@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/docs/workflow/</loc>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/quickstart/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/quickstart/install-cli-tools/</loc>
+    </url>
+        
+    <url>
+     <loc></loc>
+    </url>
+        
+    <url>
+     <loc></loc>
+    </url>
+        
+    <url>
+     <loc></loc>
+    </url>
+        
+    <url>
+     <loc></loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/quickstart/deploy-an-app/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/understanding-workflow/concepts/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/understanding-workflow/architecture/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/understanding-workflow/components/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/installing-workflow/system-requirements/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/installing-workflow/ingress/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/installing-workflow/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/installing-workflow/configuring-object-storage/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/installing-workflow/configuring-postgres/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/installing-workflow/configuring-registry/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/installing-workflow/chart-provenance/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/users/cli/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/users/registration/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/users/ssh-keys/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/applications/deploying-apps/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/using-buildpacks/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/using-dockerfiles/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/using-docker-images/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/managing-app-processes/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/managing-app-configuration/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/managing-app-lifecycle/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/managing-app-volumes/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/managing-app-resources/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/inter-app-communication/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/managing-resource-limits/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/domains-and-routing/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/applications/ssl-certificates/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/managing-workflow/tuning-component-settings/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/managing-workflow/configuring-dns/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/managing-workflow/deploy-hooks/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/managing-workflow/platform-logging/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/managing-workflow/platform-monitoring/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/managing-workflow/production-deployments/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/managing-workflow/upgrading-workflow/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/managing-workflow/extending-workflow/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/troubleshooting/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/troubleshooting/kubectl/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/troubleshooting/applications/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/roadmap/planning-process/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/roadmap/roadmap/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/roadmap/releases/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/contributing/overview/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/contributing/design-documents/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/contributing/development-environment/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/contributing/testing/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/contributing/submitting-a-pull-request/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/contributing/community/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/contributing/triaging-issues/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/contributing/conduct/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/contributing/maintainers/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/reference-guide/creating-a-self-signed-ssl-certificate/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/reference-guide/terms/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/reference-guide/controller-api/v2.0/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/reference-guide/controller-api/v2.1/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/reference-guide/controller-api/v2.2/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/reference-guide/controller-api/v2.3/</loc>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docs/workflow/changelogs/v1.4.0/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/changelogs/v1.3.0/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/changelogs/v1.2.0/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/changelogs/v1.1.0/</loc>
+    </url>
+        
+    <url>
+     <loc>/docs/workflow/changelogs/v1.0.1/</loc>
+    </url>
+        
+    
+
+</urlset>

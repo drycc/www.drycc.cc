@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="keywords" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" />
+  <link rel="canonical" href="https://drycc.cc/docs/workflow/roadmap/releases/">
+
+  <meta name="msvalidate.01" content="079E754911917142D42AB2A3694F9267" />
+  <meta name="msvalidate.01" content="08598E7D936D9217891AE6C1665A645D" />
+
+  <title>Releases - Drycc Workflow Documentation</title>
+
+  <script type="text/javascript">var documentationBaseURL = "../.."</script>
+  <link rel="icon" href="../../static/img/favicon/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../static/css/styles.css" type="text/css">
+</head>
+
+<body>
+  <div class="off-canvas-wrap">
+    <div class="inner-wrap">
+      <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]--><div class="navbar top-bar" data-purpose="navbar">
+  <div class="row fullwidth">
+    <div class="small-6 large-2 columns">
+      <h1><a href="/" class="logo"><img src="../../static/img/svg/logo.svg" width="128px" height="41px" alt="Drycc"></a></h1>
+    </div>
+    <div class="small-4 large-9 columns">
+
+      <nav class="nav navbar-nav navbar-right text-center">
+        <div class="show-for-large-up">
+          <ul class="inline-list">
+            <li>
+              <a class="dropdown" data-dropdown="drop2" aria-controls="drop1" aria-expanded="false">Projects <em><i class="fa fa-caret-down"></i></em></a>
+            </li>
+            <li>
+              <a href="https://join.slack.com/t/drycc/shared_invite/enQtNTUwNjc3MjE0OTMwLTdhODdlMTk0YWQ1ZjdiYmZlZjZjNDU2ZWE0OTBlZTA5NjMxNjFkNjQyNDMzYzVkNjJjYTU4ZjZkZWQ0MzYxNzE" id="header-slack" class="item" title="Slack">Slack</a>
+            </li>
+            <li>
+              <a href="https://drycc.github.io/blog/" id="header-blog" class="item" title="Blog">Blog</a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="right-off-canvas-toggle fa fa-bars show-for-medium-down" href="#" data-proofer-ignore></a>
+      </nav>
+
+    </div>
+  </div>
+</div>
+
+<ul id="drop2" class="f-dropdown row hide-for-medium-down" data-dropdown-content aria-hidden="true">
+  <div class="small-12 medium-offset-3 medium-9 columns">
+    <div class="row">
+    <li class="small-6 medium-4 columns"><a href="https://github.com/drycc/workflow" title="Workflow">
+      <img src="../../static/img/svg/workflow-logo.svg" alt="Workflow">
+      <h3>Workflow</h3>
+      <p>The Kubernetes platform.</p>
+    </a></li>
+    <li class="small-6 medium-4 columns"><a href="//helm.sh" title="Helm">
+      <img src="../../static/img/svg/helm-logo.svg" alt="Helm">
+      <h3>Helm</h3>
+      <p>The Package manager.</p>
+    </a></li>
+    <li class="small-6 medium-4 end columns"><a href="https://svc-cat.io" title="Service Catalog">
+      <img src="../../static/img/svg/svc-cat-logo.svg" alt="Service Catalog">
+      <h3>Service Catalog</h3>
+      <p>The Open Service Broker.</p>
+    </a></li>
+    <a class="fa fa-times right"></a>
+  </div>
+</ul><aside class="right-off-canvas-menu" data-offcanvas>
+  <ul>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Home</a>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Quick Start</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Overview" href="quickstart/">Overview</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Install CLI Tools" href="quickstart/install-cli-tools/">Install CLI Tools</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="AWS" href="">AWS</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Azure" href="">Azure</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="GKE" href="">GKE</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Minikube" href="">Minikube</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Deploy Your First App" href="quickstart/deploy-an-app/">Deploy Your First App</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Understanding Workflow</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Concepts" href="understanding-workflow/concepts/">Concepts</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Architecture" href="understanding-workflow/architecture/">Architecture</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Components" href="understanding-workflow/components/">Components</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Installing Workflow</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="System Requirements" href="installing-workflow/system-requirements/">System Requirements</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Installing Ingress" href="installing-workflow/ingress/">Installing Ingress</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Installing Workflow" href="installing-workflow/">Installing Workflow</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring Object Storage" href="installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring Postgres" href="installing-workflow/configuring-postgres/">Configuring Postgres</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring the Registry" href="installing-workflow/configuring-registry/">Configuring the Registry</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Chart Provenance" href="installing-workflow/chart-provenance/">Chart Provenance</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Users</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Command Line Interface" href="users/cli/">Command Line Interface</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Users and Registration" href="users/registration/">Users and Registration</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="SSH Keys" href="users/ssh-keys/">SSH Keys</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Applications</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Deploying Apps" href="applications/deploying-apps/">Deploying Apps</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Buildpacks" href="applications/using-buildpacks/">Buildpacks</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Dockerfiles" href="applications/using-dockerfiles/">Dockerfiles</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Docker Images" href="applications/using-docker-images/">Docker Images</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Processes" href="applications/managing-app-processes/">Managing App Processes</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Configuration" href="applications/managing-app-configuration/">Managing App Configuration</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Lifecycle" href="applications/managing-app-lifecycle/">Managing App Lifecycle</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Volumes" href="applications/managing-app-volumes/">Managing App Volumes</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Resources" href="applications/managing-app-resources/">Managing App Resources</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Inter-app Communication" href="applications/inter-app-communication/">Inter-app Communication</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Resource Limits" href="applications/managing-resource-limits/">Resource Limits</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Domains and Routing" href="applications/domains-and-routing/">Domains and Routing</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="SSL Certificates" href="applications/ssl-certificates/">SSL Certificates</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Managing Workflow</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Tuning Component Settings" href="managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring DNS" href="managing-workflow/configuring-dns/">Configuring DNS</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Deploy Hooks" href="managing-workflow/deploy-hooks/">Deploy Hooks</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Platform Logging" href="managing-workflow/platform-logging/">Platform Logging</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Platform Monitoring" href="managing-workflow/platform-monitoring/">Platform Monitoring</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Production Deployments" href="managing-workflow/production-deployments/">Production Deployments</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Upgrading Workflow" href="managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Extending Workflow" href="managing-workflow/extending-workflow/">Extending Workflow</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Troubleshooting</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Troubleshooting Workflow" href="troubleshooting/">Troubleshooting Workflow</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Troubleshooting using Kubectl" href="troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Troubleshooting Applications" href="troubleshooting/applications/">Troubleshooting Applications</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1 current">
+      <a class="reference internal current" state="open" href="">Roadmap</a>
+      
+        <ul  class="current">
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Planning Process" href="roadmap/planning-process/">Planning Process</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Roadmap" href="roadmap/roadmap/">Roadmap</a>
+          </li>
+        
+          <li class="toctree-l2 current">
+          <a class="reference internal current" id="Releases" href="roadmap/releases/">Releases</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Contributing</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Overview" href="contributing/overview/">Overview</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Design Documents" href="contributing/design-documents/">Design Documents</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Development Environment" href="contributing/development-environment/">Development Environment</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Testing" href="contributing/testing/">Testing</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Submitting a Pull Request" href="contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Community" href="contributing/community/">Community</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Triaging Issues" href="contributing/triaging-issues/">Triaging Issues</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Conduct" href="contributing/conduct/">Conduct</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Maintainers" href="contributing/maintainers/">Maintainers</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Reference Guide</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Creating a Self-Signed SSL Certificate" href="reference-guide/creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Terms" href="reference-guide/terms/">Terms</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Controller API v2.0" href="reference-guide/controller-api/v2.0/">Controller API v2.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Controller API v2.1" href="reference-guide/controller-api/v2.1/">Controller API v2.1</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Controller API v2.2" href="reference-guide/controller-api/v2.2/">Controller API v2.2</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Controller API v2.3" href="reference-guide/controller-api/v2.3/">Controller API v2.3</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Changelogs</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.4.0" href="changelogs/v1.4.0/">v1.4.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.3.0" href="changelogs/v1.3.0/">v1.3.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.2.0" href="changelogs/v1.2.0/">v1.2.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.1.0" href="changelogs/v1.1.0/">v1.1.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.0.1" href="changelogs/v1.0.1/">v1.0.1</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+  </ul>
+</aside>
+
+      <!-- banner at the top of the page for temporary announcements-->
+      <!-- <div data-alert class="alert-box alert banner text-center hide-for-small">
+      </div> -->
+
+      <div class="content-wrap">
+
+        <div class="content-inner">
+          <div class="container">
+            <div class="row">
+              <div class="small-12">
+                <h1 id="releases">Releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h1>
+<p>Drycc uses a <a href="https://en.wikipedia.org/wiki/Continuous_delivery">continuous delivery</a> approach for creating releases. Every merged commit that passes
+testing results in a deliverable that can be given a <a href="http://semver.org">semantic version</a> tag and shipped.</p>
+<p>The master <code>git</code> branch of a project should always work. Only changes considered ready to be
+released publicly are merged.</p>
+<h2 id="components-release-as-needed">Components Release as Needed<a class="headerlink" href="#components-release-as-needed" title="Permanent link">&para;</a></h2>
+<p>Drycc components release new versions as often as needed. Fixing a high priority bug requires the
+project maintainer to create a new patch release. Merging a backward-compatible feature implies
+a minor release.</p>
+<p>By releasing often, each component release becomes a safe and routine event. This makes it faster
+and easier for users to obtain specific fixes. Continuous delivery also reduces the work
+necessary to release a product such as Drycc Workflow, which integrates several components.</p>
+<p>"Components" applies not just to Drycc Workflow projects, but also to development and release
+tools, to Docker base images, and to other Drycc projects that do <a href="http://semver.org">semantic version</a> releases.</p>
+<p>See "<a href="#how-to-release-a-component">How to Release a Component</a>" for more detail.</p>
+<h2 id="workflow-releases-each-month">Workflow Releases Each Month<a class="headerlink" href="#workflow-releases-each-month" title="Permanent link">&para;</a></h2>
+<p>Drycc Workflow has a regular, public release cadence. From v2.8.0 onward, new Workflow feature
+releases arrive on the first Thursday of each month. Patch releases are created at any time,
+as needed. GitHub milestones are used to communicate the content and timing of major and minor
+releases, and longer-term planning is visible at <a href="../roadmap/">the Roadmap</a>.</p>
+<p>Workflow release timing is not linked to specific features. If a feature is merged before the
+release date, it is included in the next release.</p>
+<p>See "<a href="#how-to-release-workflow">How to Release Workflow</a>" for more detail.</p>
+<h2 id="semantic-versioning">Semantic Versioning<a class="headerlink" href="#semantic-versioning" title="Permanent link">&para;</a></h2>
+<p>Drycc releases comply with <a href="http://semver.org">semantic versioning</a>, with the "public API" broadly
+defined as:</p>
+<ul>
+<li>REST, gRPC, or other API that is network-accessible</li>
+<li>Library or framework API intended for public use</li>
+<li>"Pluggable" socket-level protocols users can redirect</li>
+<li>CLI commands and output formats</li>
+</ul>
+<p>In general, changes to anything a user might reasonably link to, customize, or integrate with
+should be backward-compatible, or else require a major release. Drycc users can be confident that
+upgrading to a patch or to a minor release will not break anything.</p>
+<h2 id="how-to-release-a-component">How to Release a Component<a class="headerlink" href="#how-to-release-a-component" title="Permanent link">&para;</a></h2>
+<p>Most Drycc projects are "components" which produce a Docker image or binary executable as a
+deliverable. This section leads a maintainer through creating a component release.</p>
+<h3 id="step-1-update-code-and-run-the-release-tool">Step 1: Update Code and Run the Release Tool<a class="headerlink" href="#step-1-update-code-and-run-the-release-tool" title="Permanent link">&para;</a></h3>
+<p>Major or minor releases should happen on the master branch. Patch releases
+should check out the previous release tag and cherry-pick specific commits from master.</p>
+<p><strong>Note:</strong> if a patch release, the release artifact will have to be manually promoted by triggering
+the <a href="https://ci.drycc.info/job/component-promote">component-promote</a> job with the following values:</p>
+<pre class="codehilite"><code class="language-bash">COMPONENT_NAME=&lt;component name&gt;
+COMPONENT_SHA=&lt;patch commit sha&gt;
+</code></pre>
+
+<p>Make sure you have the <a href="https://github.com/drycc/dryccrel">dryccrel</a> release tool in your search <code>$PATH</code>.</p>
+<p>Run <code>dryccrel release</code> once with a fake semver tag to proofread the changelog content. (If <code>HEAD</code>
+of master is not what is intended for the release, add the <code>--sha</code> flag as described
+in <code>dryccrel release --help</code>.)</p>
+<pre class="codehilite"><code class="language-bash">$ dryccrel release controller v0.0.0
+Doing a dry run of the component release...
+skipping commit 943a49267eeb28546819a266654806cfcbae0e38
+
+Creating changelog for controller with tag v2.8.1 through commit 943a49267eeb28546819a266654806cfcbae0e38
+
+### v2.8.1 -&gt; v0.0.0
+
+#### Fixes
+
+- [`615b834`](https://github.com/drycc/controller/commit/615b834f39cb68a854cc1f1e2f0f82d862ea2731) boot: Ensure DRYCC_DEBUG==true for debug output
+</code></pre>
+
+<p>Based on the changelog content, determine whether the component deserves a minor or patch
+release. Run the command again with that semver tag and <code>--dry-run=false</code>. You will still be
+asked for confirmation before the release is created:</p>
+<pre class="codehilite"><code class="language-bash">$ dryccrel release controller v2.8.2 --dry-run=false
+skipping commit 943a49267eeb28546819a266654806cfcbae0e38
+
+Creating changelog for controller with tag v2.8.1 through commit 943a49267eeb28546819a266654806cfcbae0e38
+
+### v2.8.1 -&gt; v2.8.2
+
+
+#### Fixes
+
+- [`615b834`](https://github.com/drycc/controller/commit/615b834f39cb68a854cc1f1e2f0f82d862ea2731) boot: Ensure DRYCC_DEBUG==true for debug output
+
+
+Please review the above changelog contents and ensure:
+  1. All intended commits are mentioned
+  2. The changes agree with the semver release tag (major, minor, or patch)
+
+Create release for Drycc Controller v2.8.2? [y/n]: y
+New release is available at https://github.com/drycc/controller/releases/tag/v2.8.2
+</code></pre>
+
+<h3 id="step-2-verify-the-component-is-available">Step 2: Verify the Component is Available<a class="headerlink" href="#step-2-verify-the-component-is-available" title="Permanent link">&para;</a></h3>
+<p>Tagging the component (see <a href="/roadmap/releases/#step-1-update-code-and-run-the-release-tool">Step 1</a>)
+starts a CI job that eventually results in an artifact being made available for public download.
+Please see the <a href="https://github.com/drycc/jenkins-jobs/#flow">CI flow diagrams</a> for details.</p>
+<p>Double-check that the artifact is available, either by a <code>docker pull</code> command or by running the
+appropriate installer script.</p>
+<p>If the artifact can't be downloaded, ensure that its CI release jobs are still in progress, or
+fix whatever issue arose in the pipeline. For example, the
+<a href="https://github.com/drycc/jenkins-jobs/#when-a-component-pr-is-merged-to-master">master merge pipeline</a>
+may have failed to promote the <code>:git-abc1d23</code> candidate image and needs to be restarted with
+that component and commit.</p>
+<p>If the component has a correlating <a href="https://github.com/kubernetes/helm">Kubernetes Helm</a> chart,
+this chart will also be packaged, signed and uploaded to its production chart repo.  Please
+verify it can be fetched (and verified):</p>
+<pre class="codehilite"><code>$ helm repo add controller https://charts.drycc.cc/stable
+&quot;controller&quot; has been added to your repositories
+$ helm fetch --verify drycc/controller --version v1.0.1
+Verification: &amp;{0xc4207ec870 sha256:026e766e918ff28d2a7041bc3d560d149ee7eb0cb84165c9d9d00a3045ff45c3 controller-v1.0.1.tgz}
+</code></pre>
+
+<h2 id="how-to-release-workflow">How to Release Workflow<a class="headerlink" href="#how-to-release-workflow" title="Permanent link">&para;</a></h2>
+<p>Drycc Workflow integrates multiple component releases together with a <a href="https://github.com/kubernetes/helm">Kubernetes Helm</a> chart
+deliverable. This section leads a maintainer through creating a Workflow release.</p>
+<h3 id="step-1-set-environment-variables">Step 1: Set Environment Variables<a class="headerlink" href="#step-1-set-environment-variables" title="Permanent link">&para;</a></h3>
+<p>Export two environment variables that will be used in later steps:</p>
+<pre class="codehilite"><code class="language-bash">export WORKFLOW_RELEASE=v2.17.0 WORKFLOW_PREV_RELEASE=v2.16.0  # for example
+</code></pre>
+
+<h3 id="step-2-tag-supporting-repositories">Step 2: Tag Supporting Repositories<a class="headerlink" href="#step-2-tag-supporting-repositories" title="Permanent link">&para;</a></h3>
+<p>Some Workflow components not in the Helm chart must also be tagged in sync with the release.
+Follow the <a href="#how-to-release-a-component">component release process</a> above and ensure that
+these components are tagged:</p>
+<ul>
+<li><a href="https://github.com/drycc/workflow-cli">drycc/workflow-cli</a></li>
+<li><a href="https://github.com/drycc/workflow-e2e">drycc/workflow-e2e</a></li>
+</ul>
+<p>The version number for <a href="https://github.com/drycc/workflow-cli">drycc/workflow-cli</a> should always match the overall Workflow version
+number.</p>
+<h3 id="step-3-create-helm-chart">Step 3: Create Helm Chart<a class="headerlink" href="#step-3-create-helm-chart" title="Permanent link">&para;</a></h3>
+<p>To create and stage a release candidate chart for Workflow, we will build the <a href="https://ci.drycc.info/job/workflow-chart-stage">workflow-chart-stage</a> job with the following parameters:</p>
+<p><code>RELEASE_TAG=$WORKFLOW_RELEASE</code></p>
+<p>This job will gather all of the latest component release tags and use these to specify the versions of all component charts.
+It will then package the Workflow chart, upload it to the staging chart repo and kick off an e2e run against said chart.</p>
+<h3 id="step-4-manual-testing">Step 4: Manual Testing<a class="headerlink" href="#step-4-manual-testing" title="Permanent link">&para;</a></h3>
+<p>Now it's time to go above and beyond current CI tests. Create a testing matrix spreadsheet (copying
+from the previous document is a good start) and sign up testers to cover all permutations.</p>
+<p>Testers should pay special attention to the overall user experience, make sure upgrading from
+earlier versions is smooth, and cover various storage configurations and Kubernetes versions and
+infrastructure providers.</p>
+<p>When showstopper-level bugs are found, the process is as follows:</p>
+<ol>
+<li>Create a component PR that fixes the bug.</li>
+<li>Once the PR passes and is reviewed, merge it and do a new
+  <a href="#how-to-release-a-component">component release</a></li>
+<li>Trigger the same <code>workflow-chart-stage</code> job as mentioned in Step 3 to upload the newly-generated Workflow release candidate chart to staging.</li>
+</ol>
+<h3 id="step-5-release-the-chart">Step 5: Release the Chart<a class="headerlink" href="#step-5-release-the-chart" title="Permanent link">&para;</a></h3>
+<p>When testing has completed without uncovering any new showstopper bugs, kick off the <a href="https://ci.drycc.info/job/workflow-chart-release">workflow-chart-release</a> job with the following parameter:</p>
+<p><code>RELEASE_TAG=$WORKFLOW_RELEASE</code></p>
+<p>This job will copy the release candidate chart (now approved by CI and manual testing) from the staging repo to the production repo, signing
+it if it has not done so already.</p>
+<h3 id="step-6-assemble-master-changelog">Step 6: Assemble Master Changelog<a class="headerlink" href="#step-6-assemble-master-changelog" title="Permanent link">&para;</a></h3>
+<p>Each component already updated its release notes on GitHub with CHANGELOG content. We'll now
+generate the master changelog for the Workflow chart, consisting of all component and auxilliary repo changes.</p>
+<p>We'll employ the <code>requirements.lock</code> file from the <code>WORKFLOW_PREV_RELEASE</code> chart, as well as a repo-to-chart-name <a href="https://github.com/drycc/dryccrel/blob/main/map.json">mapping file</a>, this time invoking <code>dryccrel changelog global</code> to get all component changes between
+the chart versions existing in the <code>WORKFLOW_PREV_RELEASE</code> chart and the <em>most recent</em> releases existing in GitHub.
+(Therefore, if there are any unreleased commits in a component repo, they will not appear here):</p>
+<pre class="codehilite"><code class="language-bash">helm repo add drycc https://charts.drycc.cc/stable
+helm fetch --untar drycc/workflow --version $WORKFLOW_PREV_RELEASE
+dryccrel changelog global workflow/requirements.lock map.json &gt; changelog-$WORKFLOW_RELEASE.md
+</code></pre>
+
+<p>This master changelog should then be placed into a single gist.  The file will also be added to the documentation
+update PR created in the next step.</p>
+<h3 id="step-7-update-documentation">Step 7: Update Documentation<a class="headerlink" href="#step-7-update-documentation" title="Permanent link">&para;</a></h3>
+<p>Create a new pull request at <a href="https://github.com/drycc/workflow">drycc/workflow</a> that updates version references to the new release.
+Use <code>git grep $WORKFLOW_PREV_RELEASE</code> to find any references, but be careful not to change
+<code>CHANGELOG.md</code>.</p>
+<p>Place the <code>$WORKFLOW_RELEASE</code> master changelog generated in Step 7 in the <code>changelogs</code> directory.
+Make sure to add a header to the page to make it clear that this is for a Workflow release, e.g.:</p>
+<pre class="codehilite"><code>## Workflow v2.16.0 -&gt; v2.17.0
+</code></pre>
+
+<p>Once the PR has been reviewed and merged, do a <a href="#how-to-release-a-component">component release</a> of
+<a href="https://github.com/drycc/workflow">drycc/workflow</a> itself. The version number for <a href="https://github.com/drycc/workflow">drycc/workflow</a> should always match the
+overall Workflow version number.</p>
+<h3 id="step-8-close-github-milestones">Step 8: Close GitHub Milestones<a class="headerlink" href="#step-8-close-github-milestones" title="Permanent link">&para;</a></h3>
+<p>Create a pull request at <a href="https://github.com/drycc/seed-repo">seed-repo</a> to close the release
+milestone and create the next one. When changes are merged to seed-repo, milestones on all
+relevant projects will be updated. If there are open issues attached to the milestone, move them
+to the next upcoming milestone before merging the pull request.</p>
+<p>Milestones map to Drycc Workflow releases in <a href="https://github.com/drycc/workflow">drycc/workflow</a>. These milestones do not correspond
+to individual component release tags.</p>
+<h3 id="step-9-release-workflow-cli-stable">Step 9: Release Workflow CLI Stable<a class="headerlink" href="#step-9-release-workflow-cli-stable" title="Permanent link">&para;</a></h3>
+<p>Now that the <code>$WORKFLOW_RELEASE</code> version of Workflow CLI has been vetted, we can push <code>stable</code> artifacts based on this version.</p>
+<p>Kick off https://ci.drycc.info/job/workflow-cli-build-stable/ with the <code>TAG</code> build parameter of <code>$WORKFLOW_RELEASE</code>
+and then verify <code>stable</code> artifacts are available and appropriately updated after the job completes:</p>
+<pre class="codehilite"><code>$ curl -sSL https://raw.githubusercontent.com/drycc/workflow-cli/main/install.tmpl | bash -s v1.1.0
+$ ./drycc version
+# (Should show $WORKFLOW_RELEASE)
+</code></pre>
+
+<h3 id="step-10-let-everyone-know">Step 10: Let Everyone Know<a class="headerlink" href="#step-10-let-everyone-know" title="Permanent link">&para;</a></h3>
+<p>Let the rest of the team know they can start blogging and tweeting about the new Workflow release.
+Post a message to the #company channel on Slack. Include a link to the released chart and to the
+master CHANGELOG:</p>
+<pre class="codehilite"><code>@here Drycc Workflow v2.17.0 is now live!
+Master CHANGELOG: https://drycc.info/docs/workflow/changelogs/v2.17.0/
+</code></pre>
+
+<p>You're done with the release. Nice job!</p>
+              </div>
+            </div>
+          </div>
+        </div><nav class="sidebar hide-for-medium-down">
+  <div class="sidebar-inner">
+    <h1><a href="/" class="logo"><img src="../../static/img/svg/logo.svg" width="128px" height="41px" alt="Drycc"></a></h1>
+
+    <ul class="current sidebar-main">
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Home</a>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Quick Start</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Overview" href="../../quickstart/">Overview</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Install CLI Tools" href="../../quickstart/install-cli-tools/">Install CLI Tools</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="AWS" href="../..">AWS</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Azure" href="../..">Azure</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="GKE" href="../..">GKE</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Minikube" href="../..">Minikube</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Deploy Your First App" href="../../quickstart/deploy-an-app/">Deploy Your First App</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Understanding Workflow</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Concepts" href="../../understanding-workflow/concepts/">Concepts</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Architecture" href="../../understanding-workflow/architecture/">Architecture</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Components" href="../../understanding-workflow/components/">Components</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Installing Workflow</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="System Requirements" href="../../installing-workflow/system-requirements/">System Requirements</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Installing Ingress" href="../../installing-workflow/ingress/">Installing Ingress</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Installing Workflow" href="../../installing-workflow/">Installing Workflow</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring Object Storage" href="../../installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring Postgres" href="../../installing-workflow/configuring-postgres/">Configuring Postgres</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring the Registry" href="../../installing-workflow/configuring-registry/">Configuring the Registry</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Chart Provenance" href="../../installing-workflow/chart-provenance/">Chart Provenance</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Users</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Command Line Interface" href="../../users/cli/">Command Line Interface</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Users and Registration" href="../../users/registration/">Users and Registration</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="SSH Keys" href="../../users/ssh-keys/">SSH Keys</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Applications</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Deploying Apps" href="../../applications/deploying-apps/">Deploying Apps</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Buildpacks" href="../../applications/using-buildpacks/">Buildpacks</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Dockerfiles" href="../../applications/using-dockerfiles/">Dockerfiles</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Docker Images" href="../../applications/using-docker-images/">Docker Images</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Processes" href="../../applications/managing-app-processes/">Managing App Processes</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Configuration" href="../../applications/managing-app-configuration/">Managing App Configuration</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Lifecycle" href="../../applications/managing-app-lifecycle/">Managing App Lifecycle</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Volumes" href="../../applications/managing-app-volumes/">Managing App Volumes</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Resources" href="../../applications/managing-app-resources/">Managing App Resources</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Inter-app Communication" href="../../applications/inter-app-communication/">Inter-app Communication</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Resource Limits" href="../../applications/managing-resource-limits/">Resource Limits</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Domains and Routing" href="../../applications/domains-and-routing/">Domains and Routing</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="SSL Certificates" href="../../applications/ssl-certificates/">SSL Certificates</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Managing Workflow</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Tuning Component Settings" href="../../managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring DNS" href="../../managing-workflow/configuring-dns/">Configuring DNS</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Deploy Hooks" href="../../managing-workflow/deploy-hooks/">Deploy Hooks</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Platform Logging" href="../../managing-workflow/platform-logging/">Platform Logging</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Platform Monitoring" href="../../managing-workflow/platform-monitoring/">Platform Monitoring</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Production Deployments" href="../../managing-workflow/production-deployments/">Production Deployments</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Upgrading Workflow" href="../../managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Extending Workflow" href="../../managing-workflow/extending-workflow/">Extending Workflow</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Troubleshooting</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Troubleshooting Workflow" href="../../troubleshooting/">Troubleshooting Workflow</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Troubleshooting using Kubectl" href="../../troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Troubleshooting Applications" href="../../troubleshooting/applications/">Troubleshooting Applications</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1 current">
+        <a class="reference internal current" state="open" href="../..">Roadmap</a>
+        
+            <ul style="display: none;" class="current">
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Planning Process" href="../planning-process/">Planning Process</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Roadmap" href="../roadmap/">Roadmap</a>
+                </li>
+            
+                <li class="toctree-l2 current">
+                <a class="reference internal current" id="Releases" href="./">Releases</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Contributing</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Overview" href="../../contributing/overview/">Overview</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Design Documents" href="../../contributing/design-documents/">Design Documents</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Development Environment" href="../../contributing/development-environment/">Development Environment</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Testing" href="../../contributing/testing/">Testing</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Submitting a Pull Request" href="../../contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Community" href="../../contributing/community/">Community</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Triaging Issues" href="../../contributing/triaging-issues/">Triaging Issues</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Conduct" href="../../contributing/conduct/">Conduct</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Maintainers" href="../../contributing/maintainers/">Maintainers</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Reference Guide</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Creating a Self-Signed SSL Certificate" href="../../reference-guide/creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Terms" href="../../reference-guide/terms/">Terms</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Controller API v2.0" href="../../reference-guide/controller-api/v2.0/">Controller API v2.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Controller API v2.1" href="../../reference-guide/controller-api/v2.1/">Controller API v2.1</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Controller API v2.2" href="../../reference-guide/controller-api/v2.2/">Controller API v2.2</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Controller API v2.3" href="../../reference-guide/controller-api/v2.3/">Controller API v2.3</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Changelogs</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.4.0" href="../../changelogs/v1.4.0/">v1.4.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.3.0" href="../../changelogs/v1.3.0/">v1.3.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.2.0" href="../../changelogs/v1.2.0/">v1.2.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.1.0" href="../../changelogs/v1.1.0/">v1.1.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.0.1" href="../../changelogs/v1.0.1/">v1.0.1</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+<div class="clearbox"></div>
+      <li class="toctree-l1">
+        
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidebar-bg"></div>
+</nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="../../static/js/jquery-1.12.4.min.js"><\/script>')</script>
+  <!-- extra_javascript - defined in the root 'mkdocs.yml -->
+  
+    <script src="../../static/js/foundation.js" async></script>
+  
+    <script src="../../static/js/foundation.dropdown.js" async></script>
+  
+    <script src="../../static/js/foundation.offcanvas.js" async></script>
+  
+    <script src="../../static/js/headroom.min.js" async></script>
+  
+    <script src="../../static/js/adjustments.js" async></script>
+  
+    <script src="../../search/main.js" async></script>
+  
+
+  
+
+</body>
+</html>

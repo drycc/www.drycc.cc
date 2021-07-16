@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="keywords" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" />
+  <link rel="canonical" href="https://drycc.cc/docs/workflow/reference-guide/controller-api/v2.1/">
+
+  <meta name="msvalidate.01" content="079E754911917142D42AB2A3694F9267" />
+  <meta name="msvalidate.01" content="08598E7D936D9217891AE6C1665A645D" />
+
+  <title>Controller API v2.1 - Drycc Workflow Documentation</title>
+
+  <script type="text/javascript">var documentationBaseURL = "../../.."</script>
+  <link rel="icon" href="../../../static/img/favicon/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../../static/css/styles.css" type="text/css">
+</head>
+
+<body>
+  <div class="off-canvas-wrap">
+    <div class="inner-wrap">
+      <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]--><div class="navbar top-bar" data-purpose="navbar">
+  <div class="row fullwidth">
+    <div class="small-6 large-2 columns">
+      <h1><a href="/" class="logo"><img src="../../../static/img/svg/logo.svg" width="128px" height="41px" alt="Drycc"></a></h1>
+    </div>
+    <div class="small-4 large-9 columns">
+
+      <nav class="nav navbar-nav navbar-right text-center">
+        <div class="show-for-large-up">
+          <ul class="inline-list">
+            <li>
+              <a class="dropdown" data-dropdown="drop2" aria-controls="drop1" aria-expanded="false">Projects <em><i class="fa fa-caret-down"></i></em></a>
+            </li>
+            <li>
+              <a href="https://join.slack.com/t/drycc/shared_invite/enQtNTUwNjc3MjE0OTMwLTdhODdlMTk0YWQ1ZjdiYmZlZjZjNDU2ZWE0OTBlZTA5NjMxNjFkNjQyNDMzYzVkNjJjYTU4ZjZkZWQ0MzYxNzE" id="header-slack" class="item" title="Slack">Slack</a>
+            </li>
+            <li>
+              <a href="https://drycc.github.io/blog/" id="header-blog" class="item" title="Blog">Blog</a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="right-off-canvas-toggle fa fa-bars show-for-medium-down" href="#" data-proofer-ignore></a>
+      </nav>
+
+    </div>
+  </div>
+</div>
+
+<ul id="drop2" class="f-dropdown row hide-for-medium-down" data-dropdown-content aria-hidden="true">
+  <div class="small-12 medium-offset-3 medium-9 columns">
+    <div class="row">
+    <li class="small-6 medium-4 columns"><a href="https://github.com/drycc/workflow" title="Workflow">
+      <img src="../../../static/img/svg/workflow-logo.svg" alt="Workflow">
+      <h3>Workflow</h3>
+      <p>The Kubernetes platform.</p>
+    </a></li>
+    <li class="small-6 medium-4 columns"><a href="//helm.sh" title="Helm">
+      <img src="../../../static/img/svg/helm-logo.svg" alt="Helm">
+      <h3>Helm</h3>
+      <p>The Package manager.</p>
+    </a></li>
+    <li class="small-6 medium-4 end columns"><a href="https://svc-cat.io" title="Service Catalog">
+      <img src="../../../static/img/svg/svc-cat-logo.svg" alt="Service Catalog">
+      <h3>Service Catalog</h3>
+      <p>The Open Service Broker.</p>
+    </a></li>
+    <a class="fa fa-times right"></a>
+  </div>
+</ul><aside class="right-off-canvas-menu" data-offcanvas>
+  <ul>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Home</a>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Quick Start</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Overview" href="quickstart/">Overview</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Install CLI Tools" href="quickstart/install-cli-tools/">Install CLI Tools</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="AWS" href="">AWS</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Azure" href="">Azure</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="GKE" href="">GKE</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Minikube" href="">Minikube</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Deploy Your First App" href="quickstart/deploy-an-app/">Deploy Your First App</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Understanding Workflow</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Concepts" href="understanding-workflow/concepts/">Concepts</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Architecture" href="understanding-workflow/architecture/">Architecture</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Components" href="understanding-workflow/components/">Components</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Installing Workflow</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="System Requirements" href="installing-workflow/system-requirements/">System Requirements</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Installing Ingress" href="installing-workflow/ingress/">Installing Ingress</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Installing Workflow" href="installing-workflow/">Installing Workflow</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring Object Storage" href="installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring Postgres" href="installing-workflow/configuring-postgres/">Configuring Postgres</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring the Registry" href="installing-workflow/configuring-registry/">Configuring the Registry</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Chart Provenance" href="installing-workflow/chart-provenance/">Chart Provenance</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Users</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Command Line Interface" href="users/cli/">Command Line Interface</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Users and Registration" href="users/registration/">Users and Registration</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="SSH Keys" href="users/ssh-keys/">SSH Keys</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Applications</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Deploying Apps" href="applications/deploying-apps/">Deploying Apps</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Buildpacks" href="applications/using-buildpacks/">Buildpacks</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Dockerfiles" href="applications/using-dockerfiles/">Dockerfiles</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Docker Images" href="applications/using-docker-images/">Docker Images</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Processes" href="applications/managing-app-processes/">Managing App Processes</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Configuration" href="applications/managing-app-configuration/">Managing App Configuration</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Lifecycle" href="applications/managing-app-lifecycle/">Managing App Lifecycle</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Volumes" href="applications/managing-app-volumes/">Managing App Volumes</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Resources" href="applications/managing-app-resources/">Managing App Resources</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Inter-app Communication" href="applications/inter-app-communication/">Inter-app Communication</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Resource Limits" href="applications/managing-resource-limits/">Resource Limits</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Domains and Routing" href="applications/domains-and-routing/">Domains and Routing</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="SSL Certificates" href="applications/ssl-certificates/">SSL Certificates</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Managing Workflow</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Tuning Component Settings" href="managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring DNS" href="managing-workflow/configuring-dns/">Configuring DNS</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Deploy Hooks" href="managing-workflow/deploy-hooks/">Deploy Hooks</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Platform Logging" href="managing-workflow/platform-logging/">Platform Logging</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Platform Monitoring" href="managing-workflow/platform-monitoring/">Platform Monitoring</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Production Deployments" href="managing-workflow/production-deployments/">Production Deployments</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Upgrading Workflow" href="managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Extending Workflow" href="managing-workflow/extending-workflow/">Extending Workflow</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Troubleshooting</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Troubleshooting Workflow" href="troubleshooting/">Troubleshooting Workflow</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Troubleshooting using Kubectl" href="troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Troubleshooting Applications" href="troubleshooting/applications/">Troubleshooting Applications</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Roadmap</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Planning Process" href="roadmap/planning-process/">Planning Process</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Roadmap" href="roadmap/roadmap/">Roadmap</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Releases" href="roadmap/releases/">Releases</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Contributing</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Overview" href="contributing/overview/">Overview</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Design Documents" href="contributing/design-documents/">Design Documents</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Development Environment" href="contributing/development-environment/">Development Environment</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Testing" href="contributing/testing/">Testing</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Submitting a Pull Request" href="contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Community" href="contributing/community/">Community</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Triaging Issues" href="contributing/triaging-issues/">Triaging Issues</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Conduct" href="contributing/conduct/">Conduct</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Maintainers" href="contributing/maintainers/">Maintainers</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1 current">
+      <a class="reference internal current" state="open" href="">Reference Guide</a>
+      
+        <ul  class="current">
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Creating a Self-Signed SSL Certificate" href="reference-guide/creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Terms" href="reference-guide/terms/">Terms</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Controller API v2.0" href="reference-guide/controller-api/v2.0/">Controller API v2.0</a>
+          </li>
+        
+          <li class="toctree-l2 current">
+          <a class="reference internal current" id="Controller API v2.1" href="reference-guide/controller-api/v2.1/">Controller API v2.1</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Controller API v2.2" href="reference-guide/controller-api/v2.2/">Controller API v2.2</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Controller API v2.3" href="reference-guide/controller-api/v2.3/">Controller API v2.3</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Changelogs</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.4.0" href="changelogs/v1.4.0/">v1.4.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.3.0" href="changelogs/v1.3.0/">v1.3.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.2.0" href="changelogs/v1.2.0/">v1.2.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.1.0" href="changelogs/v1.1.0/">v1.1.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.0.1" href="changelogs/v1.0.1/">v1.0.1</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+  </ul>
+</aside>
+
+      <!-- banner at the top of the page for temporary announcements-->
+      <!-- <div data-alert class="alert-box alert banner text-center hide-for-small">
+      </div> -->
+
+      <div class="content-wrap">
+
+        <div class="content-inner">
+          <div class="container">
+            <div class="row">
+              <div class="small-12">
+                <h1 id="controller-api-v21">Controller API v2.1<a class="headerlink" href="#controller-api-v21" title="Permanent link">&para;</a></h1>
+<p>This is the v2.1 REST API for the Controller.</p>
+<h2 id="whats-new">What's New<a class="headerlink" href="#whats-new" title="Permanent link">&para;</a></h2>
+<p><strong>New!</strong> <code>healthcheck</code> field in configuration, deprecates the <code>HEALTHCHECK_*</code> environment variables.</p>
+<p><strong>New!</strong> Unsetting a configuration variable that does not exist will return a 422.</p>
+<p><strong>New!</strong> Creating an identical sequential release returns a 409 rather than create a no-op release.</p>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<h3 id="register-a-new-user">Register a New User<a class="headerlink" href="#register-a-new-user" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/auth/register/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{
+    &quot;username&quot;: &quot;test&quot;,
+    &quot;password&quot;: &quot;opensesame&quot;,
+    &quot;email&quot;: &quot;test@example.com&quot;
+}
+</code></pre>
+
+<p>Optional Parameters:</p>
+<pre class="codehilite"><code>{
+    &quot;first_name&quot;: &quot;test&quot;,
+    &quot;last_name&quot;: &quot;testerson&quot;
+}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;id&quot;: 1,
+    &quot;last_login&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+    &quot;is_superuser&quot;: true,
+    &quot;username&quot;: &quot;test&quot;,
+    &quot;first_name&quot;: &quot;test&quot;,
+    &quot;last_name&quot;: &quot;testerson&quot;,
+    &quot;email&quot;: &quot;test@example.com&quot;,
+    &quot;is_staff&quot;: true,
+    &quot;is_active&quot;: true,
+    &quot;date_joined&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+    &quot;groups&quot;: [],
+    &quot;user_permissions&quot;: []
+}
+</code></pre>
+
+<h3 id="log-in">Log in<a class="headerlink" href="#log-in" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/auth/login/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{&quot;username&quot;: &quot;test&quot;, &quot;password&quot;: &quot;opensesame&quot;}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&quot;token&quot;: &quot;abc123&quot;}
+</code></pre>
+
+<h3 id="cancel-account">Cancel Account<a class="headerlink" href="#cancel-account" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h3 id="regenerate-token">Regenerate Token<a class="headerlink" href="#regenerate-token" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command could require administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Optional Parameters:</p>
+<pre class="codehilite"><code>{
+    &quot;username&quot; : &quot;test&quot;
+    &quot;all&quot; : &quot;true&quot;
+}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&quot;token&quot;: &quot;abc123&quot;}
+</code></pre>
+
+<h3 id="change-password">Change Password<a class="headerlink" href="#change-password" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &quot;password&quot;: &quot;foo&quot;,
+    &quot;new_password&quot;: &quot;bar&quot;
+}
+</code></pre>
+
+<p>Optional parameters:</p>
+<pre class="codehilite"><code>{&quot;username&quot;: &quot;testuser&quot;}
+</code></pre>
+
+<blockquote>
+<p><strong>note</strong></p>
+<p>Using the <code>username</code> parameter requires administrative privileges and makes the <code>password</code> parameter optional.</p>
+</blockquote>
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
+<h3 id="list-all-applications">List all Applications<a class="headerlink" href="#list-all-applications" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;id&quot;: &quot;example-go&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;structure&quot;: {},
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;url&quot;: &quot;example-go.example.com&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h3 id="create-an-application">Create an Application<a class="headerlink" href="#create-an-application" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+</code></pre>
+
+<p>Optional parameters:</p>
+<pre class="codehilite"><code>{&quot;id&quot;: &quot;example-go&quot;}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;id&quot;: &quot;example-go&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;structure&quot;: {},
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;url&quot;: &quot;example-go.example.com&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}
+</code></pre>
+
+<h3 id="destroy-an-application">Destroy an Application<a class="headerlink" href="#destroy-an-application" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h3 id="list-application-details">List Application Details<a class="headerlink" href="#list-application-details" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;id&quot;: &quot;example-go&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;structure&quot;: {},
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;url&quot;: &quot;example-go.example.com&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}
+</code></pre>
+
+<h3 id="update-application-details">Update Application Details<a class="headerlink" href="#update-application-details" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Optional parameters:</p>
+<pre class="codehilite"><code>{
+  &quot;owner&quot;: &quot;test&quot;
+}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json
+</code></pre>
+
+<h3 id="retrieve-application-logs">Retrieve Application Logs<a class="headerlink" href="#retrieve-application-logs" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Optional URL Query Parameters:</p>
+<pre class="codehilite"><code>?log_lines=
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: text/plain
+
+&quot;16:51:14 drycc[api]: test created initial release\n&quot;
+</code></pre>
+
+<h3 id="run-one-off-commands">Run one-off Commands<a class="headerlink" href="#run-one-off-commands" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;command&quot;: &quot;echo hi&quot;}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&quot;exit_code&quot;: 0, &quot;output&quot;: &quot;hi\n&quot;}
+</code></pre>
+
+<h2 id="certificates">Certificates<a class="headerlink" href="#certificates" title="Permanent link">&para;</a></h2>
+<h3 id="list-all-certificates">List all Certificates<a class="headerlink" href="#list-all-certificates" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/certs HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &quot;count&quot;: 1,
+  &quot;next&quot;: null,
+  &quot;previous&quot;: null,
+  &quot;results&quot;: [
+    {
+      &quot;id&quot;: 22,
+      &quot;owner&quot;: &quot;test&quot;,
+      &quot;san&quot;: [],
+      &quot;domains&quot;: [],
+      &quot;created&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+      &quot;updated&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+      &quot;name&quot;: &quot;foo&quot;,
+      &quot;common_name&quot;: &quot;bar.com&quot;,
+      &quot;fingerprint&quot;: &quot;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&quot;,
+      &quot;expires&quot;: &quot;2017-01-14T23:57:57Z&quot;,
+      &quot;starts&quot;: &quot;2016-01-15T23:57:57Z&quot;,
+      &quot;issuer&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&quot;,
+      &quot;subject&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="get-certificate-details">Get Certificate Details<a class="headerlink" href="#get-certificate-details" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &quot;id&quot;: 22,
+  &quot;owner&quot;: &quot;test&quot;,
+  &quot;san&quot;: [],
+  &quot;domains&quot;: [],
+  &quot;created&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+  &quot;updated&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+  &quot;name&quot;: &quot;foo&quot;,
+  &quot;common_name&quot;: &quot;bar.com&quot;,
+  &quot;fingerprint&quot;: &quot;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&quot;,
+  &quot;expires&quot;: &quot;2017-01-14T23:57:57Z&quot;,
+  &quot;starts&quot;: &quot;2016-01-15T23:57:57Z&quot;,
+  &quot;issuer&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&quot;,
+  &quot;subject&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&quot;
+}
+</code></pre>
+
+<h3 id="create-certificate">Create Certificate<a class="headerlink" href="#create-certificate" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/certs/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &quot;name&quot;: &quot;foo&quot;
+    &quot;certificate&quot;: &quot;-----BEGIN CERTIFICATE-----&quot;,
+    &quot;key&quot;: &quot;-----BEGIN RSA PRIVATE KEY-----&quot;
+}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &quot;id&quot;: 22,
+  &quot;owner&quot;: &quot;test&quot;,
+  &quot;san&quot;: [],
+  &quot;domains&quot;: [],
+  &quot;created&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+  &quot;updated&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+  &quot;name&quot;: &quot;foo&quot;,
+  &quot;common_name&quot;: &quot;bar.com&quot;,
+  &quot;fingerprint&quot;: &quot;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&quot;,
+  &quot;expires&quot;: &quot;2017-01-14T23:57:57Z&quot;,
+  &quot;starts&quot;: &quot;2016-01-15T23:57:57Z&quot;,
+  &quot;issuer&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&quot;,
+  &quot;subject&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&quot;
+}
+</code></pre>
+
+<h3 id="destroy-a-certificate">Destroy a Certificate<a class="headerlink" href="#destroy-a-certificate" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h3 id="attach-a-domain-to-a-certificate">Attach a Domain to a Certificate<a class="headerlink" href="#attach-a-domain-to-a-certificate" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &quot;domain&quot;: &quot;test.com&quot;
+}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h3 id="remove-a-domain-from-a-certificate">Remove a Domain from a Certificate<a class="headerlink" href="#remove-a-domain-from-a-certificate" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h2 id="pods">Pods<a class="headerlink" href="#pods" title="Permanent link">&para;</a></h2>
+<h3 id="list-all-pods">List all Pods<a class="headerlink" href="#list-all-pods" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;results&quot;: [
+        {
+            &quot;name&quot;: &quot;go-v2-web-e7dej&quot;,
+            &quot;release&quot;: &quot;v2&quot;,
+            &quot;started&quot;: &quot;2014-01-01T00:00:00Z&quot;,
+            &quot;state&quot;: &quot;up&quot;,
+            &quot;type&quot;: &quot;web&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h3 id="list-all-pods-by-type">List all Pods by Type<a class="headerlink" href="#list-all-pods-by-type" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;results&quot;: [
+        {
+            &quot;name&quot;: &quot;go-v2-web-e7dej&quot;,
+            &quot;release&quot;: &quot;v2&quot;,
+            &quot;started&quot;: &quot;2014-01-01T00:00:00Z&quot;,
+            &quot;state&quot;: &quot;up&quot;,
+            &quot;type&quot;: &quot;web&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h3 id="restart-all-pods">Restart All Pods<a class="headerlink" href="#restart-all-pods" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &quot;name&quot;: &quot;go-v2-web-atots&quot;,
+        &quot;release&quot;: &quot;v2&quot;,
+        &quot;started&quot;: &quot;2016-04-11T21:07:54Z&quot;,
+        &quot;state&quot;: &quot;up&quot;,
+        &quot;type&quot;: &quot;web&quot;
+    }
+]
+</code></pre>
+
+<h3 id="restart-pods-by-type">Restart Pods by Type<a class="headerlink" href="#restart-pods-by-type" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &quot;name&quot;: &quot;go-v2-web-atots&quot;,
+        &quot;release&quot;: &quot;v2&quot;,
+        &quot;started&quot;: &quot;2016-04-11T21:07:54Z&quot;,
+        &quot;state&quot;: &quot;up&quot;,
+        &quot;type&quot;: &quot;web&quot;
+    }
+]
+</code></pre>
+
+<h3 id="restart-pods-by-type-and-name">Restart Pods by Type and Name<a class="headerlink" href="#restart-pods-by-type-and-name" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &quot;name&quot;: &quot;go-v2-web-atots&quot;,
+        &quot;release&quot;: &quot;v2&quot;,
+        &quot;started&quot;: &quot;2016-04-11T21:07:54Z&quot;,
+        &quot;state&quot;: &quot;up&quot;,
+        &quot;type&quot;: &quot;web&quot;
+    }
+]
+</code></pre>
+
+<h3 id="scale-pods">Scale Pods<a class="headerlink" href="#scale-pods" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;web&quot;: 3}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-configuration">List Application Configuration<a class="headerlink" href="#list-application-configuration" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;values&quot;: {
+      &quot;PLATFORM&quot;: &quot;drycc&quot;
+    },
+    &quot;memory&quot;: {},
+    &quot;cpu&quot;: {},
+    &quot;tags&quot;: {},
+    &quot;healthcheck&quot;: {},
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}
+</code></pre>
+
+<h3 id="create-new-config">Create new Config<a class="headerlink" href="#create-new-config" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;values&quot;: {&quot;HELLO&quot;: &quot;world&quot;, &quot;PLATFORM&quot;: &quot;drycc&quot;}}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;values&quot;: {
+        &quot;DRYCC_APP&quot;: &quot;example-go&quot;,
+        &quot;DRYCC_RELEASE&quot;: &quot;v3&quot;,
+        &quot;HELLO&quot;: &quot;world&quot;,
+        &quot;PLATFORM&quot;: &quot;drycc&quot;
+
+    },
+    &quot;memory&quot;: {},
+    &quot;cpu&quot;: {},
+    &quot;tags&quot;: {},
+    &quot;healthcheck&quot;: {},
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}
+</code></pre>
+
+<h3 id="unset-config-variable">Unset Config Variable<a class="headerlink" href="#unset-config-variable" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;values&quot;: {&quot;HELLO&quot;: null}}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;values&quot;: {
+        &quot;DRYCC_APP&quot;: &quot;example-go&quot;,
+        &quot;DRYCC_RELEASE&quot;: &quot;v4&quot;,
+        &quot;PLATFORM&quot;: &quot;drycc&quot;
+   },
+    &quot;memory&quot;: {},
+    &quot;cpu&quot;: {},
+    &quot;tags&quot;: {},
+    &quot;healthcheck&quot;: {},
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}
+</code></pre>
+
+<h2 id="domains">Domains<a class="headerlink" href="#domains" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-domains">List Application Domains<a class="headerlink" href="#list-application-domains" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;domain&quot;: &quot;example.example.com&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h3 id="add-domain">Add Domain<a class="headerlink" href="#add-domain" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{'domain': 'example.example.com'}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;domain&quot;: &quot;example.example.com&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;
+}
+</code></pre>
+
+<h3 id="remove-domain">Remove Domain<a class="headerlink" href="#remove-domain" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h2 id="builds">Builds<a class="headerlink" href="#builds" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-builds">List Application Builds<a class="headerlink" href="#list-application-builds" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/builds/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;dockerfile&quot;: &quot;FROM drycc/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&quot;/runner/init\&quot;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&quot;,
+            &quot;image&quot;: &quot;example-go&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;procfile&quot;: {
+                &quot;web&quot;: &quot;example-go&quot;
+            },
+            &quot;sha&quot;: &quot;060da68f&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h3 id="create-application-build">Create Application Build<a class="headerlink" href="#create-application-build" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/builds/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;image&quot;: &quot;drycc/example-go:latest&quot;}
+</code></pre>
+
+<p>Optional Parameters:</p>
+<pre class="codehilite"><code>{
+    &quot;procfile&quot;: {
+      &quot;web&quot;: &quot;./cmd&quot;
+    }
+}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;dockerfile&quot;: &quot;&quot;,
+    &quot;image&quot;: &quot;drycc/example-go:latest&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;procfile&quot;: {},
+    &quot;sha&quot;: &quot;&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}
+</code></pre>
+
+<h2 id="releases">Releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-releases">List Application Releases<a class="headerlink" href="#list-application-releases" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 3,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;build&quot;: &quot;202d8e4b-600e-4425-a85c-ffc7ea607f61&quot;,
+            &quot;config&quot;: &quot;ed637ceb-5d32-44bd-9406-d326a777a513&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;summary&quot;: &quot;test changed nothing&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;,
+            &quot;version&quot;: 3
+        },
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;build&quot;: &quot;202d8e4b-600e-4425-a85c-ffc7ea607f61&quot;,
+            &quot;config&quot;: &quot;95bd6dea-1685-4f78-a03d-fd7270b058d1&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;summary&quot;: &quot;test deployed 060da68&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;,
+            &quot;version&quot;: 2
+        },
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;build&quot;: null,
+            &quot;config&quot;: &quot;95bd6dea-1685-4f78-a03d-fd7270b058d1&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;summary&quot;: &quot;test created initial release&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;,
+            &quot;version&quot;: 1
+        }
+    ]
+}
+</code></pre>
+
+<h3 id="list-release-details">List Release Details<a class="headerlink" href="#list-release-details" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;build&quot;: null,
+    &quot;config&quot;: &quot;95bd6dea-1685-4f78-a03d-fd7270b058d1&quot;,
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;summary&quot;: &quot;test created initial release&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;,
+    &quot;version&quot;: 1
+}
+</code></pre>
+
+<h3 id="rollback-release">Rollback Release<a class="headerlink" href="#rollback-release" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;version&quot;: 1}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&quot;version&quot;: 5}
+</code></pre>
+
+<h2 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h2>
+<h3 id="list-keys">List Keys<a class="headerlink" href="#list-keys" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;id&quot;: &quot;test@example.com&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;public&quot;: &quot;ssh-rsa &lt;...&gt;&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h3 id="add-key-to-user">Add Key to User<a class="headerlink" href="#add-key-to-user" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &quot;id&quot;: &quot;example&quot;,
+    &quot;public&quot;: &quot;ssh-rsa &lt;...&gt;&quot;
+}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;id&quot;: &quot;example&quot;,
+    &quot;owner&quot;: &quot;example&quot;,
+    &quot;public&quot;: &quot;ssh-rsa &lt;...&gt;&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}
+</code></pre>
+
+<h3 id="remove-key-from-user">Remove Key from User<a class="headerlink" href="#remove-key-from-user" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/keys/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-permissions">List Application Permissions<a class="headerlink" href="#list-application-permissions" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This does not include the app owner.</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;users&quot;: [
+        &quot;test&quot;,
+        &quot;foo&quot;
+    ]
+}
+</code></pre>
+
+<h3 id="create-application-permission">Create Application Permission<a class="headerlink" href="#create-application-permission" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&quot;username&quot;: &quot;example&quot;}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h3 id="remove-application-permission">Remove Application Permission<a class="headerlink" href="#remove-application-permission" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h3 id="list-administrators">List Administrators<a class="headerlink" href="#list-administrators" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 2,
+    &quot;next&quot;: null
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;username&quot;: &quot;test&quot;,
+            &quot;is_superuser&quot;: true
+        },
+        {
+            &quot;username&quot;: &quot;foo&quot;,
+            &quot;is_superuser&quot;: true
+        }
+    ]
+}
+</code></pre>
+
+<h3 id="grant-user-administrative-privileges">Grant User Administrative Privileges<a class="headerlink" href="#grant-user-administrative-privileges" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/admin/perms HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&quot;username&quot;: &quot;example&quot;}
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h3 id="remove-users-administrative-privileges">Remove User's Administrative Privileges<a class="headerlink" href="#remove-users-administrative-privileges" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre>
+
+<h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h2>
+<h3 id="list-all-users">List all users<a class="headerlink" href="#list-all-users" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/users HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre>
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;last_login&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+            &quot;is_superuser&quot;: true,
+            &quot;username&quot;: &quot;test&quot;,
+            &quot;first_name&quot;: &quot;test&quot;,
+            &quot;last_name&quot;: &quot;testerson&quot;,
+            &quot;email&quot;: &quot;test@example.com&quot;,
+            &quot;is_staff&quot;: true,
+            &quot;is_active&quot;: true,
+            &quot;date_joined&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+            &quot;groups&quot;: [],
+            &quot;user_permissions&quot;: []
+        }
+    ]
+}
+</code></pre>
+              </div>
+            </div>
+          </div>
+        </div><nav class="sidebar hide-for-medium-down">
+  <div class="sidebar-inner">
+    <h1><a href="/" class="logo"><img src="../../../static/img/svg/logo.svg" width="128px" height="41px" alt="Drycc"></a></h1>
+
+    <ul class="current sidebar-main">
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Home</a>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Quick Start</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Overview" href="../../../quickstart/">Overview</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Install CLI Tools" href="../../../quickstart/install-cli-tools/">Install CLI Tools</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="AWS" href="../../..">AWS</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Azure" href="../../..">Azure</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="GKE" href="../../..">GKE</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Minikube" href="../../..">Minikube</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Deploy Your First App" href="../../../quickstart/deploy-an-app/">Deploy Your First App</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Understanding Workflow</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Concepts" href="../../../understanding-workflow/concepts/">Concepts</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Architecture" href="../../../understanding-workflow/architecture/">Architecture</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Components" href="../../../understanding-workflow/components/">Components</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Installing Workflow</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="System Requirements" href="../../../installing-workflow/system-requirements/">System Requirements</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Installing Ingress" href="../../../installing-workflow/ingress/">Installing Ingress</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Installing Workflow" href="../../../installing-workflow/">Installing Workflow</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring Object Storage" href="../../../installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring Postgres" href="../../../installing-workflow/configuring-postgres/">Configuring Postgres</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring the Registry" href="../../../installing-workflow/configuring-registry/">Configuring the Registry</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Chart Provenance" href="../../../installing-workflow/chart-provenance/">Chart Provenance</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Users</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Command Line Interface" href="../../../users/cli/">Command Line Interface</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Users and Registration" href="../../../users/registration/">Users and Registration</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="SSH Keys" href="../../../users/ssh-keys/">SSH Keys</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Applications</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Deploying Apps" href="../../../applications/deploying-apps/">Deploying Apps</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Buildpacks" href="../../../applications/using-buildpacks/">Buildpacks</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Dockerfiles" href="../../../applications/using-dockerfiles/">Dockerfiles</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Docker Images" href="../../../applications/using-docker-images/">Docker Images</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Processes" href="../../../applications/managing-app-processes/">Managing App Processes</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Configuration" href="../../../applications/managing-app-configuration/">Managing App Configuration</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Lifecycle" href="../../../applications/managing-app-lifecycle/">Managing App Lifecycle</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Volumes" href="../../../applications/managing-app-volumes/">Managing App Volumes</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Resources" href="../../../applications/managing-app-resources/">Managing App Resources</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Inter-app Communication" href="../../../applications/inter-app-communication/">Inter-app Communication</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Resource Limits" href="../../../applications/managing-resource-limits/">Resource Limits</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Domains and Routing" href="../../../applications/domains-and-routing/">Domains and Routing</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="SSL Certificates" href="../../../applications/ssl-certificates/">SSL Certificates</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Managing Workflow</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Tuning Component Settings" href="../../../managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring DNS" href="../../../managing-workflow/configuring-dns/">Configuring DNS</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Deploy Hooks" href="../../../managing-workflow/deploy-hooks/">Deploy Hooks</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Platform Logging" href="../../../managing-workflow/platform-logging/">Platform Logging</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Platform Monitoring" href="../../../managing-workflow/platform-monitoring/">Platform Monitoring</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Production Deployments" href="../../../managing-workflow/production-deployments/">Production Deployments</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Upgrading Workflow" href="../../../managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Extending Workflow" href="../../../managing-workflow/extending-workflow/">Extending Workflow</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Troubleshooting</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Troubleshooting Workflow" href="../../../troubleshooting/">Troubleshooting Workflow</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Troubleshooting using Kubectl" href="../../../troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Troubleshooting Applications" href="../../../troubleshooting/applications/">Troubleshooting Applications</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Roadmap</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Planning Process" href="../../../roadmap/planning-process/">Planning Process</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Roadmap" href="../../../roadmap/roadmap/">Roadmap</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Releases" href="../../../roadmap/releases/">Releases</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Contributing</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Overview" href="../../../contributing/overview/">Overview</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Design Documents" href="../../../contributing/design-documents/">Design Documents</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Development Environment" href="../../../contributing/development-environment/">Development Environment</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Testing" href="../../../contributing/testing/">Testing</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Submitting a Pull Request" href="../../../contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Community" href="../../../contributing/community/">Community</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Triaging Issues" href="../../../contributing/triaging-issues/">Triaging Issues</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Conduct" href="../../../contributing/conduct/">Conduct</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Maintainers" href="../../../contributing/maintainers/">Maintainers</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1 current">
+        <a class="reference internal current" state="open" href="../../..">Reference Guide</a>
+        
+            <ul style="display: none;" class="current">
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Creating a Self-Signed SSL Certificate" href="../../creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Terms" href="../../terms/">Terms</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Controller API v2.0" href="../v2.0/">Controller API v2.0</a>
+                </li>
+            
+                <li class="toctree-l2 current">
+                <a class="reference internal current" id="Controller API v2.1" href="./">Controller API v2.1</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Controller API v2.2" href="../v2.2/">Controller API v2.2</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Controller API v2.3" href="../v2.3/">Controller API v2.3</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../../..">Changelogs</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.4.0" href="../../../changelogs/v1.4.0/">v1.4.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.3.0" href="../../../changelogs/v1.3.0/">v1.3.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.2.0" href="../../../changelogs/v1.2.0/">v1.2.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.1.0" href="../../../changelogs/v1.1.0/">v1.1.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.0.1" href="../../../changelogs/v1.0.1/">v1.0.1</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+<div class="clearbox"></div>
+      <li class="toctree-l1">
+        
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidebar-bg"></div>
+</nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="../../../static/js/jquery-1.12.4.min.js"><\/script>')</script>
+  <!-- extra_javascript - defined in the root 'mkdocs.yml -->
+  
+    <script src="../../../static/js/foundation.js" async></script>
+  
+    <script src="../../../static/js/foundation.dropdown.js" async></script>
+  
+    <script src="../../../static/js/foundation.offcanvas.js" async></script>
+  
+    <script src="../../../static/js/headroom.min.js" async></script>
+  
+    <script src="../../../static/js/adjustments.js" async></script>
+  
+    <script src="../../../search/main.js" async></script>
+  
+
+  
+
+</body>
+</html>

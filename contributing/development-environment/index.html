@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="keywords" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" />
+  <link rel="canonical" href="https://drycc.cc/docs/workflow/contributing/development-environment/">
+
+  <meta name="msvalidate.01" content="079E754911917142D42AB2A3694F9267" />
+  <meta name="msvalidate.01" content="08598E7D936D9217891AE6C1665A645D" />
+
+  <title>Development Environment - Drycc Workflow Documentation</title>
+
+  <script type="text/javascript">var documentationBaseURL = "../.."</script>
+  <link rel="icon" href="../../static/img/favicon/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../static/css/styles.css" type="text/css">
+</head>
+
+<body>
+  <div class="off-canvas-wrap">
+    <div class="inner-wrap">
+      <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]--><div class="navbar top-bar" data-purpose="navbar">
+  <div class="row fullwidth">
+    <div class="small-6 large-2 columns">
+      <h1><a href="/" class="logo"><img src="../../static/img/svg/logo.svg" width="128px" height="41px" alt="Drycc"></a></h1>
+    </div>
+    <div class="small-4 large-9 columns">
+
+      <nav class="nav navbar-nav navbar-right text-center">
+        <div class="show-for-large-up">
+          <ul class="inline-list">
+            <li>
+              <a class="dropdown" data-dropdown="drop2" aria-controls="drop1" aria-expanded="false">Projects <em><i class="fa fa-caret-down"></i></em></a>
+            </li>
+            <li>
+              <a href="https://join.slack.com/t/drycc/shared_invite/enQtNTUwNjc3MjE0OTMwLTdhODdlMTk0YWQ1ZjdiYmZlZjZjNDU2ZWE0OTBlZTA5NjMxNjFkNjQyNDMzYzVkNjJjYTU4ZjZkZWQ0MzYxNzE" id="header-slack" class="item" title="Slack">Slack</a>
+            </li>
+            <li>
+              <a href="https://drycc.github.io/blog/" id="header-blog" class="item" title="Blog">Blog</a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="right-off-canvas-toggle fa fa-bars show-for-medium-down" href="#" data-proofer-ignore></a>
+      </nav>
+
+    </div>
+  </div>
+</div>
+
+<ul id="drop2" class="f-dropdown row hide-for-medium-down" data-dropdown-content aria-hidden="true">
+  <div class="small-12 medium-offset-3 medium-9 columns">
+    <div class="row">
+    <li class="small-6 medium-4 columns"><a href="https://github.com/drycc/workflow" title="Workflow">
+      <img src="../../static/img/svg/workflow-logo.svg" alt="Workflow">
+      <h3>Workflow</h3>
+      <p>The Kubernetes platform.</p>
+    </a></li>
+    <li class="small-6 medium-4 columns"><a href="//helm.sh" title="Helm">
+      <img src="../../static/img/svg/helm-logo.svg" alt="Helm">
+      <h3>Helm</h3>
+      <p>The Package manager.</p>
+    </a></li>
+    <li class="small-6 medium-4 end columns"><a href="https://svc-cat.io" title="Service Catalog">
+      <img src="../../static/img/svg/svc-cat-logo.svg" alt="Service Catalog">
+      <h3>Service Catalog</h3>
+      <p>The Open Service Broker.</p>
+    </a></li>
+    <a class="fa fa-times right"></a>
+  </div>
+</ul><aside class="right-off-canvas-menu" data-offcanvas>
+  <ul>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Home</a>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Quick Start</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Overview" href="quickstart/">Overview</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Install CLI Tools" href="quickstart/install-cli-tools/">Install CLI Tools</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="AWS" href="">AWS</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Azure" href="">Azure</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="GKE" href="">GKE</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Minikube" href="">Minikube</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Deploy Your First App" href="quickstart/deploy-an-app/">Deploy Your First App</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Understanding Workflow</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Concepts" href="understanding-workflow/concepts/">Concepts</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Architecture" href="understanding-workflow/architecture/">Architecture</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Components" href="understanding-workflow/components/">Components</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Installing Workflow</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="System Requirements" href="installing-workflow/system-requirements/">System Requirements</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Installing Ingress" href="installing-workflow/ingress/">Installing Ingress</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Installing Workflow" href="installing-workflow/">Installing Workflow</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring Object Storage" href="installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring Postgres" href="installing-workflow/configuring-postgres/">Configuring Postgres</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring the Registry" href="installing-workflow/configuring-registry/">Configuring the Registry</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Chart Provenance" href="installing-workflow/chart-provenance/">Chart Provenance</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Users</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Command Line Interface" href="users/cli/">Command Line Interface</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Users and Registration" href="users/registration/">Users and Registration</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="SSH Keys" href="users/ssh-keys/">SSH Keys</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Applications</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Deploying Apps" href="applications/deploying-apps/">Deploying Apps</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Buildpacks" href="applications/using-buildpacks/">Buildpacks</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Dockerfiles" href="applications/using-dockerfiles/">Dockerfiles</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Docker Images" href="applications/using-docker-images/">Docker Images</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Processes" href="applications/managing-app-processes/">Managing App Processes</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Configuration" href="applications/managing-app-configuration/">Managing App Configuration</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Lifecycle" href="applications/managing-app-lifecycle/">Managing App Lifecycle</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Volumes" href="applications/managing-app-volumes/">Managing App Volumes</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Managing App Resources" href="applications/managing-app-resources/">Managing App Resources</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Inter-app Communication" href="applications/inter-app-communication/">Inter-app Communication</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Resource Limits" href="applications/managing-resource-limits/">Resource Limits</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Domains and Routing" href="applications/domains-and-routing/">Domains and Routing</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="SSL Certificates" href="applications/ssl-certificates/">SSL Certificates</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Managing Workflow</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Tuning Component Settings" href="managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Configuring DNS" href="managing-workflow/configuring-dns/">Configuring DNS</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Deploy Hooks" href="managing-workflow/deploy-hooks/">Deploy Hooks</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Platform Logging" href="managing-workflow/platform-logging/">Platform Logging</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Platform Monitoring" href="managing-workflow/platform-monitoring/">Platform Monitoring</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Production Deployments" href="managing-workflow/production-deployments/">Production Deployments</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Upgrading Workflow" href="managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Extending Workflow" href="managing-workflow/extending-workflow/">Extending Workflow</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Troubleshooting</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Troubleshooting Workflow" href="troubleshooting/">Troubleshooting Workflow</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Troubleshooting using Kubectl" href="troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Troubleshooting Applications" href="troubleshooting/applications/">Troubleshooting Applications</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Roadmap</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Planning Process" href="roadmap/planning-process/">Planning Process</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Roadmap" href="roadmap/roadmap/">Roadmap</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Releases" href="roadmap/releases/">Releases</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1 current">
+      <a class="reference internal current" state="open" href="">Contributing</a>
+      
+        <ul  class="current">
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Overview" href="contributing/overview/">Overview</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Design Documents" href="contributing/design-documents/">Design Documents</a>
+          </li>
+        
+          <li class="toctree-l2 current">
+          <a class="reference internal current" id="Development Environment" href="contributing/development-environment/">Development Environment</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Testing" href="contributing/testing/">Testing</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Submitting a Pull Request" href="contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Community" href="contributing/community/">Community</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Triaging Issues" href="contributing/triaging-issues/">Triaging Issues</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Conduct" href="contributing/conduct/">Conduct</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal current" id="Maintainers" href="contributing/maintainers/">Maintainers</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Reference Guide</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Creating a Self-Signed SSL Certificate" href="reference-guide/creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Terms" href="reference-guide/terms/">Terms</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Controller API v2.0" href="reference-guide/controller-api/v2.0/">Controller API v2.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Controller API v2.1" href="reference-guide/controller-api/v2.1/">Controller API v2.1</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Controller API v2.2" href="reference-guide/controller-api/v2.2/">Controller API v2.2</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="Controller API v2.3" href="reference-guide/controller-api/v2.3/">Controller API v2.3</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+    <li class="toctree-l1">
+      <a class="reference internal" href="">Changelogs</a>
+      
+        <ul >
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.4.0" href="changelogs/v1.4.0/">v1.4.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.3.0" href="changelogs/v1.3.0/">v1.3.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.2.0" href="changelogs/v1.2.0/">v1.2.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.1.0" href="changelogs/v1.1.0/">v1.1.0</a>
+          </li>
+        
+          <li class="toctree-l2">
+          <a class="reference internal" id="v1.0.1" href="changelogs/v1.0.1/">v1.0.1</a>
+          </li>
+        
+        </ul>
+      
+    </li>
+    
+  </ul>
+</aside>
+
+      <!-- banner at the top of the page for temporary announcements-->
+      <!-- <div data-alert class="alert-box alert banner text-center hide-for-small">
+      </div> -->
+
+      <div class="content-wrap">
+
+        <div class="content-inner">
+          <div class="container">
+            <div class="row">
+              <div class="small-12">
+                <h1 id="development-environment">Development Environment<a class="headerlink" href="#development-environment" title="Permanent link">&para;</a></h1>
+<p>This document is for developers who are interested in working directly on the Drycc codebase. In this guide, we walk you through the process of setting up a development environment that is suitable for hacking on most Drycc components.</p>
+<p>We try to make it simple to hack on Drycc components. However, there are necessarily several moving pieces and some setup required. We welcome any suggestions for automating or simplifying this process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Drycc team is actively engaged in containerizing Go and Python based development environments tailored specifically for Drycc development in order to minimize the setup required.  This work is ongoing.  Refer to the <a href="https://github.com/drycc/router">drycc/router</a> project for a working example of a fully containerized development environment.</p>
+</div>
+<p>If you're just getting into the Drycc codebase, look for GitHub issues with the label <a href="https://github.com/issues?q=user%3Adrycc+label%3Aeasy-fix+is%3Aopen">easy-fix</a>. These are more straightforward or low-risk issues and are a great way to become more familiar with Drycc.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>In order to successfully compile and test Drycc binaries and build Docker images of Drycc components, the following are required:</p>
+<ul>
+<li><a href="https://git-scm.com/">git</a></li>
+<li>Go 1.5 or later, with support for compiling to <code>linux/amd64</code></li>
+<li><a href="https://github.com/Masterminds/glide">glide</a></li>
+<li><a href="https://github.com/golang/lint">golint</a></li>
+<li><a href="https://github.com/koalaman/shellcheck">shellcheck</a></li>
+<li><a href="https://www.docker.com/">Docker</a> (in a non-Linux environment, you will additionally want <a href="http://docs.docker.com/machine/install-machine/">Docker Machine</a>)</li>
+</ul>
+<p>For <a href="https://github.com/drycc/controller">drycc/controller</a>, in particular, you will also need:</p>
+<ul>
+<li>Python 2.7 or later (with <code>pip</code>)</li>
+<li>virtualenv (<code>sudo pip install virtualenv</code>)</li>
+</ul>
+<p>In most cases, you should simply install according to the instructions. There are a few special cases, though. We cover these below.</p>
+<h3 id="configuring-go">Configuring Go<a class="headerlink" href="#configuring-go" title="Permanent link">&para;</a></h3>
+<p>If your local workstation does not support the <code>linux/amd64</code> target environment, you will have to install Go from source with cross-compile support for that environment. This is because some of the components are built on your local machine and then injected into a Docker container.</p>
+<p>Homebrew users can just install with cross compiling support:</p>
+<pre class="codehilite"><code>$ brew install go --with-cc-common
+</code></pre>
+
+<p>It is also straightforward to build Go from source:</p>
+<pre class="codehilite"><code>$ sudo su
+$ curl -sSL https://golang.org/dl/go1.5.src.tar.gz | tar -v -C /usr/local -xz
+$ cd /usr/local/go/src
+$ # compile Go for our default platform first, then add cross-compile support
+$ ./make.bash --no-clean
+$ GOOS=linux GOARCH=amd64 ./make.bash --no-clean
+</code></pre>
+
+<p>Once you can compile to <code>linux/amd64</code>, you should be able to compile Drycc components as normal.</p>
+<h3 id="configuring-docker-machine-mac">Configuring Docker Machine (Mac)<a class="headerlink" href="#configuring-docker-machine-mac" title="Permanent link">&para;</a></h3>
+<p>Drycc needs Docker for building images.  Docker utilizes a client/server architecture, and while the Docker client is available for Mac OS, the Docker server is dependent upon the Linux kernel.  Therefore, in order to use Docker on Mac OS, <a href="http://docs.docker.com/machine/install-machine/">Docker Machine</a> is used to facilitate running the Docker server within a <a href="https://www.virtualbox.org/">VirtualBox</a> VM.</p>
+<p>Install Docker Machine according to the normal installation instructions, then use it to create a new VM:</p>
+<pre class="codehilite"><code>$ docker-machine create drycc-docker \
+    --driver=virtualbox \
+    --virtualbox-disk-size=100000 \
+    --engine-insecure-registry 10.0.0.0/8 \
+    --engine-insecure-registry 172.16.0.0/12 \
+    --engine-insecure-registry 192.168.0.0/16 \
+    --engine-insecure-registry 100.64.0.0/10
+</code></pre>
+
+<p>This will create a new virtual machine named <code>drycc-docker</code> that will take up as much as 100,000 MB of disk space. The images you build may be large, so allocating a big disk is a good idea.</p>
+<p>Once the <code>drycc-docker</code> machine exists, source its values into your environment so your docker client knows how to use the new machine. You may even choose to add this to your bash profile or similar.</p>
+<pre class="codehilite"><code>$ eval &quot;$(docker-machine env drycc-docker)&quot;
+</code></pre>
+
+<p>After following these steps, some Docker Machine users report a slight delay (30 - 60 seconds) before the Docker server is ready.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In subsequent steps, you may run a Docker registry within the <code>drycc-docker</code> VM. Such a registry will not have a valid SSL certificate and will use HTTP instead of HTTPS. Such registries are implicitly untrusted by the Docker server (which is also running on the <code>drycc-docker</code> VM).  In order for the Docker server to trust the insecure registry, <code>drycc-docker</code> is explicitly created to trust all registries in the IP ranges that that are reserved for use by private networks.  The VM (and therefore the registry) will exist within such a range.  This will effectively permit Docker pulls and pushes to such a registry.</p>
+</div>
+<h2 id="fork-the-repository">Fork the Repository<a class="headerlink" href="#fork-the-repository" title="Permanent link">&para;</a></h2>
+<p>Once the prerequisites have been met, we can begin to work with Drycc components.</p>
+<p>Begin at Github by forking whichever Drycc project you would like to contribute to, then clone that fork locally.  Since Drycc is predominantly written in Go, the best place to put it is under <code>$GOPATH/src/github.com/drycc/</code>.</p>
+<pre class="codehilite"><code>$ mkdir -p  $GOPATH/src/github.com/drycc
+$ cd $GOPATH/src/github.com/drycc
+$ git clone git@github.com:&lt;username&gt;/&lt;component&gt;.git
+$ cd &lt;component&gt;
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By checking out the forked copy into the namespace <code>github.com/drycc/&lt;component&gt;</code>, we are tricking the Go toolchain into seeing our fork as the "official" source tree.</p>
+</div>
+<p>If you are going to be issuing pull requests to the upstream repository from which you forked, we suggest configuring Git such that you can easily rebase your code to the upstream repository's main branch. There are various strategies for doing this, but the <a href="https://help.github.com/articles/fork-a-repo/">most common</a> is to add an <code>upstream</code> remote:</p>
+<pre class="codehilite"><code>$ git remote add upstream https://github.com/drycc/&lt;component&gt;.git
+</code></pre>
+
+<p>For the sake of simplicity, you may want to point an environment variable to your Drycc code - the directory containing one or more Drycc components:</p>
+<pre class="codehilite"><code>$ export DRYCC=$GOPATH/src/github.com/drycc
+</code></pre>
+
+<p>Throughout the rest of this document, <code>$DRYCC</code> refers to that location.</p>
+<h3 id="alternative-forking-with-a-pushurl">Alternative: Forking with a Pushurl<a class="headerlink" href="#alternative-forking-with-a-pushurl" title="Permanent link">&para;</a></h3>
+<p>A number of Drycc contributors prefer to pull directly from <code>drycc/&lt;component&gt;</code>, but push to <code>&lt;username&gt;/&lt;component&gt;</code>. If that workflow suits you better, you can set it up this way:</p>
+<pre class="codehilite"><code>$ git clone git@github.com:drycc/&lt;component&gt;.git
+$ cd drycc
+$ git config remote.origin.pushurl git@github.com:&lt;username&gt;/&lt;component&gt;.git
+</code></pre>
+
+<p>In this setup, fetching and pulling code will work directly with the upstream repository, while pushing code will send changes to your fork. This makes it easy to stay up to date, but also make changes and then issue pull requests.</p>
+<h2 id="make-your-changes">Make Your Changes<a class="headerlink" href="#make-your-changes" title="Permanent link">&para;</a></h2>
+<p>With your development environment set up and the code you wish to work on forked and cloned, you can begin making your changes.</p>
+<h2 id="test-your-changes">Test Your Changes<a class="headerlink" href="#test-your-changes" title="Permanent link">&para;</a></h2>
+<p>Drycc components each include a comprehensive suite of automated tests, mostly written in Go. See <a href="../testing/">testing</a> for instructions on running the tests.</p>
+<h2 id="deploying-your-changes">Deploying Your Changes<a class="headerlink" href="#deploying-your-changes" title="Permanent link">&para;</a></h2>
+<p>Although writing and executing tests are critical to ensuring code quality, most contributors will also want to deploy their changes to a live environment, whether to make use of those changes or to test them further.  The remainder of this section documents the procedure for running officially released Drycc components in a development cluster and replacing any one of those with your customizations.</p>
+<h3 id="running-a-kubernetes-cluster-for-development">Running a Kubernetes Cluster for Development<a class="headerlink" href="#running-a-kubernetes-cluster-for-development" title="Permanent link">&para;</a></h3>
+<p>To run a Kubernetes cluster locally or elsewhere to support your development activities, refer to Drycc installation instructions <a href="../../quickstart/">here</a>.</p>
+<h3 id="using-a-development-registry">Using a Development Registry<a class="headerlink" href="#using-a-development-registry" title="Permanent link">&para;</a></h3>
+<p>To facilitate deploying Docker images containing your changes to your Kubernetes cluster, you will need to make use of a Docker registry.  This is a location to where you can push your custom-built images and from where your Kubernetes cluster can retrieve those same images.</p>
+<p>If your development cluster runs locally (in Minikube, for instance), the most efficient and economical means of achieving this is to run a Docker registry locally <em>as</em> a Docker container.</p>
+<p>To facilitate this, most Drycc components provide a make target to create such a registry:</p>
+<pre class="codehilite"><code>$ make dev-registry
+</code></pre>
+
+<p>In a Linux environment, to begin using the registry:</p>
+<pre class="codehilite"><code>export DRYCC_REGISTRY=&lt;IP of the host machine&gt;:5000
+</code></pre>
+
+<p>In non-Linux environments:</p>
+<pre class="codehilite"><code>export DRYCC_REGISTRY=&lt;IP of the drycc-docker Docker Machine VM&gt;:5000
+</code></pre>
+
+<p>If your development cluster runs on a cloud provider such as Google Container Engine, a local registry such as the one above will not be accessible to your Kubernetes nodes.  In such cases, a public registry such as <a href="https://hub.docker.com/">DockerHub</a> or <a href="https://quay.io/">quay.io</a> will suffice.</p>
+<p>To use DockerHub for this purpose, for instance:</p>
+<pre class="codehilite"><code>$ export DRYCC_REGISTRY=&quot;docker.io&quot;
+$ export IMAGE_PREFIX=&lt;your DockerHub username&gt;
+</code></pre>
+
+<p>To use quay.io:</p>
+<pre class="codehilite"><code>$ export DRYCC_REGISTRY=quay.io
+$ export IMAGE_PREFIX=&lt;your quay.io username&gt;
+</code></pre>
+
+<p>Note the importance of the trailing slash.</p>
+<h3 id="dev-deployment-workflow">Dev / Deployment Workflow<a class="headerlink" href="#dev-deployment-workflow" title="Permanent link">&para;</a></h3>
+<p>With a functioning Kubernetes cluster and the officially released Drycc components installed onto it, deployment and further testing of any Drycc component you have made changes to is facilitated by replacing the officially released component with a custom built image that contains your changes.  Most Drycc components include Makefiles with targets specifically intended to facilitate this workflow with minimal friction.</p>
+<p>In the general case, this workflow looks like this:</p>
+<ol>
+<li>Update source code and commit your changes using <code>git</code></li>
+<li>Use <code>make build</code> to build a new Docker image</li>
+<li>Use <code>make dev-release</code> to generate Kubernetes manifest(s)</li>
+<li>Use <code>make deploy</code> to restart the component using the updated manifest</li>
+</ol>
+<p>This can be shortened to a one-liner using just the <code>deploy</code> target:</p>
+<pre class="codehilite"><code>$ make deploy
+</code></pre>
+
+<h2 id="useful-commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h2>
+<p>Once your customized Drycc component has been deployed, here are some helpful commands that will allow you to inspect your cluster and to troubleshoot, if necessary:</p>
+<h3 id="see-all-drycc-pods">See All Drycc Pods<a class="headerlink" href="#see-all-drycc-pods" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>$ kubectl --namespace=drycc get pods
+</code></pre>
+
+<h3 id="describe-a-pod">Describe a Pod<a class="headerlink" href="#describe-a-pod" title="Permanent link">&para;</a></h3>
+<p>This is often useful for troubleshooting pods that are in pending or crashed states:</p>
+<pre class="codehilite"><code>$ kubectl --namespace=drycc describe -f &lt;pod name&gt;
+</code></pre>
+
+<h3 id="tail-logs">Tail Logs<a class="headerlink" href="#tail-logs" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>$ kubectl --namespace=drycc logs -f &lt;pod name&gt;
+</code></pre>
+
+<h3 id="django-shell">Django Shell<a class="headerlink" href="#django-shell" title="Permanent link">&para;</a></h3>
+<p>Specific to <a href="https://github.com/drycc/controller">drycc/controller</a></p>
+<pre class="codehilite"><code>$ kubectl --namespace=drycc exec -it &lt;pod name&gt; -- python manage.py shell
+</code></pre>
+
+<p>Have commands other Drycc contributors might find useful? Send us a PR!</p>
+<h2 id="pull-requests">Pull Requests<a class="headerlink" href="#pull-requests" title="Permanent link">&para;</a></h2>
+<p>Satisfied with your changes?  Share them!</p>
+<p>Please read <a href="../submitting-a-pull-request/">Submitting a Pull Request</a>. It contains a checklist of
+things you should do when proposing a change to any Drycc component.</p>
+              </div>
+            </div>
+          </div>
+        </div><nav class="sidebar hide-for-medium-down">
+  <div class="sidebar-inner">
+    <h1><a href="/" class="logo"><img src="../../static/img/svg/logo.svg" width="128px" height="41px" alt="Drycc"></a></h1>
+
+    <ul class="current sidebar-main">
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Home</a>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Quick Start</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Overview" href="../../quickstart/">Overview</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Install CLI Tools" href="../../quickstart/install-cli-tools/">Install CLI Tools</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="AWS" href="../..">AWS</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Azure" href="../..">Azure</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="GKE" href="../..">GKE</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Minikube" href="../..">Minikube</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Deploy Your First App" href="../../quickstart/deploy-an-app/">Deploy Your First App</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Understanding Workflow</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Concepts" href="../../understanding-workflow/concepts/">Concepts</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Architecture" href="../../understanding-workflow/architecture/">Architecture</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Components" href="../../understanding-workflow/components/">Components</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Installing Workflow</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="System Requirements" href="../../installing-workflow/system-requirements/">System Requirements</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Installing Ingress" href="../../installing-workflow/ingress/">Installing Ingress</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Installing Workflow" href="../../installing-workflow/">Installing Workflow</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring Object Storage" href="../../installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring Postgres" href="../../installing-workflow/configuring-postgres/">Configuring Postgres</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring the Registry" href="../../installing-workflow/configuring-registry/">Configuring the Registry</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Chart Provenance" href="../../installing-workflow/chart-provenance/">Chart Provenance</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Users</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Command Line Interface" href="../../users/cli/">Command Line Interface</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Users and Registration" href="../../users/registration/">Users and Registration</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="SSH Keys" href="../../users/ssh-keys/">SSH Keys</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Applications</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Deploying Apps" href="../../applications/deploying-apps/">Deploying Apps</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Buildpacks" href="../../applications/using-buildpacks/">Buildpacks</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Dockerfiles" href="../../applications/using-dockerfiles/">Dockerfiles</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Docker Images" href="../../applications/using-docker-images/">Docker Images</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Processes" href="../../applications/managing-app-processes/">Managing App Processes</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Configuration" href="../../applications/managing-app-configuration/">Managing App Configuration</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Lifecycle" href="../../applications/managing-app-lifecycle/">Managing App Lifecycle</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Volumes" href="../../applications/managing-app-volumes/">Managing App Volumes</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Managing App Resources" href="../../applications/managing-app-resources/">Managing App Resources</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Inter-app Communication" href="../../applications/inter-app-communication/">Inter-app Communication</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Resource Limits" href="../../applications/managing-resource-limits/">Resource Limits</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Domains and Routing" href="../../applications/domains-and-routing/">Domains and Routing</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="SSL Certificates" href="../../applications/ssl-certificates/">SSL Certificates</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Managing Workflow</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Tuning Component Settings" href="../../managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Configuring DNS" href="../../managing-workflow/configuring-dns/">Configuring DNS</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Deploy Hooks" href="../../managing-workflow/deploy-hooks/">Deploy Hooks</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Platform Logging" href="../../managing-workflow/platform-logging/">Platform Logging</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Platform Monitoring" href="../../managing-workflow/platform-monitoring/">Platform Monitoring</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Production Deployments" href="../../managing-workflow/production-deployments/">Production Deployments</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Upgrading Workflow" href="../../managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Extending Workflow" href="../../managing-workflow/extending-workflow/">Extending Workflow</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Troubleshooting</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Troubleshooting Workflow" href="../../troubleshooting/">Troubleshooting Workflow</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Troubleshooting using Kubectl" href="../../troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Troubleshooting Applications" href="../../troubleshooting/applications/">Troubleshooting Applications</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Roadmap</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Planning Process" href="../../roadmap/planning-process/">Planning Process</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Roadmap" href="../../roadmap/roadmap/">Roadmap</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Releases" href="../../roadmap/releases/">Releases</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1 current">
+        <a class="reference internal current" state="open" href="../..">Contributing</a>
+        
+            <ul style="display: none;" class="current">
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Overview" href="../overview/">Overview</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Design Documents" href="../design-documents/">Design Documents</a>
+                </li>
+            
+                <li class="toctree-l2 current">
+                <a class="reference internal current" id="Development Environment" href="./">Development Environment</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Testing" href="../testing/">Testing</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Submitting a Pull Request" href="../submitting-a-pull-request/">Submitting a Pull Request</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Community" href="../community/">Community</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Triaging Issues" href="../triaging-issues/">Triaging Issues</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Conduct" href="../conduct/">Conduct</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal current" id="Maintainers" href="../maintainers/">Maintainers</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Reference Guide</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Creating a Self-Signed SSL Certificate" href="../../reference-guide/creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Terms" href="../../reference-guide/terms/">Terms</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Controller API v2.0" href="../../reference-guide/controller-api/v2.0/">Controller API v2.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Controller API v2.1" href="../../reference-guide/controller-api/v2.1/">Controller API v2.1</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Controller API v2.2" href="../../reference-guide/controller-api/v2.2/">Controller API v2.2</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="Controller API v2.3" href="../../reference-guide/controller-api/v2.3/">Controller API v2.3</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+    <li class="toctree-l1">
+        <a class="reference internal" href="../..">Changelogs</a>
+        
+            <ul style="display: none;">
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.4.0" href="../../changelogs/v1.4.0/">v1.4.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.3.0" href="../../changelogs/v1.3.0/">v1.3.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.2.0" href="../../changelogs/v1.2.0/">v1.2.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.1.0" href="../../changelogs/v1.1.0/">v1.1.0</a>
+                </li>
+            
+                <li class="toctree-l2">
+                <a class="reference internal" id="v1.0.1" href="../../changelogs/v1.0.1/">v1.0.1</a>
+                </li>
+            
+            </ul>
+        
+    </li>
+
+<div class="clearbox"></div>
+      <li class="toctree-l1">
+        
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidebar-bg"></div>
+</nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="../../static/js/jquery-1.12.4.min.js"><\/script>')</script>
+  <!-- extra_javascript - defined in the root 'mkdocs.yml -->
+  
+    <script src="../../static/js/foundation.js" async></script>
+  
+    <script src="../../static/js/foundation.dropdown.js" async></script>
+  
+    <script src="../../static/js/foundation.offcanvas.js" async></script>
+  
+    <script src="../../static/js/headroom.min.js" async></script>
+  
+    <script src="../../static/js/adjustments.js" async></script>
+  
+    <script src="../../search/main.js" async></script>
+  
+
+  
+
+</body>
+</html>
