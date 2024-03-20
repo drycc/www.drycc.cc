@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drycc – News</title>
+    <link>/blog/news/</link>
+    <description>Recent content in News on Drycc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="/blog/news/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Welcome to Drycc</title>
+      <link>/blog/2018/10/06/welcome-to-drycc/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/10/06/welcome-to-drycc/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Drycc Workflow&lt;/strong&gt; is an open source Container as a Service (CaaS) that adds a developer-friendly layer to any &lt;a href=&#34;http://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; cluster, making it easy to deploy and manage applications.&lt;/p&gt;
+&lt;p&gt;We welcome your input! If you have feedback, please &lt;a href=&#34;https://github.com/drycc/workflow/issues&#34;&gt;submit an issue&lt;/a&gt;. If you&amp;rsquo;d like to participate in development, please read the &amp;ldquo;Working on Documentation&amp;rdquo; section below and &lt;a href=&#34;https://github.com/drycc/workflow/pulls&#34;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

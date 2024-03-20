@@ -1,0 +1,1389 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drycc – Applications</title>
+    <link>/docs/applications/</link>
+    <description>Recent content in Applications on Drycc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="/docs/applications/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Deploying an Application</title>
+      <link>/docs/applications/deploying-apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/deploying-apps/</guid>
+      <description>
+        
+        
+        &lt;p&gt;An &lt;a href=&#34;../reference-guide/terms.md#application&#34;&gt;Application&lt;/a&gt; is deployed to Drycc using &lt;code&gt;git push&lt;/code&gt; or the &lt;code&gt;drycc&lt;/code&gt; client.&lt;/p&gt;
+&lt;h2 id=&#34;supported-applications&#34;&gt;Supported Applications&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#supported-applications&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc Workflow can deploy any application or service that can run inside a container.  In order to be scaled
+horizontally, applications must follow the &lt;a href=&#34;http://12factor.net/&#34;&gt;Twelve-Factor App&lt;/a&gt; methodology and store any application state in external
+backing services.&lt;/p&gt;
+&lt;p&gt;For example, if your application persists state to the local filesystem &amp;ndash; common with content management systems like
+Wordpress and Drupal &amp;ndash; it cannot be scaled horizontally using &lt;code&gt;drycc scale&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Fortunately, most modern applications feature a stateless application tier that can scale horizontally inside Drycc.&lt;/p&gt;
+&lt;h2 id=&#34;login-to-the-controller&#34;&gt;Login to the Controller&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#login-to-the-controller&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;!!! important
+if you haven&amp;rsquo;t yet, now is a good time to &lt;a href=&#34;/docs/users/cli/#installation&#34;&gt;install the client&lt;/a&gt; and &lt;a href=&#34;/docs/users/registration/&#34;&gt;register&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before deploying an application, users must first authenticate against the Drycc &lt;a href=&#34;/docs/understanding-workflow/components/#controller&#34;&gt;Controller&lt;/a&gt;
+using the URL supplied by their Drycc administrator.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc login http://drycc.example.com
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as admin
+Configuration file written to /root/.drycc/client.json
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;select-a-build-process&#34;&gt;Select a Build Process&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#select-a-build-process&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc Workflow supports three different ways of building applications:&lt;/p&gt;
+&lt;h3 id=&#34;buildpacks&#34;&gt;Buildpacks&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#buildpacks&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Cloud Native Buildpacks are useful if you want to follow &lt;a href=&#34;https://buildpacks.io/docs/&#34;&gt;cnb&amp;rsquo;s docs&lt;/a&gt; for building applications.&lt;/p&gt;
+&lt;p&gt;Learn how to deploy applications &lt;a href=&#34;/docs/applications/using-buildpacks/&#34;&gt;using Buildpacks&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;dockerfiles&#34;&gt;Dockerfiles&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dockerfiles&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Dockerfiles are a powerful way to define a portable execution environment built on a base OS of your choosing.&lt;/p&gt;
+&lt;p&gt;Learn how to deploy applications &lt;a href=&#34;/docs/applications/using-dockerfiles/&#34;&gt;using Dockerfiles&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;container-image&#34;&gt;Container Image&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#container-image&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Deploying a Container image onto Drycc allows you to take a Container image from either a public
+or a private registry and copy it over bit-for-bit, ensuring that you are running the same
+image in development or in your CI pipeline as you are in production.&lt;/p&gt;
+&lt;p&gt;Learn how to deploy applications &lt;a href=&#34;/docs/applications/using-container-images/&#34;&gt;using Container images&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;tuning-application-settings&#34;&gt;Tuning Application Settings&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#tuning-application-settings&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It is possible to configure a few of the &lt;a href=&#34;/docs/applications/managing-app-configuration/&#34;&gt;globally tunable&lt;/a&gt; settings on per application basis using &lt;code&gt;config:set&lt;/code&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Setting&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;DRYCC_DISABLE_CACHE&lt;/td&gt;
+&lt;td&gt;if set, this will disable the [imagebuilder cache][] (default: not set)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DRYCC_DEPLOY_BATCHES&lt;/td&gt;
+&lt;td&gt;the number of pods to bring up and take down sequentially during a scale (default: number of available nodes)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DRYCC_DEPLOY_TIMEOUT&lt;/td&gt;
+&lt;td&gt;deploy timeout in seconds per deploy batch (default: 120)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IMAGE_PULL_POLICY&lt;/td&gt;
+&lt;td&gt;the kubernetes [image pull policy][pull-policy] for application images (default: &amp;ldquo;IfNotPresent&amp;rdquo;) (allowed values: &amp;ldquo;Always&amp;rdquo;, &amp;ldquo;IfNotPresent&amp;rdquo;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KUBERNETES_DEPLOYMENTS_REVISION_HISTORY_LIMIT&lt;/td&gt;
+&lt;td&gt;how many &lt;a href=&#34;http://kubernetes.io/docs/user-guide/deployments/#revision-history-limit&#34;&gt;revisions&lt;/a&gt; Kubernetes keeps around of a given Deployment (default: all revisions)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KUBERNETES_POD_TERMINATION_GRACE_PERIOD_SECONDS&lt;/td&gt;
+&lt;td&gt;how many seconds kubernetes waits for a pod to finish work after a SIGTERM before sending SIGKILL (default: 30)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;deploy-timeout&#34;&gt;Deploy Timeout&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deploy-timeout&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Deploy timeout in seconds - There are 2 deploy methods, Deployments (see below) and RC (versions prior to 2.4) and this setting affects those a bit differently.&lt;/p&gt;
+&lt;h4 id=&#34;deployments&#34;&gt;Deployments&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deployments&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Deployments behave a little bit differently from the RC based deployment strategy.&lt;/p&gt;
+&lt;p&gt;Kubernetes takes care of the entire deploy, doing rolling updates in the background. As a result, there is only an overall deployment timeout instead of a configurable per-batch timeout.&lt;/p&gt;
+&lt;p&gt;The base timeout is multiplied with &lt;code&gt;DRYCC_DEPLOY_BATCHES&lt;/code&gt; to create an overall timeout. This would be 240 (timeout) * 4 (batches) = 960 second overall timeout.&lt;/p&gt;
+&lt;h4 id=&#34;rc-deploy&#34;&gt;RC deploy&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#rc-deploy&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;This deploy timeout defines how long to wait for each batch to complete in &lt;code&gt;DRYCC_DEPLOY_BATCHES&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;additions-to-the-base-timeout&#34;&gt;Additions to the base timeout&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#additions-to-the-base-timeout&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;The base timeout is extended as well with healthchecks using &lt;code&gt;initialDelaySeconds&lt;/code&gt; on &lt;code&gt;liveness&lt;/code&gt; and &lt;code&gt;readiness&lt;/code&gt; where the bigger of those two is applied.
+Additionally the timeout system accounts for slow image pulls by adding an additional 10 minutes when it has seen an image pull take over 1 minute. This allows the timeout values to be reasonable without having to account for image pull slowness in the base deploy timeout.&lt;/p&gt;
+&lt;h3 id=&#34;deployments-1&#34;&gt;Deployments&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deployments-1&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Workflow uses &lt;a href=&#34;http://kubernetes.io/docs/user-guide/deployments/&#34;&gt;Deployments&lt;/a&gt; for deploys. In prior versions &lt;a href=&#34;http://kubernetes.io/docs/user-guide/replication-controller/&#34;&gt;ReplicationControllers&lt;/a&gt; were used with the ability to turn on Deployments via &lt;code&gt;DRYCC_KUBERNETES_DEPLOYMENTS=1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The advantage of &lt;a href=&#34;http://kubernetes.io/docs/user-guide/deployments/&#34;&gt;Deployments&lt;/a&gt; is that rolling-updates will happen server-side in Kubernetes instead of in Drycc Workflow Controller,
+along with a few other Pod management related functionality. This allows a deploy to continue even when the CLI connection is interrupted.&lt;/p&gt;
+&lt;p&gt;Behind the scenes your application deploy will be built up of a Deployment object per process type,
+each having multiple ReplicaSets (one per release) which in turn manage the Pods running your application.&lt;/p&gt;
+&lt;p&gt;Drycc Workflow will behave the same way with &lt;code&gt;DRYCC_KUBERNETES_DEPLOYMENTS&lt;/code&gt; enabled or disabled (only applicable to versions prior to 2.4).
+The changes are behind the scenes. Where you will see differences while using the CLI is &lt;code&gt;drycc ps:list&lt;/code&gt; will output Pod names differently.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Using Buildpacks</title>
+      <link>/docs/applications/using-buildpacks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/using-buildpacks/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Drycc supports deploying applications via &lt;a href=&#34;https://buildpacks.io/&#34;&gt;Cloud Native Buildpacks&lt;/a&gt;. Cloud Native Buildpacks are useful if you want to follow &lt;a href=&#34;https://buildpacks.io/docs/&#34;&gt;cnb&amp;rsquo;s docs&lt;/a&gt; for building applications.&lt;/p&gt;
+&lt;h2 id=&#34;add-ssh-key&#34;&gt;Add SSH Key&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#add-ssh-key&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For &lt;strong&gt;Buildpack&lt;/strong&gt; based application deploys via &lt;code&gt;git push&lt;/code&gt;, Drycc Workflow identifies users via SSH keys. SSH keys are pushed to the platform and must be unique to each user.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;See &lt;a href=&#34;/docs/users/ssh-keys/#generate-an-ssh-key&#34;&gt;this document&lt;/a&gt; for instructions on how to generate an SSH key.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;code&gt;drycc keys:add&lt;/code&gt; to upload your SSH key to Drycc Workflow.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc keys:add ~/.ssh/id_drycc.pub
+Uploading id_drycc.pub to drycc... done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Read more about adding/removing SSH Keys &lt;a href=&#34;/docs/users/ssh-keys/#adding-and-removing-ssh-keys&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prepare-an-application&#34;&gt;Prepare an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#prepare-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you do not have an existing application, you can clone an example application that demonstrates the Heroku Buildpack workflow.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/drycc/example-go.git
+$ cd example-go
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;create-an-application&#34;&gt;Create an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#create-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;drycc create&lt;/code&gt; to create an application on the &lt;a href=&#34;/docs/understanding-workflow/components/#controller&#34;&gt;Controller&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc create
+Creating application... done, created skiing-keypunch
+Git remote drycc added
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;push-to-deploy&#34;&gt;Push to Deploy&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#push-to-deploy&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;git push drycc master&lt;/code&gt; to deploy your application.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git push drycc master
+Counting objects: 75, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (48/48), done.
+Writing objects: 100% (75/75), 18.28 KiB | 0 bytes/s, done.
+Total 75 (delta 30), reused 58 (delta 22)
+remote: ---&amp;gt;
+Starting build... but first, coffee!
+---&amp;gt; Waiting podman running.
+---&amp;gt; Process podman started.
+---&amp;gt; Waiting caddy running.
+---&amp;gt; Process caddy started.
+---&amp;gt; Building pack
+---&amp;gt; Using builder registry.drycc.cc/drycc/buildpacks:bookworm
+Builder &#39;registry.drycc.cc/drycc/buildpacks:bookworm&#39; is trusted
+Pulling image &#39;registry.drycc.cc/drycc/buildpacks:bookworm&#39;
+Resolving &amp;quot;drycc/buildpacks&amp;quot; using unqualified-search registries (/etc/containers/registries.conf)
+Trying to pull registry.drycc.cc/drycc/buildpacks:bookworm...
+Getting image source signatures
+...
+---&amp;gt; Skip generate base layer
+---&amp;gt; Python Buildpack
+---&amp;gt; Downloading and extracting Python 3.10.0
+---&amp;gt; Installing requirements with pip
+Collecting Django==3.2.8
+Downloading Django-3.2.8-py3-none-any.whl (7.9 MB)
+Collecting gunicorn==20.1.0
+Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+Collecting sqlparse&amp;gt;=0.2.2
+Downloading sqlparse-0.4.2-py3-none-any.whl (42 kB)
+Collecting pytz
+Downloading pytz-2021.3-py2.py3-none-any.whl (503 kB)
+Collecting asgiref&amp;lt;4,&amp;gt;=3.3.2
+Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
+Requirement already satisfied: setuptools&amp;gt;=3.0 in /layers/drycc_python/python/lib/python3.10/site-packages (from gunicorn==20.1.0-&amp;gt;-r requirements.txt (line 2)) (57.5.0)
+Installing collected packages: sqlparse, pytz, asgiref, gunicorn, Django
+Successfully installed Django-3.2.8 asgiref-3.4.1 gunicorn-20.1.0 pytz-2021.3 sqlparse-0.4.2
+---&amp;gt; Generate Launcher
+...
+Build complete.
+Launching App...
+...
+Done, skiing-keypunch:v2 deployed to Workflow
+
+Use &#39;drycc open&#39; to view this application in your browser
+
+To learn more, use &#39;drycc help&#39; or visit https://www.drycc.cc
+
+To ssh://git@drycc.staging-2.drycc.cc:2222/skiing-keypunch.git
+ * [new branch]      master -&amp;gt; master
+
+$ curl -s http://skiing-keypunch.example.com
+Powered by Drycc
+Release v2 on skiing-keypunch-v2-web-02zb9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Because a Buildpacks-style application is detected, the &lt;code&gt;web&lt;/code&gt; process type is automatically scaled to 1 on first deploy.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;drycc scale web=3&lt;/code&gt; to increase &lt;code&gt;web&lt;/code&gt; processes to 3, for example. Scaling a
+process type directly changes the number of &lt;a href=&#34;http://kubernetes.io/v1.1/docs/user-guide/pods.html&#34;&gt;pods&lt;/a&gt; running that process.&lt;/p&gt;
+&lt;h2 id=&#34;included-buildpacks&#34;&gt;Included Buildpacks&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#included-buildpacks&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For convenience, a number of buildpacks come bundled with Drycc:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drycc/pack-images/tree/main/buildpacks/go&#34;&gt;Go Buildpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drycc/pack-images/tree/main/buildpacks/java&#34;&gt;Java Buildpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drycc/pack-images/tree/main/buildpacks/nodejs&#34;&gt;Nodejs Buildpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drycc/pack-images/tree/main/buildpacks/php&#34;&gt;PHP Buildpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drycc/pack-images/tree/main/buildpacks/python&#34;&gt;Python Buildpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drycc/pack-images/tree/main/buildpacks/ruby&#34;&gt;Ruby Buildpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drycc/pack-images/tree/main/buildpacks/rust&#34;&gt;Rust Buildpack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Drycc will cycle through the &lt;code&gt;bin/detect&lt;/code&gt; script of each buildpack to match the code you
+are pushing.&lt;/p&gt;
+&lt;p&gt;!!! note
+If you&amp;rsquo;re testing against the [Scala Buildpack][], the &lt;a href=&#34;/docs/understanding-workflow/components/#builder&#34;&gt;Builder&lt;/a&gt; requires at least
+512MB of free memory to execute the Scala Build Tool.&lt;/p&gt;
+&lt;h2 id=&#34;using-a-custom-buildpack&#34;&gt;Using a Custom Buildpack&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#using-a-custom-buildpack&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To use a custom buildpack, you need create a &lt;code&gt;.pack_builder&lt;/code&gt; file in your root path app.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$  tee &amp;gt; .pack_builder &amp;lt;&amp;lt; EOF
+   &amp;gt; registry.drycc.cc/drycc/buildpacks:bookworm
+   &amp;gt; EOF
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On your next &lt;code&gt;git push&lt;/code&gt;, the custom buildpack will be used.&lt;/p&gt;
+&lt;h2 id=&#34;using-private-repositories&#34;&gt;Using Private Repositories&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#using-private-repositories&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To pull code from private repositories, set the &lt;code&gt;SSH_KEY&lt;/code&gt; environment variable to a private key
+which has access. Use either the path of a private key file or the raw key material:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc config:set SSH_KEY=/home/user/.ssh/id_rsa
+$ drycc config:set SSH_KEY=&amp;quot;&amp;quot;&amp;quot;-----BEGIN RSA PRIVATE KEY-----
+(...)
+-----END RSA PRIVATE KEY-----&amp;quot;&amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For example, to use a custom buildpack hosted at a private GitHub URL, ensure that an SSH public
+key exists in your &lt;a href=&#34;https://github.com/settings/ssh&#34;&gt;GitHub settings&lt;/a&gt;. Then set &lt;code&gt;SSH_KEY&lt;/code&gt; to the corresponding SSH private key
+and set &lt;code&gt;.pack_builder&lt;/code&gt; to the builder image:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$  tee &amp;gt; .pack_builder &amp;lt;&amp;lt; EOF
+   &amp;gt; registry.drycc.cc/drycc/buildpacks:bookworm
+   &amp;gt; EOF
+$ git add .buildpack
+$ git commit -m &amp;quot;chore(buildpack): modify the pack_builder&amp;quot;
+$ git push drycc master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;builder-selector&#34;&gt;Builder selector&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#builder-selector&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Which way to build a project conforms to the following principles:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If Dockerfile exists in the project, the stack uses &lt;code&gt;container&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If Procfile exists in the project, the stack uses &lt;code&gt;buildpack&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If both exist, &lt;code&gt;container&lt;/code&gt; is used by default&lt;/li&gt;
+&lt;li&gt;You can also set the &lt;code&gt;DRYCC_STACK&lt;/code&gt; to &lt;code&gt;container&lt;/code&gt; or &lt;code&gt;buildpack&lt;/code&gt; determine which stack to use.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Using Dockerfiles</title>
+      <link>/docs/applications/using-dockerfiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/using-dockerfiles/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Drycc supports deploying applications via Dockerfiles.  A &lt;a href=&#34;https://docs.docker.com/reference/builder/&#34;&gt;Dockerfile&lt;/a&gt; automates the steps for crafting a [Container Image][].
+Dockerfiles are incredibly powerful but require some extra work to define your exact application runtime environment.&lt;/p&gt;
+&lt;h2 id=&#34;add-ssh-key&#34;&gt;Add SSH Key&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#add-ssh-key&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For &lt;strong&gt;Dockerfile&lt;/strong&gt; based application deploys via &lt;code&gt;git push&lt;/code&gt;, Drycc Workflow identifies users via SSH keys. SSH keys are pushed to the platform and must be unique to each user.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;See &lt;a href=&#34;/docs/users/ssh-keys/#generate-an-ssh-key&#34;&gt;this document&lt;/a&gt; for instructions on how to generate an SSH key.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;code&gt;drycc keys:add&lt;/code&gt; to upload your SSH key to Drycc Workflow.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc keys:add ~/.ssh/id_drycc.pub
+Uploading id_drycc.pub to drycc... done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Read more about adding/removing SSH Keys &lt;a href=&#34;/docs/users/ssh-keys/#adding-and-removing-ssh-keys&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prepare-an-application&#34;&gt;Prepare an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#prepare-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you do not have an existing application, you can clone an example application that demonstrates the Dockerfile workflow.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/drycc/helloworld.git
+$ cd helloworld
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;dockerfile-requirements&#34;&gt;Dockerfile Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dockerfile-requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In order to deploy Dockerfile applications, they must conform to the following requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Dockerfile must use the &lt;code&gt;EXPOSE&lt;/code&gt; directive to expose exactly one port.&lt;/li&gt;
+&lt;li&gt;That port must be listening for an HTTP connection.&lt;/li&gt;
+&lt;li&gt;The Dockerfile must use the &lt;code&gt;CMD&lt;/code&gt; directive to define the default process that will run within the container.&lt;/li&gt;
+&lt;li&gt;The Container image must contain &lt;a href=&#34;https://www.gnu.org/software/bash/&#34;&gt;bash&lt;/a&gt; to run processes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;!!! note
+Note that if you are using a private registry of any kind (&lt;code&gt;gcr&lt;/code&gt; or other) the application environment must include a &lt;code&gt;$PORT&lt;/code&gt; config variable that matches the &lt;code&gt;EXPOSE&lt;/code&gt;&amp;rsquo;d port, example: &lt;code&gt;drycc config:set PORT=5000&lt;/code&gt;. See &lt;a href=&#34;/docs/installing-workflow/configuring-registry/#configuring-off-cluster-private-registry&#34;&gt;Configuring Registry&lt;/a&gt; for more info.&lt;/p&gt;
+&lt;h2 id=&#34;create-an-application&#34;&gt;Create an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#create-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;drycc create&lt;/code&gt; to create an application on the &lt;a href=&#34;/docs/understanding-workflow/components/#controller&#34;&gt;Controller&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc create
+Creating application... done, created folksy-offshoot
+Git remote drycc added
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;push-to-deploy&#34;&gt;Push to Deploy&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#push-to-deploy&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;git push drycc master&lt;/code&gt; to deploy your application.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git push drycc master
+Counting objects: 13, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (13/13), 1.99 KiB | 0 bytes/s, done.
+Total 13 (delta 2), reused 0 (delta 0)
+-----&amp;gt; Building Docker image
+Uploading context 4.096 kB
+Uploading context
+Step 0 : FROM drycc/base:latest
+ ---&amp;gt; 60024338bc63
+Step 1 : RUN wget -O /tmp/go1.2.1.linux-amd64.tar.gz -q https://go.googlecode.com/files/go1.2.1.linux-amd64.tar.gz
+ ---&amp;gt; Using cache
+ ---&amp;gt; cf9ef8c5caa7
+Step 2 : RUN tar -C /usr/local -xzf /tmp/go1.2.1.linux-amd64.tar.gz
+ ---&amp;gt; Using cache
+ ---&amp;gt; 515b1faf3bd8
+Step 3 : RUN mkdir -p /go
+ ---&amp;gt; Using cache
+ ---&amp;gt; ebf4927a00e9
+Step 4 : ENV GOPATH /go
+ ---&amp;gt; Using cache
+ ---&amp;gt; c6a276eded37
+Step 5 : ENV PATH /usr/local/go/bin:/go/bin:$PATH
+ ---&amp;gt; Using cache
+ ---&amp;gt; 2ba6f6c9f108
+Step 6 : ADD . /go/src/github.com/drycc/helloworld
+ ---&amp;gt; 94ab7f4b977b
+Removing intermediate container 171b7d9fdb34
+Step 7 : RUN cd /go/src/github.com/drycc/helloworld &amp;amp;&amp;amp; go install -v .
+ ---&amp;gt; Running in 0c8fbb2d2812
+github.com/drycc/helloworld
+ ---&amp;gt; 13b5af931393
+Removing intermediate container 0c8fbb2d2812
+Step 8 : ENV PORT 80
+ ---&amp;gt; Running in 9b07da36a272
+ ---&amp;gt; 2dce83167874
+Removing intermediate container 9b07da36a272
+Step 9 : CMD [&amp;quot;/go/bin/helloworld&amp;quot;]
+ ---&amp;gt; Running in f7b215199940
+ ---&amp;gt; b1e55ce5195a
+Removing intermediate container f7b215199940
+Step 10 : EXPOSE 80
+ ---&amp;gt; Running in 7eb8ec45dcb0
+ ---&amp;gt; ea1a8cc93ca3
+Removing intermediate container 7eb8ec45dcb0
+Successfully built ea1a8cc93ca3
+-----&amp;gt; Pushing image to private registry
+
+       Launching... done, v2
+
+-----&amp;gt; folksy-offshoot deployed to Drycc
+       http://folksy-offshoot.local3.dryccapp.com
+
+       To learn more, use `drycc help` or visit https://www.drycc.cc
+
+To ssh://git@local3.dryccapp.com:2222/folksy-offshoot.git
+ * [new branch]      master -&amp;gt; master
+
+$ curl -s http://folksy-offshoot.local3.dryccapp.com
+Welcome to Drycc!
+See the documentation at http://docs.drycc.cc/ for more information.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Because a Dockerfile application is detected, the &lt;code&gt;web&lt;/code&gt; process type is automatically scaled to 1 on first deploy.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;drycc scale web=3&lt;/code&gt; to increase &lt;code&gt;web&lt;/code&gt; processes to 3, for example. Scaling a
+process type directly changes the number of &lt;a href=&#34;../reference-guide/terms.md#container&#34;&gt;containers&lt;/a&gt;
+running that process.&lt;/p&gt;
+&lt;h2 id=&#34;container-build-arguments&#34;&gt;Container Build Arguments&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#container-build-arguments&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As of Workflow v2.13.0, users can inject their application config into the Container image using
+&lt;a href=&#34;https://docs.docker.com/engine/reference/commandline/build/#set-build-time-variables---build-arg&#34;&gt;Container build arguments&lt;/a&gt;. To opt into this, users must add a new environment variable
+to their application:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc config:set DRYCC_DOCKER_BUILD_ARGS_ENABLED=1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Every environment variable set with &lt;code&gt;drycc config:set&lt;/code&gt; will then be available for use inside the
+user&amp;rsquo;s Dockerfile. For example, if a user runs &lt;code&gt;drycc config:set POWERED_BY=Workflow&lt;/code&gt;,
+the user can utilize that build argument in their Dockerfile:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ARG POWERED_BY
+RUN echo &amp;#34;Powered by $POWERED_BY&amp;#34; &amp;gt; /etc/motd
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Using Docker Images</title>
+      <link>/docs/applications/using-container-images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/using-container-images/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Drycc supports deploying applications via an existing &lt;a href=&#34;https://docs.docker.com/introduction/understanding-docker/&#34;&gt;Docker Image&lt;/a&gt;.
+This is useful for integrating Drycc into Docker-based CI/CD pipelines.&lt;/p&gt;
+&lt;h2 id=&#34;prepare-an-application&#34;&gt;Prepare an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#prepare-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Start by cloning an example application:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/drycc/example-dockerfile-http.git
+$ cd example-dockerfile-http
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next use your local &lt;code&gt;docker&lt;/code&gt; client to build the image and push
+it to &lt;a href=&#34;https://registry.hub.docker.com/&#34;&gt;DockerHub&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker build -t &amp;lt;username&amp;gt;/example-dockerfile-http .
+$ docker push &amp;lt;username&amp;gt;/example-dockerfile-http
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;docker-image-requirements&#34;&gt;Docker Image Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#docker-image-requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In order to deploy Docker images, they must conform to the following requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Dockerfile must use the &lt;code&gt;EXPOSE&lt;/code&gt; directive to expose exactly one port.&lt;/li&gt;
+&lt;li&gt;That port must be listening for an HTTP connection.&lt;/li&gt;
+&lt;li&gt;The Dockerfile must use the &lt;code&gt;CMD&lt;/code&gt; directive to define the default process that will run within the container.&lt;/li&gt;
+&lt;li&gt;The Docker image must contain &lt;a href=&#34;https://www.gnu.org/software/bash/&#34;&gt;bash&lt;/a&gt; to run processes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;!!! note
+Note that if you are using a private registry of any kind (&lt;code&gt;gcr&lt;/code&gt; or other) the application environment must include a &lt;code&gt;$PORT&lt;/code&gt; config variable that matches the &lt;code&gt;EXPOSE&lt;/code&gt;&amp;rsquo;d port, example: &lt;code&gt;drycc config:set PORT=5000&lt;/code&gt;. See &lt;a href=&#34;/docs/installing-workflow/configuring-registry/#configuring-off-cluster-private-registry&#34;&gt;Configuring Registry&lt;/a&gt; for more info.&lt;/p&gt;
+&lt;h2 id=&#34;create-an-application&#34;&gt;Create an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#create-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;drycc create&lt;/code&gt; to create an application on the &lt;a href=&#34;/docs/understanding-workflow/components/#controller&#34;&gt;controller&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mkdir -p /tmp/example-dockerfile-http &amp;amp;&amp;amp; cd /tmp/example-dockerfile-http
+$ drycc create example-dockerfile-http --no-remote
+Creating application... done, created example-dockerfile-http
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;!!! note
+For all commands except for &lt;code&gt;drycc create&lt;/code&gt;, the &lt;code&gt;drycc&lt;/code&gt; client uses the name of the current directory
+as the app name if you don&amp;rsquo;t specify it explicitly with &lt;code&gt;--app&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;deploy-the-application&#34;&gt;Deploy the Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deploy-the-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;drycc pull&lt;/code&gt; to deploy your application from &lt;a href=&#34;https://registry.hub.docker.com/&#34;&gt;DockerHub&lt;/a&gt; or
+a public registry.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc pull &amp;lt;username&amp;gt;/example-dockerfile-http:latest
+Creating build...  done, v2
+
+$ curl -s http://example-dockerfile-http.local3.dryccapp.com
+Powered by Drycc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Because you are deploying a Docker image, the &lt;code&gt;web&lt;/code&gt; process type is automatically scaled to 1 on first deploy.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;drycc scale web=3&lt;/code&gt; to increase &lt;code&gt;web&lt;/code&gt; processes to 3, for example. Scaling a
+process type directly changes the number of &lt;a href=&#34;../reference-guide/terms.md#container&#34;&gt;Containers&lt;/a&gt;
+running that process.&lt;/p&gt;
+&lt;h2 id=&#34;private-registry&#34;&gt;Private Registry&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#private-registry&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To deploy Docker images from a private registry or from a private repository, use &lt;code&gt;drycc registry&lt;/code&gt;
+to attach credentials to your application. These credentials are the same as you&amp;rsquo;d use when running
+&lt;code&gt;docker login&lt;/code&gt; at your private registry.&lt;/p&gt;
+&lt;p&gt;To deploy private Docker images, take the following steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gather the username and password for the registry, such as a &lt;a href=&#34;https://docs.quay.io/glossary/robot-accounts.html&#34;&gt;Quay.io Robot Account&lt;/a&gt; or a &lt;a href=&#34;https://cloud.google.com/container-registry/docs/auth#using_a_json_key_file&#34;&gt;GCR.io Long Lived Token&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;drycc registry:set username=&amp;lt;the-user&amp;gt; password=&amp;lt;secret&amp;gt; -a &amp;lt;application-name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Now perform &lt;code&gt;drycc pull&lt;/code&gt; as normal, against an image in the private registry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When using a &lt;a href=&#34;https://cloud.google.com/container-registry/docs/auth#using_a_json_key_file&#34;&gt;GCR.io Long Lived Token&lt;/a&gt;, the JSON blob will have to be compacted first using a
+tool like &lt;a href=&#34;https://stedolan.github.io/jq/&#34;&gt;jq&lt;/a&gt; and then used in the password field in &lt;code&gt;drycc registry:set&lt;/code&gt;. For the username, use
+&lt;code&gt;_json_key&lt;/code&gt;. For example:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;drycc registry:set username=_json_key password=&amp;#34;$(cat google_cloud_cred.json | jq -c .)&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When using a private registry the docker images are no longer pulled into the Drycc Internal Registry via
+the Drycc Workflow Controller but rather is managed by Kubernetes. This will increase security and overall speed,
+however the application &lt;code&gt;port&lt;/code&gt; information can no longer be discovered. Instead the application &lt;code&gt;port&lt;/code&gt; information can be set via
+&lt;code&gt;drycc config:set PORT=80&lt;/code&gt; prior to setting the registry information.&lt;/p&gt;
+&lt;p&gt;!!! note
+Currently &lt;a href=&#34;https://gcr.io&#34;&gt;GCR.io&lt;/a&gt; and &lt;a href=&#34;https://aws.amazon.com/ecr/&#34;&gt;ECR&lt;/a&gt; in short lived auth token mode are not supported.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Managing Application Processes</title>
+      <link>/docs/applications/managing-app-processes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/managing-app-processes/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Drycc Workflow manages your application as a set of processes that can be named, scaled and configured according to their
+role. This gives you the flexibility to easily manage the different facets of your application. For example, you may have
+web-facing processes that handle HTTP traffic, background worker processes that do async work, and a helper process that
+streams from the Twitter API.&lt;/p&gt;
+&lt;p&gt;By using a Procfile, either checked in to your application or provided via the CLI you can specify the name of the type
+and the application command that should run. To spawn other process types, use &lt;code&gt;drycc scale &amp;lt;type&amp;gt;=&amp;lt;n&amp;gt;&lt;/code&gt; to scale those
+types accordingly.&lt;/p&gt;
+&lt;h2 id=&#34;default-process-types&#34;&gt;Default Process Types&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#default-process-types&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In the absence of a Procfile, a single, default process type is assumed for each application.&lt;/p&gt;
+&lt;p&gt;Applications built using &lt;a href=&#34;/docs/applications/using-buildpacks/&#34;&gt;Buildpacks&lt;/a&gt; via &lt;code&gt;git push&lt;/code&gt; implicitly receive a &lt;code&gt;web&lt;/code&gt; process type, which starts
+the application server. Rails 4, for example, has the following process type:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;web: bundle exec rails server -p $PORT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All applications utilizing &lt;a href=&#34;/docs/applications/using-dockerfiles/&#34;&gt;Dockerfiles&lt;/a&gt; have an implied &lt;code&gt;web&lt;/code&gt; process type, which runs the
+Dockerfile&amp;rsquo;s &lt;code&gt;CMD&lt;/code&gt; directive unmodified:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cat Dockerfile
+FROM centos:latest
+COPY . /app
+WORKDIR /app
+CMD python -m SimpleHTTPServer 5000
+EXPOSE 5000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For the above Dockerfile-based application, the &lt;code&gt;web&lt;/code&gt; process type would run the Container &lt;code&gt;CMD&lt;/code&gt; of &lt;code&gt;python -m SimpleHTTPServer 5000&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Applications utilizing &lt;a href=&#34;/docs/applications/using-container-images/&#34;&gt;remote Container images&lt;/a&gt;, a &lt;code&gt;web&lt;/code&gt; process type is also implied, and runs the &lt;code&gt;CMD&lt;/code&gt;
+specified in the Container image.&lt;/p&gt;
+&lt;p&gt;!!! note
+The &lt;code&gt;web&lt;/code&gt; process type is special as they’is the default process type that will
+receive HTTP traffic from Workflow’s routers. Other process types can be named arbitrarily.&lt;/p&gt;
+&lt;h2 id=&#34;declaring-process-types&#34;&gt;Declaring Process Types&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#declaring-process-types&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you use &lt;a href=&#34;/docs/applications/using-buildpacks/&#34;&gt;Buildpack&lt;/a&gt; or &lt;a href=&#34;/docs/applications/using-dockerfiles/&#34;&gt;Dockerfile&lt;/a&gt; builds and want to override or specify additional process
+types, simply include a file named &lt;code&gt;Procfile&lt;/code&gt; in the root of your application&amp;rsquo;s source tree.&lt;/p&gt;
+&lt;p&gt;The format of a &lt;code&gt;Procfile&lt;/code&gt; is one process type per line, with each line containing the command to invoke:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;process type&amp;gt;: &amp;lt;command&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The syntax is defined as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;process type&amp;gt;&lt;/code&gt; – a lowercase alphanumeric string, is a name for your command, such as web, worker, urgentworker, clock, etc.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;command&amp;gt;&lt;/code&gt; – a command line to launch the process, such as &lt;code&gt;rake jobs:work&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This example Procfile specifies two types, &lt;code&gt;web&lt;/code&gt; and &lt;code&gt;sleeper&lt;/code&gt;. The &lt;code&gt;web&lt;/code&gt; process launches a web server on port 5000 and
+a simple process which sleeps for 900 seconds and exits.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ cat Procfile
+web: bundle exec ruby web.rb -p ${PORT:-5000}
+sleeper: sleep 900
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you are using &lt;a href=&#34;/docs/applications/using-container-images/&#34;&gt;remote Container images&lt;/a&gt;, you may define process types by either running &lt;code&gt;drycc pull&lt;/code&gt; with a
+&lt;code&gt;Procfile&lt;/code&gt; in your working directory, or by passing a stringified Procfile to the &lt;code&gt;--procfile&lt;/code&gt; CLI option.&lt;/p&gt;
+&lt;p&gt;For example, passing process types inline:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc pull drycc/example-go:latest --procfile=&amp;#34;web: /app/bin/boot&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Read a &lt;code&gt;Procfile&lt;/code&gt; in another directory:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc pull drycc/example-go:latest --procfile=&amp;#34;$(cat deploy/Procfile)&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Or via a Procfile located in your current, working directory:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ cat Procfile
+web: /bin/boot
+sleeper: echo &amp;#34;sleeping&amp;#34;; sleep 900
+
+
+$ drycc pull -a steely-mainsail drycc/example-go
+Creating build... done
+
+$ drycc scale sleeper=1 -a steely-mainsail
+Scaling processes... but first, coffee!
+done in 0s
+
+NAME                                        RELEASE    STATE    TYPE       STARTED
+steely-mainsail-sleeper-76c45b967c-4qm6w    v3         up       sleeper    2023-12-08T02:25:00UTC
+steely-mainsail-web-c4f44c4b4-7p7dh         v3         up       web        2023-12-08T02:25:00UTC
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;!!! note
+Only process types of &lt;code&gt;web&lt;/code&gt; will be scaled to 1 automatically. If you have additional process types
+remember to scale the process counts after creation.&lt;/p&gt;
+&lt;p&gt;To remove a process type simply scale it to 0:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc scale sleeper=0 -a steely-mainsail
+Scaling processes... but first, coffee!
+done in 3s
+
+NAME                                        RELEASE    STATE    TYPE       STARTED
+steely-mainsail-web-c4f44c4b4-7p7dh         v3         up       web        2023-12-08T02:25:00UTC
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;scaling-processes&#34;&gt;Scaling Processes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scaling-processes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Applications deployed on Drycc Workflow scale out via the &lt;a href=&#34;https://devcenter.heroku.com/articles/process-model&#34;&gt;process model&lt;/a&gt;. Use &lt;code&gt;drycc scale&lt;/code&gt; to control the number of
+&lt;a href=&#34;../reference-guide/terms.md#container&#34;&gt;containers&lt;/a&gt; that power your app.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc scale web=5 -a iciest-waggoner
+Scaling processes... but first, coffee!
+done in 3s
+
+NAME                                        RELEASE    STATE    TYPE       STARTED
+iciest-waggoner-web-c4f44c4b4-7p7dh         v3         up       web        2023-12-08T02:25:00UTC
+iciest-waggoner-web-c4f44c4b4-8p7dh         v3         up       web        2023-12-08T02:25:00UTC
+iciest-waggoner-web-c4f44c4b4-9p7dh         v3         up       web        2023-12-08T02:25:00UTC
+iciest-waggoner-web-c4f44c4b4-1p7dh         v3         up       web        2023-12-08T02:25:00UTC
+iciest-waggoner-web-c4f44c4b4-2p7dh         v3         up       web        2023-12-08T02:25:00UTC
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you have multiple process types for your application you may scale the process count for each type separately. For
+example, this allows you to manage web process independently from background workers. For more information on process
+types see our documentation for &lt;a href=&#34;/docs/applications/managing-app-processes/&#34;&gt;Managing App Processes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this example, we are scaling the process type &lt;code&gt;web&lt;/code&gt; to 5 but leaving the process type &lt;code&gt;background&lt;/code&gt; with one worker.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc scale web=5
+Scaling processes... but first, coffee!
+done in 4s
+
+NAME                                                RELEASE    STATE    TYPE       STARTED
+scenic-icehouse-web-3291896318-7lord                v3         up       web        2023-12-08T02:25:00UTC
+scenic-icehouse-web-3291896318-jn957                v3         up       web        2023-12-08T02:25:00UTC
+scenic-icehouse-web-3291896318-rsekj                v3         up       web        2023-12-08T02:25:00UTC
+scenic-icehouse-web-3291896318-vwhnh                v3         up       web        2023-12-08T02:25:00UTC
+scenic-icehouse-web-3291896318-vokg7                v3         up       web        2023-12-08T02:25:00UTC
+scenic-icehouse-web-3291896318-vokg7                v3         up       web        2023-12-08T02:25:00UTC
+scenic-icehouse-background-3291896318-yf8kh         v3         up       web        2023-12-08T02:25:00UTC
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Scaling a process down, by reducing the process count, sends a &lt;code&gt;TERM&lt;/code&gt; signal to the processes, followed by a &lt;code&gt;SIGKILL&lt;/code&gt;
+if they have not exited within 30 seconds. Depending on your application, scaling down may interrupt long-running HTTP
+client connections.&lt;/p&gt;
+&lt;p&gt;For example, scaling from 5 processes to 3:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc scale web=3
+Scaling processes... but first, coffee!
+done in 1s
+
+NAME                                                RELEASE    STATE    TYPE       STARTED
+scenic-icehouse-web-3291896318-vwhnh                v2         up       web        2023-12-08T02:25:00UTC
+scenic-icehouse-web-3291896318-vokg7                v2         up       web        2023-12-08T02:25:00UTC
+scenic-icehouse-web-3291896318-vokg9                v2         up       web        2023-12-08T02:25:00UTC
+scenic-icehouse-background-3291896318-yf8kh         v2         up       web        2023-12-08T02:25:00UTC
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;get-a-shell-to-a-running-container&#34;&gt;Get a Shell to a Running Container&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#get-a-shell-to-a-running-container&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Verify that the container is running:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# drycc ps
+NAME                                                RELEASE    STATE    TYPE       STARTED
+python-getting-started-web-69b7d4bfdc-kl4xf         v2         up       web        2023-12-08T02:25:00UTC
+
+=== python-getting-started Processes
+--- web:
+python-getting-started-web-69b7d4bfdc-kl4xf up (v2)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Get a shell to the running container:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# drycc ps:exec python-getting-started-web-69b7d4bfdc-kl4xf -it -- bash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In your shell, list the root directory:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Run this inside the container
+ls /
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Running individual commands in a container&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# drycc ps:exec python-getting-started-web-69b7d4bfdc-kl4xf -- date
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Use &amp;ldquo;drycc ps &amp;ndash;help&amp;rdquo; for a list of global command-line (applies to all commands).&lt;/p&gt;
+&lt;h2 id=&#34;autoscale&#34;&gt;Autoscale&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#autoscale&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Autoscale allows adding a minimum and maximum number of pods on a per process type basis. This is accomplished by specifying a target CPU usage across all available pods.&lt;/p&gt;
+&lt;p&gt;This feature is built on top of &lt;a href=&#34;https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/&#34;&gt;Horizontal Pod Autoscaling&lt;/a&gt; in Kubernetes or &lt;a href=&#34;https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/&#34;&gt;HPA&lt;/a&gt; for short.&lt;/p&gt;
+&lt;p&gt;!!! note
+This is an alpha feature. It is recommended to be on the latest Kubernetes when using this feature.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc autoscale:set web --min=3 --max=8 --cpu-percent=75
+Applying autoscale settings for process type web on scenic-icehouse... done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And then review the scaling rule that was created for &lt;code&gt;web&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc autoscale:list
+UUID                                    TYPE    PERCENT    MIN    MAX
+e916b333-53c1-4d4c-ac5a-23e6961fb544    web     75         3      8
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Remove scaling rule&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc autoscale:unset web
+Removing autoscale for process type web on scenic-icehouse... done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For autoscaling to work CPU requests have to be specified on each application Pod (can be done via &lt;code&gt;drycc limits --cpu&lt;/code&gt;). This allows the autoscale policies to do the &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/design-proposals/horizontal-pod-autoscaler.md#autoscaling-algorithm&#34;&gt;appropriate calculations&lt;/a&gt; and make decisions on when to scale up and down.&lt;/p&gt;
+&lt;p&gt;Scale up can only happen if there was no rescaling within the last 3 minutes. Scale down will wait for 5 minutes from the last rescaling. That information and more can be found at &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/design-proposals/horizontal-pod-autoscaler.md#autoscaling-algorithm&#34;&gt;HPA algorithm page&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;restarting-an-application-processes&#34;&gt;Restarting an Application Processes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#restarting-an-application-processes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you need to restart an application process, you may use &lt;code&gt;drycc ps:restart&lt;/code&gt;. Behind the scenes, Drycc Workflow instructs
+Kubernetes to terminate the old process and launch a new one in its place.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc ps
+NAME                                               RELEASE    STATE       TYPE       STARTED
+scenic-icehouse-web-3291896318-vokg7               v2         up          web        2023-12-08T02:25:00UTC
+scenic-icehouse-web-3291896318-rsekj               v2         up          web        2023-12-08T02:50:21UTC
+scenic-icehouse-web-3291896318-vokg7               v2         up          web        2023-12-08T02:25:00UTC
+scenic-icehouse-background-3291896318-yf8kh        v2         up          web        2023-12-08T02:25:00UTC
+
+$ drycc ps:restart scenic-icehouse-background-3291896318-yf8kh
+NAME                                               RELEASE    STATE       TYPE       STARTED
+scenic-icehouse-web-3291896318-vokg7               v2         up          web        2023-12-08T02:25:00UTC
+scenic-icehouse-web-3291896318-rsekj               v2         up          web        2023-12-08T02:50:21UTC
+scenic-icehouse-web-3291896318-vokg7               v2         up          web        2023-12-08T02:25:00UTC
+scenic-icehouse-background-3291896318-yf8kh        v2         starting    web        2023-12-08T02:25:00UTC
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Notice that the process name has changed from &lt;code&gt;scenic-icehouse-background-3291896318-yf8kh&lt;/code&gt; to
+&lt;code&gt;scenic-icehouse-background-3291896318-yd87g&lt;/code&gt;. In a multi-node Kubernetes cluster, this may also have the effect of scheduling
+the Pod to a new node.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Configuring an Application</title>
+      <link>/docs/applications/managing-app-configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/managing-app-configuration/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;configuring-an-application&#34;&gt;Configuring an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#configuring-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;A Drycc application &lt;a href=&#34;http://12factor.net/config&#34;&gt;stores config in environment variables&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;setting-environment-variables&#34;&gt;Setting Environment Variables&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#setting-environment-variables&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;drycc config&lt;/code&gt; to modify environment variables for a deployed application.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc help config
+Valid commands for config:
+
+config:list        list environment variables for an app
+config:set         set environment variables for an app
+config:unset       unset environment variables for an app
+config:pull        extract environment variables to .env
+config:push        set environment variables from .env
+
+Use `drycc help [command]` to learn more.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When config is changed, a new release is created and deployed automatically.&lt;/p&gt;
+&lt;p&gt;You can set multiple environment variables with one &lt;code&gt;drycc config:set&lt;/code&gt; command,
+or with &lt;code&gt;drycc config:push&lt;/code&gt; and a local .env file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc config:set FOO=1 BAR=baz &amp;amp;&amp;amp; drycc config:pull
+$ cat .env
+FOO=1
+BAR=baz
+$ echo &amp;quot;TIDE=high&amp;quot; &amp;gt;&amp;gt; .env
+$ drycc config:push
+Creating config... done, v4
+
+=== yuppie-earthman
+DRYCC_APP: yuppie-earthman
+FOO: 1
+BAR: baz
+TIDE: high
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;attach-to-backing-services&#34;&gt;Attach to Backing Services&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#attach-to-backing-services&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc treats backing services like databases, caches and queues as &lt;a href=&#34;http://12factor.net/backing-services&#34;&gt;attached resources&lt;/a&gt;.
+Attachments are performed using environment variables.&lt;/p&gt;
+&lt;p&gt;For example, use &lt;code&gt;drycc config&lt;/code&gt; to set a &lt;code&gt;DATABASE_URL&lt;/code&gt; that attaches
+the application to an external PostgreSQL database.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc config:set DATABASE_URL=postgres://user:pass@example.com:5432/db
+=== peachy-waxworks
+DATABASE_URL: postgres://user:pass@example.com:5432/db
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Detachments can be performed with &lt;code&gt;drycc config:unset&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;buildpacks-cache&#34;&gt;Buildpacks Cache&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#buildpacks-cache&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;By default, apps using the [Imagebuilder][] will reuse the latest image data.
+When deploying applications that depend on third-party libraries that have to be fetched,
+this could speed up deployments a lot. In order to make use of this, the buildpack must implement
+the cache by writing to the cache directory. Most buildpacks already implement this, but when using
+custom buildpacks, it might need to be changed to make full use of the cache.&lt;/p&gt;
+&lt;h3 id=&#34;disabling-and-re-enabling-the-cache&#34;&gt;Disabling and re-enabling the cache&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#disabling-and-re-enabling-the-cache&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In some cases, cache might not speed up your application. To disable caching, you can set the
+&lt;code&gt;DRYCC_DISABLE_CACHE&lt;/code&gt; variable with &lt;code&gt;drycc config:set DRYCC_DISABLE_CACHE=1&lt;/code&gt;. When you disable the
+cache, Drycc will clear up files it created to store the cache. After having it turned off, run
+&lt;code&gt;drycc config:unset DRYCC_DISABLE_CACHE&lt;/code&gt; to re-enable the cache.&lt;/p&gt;
+&lt;h3 id=&#34;clearing-the-cache&#34;&gt;Clearing the cache&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#clearing-the-cache&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Use the following procedure to clear the cache:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc config:set DRYCC_DISABLE_CACHE=1
+$ git commit --allow-empty -m &amp;quot;Clearing Drycc cache&amp;quot;
+$ git push drycc # (if you use a different remote, you should use your remote name)
+$ drycc config:unset DRYCC_DISABLE_CACHE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;custom-health-checks&#34;&gt;Custom Health Checks&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#custom-health-checks&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;By default, Workflow only checks that the application starts in their Container. If it is preferred
+to have Kubernetes respond to application health, a health check may be added by configuring a
+health check probe for the application.&lt;/p&gt;
+&lt;p&gt;The health checks are implemented as &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes&#34;&gt;Kubernetes container probes&lt;/a&gt;. A &lt;code&gt;liveness&lt;/code&gt;
+and a &lt;code&gt;readiness&lt;/code&gt; probe can be configured, and each probe can be of type &lt;code&gt;httpGet&lt;/code&gt;, &lt;code&gt;exec&lt;/code&gt;, or
+&lt;code&gt;tcpSocket&lt;/code&gt; depending on the type of probe the container requires.&lt;/p&gt;
+&lt;p&gt;A liveness probe is useful for applications running for long periods of time, eventually
+transitioning to broken states and cannot recover except by restarting them.&lt;/p&gt;
+&lt;p&gt;Other times, a readiness probe is useful when the container is only temporarily unable to serve,
+and will recover on its own. In this case, if a container fails its readiness probe, the container
+will not be shut down, but rather the container will stop receiving incoming requests.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;httpGet&lt;/code&gt; probes are just as it sounds: it performs a HTTP GET operation on the Container. A
+response code inside the 200-399 range is considered a pass.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;exec&lt;/code&gt; probes run a command inside the Container to determine its health, such as
+&lt;code&gt;cat /var/run/myapp.pid&lt;/code&gt; or a script that determines when the application is ready. An exit code of
+zero is considered a pass, while a non-zero status code is considered a fail.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tcpSocket&lt;/code&gt; probes attempt to open a socket in the Container. The Container is only considered
+healthy if the check can establish a connection. &lt;code&gt;tcpSocket&lt;/code&gt; probes accept a port number to perform
+the socket connection on the Container.&lt;/p&gt;
+&lt;p&gt;Health checks can be configured on a per-proctype basis for each application using &lt;code&gt;drycc healthchecks:set&lt;/code&gt;. If no type is mentioned then the health checks are applied to default proc type web, whichever is present. To
+configure a &lt;code&gt;httpGet&lt;/code&gt; liveness probe:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc healthchecks:set liveness httpGet 80 --type web
+Applying livenessProbe healthcheck... done
+
+App:             peachy-waxworks
+UUID:            afd84067-29e9-4a5f-9f3a-60d91e938812
+Owner:           dev
+Created:         2023-12-08T10:25:00Z
+Updated:         2023-12-08T10:25:00Z
+Healthchecks:
+                 liveness web http-get headers=[] path=/ port=80 delay=50s timeout=50s period=10s #success=1 #failure=3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If the application relies on certain headers being set (such as the &lt;code&gt;Host&lt;/code&gt; header) or a specific
+URL path relative to the root, you can also send specific HTTP headers:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc healthchecks:set liveness httpGet 80 \
+    --path /welcome/index.html \
+    --headers &amp;#34;X-Client-Version:v1.0,X-Foo:bar&amp;#34;
+Applying livenessProbe healthcheck... done
+
+App:             peachy-waxworks
+UUID:            afd84067-29e9-4a5f-9f3a-60d91e938812
+Owner:           dev
+Created:         2023-12-08T10:25:00Z
+Updated:         2023-12-08T10:25:00Z
+Healthchecks:
+                 liveness web http-get headers=[X-Client-Version=v1.0] path=/welcome/index.html port=80 delay=50s timeout=50s period=10s #success=1 #failure=3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To configure an &lt;code&gt;exec&lt;/code&gt; readiness probe:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc healthchecks:set readiness exec -- /bin/echo -n hello --type web
+Applying readinessProbe healthcheck... done
+
+App:             peachy-waxworks
+UUID:            afd84067-29e9-4a5f-9f3a-60d91e938812
+Owner:           dev
+Created:         2023-12-08T10:25:00Z
+Updated:         2023-12-08T10:25:00Z
+Healthchecks:
+                 readiness web exec /bin/echo -n hello delay=50s timeout=50s period=10s #success=1 #failure=3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can overwrite a probe by running &lt;code&gt;drycc healthchecks:set&lt;/code&gt; again:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc healthchecks:set readiness httpGet 80 --type web
+Applying livenessProbe healthcheck... done
+
+App:             peachy-waxworks
+UUID:            afd84067-29e9-4a5f-9f3a-60d91e938812
+Owner:           dev
+Created:         2023-12-08T10:25:00Z
+Updated:         2023-12-08T10:25:00Z
+Healthchecks:
+                 liveness web http-get headers=[] path=/ port=80 delay=50s timeout=50s period=10s #success=1 #failure=3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Configured health checks also modify the default application deploy behavior. When starting a new
+Pod, Workflow will wait for the health check to pass before moving onto the next Pod.&lt;/p&gt;
+&lt;h2 id=&#34;isolate-the-application&#34;&gt;Isolate the Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#isolate-the-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Workflow supports isolating applications onto a set of nodes using &lt;code&gt;drycc tags&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;!!! note
+In order to use tags, you must first launch your cluster with the proper node labels. If you do
+not, tag commands will fail. Learn more by reading &lt;a href=&#34;http://kubernetes.io/docs/user-guide/node-selection/&#34;&gt;&amp;ldquo;Assigning Pods to Nodes&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once your nodes are configured with appropriate label selectors, use &lt;code&gt;drycc tags:set&lt;/code&gt; to restrict
+the application to those nodes:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc tags:set environ=prod
+Applying tags...  done, v4
+
+environ  prod
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Managing an Application</title>
+      <link>/docs/applications/managing-app-lifecycle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/managing-app-lifecycle/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;track-application-changes&#34;&gt;Track Application Changes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#track-application-changes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc Workflow tracks all changes to your application. Application changes are the result of either new application code
+pushed to the platform (via &lt;code&gt;git push drycc master&lt;/code&gt;), or an update to application configuration (via &lt;code&gt;drycc config:set KEY=VAL&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Each time a build or config change is made to your application a new &lt;a href=&#34;../reference-guide/terms.md#release&#34;&gt;release&lt;/a&gt; is created. These release numbers
+increase monotonically.&lt;/p&gt;
+&lt;p&gt;You can see a record of changes to your application using &lt;code&gt;drycc releases&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc releases
+UUID                                    OWNER    VERSION    CREATED                 SUMMARY
+d2646499-b0b5-402e-a4e9-710bfee15701    dev      v3         2023-12-04T10:17:46Z    dev deleted PIP_INDEX_URL, DISABLE_COLLECTSTATIC
+e8ad8e2e-b8fe-4319-9fa7-933460e19dd4    dev      v2         2023-12-01T10:20:22Z    dev added IMAGE_PULL_POLICY, PIP_INDEX_URL, PORT, DISABLE_COLLEC[...]
+d5e8f2ae-4af3-44b4-8e1a-bdb3a20bee71    dev      v1         2023-11-30T17:54:57Z    dev created initial release
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;rollback-a-release&#34;&gt;Rollback a Release&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#rollback-a-release&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc Workflow also supports rolling back go previous releases. If buggy code or an errant configuration change is pushed
+to your application, you may rollback to a previously known, good release.&lt;/p&gt;
+&lt;p&gt;!!! note
+All rollbacks create a new, numbered release. But will reference the build/code and configuration from the desired rollback point.&lt;/p&gt;
+&lt;p&gt;In this example, the application is currently running release v4. Using &lt;code&gt;drycc rollback v2&lt;/code&gt; tells Workflow to deploy the
+build and configuration that was used for release v2. This creates a new release named v5 whose contents are the source
+and configuration from release v2:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc releases
+UUID                                    OWNER    VERSION    CREATED                 SUMMARY
+d2646499-b0b5-402e-a4e9-710bfee15701    dev      v3         2023-12-04T10:17:46Z    dev deleted PIP_INDEX_URL, DISABLE_COLLECTSTATIC
+e8ad8e2e-b8fe-4319-9fa7-933460e19dd4    dev      v2         2023-12-01T10:20:22Z    dev added IMAGE_PULL_POLICY, PIP_INDEX_URL, PORT, DISABLE_COLLEC[...]
+d5e8f2ae-4af3-44b4-8e1a-bdb3a20bee71    dev      v1         2023-11-30T17:54:57Z    dev created initial release
+
+$ drycc rollback v2
+Rolled back to v2
+
+$ drycc releases
+UUID                                    OWNER    VERSION    CREATED                 SUMMARY
+d2646499-b0b5-402e-a4e9-710bfee15701    dev      v4         2023-12-04T10:20:46Z    dev rolled back to v2
+d2646499-b0b5-402e-a4e9-710bfee15701    dev      v3         2023-12-04T10:17:46Z    dev deleted PIP_INDEX_URL, DISABLE_COLLECTSTATIC
+e8ad8e2e-b8fe-4319-9fa7-933460e19dd4    dev      v2         2023-12-01T10:20:22Z    dev added IMAGE_PULL_POLICY, PIP_INDEX_URL, PORT, DISABLE_COLLEC[...]
+d5e8f2ae-4af3-44b4-8e1a-bdb3a20bee71    dev      v1         2023-11-30T17:54:57Z    dev created initial release
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;run-one-off-administration-tasks&#34;&gt;Run One-off Administration Tasks&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#run-one-off-administration-tasks&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc applications &lt;a href=&#34;http://12factor.net/admin-processes&#34;&gt;use one-off processes for admin tasks&lt;/a&gt; like database migrations and other commands that must run against the live application.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;drycc run&lt;/code&gt; to execute commands on the deployed application.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc run &#39;ls -l&#39;
+Running `ls -l`...
+
+total 28
+-rw-r--r-- 1 root root  553 Dec  2 23:59 LICENSE
+-rw-r--r-- 1 root root   60 Dec  2 23:59 Procfile
+-rw-r--r-- 1 root root   33 Dec  2 23:59 README.md
+-rw-r--r-- 1 root root 1622 Dec  2 23:59 pom.xml
+drwxr-xr-x 3 root root 4096 Dec  2 23:59 src
+-rw-r--r-- 1 root root   25 Dec  2 23:59 system.properties
+drwxr-xr-x 6 root root 4096 Dec  3 00:00 target
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;share-an-application&#34;&gt;Share an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#share-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;drycc perms:create&lt;/code&gt; to allow another Drycc user to collaborate on your application.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc perms:create otheruser
+Adding otheruser to peachy-waxworks collaborators... done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Use &lt;code&gt;drycc perms&lt;/code&gt; to see who an application is currently shared with, and &lt;code&gt;drycc perms:delete&lt;/code&gt; to remove a collaborator.&lt;/p&gt;
+&lt;p&gt;!!! note
+Collaborators can do anything with an application that its owner can do, except delete the application.&lt;/p&gt;
+&lt;p&gt;When working with an application that has been shared with you, clone the original repository and add Drycc&amp;rsquo; git remote
+entry before attempting to &lt;code&gt;git push&lt;/code&gt; any changes to Drycc.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ git clone https://github.com/drycc/example-java-jetty.git
+Cloning into &amp;#39;example-java-jetty&amp;#39;... done
+$ cd example-java-jetty
+$ git remote add -f drycc ssh://git@local3.dryccapp.com:2222/peachy-waxworks.git
+Updating drycc
+From drycc-controller.local:peachy-waxworks
+ * [new branch]      master     -&amp;gt; drycc/master
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;application-troubleshooting&#34;&gt;Application Troubleshooting&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#application-troubleshooting&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Applications deployed on Drycc Workflow &lt;a href=&#34;http://12factor.net/logs&#34;&gt;treat logs as event streams&lt;/a&gt;. Drycc Workflow aggregates &lt;code&gt;stdout&lt;/code&gt; and &lt;code&gt;stderr&lt;/code&gt;
+from every &lt;a href=&#34;../reference-guide/terms.md#container&#34;&gt;Container&lt;/a&gt; making it easy to troubleshoot problems with your application.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;drycc logs&lt;/code&gt; to view the log output from your deployed application.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc logs -f
+Dec  3 00:30:31 ip-10-250-15-201 peachy-waxworks[web.5]: INFO:oejsh.ContextHandler:started o.e.j.s.ServletContextHandler{/,null}
+Dec  3 00:30:31 ip-10-250-15-201 peachy-waxworks[web.8]: INFO:oejs.Server:jetty-7.6.0.v20120127
+Dec  3 00:30:31 ip-10-250-15-201 peachy-waxworks[web.5]: INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:10005
+Dec  3 00:30:31 ip-10-250-15-201 peachy-waxworks[web.6]: INFO:oejsh.ContextHandler:started o.e.j.s.ServletContextHandler{/,null}
+Dec  3 00:30:31 ip-10-250-15-201 peachy-waxworks[web.7]: INFO:oejsh.ContextHandler:started o.e.j.s.ServletContextHandler{/,null}
+Dec  3 00:30:31 ip-10-250-15-201 peachy-waxworks[web.6]: INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:10006
+Dec  3 00:30:31 ip-10-250-15-201 peachy-waxworks[web.8]: INFO:oejsh.ContextHandler:started o.e.j.s.ServletContextHandler{/,null}
+Dec  3 00:30:31 ip-10-250-15-201 peachy-waxworks[web.7]: INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:10007
+Dec  3 00:30:31 ip-10-250-15-201 peachy-waxworks[web.8]: INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:10008
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Mounting volumes for an Application</title>
+      <link>/docs/applications/managing-app-volumes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/managing-app-volumes/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We can use the blow command to create volumes and mount the created volumes.
+Drycc create volume support &lt;a href=&#34;https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes&#34;&gt;ReadWriteMany&lt;/a&gt;, so before deploying drycc, you need to have a StorageClass ready which can support ReadWriteMany.
+Deploying drycc, set controller.appStorageClass to this StorageClass.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;drycc volumes&lt;/code&gt; to mount a volume for a deployed application&amp;rsquo;s processes.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc help volumes
+Valid commands for volumes:
+
+volumes:create           create a volume for the application
+volumes:list             list volumes in the application
+volumes:delete           delete a volume from the application
+volumes:mount            mount a volume to process of the application
+volumes:unmount          unmount a volume from process of the application
+
+Use &#39;drycc help [command]&#39; to learn more.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;create-a-volume-for-the-application&#34;&gt;Create a volume for the application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#create-a-volume-for-the-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can create a csi volume with the &lt;code&gt;drycc volumes:create&lt;/code&gt; command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc volumes:create myvolume 200M
+Creating myvolumes to scenic-icehouse... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or use an existing nfs server&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc volumes:create myvolume 200M -t nfs --nfs-server=nfs.drycc.com --nfs-path=/
+Creating myvolumes to scenic-icehouse... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;list-volumes-in-the-application&#34;&gt;List volumes in the application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#list-volumes-in-the-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;After volume is created, you can list the volumes in this application.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc volumes:list
+=== scenic-icehouse volumes
+--- myvolumes     200M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;mount-a-volume&#34;&gt;Mount a volume&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#mount-a-volume&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The volume which is named myvolumes is created, you can mount the volume with process of the application,
+use the command of &lt;code&gt;drycc volumes:mount&lt;/code&gt;. When volume is mounted, a new release will be created and deployed automatically.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc volumes:mount myvolumes web=/data/web
+Mounting volume... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And use &lt;code&gt;drycc volumes:list&lt;/code&gt; show mount detail.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc volumes:list
+=== scenic-icehouse volumes
+--- myvolumes     200M
+web               /data/web
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you don&amp;rsquo;t need the volume, use &lt;code&gt;drycc volumes:unmount&lt;/code&gt; to unmount the volume and then use  &lt;code&gt;drycc volumes:delete&lt;/code&gt; to delete the volume from the application.
+Before deleting volume, the volume has to be unmounted.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc volumes:unmount myvolumes web
+Unmounting volume... done
+
+$ drycc volumes:delete myvolumes
+Deleting myvolumes from scenic-icehouse... done
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: About gateway for an Application</title>
+      <link>/docs/applications/managing-app-gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/managing-app-gateway/</guid>
+      <description>
+        
+        
+        &lt;p&gt;A Gateway describes how traffic can be translated to Services within the cluster. That is, it defines a request for a way to translate traffic from somewhere that does not know about Kubernetes to somewhere that does. For example, traffic sent to a Kubernetes Service by a cloud load balancer, an in-cluster proxy, or an external hardware load balancer. While many use cases have client traffic originating “outside” the cluster, this is not a requirement.&lt;/p&gt;
+&lt;h2 id=&#34;create-gateway-for-an-application&#34;&gt;Create Gateway for an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#create-gateway-for-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Gateway is a way of exposing services externally, which generates an external IP address to connect route and service.&lt;/p&gt;
+&lt;h2 id=&#34;create-service-for-an-application&#34;&gt;Create service for an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#create-service-for-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Service is a way of exposing services internally, creating a service generates an internal DNS that can access &lt;code&gt;procfile_type&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;create-route-for-an-application&#34;&gt;Create Route for an Application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#create-route-for-an-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A Gateway may be attached to one or more Route references which serve to direct traffic for a subset of traffic to a specific service.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Managing resources for an Application</title>
+      <link>/docs/applications/managing-app-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/managing-app-resources/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We can use blow command to create resources and bind which resource is created.
+This command depend on &lt;a href=&#34;https://service-catalog.drycc.cc&#34;&gt;service-catalog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;drycc resources&lt;/code&gt; to create and bind a resource for a deployed application.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc help resources
+Valid commands for resources:
+
+resources:services         list all available resource services
+resources:plans            list all available plans for an resource services
+resources:create           create a resource for the application
+resources:list             list resources in the application
+resources:describe         get a resource detail info in the application
+resources:update           update a resource from the application
+resources:destroy          delete a resource from the applicationa
+resources:bind             bind a resource to servicebroker
+resources:unbind           unbind a resource from servicebroker
+
+Use &#39;drycc help [command]&#39; to learn more.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;list-all-available-resource-services&#34;&gt;List all available resource services&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#list-all-available-resource-services&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can list available resource services with one &lt;code&gt;drycc resources:services&lt;/code&gt; command&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc resources:services
++------------+------------+
+|    NAME    | UPDATEABLE |
++------------+------------+
+| mysql      | true       |
+| postgresql | true       |
+| memcached  | true       |
+| redis      | true       |
++------------+------------+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;list-all-available-plans-for-an-resource-services&#34;&gt;List all available plans for an resource services&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#list-all-available-plans-for-an-resource-services&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can list all available plans for an resource services with one &lt;code&gt;drycc resources:plans&lt;/code&gt; command&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc resources:plans redis
++-------+--------------------------------+
+| NAME  |          DESCRIPTION           |
++-------+--------------------------------+
+| 40000 | Redis 40000 plan which limit   |
+|       | resources memory size 40Gi.    |
+|   250 | Redis 250 plan which limit     |
+|       | resources memory size 250Mi.   |
+| 20000 | Redis 20000 plan which limit   |
+|       | resources memory size 20Gi.    |
+|  5000 | Redis 5000 plan which limit    |
+|       | resources memory size 5Gi.     |
+|   500 | Redis 500 plan which limit     |
+|       | resources memory size 500Mi.   |
+|   128 | Redis 128 plan which limit     |
+|       | resources memory size 128Mi.   |
+| 50000 | Redis 50000 plan which limit   |
+|       | resources memory size 50Gi.    |
+|  2500 | Redis 2500 plan which limit    |
+|       | resources memory size 2.5Gi.   |
+| 30000 | Redis 30000 plan which limit   |
+|       | resources memory size 30Gi.    |
+| 10000 | Redis 10000 plan which limit   |
+|       | resources memory size 10Gi.    |
+|  1000 | Redis 1000 plan which limit    |
+|       | resources memory size 1Gi.     |
++-------+--------------------------------+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;create-resource-in-application&#34;&gt;Create resource in application&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#create-resource-in-application&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can create a resource with one &lt;code&gt;drycc resources:create&lt;/code&gt; command&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc resources:create redis:1000 redis
+Creating redis to scenic-icehouse... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After resources are created, you can list the resources in this application.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc resources:list
+=== scenic-icehouse resources
+redis      redis:1000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;bind-resources&#34;&gt;Bind resources&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#bind-resources&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The resource which is named redis is created, you can bind the redis to the application,
+use the command of &lt;code&gt;drycc resources:bind redis&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc resources:bind redis
+Binding resource... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;describe-resources&#34;&gt;Describe resources&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#describe-resources&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;And use &lt;code&gt;drycc resources:describe&lt;/code&gt; show the binding detail. If the binding is successful, this command will show the information of connect to the resource.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc resources:describe redis
+=== scenic-icehouse resource redis
+plan:               redis:1000
+status:             Ready
+binding:            Ready
+
+REDISPORT:          6379
+REDIS_PASSWORD:     RzG87SJWG1
+SENTINELHOST:       172.16.0.2
+SENTINELPORT:       26379
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;update-resources&#34;&gt;Update resources&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#update-resources&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can use the &lt;code&gt;drycc resources:update&lt;/code&gt; command to upgrade a new plan.
+An example of how to upgrade the plan&amp;rsquo;s capacity to 100MB:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc resources:update redis:10000 redis
+Updating redis to scenic-icehouse... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;remove-the-resource&#34;&gt;Remove the resource&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#remove-the-resource&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you don&amp;rsquo;t need resources, use &lt;code&gt;drycc resources:unbind&lt;/code&gt; to unbind the resource and then use &lt;code&gt;drycc resources:destroy&lt;/code&gt; to delete the resource from the application.
+Before deleting the resource, the resource must be unbinded.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc resources:unbind redis
+Unbinding resource... done
+
+$ drycc resources:destroy redis
+Deleting redis from scenic-icehouse... done
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Inter-app Communication</title>
+      <link>/docs/applications/inter-app-communication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/inter-app-communication/</guid>
+      <description>
+        
+        
+        &lt;p&gt;A common architecture pattern of multi-process applications is to have one process serve public requests while having multiple other processes supporting the public one to, for example, perform actions on a schedule or process work items from a queue. To implement this system of apps in Drycc Workflow, set up the apps to communicate using DNS resolution, as shown above, and hide the supporting processes from public view by removing them from the Drycc Workflow router.&lt;/p&gt;
+&lt;h3 id=&#34;dns-service-discovery&#34;&gt;DNS Service Discovery&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dns-service-discovery&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Drycc Workflow supports deploying a single app composed of a system of processes. Each Drycc Workflow app communicates on a single port, so communicating with another Workflow app means finding that app&amp;rsquo;s address and port. All Workflow apps are mapped to port 80 externally, so finding its IP address is the only challenge. Workflow creates a &lt;a href=&#34;https://kubernetes.io/docs/user-guide/services/&#34;&gt;Kubernetes Service&lt;/a&gt; for each app, which effectively assigns a name and one cluster-internal IP address to an app. The DNS service running in the cluster adds and removes DNS records which point from the app name to its IP address as services are added and removed. Drycc Workflow apps, then, can simply send requests to the domain name given to the service, which is &amp;ldquo;app-name.app-namespace&amp;rdquo;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Resource Limits</title>
+      <link>/docs/applications/managing-resource-limits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/managing-resource-limits/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;managing-application-resource-limits&#34;&gt;Managing Application Resource Limits&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#managing-application-resource-limits&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc Workflow supports restricting memory and CPU shares of each process. Requests/Limits set on a per-process type are given to
+Kubernetes as a requests and limits. Which means you guarantee &amp;lt;requests&amp;gt; amount of resource for a process as well as limit
+the process from using more than &amp;lt;limits&amp;gt;.
+By default, Kubernetes will set &amp;lt;requests&amp;gt; equal to &amp;lt;limit&amp;gt; if we don&amp;rsquo;t explicitly set &amp;lt;requests&amp;gt; value. Please keep in mind that &lt;code&gt;0 &amp;lt;= requests &amp;lt;= limits&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;limiting&#34;&gt;Limiting&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#limiting&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you set a requests/limits that is out of range for your cluster, Kubernetes will be unable to schedule your application
+processes into the cluster!&lt;/p&gt;
+&lt;p&gt;Available units for memory are:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Unit&lt;/th&gt;
+&lt;th&gt;Amount&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;Bytes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;K&lt;/td&gt;
+&lt;td&gt;KiB (Power of 2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;td&gt;MiB (Power of 2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;G&lt;/td&gt;
+&lt;td&gt;GiB (Power of 2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Available units for CPU are:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Unit&lt;/th&gt;
+&lt;th&gt;Amount&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1000m&lt;/td&gt;
+&lt;td&gt;1000 milli-cores == 100% CPU core&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;500m&lt;/td&gt;
+&lt;td&gt;500 milli-cores == 50% CPU core&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;250m&lt;/td&gt;
+&lt;td&gt;250 milli-cores == 25% CPU core&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;100m&lt;/td&gt;
+&lt;td&gt;100 milli-cores == 10% CPU core&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Use &lt;code&gt;drycc limits:set &amp;lt;type&amp;gt;=&amp;lt;value&amp;gt;&lt;/code&gt; to restrict memory by process type, where value can be &amp;lt;limit&amp;gt; or &amp;lt;request&amp;gt;/&amp;lt;limit&amp;gt; format :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc limits:set --cpu cmd=1 -m web=256M
+Applying limits... done
+
+UUID                                    OWNER    TYPE       DEVICE    QUOTA
+a0ae9c17-ed27-4a61-80b9-35eb924aee5c    dev      web        MEM       256M
+a0ae9c17-ed27-4a61-80b9-35eb924aee5c    dev      web        CPU       1
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Domains and Routing</title>
+      <link>/docs/applications/domains-and-routing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/domains-and-routing/</guid>
+      <description>
+        
+        
+        &lt;p&gt;You can use &lt;code&gt;drycc domains&lt;/code&gt; to add or remove custom domains to the application:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc domains:add hello.bacongobbler.com
+Adding hello.bacongobbler.com to finest-woodshed... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once that&amp;rsquo;s done, you can go into a DNS registrar and set up a CNAME from the new
+appname to the old one:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ dig hello.dryccapp.com
+[...]
+;; ANSWER SECTION:
+hello.bacongobbler.com.         1759    IN    CNAME    finest-woodshed.dryccapp.com.
+finest-woodshed.dryccapp.com.    270     IN    A        172.17.8.100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;!!! note
+Setting a CNAME for a root domain can cause issues. Setting an @ record
+to be a CNAME causes all traffic to go to the other domain, including mail and the SOA
+(&amp;ldquo;start-of-authority&amp;rdquo;) records. It is highly recommended that you bind a subdomain to
+an application, however you can work around this by pointing the @ record to the
+address of the load balancer (if any).&lt;/p&gt;
+&lt;p&gt;To add or remove the application from the routing mesh, use &lt;code&gt;drycc routing&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc routing:disable
+Disabling routing for finest-woodshed... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will make the application unreachable through the &lt;a href=&#34;/docs/understanding-workflow/components/#router&#34;&gt;Router&lt;/a&gt;, but the application is still
+reachable internally through its &lt;a href=&#34;../reference-guide/terms.md#service&#34;&gt;Kubernetes Service&lt;/a&gt;. To re-enable routing:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc routing:enable
+Enabling routing for finest-woodshed... done
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Application SSL Certificates</title>
+      <link>/docs/applications/ssl-certificates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/applications/ssl-certificates/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;application-ssl-certificates&#34;&gt;Application SSL Certificates&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#application-ssl-certificates&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;SSL is a cryptographic protocol that provides end-to-end encryption and integrity for all web
+requests. Apps that transmit sensitive data should enable SSL to ensure all information is
+transmitted securely.&lt;/p&gt;
+&lt;p&gt;To enable SSL on a custom domain, e.g., &lt;code&gt;www.example.com&lt;/code&gt;, use the SSL endpoint.&lt;/p&gt;
+&lt;p&gt;!!! note
+&lt;code&gt;drycc certs&lt;/code&gt; is only useful for custom domains. Default application domains are
+SSL-enabled already and can be accessed simply by using https,
+e.g. &lt;code&gt;https://foo.dryccapp.com&lt;/code&gt; (provided that you have &lt;a href=&#34;https://gateway-api.sigs.k8s.io/guides/tls/&#34;&gt;installed your wildcard
+certificate&lt;/a&gt; on the routers or on the load balancer).&lt;/p&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#overview&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Because of the unique nature of SSL validation, provisioning SSL for your domain is a multi-step
+process that involves several third-parties. You will need to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Purchase an SSL certificate from your SSL provider&lt;/li&gt;
+&lt;li&gt;Upload the cert to Drycc&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;acquire-ssl-certificate&#34;&gt;Acquire SSL Certificate&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#acquire-ssl-certificate&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Purchasing an SSL cert varies in cost and process depending on the vendor. &lt;a href=&#34;https://www.rapidssl.com/&#34;&gt;RapidSSL&lt;/a&gt; offers a
+simple way to purchase a certificate and is a recommended solution. If you’re able to use this
+provider, see &lt;a href=&#34;https://www.rapidssl.com/buy-ssl/&#34;&gt;buy an SSL certificate with RapidSSL&lt;/a&gt; for instructions.&lt;/p&gt;
+&lt;h2 id=&#34;dns-and-domain-configuration&#34;&gt;DNS and Domain Configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dns-and-domain-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Once the SSL certificate is provisioned and your cert is confirmed, you must route requests for
+your domain through Drycc. Unless you&amp;rsquo;ve already done so, add the domain specified when generating
+the CSR to your app with:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc domains:add www.example.com -a foo
+Adding www.example.com to foo... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;add-a-certificate&#34;&gt;Add a Certificate&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#add-a-certificate&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Add your certificate, any intermediate certificates, and private key to the endpoint with the
+&lt;code&gt;certs:add&lt;/code&gt; command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc certs:add example-com server.crt server.key
+Adding SSL endpoint... done
+www.example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;!!! note
+The name given to the certificate can only contain a-z (lowercase), 0-9 and hyphens&lt;/p&gt;
+&lt;p&gt;The Drycc platform will investigate the certificate and extract any relevant information from it
+such as the Common Name, Subject Alt Names (SAN), fingerprint and more.&lt;/p&gt;
+&lt;p&gt;This allows for wildcard certificates and multiple domains in the SAN without uploading duplicates.&lt;/p&gt;
+&lt;h3 id=&#34;add-a-certificate-chain&#34;&gt;Add a Certificate Chain&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#add-a-certificate-chain&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Sometimes, your certificates (such as a self-signed or a cheap certificate) need additional
+certificates to establish the chain of trust. What you need to do is bundle all the certificates
+into one file and give that to Drycc. Importantly, your site’s certificate must be the first one:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cat server.crt server.ca &amp;gt; server.bundle
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After that, you can add them to Drycc with the &lt;code&gt;certs:add&lt;/code&gt; command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc certs:add example-com server.bundle server.key
+Adding SSL endpoint... done
+www.example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;attach-ssl-certificate-to-a-domain&#34;&gt;Attach SSL certificate to a domain&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#attach-ssl-certificate-to-a-domain&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Certificates are not automagically connected up to domains, instead you will have to attach a
+certificate to a domain&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc certs:attach example-com example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each certificate can be connected to many domains. There is no need to upload duplicates.&lt;/p&gt;
+&lt;p&gt;To remove an association&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc certs:detach example-com example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;endpoint-overview&#34;&gt;Endpoint overview&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#endpoint-overview&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can verify the details of your domain&amp;rsquo;s SSL configuration with &lt;code&gt;drycc certs&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc certs
+
+     Name     |    Common Name    | SubjectAltName    |         Expires         |   Fingerprint   |   Domains    |   Updated   |   Created
++-------------+-------------------+-------------------+-------------------------+-----------------+--------------+-------------+-------------+
+  example-com |     example.com   | blog.example.com  | 31 Dec 2017 (in 1 year) | 8F:8E[...]CD:EB |  example.com | 30 Jan 2016 | 29 Jan 2016
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or by looking at at each certificates detailed information&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc certs:info example-com
+
+=== bar-com Certificate
+Common Name(s):     example.com
+Expires At:         2017-01-14 23:57:57 +0000 UTC
+Starts At:          2016-01-15 23:57:57 +0000 UTC
+Fingerprint:        7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0
+Subject Alt Name:   blog.example.com
+Issuer:             /C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=example.com/emailAddress=engineering@drycc.cc
+Subject:            /C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=example.com/emailAddress=engineering@drycc.cc
+
+Connected Domains:  example.com
+Owner:              admin-user
+Created:            2016-01-28 19:07:41 +0000 UTC
+Updated:            2016-01-30 00:10:02 +0000 UTC
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;testing-ssl&#34;&gt;Testing SSL&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#testing-ssl&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Use a command line utility like &lt;code&gt;curl&lt;/code&gt; to test that everything is configured correctly for your
+secure domain.&lt;/p&gt;
+&lt;p&gt;!!! note
+The -k option flag tells curl to ignore untrusted certificates.&lt;/p&gt;
+&lt;p&gt;Pay attention to the output. It should print &lt;code&gt;SSL certificate verify ok&lt;/code&gt;. If it prints something
+like &lt;code&gt;common name: www.example.com (does not match &#39;www.somedomain.com&#39;)&lt;/code&gt; then something is not
+configured correctly.&lt;/p&gt;
+&lt;h2 id=&#34;enforcing-ssl-at-the-router&#34;&gt;Enforcing SSL at the Router&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#enforcing-ssl-at-the-router&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To enforce all HTTP requests be redirected to HTTPS, TLS can be enforced at the router level by
+running&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc tls:force:enable -a foo
+Enabling https-only requests for foo... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Users hitting the HTTP endpoint for the application will now receive a 301 redirect to the HTTPS
+endpoint.&lt;/p&gt;
+&lt;p&gt;To disable enforced TLS, run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc tls:force:disable -a foo
+Disabling https-only requests for foo... done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;automated-certificate-management&#34;&gt;Automated Certificate Management&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#automated-certificate-management&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With Automated Certificate Management (ACM), Drycc automatically manages TLS certificates for apps with Hobby and Professional dynos on the Common Runtime, and for apps in Private Spaces that enable the feature.
+Certificates handled by ACM automatically renew one month before they expire, and new certificates are created automatically whenever you add or remove a custom domain. All applications with paid dynos include ACM for free.
+Automated Certificate Management uses Let’s Encrypt, the free, automated, and open certificate authority for managing your application’s TLS certificates. Let’s Encrypt is run for the public benefit by the Internet Security Research Group (ISRG).&lt;/p&gt;
+&lt;p&gt;To enable ACM with the following command:
+$ drycc tls:auto:enable -a foo&lt;/p&gt;
+&lt;p&gt;To disable ACM with the following command:
+$ drycc tls:auto:disable -a foo&lt;/p&gt;
+&lt;h2 id=&#34;remove-certificate&#34;&gt;Remove Certificate&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#remove-certificate&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can remove a certificate using the &lt;code&gt;certs:remove&lt;/code&gt; command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc certs:remove my-cert
+Removing www.example.com... Done.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;swapping-out-certificates&#34;&gt;Swapping out certificates&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#swapping-out-certificates&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Over the lifetime of an application an operator will have to acquire certificates with new expire
+dates and apply it to all relevant applications, below is the recommended way to swap out certificates.&lt;/p&gt;
+&lt;p&gt;Be intentional with certificate names, name them &lt;code&gt;example-com-2017&lt;/code&gt; when possible, where the year
+signifies the expiry year. This allows for &lt;code&gt;example-com-2018&lt;/code&gt; when a new certificate is purchased.&lt;/p&gt;
+&lt;p&gt;Assuming all applications are already using &lt;code&gt;example-com-2017&lt;/code&gt; the following commands can be ran,
+chained together or otherwise:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc certs:detach example-com-2017 example.com
+$ drycc certs:attach example-com-2018 example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will take care of a singular domain which allows the operator to verify everything went
+as planned and slowly roll it out to any other application using the same method.&lt;/p&gt;
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#troubleshooting&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Here are some steps you can follow if your SSL endpoint is not working as you&amp;rsquo;d expect.&lt;/p&gt;
+&lt;h3 id=&#34;untrusted-certificate&#34;&gt;Untrusted Certificate&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#untrusted-certificate&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In some cases when accessing the SSL endpoint, it may list your certificate as untrusted.&lt;/p&gt;
+&lt;p&gt;If this occurs, it may be because it is not trusted by Mozilla’s list of &lt;a href=&#34;https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/included/&#34;&gt;root CAs&lt;/a&gt;. If this is
+the case, your certificate may be considered untrusted for many browsers.&lt;/p&gt;
+&lt;p&gt;If you have uploaded a certificate that was signed by a root authority but you get the message that
+it is not trusted, then something is wrong with the certificate. For example, it may be missing
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Intermediate_certificate_authorities&#34;&gt;intermediary certificates&lt;/a&gt;. If so, download the intermediary certificates from your SSL provider,
+remove the certificate from Drycc and re-run the &lt;code&gt;certs:add&lt;/code&gt; command.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
