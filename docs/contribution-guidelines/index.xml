@@ -1,0 +1,543 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drycc – Contribution Guidelines</title>
+    <link>/docs/contribution-guidelines/</link>
+    <description>Recent content in Contribution Guidelines on Drycc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="/docs/contribution-guidelines/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Contributor Overview</title>
+      <link>/docs/contribution-guidelines/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/contribution-guidelines/overview/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;file-bugs--enhancements&#34;&gt;File Bugs &amp;amp; Enhancements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#file-bugs--enhancements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Find a bug? Want to see a new feature? Have a request for the maintainers? Open a Github issue in the applicable repository and we’ll get the conversation started.&lt;/p&gt;
+&lt;p&gt;Our official support channel is the &lt;a href=&#34;https://slack.drycc.cc&#34;&gt;Drycc #community Slack channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t know what the applicable repository for an issue is? Open up in issue in &lt;a href=&#34;https://github.com/drycc/workflow&#34;&gt;workflow&lt;/a&gt; or chat with a maintainer in the &lt;a href=&#34;https://slack.drycc.cc&#34;&gt;Drycc #community Slack channel&lt;/a&gt; and we&amp;rsquo;ll make sure it gets to the right place.&lt;/p&gt;
+&lt;p&gt;Additionally, take a look at the &lt;a href=&#34;/docs/troubleshooting/&#34;&gt;troubleshooting&lt;/a&gt; documentation for common issues.&lt;/p&gt;
+&lt;p&gt;Before opening a new issue, it&amp;rsquo;s helpful to search and see if anyone else has already reported the problem. You can search through a list of issues for all Drycc projects &lt;a href=&#34;https://github.com/pulls?utf8=%E2%9C%93&amp;q=user%3Adrycc+user%3Ahelm&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;write-documentation&#34;&gt;Write Documentation&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#write-documentation&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We are always looking to improve and expand our documentation. Most docs reside in the &lt;a href=&#34;https://github.com/drycc/workflow&#34;&gt;drycc/workflow&lt;/a&gt; repository. Simply fork the project, update docs and send us a pull request.&lt;/p&gt;
+&lt;h2 id=&#34;contribute-code&#34;&gt;Contribute Code&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#contribute-code&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We are always looking for help improving the core platform, other workloads, tooling, and test coverage. Interested in contributing code? Let’s chat in the &lt;a href=&#34;https://slack.drycc.cc&#34;&gt;Drycc #community Slack channel&lt;/a&gt;. Make sure to check out issues tagged &lt;a href=&#34;https://github.com/pulls?utf8=%E2%9C%93&amp;q=user%3Adrycc+label%3A%22easy+fix%22+is%3Aopen&#34;&gt;easy fix&lt;/a&gt; or &lt;a href=&#34;https://github.com/pulls?utf8=%E2%9C%93&amp;q=user%3Adrycc+label%3A%22help+wanted%22+is%3Aopen&#34;&gt;help wanted&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When you&amp;rsquo;re ready to begin writing code, review &lt;a href=&#34;/docs/contribution-guidelines/design-documents/&#34;&gt;Design Documents&lt;/a&gt; and get your &lt;a href=&#34;/docs/contribution-guidelines/development-environment/&#34;&gt;Development Environment&lt;/a&gt; set up.&lt;/p&gt;
+&lt;p&gt;By contributing to any Drycc project you agree to its &lt;a href=&#34;https://github.com/drycc/workflow/blob/main/DCO&#34;&gt;Developer Certificate of Origin (DCO)&lt;/a&gt;. This document was created by the Linux Kernel community and is a simple statement that you, as a contributor, have the legal right to make the contribution.&lt;/p&gt;
+&lt;h2 id=&#34;triage-issues&#34;&gt;Triage Issues&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#triage-issues&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you don&amp;rsquo;t have time to code, consider helping with triage. The community will thank you for saving them time by spending some of yours. See &lt;a href=&#34;/docs/contribution-guidelines/triaging-issues/&#34;&gt;Triaging Issues&lt;/a&gt; for more info.&lt;/p&gt;
+&lt;h2 id=&#34;share-your-experience&#34;&gt;Share your Experience&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#share-your-experience&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Interact with the community on our user mailing list or live in our &lt;a href=&#34;https://slack.drycc.cc&#34;&gt;Drycc #community Slack channel&lt;/a&gt;, where you can chat with other Drycc Workflow users any time of day.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Design Documents</title>
+      <link>/docs/contribution-guidelines/design-documents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/contribution-guidelines/design-documents/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Before submitting a pull request which will significantly alter the behavior of any Drycc component, such as a new feature or major refactoring, contributors should first open an issue representing a design document.&lt;/p&gt;
+&lt;h2 id=&#34;goals&#34;&gt;Goals&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#goals&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Design documents help ensure project contributors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Involve stakeholders as early as possible in a feature&amp;rsquo;s development&lt;/li&gt;
+&lt;li&gt;Ensure code changes accomplish the original motivations and design goals&lt;/li&gt;
+&lt;li&gt;Establish clear acceptance criteria for a feature or change&lt;/li&gt;
+&lt;li&gt;Enforce test-driven design methodology and automated test coverage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#contents&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Design document issues should be named &lt;code&gt;Design Doc: &amp;lt;change description&amp;gt;&lt;/code&gt; and contain the following sections:&lt;/p&gt;
+&lt;h3 id=&#34;goal&#34;&gt;Goal&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#goal&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This section should briefly describe the proposed change and the motivations behind it. Tests will be written to ensure this design goal is met by the change.&lt;/p&gt;
+&lt;p&gt;This section should also reference a separate GitHub issue tracking the feature or change, which will typically be assigned to a release milestone.&lt;/p&gt;
+&lt;h3 id=&#34;code-changes&#34;&gt;Code Changes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#code-changes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This section should detail the code changes necessary to accomplish the change, as well as the proposed implementation. This should be as detailed as necessary to help reviewers understand the change.&lt;/p&gt;
+&lt;h3 id=&#34;tests&#34;&gt;Tests&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#tests&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;All changes should be covered by automated tests, either unit or integration tests (ideally both). This section should detail how tests will be written to validate that the change accomplishes the design goals and doesn&amp;rsquo;t introduce any regressions.&lt;/p&gt;
+&lt;p&gt;If a change cannot be sufficiently covered by automated testing, the design should be reconsidered. If there is no test coverage whatsoever for an affected section of code, a separate issue should be filed to integrate automated testing with that section of the codebase.&lt;/p&gt;
+&lt;p&gt;The tests described here also form the acceptance criteria for the change, so that when it&amp;rsquo;s completed maintainers can merge the pull request after confirming the tests pass CI.&lt;/p&gt;
+&lt;h3 id=&#34;approval&#34;&gt;Approval&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#approval&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A design document follows the same &lt;a href=&#34;/docs/contribution-guidelines/submitting-a-pull-request/#merge-approval&#34;&gt;merge approval&lt;/a&gt; review process as final pull requests do, and maintainers will take extra care to ensure that any stakeholders for the change are included in the discussion and review of the design document.&lt;/p&gt;
+&lt;p&gt;Once the design is accepted, the author can complete the change and submit a pull request for review. The pull request should close both the design document for the change as well as any issues that either track the issue or are closed as a result of the change.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;/docs/contribution-guidelines/submitting-a-pull-request/&#34;&gt;Submitting a Pull Request&lt;/a&gt; for more information on pull request and commit message formatting.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Development Environment</title>
+      <link>/docs/contribution-guidelines/development-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/contribution-guidelines/development-environment/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In this guide, we walk you through the process of setting up a development environment that is suitable for hacking on most Drycc components.&lt;/p&gt;
+&lt;p&gt;We try to make it simple to hack on Drycc components. However, there are necessarily several moving pieces and some setup required. We welcome any suggestions for automating or simplifying this process.&lt;/p&gt;
+&lt;p&gt;!!! note
+The Drycc team is actively engaged in containerizing Go and Python based development environments tailored specifically for Drycc development in order to minimize the setup required.  This work is ongoing.  Refer to the &lt;a href=&#34;https://github.com/drycc/router&#34;&gt;drycc/router&lt;/a&gt; project for a working example of a fully containerized development environment.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re just getting into the Drycc codebase, look for GitHub issues with the label &lt;a href=&#34;https://github.com/issues?q=user%3Adrycc+label%3Aeasy-fix+is%3Aopen&#34;&gt;easy-fix&lt;/a&gt;. These are more straightforward or low-risk issues and are a great way to become more familiar with Drycc.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#prerequisites&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In order to successfully compile and test Drycc binaries and build Container images of Drycc components, the following are required:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Go 1.5 or later, with support for compiling to &lt;code&gt;linux/amd64&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Masterminds/glide&#34;&gt;glide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/golang/lint&#34;&gt;golint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/koalaman/shellcheck&#34;&gt;shellcheck&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt; (in a non-Linux environment, you will additionally want [Podman Machine][machine])&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For &lt;a href=&#34;https://github.com/drycc/controller&#34;&gt;drycc/controller&lt;/a&gt;, in particular, you will also need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 2.7 or later (with &lt;code&gt;pip&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;virtualenv (&lt;code&gt;sudo pip install virtualenv&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In most cases, you should simply install according to the instructions. There are a few special cases, though. We cover these below.&lt;/p&gt;
+&lt;h3 id=&#34;configuring-go&#34;&gt;Configuring Go&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#configuring-go&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;If your local workstation does not support the &lt;code&gt;linux/amd64&lt;/code&gt; target environment, you will have to install Go from source with cross-compile support for that environment. This is because some of the components are built on your local machine and then injected into a container.&lt;/p&gt;
+&lt;p&gt;Homebrew users can just install with cross compiling support:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ brew install go --with-cc-common
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It is also straightforward to build Go from source:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo su
+$ curl -sSL https://golang.org/dl/go1.5.src.tar.gz | tar -v -C /usr/local -xz
+$ cd /usr/local/go/src
+$ # compile Go for our default platform first, then add cross-compile support
+$ ./make.bash --no-clean
+$ GOOS=linux GOARCH=amd64 ./make.bash --no-clean
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once you can compile to &lt;code&gt;linux/amd64&lt;/code&gt;, you should be able to compile Drycc components as normal.&lt;/p&gt;
+&lt;h2 id=&#34;fork-the-repository&#34;&gt;Fork the Repository&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#fork-the-repository&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Once the prerequisites have been met, we can begin to work with Drycc components.&lt;/p&gt;
+&lt;p&gt;Begin at Github by forking whichever Drycc project you would like to contribute to, then clone that fork locally.  Since Drycc is predominantly written in Go, the best place to put it is under &lt;code&gt;$GOPATH/src/github.com/drycc/&lt;/code&gt;.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ mkdir -p  $GOPATH/src/github.com/drycc
+$ cd $GOPATH/src/github.com/drycc
+$ git clone git@github.com:&amp;lt;username&amp;gt;/&amp;lt;component&amp;gt;.git
+$ cd &amp;lt;component&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;!!! note
+By checking out the forked copy into the namespace &lt;code&gt;github.com/drycc/&amp;lt;component&amp;gt;&lt;/code&gt;, we are tricking the Go toolchain into seeing our fork as the &amp;ldquo;official&amp;rdquo; source tree.&lt;/p&gt;
+&lt;p&gt;If you are going to be issuing pull requests to the upstream repository from which you forked, we suggest configuring Git such that you can easily rebase your code to the upstream repository&amp;rsquo;s main branch. There are various strategies for doing this, but the &lt;a href=&#34;https://help.github.com/articles/fork-a-repo/&#34;&gt;most common&lt;/a&gt; is to add an &lt;code&gt;upstream&lt;/code&gt; remote:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ git remote add upstream https://github.com/drycc/&amp;lt;component&amp;gt;.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For the sake of simplicity, you may want to point an environment variable to your Drycc code - the directory containing one or more Drycc components:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ export DRYCC=$GOPATH/src/github.com/drycc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Throughout the rest of this document, &lt;code&gt;$DRYCC&lt;/code&gt; refers to that location.&lt;/p&gt;
+&lt;h3 id=&#34;alternative-forking-with-a-pushurl&#34;&gt;Alternative: Forking with a Pushurl&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#alternative-forking-with-a-pushurl&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A number of Drycc contributors prefer to pull directly from &lt;code&gt;drycc/&amp;lt;component&amp;gt;&lt;/code&gt;, but push to &lt;code&gt;&amp;lt;username&amp;gt;/&amp;lt;component&amp;gt;&lt;/code&gt;. If that workflow suits you better, you can set it up this way:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ git clone git@github.com:drycc/&amp;lt;component&amp;gt;.git
+$ cd drycc
+$ git config remote.origin.pushurl git@github.com:&amp;lt;username&amp;gt;/&amp;lt;component&amp;gt;.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this setup, fetching and pulling code will work directly with the upstream repository, while pushing code will send changes to your fork. This makes it easy to stay up to date, but also make changes and then issue pull requests.&lt;/p&gt;
+&lt;h2 id=&#34;make-your-changes&#34;&gt;Make Your Changes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#make-your-changes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With your development environment set up and the code you wish to work on forked and cloned, you can begin making your changes.&lt;/p&gt;
+&lt;h2 id=&#34;test-your-changes&#34;&gt;Test Your Changes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#test-your-changes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc components each include a comprehensive suite of automated tests, mostly written in Go. See &lt;a href=&#34;/docs/contribution-guidelines/testing/&#34;&gt;testing&lt;/a&gt; for instructions on running the tests.&lt;/p&gt;
+&lt;h2 id=&#34;deploying-your-changes&#34;&gt;Deploying Your Changes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deploying-your-changes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Although writing and executing tests are critical to ensuring code quality, most contributors will also want to deploy their changes to a live environment, whether to make use of those changes or to test them further.  The remainder of this section documents the procedure for running officially released Drycc components in a development cluster and replacing any one of those with your customizations.&lt;/p&gt;
+&lt;h3 id=&#34;running-a-kubernetes-cluster-for-development&#34;&gt;Running a Kubernetes Cluster for Development&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#running-a-kubernetes-cluster-for-development&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;To run a Kubernetes cluster locally or elsewhere to support your development activities, refer to Drycc installation instructions &lt;a href=&#34;/docs/quickstart/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;using-a-development-registry&#34;&gt;Using a Development Registry&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#using-a-development-registry&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;To facilitate deploying Container images containing your changes to your Kubernetes cluster, you will need to make use of a Container registry.  This is a location to where you can push your custom-built images and from where your Kubernetes cluster can retrieve those same images.&lt;/p&gt;
+&lt;p&gt;If your development cluster runs locally (in Minikube, for instance), the most efficient and economical means of achieving this is to run a Container registry locally &lt;em&gt;as&lt;/em&gt; a Container container.&lt;/p&gt;
+&lt;p&gt;To facilitate this, most Drycc components provide a make target to create such a registry:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ make dev-registry
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In a Linux environment, to begin using the registry:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export DRYCC_REGISTRY=&amp;lt;IP of the host machine&amp;gt;:5000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In non-Linux environments:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export DRYCC_REGISTRY=&amp;lt;IP of the drycc Container Machine VM&amp;gt;:5000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If your development cluster runs on a cloud provider such as Google Container Engine, a local registry such as the one above will not be accessible to your Kubernetes nodes.  In such cases, a public registry such as [DockerHub][dh] or &lt;a href=&#34;https://quay.io/&#34;&gt;quay.io&lt;/a&gt; will suffice.&lt;/p&gt;
+&lt;p&gt;To use DockerHub for this purpose, for instance:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ export DRYCC_REGISTRY=&amp;#34;registry.drycc.cc&amp;#34;
+$ export IMAGE_PREFIX=&amp;lt;your DockerHub username&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To use quay.io:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ export DRYCC_REGISTRY=quay.io
+$ export IMAGE_PREFIX=&amp;lt;your quay.io username&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note the importance of the trailing slash.&lt;/p&gt;
+&lt;h3 id=&#34;dev--deployment-workflow&#34;&gt;Dev / Deployment Workflow&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dev--deployment-workflow&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;With a functioning Kubernetes cluster and the officially released Drycc components installed onto it, deployment and further testing of any Drycc component you have made changes to is facilitated by replacing the officially released component with a custom built image that contains your changes.  Most Drycc components include Makefiles with targets specifically intended to facilitate this workflow with minimal friction.&lt;/p&gt;
+&lt;p&gt;In the general case, this workflow looks like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Update source code and commit your changes using &lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;make build&lt;/code&gt; to build a new Container image&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;make dev-release&lt;/code&gt; to generate Kubernetes manifest(s)&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;make deploy&lt;/code&gt; to restart the component using the updated manifest&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This can be shortened to a one-liner using just the &lt;code&gt;deploy&lt;/code&gt; target:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ make deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;useful-commands&#34;&gt;Useful Commands&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#useful-commands&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Once your customized Drycc component has been deployed, here are some helpful commands that will allow you to inspect your cluster and to troubleshoot, if necessary:&lt;/p&gt;
+&lt;h3 id=&#34;see-all-drycc-pods&#34;&gt;See All Drycc Pods&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#see-all-drycc-pods&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ kubectl --namespace=drycc get pods
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;describe-a-pod&#34;&gt;Describe a Pod&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#describe-a-pod&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is often useful for troubleshooting pods that are in pending or crashed states:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ kubectl --namespace=drycc describe -f &amp;lt;pod name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;tail-logs&#34;&gt;Tail Logs&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#tail-logs&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ kubectl --namespace=drycc logs -f &amp;lt;pod name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;django-shell&#34;&gt;Django Shell&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#django-shell&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Specific to &lt;a href=&#34;https://github.com/drycc/controller&#34;&gt;drycc/controller&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ kubectl --namespace=drycc exec -it &amp;lt;pod name&amp;gt; -- python manage.py shell
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Have commands other Drycc contributors might find useful? Send us a PR!&lt;/p&gt;
+&lt;h2 id=&#34;pull-requests&#34;&gt;Pull Requests&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#pull-requests&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Satisfied with your changes?  Share them!&lt;/p&gt;
+&lt;p&gt;Please read &lt;a href=&#34;/docs/contribution-guidelines/submitting-a-pull-request/&#34;&gt;Submitting a Pull Request&lt;/a&gt;. It contains a checklist of
+things you should do when proposing a change to any Drycc component.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Testing Drycc</title>
+      <link>/docs/contribution-guidelines/testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/contribution-guidelines/testing/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Each Drycc component includes its own suite of style checks, &lt;a href=&#34;http://en.wikipedia.org/wiki/Unit_testing&#34;&gt;unit tests&lt;/a&gt;, and black-box type &lt;a href=&#34;http://en.wikipedia.org/wiki/Functional_testing&#34;&gt;functional tests&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Integration_testing&#34;&gt;Integration tests&lt;/a&gt; verify the behavior of the Drycc components together as a system and are provided separately by the &lt;a href=&#34;https://github.com/drycc/workflow-e2e&#34;&gt;drycc/workflow-e2e&lt;/a&gt; project.&lt;/p&gt;
+&lt;p&gt;GitHub pull requests for all Drycc components are tested automatically by the &lt;a href=&#34;https://travis-ci.org/drycc&#34;&gt;Travis CI&lt;/a&gt; &lt;a href=&#34;http://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;continuous integration&lt;/a&gt; system. Contributors should run the same tests locally before proposing any changes to the Drycc codebase.&lt;/p&gt;
+&lt;h2 id=&#34;set-up-the-environment&#34;&gt;Set Up the Environment&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#set-up-the-environment&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Successfully executing the unit and functional tests for any Drycc component requires that the &lt;a href=&#34;/docs/contribution-guidelines/development-environment/&#34;&gt;Development Environment&lt;/a&gt; is set up first.&lt;/p&gt;
+&lt;h2 id=&#34;run-the-tests&#34;&gt;Run the Tests&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#run-the-tests&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The style checks, unit tests, and functional tests for each component can all be executed via make targets:&lt;/p&gt;
+&lt;p&gt;To execute style checks:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ make test-style
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To execute unit tests:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ make test-unit
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To execute functional tests:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ make test-functional
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To execute style checks, unit tests, and functional tests all in one shot:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ make test
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To execute integration tests, refer to &lt;a href=&#34;https://github.com/drycc/workflow-e2e&#34;&gt;drycc/workflow-e2e&lt;/a&gt; documentation.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Submitting a Pull Request</title>
+      <link>/docs/contribution-guidelines/submitting-a-pull-request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/contribution-guidelines/submitting-a-pull-request/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;design-document&#34;&gt;Design Document&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#design-document&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Before opening a pull request, ensure your change also references a design document if the contribution is substantial. For more information, see &lt;a href=&#34;/docs/contribution-guidelines/design-documents/&#34;&gt;Design Documents&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;single-issue&#34;&gt;Single Issue&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#single-issue&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s hard to reach agreement on the merit of a PR when it isn&amp;rsquo;t focused. When fixing an issue or implementing a new feature, resist the temptation to refactor nearby code or to fix that potential bug you noticed. Instead, open a separate issue or pull request. Keeping concerns separated allows pull requests to be tested, reviewed, and merged more quickly.&lt;/p&gt;
+&lt;p&gt;Squash and rebase the commit or commits in your pull request into logical units of work with &lt;code&gt;git&lt;/code&gt;. Include tests and documentation changes in the same commit, so that a revert would remove all traces of the feature or fix.&lt;/p&gt;
+&lt;p&gt;Most pull requests will reference a GitHub issue. In the PR description - not in the commit itself - include a line such as &amp;ldquo;closes #1234&amp;rdquo;. The issue referenced will automatically be closed when your PR is merged.&lt;/p&gt;
+&lt;h2 id=&#34;include-tests&#34;&gt;Include Tests&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#include-tests&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you significantly alter or add functionality to a component that impacts the broader Drycc Workflow PaaS, you should submit a complementary PR to modify or amend end-to-end integration tests.  These integration tests can be found in the &lt;a href=&#34;https://github.com/drycc/workflow-e2e&#34;&gt;drycc/workflow-e2e&lt;/a&gt; repository.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;/docs/contribution-guidelines/testing/&#34;&gt;testing&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;h2 id=&#34;include-docs&#34;&gt;Include Docs&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#include-docs&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Changes to any Drycc Workflow component that could affect a user&amp;rsquo;s experience also require a change or addition to the relevant documentation. For most Drycc components, this involves updating the component&amp;rsquo;s &lt;em&gt;own&lt;/em&gt; documentation. In some cases where a component is tightly integrated into &lt;a href=&#34;https://github.com/drycc/workflow&#34;&gt;drycc/workflow&lt;/a&gt;, its documentation must also be updated.&lt;/p&gt;
+&lt;h2 id=&#34;cross-repo-commits&#34;&gt;Cross-repo commits&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#cross-repo-commits&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If a pull request is part of a larger piece of work involving one or more additional commits in other Workflow repositories, these commits can be referenced in the last PR to be submitted.  The downstream &lt;a href=&#34;https://ci.drycc.info/job/workflow-e2e-pr/&#34;&gt;e2e test job&lt;/a&gt; will then supply every referenced commit (derived from PR issue number supplied) to the test runner so it can source the necessary Container images for inclusion in the generated Workflow chart to be tested.&lt;/p&gt;
+&lt;p&gt;For example, consider paired commits in &lt;a href=&#34;https://github.com/drycc/controller&#34;&gt;drycc/controller&lt;/a&gt; and &lt;a href=&#34;https://github.com/drycc/workflow-e2e&#34;&gt;drycc/workflow-e2e&lt;/a&gt;.  The commit body for the first PR in &lt;code&gt;drycc/workflow-e2e&lt;/code&gt; would look like:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;feat(foo_test): add e2e test for feature foo
+
+[skip e2e] test for controller#42
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Adding &lt;code&gt;[skip e2e]&lt;/code&gt; forgoes the e2e tests on this commit. This and any other required PRs aside from the final PR should be submitted first, so that their respective build and image push jobs run.&lt;/p&gt;
+&lt;p&gt;Lastly, the final PR in &lt;code&gt;drycc/controller&lt;/code&gt; should be created with the required PR number(s) listed, in the form of &lt;code&gt;[Rr]equires &amp;lt;repoName&amp;gt;#&amp;lt;pullRequestNumber&amp;gt;&lt;/code&gt;, for use by the downstream e2e run.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;feat(foo): add feature foo
+
+Requires workflow-e2e#42
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;code-standards&#34;&gt;Code Standards&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#code-standards&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc components are implemented in &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; and &lt;a href=&#34;http://www.python.org/&#34;&gt;Python&lt;/a&gt;. For both languages, we agree with &lt;a href=&#34;http://www.python.org/dev/peps/pep-0020/&#34;&gt;The Zen of Python&lt;/a&gt;, which emphasizes simple over clever. Readability counts.&lt;/p&gt;
+&lt;p&gt;Go code should always be run through &lt;code&gt;gofmt&lt;/code&gt; on the default settings. Lines of code may be up to 99 characters long. Documentation strings and tests are required for all exported functions. Use of third-party go packages should be minimal, but when doing so, such dependencies should be managed via the &lt;a href=&#34;https://github.com/Masterminds/glide&#34;&gt;glide&lt;/a&gt; tool.&lt;/p&gt;
+&lt;p&gt;Python code should always adhere to &lt;a href=&#34;http://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP8&lt;/a&gt;, the python code style guide, with the exception that lines of code may be up to 99 characters long. Docstrings and tests are required for all public methods, although the &lt;a href=&#34;https://pypi.python.org/pypi/flake8/&#34;&gt;flake8&lt;/a&gt; tool used by Drycc does not enforce this.&lt;/p&gt;
+&lt;h2 id=&#34;commit-style&#34;&gt;Commit Style&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#commit-style&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We follow a convention for commit messages borrowed from CoreOS, who borrowed theirs
+from AngularJS. This is an example of a commit:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;feat(scripts/test-cluster): add a cluster test command
+
+this uses tmux to setup a test cluster that you can easily kill and
+start for debugging.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To make it more formal, it looks something like this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{type}({scope}): {subject}
+&amp;lt;BLANK LINE&amp;gt;
+{body}
+&amp;lt;BLANK LINE&amp;gt;
+{footer}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The allowed &lt;code&gt;{types}&lt;/code&gt; are as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;feat&lt;/code&gt; -&amp;gt; feature&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fix&lt;/code&gt; -&amp;gt; bug fix&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docs&lt;/code&gt; -&amp;gt; documentation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;style&lt;/code&gt; -&amp;gt; formatting&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ref&lt;/code&gt; -&amp;gt; refactoring code&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;test&lt;/code&gt; -&amp;gt; adding missing tests&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chore&lt;/code&gt; -&amp;gt; maintenance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;{scope}&lt;/code&gt; can be anything specifying the location(s) of the commit change(s).&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;{subject}&lt;/code&gt; needs to be an imperative, present tense verb: “change”, not “changed” nor
+“changes”. The first letter should not be capitalized, and there is no dot (.) at the end.&lt;/p&gt;
+&lt;p&gt;Just like the &lt;code&gt;{subject}&lt;/code&gt;, the message &lt;code&gt;{body}&lt;/code&gt; needs to be in the present tense, and includes
+the motivation for the change, as well as a contrast with the previous behavior. The first
+letter in a paragraph must be capitalized.&lt;/p&gt;
+&lt;p&gt;All breaking changes need to be mentioned in the &lt;code&gt;{footer}&lt;/code&gt; with the description of the
+change, the justification behind the change and any migration notes required.&lt;/p&gt;
+&lt;p&gt;Any line of the commit message cannot be longer than 72 characters, with the subject line
+limited to 50 characters. This allows the message to be easier to read on GitHub as well
+as in various git tools.&lt;/p&gt;
+&lt;h2 id=&#34;merge-approval&#34;&gt;Merge Approval&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#merge-approval&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Any code change - other than a simple typo fix or one-line documentation change - requires at least two &lt;a href=&#34;/docs/contribution-guidelines/maintainers/&#34;&gt;Drycc maintainers&lt;/a&gt; to accept it.  Maintainers tag pull requests with &amp;ldquo;&lt;strong&gt;LGTM1&lt;/strong&gt;&amp;rdquo; and &amp;ldquo;&lt;strong&gt;LGTM2&lt;/strong&gt;&amp;rdquo; (Looks Good To Me) labels to indicate acceptance.&lt;/p&gt;
+&lt;p&gt;No pull requests can be merged until at least one core maintainer signs off with an LGTM. The other LGTM can come from either a core maintainer or contributing maintainer.&lt;/p&gt;
+&lt;p&gt;If the PR is from a Drycc maintainer, then he or she should be the one to close it. This keeps the commit stream clean and gives the maintainer the benefit of revisiting the PR before deciding whether or not to merge the changes.&lt;/p&gt;
+&lt;p&gt;An exception to this is when an errant commit needs to be reverted urgently. If necessary, a PR that only reverts a previous commit can be merged without waiting for LGTM approval.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Community</title>
+      <link>/docs/contribution-guidelines/community/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/contribution-guidelines/community/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Drycc software is fully open source. As such, the &amp;ldquo;Drycc community&amp;rdquo; consists of anyone who uses the Drycc software and participates in its evolution, whether by answering questions, finding bugs, suggesting enhancements, or writing documentation or code.&lt;/p&gt;
+&lt;p&gt;Drycc development is coordinated through numerous project repositories &lt;a href=&#34;https://github.com/drycc&#34;&gt;on GitHub&lt;/a&gt;. Anyone can check out the source code for any Drycc component, fork it, make improvements, and create a pull request to offer those changes back to the Drycc community.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.drycc.cc/community&#34;&gt;Engine Yard&lt;/a&gt; maintains the numerous Drycc projects, and as such, decides what ends up in the official GitHub repositories. Drycc depends on the contributions of the community; the maintainers will not ignore pull requests or issues.&lt;/p&gt;
+&lt;p&gt;Drycc uses the timeless, highly efficient, and totally unfair system known as &amp;ldquo;Benevolent Dictator for Life&amp;rdquo; (&lt;a href=&#34;http://en.wikipedia.org/wiki/Benevolent_Dictator_for_Life&#34;&gt;BDFL&lt;/a&gt;). &lt;a href=&#34;https://github.com/gabrtv&#34;&gt;Gabriel Monroy&lt;/a&gt;, the creator of Drycc, is our BDFL and has final say over all decisions related to Drycc.&lt;/p&gt;
+&lt;h2 id=&#34;open-source-bounties&#34;&gt;Open Source Bounties&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#open-source-bounties&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc projects are bounty-friendly.  We believe open source bounty sites can be constructive tools in the development of open source software. Community members are encouraged to a) offer bounties and b) receive bounties for open source contributions that benefit everyone. The Drycc maintainers, however, will not accept bounties on this project but are more than happy to help community members attempting bounties.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Triaging Issues</title>
+      <link>/docs/contribution-guidelines/triaging-issues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/contribution-guidelines/triaging-issues/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Triage helps ensure issues resolve quickly by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Describing the issue&amp;rsquo;s intent and purpose is conveyed precisely. This is necessary because it can be difficult for an issue to explain how an end user experiences an problem and what actions they took.&lt;/li&gt;
+&lt;li&gt;Giving a contributor the information they need before they commit to resolving an issue.&lt;/li&gt;
+&lt;li&gt;Lowering the issue count by preventing duplicate issues.&lt;/li&gt;
+&lt;li&gt;Streamlining the development process by preventing duplicate discussions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you don&amp;rsquo;t have time to code, consider helping with triage. The community will thank you for saving them time by spending some of yours.&lt;/p&gt;
+&lt;h2 id=&#34;ensure-the-issue-contains-basic-information&#34;&gt;Ensure the Issue Contains Basic Information&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#ensure-the-issue-contains-basic-information&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Before triaging an issue very far, make sure that the issue&amp;rsquo;s author provided the standard issue information. This will help you make an educated recommendation on how this to categorize the issue. Standard information that should be included in most issues are things such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the version(s) of Drycc this issue affects&lt;/li&gt;
+&lt;li&gt;a reproducible case if this is a bug&lt;/li&gt;
+&lt;li&gt;page URL if this is a docs issue or the name of a man page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Depending on the issue, you might not feel all this information is needed. Use your best judgment. If you cannot triage an issue using what its author provided, explain kindly to the author that they must provide the above information to clarify the problem.&lt;/p&gt;
+&lt;p&gt;If the author provides the recommended information but you are still unable to triage the issue, request additional information. Do this kindly and politely because you are asking for more of the author&amp;rsquo;s time.&lt;/p&gt;
+&lt;p&gt;If the author does not respond requested information within the timespan of a week, close the issue with a kind note stating that the author can request for the issue to be reopened when the necessary information is provided.&lt;/p&gt;
+&lt;h2 id=&#34;classifying-the-issue&#34;&gt;Classifying the Issue&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#classifying-the-issue&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;An issue can have multiple of the following labels:&lt;/p&gt;
+&lt;h3 id=&#34;issue-kind&#34;&gt;Issue Kind&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#issue-kind&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Kind&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;bug&lt;/td&gt;
+&lt;td&gt;Bugs are bugs. The cause may or may not be known at triage time so debugging should be taken account into the time estimate.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;docs&lt;/td&gt;
+&lt;td&gt;Writing documentation, man pages, articles, blogs, or other significant word-driven task.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;enhancement&lt;/td&gt;
+&lt;td&gt;Enhancements can drastically improve usability or performance of a component.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;question&lt;/td&gt;
+&lt;td&gt;Contains a user or contributor question requiring a response.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;security&lt;/td&gt;
+&lt;td&gt;Security-related issues such as TLS encryption, network segregation, authn/authz features, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;functional-area&#34;&gt;Functional Area&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#functional-area&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;builder&lt;/li&gt;
+&lt;li&gt;cache&lt;/li&gt;
+&lt;li&gt;contrib and provisioning&lt;/li&gt;
+&lt;li&gt;client&lt;/li&gt;
+&lt;li&gt;controller&lt;/li&gt;
+&lt;li&gt;database&lt;/li&gt;
+&lt;li&gt;docs&lt;/li&gt;
+&lt;li&gt;kubernetes&lt;/li&gt;
+&lt;li&gt;registry&lt;/li&gt;
+&lt;li&gt;router&lt;/li&gt;
+&lt;li&gt;store (Ceph)&lt;/li&gt;
+&lt;li&gt;tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;easy-fix&#34;&gt;Easy Fix&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#easy-fix&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&amp;ldquo;Easy Fix&amp;rdquo; issues are a way for a new contributor to find issues that are fit for their experience level. These issues are typically for users who are new to Drycc, and possibly Go, and is looking to help while learning the basics.&lt;/p&gt;
+&lt;h2 id=&#34;prioritizing-issues&#34;&gt;Prioritizing issues&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#prioritizing-issues&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When attached to a specific milestone, an issue can be attributed one of the following labels to indicate their degree of priority.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Priority&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;priority 0&lt;/td&gt;
+&lt;td&gt;Urgent: Security, critical bugs, blocking issues. Drop everything and fix this today, then consider creating a patch release.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;priority 1&lt;/td&gt;
+&lt;td&gt;Serious: Impedes user actions or is a regression. Fix this before the next planned release.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;And that&amp;rsquo;s it. That should be all the information required for a new or existing contributor to come in an resolve an issue.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Conduct</title>
+      <link>/docs/contribution-guidelines/conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/contribution-guidelines/conduct/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;conduct&#34;&gt;Conduct&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#conduct&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;The Drycc community welcomes and encourages participation by &lt;strong&gt;everyone&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;No matter how you identify yourself or how others perceive you: we welcome you. We welcome contributions from everyone as long as they interact constructively with our community.&lt;/p&gt;
+&lt;p&gt;The Drycc developer community continues to grow, and it is inevitable that disagreements and conflict will arise. We ask that participants conduct themselves according to these principles:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Be welcoming, friendly, and patient.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Be considerate.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Your work will be used by other people, and you in turn will depend on the work of others. Any decision you take will affect users and colleagues, and you should take those consequences into account when making decisions. Remember that we&amp;rsquo;re a world-wide community, so you might not be communicating in someone else&amp;rsquo;s primary language.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Be respectful.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Not all of us will agree all the time, but disagreement is no excuse for poor behavior and bad manners. We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack. It’s important to remember that a community where people feel uncomfortable or threatened is not a productive one.&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Be careful in the words that you choose.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Be kind to others. Do not insult or put down other participants. Behave professionally. Remember that harassment and sexist, racist, or exclusionary jokes are never appropriate for the community.&lt;/p&gt;
+&lt;p&gt;(Thanks to the &lt;a href=&#34;http://www.debian.org/intro/diversity&#34;&gt;Debian&lt;/a&gt; and &lt;a href=&#34;https://www.djangoproject.com/conduct/&#34;&gt;Django&lt;/a&gt; communities for their text and
+their inspiration.)&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Drycc Maintainers</title>
+      <link>/docs/contribution-guidelines/maintainers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/contribution-guidelines/maintainers/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;what-is-a-maintainer&#34;&gt;What is a maintainer?&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#what-is-a-maintainer&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;(Unabashedly stolen from the &lt;a href=&#34;https://github.com/containers/podman/blob/master/MAINTAINERS&#34;&gt;Podman&lt;/a&gt; project)&lt;/p&gt;
+&lt;p&gt;There are different types of maintainers, with different responsibilities, but
+all maintainers have 3 things in common:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;They share responsibility in the project&amp;rsquo;s success.&lt;/li&gt;
+&lt;li&gt;They have made a long-term, recurring time investment to improve the project.&lt;/li&gt;
+&lt;li&gt;They spend that time doing whatever needs to be done, not necessarily what
+is the most interesting or fun.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Maintainers are often under-appreciated, because their work is harder to appreciate.
+It&amp;rsquo;s easy to appreciate a really cool and technically advanced feature. It&amp;rsquo;s harder
+to appreciate the absence of bugs, the slow but steady improvement in stability,
+or the reliability of a release process. But those things distinguish a good
+project from a great one.&lt;/p&gt;
+&lt;h1 id=&#34;drycc-maintainers&#34;&gt;Drycc maintainers&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#drycc-maintainers&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Drycc has two groups of maintainers in addition to our beloved Benevolent Dictator for Life.&lt;/p&gt;
+&lt;h2 id=&#34;bdfl&#34;&gt;BDFL&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#bdfl&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc follows the timeless, highly efficient and totally unfair system known as &lt;a href=&#34;http://en.wikipedia.org/wiki/Benevolent_Dictator_for_Life&#34;&gt;Benevolent dictator
+for life&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Gabriel Monroy (&lt;a href=&#34;https://github.com/gabrtv&#34;&gt;@gabrtv&lt;/a&gt;), as creator of the Drycc project, serves as our
+project&amp;rsquo;s BDFL. While the day-to-day project management is carried out by the maintainers, Gabriel
+serves as the final arbiter of any disputes and has the final say on project direction.&lt;/p&gt;
+&lt;h2 id=&#34;core-maintainers&#34;&gt;Core maintainers&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#core-maintainers&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Core maintainers are exceptionally knowledgeable about all areas of Drycc. Some maintainers work on Drycc
+full-time, although this is not a requirement.&lt;/p&gt;
+&lt;p&gt;The duties of a core maintainer include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Classify and respond to GitHub issues and review pull requests&lt;/li&gt;
+&lt;li&gt;Help to shape the Drycc roadmap and lead efforts to accomplish roadmap milestones&lt;/li&gt;
+&lt;li&gt;Participate actively in feature development and bug fixing&lt;/li&gt;
+&lt;li&gt;Answer questions and help users in the &lt;a href=&#34;https://slack.drycc.cc&#34;&gt;Drycc #community Slack channel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The current list of core maintainers can be seen &lt;a href=&#34;https://github.com/orgs/drycc/teams/core-maintainers&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;No pull requests can be merged until at least one core maintainer signs off with an
+&lt;a href=&#34;http://docs.drycc.cc/en/latest/contributing/standards/#merge-approval&#34;&gt;LGTM&lt;/a&gt;. The other LGTM can
+come from either a core maintainer or contributing maintainer.&lt;/p&gt;
+&lt;h2 id=&#34;contributing-maintainers&#34;&gt;Contributing maintainers&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#contributing-maintainers&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Contributing maintainers are exceptionally knowledgeable about some but not necessarily all areas
+of Drycc, and are often selected due to specific domain knowledge that complements the project (but
+a willingness to continually contribute to the project is most important!). Often,
+core maintainers will ask a contributing maintainer to weigh in on issues, pull requests, or
+conversations where the contributing maintainer is knowledgeable.&lt;/p&gt;
+&lt;p&gt;The duties of a contributing maintainer are very similar to those of a core maintainer, but they are limited to areas of the Drycc project where the contributing maintainer is knowledgeable.&lt;/p&gt;
+&lt;p&gt;Contributing maintainers are defined in practice as those who have write access to the Drycc repository. All maintainers can review pull requests and add LGTM labels as appropriate.&lt;/p&gt;
+&lt;h2 id=&#34;becoming-a-maintainer&#34;&gt;Becoming a maintainer&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#becoming-a-maintainer&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The Drycc project wouldn&amp;rsquo;t be where it is today without its community. Many of the project&amp;rsquo;s
+community members embody the spirit of maintainership, and have contributed substantially to
+the project.&lt;/p&gt;
+&lt;p&gt;The contributing maintainers group was created in part so that exceptional members of the community
+who have an interest in the continued success of the project have the opportunity to join the
+core maintainers in guiding the future of Drycc.&lt;/p&gt;
+&lt;p&gt;Generally, potential contributing maintainers are selected by the Drycc core maintainers based in
+part on the following criteria:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sustained contributions to the project over a period of time (usually months)&lt;/li&gt;
+&lt;li&gt;A willingness to help Drycc users on GitHub and in the &lt;a href=&#34;https://slack.drycc.cc&#34;&gt;Drycc #community Slack channel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A friendly attitude :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Drycc core maintainers must unanimously agree before inviting a community member to join as a
+contributing maintainer, although in many cases the candidate has already been acting in the
+capacity of a contributing maintainer for some time, and has been consulted on issues, pull requests,
+etc.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
