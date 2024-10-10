@@ -1,0 +1,8 @@
+https://drycc-mirrors.drycc.cc/drycc/workflow-cli/releases/download/v1.9.0/drycc-v1.9.0-darwin-amd64
+https://drycc-mirrors.drycc.cc/drycc/workflow-cli/releases/download/v1.9.0/drycc-v1.9.0-darwin-arm64
+https://drycc-mirrors.drycc.cc/drycc/workflow-cli/releases/download/v1.9.0/drycc-v1.9.0-linux-386
+https://drycc-mirrors.drycc.cc/drycc/workflow-cli/releases/download/v1.9.0/drycc-v1.9.0-linux-amd64
+https://drycc-mirrors.drycc.cc/drycc/workflow-cli/releases/download/v1.9.0/drycc-v1.9.0-linux-arm
+https://drycc-mirrors.drycc.cc/drycc/workflow-cli/releases/download/v1.9.0/drycc-v1.9.0-linux-arm64
+https://drycc-mirrors.drycc.cc/drycc/workflow-cli/releases/download/v1.9.0/drycc-v1.9.0-windows-386
+https://drycc-mirrors.drycc.cc/drycc/workflow-cli/releases/download/v1.9.0/drycc-v1.9.0-windows-amd64
