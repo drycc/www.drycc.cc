@@ -1,0 +1,286 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drycc – Understanding Workflow</title>
+    <link>/docs/understanding-workflow/</link>
+    <description>Recent content in Understanding Workflow on Drycc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="/docs/understanding-workflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Concepts</title>
+      <link>/docs/understanding-workflow/concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/understanding-workflow/concepts/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;twelve-factor-applications&#34;&gt;Twelve-Factor Applications&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#twelve-factor-applications&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;http://12factor.net/&#34;&gt;Twelve-Factor App&lt;/a&gt; is a methodology for building modern
+applications that can be scaled across a distributed system.&lt;/p&gt;
+&lt;p&gt;Twelve-factor is a valuable synthesis of years of experience with
+software-as-a-service apps in the wild, particularly on the
+Heroku platform.&lt;/p&gt;
+&lt;p&gt;Workflow is designed to run applications that adhere to the &lt;a href=&#34;http://12factor.net/&#34;&gt;Twelve-Factor App&lt;/a&gt;
+methodology and best practices.&lt;/p&gt;
+&lt;h2 id=&#34;kubernetes&#34;&gt;Kubernetes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#kubernetes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; is an open-source cluster manager developed by Google and
+donated to the &lt;a href=&#34;https://cncf.io/&#34;&gt;Cloud Native Compute Foundation&lt;/a&gt;. Kubernetes manages all
+the activity on your cluster, including: desired state convergence, stable
+service addresses, health monitoring, service discovery, and DNS resolution.&lt;/p&gt;
+&lt;p&gt;Workflow builds upon Kubernetes abstractions like Services,
+Deployments and Pods to provide a developer-friendly experience.
+Building containers directly from application source code, aggregating logs,
+and managing deployment configurations and app releases are just some of the
+features Workflow adds.&lt;/p&gt;
+&lt;p&gt;Drycc Workflow is a set of Kubernetes-native components, installable via
+&lt;a href=&#34;https://github.com/kubernetes/helm&#34;&gt;Helm&lt;/a&gt;. Systems engineers who are familiar with Kubernetes will feel right
+at home running Workflow.&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;/docs/understanding-workflow/components/&#34;&gt;components&lt;/a&gt; overview for more detail.&lt;/p&gt;
+&lt;h2 id=&#34;container&#34;&gt;Container&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#container&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;[Container][] is an open source project to build, ship and run any
+application as a lightweight, portable, self-sufficient container.&lt;/p&gt;
+&lt;p&gt;If you have not yet converted your application to containers, Workflow provides
+a simple and straightforward &amp;ldquo;source to Container image&amp;rdquo; capability. Supporting
+multiple language runtimes via community &lt;a href=&#34;/docs/applications/using-buildpacks/&#34;&gt;buildpacks&lt;/a&gt;, building your application
+in a container can be as easy as &lt;code&gt;git push drycc master&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Applications which use either a Dockerfile or reference external Container
+images are launched unmodified.&lt;/p&gt;
+&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#applications&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Workflow is designed around the concept of an &lt;a href=&#34;../reference-guide/terms.md#application&#34;&gt;application&lt;/a&gt;, or app.&lt;/p&gt;
+&lt;p&gt;Applications come in one of three forms:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;a collection of source files stored in a &lt;code&gt;git&lt;/code&gt; repository&lt;/li&gt;
+&lt;li&gt;a Dockerfile and associated source files stored in a &lt;code&gt;git&lt;/code&gt; repository&lt;/li&gt;
+&lt;li&gt;a reference to an existing image at a Container repository&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Applications are identified by a unique name for easy reference. If you do not
+specify a name when creating your application, Workflow generates one for you.
+Workflow also manages related information, including domain names, SSL
+certificates, and developer-provided configuration.&lt;/p&gt;
+&lt;h2 id=&#34;build-release-run&#34;&gt;Build, Release, Run&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#build-release-run&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;Git Push Workflow&#34; src=&#34;../../diagrams/Git_Push_Flow.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;build-stage&#34;&gt;Build Stage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#build-stage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&#34;/docs/understanding-workflow/components/#builder&#34;&gt;builder&lt;/a&gt; component processes incoming &lt;code&gt;git push drycc master&lt;/code&gt; requests
+and manages your application packaging.&lt;/p&gt;
+&lt;p&gt;If your application is using a &lt;a href=&#34;/docs/applications/using-buildpacks/&#34;&gt;buildpack&lt;/a&gt;, builder will launch an ephemeral
+job to extract and execute the packaging instructions. The resulting
+application artifact is stored by the platform for execution during the run
+stage.&lt;/p&gt;
+&lt;p&gt;If instead builder finds a &lt;a href=&#34;/docs/applications/using-dockerfiles/&#34;&gt;Dockerfile&lt;/a&gt;, it follows those instructions to
+create a Container image. The resulting artifact is stored in a Drycc-managed registry which
+will be referenced during the run stage.&lt;/p&gt;
+&lt;p&gt;If another system already builds and packages your application, that container
+artifact can be used directly. When referencing an &lt;a href=&#34;/docs/applications/using-container-images/&#34;&gt;external Container
+image&lt;/a&gt;, the builder component doesn&amp;rsquo;t attempt to repackage your
+app.&lt;/p&gt;
+&lt;h3 id=&#34;release-stage&#34;&gt;Release Stage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#release-stage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;During the release stage, a &lt;a href=&#34;../reference-guide/terms.md#build&#34;&gt;build&lt;/a&gt; is combined with &lt;a href=&#34;../reference-guide/terms.md#config&#34;&gt;application configuration&lt;/a&gt;
+to create a new, numbered &lt;a href=&#34;../reference-guide/terms.md#release&#34;&gt;release&lt;/a&gt;. New releases are created any time a new
+build is created or application configuration is changed. Tracking releases as a
+&amp;ldquo;write-only ledger&amp;rdquo; this way makes it easy to rollback to any previous release.&lt;/p&gt;
+&lt;h3 id=&#34;run-stage&#34;&gt;Run Stage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#run-stage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The run stage deploys the new release to the underlying Kubernetes cluster by
+changing the Deployment object which references the new release.
+By managing the desired replica count, Workflow
+orchestrates a zero-downtime, rolling update of your application. Once
+successfully updated, Workflow removes the last reference to the old release.
+Note that during the deploy, your application will be running in a mixed mode.&lt;/p&gt;
+&lt;h2 id=&#34;backing-services&#34;&gt;Backing Services&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#backing-services&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Workflow treats all persistent services such as databases, caches, storage,
+messaging systems, and other &lt;a href=&#34;http://12factor.net/backing-services&#34;&gt;backing services&lt;/a&gt; as resources managed
+separately from your application. This philosophy aligns with Twelve-Factor
+best practices.&lt;/p&gt;
+&lt;p&gt;Applications attach to backing services using &lt;a href=&#34;http://12factor.net/config&#34;&gt;environment variables&lt;/a&gt;.
+Because apps are decoupled from backing services, they are free to
+scale up independently, to use services provided by other apps, or to switch
+to external or third-party vendor services.&lt;/p&gt;
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#see-also&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/understanding-workflow/architecture/&#34;&gt;Workflow Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/understanding-workflow/components/&#34;&gt;Workflow Components&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Architecture</title>
+      <link>/docs/understanding-workflow/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/understanding-workflow/architecture/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All components are published as a set of container images which can be deployed to any
+compliant Kubernetes cluster.&lt;/p&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#overview&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;System Overview&#34; src=&#34;../../diagrams/Ecosystem_Basic.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Operators use &lt;a href=&#34;https://github.com/kubernetes/helm&#34;&gt;Helm&lt;/a&gt; to configure and install the Workflow components which
+interface directly with the underlying Kubernetes cluster. Service discovery,
+container availability and networking are all delegated to Kubernetes, while
+Workflow provides a clean and simple developer experience.&lt;/p&gt;
+&lt;h2 id=&#34;platform-services&#34;&gt;Platform Services&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#platform-services&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;Workflow Overview&#34; src=&#34;../../diagrams/Workflow_Overview.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Drycc Workflow provides additional functionality to your Kubernetes cluster, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/understanding-workflow/components/#builder&#34;&gt;Source to Image Builder&lt;/a&gt; which compiles your Application code via Buildpacks or Dockerfiles&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/understanding-workflow/components/#logger&#34;&gt;Cross-Pod Log Aggregation&lt;/a&gt; which gathers logs from all of your Application processes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/understanding-workflow/components/#controller&#34;&gt;Simple REST API&lt;/a&gt; which powers the CLI and any external integrations&lt;/li&gt;
+&lt;li&gt;Application release and rollback&lt;/li&gt;
+&lt;li&gt;Authentication and Authorization to Application resources&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/understanding-workflow/components/#router&#34;&gt;HTTP/HTTPS edge routing&lt;/a&gt; for your Applications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;kubernetes-native&#34;&gt;Kubernetes-Native&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#kubernetes-native&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;All platform components and applications deployed via Workflow expect to be
+running on an existing Kubernetes cluster. This means that you can happily run
+your Kubernetes-native workloads next to applications that are managed through
+Drycc Workflow.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Workflow and Kubernetes&#34; src=&#34;../../diagrams/Workflow_Detail.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;application-layout-and-edge-routing&#34;&gt;Application Layout and Edge Routing&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#application-layout-and-edge-routing&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;By default Workflow creates per-application Namespaces and Services so you can
+easily connect your applications to other on-cluster services through standard
+Kubernetes mechanisms.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Application Configuration&#34; src=&#34;../../diagrams/Application_Layout.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The router component is responsible for routing HTTP/s traffic to your
+Applications as well as proxying &lt;code&gt;git push&lt;/code&gt; and platform API traffic.&lt;/p&gt;
+&lt;p&gt;By default, the router component is deployed as a Kubernetes service with type
+&lt;code&gt;LoadBalancer&lt;/code&gt;; which, depending on your configuration, will provision a
+cloud-native load balancer automatically.&lt;/p&gt;
+&lt;p&gt;The router automatically discovers routable Applications, SSL/TLS certificates
+and application-specific configurations through the use of Kubernetes
+annotations. Any changes to router configuration or certificates are applied
+within seconds.&lt;/p&gt;
+&lt;h2 id=&#34;topologies&#34;&gt;Topologies&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#topologies&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Drycc Workflow no longer dictates a specific topology or server count for your
+deployment. The platform components will happily run on single-server
+configurations as well as multi-server production clusters.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Components</title>
+      <link>/docs/understanding-workflow/components/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/understanding-workflow/components/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All Workflow components are deployed as services (and associated controllers) in your Kubernetes cluster.
+If you are interested we have a more detailed exploration of the &lt;a href=&#34;/docs/understanding-workflow/architecture/&#34;&gt;Workflow architecture&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All of the componentry for Workflow is built with composability in mind. If you
+need to customize one of the components for your specific deployment or need
+the functionality in your own project we invite you to give it a shot!&lt;/p&gt;
+&lt;h2 id=&#34;controller&#34;&gt;Controller&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#controller&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/controller&#34;&gt;drycc/controller&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The controller component is an HTTP API server which serves as the endpoint for
+the &lt;code&gt;drycc&lt;/code&gt; CLI. The controller provides all of the platform functionality as
+well as interfacing with your Kubernetes cluster. The controller persists all
+of its data to the database component.&lt;/p&gt;
+&lt;h2 id=&#34;passport&#34;&gt;Passport&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#passport&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/passport&#34;&gt;drycc/passport&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The passport component exposes a web API and provide OAuth2 authentication.&lt;/p&gt;
+&lt;h2 id=&#34;database&#34;&gt;Database&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#database&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/postgres&#34;&gt;drycc/postgres&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The database component is a managed instance of &lt;a href=&#34;http://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt; which holds a
+majority of the platforms state. Backups and WAL files are pushed to object
+storage via &lt;a href=&#34;https://github.com/wal-e/wal-e&#34;&gt;WAL-E&lt;/a&gt;. When the database is restarted, backups are fetched and
+replayed from object storage so no data is lost.&lt;/p&gt;
+&lt;h2 id=&#34;builder&#34;&gt;Builder&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#builder&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/builder&#34;&gt;drycc/builder&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The builder component is responsible for accepting code pushes via &lt;a href=&#34;http://git-scm.com/&#34;&gt;Git&lt;/a&gt; and
+managing the build process of your &lt;a href=&#34;../reference-guide/terms.md#application&#34;&gt;Application&lt;/a&gt;. The builder process is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Receives incoming &lt;code&gt;git push&lt;/code&gt; requests over SSH&lt;/li&gt;
+&lt;li&gt;Authenticates the user via SSH key fingerprint&lt;/li&gt;
+&lt;li&gt;Authorizes the user&amp;rsquo;s access to push code to the Application&lt;/li&gt;
+&lt;li&gt;Starts the Application Build phase (see below)&lt;/li&gt;
+&lt;li&gt;Triggers a new &lt;a href=&#34;../reference-guide/terms.md#release&#34;&gt;Release&lt;/a&gt; via the Controller&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Builder currently supports both buildpack and Dockerfile based builds.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/imagebuilder&#34;&gt;drycc/imagebuilder&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For Buildpack-based deploys, the builder component will launch a one-shot Job
+in the &lt;code&gt;drycc&lt;/code&gt; namespace. This job runs &lt;code&gt;imagebuilder&lt;/code&gt; component which handles
+default and custom buildpacks (specified by &lt;code&gt;.packbuilder&lt;/code&gt;). The completed image
+is pushed to the managed Container registry on cluster. For more information
+about buildpacks see &lt;a href=&#34;/docs/applications/using-buildpacks/&#34;&gt;using buildpacks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Unlike buildpack-based, For Applications which contain a &lt;code&gt;Dockerfile&lt;/code&gt; in the root
+of the repository, it generates a Container image (using the underlying Container engine).
+For more information see &lt;a href=&#34;/docs/applications/using-dockerfiles/&#34;&gt;using Dockerfiles&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;object-storage&#34;&gt;Object Storage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#object-storage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/storage&#34;&gt;drycc/storage&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;All of the Workflow components that need to persist data will ship them to the
+object storage that was configured for the cluster.For example, database ships
+its WAL files, registry stores Container images, and slugbuilder stores slugs.&lt;/p&gt;
+&lt;p&gt;Workflow supports either on or off-cluster storage. For production deployments
+we highly recommend that you configure &lt;a href=&#34;/docs/installing-workflow/configuring-object-storage/&#34;&gt;off-cluster object storage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To facilitate experimentation, development and test environments, the default charts for
+Workflow include on-cluster storage via &lt;a href=&#34;https://github.com/drycc/storage&#34;&gt;storage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you also feel comfortable using Kubernetes persistent volumes you may
+configure storage to use persistent storage available in your environment.&lt;/p&gt;
+&lt;h2 id=&#34;registry&#34;&gt;Registry&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#registry&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/registry&#34;&gt;drycc/registry&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The registry component is a managed container registry which holds application
+images generated from the builder component. Registry persists the Container image
+images to either local storage (in development mode) or to object storage
+configured for the cluster.&lt;/p&gt;
+&lt;h2 id=&#34;logger-fluentbit-logger&#34;&gt;Logger: fluentbit, logger&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#logger-fluentbit-logger&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The logging subsystem consists of two components. Fluentbit handles log shipping
+and logger maintains a ring-buffer of application logs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/fluentbit&#34;&gt;drycc/fluentbit&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Fluentbit is deployed to your Kubernetes cluster via Daemon Sets. Fluentbit
+subscribes to all container logs, decorates the output with Kubernetes metadata
+and can be configured to drain logs to multiple destinations. By default,
+Fluentbit ships logs to the logger component, which powers &lt;code&gt;drycc logs&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/logger&#34;&gt;drycc/logger&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;logger&lt;/code&gt; component receives log streams from &lt;code&gt;fluentbit&lt;/code&gt;, collating by
+Application name. Logger does not persist logs to disk, instead maintaining an
+in-memory ring buffer. For more information on logger see the &lt;a href=&#34;https://github.com/drycc/logger&#34;&gt;project
+documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;monitor&#34;&gt;Monitor&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#monitor&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/monitor&#34;&gt;drycc/monitor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The monitoring subsystem consists of two components: Telegraf and Grafana.&lt;/p&gt;
+&lt;p&gt;Telegraf is the is the metrics collection agent that runs using the daemon set API. It runs on
+every worker node in the cluster, fetches information about the pods currently running and ships it
+to Prometheus.&lt;/p&gt;
+&lt;p&gt;Grafana is a standalone graphing application. It natively supports Prometheus as a datasource and
+provides a robust engine for creating dashboards on top of timeseries data. Workflow provides a few
+dashboards out of the box for monitoring Drycc Workflow and Kubernetes. The dashboards can be used
+as a starting point for creating more custom dashboards to suit a user&amp;rsquo;s needs.&lt;/p&gt;
+&lt;h2 id=&#34;prometheus&#34;&gt;Prometheus&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#prometheus&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/prometheus&#34;&gt;drycc/prometheus&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Prometheus is a system monitoring and alerting system. It was opensourced by SoundCloud in 2012 and is
+the second project both to join and to graduate within Cloud Native Computing Foundation after Kubernetes.
+Prometheus stores all metrics data as time series, i.e metrics information is stored along with the
+timestamp at which it was recorded, optional key-value pairs called as labels can also be stored along
+with metrics.&lt;/p&gt;
+&lt;h2 id=&#34;helmbroker&#34;&gt;HelmBroker&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#helmbroker&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc-addons/helmbroker&#34;&gt;drycc-addons/helmbroker&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Helm Broker is a Service Broker that exposes Helm charts as Service Classes in Service Catalog.
+To do so, Helm Broker uses the concept of addons. An addon is an abstraction layer over a Helm chart
+which provides all information required to convert the chart into a Service Class.&lt;/p&gt;
+&lt;h2 id=&#34;prometheus-1&#34;&gt;Prometheus&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#prometheus-1&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/prometheus&#34;&gt;drycc/prometheus&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Prometheus is an open-source systemsmonitoring and alerting toolkit originally built atSoundCloud.&lt;/p&gt;
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#see-also&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/understanding-workflow/concepts/&#34;&gt;Workflow Concepts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/understanding-workflow/architecture/&#34;&gt;Workflow Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
