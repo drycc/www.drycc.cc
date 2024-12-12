@@ -1,0 +1,178 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drycc – Troubleshooting</title>
+    <link>/docs/troubleshooting/</link>
+    <description>Recent content in Troubleshooting on Drycc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="/docs/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Troubleshooting Workflow</title>
+      <link>/docs/troubleshooting/workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/troubleshooting/workflow/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;a-component-fails-to-start&#34;&gt;A Component Fails to Start&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#a-component-fails-to-start&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For information on troubleshooting a failing component, see
+&lt;a href=&#34;/docs/troubleshooting/kubectl/&#34;&gt;Troubleshooting with Kubectl&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;an-application-fails-to-start&#34;&gt;An Application Fails to Start&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#an-application-fails-to-start&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For information on troubleshooting application deployment issues, see
+&lt;a href=&#34;/docs/troubleshooting/applications/&#34;&gt;Troubleshooting Applications&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;permission-denied-publickey&#34;&gt;Permission denied (publickey)&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#permission-denied-publickey&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The most common problem for this issue is the user forgetting to run &lt;code&gt;drycc keys:add&lt;/code&gt; or add their
+private key to their SSH agent. To do so, run &lt;code&gt;ssh-add ~/.ssh/id_rsa&lt;/code&gt; and try running
+&lt;code&gt;git push drycc master&lt;/code&gt; again.&lt;/p&gt;
+&lt;p&gt;If you happen get a &lt;code&gt;Could not open a connection to your authentication agent&lt;/code&gt;
+error after trying to run &lt;code&gt;ssh-add&lt;/code&gt; command above, you may need to load the SSH
+agent environment variables issuing the &lt;code&gt;eval &amp;quot;$(ssh-agent)&amp;quot;&lt;/code&gt; command before.&lt;/p&gt;
+&lt;h2 id=&#34;other-issues&#34;&gt;Other Issues&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#other-issues&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Running into something not detailed here? Please &lt;a href=&#34;https://github.com/drycc/workflow/issues/new&#34;&gt;open an issue&lt;/a&gt; or hop into
+&lt;a href=&#34;http://slack.drycc.cc/&#34;&gt;#community on Slack&lt;/a&gt; for help!&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Troubleshooting using Kubectl</title>
+      <link>/docs/troubleshooting/kubectl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/troubleshooting/kubectl/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This document describes how one can use &lt;code&gt;kubectl&lt;/code&gt; to debug any issues with the cluster.&lt;/p&gt;
+&lt;h2 id=&#34;diving-into-the-components&#34;&gt;Diving into the Components&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#diving-into-the-components&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Using &lt;code&gt;kubectl&lt;/code&gt;, one can inspect the cluster&amp;rsquo;s current state. When Workflow is installed
+with &lt;code&gt;helm&lt;/code&gt;, Workflow is installed into the &lt;code&gt;drycc&lt;/code&gt; namespace. To inspect if Workflow is
+running, run:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl --namespace=drycc get pods
+NAME                          READY     STATUS              RESTARTS   AGE
+drycc-builder-gqum7            0/1       ContainerCreating   0          4s
+drycc-controller-h6lk6         0/1       ContainerCreating   0          4s
+drycc-controller-celery-cmxxn  0/3       ContainerCreating   0          4s
+drycc-database-56v39           0/1       ContainerCreating   0          4s
+drycc-logger-fluentbit-xihr1   0/1       Pending             0          2s
+drycc-logger-grupg             0/1       ContainerCreating   0          3s
+drycc-storage-c2exb            0/1       Pending             0          3s
+drycc-monitor-grafana-9ccur    0/1       Pending             0          3s
+drycc-monitor-telegraf-dc3y3   0/1       Pending             0          2s
+drycc-registry-5bor6           0/1       Pending             0          3s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;!!! tip
+To save precious keystrokes, alias &lt;code&gt;kubectl --namespace=drycc&lt;/code&gt; to &lt;code&gt;kd&lt;/code&gt; so it is easier to type
+in the future.&lt;/p&gt;
+&lt;p&gt;To fetch the logs of a specific component, use &lt;code&gt;kubectl logs&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl --namespace=drycc logs drycc-controller-h6lk6
+system information:
+Django Version: 1.9.6
+Python 3.5.1
+addgroup: gid &#39;0&#39; in use
+Django checks:
+System check identified no issues (2 silenced).
+[...]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To dive into a running container to inspect its environment, use &lt;code&gt;kubectl exec&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl --namespace=drycc exec -it drycc-database-56v39 gosu postgres psql
+psql (13.4 (Debian 13.4-1.pgdg100+1))
+Type &amp;quot;help&amp;quot; for help.
+
+postgres=# \l
+                                                List of databases
+     Name          |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges
+-------------------+----------+----------+------------+------------+-----------------------
+ drycc_controller  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ drycc_passport    | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ postgres          | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ template0         | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+                   |          |          |            |            | postgres=CTc/postgres
+ template1         | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+                   |          |          |            |            | postgres=CTc/postgres
+(4 rows)
+postgres=# \connect drycc_controller
+You are now connected to database &amp;quot;drycc_controller&amp;quot; as user &amp;quot;postgres&amp;quot;.
+drycc_controller=# \dt
+                                 List of relations
+ Schema |              Name              | Type  |      Owner
+--------+--------------------------------+-------+-------------------
+ public | api_app                        | table | drycc_controller
+ public | api_build                      | table | drycc_controller
+ public | api_certificate                | table | drycc_controller
+ public | api_config                     | table | drycc_controller
+ public | api_domain                     | table | drycc_controller
+ public | api_key                        | table | drycc_controller
+ public | api_push                       | table | drycc_controller
+ public | api_release                    | table | drycc_controller
+ public | auth_group                     | table | drycc_controller
+ --More--
+ drycc_controller=# SELECT COUNT(*) from api_app;
+ count
+-------
+     0
+(1 row)
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Troubleshooting Applications</title>
+      <link>/docs/troubleshooting/applications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/troubleshooting/applications/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;application-has-a-dockerfile-but-a-buildpack-deployment-occurs&#34;&gt;Application has a Dockerfile, but a Buildpack Deployment Occurs&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#application-has-a-dockerfile-but-a-buildpack-deployment-occurs&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When you deploy an application to Workflow using &lt;code&gt;git push drycc master&lt;/code&gt; and the &lt;a href=&#34;/docs/understanding-workflow/components/#builder&#34;&gt;Builder&lt;/a&gt;
+attempts to deploy using the Buildpack workflow, check the following steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Are you deploying the correct project?&lt;/li&gt;
+&lt;li&gt;Are you pushing the correct git branch (&lt;code&gt;git push drycc &amp;lt;branch&amp;gt;&lt;/code&gt;)?&lt;/li&gt;
+&lt;li&gt;Is the &lt;code&gt;Dockerfile&lt;/code&gt; in the project&amp;rsquo;s root directory?&lt;/li&gt;
+&lt;li&gt;Have you committed the &lt;code&gt;Dockerfile&lt;/code&gt; to the project?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;application-was-deployed-but-is-failing-to-start&#34;&gt;Application was Deployed, but is Failing to Start&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#application-was-deployed-but-is-failing-to-start&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you deployed your application but it is failing to start, you can use &lt;code&gt;drycc logs&lt;/code&gt; to check
+why the application fails to boot. Sometimes, the application container may fail to boot without
+logging any information about the error. This typically occurs when the healthcheck configured for
+the application fails. In this case, you can start by
+&lt;a href=&#34;/docs/troubleshooting/kubectl/&#34;&gt;troubleshooting using kubectl&lt;/a&gt;. You can inspect the application&amp;rsquo;s current
+state by examining the pod deployed in the application&amp;rsquo;s namespace. To do that, run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl --namespace=myapp get pods
+NAME                          READY     STATUS                RESTARTS   AGE
+myapp-web-1585713350-3brbo    0/1       CrashLoopBackOff      2          43s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can then describe the pod and determine why it is failing to boot:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Events:
+  FirstSeen     LastSeen        Count   From                            SubobjectPath                           Type            Reason          Message
+  ---------     --------        -----   ----                            -------------                           --------        ------          -------
+  43s           43s             1       {default-scheduler }                                                    Normal          Scheduled       Successfully assigned myapp-web-1585713350-3brbo to kubernetes-node-1
+  41s           41s             1       {kubelet kubernetes-node-1}     spec.containers{myapp-web}              Normal          Created         Created container with container id b86bd851a61f
+  41s           41s             1       {kubelet kubernetes-node-1}     spec.containers{myapp-web}              Normal          Started         Started container with container id b86bd851a61f
+  37s           35s             1       {kubelet kubernetes-node-1}     spec.containers{myapp-web}              Warning         Unhealthy       Liveness probe failed: Get http://10.246.39.13:8000/healthz: dial tcp 10.246.39.13:8000: getsockopt: connection refused
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this instance, we set the healthcheck initial delay timeout for the application at 1 second,
+which is too aggressive. The application needs some time to set up the API server after the
+container has booted. By increasing the healthcheck initial delay timeout to 10 seconds, the
+application is able to boot and is responding correctly.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;/docs/applications/managing-app-configuration/#custom-health-checks&#34;&gt;Custom Health Checks&lt;/a&gt; for more information on how to customize the application&amp;rsquo;s
+health checks to better suit the application&amp;rsquo;s needs.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
