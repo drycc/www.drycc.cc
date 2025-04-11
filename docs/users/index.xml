@@ -1,0 +1,212 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drycc – Users</title>
+    <link>/docs/users/</link>
+    <description>Recent content in Users on Drycc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="/docs/users/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Drycc Workflow  CLI</title>
+      <link>/docs/users/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/users/cli/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The Drycc Workflow command-line interface (CLI), or client, allows you to interact
+with Drycc Workflow.&lt;/p&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#installation&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Install the latest &lt;code&gt;drycc&lt;/code&gt; client for Linux or Mac OS X with:
+$ curl -sfL &lt;a href=&#34;https://www.drycc.cc/install-cli.sh&#34;&gt;https://www.drycc.cc/install-cli.sh&lt;/a&gt; | bash -&lt;/p&gt;
+&lt;p&gt;The installer puts &lt;code&gt;drycc&lt;/code&gt; in your current directory, but you should move it
+somewhere in your $PATH:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ln -fs $PWD/drycc /usr/local/bin/drycc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;getting-help&#34;&gt;Getting Help&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#getting-help&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The Drycc client comes with comprehensive documentation for every command.
+Use &lt;code&gt;drycc help&lt;/code&gt; to explore the commands available to you:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc help
+The Drycc command-line client issues API calls to a Drycc controller.
+
+Usage: drycc &amp;lt;command&amp;gt; [&amp;lt;args&amp;gt;...]
+
+Auth commands::
+
+  login         login to a controller
+  logout        logout from the current controller
+
+Subcommands, use `drycc help [subcommand]` to learn more::
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To get help on subcommands, use &lt;code&gt;drycc help [subcommand]&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc help apps
+Valid commands for apps:
+
+apps:create        create a new application
+apps:list          list accessible applications
+apps:info          view info about an application
+apps:open          open the application in a browser
+apps:logs          view aggregated application logs
+apps:run           run a command in an ephemeral app container
+apps:destroy       destroy an application
+apps:transfer      transfer app ownership to another user
+
+Use `drycc help [command]` to learn more
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;support-for-multiple-profiles&#34;&gt;Support for Multiple Profiles&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#support-for-multiple-profiles&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The CLI reads from the default &lt;code&gt;client&lt;/code&gt; profile, which is located on your
+workstation at &lt;code&gt;$HOME/.drycc/client.json&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Easily switch between multiple Drycc Workflow installations or users by setting
+the &lt;code&gt;$DRYCC_PROFILE&lt;/code&gt; environment variable or by using the &lt;code&gt;-c&lt;/code&gt; flag.&lt;/p&gt;
+&lt;p&gt;There are two ways to set the &lt;code&gt;$DRYCC_PROFILE&lt;/code&gt; option.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Path to a json configuration file.&lt;/li&gt;
+&lt;li&gt;Profile name. If you set profile to just a name, it will be saved alongside the default profile,
+in &lt;code&gt;$HOME/.drycc/&amp;lt;name&amp;gt;.json&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ DRYCC_PROFILE=production drycc login drycc.production.com
+...
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as drycc
+Configuration saved to /home/testuser/.drycc/production.json
+$ DRYCC_PROFILE=~/config.json drycc login drycc.example.com
+...
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as drycc
+Configuration saved to /home/testuser/config.json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The configuration flag works identically to and overrides &lt;code&gt;$DRYCC_PROFILE&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc whoami -c ~/config.json
+You are drycc at drycc.example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;proxy-support&#34;&gt;Proxy Support&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#proxy-support&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If your workstation uses a proxy to reach the network where the cluster lies,
+set the &lt;code&gt;http_proxy&lt;/code&gt; or &lt;code&gt;https_proxy&lt;/code&gt; environment variable to enable proxy support:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ export http_proxy=&amp;quot;http://proxyip:port&amp;quot;
+$ export https_proxy=&amp;quot;http://proxyip:port&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;!!! note
+Configuring a proxy is generally not necessary for local Minikube clusters.&lt;/p&gt;
+&lt;h2 id=&#34;cli-plugins&#34;&gt;CLI Plugins&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#cli-plugins&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Plugins allow developers to extend the functionality of the Drycc Client, adding new commands or features.&lt;/p&gt;
+&lt;p&gt;If an unknown command is specified, the client will attempt to execute the command as a dash-separated command. In this case, &lt;code&gt;drycc resource:command&lt;/code&gt; will execute &lt;code&gt;drycc-resource&lt;/code&gt; with the argument list &lt;code&gt;command&lt;/code&gt;. In full form:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ # these two are identical
+$ drycc accounts list
+$ drycc-accounts list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Any flags after the command will also be sent to the plugin as an argument:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ # these two are identical
+$ drycc accounts list --debug
+$ drycc-accounts list --debug
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But flags preceding the command will not:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ # these two are identical
+$ drycc --debug accounts list
+$ drycc-accounts list
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Users and Registration</title>
+      <link>/docs/users/registration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/users/registration/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Workflow use the passport component to create and authorize users, it can config options for LDAP authentication or browse passport web site to register users.&lt;/p&gt;
+&lt;h2 id=&#34;login-to-workflow&#34;&gt;Login to Workflow&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#login-to-workflow&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you already have an account, use &lt;code&gt;drycc login&lt;/code&gt; to authenticate against the Drycc Workflow API.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc login http://drycc.example.com
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as drycc
+Configuration file written to /root/.drycc/client.json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or you can login with username and password
+$ drycc login &lt;a href=&#34;http://drycc.example.com&#34;&gt;http://drycc.example.com&lt;/a&gt; &amp;ndash;username=demo &amp;ndash;password=demo
+Configuration file written to /root/.drycc/client.json&lt;/p&gt;
+&lt;h2 id=&#34;logout-from-workflow&#34;&gt;Logout from Workflow&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#logout-from-workflow&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Logout of an existing controller session using &lt;code&gt;drycc logout&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc logout
+Logged out as drycc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;verify-your-session&#34;&gt;Verify Your Session&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#verify-your-session&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can verify your client configuration by running &lt;code&gt;drycc whoami&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ drycc whoami
+You are drycc at http://drycc.example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;!!! note
+Session and client configuration is stored in the &lt;code&gt;~/.drycc/client.json&lt;/code&gt; file.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Users and SSH Keys</title>
+      <link>/docs/users/ssh-keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/users/ssh-keys/</guid>
+      <description>
+        
+        
+        &lt;p&gt;For &lt;strong&gt;Dockerfile&lt;/strong&gt; and &lt;strong&gt;Buildpack&lt;/strong&gt; based application deploys via &lt;code&gt;git push&lt;/code&gt;, Drycc Workflow identifies users via SSH
+keys. SSH keys are pushed to the platform and must be unique to each user. Users may have multiple SSH keys as needed.&lt;/p&gt;
+&lt;h2 id=&#34;generate-an-ssh-key&#34;&gt;Generate an SSH Key&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#generate-an-ssh-key&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you do not already have an SSH key or would like to create a new key for Drycc Workflow, generate a new key using
+&lt;code&gt;ssh-keygen&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ssh-keygen -f ~/.ssh/id_drycc -t rsa
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/admin/.ssh/id_drycc.
+Your public key has been saved in /Users/admin/.ssh/id_drycc.pub.
+The key fingerprint is:
+3d:ac:1f:f4:83:f7:64:51:c1:7e:7f:80:b6:70:36:c9 admin@plinth-23437.local
+The key&amp;#39;s randomart image is:
++--[ RSA 2048]----+
+|              .. |
+|               ..|
+|           . o. .|
+|         o. E .o.|
+|        S == o..o|
+|         o +.  .o|
+|        . o + o .|
+|         . o =   |
+|          .   .  |
++-----------------+
+$ ssh-add ~/.ssh/id_drycc
+Identity added: /Users/admin/.ssh/id_drycc (/Users/admin/.ssh/id_drycc)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;adding-and-removing-ssh-keys&#34;&gt;Adding and Removing SSH Keys&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#adding-and-removing-ssh-keys&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;By publishing the &lt;strong&gt;public&lt;/strong&gt; half of your SSH key to Drycc Workflow the component responsible for receiving &lt;code&gt;git push&lt;/code&gt;
+will be able to authenticate the user and ensure that they have access to the destination application.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc keys add ~/.ssh/id_drycc.pub
+Uploading id_drycc.pub to drycc... done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can always view the keys associated with your user as well:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc keys list
+ID                              OWNER    KEY                           
+admin@plinth-23437.local        admin    ssh-rsa abc AAAAB3Nz...3437.local
+admin@subgenius.local           admin    ssh-rsa 123 AAAAB3Nz...nius.local
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Remove keys by their name:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ drycc keys remove admin@plinth-23437.local
+Removing admin@plinth-23437.local SSH Key... don
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>
