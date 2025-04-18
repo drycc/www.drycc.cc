@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News on Drycc</title>
+    <link>/blog/news/</link>
+    <description>Recent content in News on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/blog/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to Drycc</title>
+      <link>/blog/2018/10/06/welcome-to-drycc/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>/blog/2018/10/06/welcome-to-drycc/</guid>
+      <description>Drycc Workflow is an open source Container as a Service (CaaS) that adds a developer-friendly layer to any Kubernetes cluster, making it easy to deploy and manage applications.&#xA;We welcome your input! If you have feedback, please submit an issue. If you&amp;rsquo;d like to participate in development, please read the &amp;ldquo;Working on Documentation&amp;rdquo; section below and submit a pull request.</description>
+    </item>
+  </channel>
+</rss>
