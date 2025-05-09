@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contribution Guidelines on Drycc</title>
+    <link>/docs/contribution-guidelines/</link>
+    <description>Recent content in Contribution Guidelines on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/contribution-guidelines/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contributor Overview</title>
+      <link>/docs/contribution-guidelines/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/overview/</guid>
+      <description>File Bugs &amp;amp; Enhancements Find a bug? Want to see a new feature? Have a request for the maintainers? Open a Github issue in the applicable repository and we’ll get the conversation started.&#xA;Our official support channel is the Drycc #community Slack channel.&#xA;Don&amp;rsquo;t know what the applicable repository for an issue is? Open up in issue in workflow or chat with a maintainer in the Drycc #community Slack channel and we&amp;rsquo;ll make sure it gets to the right place.</description>
+    </item>
+    <item>
+      <title>Design Documents</title>
+      <link>/docs/contribution-guidelines/design-documents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/design-documents/</guid>
+      <description>Before submitting a pull request which will significantly alter the behavior of any Drycc component, such as a new feature or major refactoring, contributors should first open an issue representing a design document.&#xA;Goals Design documents help ensure project contributors:&#xA;Involve stakeholders as early as possible in a feature&amp;rsquo;s development Ensure code changes accomplish the original motivations and design goals Establish clear acceptance criteria for a feature or change Enforce test-driven design methodology and automated test coverage Contents Design document issues should be named Design Doc: &amp;lt;change description&amp;gt; and contain the following sections:</description>
+    </item>
+    <item>
+      <title>Development Environment</title>
+      <link>/docs/contribution-guidelines/development-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/development-environment/</guid>
+      <description>In this guide, we walk you through the process of setting up a development environment that is suitable for hacking on most Drycc components.&#xA;We try to make it simple to hack on Drycc components. However, there are necessarily several moving pieces and some setup required. We welcome any suggestions for automating or simplifying this process.&#xA;!!! note The Drycc team is actively engaged in containerizing Go and Python based development environments tailored specifically for Drycc development in order to minimize the setup required.</description>
+    </item>
+    <item>
+      <title>Testing Drycc</title>
+      <link>/docs/contribution-guidelines/testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/testing/</guid>
+      <description>Each Drycc component includes its own suite of style checks, unit tests, and black-box type functional tests.&#xA;Integration tests verify the behavior of the Drycc components together as a system and are provided separately by the drycc/workflow-e2e project.&#xA;GitHub pull requests for all Drycc components are tested automatically by the Travis CI continuous integration system. Contributors should run the same tests locally before proposing any changes to the Drycc codebase.</description>
+    </item>
+    <item>
+      <title>Submitting a Pull Request</title>
+      <link>/docs/contribution-guidelines/submitting-a-pull-request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/submitting-a-pull-request/</guid>
+      <description>Design Document Before opening a pull request, ensure your change also references a design document if the contribution is substantial. For more information, see Design Documents.&#xA;Single Issue It&amp;rsquo;s hard to reach agreement on the merit of a PR when it isn&amp;rsquo;t focused. When fixing an issue or implementing a new feature, resist the temptation to refactor nearby code or to fix that potential bug you noticed. Instead, open a separate issue or pull request.</description>
+    </item>
+    <item>
+      <title>Community</title>
+      <link>/docs/contribution-guidelines/community/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/community/</guid>
+      <description>Drycc software is fully open source. As such, the &amp;ldquo;Drycc community&amp;rdquo; consists of anyone who uses the Drycc software and participates in its evolution, whether by answering questions, finding bugs, suggesting enhancements, or writing documentation or code.&#xA;Drycc development is coordinated through numerous project repositories on GitHub. Anyone can check out the source code for any Drycc component, fork it, make improvements, and create a pull request to offer those changes back to the Drycc community.</description>
+    </item>
+    <item>
+      <title>Triaging Issues</title>
+      <link>/docs/contribution-guidelines/triaging-issues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/triaging-issues/</guid>
+      <description>Triage helps ensure issues resolve quickly by:&#xA;Describing the issue&amp;rsquo;s intent and purpose is conveyed precisely. This is necessary because it can be difficult for an issue to explain how an end user experiences an problem and what actions they took. Giving a contributor the information they need before they commit to resolving an issue. Lowering the issue count by preventing duplicate issues. Streamlining the development process by preventing duplicate discussions.</description>
+    </item>
+    <item>
+      <title>Conduct</title>
+      <link>/docs/contribution-guidelines/conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/conduct/</guid>
+      <description>Conduct The Drycc community welcomes and encourages participation by everyone.&#xA;No matter how you identify yourself or how others perceive you: we welcome you. We welcome contributions from everyone as long as they interact constructively with our community.&#xA;The Drycc developer community continues to grow, and it is inevitable that disagreements and conflict will arise. We ask that participants conduct themselves according to these principles:&#xA;Be welcoming, friendly, and patient.</description>
+    </item>
+    <item>
+      <title>Drycc Maintainers</title>
+      <link>/docs/contribution-guidelines/maintainers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/maintainers/</guid>
+      <description>What is a maintainer? (Unabashedly stolen from the Podman project)&#xA;There are different types of maintainers, with different responsibilities, but all maintainers have 3 things in common:&#xA;They share responsibility in the project&amp;rsquo;s success. They have made a long-term, recurring time investment to improve the project. They spend that time doing whatever needs to be done, not necessarily what is the most interesting or fun. Maintainers are often under-appreciated, because their work is harder to appreciate.</description>
+    </item>
+  </channel>
+</rss>
