@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installing To Kubenetes on Drycc</title>
+    <link>/docs/installing-workflow/</link>
+    <description>Recent content in Installing To Kubenetes on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/installing-workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Requirements</title>
+      <link>/docs/installing-workflow/system-requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/system-requirements/</guid>
+      <description>Kubernetes Versions Drycc Workflow requires Kubernetes v1.16.15 or later.&#xA;Components Requirements Drycc uses gateway as a routing implementation, so you have to choose an gateway. We recommend using istio or kong.&#xA;Workflow supports the use of ACME to manage automatic certificates, cert-manager is also one of the necessary components, if you use cert-manager EAB, you need to set the clusterResourceNamespace to the namespace of drycc.&#xA;Workflow supports stateful apps. You can create and use them through the &amp;lsquo;drycc volumes&amp;rsquo; command.</description>
+    </item>
+    <item>
+      <title>Specify Gateway</title>
+      <link>/docs/installing-workflow/gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/gateway/</guid>
+      <description>Install Drycc Workflow (Specify gateway) Now that Helm is installed and the repository has been added, install Workflow with a native gateway by running:&#xA;$ helm install drycc oci://registry.drycc.cc/charts/workflow \ --namespace drycc \ --set global.gatewayClass=istio \ --set global.platformDomain=drycc.cc \ --set builder.service.type=LoadBalancer Of course, if you deploy it on a bare machine, you probably do not have Load Balancer. You need to use NodePort:&#xA;$ helm install drycc oci://registry.drycc.cc/charts/workflow \ --namespace drycc \ --set global.</description>
+    </item>
+    <item>
+      <title>Installing Drycc Workflow</title>
+      <link>/docs/installing-workflow/workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/workflow/</guid>
+      <description>If help is required getting started with Kubernetes and Drycc Workflow, follow the quickstart guide for assistance.&#xA;Prerequisites Verify the Kubernetes system requirements Install Helm and Drycc Workflow CLI tools Check Your Setup Check that the helm command is available and the version is v2.5.0 or newer.&#xA;$ helm version Client: &amp;amp;version.Version{SemVer:&amp;#34;v2.5.0&amp;#34;, GitCommit:&amp;#34;012cb0ac1a1b2f888144ef5a67b8dab6c2d45be6&amp;#34;, GitTreeState:&amp;#34;clean&amp;#34;} Server: &amp;amp;version.Version{SemVer:&amp;#34;v2.5.0&amp;#34;, GitCommit:&amp;#34;012cb0ac1a1b2f888144ef5a67b8dab6c2d45be6&amp;#34;, GitTreeState:&amp;#34;clean&amp;#34;} Choose Your Deployment Strategy Drycc Workflow includes everything it needs to run out of the box.</description>
+    </item>
+    <item>
+      <title>Configuring Object Storage</title>
+      <link>/docs/installing-workflow/configuring-object-storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/configuring-object-storage/</guid>
+      <description>Drycc Workflow ships with Storage by default, which provides in-cluster.&#xA;Configuring off-cluster Object Storage Every component that relies on object storage uses two inputs for configuration:&#xA;You must use object storage services that are compatible with S3 API Access credentials stored as a Kubernetes secret named storage-creds The helm chart for Drycc Workflow can be easily configured to connect Workflow components to off-cluster object storage. Drycc Workflow currently supports Google Compute Storage, Amazon S3, Azure Blob Storage and OpenStack Swift Storage.</description>
+    </item>
+    <item>
+      <title>Configuring Postgres</title>
+      <link>/docs/installing-workflow/configuring-postgres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/configuring-postgres/</guid>
+      <description>Configuring Postgres By default, Drycc Workflow ships with the database component, which provides an in-cluster PostgreSQL database backed up to in-cluster or off-cluster object storage. Currently, for object storage, which is utilized by several Workflow components, only off-cluster solutions such as S3 or GCS are recommended in production environments. Experience has shown that many operators already opting for off-cluster object storage similarly prefer to host Postgres off-cluster as well, using Amazon RDS or similar.</description>
+    </item>
+    <item>
+      <title>Configuring Registry</title>
+      <link>/docs/installing-workflow/configuring-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/configuring-registry/</guid>
+      <description>Drycc Workflow ships with a registry component by default, which provides an in-cluster Container registry backed by the platform-configured object storage. Operators might want to use an off-cluster registry for performance or security reasons.&#xA;Configuring Off-Cluster Private Registry Every component that relies on a registry uses two inputs for configuration:&#xA;Registry Location environment variable named DRYCC_REGISTRY_LOCATION Access credentials stored as a Kubernetes secret named registry-secret The Helm chart for Drycc Workflow can be easily configured to connect Workflow components to off-cluster registry.</description>
+    </item>
+  </channel>
+</rss>
