@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Applications on Drycc</title>
+    <link>/docs/applications/</link>
+    <description>Recent content in Applications on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/applications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying an Application</title>
+      <link>/docs/applications/deploying-apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/deploying-apps/</guid>
+      <description>An Application is deployed to Drycc using git push or the drycc client.&#xA;Supported Applications Drycc Workflow can deploy any application or service that can run inside a container. In order to be scaled horizontally, applications must follow the Twelve-Factor App methodology and store any application state in external backing services.&#xA;For example, if your application persists state to the local filesystem &amp;ndash; common with content management systems like Wordpress and Drupal &amp;ndash; it cannot be scaled horizontally using drycc scale.</description>
+    </item>
+    <item>
+      <title>Using Buildpacks</title>
+      <link>/docs/applications/using-buildpacks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/using-buildpacks/</guid>
+      <description>Drycc supports deploying applications via Cloud Native Buildpacks. Cloud Native Buildpacks are useful if you want to follow cnb&amp;rsquo;s docs for building applications.&#xA;Add SSH Key For Buildpack based application deploys via git push, Drycc Workflow identifies users via SSH keys. SSH keys are pushed to the platform and must be unique to each user.&#xA;See this document for instructions on how to generate an SSH key.&#xA;Run drycc keys add to upload your SSH key to Drycc Workflow.</description>
+    </item>
+    <item>
+      <title>Using Dockerfiles</title>
+      <link>/docs/applications/using-dockerfiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/using-dockerfiles/</guid>
+      <description>Drycc supports deploying applications via Dockerfiles. A Dockerfile automates the steps for crafting a [Container Image][]. Dockerfiles are incredibly powerful but require some extra work to define your exact application runtime environment.&#xA;Add SSH Key For Dockerfile based application deploys via git push, Drycc Workflow identifies users via SSH keys. SSH keys are pushed to the platform and must be unique to each user.&#xA;See this document for instructions on how to generate an SSH key.</description>
+    </item>
+    <item>
+      <title>Using Docker Images</title>
+      <link>/docs/applications/using-container-images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/using-container-images/</guid>
+      <description>Drycc supports deploying applications via an existing Docker Image. This is useful for integrating Drycc into Docker-based CI/CD pipelines.&#xA;Prepare an Application Start by cloning an example application:&#xA;$ git clone https://github.com/drycc/example-dockerfile-http.git $ cd example-dockerfile-http Next use your local docker client to build the image and push it to DockerHub.&#xA;$ docker build -t &amp;lt;username&amp;gt;/example-dockerfile-http . $ docker push &amp;lt;username&amp;gt;/example-dockerfile-http Docker Image Requirements In order to deploy Docker images, they must conform to the following requirements:</description>
+    </item>
+    <item>
+      <title>Managing Application Processes</title>
+      <link>/docs/applications/managing-app-processes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-processes/</guid>
+      <description>Drycc Workflow manages your application as a set of processes that can be named, scaled and configured according to their role. This gives you the flexibility to easily manage the different facets of your application. For example, you may have web-facing processes that handle HTTP traffic, background worker processes that do async work, and a helper process that streams from the Twitter API.&#xA;By using a Procfile, either checked in to your application or provided via the CLI you can specify the name of the type and the application command that should run.</description>
+    </item>
+    <item>
+      <title>Configuring an Application</title>
+      <link>/docs/applications/managing-app-configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-configuration/</guid>
+      <description>Configuring an Application A Drycc application stores config in environment variables.&#xA;Setting Environment Variables Use drycc config to modify environment variables for a deployed application.&#xA;$ drycc help config Manage environment variables that define app config Usage: drycc config [flags] drycc config [command] Available Commands: info An app config info set Set environment variables for an app unset Unset environment variables for an app pull Pull environment variables to the path push Push environment variables from the path attach Selects environment groups to attach an app ptype detach Selects environment groups to detach an app ptype Flags: -a, --app string The uniquely identifiable name for the application -g, --group string The group for which the config needs to be listed -p, --ptype string The ptype for which the config needs to be listed -v, --version int The version for which the config needs to be listed Global Flags: -c, --config string Path to configuration file.</description>
+    </item>
+    <item>
+      <title>Managing Application Metrics</title>
+      <link>/docs/applications/managing-app-metrics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-metrics/</guid>
+      <description>Create an authentication token Create an authentication token using the drycc client.&#xA;# drycc tokens add prometheus --password admin --username admin ! WARNING: Make sure to copy your token now. ! You won&amp;#39;t be able to see it again, please confirm whether to continue. ! To proceed, type &amp;#34;yes&amp;#34; ! &amp;gt; yes UUID USERNAME TOKEN 58176cf1-37a8-4c52-9b27-4c7a47269dfb admin 1F2c7A802aF640fd9F31dD846AdDf56BcMsay Add scrape configurations for prometheus A valid example file can be found here.</description>
+    </item>
+    <item>
+      <title>Managing an Application</title>
+      <link>/docs/applications/managing-app-lifecycle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-lifecycle/</guid>
+      <description>Track Application Changes Drycc Workflow tracks all changes to your application. Application changes are the result of either new application code pushed to the platform (via git push drycc master), or an update to application configuration (via drycc config:set KEY=VAL).&#xA;Each time a build or config change is made to your application a new release is created. These release numbers increase monotonically.&#xA;You can see a record of changes to your application using drycc releases:</description>
+    </item>
+    <item>
+      <title>Mounting volumes for an Application</title>
+      <link>/docs/applications/managing-app-volumes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-volumes/</guid>
+      <description>We can use the blow command to create volumes and mount the created volumes. Drycc create volume support ReadWriteMany, so before deploying drycc, you need to have a StorageClass ready which can support ReadWriteMany. Deploying drycc, set controller.appStorageClass to this StorageClass.&#xA;Use drycc volumes to mount a volume for a deployed application&amp;rsquo;s processes.&#xA;$ drycc help volumes Valid commands for volumes: add create a volume for the application expand expand a volume for the application list list volumes in the application info print information about a volume remove delete a volume from the application client the client used to manage volume files mount mount a volume to process of the application unmount unmount a volume from process of the application Use &#39;drycc help [command]&#39; to learn more.</description>
+    </item>
+    <item>
+      <title>About gateway for an Application</title>
+      <link>/docs/applications/managing-app-gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-gateway/</guid>
+      <description>A Gateway describes how traffic can be translated to Services within the cluster. That is, it defines a request for a way to translate traffic from somewhere that does not know about Kubernetes to somewhere that does. For example, traffic sent to a Kubernetes Service by a cloud load balancer, an in-cluster proxy, or an external hardware load balancer. While many use cases have client traffic originating “outside” the cluster, this is not a requirement.</description>
+    </item>
+    <item>
+      <title>Managing resources for an Application</title>
+      <link>/docs/applications/managing-app-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-resources/</guid>
+      <description>We can use blow command to create resources and bind which resource is created. This command depend on service-catalog.&#xA;Use drycc resources to create and bind a resource for a deployed application.&#xA;$ drycc help resources Manage resources for your applications Usage: drycc resources [flags] drycc resources [command] Available Commands: services List all available resource services plans List all available plans for a resource service create Create a resource for the application list List resources in the application describe Get a resource&#39;s detail in the application update Update a resource from the application bind Bind a resource for an application unbind unbind a resources for an application destroy Delete a resource from the application Flags: -a, --app string The uniquely identifiable name for the application -l, --limit int The maximum number of results to display Global Flags: -c, --config string Path to configuration file.</description>
+    </item>
+    <item>
+      <title>Inter-app Communication</title>
+      <link>/docs/applications/inter-app-communication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/inter-app-communication/</guid>
+      <description>A common architecture pattern of multi-process applications is to have one process serve public requests while having multiple other processes supporting the public one to, for example, perform actions on a schedule or process work items from a queue. To implement this system of apps in Drycc Workflow, set up the apps to communicate using DNS resolution, as shown above, and hide the supporting processes from public view by removing them from the Drycc Workflow router.</description>
+    </item>
+    <item>
+      <title>Resource Limits</title>
+      <link>/docs/applications/managing-resource-limits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-resource-limits/</guid>
+      <description>Managing Application Resource Limits Drycc Workflow supports restricting memory and CPU shares of each process. Requests/Limits set on a per-process type are given to Kubernetes as a requests and limits. Which means you guarantee &amp;lt;requests&amp;gt; amount of resource for a process as well as limit the process from using more than &amp;lt;limits&amp;gt;. By default, Kubernetes will set &amp;lt;requests&amp;gt; equal to &amp;lt;limit&amp;gt; if we don&amp;rsquo;t explicitly set &amp;lt;requests&amp;gt; value. Please keep in mind that 0 &amp;lt;= requests &amp;lt;= limits.</description>
+    </item>
+    <item>
+      <title>Domains and Routing</title>
+      <link>/docs/applications/domains-and-routing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/domains-and-routing/</guid>
+      <description>You can use drycc domains to add or remove custom domains to the application:&#xA;$ drycc domains add hello.bacongobbler.com --ptype=web Adding hello.bacongobbler.com to finest-woodshed... done Once that&amp;rsquo;s done, you can go into a DNS registrar and set up a CNAME from the new appname to the old one:&#xA;$ dig hello.dryccapp.com [...] ;; ANSWER SECTION: hello.bacongobbler.com. 1759 IN CNAME finest-woodshed.dryccapp.com. finest-woodshed.dryccapp.com. 270 IN A 172.17.8.100 !!! note Setting a CNAME for a root domain can cause issues.</description>
+    </item>
+    <item>
+      <title>Application SSL Certificates</title>
+      <link>/docs/applications/ssl-certificates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/ssl-certificates/</guid>
+      <description>Application SSL Certificates SSL is a cryptographic protocol that provides end-to-end encryption and integrity for all web requests. Apps that transmit sensitive data should enable SSL to ensure all information is transmitted securely.&#xA;To enable SSL on a custom domain, e.g., www.example.com, use the SSL endpoint.&#xA;!!! note drycc certs is only useful for custom domains. Default application domains are SSL-enabled already and can be accessed simply by using https, e.</description>
+    </item>
+    <item>
+      <title>Using drycc path</title>
+      <link>/docs/applications/using-dryccpath/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/using-dryccpath/</guid>
+      <description>The Drycc stack is intended for advanced use cases only. Unless you have a specific need for custom Docker images, we recommend using Drycc’s default buildpack-powered build system. It offers automatic base image security updates and language-specific optimizations. It also avoids the need to maintain a container Dockerfile.&#xA;Drycc config path overview A drycc repository comes in two different flavours:&#xA;a .drycc directory at the root of the working tree;</description>
+    </item>
+  </channel>
+</rss>

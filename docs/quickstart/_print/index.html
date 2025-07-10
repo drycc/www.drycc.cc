@@ -1,0 +1,685 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/docs/quickstart/">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/quickstart/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Quick Start | Drycc</title>
+<meta name="description" content="Step-by-step guides for deploying your first app and mastering the basics of Drycc.">
+<meta property="og:url" content="/docs/quickstart/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Quick Start">
+  <meta property="og:description" content="Step-by-step guides for deploying your first app and mastering the basics of Drycc.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Quick Start">
+  <meta itemprop="description" content="Step-by-step guides for deploying your first app and mastering the basics of Drycc.">
+  <meta itemprop="dateModified" content="2024-05-06T13:43:29+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Quick Start">
+  <meta name="twitter:description" content="Step-by-step guides for deploying your first app and mastering the basics of Drycc.">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/quickstart/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Quick Start</h1>
+<div class="lead">Step-by-step guides for deploying your first app and mastering the basics of Drycc.</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-c44ef3d444be71ea9e19e6b46099120c">Quick Start</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-19de2e3ad5db012bc696e084bd521832">Install Workflow</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-70f22538a3706ab607f31f52253895b1">Drycc Workflow Client CLI</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-7323d78972f7284a5a82b3888ad3b56a">Deploy Your First App</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c44ef3d444be71ea9e19e6b46099120c">1 - Quick Start</h1>
+    <div class="lead">This guide helps you set up the Drycc workflow.</div>
+	<p>Get started with Drycc Workflow in three easy steps.</p>
+<ol>
+<li>Install CLI tools for Helm and Drycc Workflow</li>
+<li>Boot a Kubernetes and install Drycc Workflow</li>
+<li>Deploy your first application</li>
+</ol>
+<p>This guide will help you set up a cluster suitable for evaluation, development and testing. When you are ready for staging and production, view our <a href="/docs/managing-workflow/production-deployments/">production checklist</a>.</p>
+<h2 id="step-1-install-workflow">Step 1: Install Workflow<a class="td-heading-self-link" href="#step-1-install-workflow" aria-label="Heading self-link"></a></h2>
+<p>For the quickstart we will <a href="/docs/quickstart/install-workflow/">install Drycc Workflow</a>.</p>
+<h2 id="step-2-install-cli-tools">Step 2: Install CLI tools<a class="td-heading-self-link" href="#step-2-install-cli-tools" aria-label="Heading self-link"></a></h2>
+<p>For the quickstart we will <a href="/docs/quickstart/install-cli-tools/">install Drycc Workflow CLI</a>.</p>
+<h2 id="step-3-deploy-your-first-app">Step 3: Deploy your first app<a class="td-heading-self-link" href="#step-3-deploy-your-first-app" aria-label="Heading self-link"></a></h2>
+<p>Last but not least, <a href="/docs/quickstart/deploy-an-app/">login and deploy your first application</a>.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-19de2e3ad5db012bc696e084bd521832">2 - Install Workflow</h1>
+    <div class="lead">Install Workflow in pure host, it can be a cloud server, bare metal server, virtual machine, or even your laptop.</div>
+	<p>If you have a pure host, it can be a cloud server, bare metal server, virtual machine, or even your laptop. Then this chapter is very suitable for you.</p>
+<h2 id="operating-systems">Operating Systems<a class="td-heading-self-link" href="#operating-systems" aria-label="Heading self-link"></a></h2>
+<p>Drycc is expected to work on most modern Linux systems. Some OSS have specific requirements:</p>
+<ul>
+<li>(Red Hat/CentOS) Enterprise Linux, they usually use RPM package management.</li>
+<li>Ubuntu (Desktop/Server/Cloud) Linux, a very popular distribution.</li>
+<li>Debian GNU Linux, a very pure distribution of opensource software.</li>
+</ul>
+<p>If you want to add more Linux distribution support, please submit a issue on github or submit PR directly.</p>
+<h2 id="system-software">System Software<a class="td-heading-self-link" href="#system-software" aria-label="Heading self-link"></a></h2>
+<p>Some basic software needs to be installed before installing drycc workflow.</p>
+<h3 id="os-configuration">OS configuration<a class="td-heading-self-link" href="#os-configuration" aria-label="Heading self-link"></a></h3>
+<p>K8s requires a large number of ports. If you are not sure what they are, please close the local firewall or open these ports.
+At the same time, because k8s you need system time, you need to ensure that the system time is correct.</p>
+<h3 id="installing-nfsv4-client">Installing NFSv4 client<a class="td-heading-self-link" href="#installing-nfsv4-client" aria-label="Heading self-link"></a></h3>
+<p>The command used to install a NFSv4 client differs depending on the Linux distribution.</p>
+<p>For Debian and Ubuntu, use this command:</p>
+<pre tabindex="0"><code>$ apt-get install nfs-common
+</code></pre><p>For RHEL, CentOS, and EKS with EKS Kubernetes Worker AMI with AmazonLinux2 image, use this command:</p>
+<pre tabindex="0"><code>$ yum install nfs-utils
+</code></pre><h3 id="installing-curl">Installing curl<a class="td-heading-self-link" href="#installing-curl" aria-label="Heading self-link"></a></h3>
+<p>For Debian and Ubuntu, use this command:</p>
+<pre tabindex="0"><code>$ apt-get install curl
+</code></pre><p>For RHEL, CentOS, and EKS with EKS Kubernetes Worker AMI with AmazonLinux2 image, use this command:</p>
+<pre tabindex="0"><code>$ yum install curl
+</code></pre><h2 id="hardware">Hardware<a class="td-heading-self-link" href="#hardware" aria-label="Heading self-link"></a></h2>
+<p>Hardware requirements scale based on the size of your deployments. Minimum recommendations are outlined here.</p>
+<ul>
+<li>RAM: 1G Minimum (we recommend at least 2GB)</li>
+<li>CPU: 1 Minimum</li>
+</ul>
+<p>This configuration only contains the minimum requirements that can meet the operation.</p>
+<h2 id="disk">Disk<a class="td-heading-self-link" href="#disk" aria-label="Heading self-link"></a></h2>
+<p>Drycc performance depends on the performance of the database. To ensure optimal speed, we recommend using an SSD when possible. Disk performance will vary on ARM devices utilizing an SD card or eMMC.</p>
+<h2 id="domain-name">Domain Name<a class="td-heading-self-link" href="#domain-name" aria-label="Heading self-link"></a></h2>
+<p>Drycc needs a root domain name under your full control and points this domain name to the server to be installed.
+Suppose there is a wildcard domain pointing to the current server to install drycc, which is the name <code>*.dryccdoman.com</code>.
+We need to set the <code>PLATFORM_DOMAIN</code> environment variables before installation.</p>
+<pre tabindex="0"><code>$ export PLATFORM_DOMAIN=dryccdoman.co
+</code></pre><p>Of course, if it is a test environment, we can also use <code>nip.io</code>, an IP to domain name service.
+For example, your host IP is <code>59.46.3.190</code>, we will get the following domain name <code>59.46.3.190.nip.io</code></p>
+<pre tabindex="0"><code>$ export PLATFORM_DOMAIN=59.46.3.190.nip.io
+</code></pre><h2 id="install">Install<a class="td-heading-self-link" href="#install" aria-label="Heading self-link"></a></h2>
+<p>Before installation, please make sure whether your installation environment is a public network.
+If it is an intranet environment and there is no public IP, you need to disable the automatic certificate.</p>
+<pre tabindex="0"><code>$ export CERT_MANAGER_ENABLED=false
+</code></pre><p>Then you can use the installation script available at <a href="https://www.drycc.cc/install.sh">https://www.drycc.cc/install.sh</a> to install drycc as a service on systemd and openrc based systems.</p>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install.sh | bash -
+</code></pre><p>!!! important
+If you are in China, you need to use mirror acceleration:</p>
+<pre><code>```
+$ curl -sfL https://www.drycc.cc/install.sh | INSTALL_DRYCC_MIRROR=cn bash -
+```
+</code></pre>
+<h3 id="install-node">Install Node<a class="td-heading-self-link" href="#install-node" aria-label="Heading self-link"></a></h3>
+<p>Node can be a simple agent or a server; Server has the function of agent. Multiple servers have high availability, but the number of servers should not
+exceed 7 at most. There is no limit to the number of agents.</p>
+<ul>
+<li>First, check the cluster token of the master.</li>
+</ul>
+<pre tabindex="0"><code>$ cat /var/lib/rancher/k3s/server/node-token
+K1078e7213ca32bdaabb44536f14b9ce7926bb201f41c3f3edd39975c16ff4901ea::server:33bde27f-ac49-4483-b6ac-f4eec2c6dbfa
+</code></pre><p>We assume that the IP address of the cluster master is <code>192.168.6.240</code>, in that way.</p>
+<ul>
+<li>Then, Set the environment variable:</li>
+</ul>
+<pre tabindex="0"><code>$ export K3S_URL=https://192.168.6.240:6443
+$ export K3S_TOKEN=&#34;K1078e7213ca32bdaabb44536f14b9ce7926bb201f41c3f3edd39975c16ff4901ea::server:33bde27f-ac49-4483-b6ac-f4eec2c6dbfa&#34;
+</code></pre><p>!!! important
+If you are in China, you need to use mirror acceleration:</p>
+<pre><code>```
+$ export INSTALL_DRYCC_MIRROR=cn
+```
+</code></pre>
+<ul>
+<li>Join the cluster as server:</li>
+</ul>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install.sh | bash -s - install_k3s_server
+</code></pre><ul>
+<li>Join the cluster as agent:</li>
+</ul>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install.sh | bash -s - install_k3s_agent
+</code></pre><h3 id="install-options">Install Options<a class="td-heading-self-link" href="#install-options" aria-label="Heading self-link"></a></h3>
+<p>When using this method to install drycc, the following environment variables can be used to configure the installation:</p>
+<table>
+<thead>
+<tr>
+<th>ENVIRONMENT VARIABLE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PLATFORM_DOMAIN</td>
+<td>Required item, specify drycc&rsquo;s domain name</td>
+</tr>
+<tr>
+<td>DRYCC_ADMIN_USERNAME</td>
+<td>Required item, specify drycc&rsquo;s admin username</td>
+</tr>
+<tr>
+<td>DRYCC_ADMIN_PASSWORD</td>
+<td>Required item, specify drycc&rsquo;s admin password</td>
+</tr>
+<tr>
+<td>CERT_MANAGER_ENABLED</td>
+<td>Whether to use automatic certificate. It is <code>false</code> by default</td>
+</tr>
+<tr>
+<td>CHANNEL</td>
+<td>By default, <code>stable</code> channel will be installed. You can also specify <code>testing</code></td>
+</tr>
+<tr>
+<td>KUBERNETES_SERVICE_HOST</td>
+<td>Set with the HOST of the loadbalancer that was in front of kube-apiserver</td>
+</tr>
+<tr>
+<td>KUBERNETES_SERVICE_PORT</td>
+<td>Set with the PORT of the loadbalancer that was in front of kube-apiserver</td>
+</tr>
+<tr>
+<td>METALLB_CONFIG_FILE</td>
+<td>The metallb config file path, layer 2 network is used by default</td>
+</tr>
+<tr>
+<td>LONGHORN_CONFIG_FILE</td>
+<td>The Longhorn config file path</td>
+</tr>
+<tr>
+<td>INSTALL_DRYCC_MIRROR</td>
+<td>Specify the accelerated mirror location. Currently, only <code>cn</code> is supported</td>
+</tr>
+<tr>
+<td>BUILDER_REPLICAS</td>
+<td>Number of builder replicas to deploy</td>
+</tr>
+<tr>
+<td>CONTROLLER_API_REPLICAS</td>
+<td>Number of controller api replicas to deploy</td>
+</tr>
+<tr>
+<td>CONTROLLER_CELERY_REPLICAS</td>
+<td>Number of controller celery replicas to deploy</td>
+</tr>
+<tr>
+<td>CONTROLLER_WEBHOOK_REPLICAS</td>
+<td>Number of controller webhook replicas to deploy</td>
+</tr>
+<tr>
+<td>CONTROLLER_APP_RUNTIME_CLASS</td>
+<td>RuntimeClass is a feature for selecting the container runtime configuration.</td>
+</tr>
+<tr>
+<td>CONTROLLER_APP_GATEWAY_CLASS</td>
+<td>GatewayClass allocated by <code>drycc gateways</code>; default GatewayClass is used by default</td>
+</tr>
+<tr>
+<td>CONTROLLER_APP_STORAGE_CLASS</td>
+<td>StorageClass allocated by <code>drycc volumes</code>; default storageClass is used by default</td>
+</tr>
+<tr>
+<td>VALKEY_PERSISTENCE_SIZE</td>
+<td>The size of the persistence space allocated to <code>valkey</code>, which is <code>5Gi</code> by default</td>
+</tr>
+<tr>
+<td>VALKEY_PERSISTENCE_STORAGE_CLASS</td>
+<td>StorangeClass of <code>valkey</code>; default storangeclass is used by default</td>
+</tr>
+<tr>
+<td>STORAGE_PERSISTENCE_SIZE</td>
+<td>The size of the persistence space allocated to <code>storage</code>, which is <code>5Gi</code> by default</td>
+</tr>
+<tr>
+<td>STORAGE_PERSISTENCE_STORAGE_CLASS</td>
+<td>StorangeClass of <code>storage</code>; default storangeclass is used by default</td>
+</tr>
+<tr>
+<td>MONITOR_GRAFANA_PERSISTENCE_SIZE</td>
+<td>The size of the persistence space allocated to <code>monitor.grafana</code>, which is <code>5Gi</code> by default</td>
+</tr>
+<tr>
+<td>MONITOR_GRAFANA_PERSISTENCE_STORAGE_CLASS</td>
+<td>StorangeClass of <code>monitor</code> grafana; default storangeclass is used by default</td>
+</tr>
+<tr>
+<td>DATABASE_PERSISTENCE_SIZE</td>
+<td>The size of the persistence space allocated to <code>database</code>, which is <code>5Gi</code> by default</td>
+</tr>
+<tr>
+<td>DATABASE_PERSISTENCE_STORAGE_CLASS</td>
+<td>StorangeClass of <code>database</code>; default storangeclass is used by default</td>
+</tr>
+<tr>
+<td>TIMESERIES_REPLICAS</td>
+<td>Number of timeseries replicas to deploy</td>
+</tr>
+<tr>
+<td>TIMESERIES_PERSISTENCE_SIZE</td>
+<td>The size of the persistence space allocated to <code>timeseries</code>, which is <code>5Gi</code> by default</td>
+</tr>
+<tr>
+<td>TIMESERIES_PERSISTENCE_STORAGE_CLASS</td>
+<td>StorangeClass of <code>timeseries</code>; default storangeclass is used by default</td>
+</tr>
+<tr>
+<td>PASSPORT_REPLICAS</td>
+<td>Number of passport replicas to deploy</td>
+</tr>
+<tr>
+<td>REGISTRY_REPLICAS</td>
+<td>Number of registry replicas to deploy</td>
+</tr>
+<tr>
+<td>HELMBROKER_REPLICAS</td>
+<td>Number of helmbroker api replicas to deploy</td>
+</tr>
+<tr>
+<td>HELMBROKER_CELERY_REPLICAS</td>
+<td>Number of helmbroker celery replicas to deploy</td>
+</tr>
+<tr>
+<td>HELMBROKER_PERSISTENCE_SIZE</td>
+<td>The size of the persistence space allocated to <code>helmbroker</code>, which is <code>5Gi</code> by default</td>
+</tr>
+<tr>
+<td>HELMBROKER_PERSISTENCE_STORAGE_CLASS</td>
+<td>StorangeClass of <code>helmbroker</code>; default storangeclass is used by default</td>
+</tr>
+<tr>
+<td>VICTORIAMETRICS_CONFIG_FILE</td>
+<td>The path of the victoriametrics configuration file, turn on this, the two below won&rsquo;t work.</td>
+</tr>
+<tr>
+<td>VICTORIAMETRICS_VMAGENT_PERSISTENCE_SIZE</td>
+<td>The size of the persistence space allocated to <code>victoriametrics</code> vmagent, which is <code>10Gi</code> by default</td>
+</tr>
+<tr>
+<td>VICTORIAMETRICS_VMAGENT_PERSISTENCE_STORAGE_CLASS</td>
+<td>StorangeClass of <code>victoriametrics</code> vmagent; default storangeclass is used by default</td>
+</tr>
+<tr>
+<td>VICTORIAMETRICS_VMSTORAGE_PERSISTENCE_SIZE</td>
+<td>The size of the persistence space allocated to <code>victoriametrics</code> vmstorage, which is <code>10Gi</code> by default</td>
+</tr>
+<tr>
+<td>VICTORIAMETRICS_VMSTORAGE_PERSISTENCE_STORAGE_CLASS</td>
+<td>StorangeClass of <code>victoriametrics</code> vmstorage; default storangeclass is used by default</td>
+</tr>
+<tr>
+<td>K3S_DATA_DIR</td>
+<td>The config of k3s data dir; If not set, the default path is used</td>
+</tr>
+<tr>
+<td>ACME_SERVER</td>
+<td>ACME Server url, default use letsencrypt</td>
+</tr>
+<tr>
+<td>ACME_EAB_KEY_ID</td>
+<td>The key ID of which your external account binding is indexed by the external account</td>
+</tr>
+<tr>
+<td>ACME_EAB_KEY_SECRET</td>
+<td>The key Secret of which your external account symmetric MAC key</td>
+</tr>
+</tbody>
+</table>
+<p>Since the installation script will install k3s, other environment variables can refer to k3s installation <a href="https://rancher.com/docs/k3s/latest/en/installation/install-options/">environment variables</a>.</p>
+<h2 id="uninstall">Uninstall<a class="td-heading-self-link" href="#uninstall" aria-label="Heading self-link"></a></h2>
+<p>If you installed drycc using an installation script, you can uninstall the entire drycc using this script.</p>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/uninstall.sh | bash -
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-70f22538a3706ab607f31f52253895b1">3 - Drycc Workflow Client CLI</h1>
+    <div class="lead">How to download, install Drycc CLI tools.</div>
+	<h2 id="drycc-workflow-client-cli">Drycc Workflow Client CLI<a class="td-heading-self-link" href="#drycc-workflow-client-cli" aria-label="Heading self-link"></a></h2>
+<p>The Drycc command-line interface (CLI), lets you interact with Drycc Workflow.
+Use the CLI to create and configure and manage applications.</p>
+<p>Install the <code>drycc</code> client for Linux or Mac OS X with:</p>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install-cli.sh | bash -
+</code></pre><p>!!! important
+Users in Chinese mainland can use the following methods to speed up installation:</p>
+<pre><code>```
+$ curl -sfL https://www.drycc.cc/install-cli.sh | INSTALL_DRYCC_MIRROR=cn bash -
+```
+</code></pre>
+<p>Others please visit: <a href="https://github.com/drycc/workflow-cli/releases">https://github.com/drycc/workflow-cli/releases</a></p>
+<p>The installer places the <code>drycc</code> binary in your current directory, but you
+should move it somewhere in your $PATH:</p>
+<pre tabindex="0"><code>$ sudo ln -fs $PWD/drycc /usr/local/bin/drycc
+</code></pre><p><em>or</em>:</p>
+<pre tabindex="0"><code>$ sudo mv $PWD/drycc /usr/local/bin/drycc
+</code></pre><p>Check your work by running <code>drycc version</code>:</p>
+<pre tabindex="0"><code>$ drycc version
+v1.1.0
+</code></pre><p>Update workflow cli to latest release.</p>
+<pre tabindex="0"><code>drycc update
+</code></pre><p>!!! note
+Note that version numbers may vary as new releases become available</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7323d78972f7284a5a82b3888ad3b56a">4 - Deploy Your First App</h1>
+    <div class="lead">Deploy an application using drycc cli.</div>
+	<h2 id="determine-your-host-and-hostname-values">Determine Your Host and Hostname Values<a class="td-heading-self-link" href="#determine-your-host-and-hostname-values" aria-label="Heading self-link"></a></h2>
+<p>Drycc workflow requires a wildcard DNS record to dynamically map app names to the router.</p>
+<p>User should already have DNS set up pointing to their known host. The <code>$hostname</code> value can be calculated by prepending <code>drycc.</code> to the value set in <code>global.platformDomain</code>.</p>
+<h2 id="login-to-workflow">Login to Workflow<a class="td-heading-self-link" href="#login-to-workflow" aria-label="Heading self-link"></a></h2>
+<p>Workflow use the passport component to create and authorize users.
+If you already have an account, use <code>drycc login</code> to authenticate against the Drycc Workflow API.</p>
+<pre tabindex="0"><code>$ drycc login http://drycc.example.com
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as admin
+Configuration file written to /root/.drycc/client.json
+</code></pre><p>Or you can login with username and password</p>
+<pre tabindex="0"><code>$ drycc login http://drycc.example.com --username=demo --password=demo
+Configuration file written to /root/.drycc/client.json
+</code></pre><h2 id="deploy-an-application">Deploy an Application<a class="td-heading-self-link" href="#deploy-an-application" aria-label="Heading self-link"></a></h2>
+<p>Drycc Workflow supports three different types of applications, Buildpacks,
+Dockerfiles and Container Images. Our first application will be a simple Container
+Image-based application, so you don&rsquo;t have to wrestle with checking out code.</p>
+<p>Run <code>drycc create</code> to create a new application on Drycc Workflow. If you do not
+specify a name for your application, Workflow automatically generates a
+friendly (and sometimes funny) name.</p>
+<pre tabindex="0"><code>$ drycc create --no-remote
+Creating Application... done, created proper-barbecue
+If you want to add a git remote for this app later, use `drycc git remote -a proper-barbecue`
+</code></pre><p>Our application has been created and named <code>proper-barbecue</code>. As with the
+<code>drycc</code> hostname, any HTTP traffic to <code>proper-barbecue</code> will be automatically
+routed to your application pods by the edge router.</p>
+<p>Let&rsquo;s use the CLI to tell the platform to deploy an application and then use curl to send a request to the app:</p>
+<pre tabindex="0"><code>$ drycc pull drycc/example-go -a proper-barbecue
+Creating build... done
+$ curl http://proper-barbecue.$hostname
+Powered by Drycc
+</code></pre><p>!!! note
+If you see a 404 error, make sure you specified your application name with <code>-a &lt;appname&gt;</code>!</p>
+<p>Workflow&rsquo;s edge router knows all about application names and automatically
+sends traffic to the right application. The router sends traffic for
+<code>proper-barbecue.104.197.125.75.nip.io</code> to your app, just like
+<code>drycc.104.197.125.75.nip.io</code> was sent to the Workflow API service.</p>
+<h2 id="change-application-configuration">Change Application Configuration<a class="td-heading-self-link" href="#change-application-configuration" aria-label="Heading self-link"></a></h2>
+<p>Next, let&rsquo;s change some configuration using the CLI. Our example app is built
+to read configuration from the environment. By using <code>drycc config set</code> we can
+change how the application behaves:</p>
+<pre tabindex="0"><code>$ drycc config set POWERED_BY=&#34;Container Images + Kubernetes&#34; -a proper-barbecue
+Creating config... done
+</code></pre><p>Behind the scenes, Workflow creates a new release for your application and uses
+Kubernetes to provide a zero-downtime rolling deploy to the new release!</p>
+<p>Validate that our configuration change has worked:</p>
+<pre tabindex="0"><code>$ curl http://proper-barbecue.104.197.125.75.nip.io
+Powered by Container Images + Kubernetes
+</code></pre><h2 id="scale-your-application">Scale Your Application<a class="td-heading-self-link" href="#scale-your-application" aria-label="Heading self-link"></a></h2>
+<p>Last, let&rsquo;s scale our application by adding more application processes. Using the CLI you can easily add and remove
+additional processes to service requests:</p>
+<pre tabindex="0"><code>$ drycc scale web=2 -a proper-barbecue
+Scaling processes... but first, coffee!
+done in 36s
+
+NAME                                RELEASE    STATE    PTYPE       STARTED
+proper-barbecue-v18-web-rk644       v18        up       web         2023-12-08T03:09:25UTC
+proper-barbecue-v18-web-0ag04       v18        up       web         2023-12-08T03:09:25UTC
+</code></pre><p>Congratulations! You have deployed, configured, and scaled your first application using Drycc Workflow.</p>
+<h2 id="going-further">Going Further<a class="td-heading-self-link" href="#going-further" aria-label="Heading self-link"></a></h2>
+<p>There is a lot more you can do with Drycc Workflow, play around with the CLI:</p>
+<p>!!! important
+In order to have permission to push an app you must add a SSH key to your user on the Drycc Workflow.
+For more information, please check <a href="/docs/users/ssh-keys/">Users and SSH Keys</a> and <a href="/docs/troubleshooting/">Troubleshooting Workflow</a>.</p>
+<ul>
+<li>Roll back to a previous release with <code>drycc rollback -a proper-barbecue</code></li>
+<li>See application logs with <code>drycc logs -a proper-barbecue</code></li>
+<li>Try one of our other example applications like:
+<ul>
+<li><a href="https://github.com/drycc/ruby-getting-started">drycc/ruby-getting-started</a></li>
+<li><a href="https://github.com/drycc/python-getting-started">drycc/python-getting-started</a></li>
+<li><a href="https://github.com/drycc/php-getting-started">drycc/php-getting-started</a></li>
+</ul>
+</li>
+<li>Read about using application <a href="/docs/applications/using-buildpacks/">Buildpacks</a> or <a href="/docs/applications/using-dockerfiles/">Dockerfiles</a></li>
+<li>Join our <a href="https://drycc.slack.com/">#community slack channel</a> and meet the team!</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

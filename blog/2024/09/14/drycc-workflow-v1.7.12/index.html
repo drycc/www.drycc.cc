@@ -1,0 +1,369 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Drycc Workflow v1.7.12 | Drycc</title>
+<meta name="description" content="New Drycc Workflow Release v1.7.12">
+<meta property="og:url" content="/blog/2024/09/14/drycc-workflow-v1.7.12/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Drycc Workflow v1.7.12">
+  <meta property="og:description" content="New Drycc Workflow Release v1.7.12">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-09-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-16T13:57:13+08:00">
+
+  <meta itemprop="name" content="Drycc Workflow v1.7.12">
+  <meta itemprop="description" content="New Drycc Workflow Release v1.7.12">
+  <meta itemprop="datePublished" content="2024-09-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-04-16T13:57:13+08:00">
+  <meta itemprop="wordCount" content="557">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Drycc Workflow v1.7.12">
+  <meta name="twitter:description" content="New Drycc Workflow Release v1.7.12">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page td-blog">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blog-li">
+  <a href="/blog/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-blog"><span class="">Blog</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blognews-li">
+  <a href="/blog/news/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-blognews"><span class="">News</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20181006welcome-to-drycc-li">
+  <a href="/blog/2018/10/06/welcome-to-drycc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20181006welcome-to-drycc"><span class="">Welcome to Drycc</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blogreleases-li">
+  <a href="/blog/releases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-blogreleases"><span class="">Release</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20250415drycc-workflow-v181-li">
+  <a href="/blog/2025/04/15/drycc-workflow-v1.8.1/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20250415drycc-workflow-v181"><span class="">Drycc Workflow v1.8.1</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-blog20240914drycc-workflow-v1712-li">
+  <a href="/blog/2024/09/14/drycc-workflow-v1.7.12/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-blog20240914drycc-workflow-v1712"><span class="td-sidebar-nav-active-item">Drycc Workflow v1.7.12</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240719drycc-workflow-v1711-li">
+  <a href="/blog/2024/07/19/drycc-workflow-v1.7.11/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240719drycc-workflow-v1711"><span class="">Drycc Workflow v1.7.11</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240508drycc-workflow-v1710-li">
+  <a href="/blog/2024/05/08/drycc-workflow-v1.7.10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240508drycc-workflow-v1710"><span class="">Drycc Workflow v1.7.10</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240507drycc-workflow-v179-li">
+  <a href="/blog/2024/05/07/drycc-workflow-v1.7.9/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240507drycc-workflow-v179"><span class="">Drycc Workflow v1.7.9</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240501drycc-workflow-v178-li">
+  <a href="/blog/2024/05/01/drycc-workflow-v1.7.8/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240501drycc-workflow-v178"><span class="">Drycc Workflow v1.7.8</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240430drycc-workflow-v177-li">
+  <a href="/blog/2024/04/30/drycc-workflow-v1.7.7/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240430drycc-workflow-v177"><span class="">Drycc Workflow v1.7.7</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240227drycc-workflow-v175-li">
+  <a href="/blog/2024/02/27/drycc-workflow-v1.7.5/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240227drycc-workflow-v175"><span class="">Drycc Workflow v1.7.5</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240227drycc-workflow-v176-li">
+  <a href="/blog/2024/02/27/drycc-workflow-v1.7.6/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240227drycc-workflow-v176"><span class="">Drycc Workflow v1.7.6</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240129drycc-workflow-v172-li">
+  <a href="/blog/2024/01/29/drycc-workflow-v1.7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240129drycc-workflow-v172"><span class="">Drycc Workflow  v1.7.2</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20231208drycc-workflow-v170-li">
+  <a href="/blog/2023/12/08/drycc-workflow-v1.7.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20231208drycc-workflow-v170"><span class="">Drycc Workflow v1.7.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221021drycc-workflow-v160-li">
+  <a href="/blog/2022/10/21/drycc-workflow-v1.6.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221021drycc-workflow-v160"><span class="">Drycc Workflow v1.6.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221006drycc-workflow-v150-li">
+  <a href="/blog/2022/10/06/drycc-workflow-v1.5.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221006drycc-workflow-v150"><span class="">Drycc Workflow v1.5.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20211006drycc-workflow-v140-li">
+  <a href="/blog/2021/10/06/drycc-workflow-v1.4.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20211006drycc-workflow-v140"><span class="">Drycc Workflow v1.4.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20201006drycc-workflow-v130-li">
+  <a href="/blog/2020/10/06/drycc-workflow-v1.3.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20201006drycc-workflow-v130"><span class="">Drycc Workflow v1.3.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20191006drycc-workflow-v120-li">
+  <a href="/blog/2019/10/06/drycc-workflow-v1.2.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20191006drycc-workflow-v120"><span class="">Drycc Workflow v1.2.0</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+<a href="https://github.com/drycc/website/tree/main/content/en/blog/releases/v1.7.12.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+  <a href="https://github.com/drycc/website/edit/main/content/en/blog/releases/v1.7.12.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/drycc/website/new/main/content/en/blog/releases?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+  <a href="https://github.com/drycc/website/issues/new?title=Drycc%20Workflow%20v1.7.12" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+  <a href="https://github.com/drycc/workflow/issues/new" class="td-page-meta--project td-page-meta__project-issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create project issue</a>
+  <a id="print" href="/blog/releases/_print/"><i class="fa-solid fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#workflow--v1711---v1712">Workflow ## v1.7.11 -&gt; v1.7.12</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5 pe-md-4" role="main">
+            <a class="td-rss-button" title="RSS" href="/blog/releases/index.xml" target="_blank" rel="noopener">
+              <i class="fa-solid fa-rss" aria-hidden="true"></i>
+            </a>
+            
+<div class="td-content">
+	<h1>Drycc Workflow v1.7.12</h1>
+	<div class="lead">New Drycc Workflow Release v1.7.12</div>
+	<div class="td-byline mb-4">
+		
+		<time datetime="2024-09-14" class="text-body-secondary">14.09.2024</time>
+	</div>
+	<header class="article-meta">
+		
+  <p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 3 minute read &nbsp;</p>
+</header>
+	<h2 id="workflow--v1711---v1712">Workflow ## v1.7.11 -&gt; v1.7.12<a class="td-heading-self-link" href="#workflow--v1711---v1712" aria-label="Heading self-link"></a></h2>
+<h4 id="releases">Releases<a class="td-heading-self-link" href="#releases" aria-label="Heading self-link"></a></h4>
+<ul>
+<li>filer v1.0.3 -&gt; v1.0.4</li>
+<li>builder v1.7.1 -&gt; v1.7.2</li>
+<li>controller v1.11.0 -&gt; v1.12.0</li>
+<li>passport v1.3.1 -&gt; v1.3.2</li>
+<li>imagebuilder v1.2.1 -&gt; v1.2.2</li>
+<li>fluentbit v0.0.2 -&gt; v0.0.3</li>
+<li>logger v1.3.5 -&gt; v1.3.6</li>
+<li>storage v0.2.0 -&gt; v0.2.1</li>
+<li>rabbitmq v1.3.1 -&gt; v1.3.2</li>
+<li>workflow-cli v1.8.0 -&gt; v1.9.0</li>
+</ul>
+<h4 id="features">Features<a class="td-heading-self-link" href="#features" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ef9e2cecad5cb01272991c446df78ec693cbbad8"><code>ef9e2ce</code></a> (controller) - controller: support autorollback config (#154)</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/c497a87e3f764b1f499dd9b581428c769f58f940"><code>c497a87</code></a> (controller) - release: add deploy release</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ba4345397ecdab870f8d2f50cad974c70f1c8a19"><code>ba43453</code></a> (controller) - release: add release deploy</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/80b6f1de5c8d4e836c1c3eefc1126c10e1d52168"><code>80b6f1d</code></a> (controller) - perms: refine the permission model</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/751f5e78a30e2bf1cc64c92dbf6eca9dc449d6c0"><code>751f5e7</code></a> (workflow-cli) - perms: add object user perm</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/005fe9546b78a50fab3966f423d25d6ec70f0b66"><code>005fe95</code></a> (workflow-cli) - workflow-cli: add autorollback cmd (#58)</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/c8fa511a616b44f2f2bf3947749af55d55536037"><code>c8fa511</code></a> (workflow-cli) - workflow-cli: add update cmd</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/a5d440c42a0a86986d569cda9add85f4a840e0e1"><code>a5d440c</code></a> (workflow-cli) - release: add deploy release</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/4f284265c7d153a953d72a89b8b8b5b8a94a26db"><code>4f28426</code></a> (workflow-cli) - workflow-cli: add autodeploy flag and more (#62)</li>
+</ul>
+<h4 id="fixes">Fixes<a class="td-heading-self-link" href="#fixes" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ce20b62a139906bad1a1e4cc86e15d6138d1d48d"><code>ce20b62</code></a> (controller) - migrations: certificate migrate err</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/97eff7a4a9eeaa5481219ffdd3cdb05a70e4b015"><code>97eff7a</code></a> (controller) - controller: volume can not delete when ptype isn&rsquo;t exist</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/4076bea43e6d12c29953a30703a062a27f50ef2c"><code>4076bea</code></a> (controller) - controller: fix pod unhealthy do not rollback</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/84c84f9e4ccb19afa9d23bd2e22b48c398f1b0a0"><code>84c84f9</code></a> (controller) - migration: cert migrate error</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/b4201d3b41e0e15160173a36f16777f547b97d05"><code>b4201d3</code></a> (controller) - controller: no cert domain do not redirect https (#162)</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/f26d608a60c53cb26341de0b5c10eca81a41bd4d"><code>f26d608</code></a> (imagebuilder) - podman: permission denied</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/7d5afe9a275208da2f7d07b8bf7506e82f87ebfd"><code>7d5afe9</code></a> (imagebuilder) - podman: failed to reexec</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/e766f1d83ddc4d7659c86e242396966334d694fe"><code>e766f1d</code></a> (workflow-cli) - perms: print perm message</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/06ac7b568b19bcf92286517b4caee18fc877d31d"><code>06ac7b5</code></a> (workflow-cli) - filer: cp file to volume error</li>
+</ul>
+<h4 id="maintenance">Maintenance<a class="td-heading-self-link" href="#maintenance" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/52ef19061b72da04c03401d2ca708685668a5116"><code>52ef190</code></a> (builder) - controller-sdk-go: bump new version v0.0.0-20240819081928-b589d0b69f71</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/b65b429ae345601f5c90539d1b08ff4aa67bfabe"><code>b65b429</code></a> (controller) - charts: config.defaultMetrics add field (#147)</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/a9266ecf6af759a2179cf0384f105276415ebffe"><code>a9266ec</code></a> (controller) - tests: use latest codecov</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/a5b4d624e0b3b51a85f2beb660cdf7b79fbb224f"><code>a5b4d62</code></a> (controller) - charts: modify grpcroutes role (#148)</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ad15c2a81d2addde7f29b80ba7ff4bb57c195cb4"><code>ad15c2a</code></a> (controller) - deps: bump django from 4.2.14 to 4.2.15 in /rootfs (#149)</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/6fd65bd971f2f3a77009866144a6723cdbb8a955"><code>6fd65bd</code></a> (controller) - metrics: add prometheus query interval</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/602105bb6690c48c08e375092c0851fcae3dadf5"><code>602105b</code></a> (controller) - deps: bump aiohttp from 3.9.4 to 3.10.2 in /rootfs (#152)</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/95961ad31fae82f691940e8a1fa0c3f7f45ec74b"><code>95961ad</code></a> (controller) - perms: add object perms</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/f4f409e3d34835048d06f6584dc8e44ccb7c512d"><code>f4f409e</code></a> (controller) - controller: merge migrations (#155)</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/fc6963e8aebab1e2c5e5cdaa3ab244a49bf07d0b"><code>fc6963e</code></a> (controller) - gateway: remove unnecessary else</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/2dd58694fd84572bd6d92938d2e3de6e84847d49"><code>2dd5869</code></a> (controller) - perms: destroy perms log err</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/8804e8f4827cfc36bde75965bf48f26c2d40e95b"><code>8804e8f</code></a> (controller) - controller: change process type names to ptypes</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/5c05c528bcdccf4372bc557c2212649cc6b096e4"><code>5c05c52</code></a> (controller) - release: add autodeploy flag</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/81340aa5853ff1765f905d136dad64a0bb6c5974"><code>81340aa</code></a> (controller) - controller: pod failed do not rollback (#159)</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/13c9a5e4f6b904da62e30c52704374ac19bf6a8e"><code>13c9a5e</code></a> (controller) - controller: unified naming convention for ptype</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/b42b5dd3eafd959b1e7c31924c76461e47ce34f7"><code>b42b5dd</code></a> (controller) - pod: modify readiness check</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/fd36f76cbfd556367d362cc6c22f6c442ed120bd"><code>fd36f76</code></a> (controller) - controller: services protocol default is TCP</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/7cc46bb2b55c483d2cdffcfe6c8619b9d74d8b40"><code>7cc46bb</code></a> (controller) - migration: remove unused cert</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/77cdbeb1f6bd6ee988ff32181780c23b025e7aa3"><code>77cdbeb</code></a> (controller) - controller: releases add_condition error (#161)</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/2ef5b65051518874849016df027fa29e6fd3b115"><code>2ef5b65</code></a> (controller) - celery: use quorum queye</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/70706be7d96d8c397a0da782c648493dfa1a9f56"><code>70706be</code></a> (controller) - filer: zero copy upload file</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/85f799cc1e9040b238c90977e4f2e9c8ccbba5bd"><code>85f799c</code></a> (controller) - release: check deploy release ptypes</li>
+<li><a href="https://api.github.com/repos/drycc/filer/git/trees/be5ec6737db1d94072d2966341b8da6d226cb390"><code>be5ec67</code></a> (filer) - filer: add timeout for read and write</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/6d5040ebfffd77e4a0f0e2106ad248d4709c7954"><code>6d5040e</code></a> (fluentbit) - plugin: only collect drycc controller logs</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/a11fbbcadc9fc7116b53ba20708920d07edd5d36"><code>a11fbbc</code></a> (imagebuilder) - imagebuilder: bump stack version</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/064cc951fa0c55e20509553b0f351126965234f8"><code>064cc95</code></a> (logger) - logger: only collect drycc controller logs</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/c8ed35ddd2cce6db6a46185c4339b6a1b9cd4e51"><code>c8ed35d</code></a> (passport) - migrate: use helm hook replace cluster lock</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/6135c7eeb14321a794301520e774b3878c6243bb"><code>6135c7e</code></a> (passport) - passport: use latest codecov cli version</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/4fbfb8417314f817c407a9dfd508382bb8040dce"><code>4fbfb84</code></a> (rabbitmq) - rabbitmq: add init vhost list</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/3e179a8031b952c22164c320fbd0df30456e5311"><code>3e179a8</code></a> (storage) - csi: remove attach</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/4918b274a23a45f4f8ca57a69919a3c39aa1cc74"><code>4918b27</code></a> (storage) - seaweedfs: bump version to 3.72</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/54207e31360f56e0c032124be3ff60c90aa55292"><code>54207e3</code></a> (storage) - charts: change config order</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/18bb07df4de31006bc0973c3e8bddd9c72ba2b68"><code>18bb07d</code></a> (storage) - seaweedfs: bump version to 3.73</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/60d80728c0343e130a54eb213a99c9033da07a72"><code>60d8072</code></a> (workflow-cli) - workflow-cli: pts add node selector and ps add status field (#55)</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/89af759091451fef5900e1498ebe22517328412a"><code>89af759</code></a> (workflow-cli) - route: pretty At time display and add GRPCRoute</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/71b755d04ffb832fc20283b85ba2c09e618c2620"><code>71b755d</code></a> (workflow-cli) - filer: zero copy upload file</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/860db961d945ab888cf01ef5c3e8bc8c617f9edb"><code>860db96</code></a> (workflow-cli) - update: dry-run short option</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/eb9b67a2c49beb1f7c219c105f62030637f4c81a"><code>eb9b67a</code></a> (workflow-cli) - perms: modify cmd describe (#59)</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/0b98ae6c3aa88d83fe84e4155dcc60ea2084431a"><code>0b98ae6</code></a> (workflow-cli) - perms: remove print (#60)</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/6d8a5ba1ef7d16651498b788bfd30fa53924223b"><code>6d8a5ba</code></a> (workflow-cli) - volumes: merge dest dir</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/add212e461aed87e304e672118bef0a1955ba06c"><code>add212e</code></a> (workflow-cli) - releases: add exception field (#61)</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/6203c2c0e18214c2bd358fa31c467f195bad8618"><code>6203c2c</code></a> (workflow-cli) - services: optimize service command parameters</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/dc0c875fa61aa129d54332adc8e1d43c6c43a595"><code>dc0c875</code></a> (workflow-cli) - controller-sdk-go: change post file procotol</li>
+</ul>
+
+	<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+  <li>
+    <a href="/blog/2024/07/19/drycc-workflow-v1.7.11/" aria-label="Previous - Drycc Workflow v1.7.11" class="btn btn-primary"><span class="me-1">←</span>Previous</a>
+  </li>
+  <li>
+    <a href="/blog/2025/04/15/drycc-workflow-v1.8.1/" aria-label="Next - Drycc Workflow v1.8.1" class="btn btn-primary">Next<span class="ms-1">→</span></a>
+  </li>
+</ul>
+
+	<div class="td-page-meta__lastmod">
+  Last modified 16.04.2025: <a href="https://github.com/drycc/website/commit/feff6937adcf2b871fab8585efaed36cc269a34d">chore(blog): add v1.8.1 release note (feff693)</a>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

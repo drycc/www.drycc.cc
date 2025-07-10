@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Roadmap on Drycc</title>
+    <link>/docs/roadmap/</link>
+    <description>Recent content in Roadmap on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/roadmap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Planning Process</title>
+      <link>/docs/roadmap/planning-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/roadmap/planning-process/</guid>
+      <description>The Role of Maintainers Maintainers lead the Drycc projects. Their duties include proposing the Roadmap, reviewing and integrating contributions and maintaining the vision of the project.&#xA;Open Roadmap The Drycc Roadmap is a community document. While Maintainers propose the Roadmap, it gets discussed and refined in Release Planning Meetings.&#xA;Contributing to the Roadmap Proposals and issues can be opened by anyone. Every member of the community is welcome to participate in the discussion by providing feedback and/or offering counter-proposals.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow Roadmap</title>
+      <link>/docs/roadmap/roadmap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/roadmap/roadmap/</guid>
+      <description>Drycc Workflow Roadmap The Drycc Workflow Roadmap is a community document created as part of the open Planning Process. Each roadmap item describes a high-level capability or grouping of features that are deemed important to the future of Drycc.&#xA;Given the project&amp;rsquo;s rapid Release Schedule, roadmap items are designed to provide a sense of direction over many releases.&#xA;Interactive drycc run /bin/bash Provide the ability for developers to launch an interactive terminal session in their application environment.</description>
+    </item>
+    <item>
+      <title>Releases</title>
+      <link>/docs/roadmap/releases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/roadmap/releases/</guid>
+      <description>Drycc uses a continuous delivery approach for creating releases. Every merged commit that passes testing results in a deliverable that can be given a semantic version tag and shipped.&#xA;The master git branch of a project should always work. Only changes considered ready to be released publicly are merged.&#xA;Components Release as Needed Drycc components release new versions as often as needed. Fixing a high priority bug requires the project maintainer to create a new patch release.</description>
+    </item>
+  </channel>
+</rss>

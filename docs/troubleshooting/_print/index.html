@@ -1,0 +1,395 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/docs/troubleshooting/">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/troubleshooting/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Troubleshooting | Drycc</title>
+<meta name="description" content="Troubleshooting is systematic approach to problem-solving.">
+<meta property="og:url" content="/docs/troubleshooting/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Troubleshooting">
+  <meta property="og:description" content="Troubleshooting is systematic approach to problem-solving.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Troubleshooting">
+  <meta itemprop="description" content="Troubleshooting is systematic approach to problem-solving.">
+  <meta itemprop="dateModified" content="2024-05-06T13:43:29+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Troubleshooting">
+  <meta name="twitter:description" content="Troubleshooting is systematic approach to problem-solving.">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/troubleshooting/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Troubleshooting</h1>
+<div class="lead">Troubleshooting is systematic approach to problem-solving.</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-ae09ee5bda595915162c64bb5b058028">Troubleshooting Workflow</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-804be11dbfa1e18a9008195da92602ff">Troubleshooting using Kubectl</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-840798867228de33b883f3d76e5df256">Troubleshooting Applications</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-ae09ee5bda595915162c64bb5b058028">1 - Troubleshooting Workflow</h1>
+    <div class="lead">Common issues that users have run into when provisioning Workflow are detailed below.</div>
+	<h2 id="a-component-fails-to-start">A Component Fails to Start<a class="td-heading-self-link" href="#a-component-fails-to-start" aria-label="Heading self-link"></a></h2>
+<p>For information on troubleshooting a failing component, see
+<a href="/docs/troubleshooting/kubectl/">Troubleshooting with Kubectl</a>.</p>
+<h2 id="an-application-fails-to-start">An Application Fails to Start<a class="td-heading-self-link" href="#an-application-fails-to-start" aria-label="Heading self-link"></a></h2>
+<p>For information on troubleshooting application deployment issues, see
+<a href="/docs/troubleshooting/applications/">Troubleshooting Applications</a>.</p>
+<h2 id="permission-denied-publickey">Permission denied (publickey)<a class="td-heading-self-link" href="#permission-denied-publickey" aria-label="Heading self-link"></a></h2>
+<p>The most common problem for this issue is the user forgetting to run <code>drycc keys:add</code> or add their
+private key to their SSH agent. To do so, run <code>ssh-add ~/.ssh/id_rsa</code> and try running
+<code>git push drycc master</code> again.</p>
+<p>If you happen get a <code>Could not open a connection to your authentication agent</code>
+error after trying to run <code>ssh-add</code> command above, you may need to load the SSH
+agent environment variables issuing the <code>eval &quot;$(ssh-agent)&quot;</code> command before.</p>
+<h2 id="other-issues">Other Issues<a class="td-heading-self-link" href="#other-issues" aria-label="Heading self-link"></a></h2>
+<p>Running into something not detailed here? Please <a href="https://github.com/drycc/workflow/issues/new">open an issue</a> or hop into
+<a href="http://slack.drycc.cc/">#community on Slack</a> for help!</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-804be11dbfa1e18a9008195da92602ff">2 - Troubleshooting using Kubectl</h1>
+    <div class="lead">Kubernetes provides a command line tool for communicating with a Kubernetes cluster&rsquo;s control plane, using the Kubernetes API.</div>
+	<p>This document describes how one can use <code>kubectl</code> to debug any issues with the cluster.</p>
+<h2 id="diving-into-the-components">Diving into the Components<a class="td-heading-self-link" href="#diving-into-the-components" aria-label="Heading self-link"></a></h2>
+<p>Using <code>kubectl</code>, one can inspect the cluster&rsquo;s current state. When Workflow is installed
+with <code>helm</code>, Workflow is installed into the <code>drycc</code> namespace. To inspect if Workflow is
+running, run:</p>
+<pre><code>$ kubectl --namespace=drycc get pods
+NAME                          READY     STATUS              RESTARTS   AGE
+drycc-builder-gqum7            0/1       ContainerCreating   0          4s
+drycc-controller-h6lk6         0/1       ContainerCreating   0          4s
+drycc-controller-celery-cmxxn  0/3       ContainerCreating   0          4s
+drycc-database-56v39           0/1       ContainerCreating   0          4s
+drycc-fluentbit-xihr1          0/1       Pending             0          2s
+drycc-storage-c2exb            0/1       Pending             0          3s
+drycc-grafana-9ccur            0/1       Pending             0          3s
+drycc-registry-5bor6           0/1       Pending             0          3s
+</code></pre>
+<p>!!! tip
+To save precious keystrokes, alias <code>kubectl --namespace=drycc</code> to <code>kd</code> so it is easier to type
+in the future.</p>
+<p>To fetch the logs of a specific component, use <code>kubectl logs</code>:</p>
+<pre><code>$ kubectl --namespace=drycc logs drycc-controller-h6lk6
+system information:
+Django Version: 1.9.6
+Python 3.5.1
+addgroup: gid '0' in use
+Django checks:
+System check identified no issues (2 silenced).
+[...]
+</code></pre>
+<p>To dive into a running container to inspect its environment, use <code>kubectl exec</code>:</p>
+<pre><code>$ kubectl --namespace=drycc exec -it drycc-database-56v39 gosu postgres psql
+psql (13.4 (Debian 13.4-1.pgdg100+1))
+Type &quot;help&quot; for help.
+
+postgres=# \l
+                                                List of databases
+     Name          |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges
+-------------------+----------+----------+------------+------------+-----------------------
+ drycc_controller  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ drycc_passport    | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ postgres          | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ template0         | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+                   |          |          |            |            | postgres=CTc/postgres
+ template1         | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+                   |          |          |            |            | postgres=CTc/postgres
+(4 rows)
+postgres=# \connect drycc_controller
+You are now connected to database &quot;drycc_controller&quot; as user &quot;postgres&quot;.
+drycc_controller=# \dt
+                                 List of relations
+ Schema |              Name              | Type  |      Owner
+--------+--------------------------------+-------+-------------------
+ public | api_app                        | table | drycc_controller
+ public | api_build                      | table | drycc_controller
+ public | api_certificate                | table | drycc_controller
+ public | api_config                     | table | drycc_controller
+ public | api_domain                     | table | drycc_controller
+ public | api_key                        | table | drycc_controller
+ public | api_push                       | table | drycc_controller
+ public | api_release                    | table | drycc_controller
+ public | auth_group                     | table | drycc_controller
+ --More--
+ drycc_controller=# SELECT COUNT(*) from api_app;
+ count
+-------
+     0
+(1 row)
+</code></pre>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-840798867228de33b883f3d76e5df256">3 - Troubleshooting Applications</h1>
+    <div class="lead">This document describes how one can troubleshoot common issues when deploying or debugging an application that fails to start or deploy.</div>
+	<h2 id="application-has-a-dockerfile-but-a-buildpack-deployment-occurs">Application has a Dockerfile, but a Buildpack Deployment Occurs<a class="td-heading-self-link" href="#application-has-a-dockerfile-but-a-buildpack-deployment-occurs" aria-label="Heading self-link"></a></h2>
+<p>When you deploy an application to Workflow using <code>git push drycc master</code> and the <a href="/docs/understanding-workflow/components/#builder">Builder</a>
+attempts to deploy using the Buildpack workflow, check the following steps:</p>
+<ol>
+<li>Are you deploying the correct project?</li>
+<li>Are you pushing the correct git branch (<code>git push drycc &lt;branch&gt;</code>)?</li>
+<li>Is the <code>Dockerfile</code> in the project&rsquo;s root directory?</li>
+<li>Have you committed the <code>Dockerfile</code> to the project?</li>
+</ol>
+<h2 id="application-was-deployed-but-is-failing-to-start">Application was Deployed, but is Failing to Start<a class="td-heading-self-link" href="#application-was-deployed-but-is-failing-to-start" aria-label="Heading self-link"></a></h2>
+<p>If you deployed your application but it is failing to start, you can use <code>drycc logs</code> to check
+why the application fails to boot. Sometimes, the application container may fail to boot without
+logging any information about the error. This typically occurs when the healthcheck configured for
+the application fails. In this case, you can start by
+<a href="/docs/troubleshooting/kubectl/">troubleshooting using kubectl</a>. You can inspect the application&rsquo;s current
+state by examining the pod deployed in the application&rsquo;s namespace. To do that, run</p>
+<pre><code>$ kubectl --namespace=myapp get pods
+NAME                          READY     STATUS                RESTARTS   AGE
+myapp-web-1585713350-3brbo    0/1       CrashLoopBackOff      2          43s
+</code></pre>
+<p>We can then describe the pod and determine why it is failing to boot:</p>
+<pre><code>Events:
+  FirstSeen     LastSeen        Count   From                            SubobjectPath                           Type            Reason          Message
+  ---------     --------        -----   ----                            -------------                           --------        ------          -------
+  43s           43s             1       {default-scheduler }                                                    Normal          Scheduled       Successfully assigned myapp-web-1585713350-3brbo to kubernetes-node-1
+  41s           41s             1       {kubelet kubernetes-node-1}     spec.containers{myapp-web}              Normal          Created         Created container with container id b86bd851a61f
+  41s           41s             1       {kubelet kubernetes-node-1}     spec.containers{myapp-web}              Normal          Started         Started container with container id b86bd851a61f
+  37s           35s             1       {kubelet kubernetes-node-1}     spec.containers{myapp-web}              Warning         Unhealthy       Liveness probe failed: Get http://10.246.39.13:8000/healthz: dial tcp 10.246.39.13:8000: getsockopt: connection refused
+</code></pre>
+<p>In this instance, we set the healthcheck initial delay timeout for the application at 1 second,
+which is too aggressive. The application needs some time to set up the API server after the
+container has booted. By increasing the healthcheck initial delay timeout to 10 seconds, the
+application is able to boot and is responding correctly.</p>
+<p>See <a href="/docs/applications/managing-app-configuration/#custom-health-checks">Custom Health Checks</a> for more information on how to customize the application&rsquo;s
+health checks to better suit the application&rsquo;s needs.</p>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

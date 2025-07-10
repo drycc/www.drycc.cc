@@ -1,0 +1,557 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Drycc Workflow v1.7.0 | Drycc</title>
+<meta name="description" content="New Drycc Workflow Release v1.7.0">
+<meta property="og:url" content="/blog/2023/12/08/drycc-workflow-v1.7.0/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Drycc Workflow v1.7.0">
+  <meta property="og:description" content="New Drycc Workflow Release v1.7.0">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2023-12-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-02-29T23:04:26+08:00">
+
+  <meta itemprop="name" content="Drycc Workflow v1.7.0">
+  <meta itemprop="description" content="New Drycc Workflow Release v1.7.0">
+  <meta itemprop="datePublished" content="2023-12-08T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-02-29T23:04:26+08:00">
+  <meta itemprop="wordCount" content="1943">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Drycc Workflow v1.7.0">
+  <meta name="twitter:description" content="New Drycc Workflow Release v1.7.0">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page td-blog">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blog-li">
+  <a href="/blog/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-blog"><span class="">Blog</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blognews-li">
+  <a href="/blog/news/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-blognews"><span class="">News</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20181006welcome-to-drycc-li">
+  <a href="/blog/2018/10/06/welcome-to-drycc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20181006welcome-to-drycc"><span class="">Welcome to Drycc</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blogreleases-li">
+  <a href="/blog/releases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-blogreleases"><span class="">Release</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20250415drycc-workflow-v181-li">
+  <a href="/blog/2025/04/15/drycc-workflow-v1.8.1/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20250415drycc-workflow-v181"><span class="">Drycc Workflow v1.8.1</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240914drycc-workflow-v1712-li">
+  <a href="/blog/2024/09/14/drycc-workflow-v1.7.12/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240914drycc-workflow-v1712"><span class="">Drycc Workflow v1.7.12</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240719drycc-workflow-v1711-li">
+  <a href="/blog/2024/07/19/drycc-workflow-v1.7.11/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240719drycc-workflow-v1711"><span class="">Drycc Workflow v1.7.11</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240508drycc-workflow-v1710-li">
+  <a href="/blog/2024/05/08/drycc-workflow-v1.7.10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240508drycc-workflow-v1710"><span class="">Drycc Workflow v1.7.10</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240507drycc-workflow-v179-li">
+  <a href="/blog/2024/05/07/drycc-workflow-v1.7.9/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240507drycc-workflow-v179"><span class="">Drycc Workflow v1.7.9</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240501drycc-workflow-v178-li">
+  <a href="/blog/2024/05/01/drycc-workflow-v1.7.8/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240501drycc-workflow-v178"><span class="">Drycc Workflow v1.7.8</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240430drycc-workflow-v177-li">
+  <a href="/blog/2024/04/30/drycc-workflow-v1.7.7/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240430drycc-workflow-v177"><span class="">Drycc Workflow v1.7.7</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240227drycc-workflow-v175-li">
+  <a href="/blog/2024/02/27/drycc-workflow-v1.7.5/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240227drycc-workflow-v175"><span class="">Drycc Workflow v1.7.5</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240227drycc-workflow-v176-li">
+  <a href="/blog/2024/02/27/drycc-workflow-v1.7.6/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240227drycc-workflow-v176"><span class="">Drycc Workflow v1.7.6</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240129drycc-workflow-v172-li">
+  <a href="/blog/2024/01/29/drycc-workflow-v1.7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240129drycc-workflow-v172"><span class="">Drycc Workflow  v1.7.2</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-blog20231208drycc-workflow-v170-li">
+  <a href="/blog/2023/12/08/drycc-workflow-v1.7.0/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-blog20231208drycc-workflow-v170"><span class="td-sidebar-nav-active-item">Drycc Workflow v1.7.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221021drycc-workflow-v160-li">
+  <a href="/blog/2022/10/21/drycc-workflow-v1.6.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221021drycc-workflow-v160"><span class="">Drycc Workflow v1.6.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221006drycc-workflow-v150-li">
+  <a href="/blog/2022/10/06/drycc-workflow-v1.5.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221006drycc-workflow-v150"><span class="">Drycc Workflow v1.5.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20211006drycc-workflow-v140-li">
+  <a href="/blog/2021/10/06/drycc-workflow-v1.4.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20211006drycc-workflow-v140"><span class="">Drycc Workflow v1.4.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20201006drycc-workflow-v130-li">
+  <a href="/blog/2020/10/06/drycc-workflow-v1.3.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20201006drycc-workflow-v130"><span class="">Drycc Workflow v1.3.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20191006drycc-workflow-v120-li">
+  <a href="/blog/2019/10/06/drycc-workflow-v1.2.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20191006drycc-workflow-v120"><span class="">Drycc Workflow v1.2.0</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+<a href="https://github.com/drycc/website/tree/main/content/en/blog/releases/v1.7.0.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+  <a href="https://github.com/drycc/website/edit/main/content/en/blog/releases/v1.7.0.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/drycc/website/new/main/content/en/blog/releases?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+  <a href="https://github.com/drycc/website/issues/new?title=Drycc%20Workflow%20v1.7.0" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+  <a href="https://github.com/drycc/workflow/issues/new" class="td-page-meta--project td-page-meta__project-issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create project issue</a>
+  <a id="print" href="/blog/releases/_print/"><i class="fa-solid fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#workflow--v160---v170">Workflow ## v1.6.0 -&gt; v1.7.0</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5 pe-md-4" role="main">
+            <a class="td-rss-button" title="RSS" href="/blog/releases/index.xml" target="_blank" rel="noopener">
+              <i class="fa-solid fa-rss" aria-hidden="true"></i>
+            </a>
+            
+<div class="td-content">
+	<h1>Drycc Workflow v1.7.0</h1>
+	<div class="lead">New Drycc Workflow Release v1.7.0</div>
+	<div class="td-byline mb-4">
+		
+		<time datetime="2023-12-08" class="text-body-secondary">08.12.2023</time>
+	</div>
+	<header class="article-meta">
+		
+  <p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 10 minute read &nbsp;</p>
+</header>
+	<p>These release notes for Drycc Workflow v1.7.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.6.0, please refer to the following change summary.</p>
+<h2 id="workflow--v160---v170">Workflow ## v1.6.0 -&gt; v1.7.0<a class="td-heading-self-link" href="#workflow--v160---v170" aria-label="Heading self-link"></a></h2>
+<h4 id="releases">Releases<a class="td-heading-self-link" href="#releases" aria-label="Heading self-link"></a></h4>
+<ul>
+<li>builder v1.4.0 -&gt; v1.5.0</li>
+<li>controller v1.5.1 -&gt; v1.6.0</li>
+<li>database v1.2.0 -&gt; v1.2.1</li>
+<li>passport v1.1.0 -&gt; v1.2.0</li>
+<li>imagebuilder v1.1.0 -&gt; v1.1.1</li>
+<li>fluentbit v0.0.0 -&gt; v0.0.1</li>
+<li>logger v1.3.0 -&gt; v1.3.1</li>
+<li>storage v0.0.0 -&gt; v0.0.1</li>
+<li>gateway v0.0.0 -&gt; v0.0.1</li>
+<li>monitor v1.3.0 -&gt; v1.4.0</li>
+<li>redis v1.3.0 -&gt; v1.3.1</li>
+<li>timeseries v0.0.0 -&gt; v0.0.1</li>
+<li>prometheus v0.0.0 -&gt; v0.1.0</li>
+<li>rabbitmq v1.1.0 -&gt; v1.2.0</li>
+<li>registry v1.2.0 -&gt; v1.2.1</li>
+<li>registry-proxy v1.2.0 -&gt; v1.2.1</li>
+</ul>
+<h4 id="features">Features<a class="td-heading-self-link" href="#features" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/fcbebdae62029cf4308ffc0adeb8a90cf5550077"><code>fcbebda</code></a> (builder) - builder: use TCPRoute expose service</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/d02bb5de832e50a281aa550c738b3eb653549806"><code>d02bb5d</code></a> (controller) - controller: support app dns policy config</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/9aa968ebccdebaf0971a6dbaa890320b9603a6a9"><code>9aa968e</code></a> (controller) - controller: add svc type support</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/62e2d348e2987ebcdcaba993559dc1d30a8ffec6"><code>62e2d34</code></a> (controller) - controller: improve the services api</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/4393755b08a587e093b7603683ac8b5cdf654ac3"><code>4393755</code></a> (controller) - controller: use gateway replace ingress</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/323045d9ab1589c08a8090d7fe9c73ab6276281d"><code>323045d</code></a> (controller) - controller: add canary support</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/3f81c975baefd4018e6b3426965b4397456f0d0e"><code>3f81c97</code></a> (controller) - gateways: add addresses field</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/4e64aa73d0fde9fe667064b420bd9375dbea8397"><code>4e64aa7</code></a> (controller) - gateways: add addresses field</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/02ad5811d9a8d3e031ce97f8ce85d0ce85be7619"><code>02ad581</code></a> (monitor) - grafana: add pd tikv dashboard</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/2a9e2b042941a911a31c846f71988d6eadeff811"><code>2a9e2b0</code></a> (monitor) - monitor: add storage monitor</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/41d5057b1d4067822edcf597e888b3f23e052d9d"><code>41d5057</code></a> (monitor) - grafana: data source change to prometheus</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/ec035d11f3fcf8486f4240aac8db4890e4520b53"><code>ec035d1</code></a> (monitor) - monitor: usegateway replace ingress</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/c694c98cfab10d8381fd70d7efbbdaedc26caf2d"><code>c694c98</code></a> (monitor) - grafana: add drycc storage seaweedfs dashboard</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/1e1fdc8a8f3ca0974ff5d06ade500afed29a16ed"><code>1e1fdc8</code></a> (passport) - passport: use gateway replace ingress</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/ffdb408776bfa42c80ba5df56730c689a26a821a"><code>ffdb408</code></a> (prometheus) - prometheus: use gateway replace ingress</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/04152b99ca9a8aacddc246af78968191e41ea9d7"><code>04152b9</code></a> (rabbitmq) - rabbitmq: use gateway replace ingress</li>
+</ul>
+<h4 id="fixes">Fixes<a class="td-heading-self-link" href="#fixes" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/0499500a1335791a89ffcab18e97b22d55ac232c"><code>0499500</code></a> (builder) - builder: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/642491d68a4958cdd6b9b78771ad512d7a462231"><code>642491d</code></a> (builder) - builder: no build log</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/873d146812f40de609100d9a2181d50e79695a54"><code>873d146</code></a> (controller) - controller: do not set entrypoint when no procfile</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/d9028c53547b4d53d46d5cba508602ae31d0b391"><code>d9028c5</code></a> (controller) - controller: pip8 error</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/3efcfb764325255ff9ae4ca47ab82927e88ff9ab"><code>3efcfb7</code></a> (controller) - controller: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/18a3a1a3f777597966da8f8fb21545a18b44d887"><code>18a3a1a</code></a> (controller) - controller: miss service error</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/94f796cd2ebd8dd76b4e8073cab039fed0211cae"><code>94f796c</code></a> (controller) - controller: drycc run pod should not restart</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/80f31614601daf30351033c3d9ce8610d4a41581"><code>80f3161</code></a> (controller) - controller: monitor query error</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/b76f2c5ee9c0e3461737ec7fc6cc73b73a0c043c"><code>b76f2c5</code></a> (controller) - controller: read websocket delay</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/b6e068ee19354b98d613985c8c80ec6d42171cc0"><code>b6e068e</code></a> (controller) - controller: metrics sql tpl, gateway pod should not restart, cleanup old rs, update monitor datatbase config</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ad9adc645759445702688b2a486ed5d6a1e6a5f7"><code>ad9adc6</code></a> (controller) - controller: rabbitmq sharding err</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/67739075a1134b817e9be97b7d594c1e3790f444"><code>6773907</code></a> (controller) - controller: default k8s pod annotaions</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ffcf1f931c395c3293d909f32a3bf35136b72776"><code>ffcf1f9</code></a> (controller) - controller: under-indented for visual indent</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/3afd0cf8e36cec5bbfb59424d5ab036268287d3a"><code>3afd0cf</code></a> (controller) - controller: charts env error</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/769bb8b8dc47ef032377a61e6288c514bff16a9b"><code>769bb8b</code></a> (database) - database: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/769bb8b8dc47ef032377a61e6288c514bff16a9b"><code>769bb8b</code></a> (database) - database: label conflict error</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/6a321c5c802b3a0826bc283f2ffe429769f8753c"><code>6a321c5</code></a> (database) - database: link error</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/558feae9c0edfb4fa7f0dae08f09dc987f822c88"><code>558feae</code></a> (fluentbit) - fluentbit: build charts error</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/98d8a2a6046dffa3213f84fd5cb2f054727ca798"><code>98d8a2a</code></a> (gateway) - fixup</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/8b5dde1d5b0107913f3fca7c90703902fd9a360e"><code>8b5dde1</code></a> (gateway) - gateway: secretName</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/702866da3014497e303eb346be0f88c3c161586c"><code>702866d</code></a> (gateway) - gateway: build status</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/f55dac1cbab3214f60b33992f3e08e186bfa6198"><code>f55dac1</code></a> (imagebuilder) - imagebuilder: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/ac13b5f036e036073d39ddf2e34627be340df078"><code>ac13b5f</code></a> (imagebuilder) - imagebuilder: build svg</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/6b7bbc5a38a8550457585908ac7ce9858c19a034"><code>6b7bbc5</code></a> (logger) - logger: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/0136b5c3ac711f132be35d8382f9df9268145be6"><code>0136b5c</code></a> (monitor) - monitor: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/f03d975fe88a4419f58b54f8d1ac944f968b0bfe"><code>f03d975</code></a> (passport) - passport: DRYCC_GRAFANA_DOMAIN error</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/b530ea8960c173b16968dc5c4da5f8e5f783d9dd"><code>b530ea8</code></a> (passport) - passport: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/be5a0a77f5e037456676af5617cdcd01c2f868ea"><code>be5a0a7</code></a> (passport) - passport: change passport</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/1596c7f723d493b8f17e367999e0315d7f2bc205"><code>1596c7f</code></a> (rabbitmq) - rabbitmq: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/0dc4f6fef0bf147e2cec96cd26f490ae5799fa57"><code>0dc4f6f</code></a> (rabbitmq) - rabbitmq: images-shard error</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/43293ae792f0fc8fa932b7fac865f57510de793d"><code>43293ae</code></a> (redis) - redis: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/ca13b7d7592995b057f1075b3223074c7a9de54b"><code>ca13b7d</code></a> (registry) - registry: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/ab5c7937aac830c2b09b08777f39180248911442"><code>ab5c793</code></a> (registry) - registry: garbage collect error</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/ab0fabc77483f531acaeaa089afce1636200c20a"><code>ab0fabc</code></a> (registry-proxy) - registry-proxy: manifest error</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/dfc72361f70380697d7090cb0e5bfa61c5264560"><code>dfc7236</code></a> (registry-proxy) - registry-proxy: daemon yaml format</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/42c03bee957cb46b5703cd163cea24c754b3cccc"><code>42c03be</code></a> (storage) - storage: seaweedfs csi error</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/453e41a13ecaedf256dc823c37de3233a2f60cab"><code>453e41a</code></a> (timeseries) - timeseries: could not register node</li>
+</ul>
+<h4 id="docs">Docs<a class="td-heading-self-link" href="#docs" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/5433c8907bdf4c0320566878a0cfc4f38730f3d4"><code>5433c89</code></a> (gateway) - gateway: add prerequisites</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/2f0c5d8ed5a227507f7848426824759db673eb20"><code>2f0c5d8</code></a> (logger) - logger: change architecture</li>
+</ul>
+<h4 id="maintenance">Maintenance<a class="td-heading-self-link" href="#maintenance" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/bdd02ebf1178209cca08c0e94d76638405100083"><code>bdd02eb</code></a> (builder) - builder: use dynamic clusterrole name</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/66b4b25ec7c517152a37e375f9a7e86e05cceada"><code>66b4b25</code></a> (builder) - builder: upgrade new controller-go-sdk</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/219d86f6bebf11fce80e2535b724bf8ad94b204b"><code>219d86f</code></a> (builder) - builder: upgrade go.mod</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/91f2f14b0b02af099fe67d4a9be65432de0cb18d"><code>91f2f14</code></a> (builder) - builder: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/9abca168d6a8b26f45a3787c2a80bf5aa6354451"><code>9abca16</code></a> (builder) - woodpecker: use woodpecker ci build status</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/f43dd5030ac3715ab96cfb2a114bd0416b21110c"><code>f43dd50</code></a> (builder) - deps: bump golang.org/x/net from 0.2.0 to 0.7.0</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/0384c69ad46cdabeabb3ca23d01367d047eb0c84"><code>0384c69</code></a> (builder) - builder: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/e3149b95e8c64c1d01444d58de67aa4747c4ebf7"><code>e3149b9</code></a> (builder) - builder: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/d88ea1bd5538e5425cb4cbb856ab82bb5dfe47e8"><code>d88ea1b</code></a> (builder) - builder: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/ba590303b791ff954e41a64ef8babe54170aba3b"><code>ba59030</code></a> (builder) - builder: upgrade go.mod</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/1114dd7d951215c23a6fcefc75a5a71a85391561"><code>1114dd7</code></a> (builder) - builder: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/fe50b626d9edf4908f6c820fa2714e5bde0fbc0e"><code>fe50b62</code></a> (builder) - builder: change drycc gateway listener name</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/db3950cf47cd8f5f0c06c579eec1189c2bcdb0b3"><code>db3950c</code></a> (builder) - builder: remove gateway route</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/5a508bbc9e21852c4e47e598bb42a7c8c75e93ee"><code>5a508bb</code></a> (builder) - builder: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/bbb9029e773f24d2692afdd801e8d09ca75538a3"><code>bbb9029</code></a> (builder) - deps: bump golang.org/x/net from 0.12.0 to 0.17.0</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/f4e5d6ca78d597e020ce398fd9fd132c41591826"><code>f4e5d6c</code></a> (builder) - builder: remove health url</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/9111c8ffd87978db6734d405ef0362c34b9fe4ef"><code>9111c8f</code></a> (builder) - builder: remove io/ioutil</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/1f36e3ddd67b29571707c57819bdd8148647359c"><code>1f36e3d</code></a> (controller) - deps: bump django from 4.1.2 to 4.1.6 in /rootfs</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/e4ab434db6fd84cd35a127c8414951df7e138503"><code>e4ab434</code></a> (controller) - controller: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/9f0301e4a138d337d9530807b347775d25ee6525"><code>9f0301e</code></a> (controller) - deps: bump django from 4.1.6 to 4.1.7 in /rootfs</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/39324238c251f982072b28fdbb79c04df6230889"><code>3932423</code></a> (controller) - woodpecker: use woodpecker ci build status</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ae8b6b464f3733bd0ca743bd419ecf806646909f"><code>ae8b6b4</code></a> (controller) - setting: support KUBERNETES_LIMITS env config</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/c10b9bc740f74ed820d36ba5cb6eb462bce3bb7c"><code>c10b9bc</code></a> (controller) - controller: using the api_version instead of hard coding</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/e6908cd934ec0360344c2120bbd4bd9a27b6fe9d"><code>e6908cd</code></a> (controller) - controller: upgrade requirements</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/b0eba0c0f03b3b74bf6b2d013a8e2fd69dd5fc6c"><code>b0eba0c</code></a> (controller) - controller: add route rules serializer</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/2e4b6a457f6ab66137badecaa0ce5a020e2208e2"><code>2e4b6a4</code></a> (controller) - controller: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/7d32b55dad2a0da5a2d539c970608182dfd00c52"><code>7d32b55</code></a> (controller) - controller: upgrade to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/f2dc8dd737e44d1297f6a6903bc17392f767a828"><code>f2dc8dd</code></a> (controller) - controller: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/5739b8306921408b11b921515cd6dc7a818e6a1a"><code>5739b83</code></a> (controller) - controller: use timescaledb replace influxdb</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/53892cb796b69ba91b1520ee2b1e35bf6516fb57"><code>53892cb</code></a> (controller) - controller: add timeseries</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/0fe0eae17d2af7e0a955d6e8041db22a66b64317"><code>0fe0eae</code></a> (controller) - controller: upgrade requirements</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/18b2a915d043cade51e0d4017d08e4ffa9f54dd6"><code>18b2a91</code></a> (controller) - deps: bump aiohttp from 3.8.4 to 3.8.5 in /rootfs</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/f50874a6e180d9a18fd3a9b9ad1ec1491acae114"><code>f50874a</code></a> (controller) - controller: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/956cd081922f8eeda637530e8397a40d9f7d9c3d"><code>956cd08</code></a> (controller) - controller: change drycc gateway listener name</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/9ab3ead47263e0f00f5d31afdad028eedefd6a56"><code>9ab3ead</code></a> (controller) - controller: remove passport url check</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/a24c7b011de56845fcc0ffaa78424d60e6cb8aac"><code>a24c7b0</code></a> (controller) - controller: remove gateway route</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/f7e539acb9890593d5b3ba970221f333b81abff5"><code>f7e539a</code></a> (controller) - controller: change celery priority</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ab77a529bc9ac2e61a45af4676b8d8796789f014"><code>ab77a52</code></a> (controller) - controller: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/8e27501fc6f024bd590508ad827d6a28ca871776"><code>8e27501</code></a> (controller) - controller: dynamic app storage class</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/385978b8f8a07696196974f7f021886448fbc31c"><code>385978b</code></a> (controller) - controller: list_pods datetime format</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/b20362c09cf14cbb64148476948481bca11fcf99"><code>b20362c</code></a> (controller) - deps: bump django from 4.2.3 to 4.2.7 in /rootfs</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/e11ae1ba7d5ef0423b6a51874704739e6a3c86df"><code>e11ae1b</code></a> (controller) - controller: add cluster migrate</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ca6e9dfa4e90c613572faf449445cebabcf1a310"><code>ca6e9df</code></a> (controller) - controller: async mount</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/9a7fbfc5e7037dbcd6f8415da1540fc0d0785bff"><code>9a7fbfc</code></a> (controller) - controller: remove FOSSA</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/3d55279d81f93783dfdcf0af47c429094fd45019"><code>3d55279</code></a> (controller) - deps: bump aiohttp from 3.8.5 to 3.8.6 in /rootfs</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/d498a11d8c1179d9ef7e09d4638b10663fc3266d"><code>d498a11</code></a> (controller) - controller: add measure loalancers</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/249a985410e98ab0250af7eaf88c28735f2d7ef1"><code>249a985</code></a> (controller) - deps: bump aiohttp from 3.8.5 to 3.8.6 in /rootfs</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/b967f5846a006e03d41374266d689a34bd387ba8"><code>b967f58</code></a> (controller) - deps: bump aiohttp from 3.8.6 to 3.9.0 in /rootfs (#107)</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/8ca9ed61477fe4c538b0eefbe08f42757f9ec527"><code>8ca9ed6</code></a> (controller) - controller: no longer restrict reserved domain</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/9ff6649b311185927398a12d55451897015ba491"><code>9ff6649</code></a> (database) - database: add init database configure</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/9b4cd26e827862bbcbd2f95eb9ff5aea3031ef80"><code>9b4cd26</code></a> (database) - database: use dynamic clusterrole name</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/b59cde4a41499b1739f51776524c969963706a1e"><code>b59cde4</code></a> (database) - database: remove minio require</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/86462f8e432c21ed691f17544313747a1a95bf2a"><code>86462f8</code></a> (database) - database: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/1e8555a4fa0aa4ab14e276af95eeadb11e7ea2f3"><code>1e8555a</code></a> (database) - database: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/1b762d54948614e8ff8179f91ba4087c1c24cd93"><code>1b762d5</code></a> (database) - database: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/9ffe1fdcc1d1fd33e1d5a69d38c6e2c044f7e002"><code>9ffe1fd</code></a> (database) - database: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/69466d71dfb0fac98f5e2372eae4923d2cb55dde"><code>69466d7</code></a> (database) - database: add database extension</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/beb4b628783f30b8dec35f0ee50d179a27781915"><code>beb4b62</code></a> (database) - database: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/67e27148766a6a16379bccbb160df881e8638cfa"><code>67e2714</code></a> (database) - database: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/8f328f85f28b51b0ea8ce4fe508701c2e875a668"><code>8f328f8</code></a> (fluentbit) - fluentbit: no limit buffer size for kube api</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/fc0552c72b83267e37d67766a0e1040c7d3d59d8"><code>fc0552c</code></a> (fluentbit) - fluentbit: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/63a6cab0c5004ade3c332f16d87f70daaebc12b0"><code>63a6cab</code></a> (fluentbit) - fluentbit: change fluentbit match</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/220f81adae775c21f6eac5fca0f16f2f96962e7d"><code>220f81a</code></a> (fluentbit) - fluentbit: run as no-root</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/aec1393d9e976f2ecb24281a3fc92f5f8bdcf563"><code>aec1393</code></a> (fluentbit) - fluentbit: change configmap name</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/1af4fd24c9e061cb74c3c09af75ad33262a74a19"><code>1af4fd2</code></a> (fluentbit) - fluentbit: change default stream name</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/bef90adfd96f4c713a7de261cb2c66e7cb9900af"><code>bef90ad</code></a> (gateway) - gateway: add route for gateway</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/d523ddb7f794774c5e237c10779fe43713cdc0b6"><code>d523ddb</code></a> (gateway) - gateway: change drycc gateway listener name</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/d9137f4c7681be9edacc2f1123660d0feb961601"><code>d9137f4</code></a> (gateway) - gateway: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/0425dd4e7a0399fd757a80880e67eda2e8c150fc"><code>0425dd4</code></a> (gateway) - gateway: add customListeners</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/3982b86cb7515d42ead064dee86b931f2f4c58a7"><code>3982b86</code></a> (imagebuilder) - imagebuilder: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/3e4e7a329c7532d8787c9c76eb71d938d12fad45"><code>3e4e7a3</code></a> (imagebuilder) - imagebuilder: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/8df6e8e0e6684a4c4a21bf477958b36eb6750e97"><code>8df6e8e</code></a> (imagebuilder) - imagebuilder: upgrade stack version</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/a5601f7588843698b336eccacbc12559dc915779"><code>a5601f7</code></a> (imagebuilder) - imagebuilder: add drycc_app env</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/07465f8bc16cbb15e12d02d522df94265d503c45"><code>07465f8</code></a> (imagebuilder) - imagebuilder: upgrade to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/00d22d2a3c3fa5dce5595fee94bfa8d5a5ca9b2c"><code>00d22d2</code></a> (imagebuilder) - imagebuilder: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/0b7a24e9211acef3252234e4ebce81353c2a8218"><code>0b7a24e</code></a> (imagebuilder) - imagebuilder: upgrade podman/mc/caddy</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/a7d8be869f0b128e9fc6a28ec5c45e5cdca0ea90"><code>a7d8be8</code></a> (imagebuilder) - imagebuilder: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/6b2da83d29e0210a9307e4c5ad1199ed7d7599ce"><code>6b2da83</code></a> (logger) - logger: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/8245b2588a3c350b9c1405c9e56664881534c4b4"><code>8245b25</code></a> (logger) - woodpecker: use woodpecker ci build status</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/f811a74710324fa3ac4ac1fbafc76fe38b042c33"><code>f811a74</code></a> (logger) - logger: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/413f6f60b255f43adbf98cfdbdf2a8325cf3327a"><code>413f6f6</code></a> (logger) - logger: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/2ac6b101d2a205cce7653dcbf635cf1afea8e47e"><code>2ac6b10</code></a> (logger) - logger: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/2581426b262362e04fc4906cfb7d4567ca58d40a"><code>2581426</code></a> (logger) - logger: bump redis to v9</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/364b25aebe91236be41b5974b3643fc1a2b6d352"><code>364b25a</code></a> (logger) - logger: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/dc169a303663ce319037fcf19d0b6bd164b8ee82"><code>dc169a3</code></a> (logger) - logger: use fluentbit replace fluentd</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/d855d91ba3b4651d2a384f3919a39a84f6794b95"><code>d855d91</code></a> (logger) - logger: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/f76723507196a4814dc98e8d9c6403157b6273c4"><code>f767235</code></a> (monitor) - monitor: add off-cluster passport configure</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/ab23936f8d8610f88c061996217b28a8da0ffe3d"><code>ab23936</code></a> (monitor) - monitor: use dynamic clusterrole name</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/47beee0619ee974ad702d813e4db39b187a0507b"><code>47beee0</code></a> (monitor) - monitor: change tikv secret key</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/af7703f7a646a074adf89f9e1d7681bc2a4a8cfb"><code>af7703f</code></a> (monitor) - grafana: remove panel when component off-cluster</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/1b870c2a5b5212d9aeae8dd720bab8190a2b8002"><code>1b870c2</code></a> (monitor) - monitor: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/4a5f1f164c48e93271e28e5a252eb9c87ce4e293"><code>4a5f1f1</code></a> (monitor) - grafana: up ldap api_url config</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/143cabe692cd9d80f909afbe91de0bb8b3c18dea"><code>143cabe</code></a> (monitor) - monitor: add prometheus architecture diagram</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/93091c2dcde35d1ca63450ba08cd2e92b532cdda"><code>93091c2</code></a> (monitor) - woodpecker: use woodpecker ci build status</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/0b7045a1ec3d0061a8434e7e8beed47183287b2c"><code>0b7045a</code></a> (monitor) - grafana: add dashboard kubernetes_deployment_metrics</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/2fb1839f48277724e394b04697d1eb1fb748bf3e"><code>2fb1839</code></a> (monitor) - woodpecker: pipeline config VERSION, when build container image</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/e2724164a3e2855d1f62e4bdcdcff99f6b10e48f"><code>e272416</code></a> (monitor) - monitor: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/abc0e5373a0aef065fd8887e9f8bee5fd13a5e92"><code>abc0e53</code></a> (monitor) - monitor: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/86cc01bd318becf9528feffcfd7c6080c3faafa2"><code>86cc01b</code></a> (monitor) - monitor: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/1cd849ff6f8367375f6d80430e9fe623ebe0162d"><code>1cd849f</code></a> (monitor) - monitor: add postgresql outputs</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/c3205c04418bbb794286eca1bcaa2bf37f26437c"><code>c3205c0</code></a> (monitor) - monitor: change default agent config</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/8c802c01af85fbf40b42c124cd6c72a7c3d8266d"><code>8c802c0</code></a> (monitor) - monitor: add timeseries database</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/e9abc40801c5d90934d19b5ca1b838dbdf9b2431"><code>e9abc40</code></a> (monitor) - monitor: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/6af66cd45685080c5242f6bc6758df35e0c7a69f"><code>6af66cd</code></a> (monitor) - monitor: change drycc gateway listener name</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/d02d718b64837e2869aea66f8a9205d0d3205feb"><code>d02d718</code></a> (monitor) - monitor: remove gateway route</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/3509c2916b9b6aabe709b0057afdacbdc747e462"><code>3509c29</code></a> (monitor) - monitor: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/ed7bfa2f0c17b3e2577f168af719a6c9b3adc436"><code>ed7bfa2</code></a> (monitor) - monitor: optimize env PROMETHEUS_URL</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/da89befad4be1c66ae33740c7a2567b8b83b6b46"><code>da89bef</code></a> (passport) - passport: charts codereview</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/61c4a964022e28f81727efdc858e5ec3a07a71fb"><code>61c4a96</code></a> (passport) - passport: support init app config</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/91010068522d524dfd6680d09915a5444e29a1ba"><code>9101006</code></a> (passport) - passport: add initApplications to charts</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/7dd7fa414f07cc61771cec2d3e98cc1a32d38a00"><code>7dd7fa4</code></a> (passport) - passport: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/4400199ac576b00e0e268ca74d18ff1da15f32bc"><code>4400199</code></a> (passport) - woodpecker: use woodpecker ci build status</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/6b2c546ec6a5dd0311667cab1ac322819ea71918"><code>6b2c546</code></a> (passport) - passport: change secret name to drycc-passport-auto-tls</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/c8bd824c567bfc68df8fd118ad5a9805242507bd"><code>c8bd824</code></a> (passport) - passport: upgrade requirements</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/aee5aefe0c074816b6ba99624f0e2e5fb6462516"><code>aee5aef</code></a> (passport) - passport: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/2d819533a0d6e10534e5a82fac370dd67ef96fc2"><code>2d81953</code></a> (passport) - passport: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/9e662428f39d73651a0c70bd613595c7205c4494"><code>9e66242</code></a> (passport) - passport: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/0fca9982e2ff45bbb5ebe7e3e91fcf0a6af52d94"><code>0fca998</code></a> (passport) - passport: upgrade requirements</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/348252849763e5e96b5908293bd78d84b52b6ad0"><code>3482528</code></a> (passport) - passport: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/0c5ec939da419910c9e98ea97cee9d66916ba14f"><code>0c5ec93</code></a> (passport) - passport: change drycc gateway listener name</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/f7b8f5312d0e9707d2f41b14fb1113e2dfa63dc3"><code>f7b8f53</code></a> (passport) - passport: remove gateway route</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/baf69da9f8b9e1858fa89418e12f3133ab567d88"><code>baf69da</code></a> (passport) - passport: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/fcd45dd063da8338c812d5d8af9c41c6d4405826"><code>fcd45dd</code></a> (passport) - passport: add cluster migrate</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/da6d32a3f09d43209fd1037cb1cff810ddcdcf68"><code>da6d32a</code></a> (prometheus) - prometheus: add prometheus-config</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/683de9e2c03941152196e4fb986cb9ce8e7c1a0f"><code>683de9e</code></a> (prometheus) - prometheus: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/3323300fa23d53bc09e3e70041f4a300aaace68b"><code>3323300</code></a> (prometheus) - prometheus: remove gateway route</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/da1d356e3f978a01fcbbd6b5996ff9272748ed87"><code>da1d356</code></a> (prometheus) - prometheus: change drycc gateway listener name</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/4e7a936edaf8446d48b80e69afd610af6d59a6a4"><code>4e7a936</code></a> (prometheus) - prometheus: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/44c1c6f6a3a11cd1792753c7ba94faf6675e8fa3"><code>44c1c6f</code></a> (prometheus) - prometheus: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/d1f1dda09da1cd0b82dd18854e196b206e27e931"><code>d1f1dda</code></a> (prometheus) - prometheus: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/0836fc1cea544fd928fb6727c99ca9369a1c2134"><code>0836fc1</code></a> (prometheus) - prometheus: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/9e132322c6c36fde1a6ce4f8fabce6ffdb73cb32"><code>9e13232</code></a> (prometheus) - prometheus: add LICENSE</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/f53e14a9e741122cef2a88976a4ccafc6ad6f6fd"><code>f53e14a</code></a> (rabbitmq) - rabbitmq: remove auto user</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/0ec7277c5624b35ea1ac9d5d88a9eddb75278794"><code>0ec7277</code></a> (rabbitmq) - rabbitmq: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/f376a30bdb6223f03b7d3e40eb3093616830291b"><code>f376a30</code></a> (rabbitmq) - woodpecker: use woodpecker ci build status</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/51405d8f429584fcf5d38a7b1422971304f3981c"><code>51405d8</code></a> (rabbitmq) - rabbitmq: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/463ca03544a31a0a6c98ceb4862e9cd15a47271b"><code>463ca03</code></a> (rabbitmq) - rabbitmq: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/1978a714c0f868de9d4dfc863be003c313d3db6f"><code>1978a71</code></a> (rabbitmq) - rabbitmq: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/139277f11035e0e548bfdc35272579806cd8bb0c"><code>139277f</code></a> (rabbitmq) - rabbitmq: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/be49741721134fd966c09ea44ef87b705668c8a2"><code>be49741</code></a> (rabbitmq) - rabbitmq: change drycc gateway listener name</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/6d22518f5bbb3883bc4bdc05b6c93ea6b40e3be9"><code>6d22518</code></a> (rabbitmq) - rabbitmq: remove gateway route</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/0eb7833ac8a01bbde78f3e0172e6d3d2948d6234"><code>0eb7833</code></a> (rabbitmq) - rabbitmq: add check shards</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/921106312dc679e79c8dc8ce226ae62fa68ce0ec"><code>9211063</code></a> (rabbitmq) - rabbitmq: erlang vm tuning optimization</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/648a78d9b886890e924250a198624972d28a2ad8"><code>648a78d</code></a> (rabbitmq) - rabbitmq: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/0b43a4d04556eb2bfa81cc8ed22d84d636ad45d1"><code>0b43a4d</code></a> (rabbitmq) - rabbitmq: add x-random exchange</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/ad1c4da3f11a1e690508c71a992a3bda86b56201"><code>ad1c4da</code></a> (redis) - redis: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/3f37f92a06db4b06c105718bec48aeaac2bf1a31"><code>3f37f92</code></a> (redis) - redis: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/e3bef7a15e73fb77ba76ac4f0140fa03ebd2a813"><code>e3bef7a</code></a> (redis) - redis: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/4e806d40f4a203db5c91dd184a712fba8ce55820"><code>4e806d4</code></a> (redis) - redis: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/d5023be85937f1f4cf4b625fb8250a63c4776f3b"><code>d5023be</code></a> (redis) - redis: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/98f5d6fa30d4fb28c89eb547a0e2631aa34a46ac"><code>98f5d6f</code></a> (redis) - redis: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/063f29e85bc565c29d19b900b96017161263cb88"><code>063f29e</code></a> (registry) - registry: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/17bf8ae8cc1a257ff978a6a8ee27d8988f3ed9c2"><code>17bf8ae</code></a> (registry) - woodpecker: use woodpecker ci build status</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/7bbad151b1d5c934f9d81a882ea6ebef16bf1723"><code>7bbad15</code></a> (registry) - registry: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/279154fdec97b5e0d28a5c27481928d433ac1369"><code>279154f</code></a> (registry) - registry: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/3e4ae840d5718521278051122c19b96b9dbf2791"><code>3e4ae84</code></a> (registry) - registry: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/fa322d6c372fd6d622a2054584bbcab934ff67f0"><code>fa322d6</code></a> (registry) - registry: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/6c18fe004f3431a59ecd5c874c3bd77af544c661"><code>6c18fe0</code></a> (registry) - registry: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/0bc8472a7baa4b8f982694b97528fa984c03639d"><code>0bc8472</code></a> (registry) - registry: remove health url</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/5dacd9f735816decc4b6af7c4994a75ce280d92b"><code>5dacd9f</code></a> (registry) - registry: add wait-for-port check</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/fdeefc3888d5ec0dbfff8db6c797621a90896531"><code>fdeefc3</code></a> (registry) - registry: use headless</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/08bf9f882de2d94f8c3bdefafe24fafa9b9870c4"><code>08bf9f8</code></a> (registry) - registry: change registry port to 5000</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/40bcea2ddf3a6e6316422e14a25df360fb4dcf81"><code>40bcea2</code></a> (registry) - registry: add registry push test</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/871b8e72735b0c17f4c692ea53495e1abb4497d1"><code>871b8e7</code></a> (registry) - registry: add default env</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/7f3b3aceea1cc28475f9cec0a3244f693eaf1e6a"><code>7f3b3ac</code></a> (registry) - registry: bump registry 2.8.3</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/569f15dca6d21c69f3ad3734e6509addf2caf913"><code>569f15d</code></a> (registry-proxy) - registry-proxy: use woodpecker replace drone</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/cc33caf06d9aa2c4bec7a745aa233f8827695972"><code>cc33caf</code></a> (registry-proxy) - woodpecker: use woodpecker ci build status</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/0002aab36b2692250f8653db3505a0300275bea3"><code>0002aab</code></a> (registry-proxy) - registry-proxy: add chart appVersion</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/40af10ba90e5e0e6e050f5d97625a1294ab6f910"><code>40af10b</code></a> (registry-proxy) - registry-proxy: upgrade codename to bookworm</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/c56b9dff701130403d9d0ecc932069fa16d2e462"><code>c56b9df</code></a> (registry-proxy) - registry-proxy: add codename build-arg</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/9d5bfe091bddf0f6d7d0cd8995823540b084dc77"><code>9d5bfe0</code></a> (registry-proxy) - registry-proxy: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/e6a33500e5eba9a32baa3f2e9841e67546236965"><code>e6a3350</code></a> (registry-proxy) - registry-proxy: change worker_processes to 1</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/726f39d51f196a28effb917fbacb20db960cf5f3"><code>726f39d</code></a> (storage) - storage: add volume compactionMBps</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/a5aa2d87bd4d320e30833cbe3e3598f5199e7da5"><code>a5aa2d8</code></a> (storage) - storage: add threshold to vacuum and reclaim spaces</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/e687d044f2796dbfef23239df62337b2e658b797"><code>e687d04</code></a> (storage) - storage: delete disk type in single disk case</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/75ee2e4f4acfa1c4fd8f725252ffdc8a30495dda"><code>75ee2e4</code></a> (storage) - storage: change datanode replicas to 4</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/c5fd7bad70e239cd389fc92372305435e099d4ce"><code>c5fd7ba</code></a> (storage) - storage: delete useless env</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/b3826ea800b1fbde96178f590d25361560f3bc3a"><code>b3826ea</code></a> (storage) - storage: add ssd hdd dir</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/29881a0702b1e68e69c86e6ae96da8c4eda209a4"><code>29881a0</code></a> (storage) - storage: add balance cronjob</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/c5a0f512283eb2c32814f3b2f3c0e3ebfb57bd1f"><code>c5a0f51</code></a> (storage) - storage: add defaultReplication for seaweedfs master</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/543c7a273c2988d477782ba97462263c93068669"><code>543c7a2</code></a> (timeseries) - timeseries: use podman replace docker</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/5376024ea1489cf311fd18dd691ab5b80eb4e5e8"><code>5376024</code></a> (timeseries) - timeseries: update timeseries-service-replica</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/52e8520d0e2bb6b0625304a8e29d3b680bc44840"><code>52e8520</code></a> (timeseries) - timeseries: bump common 1.1.2</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/f82657ceb0cdf390fb07e721ce57e07081d43968"><code>f82657c</code></a> (timeseries) - timeseries: add start script</li>
+</ul>
+
+	<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+  <li>
+    <a href="/blog/2022/10/21/drycc-workflow-v1.6.0/" aria-label="Previous - Drycc Workflow v1.6.0" class="btn btn-primary"><span class="me-1">←</span>Previous</a>
+  </li>
+  <li>
+    <a href="/blog/2024/01/29/drycc-workflow-v1.7.2/" aria-label="Next - Drycc Workflow  v1.7.2" class="btn btn-primary">Next<span class="ms-1">→</span></a>
+  </li>
+</ul>
+
+	<div class="td-page-meta__lastmod">
+  Last modified 29.02.2024: <a href="https://github.com/drycc/website/commit/3b49d6ee91dda360c6b7d34f632a24c93b3d7702">init repo (3b49d6e)</a>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

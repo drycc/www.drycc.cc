@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reference Guide on Drycc</title>
+    <link>/docs/reference-guide/</link>
+    <description>Recent content in Reference Guide on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/reference-guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a Self-Signed SSL Certificate</title>
+      <link>/docs/reference-guide/creating-a-self-signed-ssl-certificate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/creating-a-self-signed-ssl-certificate/</guid>
+      <description>When using the app ssl feature for non-production applications or when installing SSL for the platform, you can avoid the costs associated with the SSL certificate by using a self-signed SSL certificate. Though the certificate implements full encryption, visitors to your site will see a browser warning indicating that the certificate should not be trusted.&#xA;Prerequisites The openssl library is required to generate your own certificate. Run the following command in your local environment to see if you already have openssl installed.</description>
+    </item>
+    <item>
+      <title>Controller API v2.0</title>
+      <link>/docs/reference-guide/controller-api-v2-0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/controller-api-v2-0/</guid>
+      <description>What&amp;rsquo;s New New! format of POST /v2/apps/&amp;lt;app id&amp;gt;/run has changed.&#xA;Authentication Register a New User Example Request:&#xA;POST /v2/auth/register/ HTTP/1.1 Host: drycc.example.com Content-Type: application/json { &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;opensesame&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34; } Optional Parameters:&#xA;{ &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34; } Example Response:&#xA;HTTP/1.1 201 CREATED DRYCC_API_VERSION: 2.0 DRYCC_PLATFORM_VERSION: 2.1.0 Content-Type: application/json { &amp;#34;id&amp;#34;: 1, &amp;#34;last_login&amp;#34;: &amp;#34;2014-10-19T22:01:00.601Z&amp;#34;, &amp;#34;is_superuser&amp;#34;: true, &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34;, &amp;#34;is_staff&amp;#34;: true, &amp;#34;is_active&amp;#34;: true, &amp;#34;date_joined&amp;#34;: &amp;#34;2014-10-19T22:01:00.</description>
+    </item>
+    <item>
+      <title>Controller API v2.1</title>
+      <link>/docs/reference-guide/controller-api-v2-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/controller-api-v2-1/</guid>
+      <description>What&amp;rsquo;s New New! healthcheck field in configuration, deprecates the HEALTHCHECK_* environment variables.&#xA;New! Unsetting a configuration variable that does not exist will return a 422.&#xA;New! Creating an identical sequential release returns a 409 rather than create a no-op release.&#xA;Authentication Register a New User Example Request:&#xA;POST /v2/auth/register/ HTTP/1.1 Host: drycc.example.com Content-Type: application/json { &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;opensesame&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34; } Optional Parameters:&#xA;{ &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34; } Example Response:</description>
+    </item>
+    <item>
+      <title>Controller API v2.2</title>
+      <link>/docs/reference-guide/controller-api-v2-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/controller-api-v2-2/</guid>
+      <description>What&amp;rsquo;s New New! /v2/auth/whoami endpoint&#xA;Authentication Register a New User Example Request:&#xA;POST /v2/auth/register/ HTTP/1.1 Host: drycc.example.com Content-Type: application/json { &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;opensesame&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34; } Optional Parameters:&#xA;{ &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34; } Example Response:&#xA;HTTP/1.1 201 CREATED DRYCC_API_VERSION: 2.2 DRYCC_PLATFORM_VERSION: 2.2.0 Content-Type: application/json { &amp;#34;id&amp;#34;: 1, &amp;#34;last_login&amp;#34;: &amp;#34;2014-10-19T22:01:00.601Z&amp;#34;, &amp;#34;is_superuser&amp;#34;: true, &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34;, &amp;#34;is_staff&amp;#34;: true, &amp;#34;is_active&amp;#34;: true, &amp;#34;date_joined&amp;#34;: &amp;#34;2014-10-19T22:01:00.601Z&amp;#34;, &amp;#34;groups&amp;#34;: [], &amp;#34;user_permissions&amp;#34;: [] } Log in Example Request:</description>
+    </item>
+    <item>
+      <title>Controller API v2.3</title>
+      <link>/docs/reference-guide/controller-api-v2-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/controller-api-v2-3/</guid>
+      <description>What&amp;rsquo;s New New! /v2/apps/{name}/logs endpoint was fixed and no longer returns b&#39;log data&#39; and instead returns a normal string log data&#xA;Authentication Register a New User Example Request:&#xA;POST /v2/auth/register/ HTTP/1.1 Host: drycc.example.com Content-Type: application/json { &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;opensesame&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34; } Optional Parameters:&#xA;{ &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34; } Example Response:&#xA;HTTP/1.1 201 CREATED DRYCC_API_VERSION: 2.3 DRYCC_PLATFORM_VERSION: 2.3.0 Content-Type: application/json { &amp;#34;id&amp;#34;: 1, &amp;#34;last_login&amp;#34;: &amp;#34;2014-10-19T22:01:00.601Z&amp;#34;, &amp;#34;is_superuser&amp;#34;: true, &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.</description>
+    </item>
+  </channel>
+</rss>

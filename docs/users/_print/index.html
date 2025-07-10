@@ -1,0 +1,431 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/docs/users/">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/users/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Users | Drycc</title>
+<meta name="description" content="In this tutorial, you&#39;ll learn how to manage users.">
+<meta property="og:url" content="/docs/users/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Users">
+  <meta property="og:description" content="In this tutorial, you&#39;ll learn how to manage users.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Users">
+  <meta itemprop="description" content="In this tutorial, you&#39;ll learn how to manage users.">
+  <meta itemprop="dateModified" content="2024-05-06T13:43:29+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Users">
+  <meta name="twitter:description" content="In this tutorial, you&#39;ll learn how to manage users.">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/users/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Users</h1>
+<div class="lead">In this tutorial, you&rsquo;ll learn how to manage users.</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-4fb0482339ab618b926388863b0a7831">Drycc Workflow  CLI</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-12c0c67f6b5849e4a51f8b6f7c8d4df3">Users and Registration</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-58441c0d4701f07c911ce8422802623a">Users and SSH Keys</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-4fb0482339ab618b926388863b0a7831">1 - Drycc Workflow  CLI</h1>
+    <div class="lead">How to download, install, and start using the Drycc CLI. The Drycc CLI used to be part of the Drycc Toolbelt.</div>
+	<p>The Drycc Workflow command-line interface (CLI), or client, allows you to interact
+with Drycc Workflow.</p>
+<h2 id="installation">Installation<a class="td-heading-self-link" href="#installation" aria-label="Heading self-link"></a></h2>
+<p>Install the latest <code>drycc</code> client for Linux or Mac OS X with:
+$ curl -sfL <a href="https://www.drycc.cc/install-cli.sh">https://www.drycc.cc/install-cli.sh</a> | bash -</p>
+<p>The installer puts <code>drycc</code> in your current directory, but you should move it
+somewhere in your $PATH:</p>
+<pre><code>$ ln -fs $PWD/drycc /usr/local/bin/drycc
+</code></pre>
+<h2 id="getting-help">Getting Help<a class="td-heading-self-link" href="#getting-help" aria-label="Heading self-link"></a></h2>
+<p>The Drycc client comes with comprehensive documentation for every command.
+Use <code>drycc help</code> to explore the commands available to you:</p>
+<pre><code>$ drycc help
+The Drycc command-line client issues API calls to a Drycc controller.
+
+Usage: drycc &lt;command&gt; [&lt;args&gt;...]
+
+Auth commands::
+
+  login         login to a controller
+  logout        logout from the current controller
+
+Subcommands, use `drycc help [subcommand]` to learn more::
+...
+</code></pre>
+<p>To get help on subcommands, use <code>drycc help [subcommand]</code>:</p>
+<pre><code>$ drycc help apps
+Valid commands for apps:
+
+apps:create        create a new application
+apps:list          list accessible applications
+apps:info          view info about an application
+apps:open          open the application in a browser
+apps:logs          view aggregated application logs
+apps:run           run a command in an ephemeral app container
+apps:destroy       destroy an application
+apps:transfer      transfer app ownership to another user
+
+Use `drycc help [command]` to learn more
+</code></pre>
+<h2 id="support-for-multiple-profiles">Support for Multiple Profiles<a class="td-heading-self-link" href="#support-for-multiple-profiles" aria-label="Heading self-link"></a></h2>
+<p>The CLI reads from the default <code>client</code> profile, which is located on your
+workstation at <code>$HOME/.drycc/client.json</code>.</p>
+<p>Easily switch between multiple Drycc Workflow installations or users by setting
+the <code>$DRYCC_PROFILE</code> environment variable or by using the <code>-c</code> flag.</p>
+<p>There are two ways to set the <code>$DRYCC_PROFILE</code> option.</p>
+<ol>
+<li>Path to a json configuration file.</li>
+<li>Profile name. If you set profile to just a name, it will be saved alongside the default profile,
+in <code>$HOME/.drycc/&lt;name&gt;.json</code>.</li>
+</ol>
+<p>Examples:</p>
+<pre><code>$ DRYCC_PROFILE=production drycc login drycc.production.com
+...
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as drycc
+Configuration saved to /home/testuser/.drycc/production.json
+$ DRYCC_PROFILE=~/config.json drycc login drycc.example.com
+...
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as drycc
+Configuration saved to /home/testuser/config.json
+</code></pre>
+<p>The configuration flag works identically to and overrides <code>$DRYCC_PROFILE</code>:</p>
+<pre><code>$ drycc whoami -c ~/config.json
+You are drycc at drycc.example.com
+</code></pre>
+<h2 id="proxy-support">Proxy Support<a class="td-heading-self-link" href="#proxy-support" aria-label="Heading self-link"></a></h2>
+<p>If your workstation uses a proxy to reach the network where the cluster lies,
+set the <code>http_proxy</code> or <code>https_proxy</code> environment variable to enable proxy support:</p>
+<pre><code>$ export http_proxy=&quot;http://proxyip:port&quot;
+$ export https_proxy=&quot;http://proxyip:port&quot;
+</code></pre>
+<p>!!! note
+Configuring a proxy is generally not necessary for local Minikube clusters.</p>
+<h2 id="cli-plugins">CLI Plugins<a class="td-heading-self-link" href="#cli-plugins" aria-label="Heading self-link"></a></h2>
+<p>Plugins allow developers to extend the functionality of the Drycc Client, adding new commands or features.</p>
+<p>If an unknown command is specified, the client will attempt to execute the command as a dash-separated command. In this case, <code>drycc resource:command</code> will execute <code>drycc-resource</code> with the argument list <code>command</code>. In full form:</p>
+<pre><code>$ # these two are identical
+$ drycc accounts list
+$ drycc-accounts list
+</code></pre>
+<p>Any flags after the command will also be sent to the plugin as an argument:</p>
+<pre><code>$ # these two are identical
+$ drycc accounts list --debug
+$ drycc-accounts list --debug
+</code></pre>
+<p>But flags preceding the command will not:</p>
+<pre><code>$ # these two are identical
+$ drycc --debug accounts list
+$ drycc-accounts list
+</code></pre>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-12c0c67f6b5849e4a51f8b6f7c8d4df3">2 - Users and Registration</h1>
+    <div class="lead">Get started on Drycc today</div>
+	<p>Workflow use the passport component to create and authorize users, it can config options for LDAP authentication or browse passport web site to register users.</p>
+<h2 id="login-to-workflow">Login to Workflow<a class="td-heading-self-link" href="#login-to-workflow" aria-label="Heading self-link"></a></h2>
+<p>If you already have an account, use <code>drycc login</code> to authenticate against the Drycc Workflow API.</p>
+<pre><code>$ drycc login http://drycc.example.com
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as drycc
+Configuration file written to /root/.drycc/client.json
+</code></pre>
+<p>Or you can login with username and password
+$ drycc login <a href="http://drycc.example.com">http://drycc.example.com</a> &ndash;username=demo &ndash;password=demo
+Configuration file written to /root/.drycc/client.json</p>
+<h2 id="logout-from-workflow">Logout from Workflow<a class="td-heading-self-link" href="#logout-from-workflow" aria-label="Heading self-link"></a></h2>
+<p>Logout of an existing controller session using <code>drycc logout</code>.</p>
+<pre><code>$ drycc logout
+Logged out as drycc
+</code></pre>
+<h2 id="verify-your-session">Verify Your Session<a class="td-heading-self-link" href="#verify-your-session" aria-label="Heading self-link"></a></h2>
+<p>You can verify your client configuration by running <code>drycc whoami</code>.</p>
+<pre><code>$ drycc whoami
+You are drycc at http://drycc.example.com
+</code></pre>
+<p>!!! note
+Session and client configuration is stored in the <code>~/.drycc/client.json</code> file.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-58441c0d4701f07c911ce8422802623a">3 - Users and SSH Keys</h1>
+    <div class="lead">Create, manage, and upload SSH keys to Drycc for use in deploying and connecting to applications.</div>
+	<p>For <strong>Dockerfile</strong> and <strong>Buildpack</strong> based application deploys via <code>git push</code>, Drycc Workflow identifies users via SSH
+keys. SSH keys are pushed to the platform and must be unique to each user. Users may have multiple SSH keys as needed.</p>
+<h2 id="generate-an-ssh-key">Generate an SSH Key<a class="td-heading-self-link" href="#generate-an-ssh-key" aria-label="Heading self-link"></a></h2>
+<p>If you do not already have an SSH key or would like to create a new key for Drycc Workflow, generate a new key using
+<code>ssh-keygen</code>:</p>
+<pre tabindex="0"><code>$ ssh-keygen -f ~/.ssh/id_drycc -t rsa
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/admin/.ssh/id_drycc.
+Your public key has been saved in /Users/admin/.ssh/id_drycc.pub.
+The key fingerprint is:
+3d:ac:1f:f4:83:f7:64:51:c1:7e:7f:80:b6:70:36:c9 admin@plinth-23437.local
+The key&#39;s randomart image is:
++--[ RSA 2048]----+
+|              .. |
+|               ..|
+|           . o. .|
+|         o. E .o.|
+|        S == o..o|
+|         o +.  .o|
+|        . o + o .|
+|         . o =   |
+|          .   .  |
++-----------------+
+$ ssh-add ~/.ssh/id_drycc
+Identity added: /Users/admin/.ssh/id_drycc (/Users/admin/.ssh/id_drycc)
+</code></pre><h2 id="adding-and-removing-ssh-keys">Adding and Removing SSH Keys<a class="td-heading-self-link" href="#adding-and-removing-ssh-keys" aria-label="Heading self-link"></a></h2>
+<p>By publishing the <strong>public</strong> half of your SSH key to Drycc Workflow the component responsible for receiving <code>git push</code>
+will be able to authenticate the user and ensure that they have access to the destination application.</p>
+<pre tabindex="0"><code>$ drycc keys add ~/.ssh/id_drycc.pub
+Uploading id_drycc.pub to drycc... done
+</code></pre><p>You can always view the keys associated with your user as well:</p>
+<pre tabindex="0"><code>$ drycc keys list
+ID                              OWNER    KEY                           
+admin@plinth-23437.local        admin    ssh-rsa abc AAAAB3Nz...3437.local
+admin@subgenius.local           admin    ssh-rsa 123 AAAAB3Nz...nius.local
+</code></pre><p>Remove keys by their name:</p>
+<pre tabindex="0"><code>$ drycc keys remove admin@plinth-23437.local
+Removing admin@plinth-23437.local SSH Key... don
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

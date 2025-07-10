@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Users on Drycc</title>
+    <link>/docs/users/</link>
+    <description>Recent content in Users on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/users/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drycc Workflow  CLI</title>
+      <link>/docs/users/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/users/cli/</guid>
+      <description>The Drycc Workflow command-line interface (CLI), or client, allows you to interact with Drycc Workflow.&#xA;Installation Install the latest drycc client for Linux or Mac OS X with: $ curl -sfL https://www.drycc.cc/install-cli.sh | bash -&#xA;The installer puts drycc in your current directory, but you should move it somewhere in your $PATH:&#xA;$ ln -fs $PWD/drycc /usr/local/bin/drycc Getting Help The Drycc client comes with comprehensive documentation for every command. Use drycc help to explore the commands available to you:</description>
+    </item>
+    <item>
+      <title>Users and Registration</title>
+      <link>/docs/users/registration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/users/registration/</guid>
+      <description>Workflow use the passport component to create and authorize users, it can config options for LDAP authentication or browse passport web site to register users.&#xA;Login to Workflow If you already have an account, use drycc login to authenticate against the Drycc Workflow API.&#xA;$ drycc login http://drycc.example.com Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71 Waiting for login... .o.Logged in as drycc Configuration file written to /root/.drycc/client.json Or you can login with username and password $ drycc login http://drycc.</description>
+    </item>
+    <item>
+      <title>Users and SSH Keys</title>
+      <link>/docs/users/ssh-keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/users/ssh-keys/</guid>
+      <description>For Dockerfile and Buildpack based application deploys via git push, Drycc Workflow identifies users via SSH keys. SSH keys are pushed to the platform and must be unique to each user. Users may have multiple SSH keys as needed.&#xA;Generate an SSH Key If you do not already have an SSH key or would like to create a new key for Drycc Workflow, generate a new key using ssh-keygen:&#xA;$ ssh-keygen -f ~/.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Managing Workflow on Drycc</title>
+    <link>/docs/managing-workflow/</link>
+    <description>Recent content in Managing Workflow on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/managing-workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tuning Component Settings</title>
+      <link>/docs/managing-workflow/tuning-component-settings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/tuning-component-settings/</guid>
+      <description>After you add the Drycc Chart Repository, you can customize the chart using helm inspect values drycc/workflow &amp;gt; values.yaml before using helm install to complete the installation.&#xA;There are a few ways to customize the respective component:&#xA;If the value is exposed in the values.yaml file as derived above, one may modify the section of the component to tune these settings. The modified value(s) will then take effect at chart installation or release upgrade time via either of the two respective commands:</description>
+    </item>
+    <item>
+      <title>Configure DNS</title>
+      <link>/docs/managing-workflow/configuring-dns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/configuring-dns/</guid>
+      <description>For example, assuming example.com were a cluster&amp;rsquo;s domain:&#xA;The controller should be accessible at drycc.example.com Applications should be accessible (by default) at &amp;lt;application name&amp;gt;.example.com Given that this is the case, the primary objective in configuring DNS is that traffic for all subdomains of a cluster&amp;rsquo;s domain be directed to the cluster node(s) hosting the platform&amp;rsquo;s router component, which is capable of directing traffic within the cluster to the correct endpoints.</description>
+    </item>
+    <item>
+      <title>Deploy Hooks</title>
+      <link>/docs/managing-workflow/deploy-hooks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/deploy-hooks/</guid>
+      <description>It’s useful to help keep the development team informed about deploys, while it can also be used to integrate different systems together.&#xA;After one or more hooks are setup, hook output and errors appear in your application’s logs:&#xA;$ drycc logs ... 2011-03-15T15:07:29-07:00 drycc[api]: Deploy hook sent to http://drycc.rocks Deploy hooks are a generic HTTP hook. An administrator can create and configure multiple deploy hooks by tuning the controller settings via the Helm chart.</description>
+    </item>
+    <item>
+      <title>Platform Logging</title>
+      <link>/docs/managing-workflow/platform-logging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/platform-logging/</guid>
+      <description>We’re working with Quickwit to bring you an application log cluster and search interface.&#xA;Architecture Diagram ┌───────────┐ ┌───────────┐ │ Container │ │ Grafana │ └───────────┘ └───────────┘ │ ^ log | │ | ˅ │ ┌───────────┐ ┌───────────┐ │ Fluentbit │─────otel/grpc────&amp;gt;│ Quickwit │ └───────────┘ └───────────┘ Default Configuration Fluent Bit is based in a pluggable architecture where different plugins plays a major role in the data pipeline, more than 70 built-in plugins available. Please refer to charts values.</description>
+    </item>
+    <item>
+      <title>Platform Monitoring</title>
+      <link>/docs/managing-workflow/platform-monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/platform-monitoring/</guid>
+      <description>Description We now include a monitoring stack for introspection on a running Kubernetes cluster. The stack includes 4 components:&#xA;kube-state-metrics, kube-state-metrics (KSM) is a simple service that listens to the Kubernetes API server and generates metrics about the state of the objects. Node Exporter, Prometheus exporter for hardware and OS metrics exposed by *NIX kernels. Victoriametrics, a Cloud Native Computing Foundation project, is a systems and service monitoring system. Grafana, Graphing tool for time series data Architecture Diagram ┌────────────────┐ │ HOST │ │ node-exporter │◀──┐ ┌──────────────────┐ └────────────────┘ │ │kube-state-metrics│ │ └──────────────────┘ ┌────────────────┐ │ ▲ │ HOST │ │ ┌─────────────────┐ │ │ node-exporter │◀──┼────│ victoriametrics │─────────────┘ └────────────────┘ │ └─────────────────┘ │ ▲ ┌───────────────┐ │ │ │ HOST │ │ ▼ │ node-exporter│◀───┘ ┌──────────┐ └───────────────┘ │ Grafana │ └──────────┘ Grafana Grafana allows users to create custom dashboards that visualize the data captured to the running VictoriaMetrics component.</description>
+    </item>
+    <item>
+      <title>Production Deployments</title>
+      <link>/docs/managing-workflow/production-deployments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/production-deployments/</guid>
+      <description>Running Workflow without drycc storage In production, persistent storage can be achieved by running an external object store. For users on AWS, GCE/GKE or Azure, the convenience of Amazon S3, Google GCS or Microsoft Azure Storage makes the prospect of running a Storage-less Workflow cluster quite reasonable. For users who have restriction on using external object storage using swift object storage can be an option.&#xA;Running a Workflow cluster without Storage provides several advantages:</description>
+    </item>
+    <item>
+      <title>Upgrading Workflow</title>
+      <link>/docs/managing-workflow/upgrading-workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/upgrading-workflow/</guid>
+      <description>This upgrade process requires:&#xA;Helm version 2.1.0 or newer Configured Off-Cluster Storage Upgrade Process !!! note If upgrading from a Helm Classic install, you&amp;rsquo;ll need to &amp;lsquo;migrate&amp;rsquo; the cluster to a Kubernetes Helm installation. See Workflow-Migration for steps.&#xA;Step 1: Apply the Workflow upgrade Helm will remove all components from the previous release. Traffic to applications deployed through Workflow will continue to flow during the upgrade. No service interruptions should occur.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,998 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/docs/managing-workflow/">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/managing-workflow/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Managing Workflow | Drycc</title>
+<meta name="description" content="Managing Workflow using the kubectl.">
+<meta property="og:url" content="/docs/managing-workflow/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Managing Workflow">
+  <meta property="og:description" content="Managing Workflow using the kubectl.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Managing Workflow">
+  <meta itemprop="description" content="Managing Workflow using the kubectl.">
+  <meta itemprop="dateModified" content="2024-05-06T13:43:29+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Managing Workflow">
+  <meta name="twitter:description" content="Managing Workflow using the kubectl.">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/managing-workflow/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Managing Workflow</h1>
+<div class="lead">Managing Workflow using the kubectl.</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-0e712a5c2020887818ceab36d4f26910">Tuning Component Settings</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-a1258f39e96a14029efa8d7c379f95a4">Configure DNS</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-5e70dabb651ba434bf52f6a0f428d092">Deploy Hooks</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-004a15eb4cb73246d89366dd9838d84d">Platform Logging</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-fd8f5f6dc2937f1343d4f1cd4660ae35">Platform Monitoring</a></li>
+
+
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-ad04652ad398a8700cd2996d3d721e6f">Production Deployments</a></li>
+
+
+    
+  
+    
+    
+	
+<li>7: <a href="#pg-f30a865310ec754108a4ce6a32869210">Upgrading Workflow</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-0e712a5c2020887818ceab36d4f26910">1 - Tuning Component Settings</h1>
+    <div class="lead">Helm Charts are a set of Kubernetes manifests that reflect best practices for deploying an application or service on Kubernetes.</div>
+	<p>After you add the Drycc Chart Repository, you can customize the chart using
+<code>helm inspect values drycc/workflow &gt; values.yaml</code> before using <code>helm install</code> to complete the
+installation.</p>
+<p>There are a few ways to customize the respective component:</p>
+<ul>
+<li>
+<p>If the value is exposed in the <code>values.yaml</code> file as derived above, one may modify the section of the component to tune these settings.  The modified value(s) will then take effect at chart installation or release upgrade time via either of the two respective commands:</p>
+<pre><code> $ helm install drycc oci://registry.drycc.cc/charts/workflow \
+     -n drycc \
+     --namespace drycc \
+     -f values.yaml
+ $ helm upgrade drycc oci://registry.drycc.cc/charts/workflow \
+     -n drycc \
+     --namespace drycc \
+     -f values.yaml
+</code></pre>
+</li>
+<li>
+<p>If the value hasn&rsquo;t yet been exposed in the <code>values.yaml</code> file, one may edit the component deployment with the tuned setting.  Here we edit the <code>drycc-controller</code> deployment:</p>
+<pre><code> $ kubectl --namespace drycc edit deployment drycc-controller
+</code></pre>
+<p>Add/edit the setting via the appropriate environment variable and value under the <code>env</code> section and save.  The updated deployment will recreate the component pod with the new/modified setting.</p>
+</li>
+<li>
+<p>Lastly, one may also fetch and edit the chart as served by version control/the chart repository itself:</p>
+<pre><code> $ helm fetch oci://registry.drycc.cc/charts/workflow --untar
+ $ $EDITOR workflow/charts/controller/templates/controller-deployment.yaml
+</code></pre>
+<p>Then run <code>helm install ./workflow --namespace drycc --name drycc</code> to apply the changes, or <code>helm upgrade drycc ./workflow</code> if the cluster is already running.</p>
+</li>
+</ul>
+<h2 id="setting-resource-limits">Setting Resource limits<a class="td-heading-self-link" href="#setting-resource-limits" aria-label="Heading self-link"></a></h2>
+<p>You can set resource limits to Workflow components by modifying the values.yaml file fetched
+earlier. This file has a section for each Workflow component. To set a limit to any Workflow
+component just add <code>resources</code> in the section and set them to the appropriate values.</p>
+<p>Below is an example of how the builder section of <code>values.yaml</code> might look with CPU and memory
+limits set:</p>
+<pre tabindex="0"><code>builder:
+  imageOrg: &#34;drycc&#34;
+  imagePullPolicy: &#34;Always&#34;
+  imageTag: &#34;canary&#34;
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 2048Mi
+    requests:
+      cpu: 500m
+      memory: 1024Mi
+</code></pre><h2 id="customizing-the-builder">Customizing the Builder<a class="td-heading-self-link" href="#customizing-the-builder" aria-label="Heading self-link"></a></h2>
+<p>The following environment variables are tunable for the <a href="/docs/understanding-workflow/components/#builder">Builder</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DEBUG</td>
+<td>Enable debug log output (default: false)</td>
+</tr>
+<tr>
+<td>BUILDER_POD_NODE_SELECTOR</td>
+<td>A node selector setting for builder job. As it may sometimes consume a lot of node resources, one may want a given builder job to run in a specific node only, so it won&rsquo;t affect critical nodes. for example <code>pool:testing,disk:magnetic</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="customizing-the-controller">Customizing the Controller<a class="td-heading-self-link" href="#customizing-the-controller" aria-label="Heading self-link"></a></h2>
+<p>The following environment variables are tunable for the <a href="/docs/understanding-workflow/components/#controller">Controller</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REGISTRATION_MODE</td>
+<td>set registration to &ldquo;enabled&rdquo;, &ldquo;disabled&rdquo;, or &ldquo;admin_only&rdquo; (default: &ldquo;admin_only&rdquo;)</td>
+</tr>
+<tr>
+<td>GUNICORN_WORKERS</td>
+<td>number of <a href="http://gunicorn.org/">gunicorn</a> workers spawned to process requests (default: CPU cores * 4 + 1)</td>
+</tr>
+<tr>
+<td>RESERVED_NAMES</td>
+<td>a comma-separated list of names which applications cannot reserve for routing (default: &ldquo;drycc, drycc-builder&rdquo;)</td>
+</tr>
+<tr>
+<td>DRYCC_DEPLOY_HOOK_URLS</td>
+<td>a comma-separated list of URLs to send <a href="/docs/managing-workflow/deploy-hooks/#http-post-hook">deploy hooks</a> to.</td>
+</tr>
+<tr>
+<td>DRYCC_DEPLOY_HOOK_SECRET_KEY</td>
+<td>a private key used to compute the HMAC signature for deploy hooks.</td>
+</tr>
+<tr>
+<td>DRYCC_DEPLOY_REJECT_IF_PROCFILE_MISSING</td>
+<td>rejects a deploy if the previous build had a Procfile but the current deploy is missing it. A 409 is thrown in the API. Prevents accidental process types removal. (default: &ldquo;false&rdquo;, allowed values: &ldquo;true&rdquo;, &ldquo;false&rdquo;)</td>
+</tr>
+<tr>
+<td>DRYCC_DEPLOY_PROCFILE_MISSING_REMOVE</td>
+<td>when turned on (default) any missing process type in a Procfile compared to the previous deploy is removed. When set to false will allow an empty Procfile to go through without removing missing process types, note that new images, configs and so on will get updated on all proc types.  (default: &ldquo;true&rdquo;, allowed values: &ldquo;true&rdquo;, &ldquo;false&rdquo;)</td>
+</tr>
+<tr>
+<td>DRYCC_DEFAULT_CONFIG_TAGS</td>
+<td>set tags for all applications by default, for example: &lsquo;{&ldquo;role&rdquo;: &ldquo;worker&rdquo;}&rsquo;. (default: &lsquo;&rsquo;)</td>
+</tr>
+<tr>
+<td>KUBERNETES_NAMESPACE_DEFAULT_QUOTA_SPEC</td>
+<td>set resource quota to application namespace by setting <a href="http://kubernetes.io/docs/admin/resourcequota/">ResourceQuota</a> spec, for example: <code>{&quot;spec&quot;:{&quot;hard&quot;:{&quot;pods&quot;:&quot;10&quot;}}}</code>, restrict app owner to spawn more then 10 pods (default: &ldquo;&rdquo;, no quota will be applied to namespace)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ldap-authentication-settings">LDAP authentication settings<a class="td-heading-self-link" href="#ldap-authentication-settings" aria-label="Heading self-link"></a></h3>
+<p>Configuration options for LDAP authentication are detailed <a href="https://pythonhosted.org/django-auth-ldap/reference.html">here</a>.</p>
+<p>The following environment variables are available for enabling LDAP
+authentication of user accounts in the <a href="/docs/understanding-workflow/components/#passport">Passport</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LDAP_ENDPOINT</td>
+<td>The URI of the LDAP server. If not specified, LDAP authentication is not enabled (default: &ldquo;&rdquo;, example: <code>ldap://hostname</code>).</td>
+</tr>
+<tr>
+<td>LDAP_BIND_DN</td>
+<td>The distinguished name to use when binding to the LDAP server (default: &ldquo;&rdquo;)</td>
+</tr>
+<tr>
+<td>LDAP_BIND_PASSWORD</td>
+<td>The password to use with LDAP_BIND_DN (default: &ldquo;&rdquo;)</td>
+</tr>
+<tr>
+<td>LDAP_USER_BASEDN</td>
+<td>The distinguished name of the search base for user names (default: &ldquo;&rdquo;)</td>
+</tr>
+<tr>
+<td>LDAP_USER_FILTER</td>
+<td>The name of the login field in the users search base (default: &ldquo;username&rdquo;)</td>
+</tr>
+<tr>
+<td>LDAP_GROUP_BASEDN</td>
+<td>The distinguished name of the search base for user&rsquo;s groups names (default: &ldquo;&rdquo;)</td>
+</tr>
+<tr>
+<td>LDAP_GROUP_FILTER</td>
+<td>The filter for user&rsquo;s groups (default: &ldquo;&rdquo;, example: <code>objectClass=person</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="global-and-per-application-settings">Global and per application settings<a class="td-heading-self-link" href="#global-and-per-application-settings" aria-label="Heading self-link"></a></h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DRYCC_DEPLOY_BATCHES</td>
+<td>the number of pods to bring up and take down sequentially during a scale (default: number of available nodes)</td>
+</tr>
+<tr>
+<td>DRYCC_DEPLOY_TIMEOUT</td>
+<td>deploy timeout in seconds per deploy batch (default: 120)</td>
+</tr>
+<tr>
+<td>IMAGE_PULL_POLICY</td>
+<td>the kubernetes <a href="http://kubernetes.io/docs/user-guide/images/">image pull policy</a> for application images (default: &ldquo;IfNotPresent&rdquo;) (allowed values: &ldquo;Always&rdquo;, &ldquo;IfNotPresent&rdquo;)</td>
+</tr>
+<tr>
+<td>KUBERNETES_DEPLOYMENTS_REVISION_HISTORY_LIMIT</td>
+<td>how many <a href="http://kubernetes.io/docs/user-guide/deployments/#revision-history-limit">revisions</a> Kubernetes keeps around of a given Deployment (default: all revisions)</td>
+</tr>
+<tr>
+<td>KUBERNETES_POD_TERMINATION_GRACE_PERIOD_SECONDS</td>
+<td>how many seconds kubernetes waits for a pod to finish work after a SIGTERM before sending SIGKILL (default: 30)</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="/docs/applications/deploying-apps/">Deploying Apps</a> guide for more detailed information on those.</p>
+<h2 id="customizing-the-database">Customizing the Database<a class="td-heading-self-link" href="#customizing-the-database" aria-label="Heading self-link"></a></h2>
+<p>The following environment variables are tunable for the <a href="/docs/understanding-workflow/components/#database">Database</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BACKUP_FREQUENCY</td>
+<td>how often the database should perform a base backup (default: &ldquo;12h&rdquo;)</td>
+</tr>
+<tr>
+<td>BACKUPS_TO_RETAIN</td>
+<td>number of base backups the backing store should retain (default: 5)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customizing-fluentbit">Customizing Fluentbit<a class="td-heading-self-link" href="#customizing-fluentbit" aria-label="Heading self-link"></a></h2>
+<p>The following values can be changed in the <code>values.yaml</code> file or by using the <code>--values</code> flag with the Helm CLI.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config.service</td>
+<td>The service section defines the global properties of the service.</td>
+</tr>
+<tr>
+<td>config.inputs</td>
+<td>An input section defines a source (related to an input plugin).</td>
+</tr>
+<tr>
+<td>config.filters</td>
+<td>A filter section defines a filter (related to a filter plugin)</td>
+</tr>
+<tr>
+<td>config.outputs</td>
+<td>The outputs section specify a destination that certain records should follow after a Tag match.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information about the various variables that can be set please see the <a href="https://github.com/drycc/fluentbit">fluentbit</a>.</p>
+<h2 id="customizing-the-monitor">Customizing the Monitor<a class="td-heading-self-link" href="#customizing-the-monitor" aria-label="Heading self-link"></a></h2>
+<h3 id="grafanahttpsgrafanacom"><a href="https://grafana.com/">Grafana</a><a class="td-heading-self-link" href="#grafanahttpsgrafanacom" aria-label="Heading self-link"></a></h3>
+<p>We have exposed some of the more useful configuration values directly in the chart. This allows them to be set using either the <code>values.yaml</code> file or by using the <code>--set</code> flag with the Helm CLI. You can see these options below:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>&ldquo;admin&rdquo;</td>
+<td>The first user created in the database (this user has admin privileges)</td>
+</tr>
+<tr>
+<td>password</td>
+<td>&ldquo;admin&rdquo;</td>
+<td>Password for the first user.</td>
+</tr>
+<tr>
+<td>allow_sign_up</td>
+<td>&ldquo;true&rdquo;</td>
+<td>Allows users to sign up for an account.</td>
+</tr>
+</tbody>
+</table>
+<p>For a list of other options you can set by using environment variables please see the <a href="https://github.com/drycc/monitor/blob/main/grafana/rootfs/usr/share/grafana/grafana.ini.tpl">configuration file</a> in Github.</p>
+<h3 id="victoriametricshttpsvictoriametricscom"><a href="https://victoriametrics.com/">Victoriametrics</a><a class="td-heading-self-link" href="#victoriametricshttpsvictoriametricscom" aria-label="Heading self-link"></a></h3>
+<p>You can find a list of values that can be set using environment variables <a href="https://github.com/drycc/victoriametrics">here</a>.</p>
+<h2 id="customizing-the-registry">Customizing the Registry<a class="td-heading-self-link" href="#customizing-the-registry" aria-label="Heading self-link"></a></h2>
+<p>The <a href="/docs/understanding-workflow/components/#registry">Registry</a> component can be tuned by following the
+<a href="https://github.com/drycc/distribution/blob/main/docs/configuration.md">drycc/distribution config doc</a>.</p>
+<h2 id="customizing-the-router">Customizing the Router<a class="td-heading-self-link" href="#customizing-the-router" aria-label="Heading self-link"></a></h2>
+<p>The majority of router settings are tunable through annotations, which allows the router to be
+re-configured with zero downtime post-installation. You can find the list of annotations to tune
+<a href="https://github.com/drycc/router#annotations">here</a>.</p>
+<p>The following environment variables are tunable for the [Router][] component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POD_NAMESPACE</td>
+<td>The pod namespace the router resides in. This is set by the <a href="http://kubernetes.io/docs/user-guide/downward-api/">Kubernetes downward API</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customizing-workflow-manager">Customizing Workflow Manager<a class="td-heading-self-link" href="#customizing-workflow-manager" aria-label="Heading self-link"></a></h2>
+<p>The following environment variables are tunable for [Workflow Manager][]:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHECK_VERSIONS</td>
+<td>Enables the external version check at <a href="https://versions.drycc.info/">https://versions.drycc.info/</a> (default: &ldquo;true&rdquo;)</td>
+</tr>
+<tr>
+<td>POLL_INTERVAL_SEC</td>
+<td>The interval when Workflow Manager performs a version check, in seconds (default: 43200, or 12 hours)</td>
+</tr>
+<tr>
+<td>VERSIONS_API_URL</td>
+<td>The versions API URL (default: &ldquo;<a href="https://versions-staging.drycc.info">https://versions-staging.drycc.info</a>&rdquo;)</td>
+</tr>
+<tr>
+<td>DOCTOR_API_URL</td>
+<td>The doctor API URL (default: &ldquo;<a href="https://doctor-staging.drycc.info">https://doctor-staging.drycc.info</a>&rdquo;)</td>
+</tr>
+<tr>
+<td>API_VERSION</td>
+<td>The version number Workflow Manager sends to the versions API (default: &ldquo;v2&rdquo;)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a1258f39e96a14029efa8d7c379f95a4">2 - Configure DNS</h1>
+    <div class="lead">The Drycc Workflow controller and all applications deployed via Workflow are intended (by default) to be accessible as subdomains of the Workflow cluster&rsquo;s domain.</div>
+	<p>For example, assuming <code>example.com</code> were a cluster&rsquo;s domain:</p>
+<ul>
+<li>The controller should be accessible at <code>drycc.example.com</code></li>
+<li>Applications should be accessible (by default) at <code>&lt;application name&gt;.example.com</code></li>
+</ul>
+<p>Given that this is the case, the primary objective in configuring DNS is that traffic for all subdomains of a cluster&rsquo;s domain be directed to the cluster node(s) hosting the platform&rsquo;s router component, which is capable of directing traffic within the cluster to the correct endpoints.</p>
+<h2 id="with-a-load-balancer">With a Load Balancer<a class="td-heading-self-link" href="#with-a-load-balancer" aria-label="Heading self-link"></a></h2>
+<p>Generally, it is recommended that a [load balancer][] be used to direct inbound traffic to one or more routers.  In such a case, configuring DNS is as simple as defining a wildcard record in DNS that points to the load balancer.</p>
+<p>For example, assuming a domain of <code>example.com</code>:</p>
+<ul>
+<li>An <code>A</code> record enumerating each of your load balancer(s) IPs (i.e. DNS round-robining)</li>
+<li>A <code>CNAME</code> record referencing an existing fully-qualified domain name for the load balancer
+<ul>
+<li>Per <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">AWS&rsquo; own documentation</a>, this is the recommended strategy when using AWS Elastic Load Balancers, as ELB IPs may change over time.</li>
+</ul>
+</li>
+</ul>
+<p>DNS for any applications using a &ldquo;custom domain&rdquo; (a fully-qualified domain name that is not a subdomain of the cluster&rsquo;s own domain) can be configured by creating a <code>CNAME</code> record that references the wildcard record described above.</p>
+<p>Although it is dependent upon your distribution of Kubernetes and your underlying infrastructure, in many cases, the IP(s) or existing fully-qualified domain name of a load balancer can be determined directly using the <code>kubectl</code> tool:</p>
+<pre tabindex="0"><code>$ kubectl --namespace=istio-nginx describe service | grep &#34;LoadBalancer&#34;
+LoadBalancer Ingress:	a493e4e58ea0511e5bb390686bc85da3-1558404688.us-west-2.elb.amazonaws.com
+</code></pre><p>The <code>LoadBalancer Ingress</code> field typically describes an existing domain name or public IP(s).  Note that if Kubernetes is able to automatically provision a load balancer for you, it does so asynchronously.  If the command shown above is issued very soon after Workflow installation, the load balancer may not exist yet.</p>
+<h2 id="without-a-load-balancer">Without a Load Balancer<a class="td-heading-self-link" href="#without-a-load-balancer" aria-label="Heading self-link"></a></h2>
+<p>On some platforms (Minikube, for instance), a load balancer is not an easy or practical thing to provision. In these cases, one can directly identify the public IP of a Kubernetes node that is hosting a router pod and use that information to configure the local <code>/etc/hosts</code> file.</p>
+<p>Because wildcard entries do not work in a local <code>/etc/hosts</code> file, using this strategy may result in frequent editing of that file to add fully-qualified subdomains of a cluster for each application added to that cluster.  Because of this a more viable option may be to utilize the <a href="http://xip.io/">xip.io</a> service.</p>
+<p>In general, for any IP, <code>a.b.c.d</code>, the fully-qualified domain name <code>any-subdomain.a.b.c.d.xip.io</code> will resolve to the IP <code>a.b.c.d</code>.  This can be enormously useful.</p>
+<p>To begin, find the node(s) hosting router instances using <code>kubectl</code>:</p>
+<pre tabindex="0"><code>$ kubectl --namespace=istio-ingress describe pod | grep Node:
+Node:       ip-10-0-0-199.us-west-2.compute.internal/10.0.0.199
+Node:       ip-10-0-0-198.us-west-2.compute.internal/10.0.0.198
+</code></pre><p>The command will display information for every router pod.  For each, a node name and IP are displayed in the <code>Node</code> field.  If the IPs appearing in these fields are public, any of these may be used to configure your local <code>/etc/hosts</code> file or may be used with <a href="http://xip.io/">xip.io</a>.  If the IPs shown are not public, further investigation may be needed.</p>
+<p>You can list the IP addresses of a node using <code>kubectl</code>:</p>
+<pre tabindex="0"><code>$ kubectl describe node ip-10-0-0-199.us-west-2.compute.internal
+# ...
+Addresses:	10.0.0.199,10.0.0.199,54.218.85.175
+# ...
+</code></pre><p>Here, the <code>Addresses</code> field lists all the node&rsquo;s IPs.  If any of them are public, again, they may be used to configure your local <code>/etc/hosts</code> file or may be used with <a href="http://xip.io/">xip.io</a>.</p>
+<h2 id="tutorial-configuring-dns-with-google-cloud-dnscloud-dns">Tutorial: Configuring DNS with <a href="https://cloud.google.com/dns/docs">Google Cloud DNS</a><a class="td-heading-self-link" href="#tutorial-configuring-dns-with-google-cloud-dnscloud-dns" aria-label="Heading self-link"></a></h2>
+<p>In this section, we&rsquo;ll describe how to configure Google Cloud DNS for routing your domain name to your Drycc cluster.</p>
+<p>We&rsquo;ll assume the following in this section:</p>
+<ul>
+<li>Your Ingress service has a load balancer in front of it.
+<ul>
+<li>The load balancer need not be cloud based, it just needs to provide a stable IP address or a stable domain name</li>
+</ul>
+</li>
+<li>You have the <code>mystuff.com</code> domain name registered with a registrar
+<ul>
+<li>Replace your domain name with <code>mystuff.com</code> in the instructions to follow</li>
+</ul>
+</li>
+<li>Your registrar lets you alter the nameservers for your domain name (most registrars do)</li>
+</ul>
+<p>Here are the steps for configuring cloud DNS to route to your drycc cluster:</p>
+<ol>
+<li>Get the load balancer IP or domain name</li>
+</ol>
+<ul>
+<li>If you are on Google Container Engine, you can run <code>kubectl get svc -n istio-ingress</code> and look for the <code>LoadBalancer Ingress</code> column to get the IP address</li>
+</ul>
+<ol start="2">
+<li>Create a new Cloud DNS Zone (on the console: <code>Networking</code> =&gt; <code>Cloud DNS</code>, then click on <code>Create Zone</code>)</li>
+<li>Name your zone, and set the DNS name to <code>mystuff.com.</code> (note the <code>.</code> at the end</li>
+<li>Click on the <code>Create</code> button</li>
+<li>Click on the <code>Add Record Set</code> button on the resulting page</li>
+<li>If your load balancer provides a stable IP address, enter the following fields in the resulting form:</li>
+<li><code>DNS Name</code>: <code>*</code></li>
+<li><code>Resource Record Type</code>: <code>A</code></li>
+<li><code>TTL</code>: the DNS TTL of your choosing. If you&rsquo;re testing or you anticipate that you&rsquo;ll tear down and rebuild many drycc clusters over time, we recommend a low TTL</li>
+<li><code>IPv4 Address</code>: The IP that you got in the very first step</li>
+<li>Click the <code>Create</code> button</li>
+<li>If your load balancer provides the stable domain name <code>lbdomain.com</code>, enter the following fields in the resulting form:</li>
+<li><code>DNS Name</code>: <code>*</code></li>
+<li><code>Resource Record Type</code>: <code>CNAME</code></li>
+<li><code>TTL</code>: the DNS TTL of your choosing. If you&rsquo;re testing or you anticipate that you&rsquo;ll tear down and rebuild many drycc clusters over time, we recommend a low TTL</li>
+<li><code>Canonical name</code>: <code>lbdomain.com.</code> (note the <code>.</code> a the end)</li>
+<li>Click on the <code>Create</code> button</li>
+<li>In your domain registrar, set the nameservers for your <code>mystuff.com</code> domain to the ones under the <code>data</code> column in the <code>NS</code> record on the same page. They&rsquo;ll often be something like the below (note the trailing <code>.</code> characters).</li>
+</ol>
+<pre tabindex="0"><code>ns-cloud-b1.googledomains.com.
+ns-cloud-b2.googledomains.com.
+ns-cloud-b3.googledomains.com.
+ns-cloud-b4.googledomains.com.
+</code></pre><p>Note: If you ever have to re-create your drycc cluster, simply go back to step 6.4 or 7.4 (depending on your load balancer) and change the IP address or domain name to the new value. You may have to wait for the TTL you set to expire.</p>
+<h2 id="testing">Testing<a class="td-heading-self-link" href="#testing" aria-label="Heading self-link"></a></h2>
+<p>To test that traffic reaches its intended destination, a request can be
+sent to the Drycc controller like so (do not forget the trailing slash!):</p>
+<pre tabindex="0"><code>curl http://drycc.example.com/v2/
+</code></pre><p>Or:</p>
+<pre tabindex="0"><code>curl http://drycc.54.218.85.175.xip.io/v2/
+</code></pre><p>Since such requests require authentication, a response such as the following should be considered an indicator of success:</p>
+<pre tabindex="0"><code>{&#34;detail&#34;:&#34;Authentication credentials were not provided.&#34;}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5e70dabb651ba434bf52f6a0f428d092">3 - Deploy Hooks</h1>
+    <div class="lead">Deploy hooks allow an external service to receive a notification whenever a new version of your app is pushed to Workflow.</div>
+	<p>It’s useful to help keep the development team informed about deploys, while
+it can also be used to integrate different systems together.</p>
+<p>After one or more hooks are setup, hook output and errors appear in your application’s logs:</p>
+<pre tabindex="0"><code>$ drycc logs
+...
+2011-03-15T15:07:29-07:00 drycc[api]: Deploy hook sent to http://drycc.rocks
+</code></pre><p>Deploy hooks are a generic HTTP hook. An administrator can create and configure multiple deploy
+hooks by <a href="/docs/managing-workflow/tuning-component-settings/#customizing-the-controller">tuning the controller settings</a> via the Helm chart.</p>
+<h2 id="http-post-hook">HTTP POST Hook<a class="td-heading-self-link" href="#http-post-hook" aria-label="Heading self-link"></a></h2>
+<p>The HTTP deploy hook performs an HTTP POST to a URL. The parameters included in the request are the
+same as the variables available in the hook message: <code>app</code>, <code>release</code>, <code>release_summary</code>, <code>sha</code> and
+<code>user</code>. See below for their descriptions:</p>
+<pre tabindex="0"><code>app=secure-woodland&amp;release=v4&amp;release_summary=gabrtv%20deployed%35b3726&amp;sha=35b3726&amp;user=gabrtv
+</code></pre><p>Optionally, if a deploy hook secret key is added to the controller through
+<a href="/docs/managing-workflow/tuning-component-settings/#customizing-the-controller">tuning the controller settings</a>, a new <code>Authorization</code> header will be
+present in the POST request. The value of this header is computed as the <a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a> hex digest of the
+request URL, using the secret as the key.</p>
+<p>In order to authenticate that this request came from Workflow, use the secret key, the full URL and
+the HMAC-SHA1 hashing algorithm to compute the signature. In Python, that would look something like
+this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">hashlib</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">hmac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">hmac</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">new</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;my_secret_key&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;http://drycc.rocks?app=secure-woodland&amp;release=v4&amp;release_summary=gabrtv</span><span style="color:#4e9a06">%20d</span><span style="color:#4e9a06">eployed%35b3726&amp;sha=35b3726&amp;user=gabrtv&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">digestmod</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">hashlib</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">sha1</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">hexdigest</span><span style="color:#000;font-weight:bold">()</span>
+</span></span></code></pre></div><p>If the value of the computed HMAC hex digest and the value in the <code>Authorization</code> header are
+identical, then the request came from Workflow.</p>
+<p>!!! important
+When computing the signature, ensure that the URL parameters are in alphabetic order. This is
+critical when computing the cryptographic signature as most web applications don&rsquo;t care about
+the order of the HTTP parameters, but the cryptographic signature will not be the same.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-004a15eb4cb73246d89366dd9838d84d">4 - Platform Logging</h1>
+    <div class="lead">Logs are a stream of time-stamped events aggregated from the output streams of all your app’s running processes. Retrieve, filter, or use syslog drains.</div>
+	<p>We’re working with Quickwit to bring you an application log cluster and search interface.</p>
+<h2 id="architecture-diagram">Architecture Diagram<a class="td-heading-self-link" href="#architecture-diagram" aria-label="Heading self-link"></a></h2>
+<pre tabindex="0"><code>┌───────────┐                   ┌───────────┐                     
+│ Container │                   │  Grafana  │
+└───────────┘                   └───────────┘
+      │                               ^
+     log                              |                
+      │                               |                
+      ˅                               │                
+┌───────────┐                   ┌───────────┐     
+│ Fluentbit │─────otel/grpc────&gt;│  Quickwit │     
+└───────────┘                   └───────────┘     
+                                                                          
+</code></pre><h2 id="default-configuration">Default Configuration<a class="td-heading-self-link" href="#default-configuration" aria-label="Heading self-link"></a></h2>
+<p>Fluent Bit is based in a pluggable architecture where different plugins plays a major role in the data pipeline, more than 70 built-in plugins available.
+Please refer to charts <a href="https://github.com/drycc/fluentbit/blob/main/charts/fluentbit/values.yaml">values.yaml</a> for specific configurations.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fd8f5f6dc2937f1343d4f1cd4660ae35">5 - Platform Monitoring</h1>
+    <div class="lead">Platform monitoring to your apps to spot issues in advance and respond to incidents quickly.</div>
+	<h2 id="description">Description<a class="td-heading-self-link" href="#description" aria-label="Heading self-link"></a></h2>
+<p>We now include a monitoring stack for introspection on a running Kubernetes cluster. The stack includes 4 components:</p>
+<ul>
+<li><a href="https://github.com/kubernetes/kube-state-metrics">kube-state-metrics</a>, kube-state-metrics (KSM) is a simple service that listens to the Kubernetes API server and generates metrics about the state of the objects.</li>
+<li><a href="http://github.com/prometheus/node_exporter">Node Exporter</a>, Prometheus exporter for hardware and OS metrics exposed by *NIX kernels.</li>
+<li><a href="https://victoriametrics.com/">Victoriametrics</a>, a <a href="https://cncf.io/">Cloud Native Computing Foundation</a> project, is a systems and service monitoring system.</li>
+<li><a href="http://grafana.org/">Grafana</a>, Graphing tool for time series data</li>
+</ul>
+<h2 id="architecture-diagram">Architecture Diagram<a class="td-heading-self-link" href="#architecture-diagram" aria-label="Heading self-link"></a></h2>
+<pre tabindex="0"><code>┌────────────────┐                                                        
+│ HOST           │                                                        
+│  node-exporter │◀──┐                          ┌──────────────────┐         
+└────────────────┘   │                          │kube-state-metrics│         
+                     │                          └──────────────────┘         
+┌────────────────┐   │                                    ▲                    
+│ HOST           │   │    ┌─────────────────┐             │                    
+│  node-exporter │◀──┼────│ victoriametrics │─────────────┘                    
+└────────────────┘   │    └─────────────────┘                                  
+                     │             ▲                                         
+┌───────────────┐    │             │                                         
+│ HOST          │    │             ▼                                         
+│  node-exporter│◀───┘       ┌──────────┐                                    
+└───────────────┘            │ Grafana  │                                    
+                             └──────────┘                                    
+</code></pre><h2 id="grafanahttpsgrafanacom"><a href="https://grafana.com/">Grafana</a><a class="td-heading-self-link" href="#grafanahttpsgrafanacom" aria-label="Heading self-link"></a></h2>
+<p>Grafana allows users to create custom dashboards that visualize the data captured to the running VictoriaMetrics component. By default Grafana is exposed using a <a href="https://github.com/drycc/router#how-it-works">service annotation</a> through the router at the following URL: <code>http://grafana.mydomain.com</code>. The default login is <code>admin/admin</code>. If you are interested in changing these values please see [Tuning Component Settings][].</p>
+<p>Grafana will preload several dashboards to help operators get started with monitoring Kubernetes and Drycc Workflow.
+These dashboards are meant as starting points and don&rsquo;t include every item that might be desirable to monitor in a
+production installation.</p>
+<p>Drycc Workflow monitoring by default does not write data to the host filesystem or to long-term storage. If the Grafana instance fails, modified dashboards are lost.</p>
+<h3 id="production-configuration">Production Configuration<a class="td-heading-self-link" href="#production-configuration" aria-label="Heading self-link"></a></h3>
+<p>A production install of Grafana should have the following configuration values changed if possible:</p>
+<ul>
+<li>Change the default username and password from <code>admin/admin</code>. The value for the password is passed in plain text so it is best to set this value on the command line instead of checking it into version control.</li>
+<li>Enable persistence</li>
+<li>Use a supported external database such as mysql or postgres. You can find more information <a href="https://github.com/drycc/monitor/blob/main/grafana/rootfs/usr/share/grafana/grafana.ini.tpl#L62">here</a></li>
+</ul>
+<h3 id="on-cluster-persistence">On Cluster Persistence<a class="td-heading-self-link" href="#on-cluster-persistence" aria-label="Heading self-link"></a></h3>
+<p>Enabling persistence will allow your custom configuration to persist across pod restarts. This means that the default sqllite database (which stores things like sessions and user data) will not disappear if you upgrade the Workflow installation.</p>
+<p>If you wish to have persistence for Grafana you can set <code>enabled</code> to <code>true</code> in the <code>values.yaml</code> file before running <code>helm install</code>.</p>
+<pre tabindex="0"><code> grafana:
+   # Configure the following ONLY if you want persistence for on-cluster grafana
+   # GCP PDs and EBS volumes are supported only
+   persistence:
+     enabled: true # Set to true to enable persistence
+     size: 5Gi # PVC size
+</code></pre><h3 id="off-cluster-grafana">Off Cluster Grafana<a class="td-heading-self-link" href="#off-cluster-grafana" aria-label="Heading self-link"></a></h3>
+<p>If you wish to provide your own Grafana instance you can set <code>grafana.enabled</code> in the <code>values.yaml</code> file before running <code>helm install</code>.</p>
+<h2 id="victoriametricshttpsvictoriametricscom"><a href="https://victoriametrics.com/">VictoriaMetrics</a><a class="td-heading-self-link" href="#victoriametricshttpsvictoriametricscom" aria-label="Heading self-link"></a></h2>
+<p>VictoriaMetrics is a fast and scalable open source time series database and monitoring solution that lets users build a monitoring platform without scalability issues and minimal operational burden, it is fully compatible with the prometheus format.</p>
+<h3 id="on-cluster-persistence-1">On Cluster Persistence<a class="td-heading-self-link" href="#on-cluster-persistence-1" aria-label="Heading self-link"></a></h3>
+<p>You can set <code>node-exporter</code> and <code>kube-state-metrics</code> to <code>true</code> or <code>false</code> in the <code>values.yaml</code>.
+-If you wish to have persistence for VictoriaMetrics you can set <code>enabled</code> to <code>true</code> in the <code>values.yaml</code> file before running <code>helm install</code>.</p>
+<pre tabindex="0"><code>victoriametrics:
+  vmstorage:
+    replicas: 3
+    extraArgs:
+    - --retentionPeriod=30d
+    temporary:
+      enabled: true
+      size: 5Gi
+      storageClass: &#34;toplvm-ssd&#34;
+    persistence:
+      enabled: true
+      size: 10Gi
+      storageClass: &#34;toplvm-hdd&#34;
+  node-exporter:
+    enabled: true
+  kube-state-metrics:
+    enabled: true
+</code></pre><h3 id="off-cluster-victoriametrics">Off Cluster VictoriaMetrics<a class="td-heading-self-link" href="#off-cluster-victoriametrics" aria-label="Heading self-link"></a></h3>
+<p>To use false VictoriaMetrics, please provide the following values in the <code>values.yaml</code> file before running <code>helm install</code>.</p>
+<ul>
+<li><code>victoriametrics.enabled=false</code></li>
+<li><code>grafana.prometheusUrl=&quot;http://my.prometheus.url:9090&quot;</code></li>
+<li><code>controller.prometheusUrl=&quot;http://my.prometheus.url:9090&quot;</code></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ad04652ad398a8700cd2996d3d721e6f">6 - Production Deployments</h1>
+    <div class="lead">When readying a Workflow deployment for production workloads, there are some additional recommendations.</div>
+	<h2 id="running-workflow-without-drycc-storage">Running Workflow without drycc storage<a class="td-heading-self-link" href="#running-workflow-without-drycc-storage" aria-label="Heading self-link"></a></h2>
+<p>In production, persistent storage can be achieved by running an external object store.
+For users on AWS, GCE/GKE or Azure, the convenience of Amazon S3, Google GCS or Microsoft Azure Storage
+makes the prospect of running a Storage-less Workflow cluster quite reasonable. For users who have restriction
+on using external object storage using swift object storage can be an option.</p>
+<p>Running a Workflow cluster without Storage provides several advantages:</p>
+<ul>
+<li>Removal of state from the worker nodes</li>
+<li>Reduced resource usage</li>
+<li>Reduced complexity and operational burden of managing Workflow</li>
+</ul>
+<p>See <a href="/docs/installing-workflow/configuring-object-storage/">Configuring Object Storage</a> for details on removing this operational complexity.</p>
+<h2 id="review-security-considerations">Review Security Considerations<a class="td-heading-self-link" href="#review-security-considerations" aria-label="Heading self-link"></a></h2>
+<p>There are some additional security-related considerations when running Workflow in production.
+See [Security Considerations][] for details.</p>
+<h2 id="registration-is-admin-only">Registration is Admin-Only<a class="td-heading-self-link" href="#registration-is-admin-only" aria-label="Heading self-link"></a></h2>
+<p>By default, registration with the Workflow controller is in &ldquo;admin_only&rdquo; mode. The first user
+to run a <code>drycc register</code> command becomes the initial &ldquo;admin&rdquo; user, and registrations after that
+are disallowed unless requested by an admin.</p>
+<p>Please see the following documentation to learn about changing registration mode:</p>
+<ul>
+<li><a href="/docs/managing-workflow/tuning-component-settings/#customizing-the-controller">Customizing Controller</a></li>
+</ul>
+<h2 id="disable-grafana-signups">Disable Grafana Signups<a class="td-heading-self-link" href="#disable-grafana-signups" aria-label="Heading self-link"></a></h2>
+<p>It is also recommended to disable signups for the Grafana dashboards.</p>
+<p>Please see the following documentation to learn about disabling Grafana signups:</p>
+<ul>
+<li><a href="/docs/managing-workflow/tuning-component-settings/#customizing-the-monitor">Customizing Monitor</a></li>
+</ul>
+<h2 id="running-workflow-with-rbac">Running Workflow with RBAC<a class="td-heading-self-link" href="#running-workflow-with-rbac" aria-label="Heading self-link"></a></h2>
+<p>If your cluster has <a href="https://kubernetes.io/docs/admin/authorization/rbac/">RBAC</a> amongst your <a href="https://kubernetes.io/docs/admin/authorization/">authorization</a> modes (<code>$ kubectl api-versions</code> should contains <code>rbac.authorization.k8s.io</code>) it may be necessary to enable RBAC in Workflow.
+This can be achieved by setting <code>use_rbac</code> in the <code>global</code> section of <code>values.yaml</code> to <code>true</code>, or by adding <code>--set=global.use_rbac=true</code> to the <code>$ helm install/upgrade</code> command.
+RBAC support was announced in Kubernetes-1.5 and is enabled by default if:</p>
+<ul>
+<li>your Kubernetes cluster is in GKE</li>
+<li>your Kubernetes cluster built with <a href="https://kubernetes.io/docs/getting-started-guides/kubeadm/">kubeadm</a></li>
+</ul>
+<p><strong>Note</strong>: helm may need to be given <a href="/docs/installing-workflow/#check-your-authorization">specific permissions</a> under RBAC if not already done.</p>
+<p><strong>Attention</strong>: Azure ACS Kubernetes clusters are not RBAC-enabled for today due to lack in authentication strategy. Feel free to watch this <a href="https://github.com/kubernetes/kubernetes/pull/43987">PR</a> for more details.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f30a865310ec754108a4ce6a32869210">7 - Upgrading Workflow</h1>
+    <div class="lead">Drycc Workflow releases may be upgraded in-place with minimal downtime.</div>
+	<p>This upgrade process requires:</p>
+<ul>
+<li>Helm version <a href="https://github.com/kubernetes/helm/releases/tag/v2.1.0">2.1.0 or newer</a></li>
+<li>Configured Off-Cluster Storage</li>
+</ul>
+<h2 id="upgrade-process">Upgrade Process<a class="td-heading-self-link" href="#upgrade-process" aria-label="Heading self-link"></a></h2>
+<p>!!! note
+If upgrading from a <a href="https://github.com/helm/helm-classic">Helm Classic</a> install, you&rsquo;ll need to &lsquo;migrate&rsquo; the cluster to a <a href="https://github.com/kubernetes/helm">Kubernetes Helm</a> installation.  See <a href="https://github.com/drycc/workflow-migration/blob/main/README.md">Workflow-Migration</a> for steps.</p>
+<h3 id="step-1-apply-the-workflow-upgrade">Step 1: Apply the Workflow upgrade<a class="td-heading-self-link" href="#step-1-apply-the-workflow-upgrade" aria-label="Heading self-link"></a></h3>
+<p>Helm will remove all components from the previous release. Traffic to applications deployed through
+Workflow will continue to flow during the upgrade. No service interruptions should occur.</p>
+<p>If Workflow is not configured to use off-cluster Postgres, the Workflow API will experience a brief
+period of downtime while the database recovers from backup.</p>
+<p>First, find the name of the release helm gave to your deployment with <code>helm ls</code>, then run</p>
+<pre tabindex="0"><code>$ helm upgrade &lt;release-name&gt; oci://registry.drycc.cc/charts/workflow
+</code></pre><p><strong>Note:</strong> If using off-cluster object storage on <a href="https://cloud.google.com/storage/">gcs</a> and/or off-cluster registry using <a href="https://cloud.google.com/container-registry/">gcr</a> and intending to upgrade from a pre-<code>v2.10.0</code> chart to <code>v2.10.0</code> or greater, the <code>key_json</code> values will now need to be pre-base64-encoded.  Therefore, assuming the rest of the custom/off-cluster values are defined in the existing <code>values.yaml</code> used for previous installs, the following may be run:</p>
+<pre tabindex="0"><code>$ B64_KEY_JSON=&#34;$(cat ~/path/to/key.json | base64 -w 0)&#34;
+$ helm upgrade &lt;release_name&gt; drycc/workflow -f values.yaml --set gcs.key_json=&#34;${B64_KEY_JSON}&#34;,registry-token-refresher.gcr.key_json=&#34;${B64_KEY_JSON}&#34;
+</code></pre><p>Alternatively, simply replace the appropriate values in values.yaml and do without the <code>--set</code>
+parameter. Make sure to wrap it in single quotes as double quotes will give a parser error when
+upgrading.</p>
+<h3 id="step-2-verify-upgrade">Step 2: Verify Upgrade<a class="td-heading-self-link" href="#step-2-verify-upgrade" aria-label="Heading self-link"></a></h3>
+<p>Verify that all components have started and passed their readiness checks:</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+NAME                                     READY     STATUS    RESTARTS   AGE
+drycc-builder-2448122224-3cibz            1/1       Running   0          5m
+drycc-controller-1410285775-ipc34         1/1       Running   3          5m
+drycc-controller-celery-694f75749b-cmxxn  3/3       Running   0          5m
+drycc-database-e7c5z                      1/1       Running   0          5m
+drycc-fluentbit-45h7j                     1/1       Running   0          5m
+drycc-fluentbit-4z7lw                     1/1       Running   0          5m
+drycc-fluentbit-k2wsw                     1/1       Running   0          5m
+drycc-fluentbit-skdw4                     1/1       Running   0          5m
+drycc-valkey-8nazu                        1/1       Running   0          5m
+drycc-grafana-tm266                       1/1       Running   0          5m
+drycc-registry-1814324048-yomz5           1/1       Running   0          5m
+drycc-registry-proxy-4m3o4                1/1       Running   0          5m
+drycc-registry-proxy-no3r1                1/1       Running   0          5m
+drycc-registry-proxy-ou8is                1/1       Running   0          5m
+drycc-registry-proxy-zyajl                1/1       Running   0          5m
+</code></pre><h3 id="step-3-upgrade-the-drycc-client">Step 3: Upgrade the Drycc Client<a class="td-heading-self-link" href="#step-3-upgrade-the-drycc-client" aria-label="Heading self-link"></a></h3>
+<p>Users of Drycc Workflow should now upgrade their drycc client to avoid getting <code>WARNING: Client and server API versions do not match. Please consider upgrading.</code> warnings.</p>
+<pre tabindex="0"><code>curl -sfL https://www.drycc.cc/install-cli.sh | bash - &amp;&amp; sudo mv drycc $(which drycc)
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

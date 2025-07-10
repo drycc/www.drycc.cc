@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quick Start on Drycc</title>
+    <link>/docs/quickstart/</link>
+    <description>Recent content in Quick Start on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/quickstart/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quick Start</title>
+      <link>/docs/quickstart/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/overview/</guid>
+      <description>Get started with Drycc Workflow in three easy steps.&#xA;Install CLI tools for Helm and Drycc Workflow Boot a Kubernetes and install Drycc Workflow Deploy your first application This guide will help you set up a cluster suitable for evaluation, development and testing. When you are ready for staging and production, view our production checklist.&#xA;Step 1: Install Workflow For the quickstart we will install Drycc Workflow.&#xA;Step 2: Install CLI tools For the quickstart we will install Drycc Workflow CLI.</description>
+    </item>
+    <item>
+      <title>Install Workflow</title>
+      <link>/docs/quickstart/install-workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/install-workflow/</guid>
+      <description>If you have a pure host, it can be a cloud server, bare metal server, virtual machine, or even your laptop. Then this chapter is very suitable for you.&#xA;Operating Systems Drycc is expected to work on most modern Linux systems. Some OSS have specific requirements:&#xA;(Red Hat/CentOS) Enterprise Linux, they usually use RPM package management. Ubuntu (Desktop/Server/Cloud) Linux, a very popular distribution. Debian GNU Linux, a very pure distribution of opensource software.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow Client CLI</title>
+      <link>/docs/quickstart/install-cli-tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/install-cli-tools/</guid>
+      <description>Drycc Workflow Client CLI The Drycc command-line interface (CLI), lets you interact with Drycc Workflow. Use the CLI to create and configure and manage applications.&#xA;Install the drycc client for Linux or Mac OS X with:&#xA;$ curl -sfL https://www.drycc.cc/install-cli.sh | bash - !!! important Users in Chinese mainland can use the following methods to speed up installation:&#xA;``` $ curl -sfL https://www.drycc.cc/install-cli.sh | INSTALL_DRYCC_MIRROR=cn bash - ``` Others please visit: https://github.</description>
+    </item>
+    <item>
+      <title>Deploy Your First App</title>
+      <link>/docs/quickstart/deploy-an-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/deploy-an-app/</guid>
+      <description>Determine Your Host and Hostname Values Drycc workflow requires a wildcard DNS record to dynamically map app names to the router.&#xA;User should already have DNS set up pointing to their known host. The $hostname value can be calculated by prepending drycc. to the value set in global.platformDomain.&#xA;Login to Workflow Workflow use the passport component to create and authorize users. If you already have an account, use drycc login to authenticate against the Drycc Workflow API.</description>
+    </item>
+  </channel>
+</rss>

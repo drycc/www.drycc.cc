@@ -1,0 +1,4269 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/docs/reference-guide/">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/reference-guide/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Reference Guide | Drycc</title>
+<meta name="description" content="Reference gxwuide definition and meaning.">
+<meta property="og:url" content="/docs/reference-guide/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Reference Guide">
+  <meta property="og:description" content="Reference gxwuide definition and meaning.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Reference Guide">
+  <meta itemprop="description" content="Reference gxwuide definition and meaning.">
+  <meta itemprop="dateModified" content="2024-05-06T13:43:29+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Reference Guide">
+  <meta name="twitter:description" content="Reference gxwuide definition and meaning.">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/reference-guide/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Reference Guide</h1>
+<div class="lead">Reference gxwuide definition and meaning.</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-8dc8e2744c72e06d155d31efb9f8001f">Creating a Self-Signed SSL Certificate</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-8a47178b8f3a1af42c395fef1a635765">Controller API v2.0</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-cee50ca92714d97db6e9e68bc506be78">Controller API v2.1</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-b5fb7561bc7d913f5efd9e06d7b13c33">Controller API v2.2</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-6272bef032a9303c3be681bdf0c9d07b">Controller API v2.3</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-8dc8e2744c72e06d155d31efb9f8001f">1 - Creating a Self-Signed SSL Certificate</h1>
+    <div class="lead">A self-signed TLS/SSL certificate is not signed by a publicly trusted certificate authority (CA) but instead by the developer or company that is responsible for the website.</div>
+	<p>When <a href="/docs/applications/ssl-certificates/">using the app ssl</a> feature for non-production applications or when <a href="https://gateway-api.sigs.k8s.io/guides/tls/">installing SSL for the platform</a>, you can avoid the costs associated with the SSL certificate by using a self-signed SSL certificate. Though the certificate implements full encryption, visitors to your site will see a browser warning indicating that the certificate should not be trusted.</p>
+<h2 id="prerequisites">Prerequisites<a class="td-heading-self-link" href="#prerequisites" aria-label="Heading self-link"></a></h2>
+<p>The openssl library is required to generate your own certificate. Run the following command in your local environment to see if you already have openssl installed.</p>
+<pre><code>$ which openssl
+/usr/bin/openssl
+</code></pre>
+<p>If the which command does not return a path then you will need to install openssl yourself:</p>
+<table>
+<thead>
+<tr>
+<th>If you have&hellip;</th>
+<th>Install with&hellip;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mac OS X</td>
+<td>Homebrew: <code>brew install openssl</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>complete package .exe installed</td>
+</tr>
+<tr>
+<td>Ubuntu Linux</td>
+<td><code>apt-get install openssl</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="generate-private-key-and-certificate-signing-request">Generate Private Key and Certificate Signing Request<a class="td-heading-self-link" href="#generate-private-key-and-certificate-signing-request" aria-label="Heading self-link"></a></h2>
+<p>A private key and certificate signing request are required to create an SSL certificate. These can be generated with a few simple commands. When the openssl req command asks for a “challenge password”, just press return, leaving the password empty.</p>
+<pre><code>$ openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
+...
+$ openssl rsa -passin pass:x -in server.pass.key -out server.key
+writing RSA key
+$ rm server.pass.key
+$ openssl req -new -key server.key -out server.csr
+...
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:California
+...
+A challenge password []:
+...
+</code></pre>
+<h2 id="generate-ssl-certificate">Generate SSL Certificate<a class="td-heading-self-link" href="#generate-ssl-certificate" aria-label="Heading self-link"></a></h2>
+<p>The self-signed SSL certificate is generated from the server.key private key and server.csr files.</p>
+<pre><code>$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+</code></pre>
+<p>The server.crt file is your site certificate suitable for use with <a href="/docs/applications/ssl-certificates/">Drycc&rsquo;s SSL endpoint</a> along with the server.key private key.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8a47178b8f3a1af42c395fef1a635765">2 - Controller API v2.0</h1>
+    <div class="lead">This is the v2.0 REST API for the Controller.</div>
+	<h2 id="whats-new">What&rsquo;s New<a class="td-heading-self-link" href="#whats-new" aria-label="Heading self-link"></a></h2>
+<p><strong>New!</strong> format of <code>POST /v2/apps/&lt;app id&gt;/run</code> has changed.</p>
+<h2 id="authentication">Authentication<a class="td-heading-self-link" href="#authentication" aria-label="Heading self-link"></a></h2>
+<h3 id="register-a-new-user">Register a New User<a class="td-heading-self-link" href="#register-a-new-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/register/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;password&#34;: &#34;opensesame&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;
+}
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="log-in">Log in<a class="td-heading-self-link" href="#log-in" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/login/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{&#34;username&#34;: &#34;test&#34;, &#34;password&#34;: &#34;opensesame&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="cancel-account">Cancel Account<a class="td-heading-self-link" href="#cancel-account" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="regenerate-token">Regenerate Token<a class="td-heading-self-link" href="#regenerate-token" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command could require administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;username&#34; : &#34;test&#34;
+    &#34;all&#34; : &#34;true&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="change-password">Change Password<a class="td-heading-self-link" href="#change-password" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;password&#34;: &#34;foo&#34;,
+    &#34;new_password&#34;: &#34;bar&#34;
+}
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{&#34;username&#34;: &#34;testuser&#34;}
+</code></pre><blockquote>
+<p><strong>note</strong></p>
+<p>Using the <code>username</code> parameter requires administrative privileges and makes the <code>password</code> parameter optional.</p>
+</blockquote>
+<p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="applications">Applications<a class="td-heading-self-link" href="#applications" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-applications">List all Applications<a class="td-heading-self-link" href="#list-all-applications" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;example-go&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;structure&#34;: {},
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;url&#34;: &#34;example-go.example.com&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="create-an-application">Create an Application<a class="td-heading-self-link" href="#create-an-application" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{&#34;id&#34;: &#34;example-go&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="destroy-an-application">Destroy an Application<a class="td-heading-self-link" href="#destroy-an-application" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="list-application-details">List Application Details<a class="td-heading-self-link" href="#list-application-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="update-application-details">Update Application Details<a class="td-heading-self-link" href="#update-application-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{
+  &#34;owner&#34;: &#34;test&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json
+</code></pre><h3 id="retrieve-application-logs">Retrieve Application Logs<a class="td-heading-self-link" href="#retrieve-application-logs" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional URL Query Parameters:</p>
+<pre tabindex="0"><code>?log_lines=
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: text/plain
+
+&#34;16:51:14 drycc[api]: test created initial release\n&#34;
+</code></pre><h3 id="run-one-off-commands">Run one-off Commands<a class="td-heading-self-link" href="#run-one-off-commands" aria-label="Heading self-link"></a></h3>
+<pre tabindex="0"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;command&#34;: &#34;echo hi&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;exit_code&#34;: 0, &#34;output&#34;: &#34;hi\n&#34;}
+</code></pre><h2 id="certificates">Certificates<a class="td-heading-self-link" href="#certificates" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-certificates">List all Certificates<a class="td-heading-self-link" href="#list-all-certificates" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/certs HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;count&#34;: 1,
+  &#34;next&#34;: null,
+  &#34;previous&#34;: null,
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: 22,
+      &#34;owner&#34;: &#34;test&#34;,
+      &#34;san&#34;: [],
+      &#34;domains&#34;: [],
+      &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;name&#34;: &#34;foo&#34;,
+      &#34;common_name&#34;: &#34;bar.com&#34;,
+      &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+      &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+      &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+      &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+      &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+    }
+  ]
+}
+</code></pre><h3 id="get-certificate-details">Get Certificate Details<a class="td-heading-self-link" href="#get-certificate-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="create-certificate">Create Certificate<a class="td-heading-self-link" href="#create-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/certs/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &#34;name&#34;: &#34;foo&#34;
+    &#34;certificate&#34;: &#34;-----BEGIN CERTIFICATE-----&#34;,
+    &#34;key&#34;: &#34;-----BEGIN RSA PRIVATE KEY-----&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="destroy-a-certificate">Destroy a Certificate<a class="td-heading-self-link" href="#destroy-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="attach-a-domain-to-a-certificate">Attach a Domain to a Certificate<a class="td-heading-self-link" href="#attach-a-domain-to-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;domain&#34;: &#34;test.com&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="remove-a-domain-from-a-certificate">Remove a Domain from a Certificate<a class="td-heading-self-link" href="#remove-a-domain-from-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="pods">Pods<a class="td-heading-self-link" href="#pods" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-pods">List all Pods<a class="td-heading-self-link" href="#list-all-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="list-all-pods-by-type">List all Pods by Type<a class="td-heading-self-link" href="#list-all-pods-by-type" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="restart-all-pods">Restart All Pods<a class="td-heading-self-link" href="#restart-all-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="restart-pods-by-type">Restart Pods by Type<a class="td-heading-self-link" href="#restart-pods-by-type" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="restart-pods-by-type-and-name">Restart Pods by Type and Name<a class="td-heading-self-link" href="#restart-pods-by-type-and-name" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="scale-pods">Scale Pods<a class="td-heading-self-link" href="#scale-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;web&#34;: 3}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="configuration">Configuration<a class="td-heading-self-link" href="#configuration" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-configuration">List Application Configuration<a class="td-heading-self-link" href="#list-application-configuration" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+      &#34;PLATFORM&#34;: &#34;drycc&#34;
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="create-new-config">Create new Config<a class="td-heading-self-link" href="#create-new-config" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: &#34;world&#34;, &#34;PLATFORM&#34;: &#34;drycc&#34;}}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+X-Drycc-Release: 3
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v3&#34;,
+        &#34;HELLO&#34;: &#34;world&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="unset-config-variable">Unset Config Variable<a class="td-heading-self-link" href="#unset-config-variable" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: null}}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+X-Drycc-Release: 4
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v4&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+   },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="domains">Domains<a class="td-heading-self-link" href="#domains" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-domains">List Application Domains<a class="td-heading-self-link" href="#list-application-domains" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;domain&#34;: &#34;example.example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+        }
+    ]
+}
+</code></pre><h3 id="add-domain">Add Domain<a class="td-heading-self-link" href="#add-domain" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#39;domain&#39;: &#39;example.example.com&#39;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;domain&#34;: &#34;example.example.com&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+}
+</code></pre><h3 id="remove-domain">Remove Domain<a class="td-heading-self-link" href="#remove-domain" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="builds">Builds<a class="td-heading-self-link" href="#builds" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-builds">List Application Builds<a class="td-heading-self-link" href="#list-application-builds" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;FROM drycc/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&#34;/runner/init\&#34;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&#34;,
+    &#34;image&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {
+        &#34;web&#34;: &#34;example-go&#34;
+    },
+    &#34;sha&#34;: &#34;060da68f&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="create-application-build">Create Application Build<a class="td-heading-self-link" href="#create-application-build" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;image&#34;: &#34;drycc/example-go:latest&#34;}
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;procfile&#34;: {
+      &#34;web&#34;: &#34;./cmd&#34;
+    }
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+X-Drycc-Release: 4
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;&#34;,
+    &#34;image&#34;: &#34;drycc/example-go:latest&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {},
+    &#34;sha&#34;: &#34;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="releases">Releases<a class="td-heading-self-link" href="#releases" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-releases">List Application Releases<a class="td-heading-self-link" href="#list-application-releases" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 3,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;ed637ceb-5d32-44bd-9406-d326a777a513&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test changed nothing&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 3
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test deployed 060da68&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 2
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: null,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test created initial release&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 1
+        }
+    ]
+}
+</code></pre><h3 id="list-release-details">List Release Details<a class="td-heading-self-link" href="#list-release-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;build&#34;: null,
+    &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;summary&#34;: &#34;test created initial release&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+    &#34;version&#34;: 1
+}
+</code></pre><h3 id="rollback-release">Rollback Release<a class="td-heading-self-link" href="#rollback-release" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;version&#34;: 1}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;version&#34;: 5}
+</code></pre><h2 id="keys">Keys<a class="td-heading-self-link" href="#keys" aria-label="Heading self-link"></a></h2>
+<h3 id="list-keys">List Keys<a class="td-heading-self-link" href="#list-keys" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;test@example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="add-key-to-user">Add Key to User<a class="td-heading-self-link" href="#add-key-to-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;owner&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="remove-key-from-user">Remove Key from User<a class="td-heading-self-link" href="#remove-key-from-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/keys/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="permissions">Permissions<a class="td-heading-self-link" href="#permissions" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-permissions">List Application Permissions<a class="td-heading-self-link" href="#list-application-permissions" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This does not include the app owner.</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;users&#34;: [
+        &#34;test&#34;,
+        &#34;foo&#34;
+    ]
+}
+</code></pre><h3 id="create-application-permission">Create Application Permission<a class="td-heading-self-link" href="#create-application-permission" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="remove-application-permission">Remove Application Permission<a class="td-heading-self-link" href="#remove-application-permission" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="list-administrators">List Administrators<a class="td-heading-self-link" href="#list-administrators" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 2,
+    &#34;next&#34;: null
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;is_superuser&#34;: true
+        },
+        {
+            &#34;username&#34;: &#34;foo&#34;,
+            &#34;is_superuser&#34;: true
+        }
+    ]
+}
+</code></pre><h3 id="grant-user-administrative-privileges">Grant User Administrative Privileges<a class="td-heading-self-link" href="#grant-user-administrative-privileges" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/admin/perms HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="remove-users-administrative-privileges">Remove User&rsquo;s Administrative Privileges<a class="td-heading-self-link" href="#remove-users-administrative-privileges" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="users">Users<a class="td-heading-self-link" href="#users" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-users">List all users<a class="td-heading-self-link" href="#list-all-users" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/users HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;id&#34;: 1,
+            &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;is_superuser&#34;: true,
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;first_name&#34;: &#34;test&#34;,
+            &#34;last_name&#34;: &#34;testerson&#34;,
+            &#34;email&#34;: &#34;test@example.com&#34;,
+            &#34;is_staff&#34;: true,
+            &#34;is_active&#34;: true,
+            &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;groups&#34;: [],
+            &#34;user_permissions&#34;: []
+        }
+    ]
+}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cee50ca92714d97db6e9e68bc506be78">3 - Controller API v2.1</h1>
+    <div class="lead">This is the v2.1 REST API for the Controller.</div>
+	<h2 id="whats-new">What&rsquo;s New<a class="td-heading-self-link" href="#whats-new" aria-label="Heading self-link"></a></h2>
+<p><strong>New!</strong> <code>healthcheck</code> field in configuration, deprecates the <code>HEALTHCHECK_*</code> environment variables.</p>
+<p><strong>New!</strong> Unsetting a configuration variable that does not exist will return a 422.</p>
+<p><strong>New!</strong> Creating an identical sequential release returns a 409 rather than create a no-op release.</p>
+<h2 id="authentication">Authentication<a class="td-heading-self-link" href="#authentication" aria-label="Heading self-link"></a></h2>
+<h3 id="register-a-new-user">Register a New User<a class="td-heading-self-link" href="#register-a-new-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/register/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;password&#34;: &#34;opensesame&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;
+}
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="log-in">Log in<a class="td-heading-self-link" href="#log-in" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/login/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{&#34;username&#34;: &#34;test&#34;, &#34;password&#34;: &#34;opensesame&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="cancel-account">Cancel Account<a class="td-heading-self-link" href="#cancel-account" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="regenerate-token">Regenerate Token<a class="td-heading-self-link" href="#regenerate-token" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command could require administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;username&#34; : &#34;test&#34;
+    &#34;all&#34; : &#34;true&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="change-password">Change Password<a class="td-heading-self-link" href="#change-password" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;password&#34;: &#34;foo&#34;,
+    &#34;new_password&#34;: &#34;bar&#34;
+}
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{&#34;username&#34;: &#34;testuser&#34;}
+</code></pre><blockquote>
+<p><strong>note</strong></p>
+<p>Using the <code>username</code> parameter requires administrative privileges and makes the <code>password</code> parameter optional.</p>
+</blockquote>
+<p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="applications">Applications<a class="td-heading-self-link" href="#applications" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-applications">List all Applications<a class="td-heading-self-link" href="#list-all-applications" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;example-go&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;structure&#34;: {},
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;url&#34;: &#34;example-go.example.com&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="create-an-application">Create an Application<a class="td-heading-self-link" href="#create-an-application" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{&#34;id&#34;: &#34;example-go&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="destroy-an-application">Destroy an Application<a class="td-heading-self-link" href="#destroy-an-application" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="list-application-details">List Application Details<a class="td-heading-self-link" href="#list-application-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="update-application-details">Update Application Details<a class="td-heading-self-link" href="#update-application-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{
+  &#34;owner&#34;: &#34;test&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json
+</code></pre><h3 id="retrieve-application-logs">Retrieve Application Logs<a class="td-heading-self-link" href="#retrieve-application-logs" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional URL Query Parameters:</p>
+<pre tabindex="0"><code>?log_lines=
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: text/plain
+
+&#34;16:51:14 drycc[api]: test created initial release\n&#34;
+</code></pre><h3 id="run-one-off-commands">Run one-off Commands<a class="td-heading-self-link" href="#run-one-off-commands" aria-label="Heading self-link"></a></h3>
+<pre tabindex="0"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;command&#34;: &#34;echo hi&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;exit_code&#34;: 0, &#34;output&#34;: &#34;hi\n&#34;}
+</code></pre><h2 id="certificates">Certificates<a class="td-heading-self-link" href="#certificates" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-certificates">List all Certificates<a class="td-heading-self-link" href="#list-all-certificates" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/certs HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;count&#34;: 1,
+  &#34;next&#34;: null,
+  &#34;previous&#34;: null,
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: 22,
+      &#34;owner&#34;: &#34;test&#34;,
+      &#34;san&#34;: [],
+      &#34;domains&#34;: [],
+      &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;name&#34;: &#34;foo&#34;,
+      &#34;common_name&#34;: &#34;bar.com&#34;,
+      &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+      &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+      &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+      &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+      &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+    }
+  ]
+}
+</code></pre><h3 id="get-certificate-details">Get Certificate Details<a class="td-heading-self-link" href="#get-certificate-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="create-certificate">Create Certificate<a class="td-heading-self-link" href="#create-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/certs/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &#34;name&#34;: &#34;foo&#34;
+    &#34;certificate&#34;: &#34;-----BEGIN CERTIFICATE-----&#34;,
+    &#34;key&#34;: &#34;-----BEGIN RSA PRIVATE KEY-----&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="destroy-a-certificate">Destroy a Certificate<a class="td-heading-self-link" href="#destroy-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="attach-a-domain-to-a-certificate">Attach a Domain to a Certificate<a class="td-heading-self-link" href="#attach-a-domain-to-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;domain&#34;: &#34;test.com&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="remove-a-domain-from-a-certificate">Remove a Domain from a Certificate<a class="td-heading-self-link" href="#remove-a-domain-from-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="pods">Pods<a class="td-heading-self-link" href="#pods" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-pods">List all Pods<a class="td-heading-self-link" href="#list-all-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="list-all-pods-by-type">List all Pods by Type<a class="td-heading-self-link" href="#list-all-pods-by-type" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="restart-all-pods">Restart All Pods<a class="td-heading-self-link" href="#restart-all-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="restart-pods-by-type">Restart Pods by Type<a class="td-heading-self-link" href="#restart-pods-by-type" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="restart-pods-by-type-and-name">Restart Pods by Type and Name<a class="td-heading-self-link" href="#restart-pods-by-type-and-name" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="scale-pods">Scale Pods<a class="td-heading-self-link" href="#scale-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;web&#34;: 3}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="configuration">Configuration<a class="td-heading-self-link" href="#configuration" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-configuration">List Application Configuration<a class="td-heading-self-link" href="#list-application-configuration" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+      &#34;PLATFORM&#34;: &#34;drycc&#34;
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="create-new-config">Create new Config<a class="td-heading-self-link" href="#create-new-config" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: &#34;world&#34;, &#34;PLATFORM&#34;: &#34;drycc&#34;}}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v3&#34;,
+        &#34;HELLO&#34;: &#34;world&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="unset-config-variable">Unset Config Variable<a class="td-heading-self-link" href="#unset-config-variable" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: null}}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v4&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+   },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="domains">Domains<a class="td-heading-self-link" href="#domains" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-domains">List Application Domains<a class="td-heading-self-link" href="#list-application-domains" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;domain&#34;: &#34;example.example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+        }
+    ]
+}
+</code></pre><h3 id="add-domain">Add Domain<a class="td-heading-self-link" href="#add-domain" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#39;domain&#39;: &#39;example.example.com&#39;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;domain&#34;: &#34;example.example.com&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+}
+</code></pre><h3 id="remove-domain">Remove Domain<a class="td-heading-self-link" href="#remove-domain" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="builds">Builds<a class="td-heading-self-link" href="#builds" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-builds">List Application Builds<a class="td-heading-self-link" href="#list-application-builds" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;FROM drycc/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&#34;/runner/init\&#34;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&#34;,
+    &#34;image&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {
+        &#34;web&#34;: &#34;example-go&#34;
+    },
+    &#34;sha&#34;: &#34;060da68f&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="create-application-build">Create Application Build<a class="td-heading-self-link" href="#create-application-build" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;image&#34;: &#34;drycc/example-go:latest&#34;}
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;procfile&#34;: {
+      &#34;web&#34;: &#34;./cmd&#34;
+    }
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;&#34;,
+    &#34;image&#34;: &#34;drycc/example-go:latest&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {},
+    &#34;sha&#34;: &#34;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="releases">Releases<a class="td-heading-self-link" href="#releases" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-releases">List Application Releases<a class="td-heading-self-link" href="#list-application-releases" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 3,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;ed637ceb-5d32-44bd-9406-d326a777a513&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test changed nothing&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 3
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test deployed 060da68&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 2
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: null,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test created initial release&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 1
+        }
+    ]
+}
+</code></pre><h3 id="list-release-details">List Release Details<a class="td-heading-self-link" href="#list-release-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;build&#34;: null,
+    &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;summary&#34;: &#34;test created initial release&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+    &#34;version&#34;: 1
+}
+</code></pre><h3 id="rollback-release">Rollback Release<a class="td-heading-self-link" href="#rollback-release" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;version&#34;: 1}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;version&#34;: 5}
+</code></pre><h2 id="keys">Keys<a class="td-heading-self-link" href="#keys" aria-label="Heading self-link"></a></h2>
+<h3 id="list-keys">List Keys<a class="td-heading-self-link" href="#list-keys" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;test@example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="add-key-to-user">Add Key to User<a class="td-heading-self-link" href="#add-key-to-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;owner&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="remove-key-from-user">Remove Key from User<a class="td-heading-self-link" href="#remove-key-from-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/keys/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="permissions">Permissions<a class="td-heading-self-link" href="#permissions" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-permissions">List Application Permissions<a class="td-heading-self-link" href="#list-application-permissions" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This does not include the app owner.</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;users&#34;: [
+        &#34;test&#34;,
+        &#34;foo&#34;
+    ]
+}
+</code></pre><h3 id="create-application-permission">Create Application Permission<a class="td-heading-self-link" href="#create-application-permission" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="remove-application-permission">Remove Application Permission<a class="td-heading-self-link" href="#remove-application-permission" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="list-administrators">List Administrators<a class="td-heading-self-link" href="#list-administrators" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 2,
+    &#34;next&#34;: null
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;is_superuser&#34;: true
+        },
+        {
+            &#34;username&#34;: &#34;foo&#34;,
+            &#34;is_superuser&#34;: true
+        }
+    ]
+}
+</code></pre><h3 id="grant-user-administrative-privileges">Grant User Administrative Privileges<a class="td-heading-self-link" href="#grant-user-administrative-privileges" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/admin/perms HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="remove-users-administrative-privileges">Remove User&rsquo;s Administrative Privileges<a class="td-heading-self-link" href="#remove-users-administrative-privileges" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="users">Users<a class="td-heading-self-link" href="#users" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-users">List all users<a class="td-heading-self-link" href="#list-all-users" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/users HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;id&#34;: 1,
+            &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;is_superuser&#34;: true,
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;first_name&#34;: &#34;test&#34;,
+            &#34;last_name&#34;: &#34;testerson&#34;,
+            &#34;email&#34;: &#34;test@example.com&#34;,
+            &#34;is_staff&#34;: true,
+            &#34;is_active&#34;: true,
+            &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;groups&#34;: [],
+            &#34;user_permissions&#34;: []
+        }
+    ]
+}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b5fb7561bc7d913f5efd9e06d7b13c33">4 - Controller API v2.2</h1>
+    <div class="lead">This is the v2.2 REST API for the Controller.</div>
+	<h2 id="whats-new">What&rsquo;s New<a class="td-heading-self-link" href="#whats-new" aria-label="Heading self-link"></a></h2>
+<p><strong>New!</strong> <code>/v2/auth/whoami</code> endpoint</p>
+<h2 id="authentication">Authentication<a class="td-heading-self-link" href="#authentication" aria-label="Heading self-link"></a></h2>
+<h3 id="register-a-new-user">Register a New User<a class="td-heading-self-link" href="#register-a-new-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/register/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;password&#34;: &#34;opensesame&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;
+}
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="log-in">Log in<a class="td-heading-self-link" href="#log-in" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/login/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{&#34;username&#34;: &#34;test&#34;, &#34;password&#34;: &#34;opensesame&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="cancel-account">Cancel Account<a class="td-heading-self-link" href="#cancel-account" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="who-am-i">Who Am I<a class="td-heading-self-link" href="#who-am-i" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/auth/whoami/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="regenerate-token">Regenerate Token<a class="td-heading-self-link" href="#regenerate-token" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command could require administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;username&#34; : &#34;test&#34;
+    &#34;all&#34; : &#34;true&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="change-password">Change Password<a class="td-heading-self-link" href="#change-password" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;password&#34;: &#34;foo&#34;,
+    &#34;new_password&#34;: &#34;bar&#34;
+}
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{&#34;username&#34;: &#34;testuser&#34;}
+</code></pre><blockquote>
+<p><strong>note</strong></p>
+<p>Using the <code>username</code> parameter requires administrative privileges and makes the <code>password</code> parameter optional.</p>
+</blockquote>
+<p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="applications">Applications<a class="td-heading-self-link" href="#applications" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-applications">List all Applications<a class="td-heading-self-link" href="#list-all-applications" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;example-go&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;structure&#34;: {},
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;url&#34;: &#34;example-go.example.com&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="create-an-application">Create an Application<a class="td-heading-self-link" href="#create-an-application" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{&#34;id&#34;: &#34;example-go&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="destroy-an-application">Destroy an Application<a class="td-heading-self-link" href="#destroy-an-application" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="list-application-details">List Application Details<a class="td-heading-self-link" href="#list-application-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="update-application-details">Update Application Details<a class="td-heading-self-link" href="#update-application-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{
+  &#34;owner&#34;: &#34;test&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json
+</code></pre><h3 id="retrieve-application-logs">Retrieve Application Logs<a class="td-heading-self-link" href="#retrieve-application-logs" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional URL Query Parameters:</p>
+<pre tabindex="0"><code>?log_lines=
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: text/plain
+
+&#34;16:51:14 drycc[api]: test created initial release\n&#34;
+</code></pre><h3 id="run-one-off-commands">Run one-off Commands<a class="td-heading-self-link" href="#run-one-off-commands" aria-label="Heading self-link"></a></h3>
+<pre tabindex="0"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;command&#34;: &#34;echo hi&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&#34;exit_code&#34;: 0, &#34;output&#34;: &#34;hi\n&#34;}
+</code></pre><h2 id="certificates">Certificates<a class="td-heading-self-link" href="#certificates" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-certificates">List all Certificates<a class="td-heading-self-link" href="#list-all-certificates" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/certs HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+  &#34;count&#34;: 1,
+  &#34;next&#34;: null,
+  &#34;previous&#34;: null,
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: 22,
+      &#34;owner&#34;: &#34;test&#34;,
+      &#34;san&#34;: [],
+      &#34;domains&#34;: [],
+      &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;name&#34;: &#34;foo&#34;,
+      &#34;common_name&#34;: &#34;bar.com&#34;,
+      &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+      &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+      &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+      &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+      &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+    }
+  ]
+}
+</code></pre><h3 id="get-certificate-details">Get Certificate Details<a class="td-heading-self-link" href="#get-certificate-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="create-certificate">Create Certificate<a class="td-heading-self-link" href="#create-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/certs/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &#34;name&#34;: &#34;foo&#34;
+    &#34;certificate&#34;: &#34;-----BEGIN CERTIFICATE-----&#34;,
+    &#34;key&#34;: &#34;-----BEGIN RSA PRIVATE KEY-----&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="destroy-a-certificate">Destroy a Certificate<a class="td-heading-self-link" href="#destroy-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="attach-a-domain-to-a-certificate">Attach a Domain to a Certificate<a class="td-heading-self-link" href="#attach-a-domain-to-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;domain&#34;: &#34;test.com&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="remove-a-domain-from-a-certificate">Remove a Domain from a Certificate<a class="td-heading-self-link" href="#remove-a-domain-from-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="pods">Pods<a class="td-heading-self-link" href="#pods" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-pods">List all Pods<a class="td-heading-self-link" href="#list-all-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="list-all-pods-by-type">List all Pods by Type<a class="td-heading-self-link" href="#list-all-pods-by-type" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="restart-all-pods">Restart All Pods<a class="td-heading-self-link" href="#restart-all-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="restart-pods-by-type">Restart Pods by Type<a class="td-heading-self-link" href="#restart-pods-by-type" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="restart-pods-by-type-and-name">Restart Pods by Type and Name<a class="td-heading-self-link" href="#restart-pods-by-type-and-name" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="scale-pods">Scale Pods<a class="td-heading-self-link" href="#scale-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;web&#34;: 3}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="configuration">Configuration<a class="td-heading-self-link" href="#configuration" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-configuration">List Application Configuration<a class="td-heading-self-link" href="#list-application-configuration" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+      &#34;PLATFORM&#34;: &#34;drycc&#34;
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="create-new-config">Create new Config<a class="td-heading-self-link" href="#create-new-config" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: &#34;world&#34;, &#34;PLATFORM&#34;: &#34;drycc&#34;}}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v3&#34;,
+        &#34;HELLO&#34;: &#34;world&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="unset-config-variable">Unset Config Variable<a class="td-heading-self-link" href="#unset-config-variable" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: null}}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v4&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+   },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="domains">Domains<a class="td-heading-self-link" href="#domains" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-domains">List Application Domains<a class="td-heading-self-link" href="#list-application-domains" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;domain&#34;: &#34;example.example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+        }
+    ]
+}
+</code></pre><h3 id="add-domain">Add Domain<a class="td-heading-self-link" href="#add-domain" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#39;domain&#39;: &#39;example.example.com&#39;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;domain&#34;: &#34;example.example.com&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+}
+</code></pre><h3 id="remove-domain">Remove Domain<a class="td-heading-self-link" href="#remove-domain" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="builds">Builds<a class="td-heading-self-link" href="#builds" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-builds">List Application Builds<a class="td-heading-self-link" href="#list-application-builds" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;FROM drycc/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&#34;/runner/init\&#34;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&#34;,
+    &#34;image&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {
+        &#34;web&#34;: &#34;example-go&#34;
+    },
+    &#34;sha&#34;: &#34;060da68f&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="create-application-build">Create Application Build<a class="td-heading-self-link" href="#create-application-build" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;image&#34;: &#34;drycc/example-go:latest&#34;}
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;procfile&#34;: {
+      &#34;web&#34;: &#34;./cmd&#34;
+    }
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;&#34;,
+    &#34;image&#34;: &#34;drycc/example-go:latest&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {},
+    &#34;sha&#34;: &#34;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="releases">Releases<a class="td-heading-self-link" href="#releases" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-releases">List Application Releases<a class="td-heading-self-link" href="#list-application-releases" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 3,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;ed637ceb-5d32-44bd-9406-d326a777a513&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test changed nothing&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 3
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test deployed 060da68&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 2
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: null,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test created initial release&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 1
+        }
+    ]
+}
+</code></pre><h3 id="list-release-details">List Release Details<a class="td-heading-self-link" href="#list-release-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;build&#34;: null,
+    &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;summary&#34;: &#34;test created initial release&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+    &#34;version&#34;: 1
+}
+</code></pre><h3 id="rollback-release">Rollback Release<a class="td-heading-self-link" href="#rollback-release" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;version&#34;: 1}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&#34;version&#34;: 5}
+</code></pre><h2 id="keys">Keys<a class="td-heading-self-link" href="#keys" aria-label="Heading self-link"></a></h2>
+<h3 id="list-keys">List Keys<a class="td-heading-self-link" href="#list-keys" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;test@example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="add-key-to-user">Add Key to User<a class="td-heading-self-link" href="#add-key-to-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;owner&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="remove-key-from-user">Remove Key from User<a class="td-heading-self-link" href="#remove-key-from-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/keys/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="permissions">Permissions<a class="td-heading-self-link" href="#permissions" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-permissions">List Application Permissions<a class="td-heading-self-link" href="#list-application-permissions" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This does not include the app owner.</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;users&#34;: [
+        &#34;test&#34;,
+        &#34;foo&#34;
+    ]
+}
+</code></pre><h3 id="create-application-permission">Create Application Permission<a class="td-heading-self-link" href="#create-application-permission" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="remove-application-permission">Remove Application Permission<a class="td-heading-self-link" href="#remove-application-permission" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="list-administrators">List Administrators<a class="td-heading-self-link" href="#list-administrators" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 2,
+    &#34;next&#34;: null
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;is_superuser&#34;: true
+        },
+        {
+            &#34;username&#34;: &#34;foo&#34;,
+            &#34;is_superuser&#34;: true
+        }
+    ]
+}
+</code></pre><h3 id="grant-user-administrative-privileges">Grant User Administrative Privileges<a class="td-heading-self-link" href="#grant-user-administrative-privileges" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/admin/perms HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="remove-users-administrative-privileges">Remove User&rsquo;s Administrative Privileges<a class="td-heading-self-link" href="#remove-users-administrative-privileges" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="users">Users<a class="td-heading-self-link" href="#users" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-users">List all users<a class="td-heading-self-link" href="#list-all-users" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/users HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;id&#34;: 1,
+            &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;is_superuser&#34;: true,
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;first_name&#34;: &#34;test&#34;,
+            &#34;last_name&#34;: &#34;testerson&#34;,
+            &#34;email&#34;: &#34;test@example.com&#34;,
+            &#34;is_staff&#34;: true,
+            &#34;is_active&#34;: true,
+            &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;groups&#34;: [],
+            &#34;user_permissions&#34;: []
+        }
+    ]
+}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-6272bef032a9303c3be681bdf0c9d07b">5 - Controller API v2.3</h1>
+    <div class="lead">This is the v2.3 REST API for the Controller.</div>
+	<h2 id="whats-new">What&rsquo;s New<a class="td-heading-self-link" href="#whats-new" aria-label="Heading self-link"></a></h2>
+<p><strong>New!</strong> <code>/v2/apps/{name}/logs</code> endpoint was fixed and no longer returns <code>b'log data'</code> and instead returns a normal string <code>log data</code></p>
+<h2 id="authentication">Authentication<a class="td-heading-self-link" href="#authentication" aria-label="Heading self-link"></a></h2>
+<h3 id="register-a-new-user">Register a New User<a class="td-heading-self-link" href="#register-a-new-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/register/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;password&#34;: &#34;opensesame&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;
+}
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="log-in">Log in<a class="td-heading-self-link" href="#log-in" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/login/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{&#34;username&#34;: &#34;test&#34;, &#34;password&#34;: &#34;opensesame&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="cancel-account">Cancel Account<a class="td-heading-self-link" href="#cancel-account" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="who-am-i">Who Am I<a class="td-heading-self-link" href="#who-am-i" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/auth/whoami/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="regenerate-token">Regenerate Token<a class="td-heading-self-link" href="#regenerate-token" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command could require administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;username&#34; : &#34;test&#34;
+    &#34;all&#34; : &#34;true&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="change-password">Change Password<a class="td-heading-self-link" href="#change-password" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;password&#34;: &#34;foo&#34;,
+    &#34;new_password&#34;: &#34;bar&#34;
+}
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{&#34;username&#34;: &#34;testuser&#34;}
+</code></pre><blockquote>
+<p><strong>note</strong></p>
+<p>Using the <code>username</code> parameter requires administrative privileges and makes the <code>password</code> parameter optional.</p>
+</blockquote>
+<p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="applications">Applications<a class="td-heading-self-link" href="#applications" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-applications">List all Applications<a class="td-heading-self-link" href="#list-all-applications" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;example-go&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;structure&#34;: {},
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;url&#34;: &#34;example-go.example.com&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="create-an-application">Create an Application<a class="td-heading-self-link" href="#create-an-application" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{&#34;id&#34;: &#34;example-go&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="destroy-an-application">Destroy an Application<a class="td-heading-self-link" href="#destroy-an-application" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="list-application-details">List Application Details<a class="td-heading-self-link" href="#list-application-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="update-application-details">Update Application Details<a class="td-heading-self-link" href="#update-application-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional parameters:</p>
+<pre tabindex="0"><code>{
+  &#34;owner&#34;: &#34;test&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json
+</code></pre><h3 id="retrieve-application-logs">Retrieve Application Logs<a class="td-heading-self-link" href="#retrieve-application-logs" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Optional URL Query Parameters:</p>
+<pre tabindex="0"><code>?log_lines=
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: text/plain
+
+&#34;16:51:14 drycc[api]: test created initial release\n&#34;
+</code></pre><h3 id="run-one-off-commands">Run one-off Commands<a class="td-heading-self-link" href="#run-one-off-commands" aria-label="Heading self-link"></a></h3>
+<pre tabindex="0"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;command&#34;: &#34;echo hi&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{&#34;exit_code&#34;: 0, &#34;output&#34;: &#34;hi\n&#34;}
+</code></pre><h2 id="certificates">Certificates<a class="td-heading-self-link" href="#certificates" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-certificates">List all Certificates<a class="td-heading-self-link" href="#list-all-certificates" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/certs HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+  &#34;count&#34;: 1,
+  &#34;next&#34;: null,
+  &#34;previous&#34;: null,
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: 22,
+      &#34;owner&#34;: &#34;test&#34;,
+      &#34;san&#34;: [],
+      &#34;domains&#34;: [],
+      &#34;created&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+      &#34;updated&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+      &#34;name&#34;: &#34;foo&#34;,
+      &#34;common_name&#34;: &#34;bar.com&#34;,
+      &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+      &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+      &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+      &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+      &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+    }
+  ]
+}
+</code></pre><h3 id="get-certificate-details">Get Certificate Details<a class="td-heading-self-link" href="#get-certificate-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="create-certificate">Create Certificate<a class="td-heading-self-link" href="#create-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/certs/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &#34;name&#34;: &#34;foo&#34;
+    &#34;certificate&#34;: &#34;-----BEGIN CERTIFICATE-----&#34;,
+    &#34;key&#34;: &#34;-----BEGIN RSA PRIVATE KEY-----&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="destroy-a-certificate">Destroy a Certificate<a class="td-heading-self-link" href="#destroy-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="attach-a-domain-to-a-certificate">Attach a Domain to a Certificate<a class="td-heading-self-link" href="#attach-a-domain-to-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;domain&#34;: &#34;test.com&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="remove-a-domain-from-a-certificate">Remove a Domain from a Certificate<a class="td-heading-self-link" href="#remove-a-domain-from-a-certificate" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="enable-or-disable-tls">Enable or disable TLS<a class="td-heading-self-link" href="#enable-or-disable-tls" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/tls/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+  &#34;https_enforced&#34;: true
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;https_enforced&#34;: true,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="get-tls-status">Get TLS status<a class="td-heading-self-link" href="#get-tls-status" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/tls/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;https_enforced&#34;: false,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="pods">Pods<a class="td-heading-self-link" href="#pods" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-pods">List all Pods<a class="td-heading-self-link" href="#list-all-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="list-all-pods-by-type">List all Pods by Type<a class="td-heading-self-link" href="#list-all-pods-by-type" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="restart-all-pods">Restart All Pods<a class="td-heading-self-link" href="#restart-all-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="restart-pods-by-type">Restart Pods by Type<a class="td-heading-self-link" href="#restart-pods-by-type" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="restart-pods-by-type-and-name">Restart Pods by Type and Name<a class="td-heading-self-link" href="#restart-pods-by-type-and-name" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="scale-pods">Scale Pods<a class="td-heading-self-link" href="#scale-pods" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;web&#34;: 3}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="configuration">Configuration<a class="td-heading-self-link" href="#configuration" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-configuration">List Application Configuration<a class="td-heading-self-link" href="#list-application-configuration" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+      &#34;PLATFORM&#34;: &#34;drycc&#34;
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="create-new-config">Create new Config<a class="td-heading-self-link" href="#create-new-config" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: &#34;world&#34;, &#34;PLATFORM&#34;: &#34;drycc&#34;}}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v3&#34;,
+        &#34;HELLO&#34;: &#34;world&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="unset-config-variable">Unset Config Variable<a class="td-heading-self-link" href="#unset-config-variable" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: null}}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v4&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+   },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="domains">Domains<a class="td-heading-self-link" href="#domains" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-domains">List Application Domains<a class="td-heading-self-link" href="#list-application-domains" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;domain&#34;: &#34;example.example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+        }
+    ]
+}
+</code></pre><h3 id="add-domain">Add Domain<a class="td-heading-self-link" href="#add-domain" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#39;domain&#39;: &#39;example.example.com&#39;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;domain&#34;: &#34;example.example.com&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+}
+</code></pre><h3 id="remove-domain">Remove Domain<a class="td-heading-self-link" href="#remove-domain" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="builds">Builds<a class="td-heading-self-link" href="#builds" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-builds">List Application Builds<a class="td-heading-self-link" href="#list-application-builds" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;FROM drycc/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&#34;/runner/init\&#34;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&#34;,
+    &#34;image&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {
+        &#34;web&#34;: &#34;example-go&#34;
+    },
+    &#34;sha&#34;: &#34;060da68f&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="create-application-build">Create Application Build<a class="td-heading-self-link" href="#create-application-build" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;image&#34;: &#34;drycc/example-go:latest&#34;}
+</code></pre><p>Optional Parameters:</p>
+<pre tabindex="0"><code>{
+    &#34;procfile&#34;: {
+      &#34;web&#34;: &#34;./cmd&#34;
+    }
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;&#34;,
+    &#34;image&#34;: &#34;drycc/example-go:latest&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {},
+    &#34;sha&#34;: &#34;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="releases">Releases<a class="td-heading-self-link" href="#releases" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-releases">List Application Releases<a class="td-heading-self-link" href="#list-application-releases" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 3,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;2.3d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;ed637ceb-5d32-44bd-9406-d326a777a513&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test changed nothing&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 3
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;2.3d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test deployed 060da68&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 2
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: null,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test created initial release&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 1
+        }
+    ]
+}
+</code></pre><h3 id="list-release-details">List Release Details<a class="td-heading-self-link" href="#list-release-details" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;build&#34;: null,
+    &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;summary&#34;: &#34;test created initial release&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+    &#34;version&#34;: 1
+}
+</code></pre><h3 id="rollback-release">Rollback Release<a class="td-heading-self-link" href="#rollback-release" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;version&#34;: 1}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{&#34;version&#34;: 5}
+</code></pre><h2 id="keys">Keys<a class="td-heading-self-link" href="#keys" aria-label="Heading self-link"></a></h2>
+<h3 id="list-keys">List Keys<a class="td-heading-self-link" href="#list-keys" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;test@example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="add-key-to-user">Add Key to User<a class="td-heading-self-link" href="#add-key-to-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;
+}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;owner&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="remove-key-from-user">Remove Key from User<a class="td-heading-self-link" href="#remove-key-from-user" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/keys/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="permissions">Permissions<a class="td-heading-self-link" href="#permissions" aria-label="Heading self-link"></a></h2>
+<h3 id="list-application-permissions">List Application Permissions<a class="td-heading-self-link" href="#list-application-permissions" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This does not include the app owner.</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;users&#34;: [
+        &#34;test&#34;,
+        &#34;foo&#34;
+    ]
+}
+</code></pre><h3 id="create-application-permission">Create Application Permission<a class="td-heading-self-link" href="#create-application-permission" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="remove-application-permission">Remove Application Permission<a class="td-heading-self-link" href="#remove-application-permission" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="list-administrators">List Administrators<a class="td-heading-self-link" href="#list-administrators" aria-label="Heading self-link"></a></h3>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 2,
+    &#34;next&#34;: null
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;is_superuser&#34;: true
+        },
+        {
+            &#34;username&#34;: &#34;foo&#34;,
+            &#34;is_superuser&#34;: true
+        }
+    ]
+}
+</code></pre><h3 id="grant-user-administrative-privileges">Grant User Administrative Privileges<a class="td-heading-self-link" href="#grant-user-administrative-privileges" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>POST /v2/admin/perms HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="remove-users-administrative-privileges">Remove User&rsquo;s Administrative Privileges<a class="td-heading-self-link" href="#remove-users-administrative-privileges" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="users">Users<a class="td-heading-self-link" href="#users" aria-label="Heading self-link"></a></h2>
+<h3 id="list-all-users">List all users<a class="td-heading-self-link" href="#list-all-users" aria-label="Heading self-link"></a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre tabindex="0"><code>GET /v2/users HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>Example Response:</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;id&#34;: 1,
+            &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;is_superuser&#34;: true,
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;first_name&#34;: &#34;test&#34;,
+            &#34;last_name&#34;: &#34;testerson&#34;,
+            &#34;email&#34;: &#34;test@example.com&#34;,
+            &#34;is_staff&#34;: true,
+            &#34;is_active&#34;: true,
+            &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;groups&#34;: [],
+            &#34;user_permissions&#34;: []
+        }
+    ]
+}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

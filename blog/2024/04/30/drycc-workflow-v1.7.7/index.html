@@ -1,0 +1,446 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Drycc Workflow v1.7.7 | Drycc</title>
+<meta name="description" content="New Drycc Workflow Release v1.7.7">
+<meta property="og:url" content="/blog/2024/04/30/drycc-workflow-v1.7.7/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Drycc Workflow v1.7.7">
+  <meta property="og:description" content="New Drycc Workflow Release v1.7.7">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-04-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-04-30T18:00:24+08:00">
+
+  <meta itemprop="name" content="Drycc Workflow v1.7.7">
+  <meta itemprop="description" content="New Drycc Workflow Release v1.7.7">
+  <meta itemprop="datePublished" content="2024-04-30T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-04-30T18:00:24+08:00">
+  <meta itemprop="wordCount" content="1135">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Drycc Workflow v1.7.7">
+  <meta name="twitter:description" content="New Drycc Workflow Release v1.7.7">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page td-blog">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blog-li">
+  <a href="/blog/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-blog"><span class="">Blog</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blognews-li">
+  <a href="/blog/news/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-blognews"><span class="">News</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20181006welcome-to-drycc-li">
+  <a href="/blog/2018/10/06/welcome-to-drycc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20181006welcome-to-drycc"><span class="">Welcome to Drycc</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blogreleases-li">
+  <a href="/blog/releases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-blogreleases"><span class="">Release</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20250415drycc-workflow-v181-li">
+  <a href="/blog/2025/04/15/drycc-workflow-v1.8.1/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20250415drycc-workflow-v181"><span class="">Drycc Workflow v1.8.1</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240914drycc-workflow-v1712-li">
+  <a href="/blog/2024/09/14/drycc-workflow-v1.7.12/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240914drycc-workflow-v1712"><span class="">Drycc Workflow v1.7.12</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240719drycc-workflow-v1711-li">
+  <a href="/blog/2024/07/19/drycc-workflow-v1.7.11/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240719drycc-workflow-v1711"><span class="">Drycc Workflow v1.7.11</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240508drycc-workflow-v1710-li">
+  <a href="/blog/2024/05/08/drycc-workflow-v1.7.10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240508drycc-workflow-v1710"><span class="">Drycc Workflow v1.7.10</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240507drycc-workflow-v179-li">
+  <a href="/blog/2024/05/07/drycc-workflow-v1.7.9/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240507drycc-workflow-v179"><span class="">Drycc Workflow v1.7.9</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240501drycc-workflow-v178-li">
+  <a href="/blog/2024/05/01/drycc-workflow-v1.7.8/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240501drycc-workflow-v178"><span class="">Drycc Workflow v1.7.8</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-blog20240430drycc-workflow-v177-li">
+  <a href="/blog/2024/04/30/drycc-workflow-v1.7.7/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-blog20240430drycc-workflow-v177"><span class="td-sidebar-nav-active-item">Drycc Workflow v1.7.7</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240227drycc-workflow-v175-li">
+  <a href="/blog/2024/02/27/drycc-workflow-v1.7.5/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240227drycc-workflow-v175"><span class="">Drycc Workflow v1.7.5</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240227drycc-workflow-v176-li">
+  <a href="/blog/2024/02/27/drycc-workflow-v1.7.6/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240227drycc-workflow-v176"><span class="">Drycc Workflow v1.7.6</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240129drycc-workflow-v172-li">
+  <a href="/blog/2024/01/29/drycc-workflow-v1.7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240129drycc-workflow-v172"><span class="">Drycc Workflow  v1.7.2</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20231208drycc-workflow-v170-li">
+  <a href="/blog/2023/12/08/drycc-workflow-v1.7.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20231208drycc-workflow-v170"><span class="">Drycc Workflow v1.7.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221021drycc-workflow-v160-li">
+  <a href="/blog/2022/10/21/drycc-workflow-v1.6.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221021drycc-workflow-v160"><span class="">Drycc Workflow v1.6.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221006drycc-workflow-v150-li">
+  <a href="/blog/2022/10/06/drycc-workflow-v1.5.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221006drycc-workflow-v150"><span class="">Drycc Workflow v1.5.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20211006drycc-workflow-v140-li">
+  <a href="/blog/2021/10/06/drycc-workflow-v1.4.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20211006drycc-workflow-v140"><span class="">Drycc Workflow v1.4.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20201006drycc-workflow-v130-li">
+  <a href="/blog/2020/10/06/drycc-workflow-v1.3.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20201006drycc-workflow-v130"><span class="">Drycc Workflow v1.3.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20191006drycc-workflow-v120-li">
+  <a href="/blog/2019/10/06/drycc-workflow-v1.2.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20191006drycc-workflow-v120"><span class="">Drycc Workflow v1.2.0</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+<a href="https://github.com/drycc/website/tree/main/content/en/blog/releases/v1.7.7.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+  <a href="https://github.com/drycc/website/edit/main/content/en/blog/releases/v1.7.7.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/drycc/website/new/main/content/en/blog/releases?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+  <a href="https://github.com/drycc/website/issues/new?title=Drycc%20Workflow%20v1.7.7" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+  <a href="https://github.com/drycc/workflow/issues/new" class="td-page-meta--project td-page-meta__project-issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create project issue</a>
+  <a id="print" href="/blog/releases/_print/"><i class="fa-solid fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#workflow--v176---v177">Workflow ## v1.7.6 -&gt; v1.7.7</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5 pe-md-4" role="main">
+            <a class="td-rss-button" title="RSS" href="/blog/releases/index.xml" target="_blank" rel="noopener">
+              <i class="fa-solid fa-rss" aria-hidden="true"></i>
+            </a>
+            
+<div class="td-content">
+	<h1>Drycc Workflow v1.7.7</h1>
+	<div class="lead">New Drycc Workflow Release v1.7.7</div>
+	<div class="td-byline mb-4">
+		
+		<time datetime="2024-04-30" class="text-body-secondary">30.04.2024</time>
+	</div>
+	<header class="article-meta">
+		
+  <p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 6 minute read &nbsp;</p>
+</header>
+	<h2 id="workflow--v176---v177">Workflow ## v1.7.6 -&gt; v1.7.7<a class="td-heading-self-link" href="#workflow--v176---v177" aria-label="Heading self-link"></a></h2>
+<h4 id="releases">Releases<a class="td-heading-self-link" href="#releases" aria-label="Heading self-link"></a></h4>
+<ul>
+<li>builder v1.5.1 -&gt; v1.6.0</li>
+<li>controller v1.7.0 -&gt; v1.8.0</li>
+<li>database v1.2.1 -&gt; v1.3.0</li>
+<li>passport v1.2.0 -&gt; v1.3.0</li>
+<li>imagebuilder v1.1.1 -&gt; v1.2.0</li>
+<li>fluentbit v0.0.1 -&gt; v0.0.2</li>
+<li>logger v1.3.3 -&gt; v1.3.4</li>
+<li>storage v0.0.5 -&gt; v0.1.0</li>
+<li>gateway v0.0.2 -&gt; v0.0.3</li>
+<li>monitor v1.4.0 -&gt; v1.4.1</li>
+<li>redis v1.3.2 -&gt; v1.4.0</li>
+<li>timeseries v0.0.2 -&gt; v0.1.0</li>
+<li>prometheus v0.1.1 -&gt; v0.1.2</li>
+<li>rabbitmq v1.2.1 -&gt; v1.3.0</li>
+<li>registry v1.2.2 -&gt; v1.3.0</li>
+<li>registry-proxy v1.2.1 -&gt; v1.2.2</li>
+<li>workflow-cli v1.5.2 -&gt; v1.6.0</li>
+</ul>
+<h4 id="features">Features<a class="td-heading-self-link" href="#features" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/6c1cf5e514543737c38384596abffca1ac96af44"><code>6c1cf5e</code></a> (builder) - charts: reuses the value from an existing secret and config</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/65ae63c4d3aaff3354d162718ff07c0509b4e689"><code>65ae63c</code></a> (builder) - pipeline: add dryccfile support</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/bb7b11de75226c3a1cb9254dfec78a8edda0c864"><code>bb7b11d</code></a> (builder) - auth: add tokens api</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/39d022fe0a4106c91ea461f73728490560f8d653"><code>39d022f</code></a> (controller) - ps: add pod logs support</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/86056d06d8992172fe02240d7963aa416ec9c754"><code>86056d0</code></a> (controller) - charts: reuses the value from an existing secret and config</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/4cf005c1cc4b361af80ef96597e291ebe3baec24"><code>4cf005c</code></a> (controller) - limits: add limits plan support</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/bf60e4bdbebb3f3288e0fbd81566c264dd187faf"><code>bf60e4b</code></a> (controller) - controller: add init job</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/98f77a8ceeea6e8a098cd37d79115201c40133e1"><code>98f77a8</code></a> (controller) - pipeline: add dryccfile support</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/8ce9a83f4bcf46d6039910e052e6ebfa959fd0e8"><code>8ce9a83</code></a> (controller) - cert-manager: add tls events</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/7034f5d8347f0c85b40651eaf239a554fd95ae76"><code>7034f5d</code></a> (controller) - config: deploy according to procfile_type</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/5554d8f9f26790783d97d6d6128920ffa9b28713"><code>5554d8f</code></a> (controller) - config: add typed_values</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/2c5bbad2d74b1c40c61158477aac9103dac2eff4"><code>2c5bbad</code></a> (controller) - auth: add token api</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/410d34e8e639c973557104c3aee14a85324f3c0f"><code>410d34e</code></a> (database) - charts: reuses the value from an existing secret and config</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/693e4d199b18342e33c7ec68c3a651d29b7d9ad6"><code>693e4d1</code></a> (imagebuilder) - pipeline: add dryccfile support</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/7d9cc0679eac7dd873d8db8f9607e347830b2aa1"><code>7d9cc06</code></a> (imagebuilder) - config: add typed values</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/854e1711180de70bc83d3c65721910df013ef988"><code>854e171</code></a> (passport) - charts: reuses the value from an existing secret and config</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/7ac92557670d915c1e568c7297c5ec1b9620f1a1"><code>7ac9255</code></a> (passport) - oauth2: add authorization code for any grant type</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/4517547e21983dd7192ae8cc985c974ed2c64b51"><code>4517547</code></a> (rabbitmq) - charts: reuses the value from an existing secret and config</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/bccfcb43cd63e62974b55523a75fa994ed560453"><code>bccfcb4</code></a> (redis) - charts: reuses the value from an existing secret and config</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/d8876055c0732c470d17d9205a5188289fdac1ec"><code>d887605</code></a> (registry) - charts: reuses the value from an existing secret and config</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/ff09e5b8279cd3343370bfa58c3acba234621263"><code>ff09e5b</code></a> (storage) - charts: reuses the value from an existing secret and config</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/c6e2ac82c8adc75687dbc814cb2163b06820311e"><code>c6e2ac8</code></a> (timeseries) - charts: reuses the value from an existing secret and config</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/22c4c772e3c9cbfe4f686d2fbe161b6484cdcc12"><code>22c4c77</code></a> (workflow-cli) - apps: change drycc run to async</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/a9e6369153255a6cc84dc73e3095086a34d25ad1"><code>a9e6369</code></a> (workflow-cli) - ps: add pod logs support</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/2bc31c8a2010e147b92827a967238e88dca5b743"><code>2bc31c8</code></a> (workflow-cli) - limits: add limits plan support</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/f40398a555e67a942fbe465d29e1076516941d74"><code>f40398a</code></a> (workflow-cli) - pipeline: add dryccfile support</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/03638ffdaefab5e0c7020f6eb279ddeda99aeded"><code>03638ff</code></a> (workflow-cli) - tls: add tls events</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/91136274d87d2cf9e0d2a1dd313d9b948a5d0a81"><code>9113627</code></a> (workflow-cli) - config: add typed values</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/43ee760c4bc93bc5e5402536a09f05dfd6832b7d"><code>43ee760</code></a> (workflow-cli) - auth: add tokens api</li>
+</ul>
+<h4 id="fixes">Fixes<a class="td-heading-self-link" href="#fixes" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/50dfe6449cbf50bfcf55421f34f2195cb8d7e26c"><code>50dfe64</code></a> (builder) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/ab09b243b8484d8a989327e8e3b41f2a23efa643"><code>ab09b24</code></a> (controller) - healthcheck: delete outdated code</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/52019b541aaaca98b2b6692fec1290d1231e21fe"><code>52019b5</code></a> (controller) - services: default PORT change error</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/f57ae429fa4d9dbd89c7cf81f805fe9127930219"><code>f57ae42</code></a> (controller) - certificate: failed to create certificate</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/30c3f548324dcfa571a86afbed64ba0d38b72e99"><code>30c3f54</code></a> (controller) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/dbba43ae315644e858eb2330d52cbf636a366a07"><code>dbba43a</code></a> (controller) - service: update port error</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/e0459c5d43a74c2c38aae6ebf3e207ad8cc9f283"><code>e0459c5</code></a> (controller) - copy: use deepcopy replace copy</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/2122479685d9ce83c986449e20a041de105a2d49"><code>2122479</code></a> (controller) - charts: failed to call webhook</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/53d99775d66648aca41b88992df4ee203cb8f675"><code>53d9977</code></a> (controller) - signals: config limits handle error</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/afda287ead80e94a699b3548c01fdfdbd1a6f5a4"><code>afda287</code></a> (controller) - limits: always set default</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/b350cb89e4c313d776592e9e4706909ee72550b5"><code>b350cb8</code></a> (database) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/b48a42243e602637fb04f14cb74d23e23096e2e2"><code>b48a422</code></a> (fluentbit) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/7cebca2a2589c839efbe49cbec6becde85149a8e"><code>7cebca2</code></a> (gateway) - cert-manager: auto tls error</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/190c19bbac3386e277bd7918be5b7f7ad5a25566"><code>190c19b</code></a> (imagebuilder) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/2c6a6f9273a0f5e2c16744f6ac6e77d27a7234a2"><code>2c6a6f9</code></a> (logger) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/10bb98df862bebefcf4142e88c24e8f804e310ba"><code>10bb98d</code></a> (monitor) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/f8225dca4c4ceae7bc4d613e77ae4c8ebf71838c"><code>f8225dc</code></a> (passport) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/06db66c072006f79c10404812ad9f0902cfb52b7"><code>06db66c</code></a> (prometheus) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/f4aff727962b6afe99e89283ce14ebe8d571d9ab"><code>f4aff72</code></a> (rabbitmq) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/88c18ff452bdd478f49dd88f6595ea096e430f2d"><code>88c18ff</code></a> (redis) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/5dcc19d6d47ea30b799ae10e915ebd948b39fc4c"><code>5dcc19d</code></a> (registry) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/092a9398243f19e41ac14cc5fb4f76473848c585"><code>092a939</code></a> (registry-proxy) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/3597ac918db548f837b3262a033d836690378972"><code>3597ac9</code></a> (storage) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/5a49b35d2197c957e43a98e94d38ac8a8ebd894b"><code>5a49b35</code></a> (timeseries) - woodpecker: CI_SYSTEM_ARCH env removed</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/0c4a48a84b998b8e7f57f09f307930630e8efd74"><code>0c4a48a</code></a> (workflow-cli) - tls: change issuer options</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/06a2511195bc1f2a3145a73269428200914b4694"><code>06a2511</code></a> (workflow-cli) - tls: info error</li>
+</ul>
+<h4 id="maintenance">Maintenance<a class="td-heading-self-link" href="#maintenance" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/2f7617e164707830b52f2ca39c7f634ca53842ed"><code>2f7617e</code></a> (builder) - go: bump controller-sdk-go version</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/aae2f2911197e4643e7a999944401d2e5acd884d"><code>aae2f29</code></a> (builder) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/7304980fb22cd0d56e1fa5b1e573b4795ef2ddd9"><code>7304980</code></a> (builder) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/30b648b0d429ba08f89e1d3b49078e40eae2d897"><code>30b648b</code></a> (builder) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/2afa006867a3d4d4501578f0973ff759d87af87f"><code>2afa006</code></a> (builder) - controller-sdk-go: bump version</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/d127a9070a6dd0be1d96860c719d3b4a71eb7bb9"><code>d127a90</code></a> (builder) - config: add typed values</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/32fdfd0e7f54793d3ced05ff42b300173debe866"><code>32fdfd0</code></a> (controller) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/0974942fb8a70d9165ef6524744850cf72629a0c"><code>0974942</code></a> (controller) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/f401e08d3ffbfee5d84410ad8e31c18a3267513e"><code>f401e08</code></a> (controller) - python: bump python 3.12</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/c565959af53e6ab7be7245faea09fd1a30972ac7"><code>c565959</code></a> (controller) - celery: remove retrieve_resource task</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/47be1a10b03d7522a9bc87b9973c8f126db95478"><code>47be1a1</code></a> (controller) - requirements: bump drf 3.15.1</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/99f7468e561d596121bc981294e6ca4baaed2728"><code>99f7468</code></a> (controller) - charts: add config to values.yaml</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/7d17f5ca716596ef66046eb5f3606215feb87731"><code>7d17f5c</code></a> (controller) - scale: prohibit scale when there is a running pipeline</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/f09e1c9475e64840ff02e23cee30f5911b507a58"><code>f09e1c9</code></a> (controller) - resource: sort services and plans</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/e817505fc5dc6a2e9b959b9fd7d63c044f17fcf1"><code>e817505</code></a> (controller) - limits: change default cpu and gpu name</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/5531b2ff4b15a6b9804cc0b146b69ee7308a1a83"><code>5531b2f</code></a> (controller) - auth: add password login</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/27473f72e8b7c1f1b6bb9c56493688f346bbcc9c"><code>27473f7</code></a> (controller) - deps: bump gunicorn from 21.2.0 to 22.0.0 in /rootfs</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/c1ee1c7a3103c938b8b81219da7b14cd30f3eceb"><code>c1ee1c7</code></a> (controller) - deps: bump aiohttp from 3.9.3 to 3.9.4 in /rootfs</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/affbcb587360d7750f3faf4d022e36032f0b3266"><code>affbcb5</code></a> (database) - postgres: add patroni and postgres params (#15)</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/f9e4edaf9a2a22b974a2aced48a7890f767da0c0"><code>f9e4eda</code></a> (database) - dockerfile: install vi</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/008b7b675c244d2aff9b86947fe907dbb84185f4"><code>008b7b6</code></a> (database) - dockerfile: install vim instand of vi</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/dbbfee12b2fe9c773d32660a6bcf26674ae2cd61"><code>dbbfee1</code></a> (database) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/2e26c333df5aa90243cff8c5159a6c3a9b499a00"><code>2e26c33</code></a> (database) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/database/git/trees/a1b81f20f517743d9f69ecda526095a4e9c3ee36"><code>a1b81f2</code></a> (database) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/bc725e8169b25eda4017012f72b5d970147f0d08"><code>bc725e8</code></a> (fluentbit) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/5d738865825bd083561972373a5dd8796a53be6c"><code>5d73886</code></a> (fluentbit) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/fluentbit/git/trees/b85072d0177447ac3f05f1f4ccd4c9d7f4a56f99"><code>b85072d</code></a> (fluentbit) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/761174ddb5bc06643a02c145714587816ea06f8a"><code>761174d</code></a> (gateway) - gateway: change secrets name</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/1c304da25eef99568badf3ece29639dd6d8f8564"><code>1c304da</code></a> (gateway) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/gateway/git/trees/b919a4c24b5abb776876df002cc9d4c15cf3d50d"><code>b919a4c</code></a> (gateway) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/3cea298be74856a2fba40b0a35824e0f3018dcab"><code>3cea298</code></a> (imagebuilder) - charts: allow all dns</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/653bcbeec95adcea209299751a3a94f3ebaf2d4f"><code>653bcbe</code></a> (imagebuilder) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/imagebuilder/git/trees/59daeab055610ce6cc584be73dba3767158b9747"><code>59daeab</code></a> (imagebuilder) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/2834a5acb914eecb7708ad3bd3efdcc38243d784"><code>2834a5a</code></a> (logger) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/6685492c2a8493bad3b59dedb201576f7508ff86"><code>6685492</code></a> (logger) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/logger/git/trees/191cdaf001ab5b916b0edf53aaa2a7558ef7f35a"><code>191cdaf</code></a> (logger) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/b3c3cfa319fe46d30696a2f4637f91636398ffff"><code>b3c3cfa</code></a> (monitor) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/796799db309de06ea54db56a1c0e5f397c858f47"><code>796799d</code></a> (monitor) - grafana: add node metrics dashboard</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/ef2a2228a27e4eddce1ff3b4b56755ab013c47cd"><code>ef2a222</code></a> (monitor) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/monitor/git/trees/9c830909640fddca03329d4a72eb91ab1d913c86"><code>9c83090</code></a> (monitor) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/1a97c2cedd3ace5c567bf32dbd057bd215502662"><code>1a97c2c</code></a> (passport) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/353e1ae932ea4dae5112b8f8225ee502695b11ee"><code>353e1ae</code></a> (passport) - logger: add oauth2_provider logger config</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/fe735c0d8c5a2840349b27ceb081d02729ae50bf"><code>fe735c0</code></a> (passport) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/41d6144a20f24461e1a393d4b1957f5be19f4f3a"><code>41d6144</code></a> (passport) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/979d4740bdd50a12f5110144cf413c3972164c90"><code>979d474</code></a> (passport) - python: bump python 3.12</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/e9f41a121e11becd9dcd6b5422dcc6e209cbeedf"><code>e9f41a1</code></a> (passport) - requirements: bump drf 3.15.1</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/f479f4d5791ac2917679b70f376ec9bf24fa1fd4"><code>f479f4d</code></a> (passport) - charts: add migrate job</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/ad9abf64ad7e2b959d565eaa0016066183444cd0"><code>ad9abf6</code></a> (passport) - passport: migrations add run_before</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/95ac66705669bd4301af9d3ae812e0843eb6a37c"><code>95ac667</code></a> (passport) - passport: optimize the use of master and slave database rules</li>
+<li><a href="https://api.github.com/repos/drycc/passport/git/trees/204f7fc62fd0cdf016cd5e95a4d2fd2e6c841b17"><code>204f7fc</code></a> (passport) - deps: bump gunicorn from 21.2.0 to 22.0.0 in /rootfs</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/90a6410c0d0864a434b804cf80fe63960afd4493"><code>90a6410</code></a> (prometheus) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/prometheus/git/trees/2d8eb44ef28deae27ac54247a008a5351212eea0"><code>2d8eb44</code></a> (prometheus) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/9687a175b58aed22d314557d7254a82ff0a6d3dd"><code>9687a17</code></a> (rabbitmq) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/35d3d5b7e01bebbeeea5442a22f24d40fcbfdd93"><code>35d3d5b</code></a> (rabbitmq) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/rabbitmq/git/trees/6a6564ddef4f26bc81ea3eb9e965fb8e6180d092"><code>6a6564d</code></a> (rabbitmq) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/cb6722f0df93fae95d4480e1929b55e1e78a2a3a"><code>cb6722f</code></a> (redis) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/9553497d89e358022ab539cb3db658def17bc9cb"><code>9553497</code></a> (redis) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/redis/git/trees/1c8dc07b0167126d292e3db45f23db5d6ff111dc"><code>1c8dc07</code></a> (redis) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/9fa2a32f965d282940cd3f8489ce8959bb2e791f"><code>9fa2a32</code></a> (registry) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/9b09e51c1d548ba4d1c088aff761391092d746e3"><code>9b09e51</code></a> (registry) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/7dbd3902139c8430c18bfb83e4dbce79a6df16a5"><code>7dbd390</code></a> (registry) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/e1d2a33d8c9f20eddce510d79df050b0fe90a94c"><code>e1d2a33</code></a> (registry-proxy) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/3eabfdda5c2a78fc49e73dce382263faad29f5c3"><code>3eabfdd</code></a> (registry-proxy) - charts: remove default limits</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/f8754dad5de5f88bb0f20f46d73e1cbab2aff68e"><code>f8754da</code></a> (registry-proxy) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/7df73166e6ea521587eb2ba5b8e1626cc334d7f3"><code>7df7316</code></a> (registry-proxy) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/861d3b8f5ebc2ee32f11a600b26a14d79e0acdf1"><code>861d3b8</code></a> (storage) - filer: modify the default parameters of the filer</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/5fa08da71087503071fa780ac2469f4d55e7d0c5"><code>5fa08da</code></a> (storage) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/storage/git/trees/22c4620e0e724b26943260d58d749bb4efd0999b"><code>22c4620</code></a> (storage) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/6c1e29c1bf187e2b754d6f683014dba7a4ebe342"><code>6c1e29c</code></a> (timeseries) - postgres: add patroni params</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/e280d3ff2d799fa1e0738bf6e7585aaba0e72c58"><code>e280d3f</code></a> (timeseries) - dockerfile: install vi</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/5213617c4a5ace9225e1cad8348c736b943c5e25"><code>5213617</code></a> (timeseries) - dockerfile: install vim instand of vi</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/a569a57f06484738d5801651f9e253553347f928"><code>a569a57</code></a> (timeseries) - charts: add diagnostic mode</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/b93ec702dcbd0e2306d0290cde2d104d4c5897f3"><code>b93ec70</code></a> (timeseries) - woodpecker: migrations woodpecker-ci to 2</li>
+<li><a href="https://api.github.com/repos/drycc/timeseries/git/trees/ff3b8705e65a56f0da392519b54f9b060894ec8c"><code>ff3b870</code></a> (timeseries) - charts: change canary app version</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/e334f74a71ffbd5f10baa38da43248d92c051322"><code>e334f74</code></a> (workflow-cli) - healthcheck: delete outdated healthcheck style</li>
+<li><a href="https://api.github.com/repos/drycc/workflow-cli/git/trees/4f8b960e9ddcd1351b4567935d0a8d98d2aa843d"><code>4f8b960</code></a> (workflow-cli) - auth: add password login</li>
+</ul>
+
+	<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+  <li>
+    <a href="/blog/2024/02/27/drycc-workflow-v1.7.5/" aria-label="Previous - Drycc Workflow v1.7.5" class="btn btn-primary"><span class="me-1">←</span>Previous</a>
+  </li>
+  <li>
+    <a href="/blog/2024/05/01/drycc-workflow-v1.7.8/" aria-label="Next - Drycc Workflow v1.7.8" class="btn btn-primary">Next<span class="ms-1">→</span></a>
+  </li>
+</ul>
+
+	<div class="td-page-meta__lastmod">
+  Last modified 30.04.2024: <a href="https://github.com/drycc/website/commit/42fe56f67554817fef2d04f828489e50b8eee4bb">docs(prometheus): add metrics (42fe56f)</a>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

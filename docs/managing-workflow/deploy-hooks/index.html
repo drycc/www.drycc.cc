@@ -1,0 +1,487 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Deploy Hooks | Drycc</title>
+<meta name="description" content="Deploy hooks allow an external service to receive a notification whenever a new version of your app is pushed to Workflow.">
+<meta property="og:url" content="/docs/managing-workflow/deploy-hooks/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Deploy Hooks">
+  <meta property="og:description" content="Deploy hooks allow an external service to receive a notification whenever a new version of your app is pushed to Workflow.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2024-02-29T23:04:26+08:00">
+
+  <meta itemprop="name" content="Deploy Hooks">
+  <meta itemprop="description" content="Deploy hooks allow an external service to receive a notification whenever a new version of your app is pushed to Workflow.">
+  <meta itemprop="dateModified" content="2024-02-29T23:04:26+08:00">
+  <meta itemprop="wordCount" content="277">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Deploy Hooks">
+  <meta name="twitter:description" content="Deploy hooks allow an external service to receive a notification whenever a new version of your app is pushed to Workflow.">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Docs</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsquickstart-li">
+  <a href="/docs/quickstart/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsquickstart"><span class="">Quick Start</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsquickstartoverview-li">
+  <a href="/docs/quickstart/overview/" title="Quick Start" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsquickstartoverview"><span class="">overview</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsquickstartinstall-workflow-li">
+  <a href="/docs/quickstart/install-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsquickstartinstall-workflow"><span class="">Install Workflow</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsquickstartinstall-cli-tools-li">
+  <a href="/docs/quickstart/install-cli-tools/" title="Drycc Workflow Client CLI" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsquickstartinstall-cli-tools"><span class="">Install CLI Tools</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsquickstartdeploy-an-app-li">
+  <a href="/docs/quickstart/deploy-an-app/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsquickstartdeploy-an-app"><span class="">Deploy Your First App</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsunderstanding-workflow-li">
+  <a href="/docs/understanding-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsunderstanding-workflow"><span class="">Understanding Workflow</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsunderstanding-workflowconcepts-li">
+  <a href="/docs/understanding-workflow/concepts/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsunderstanding-workflowconcepts"><span class="">Concepts</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsunderstanding-workflowarchitecture-li">
+  <a href="/docs/understanding-workflow/architecture/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsunderstanding-workflowarchitecture"><span class="">Architecture</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsunderstanding-workflowcomponents-li">
+  <a href="/docs/understanding-workflow/components/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsunderstanding-workflowcomponents"><span class="">Components</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsinstalling-workflow-li">
+  <a href="/docs/installing-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsinstalling-workflow"><span class="">Installing To Kubenetes</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsinstalling-workflowsystem-requirements-li">
+  <a href="/docs/installing-workflow/system-requirements/" title="Requirements" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinstalling-workflowsystem-requirements"><span class="">System Requirements</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsinstalling-workflowgateway-li">
+  <a href="/docs/installing-workflow/gateway/" title="Specify Gateway" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinstalling-workflowgateway"><span class="">Installing Gateway</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsinstalling-workflowworkflow-li">
+  <a href="/docs/installing-workflow/workflow/" title="Installing Drycc Workflow" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinstalling-workflowworkflow"><span class="">Installing Workflow</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsinstalling-workflowconfiguring-object-storage-li">
+  <a href="/docs/installing-workflow/configuring-object-storage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinstalling-workflowconfiguring-object-storage"><span class="">Configuring Object Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsinstalling-workflowconfiguring-postgres-li">
+  <a href="/docs/installing-workflow/configuring-postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinstalling-workflowconfiguring-postgres"><span class="">Configuring Postgres</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsinstalling-workflowconfiguring-registry-li">
+  <a href="/docs/installing-workflow/configuring-registry/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinstalling-workflowconfiguring-registry"><span class="">Configuring Registry</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsusers-li">
+  <a href="/docs/users/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsusers"><span class="">Users</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsuserscli-li">
+  <a href="/docs/users/cli/" title="Drycc Workflow  CLI" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsuserscli"><span class="">Command Line Interface</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsusersregistration-li">
+  <a href="/docs/users/registration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsusersregistration"><span class="">Users and Registration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsusersssh-keys-li">
+  <a href="/docs/users/ssh-keys/" title="Users and SSH Keys" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsusersssh-keys"><span class="">SSH Keys</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsapplications-li">
+  <a href="/docs/applications/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsapplications"><span class="">Applications</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsdeploying-apps-li">
+  <a href="/docs/applications/deploying-apps/" title="Deploying an Application" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsdeploying-apps"><span class="">Deploying Apps</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsusing-buildpacks-li">
+  <a href="/docs/applications/using-buildpacks/" title="Using Buildpacks" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsusing-buildpacks"><span class="">Buildpacks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsusing-dockerfiles-li">
+  <a href="/docs/applications/using-dockerfiles/" title="Using Dockerfiles" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsusing-dockerfiles"><span class="">Deploying with Dockerfiles</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsusing-container-images-li">
+  <a href="/docs/applications/using-container-images/" title="Using Docker Images" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsusing-container-images"><span class="">Container Images</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsmanaging-app-processes-li">
+  <a href="/docs/applications/managing-app-processes/" title="Managing Application Processes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsmanaging-app-processes"><span class="">Managing App Processes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsmanaging-app-configuration-li">
+  <a href="/docs/applications/managing-app-configuration/" title="Configuring an Application" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsmanaging-app-configuration"><span class="">Managing App Configuration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsmanaging-app-metrics-li">
+  <a href="/docs/applications/managing-app-metrics/" title="Managing Application Metrics" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsmanaging-app-metrics"><span class="">Managing App Metrics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsmanaging-app-lifecycle-li">
+  <a href="/docs/applications/managing-app-lifecycle/" title="Managing an Application" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsmanaging-app-lifecycle"><span class="">Managing App Lifecycle</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsmanaging-app-volumes-li">
+  <a href="/docs/applications/managing-app-volumes/" title="Mounting volumes for an Application" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsmanaging-app-volumes"><span class="">Managing App Volumes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsmanaging-app-gateway-li">
+  <a href="/docs/applications/managing-app-gateway/" title="About gateway for an Application" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsmanaging-app-gateway"><span class="">Managing App Gateway</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsmanaging-app-resources-li">
+  <a href="/docs/applications/managing-app-resources/" title="Managing resources for an Application" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsmanaging-app-resources"><span class="">Managing App Resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsinter-app-communication-li">
+  <a href="/docs/applications/inter-app-communication/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsinter-app-communication"><span class="">Inter-app Communication</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsmanaging-resource-limits-li">
+  <a href="/docs/applications/managing-resource-limits/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsmanaging-resource-limits"><span class="">Resource Limits</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsdomains-and-routing-li">
+  <a href="/docs/applications/domains-and-routing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsdomains-and-routing"><span class="">Domains and Routing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsssl-certificates-li">
+  <a href="/docs/applications/ssl-certificates/" title="Application SSL Certificates" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsssl-certificates"><span class="">SSL Certificates</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsapplicationsusing-dryccpath-li">
+  <a href="/docs/applications/using-dryccpath/" title="Using drycc path" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsapplicationsusing-dryccpath"><span class="">Deploying with drycc path</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsmanaging-workflow-li">
+  <a href="/docs/managing-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsmanaging-workflow"><span class="">Managing Workflow</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmanaging-workflowtuning-component-settings-li">
+  <a href="/docs/managing-workflow/tuning-component-settings/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsmanaging-workflowtuning-component-settings"><span class="">Tuning Component Settings</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmanaging-workflowconfiguring-dns-li">
+  <a href="/docs/managing-workflow/configuring-dns/" title="Configure DNS" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsmanaging-workflowconfiguring-dns"><span class="">Configuring DNS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsmanaging-workflowdeploy-hooks-li">
+  <a href="/docs/managing-workflow/deploy-hooks/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-docsmanaging-workflowdeploy-hooks"><span class="td-sidebar-nav-active-item">Deploy Hooks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmanaging-workflowplatform-logging-li">
+  <a href="/docs/managing-workflow/platform-logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsmanaging-workflowplatform-logging"><span class="">Platform Logging</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmanaging-workflowplatform-monitoring-li">
+  <a href="/docs/managing-workflow/platform-monitoring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsmanaging-workflowplatform-monitoring"><span class="">Platform Monitoring</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmanaging-workflowproduction-deployments-li">
+  <a href="/docs/managing-workflow/production-deployments/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsmanaging-workflowproduction-deployments"><span class="">Production Deployments</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmanaging-workflowupgrading-workflow-li">
+  <a href="/docs/managing-workflow/upgrading-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsmanaging-workflowupgrading-workflow"><span class="">Upgrading Workflow</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docstroubleshooting-li">
+  <a href="/docs/troubleshooting/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docstroubleshooting"><span class="">Troubleshooting</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docstroubleshootingworkflow-li">
+  <a href="/docs/troubleshooting/workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docstroubleshootingworkflow"><span class="">Troubleshooting Workflow</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docstroubleshootingkubectl-li">
+  <a href="/docs/troubleshooting/kubectl/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docstroubleshootingkubectl"><span class="">Troubleshooting using Kubectl</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docstroubleshootingapplications-li">
+  <a href="/docs/troubleshooting/applications/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docstroubleshootingapplications"><span class="">Troubleshooting Applications</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsroadmap-li">
+  <a href="/docs/roadmap/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsroadmap"><span class="">Roadmap</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsroadmapplanning-process-li">
+  <a href="/docs/roadmap/planning-process/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsroadmapplanning-process"><span class="">Planning Process</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsroadmaproadmap-li">
+  <a href="/docs/roadmap/roadmap/" title="Drycc Workflow Roadmap" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsroadmaproadmap"><span class="">Roadmap</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsroadmapreleases-li">
+  <a href="/docs/roadmap/releases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsroadmapreleases"><span class="">Releases</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docscontribution-guidelines-li">
+  <a href="/docs/contribution-guidelines/" title="Contribution Guidelines" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docscontribution-guidelines"><span class="">Contributing</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelinesoverview-li">
+  <a href="/docs/contribution-guidelines/overview/" title="Contributor Overview" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelinesoverview"><span class="">Overview</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelinesdesign-documents-li">
+  <a href="/docs/contribution-guidelines/design-documents/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelinesdesign-documents"><span class="">Design Documents</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelinesdevelopment-environment-li">
+  <a href="/docs/contribution-guidelines/development-environment/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelinesdevelopment-environment"><span class="">Development Environment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelinestesting-li">
+  <a href="/docs/contribution-guidelines/testing/" title="Testing Drycc" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelinestesting"><span class="">Testing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelinessubmitting-a-pull-request-li">
+  <a href="/docs/contribution-guidelines/submitting-a-pull-request/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelinessubmitting-a-pull-request"><span class="">Submitting a Pull Request</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelinescommunity-li">
+  <a href="/docs/contribution-guidelines/community/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelinescommunity"><span class="">Community</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelinestriaging-issues-li">
+  <a href="/docs/contribution-guidelines/triaging-issues/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelinestriaging-issues"><span class="">Triaging Issues</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelinesconduct-li">
+  <a href="/docs/contribution-guidelines/conduct/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelinesconduct"><span class="">Conduct</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelinesmaintainers-li">
+  <a href="/docs/contribution-guidelines/maintainers/" title="Drycc Maintainers" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelinesmaintainers"><span class="">Maintainers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsreference-guide-li">
+  <a href="/docs/reference-guide/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsreference-guide"><span class="">Reference Guide</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsreference-guidecreating-a-self-signed-ssl-certificate-li">
+  <a href="/docs/reference-guide/creating-a-self-signed-ssl-certificate/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsreference-guidecreating-a-self-signed-ssl-certificate"><span class="">Creating a Self-Signed SSL Certificate</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsreference-guidecontroller-api-v2-0-li">
+  <a href="/docs/reference-guide/controller-api-v2-0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsreference-guidecontroller-api-v2-0"><span class="">Controller API v2.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsreference-guidecontroller-api-v2-1-li">
+  <a href="/docs/reference-guide/controller-api-v2-1/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsreference-guidecontroller-api-v2-1"><span class="">Controller API v2.1</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsreference-guidecontroller-api-v2-2-li">
+  <a href="/docs/reference-guide/controller-api-v2-2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsreference-guidecontroller-api-v2-2"><span class="">Controller API v2.2</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsreference-guidecontroller-api-v2-3-li">
+  <a href="/docs/reference-guide/controller-api-v2-3/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsreference-guidecontroller-api-v2-3"><span class="">Controller API v2.3</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+<a href="https://github.com/drycc/website/tree/main/content/en/docs/managing-workflow/deploy-hooks.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+  <a href="https://github.com/drycc/website/edit/main/content/en/docs/managing-workflow/deploy-hooks.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/drycc/website/new/main/content/en/docs/managing-workflow?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+  <a href="https://github.com/drycc/website/issues/new?title=Deploy%20Hooks" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+  <a href="https://github.com/drycc/workflow/issues/new" class="td-page-meta--project td-page-meta__project-issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create project issue</a>
+  <a id="print" href="/docs/managing-workflow/_print/"><i class="fa-solid fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#http-post-hook">HTTP POST Hook</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/docs/">Docs</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/managing-workflow/">Managing Workflow</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Deploy Hooks</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Deploy Hooks</h1>
+	<div class="lead">Deploy hooks allow an external service to receive a notification whenever a new version of your app is pushed to Workflow.</div>
+	<header class="article-meta">
+		
+  <p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 2 minute read &nbsp;</p>
+</header>
+	<p>It’s useful to help keep the development team informed about deploys, while
+it can also be used to integrate different systems together.</p>
+<p>After one or more hooks are setup, hook output and errors appear in your application’s logs:</p>
+<pre tabindex="0"><code>$ drycc logs
+...
+2011-03-15T15:07:29-07:00 drycc[api]: Deploy hook sent to http://drycc.rocks
+</code></pre><p>Deploy hooks are a generic HTTP hook. An administrator can create and configure multiple deploy
+hooks by <a href="/docs/managing-workflow/tuning-component-settings/#customizing-the-controller">tuning the controller settings</a> via the Helm chart.</p>
+<h2 id="http-post-hook">HTTP POST Hook<a class="td-heading-self-link" href="#http-post-hook" aria-label="Heading self-link"></a></h2>
+<p>The HTTP deploy hook performs an HTTP POST to a URL. The parameters included in the request are the
+same as the variables available in the hook message: <code>app</code>, <code>release</code>, <code>release_summary</code>, <code>sha</code> and
+<code>user</code>. See below for their descriptions:</p>
+<pre tabindex="0"><code>app=secure-woodland&amp;release=v4&amp;release_summary=gabrtv%20deployed%35b3726&amp;sha=35b3726&amp;user=gabrtv
+</code></pre><p>Optionally, if a deploy hook secret key is added to the controller through
+<a href="/docs/managing-workflow/tuning-component-settings/#customizing-the-controller">tuning the controller settings</a>, a new <code>Authorization</code> header will be
+present in the POST request. The value of this header is computed as the <a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a> hex digest of the
+request URL, using the secret as the key.</p>
+<p>In order to authenticate that this request came from Workflow, use the secret key, the full URL and
+the HMAC-SHA1 hashing algorithm to compute the signature. In Python, that would look something like
+this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">hashlib</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">hmac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">hmac</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">new</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;my_secret_key&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;http://drycc.rocks?app=secure-woodland&amp;release=v4&amp;release_summary=gabrtv</span><span style="color:#4e9a06">%20d</span><span style="color:#4e9a06">eployed%35b3726&amp;sha=35b3726&amp;user=gabrtv&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">digestmod</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">hashlib</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">sha1</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">hexdigest</span><span style="color:#000;font-weight:bold">()</span>
+</span></span></code></pre></div><p>If the value of the computed HMAC hex digest and the value in the <code>Authorization</code> header are
+identical, then the request came from Workflow.</p>
+<p>!!! important
+When computing the signature, ensure that the URL parameters are in alphabetic order. This is
+critical when computing the cryptographic signature as most web applications don&rsquo;t care about
+the order of the HTTP parameters, but the cryptographic signature will not be the same.</p>
+
+	<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h2>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/drycc/workflow/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/drycc/workflow/issues/new">tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'page_helpful', {
+      'event_category': 'Helpful',
+      'event_label': window.location.pathname,
+      'value': value
+    });
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback( 100 );
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+<br />
+<div class="td-page-meta__lastmod">
+  Last modified 29.02.2024: <a href="https://github.com/drycc/website/commit/3b49d6ee91dda360c6b7d34f632a24c93b3d7702">init repo (3b49d6e)</a>
+</div>
+
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

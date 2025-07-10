@@ -1,0 +1,653 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/docs/installing-workflow/">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/installing-workflow/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Installing To Kubenetes | Drycc</title>
+<meta name="description" content="Deploying Drycc on a Kubernetes Cluster.">
+<meta property="og:url" content="/docs/installing-workflow/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Installing To Kubenetes">
+  <meta property="og:description" content="Deploying Drycc on a Kubernetes Cluster.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Installing To Kubenetes">
+  <meta itemprop="description" content="Deploying Drycc on a Kubernetes Cluster.">
+  <meta itemprop="dateModified" content="2024-05-06T13:43:29+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Installing To Kubenetes">
+  <meta name="twitter:description" content="Deploying Drycc on a Kubernetes Cluster.">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/installing-workflow/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Installing To Kubenetes</h1>
+<div class="lead">Deploying Drycc on a Kubernetes Cluster.</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-46bc914b43c7294d3007db288d795021">Requirements</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-ee3fe110d0efcc1b34a882fb946886e4">Specify Gateway</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-8ff1c03ab1d2c9948af7ce8da6fa387a">Installing Drycc Workflow</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-295b46299c21cdb84c782750a6780f61">Configuring Object Storage</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-0d336adcc6b0a2147690be79cb9a7557">Configuring Postgres</a></li>
+
+
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-fe6530b6e8ee56416ae8a9f905cc910c">Configuring Registry</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-46bc914b43c7294d3007db288d795021">1 - Requirements</h1>
+    <div class="lead">To run Drycc Workflow on a Kubernetes cluster, there are a few requirements to keep in mind.</div>
+	<h2 id="kubernetes-versions">Kubernetes Versions<a class="td-heading-self-link" href="#kubernetes-versions" aria-label="Heading self-link"></a></h2>
+<p>Drycc Workflow requires Kubernetes v1.16.15 or later.</p>
+<h2 id="components-requirements">Components Requirements<a class="td-heading-self-link" href="#components-requirements" aria-label="Heading self-link"></a></h2>
+<p>Drycc uses gateway as a routing implementation, so you have to choose an gateway. We recommend using <a href="https://istio.io/">istio</a> or <a href="https://konghq.com/">kong</a>.</p>
+<p>Workflow supports the use of ACME to manage automatic certificates, <a href="https://github.com/helm/charts/tree/master/stable/cert-manager">cert-manager</a> is also one of the necessary components, if you use cert-manager EAB, you need to set the <code>clusterResourceNamespace</code> to the namespace of drycc.</p>
+<p>Workflow supports stateful apps. You can create and use them through the &lsquo;drycc volumes&rsquo; command. If you want to use this feature, you must have a <code>StorageClass</code> that supports <code>ReadWriteMany</code>.</p>
+<p>Workflow also supports the <a href="https://github.com/openservicebrokerapi/servicebroker">OSB</a> API through the &lsquo;drycc resources&rsquo; command. If you want to use this function, you need to install <a href="https://service-catalog.drycc.cc">service-catalog</a>.</p>
+<h2 id="storage-requirements">Storage Requirements<a class="td-heading-self-link" href="#storage-requirements" aria-label="Heading self-link"></a></h2>
+<p>A variety of Drycc Workflow components rely on an object storage system to do their work, including storing application
+slugs, Container images and database logs.</p>
+<p>Drycc Workflow ships with drycc storage by default, which provides in-cluster.</p>
+<p>Workflow supports Amazon Simple Storage Service (S3), Google Cloud Storage (GCS), OpenShift Swift, and Azure Blob
+Storage. See <a href="/docs/installing-workflow/configuring-object-storage/">configuring object storage</a> for setup instructions.</p>
+<h2 id="resource-requirements">Resource Requirements<a class="td-heading-self-link" href="#resource-requirements" aria-label="Heading self-link"></a></h2>
+<p>When deploying Drycc Workflow, it&rsquo;s important to provision machines with adequate resources. Drycc is a highly-available
+distributed system, which means that Drycc components and your deployed applications will move around the cluster onto
+healthy hosts as hosts leave the cluster for various reasons (failures, reboots, autoscalers, etc.). Because of this,
+you should have ample spare resources on any machine in your cluster to withstand the additional load of running
+services for failed machines.</p>
+<p>Drycc Workflow components use about 2.5GB of memory across the cluster, and require approximately 30GB of hard disk
+space. Because it may need to handle additional load if another one fails, each machine has minimum requirements of:</p>
+<ul>
+<li>At least 4GB of RAM (more is better)</li>
+<li>At least 40GB of hard disk space</li>
+</ul>
+<p>Note that these estimates are for Drycc Workflow and Kubernetes only. Be sure to leave enough spare capacity for your
+application footprint as well.</p>
+<p>Running smaller machines will likely result in increased system load and has been known to result in component failures
+and instability.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ee3fe110d0efcc1b34a882fb946886e4">2 - Specify Gateway</h1>
+    <div class="lead">Choose the gateway provider that best suits your needs and platform.</div>
+	<h2 id="install-drycc-workflow-specify-gateway">Install Drycc Workflow (Specify gateway)<a class="td-heading-self-link" href="#install-drycc-workflow-specify-gateway" aria-label="Heading self-link"></a></h2>
+<p>Now that Helm is installed and the repository has been added, install Workflow with a native gateway by running:</p>
+<pre tabindex="0"><code>$ helm install drycc oci://registry.drycc.cc/charts/workflow \
+    --namespace drycc \
+    --set global.gatewayClass=istio \
+    --set global.platformDomain=drycc.cc \
+    --set builder.service.type=LoadBalancer
+</code></pre><p>Of course, if you deploy it on a bare machine, you probably do not have Load Balancer. You need to use NodePort:</p>
+<pre tabindex="0"><code>$ helm install drycc oci://registry.drycc.cc/charts/workflow \
+    --namespace drycc \
+    --set global.gatewayClass=istio \
+    --set global.platformDomain=drycc.cc \
+    --set builder.service.type=NodePort \
+    --set builder.service.nodePort=32222
+</code></pre><p>If you want to use Load Balancer on a bare machine, you can look at <a href="https://github.com/metallb/metallb">metallb</a></p>
+<p>Where <code>global.platformDomain</code> is a <strong>required</strong> parameter that is traditionally not required for Workflow that is explained in the next section. In this example we are using <code>drycc.cc</code> for <code>$hostname</code>.</p>
+<p>Helm will install a variety of Kubernetes resources in the <code>drycc</code> namespace.
+Wait for the pods that Helm launched to be ready. Monitor their status by running:</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+</code></pre><p>You should also notice that several Kubernetes gatewayclass has been installed on your cluster. You can view it by running:</p>
+<pre tabindex="0"><code>$ kubectl get gatewayclass --namespace drycc
+</code></pre><p>Depending on the order in which the Workflow components initialize, some pods may restart. This is common during the
+installation: if a component&rsquo;s dependencies are not yet available, that component will exit and Kubernetes will
+automatically restart it.</p>
+<p>Here, it can be seen that the controller, builder and registry all took a few loops waiting for storage before they were able to start:</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+NAME                          READY     STATUS    RESTARTS   AGE
+drycc-builder-hy3xv            1/1       Running   5          5m
+drycc-controller-g3cu8         1/1       Running   5          5m
+drycc-controller-celery-cmxxn  3/3       Running   0          5m
+drycc-database-rad1o           1/1       Running   0          5m
+drycc-fluentbit-1v8uk          1/1       Running   0          5m
+drycc-fluentbit-esm60          1/1       Running   0          5m
+drycc-storage-4ww3t            1/1       Running   0          5m
+drycc-registry-asozo           1/1       Running   1          5m
+</code></pre><h2 id="install-a-kubernetes-gateway">Install a Kubernetes Gateway<a class="td-heading-self-link" href="#install-a-kubernetes-gateway" aria-label="Heading self-link"></a></h2>
+<p>Now that Workflow has been deployed with the <code>global.gatewayClass</code> , we will need a Kubernetes gateway in place to begin routing traffic.</p>
+<p>Here is an example of how to use <a href="https://istio.io/">istio</a> as an gateway for Workflow. Of course, you are welcome to use any controller you wish.</p>
+<pre tabindex="0"><code>$ helm repo add istio https://istio-release.storage.googleapis.com/charts
+$ helm repo update
+$ kubectl create namespace istio-system
+$ helm install istio-base istio/base -n istio-system
+$ helm install istiod istio/istiod -n istio-system --wait
+$ kubectl create namespace istio-ingress
+$ helm install istio-ingress istio/gateway -n istio-ingress --wait
+</code></pre><h2 id="configure-dns">Configure DNS<a class="td-heading-self-link" href="#configure-dns" aria-label="Heading self-link"></a></h2>
+<p>User must install <a href="/docs/quickstart/install-workflow/">drycc</a> and then set up a hostname, and assumes the <code>*.$host</code> convention.</p>
+<p>We need to point the <code>*.$host</code> record to the public IP address of your gateway. You can get the public IP using the following command. A wildcard entry is necessary here as apps will use the same rule after they are deployed.</p>
+<pre tabindex="0"><code>$ kubectl get gateway --namespace drycc
+NAME      CLASS   ADDRESS         PROGRAMMED   AGE
+gateway   istio   138.91.243.152  True         36d
+</code></pre><p>If we were using <code>drycc.cc</code> as a hostname, we would need to create the following A DNS records.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*.drycc.cc</td>
+<td style="text-align:center">A</td>
+<td style="text-align:right">138.91.243.152</td>
+</tr>
+</tbody>
+</table>
+<p>Once all of the pods are in the <code>READY</code> state, and <code>*.$host</code> resolves to the external IP found above, the preparation of gateway has been completed!</p>
+<p>After installing Workflow, <a href="/docs/quickstart/deploy-an-app/">register a user and deploy an application</a>.</p>
+<p>If your k8s does not provide public network loadblance, you need to install TCP proxy services such as haproxy on machines that can
+access both internal and external networks, and then expose <code>80</code> and <code>443</code>.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8ff1c03ab1d2c9948af7ce8da6fa387a">3 - Installing Drycc Workflow</h1>
+    <div class="lead">This document is aimed at those who have already provisioned a Kubernetes cluster and want to install Drycc Workflow.</div>
+	<p>If help is required getting started with Kubernetes and
+Drycc Workflow, follow the <a href="/docs/quickstart/">quickstart guide</a> for assistance.</p>
+<h2 id="prerequisites">Prerequisites<a class="td-heading-self-link" href="#prerequisites" aria-label="Heading self-link"></a></h2>
+<ol>
+<li>Verify the <a href="/docs/installing-workflow/system-requirements/">Kubernetes system requirements</a></li>
+<li>Install <a href="/docs/quickstart/install-cli-tools/">Helm and Drycc Workflow CLI</a> tools</li>
+</ol>
+<h2 id="check-your-setup">Check Your Setup<a class="td-heading-self-link" href="#check-your-setup" aria-label="Heading self-link"></a></h2>
+<p>Check that the <code>helm</code> command is available and the version is v2.5.0 or newer.</p>
+<pre tabindex="0"><code>$ helm version
+Client: &amp;version.Version{SemVer:&#34;v2.5.0&#34;, GitCommit:&#34;012cb0ac1a1b2f888144ef5a67b8dab6c2d45be6&#34;, GitTreeState:&#34;clean&#34;}
+Server: &amp;version.Version{SemVer:&#34;v2.5.0&#34;, GitCommit:&#34;012cb0ac1a1b2f888144ef5a67b8dab6c2d45be6&#34;, GitTreeState:&#34;clean&#34;}
+</code></pre><h2 id="choose-your-deployment-strategy">Choose Your Deployment Strategy<a class="td-heading-self-link" href="#choose-your-deployment-strategy" aria-label="Heading self-link"></a></h2>
+<p>Drycc Workflow includes everything it needs to run out of the box. However, these defaults are aimed at simplicity rather than
+production readiness. Production and staging deployments of Workflow should, at a minimum, use off-cluster storage
+which is used by Workflow components to store and backup critical data. Should an operator need to completely re-install
+Workflow, the required components can recover from off-cluster storage. See the documentation for <a href="/docs/installing-workflow/configuring-object-storage/">configuring object
+storage</a> for more details.</p>
+<p>More rigorous installations would benefit from using outside sources for the following things:</p>
+<ul>
+<li><a href="/docs/installing-workflow/configuring-postgres/">Postgres</a> - For example AWS RDS.</li>
+<li><a href="/docs/installing-workflow/configuring-registry/">Registry</a> - This includes <a href="https://quay.io">quay.io</a>, <a href="https://hub.docker.com">dockerhub</a>, <a href="https://aws.amazon.com/ecr/">Amazon ECR</a>, and <a href="https://cloud.google.com/container-registry/">Google GCR</a>.</li>
+<li><a href="/docs/managing-workflow/platform-logging/#configuring-off-cluster-valkey">Valkey</a> - Such as AWS Elasticache</li>
+<li><a href="/docs/managing-workflow/platform-monitoring/#off-cluster-grafana">Grafana</a></li>
+</ul>
+<h4 id="gateway">Gateway<a class="td-heading-self-link" href="#gateway" aria-label="Heading self-link"></a></h4>
+<p>Now, workflow requires that gateway and cert-manager must be installed. Any compatible Kubernetes entry controller can be used.</p>
+<h2 id="install-drycc-workflow">Install Drycc Workflow<a class="td-heading-self-link" href="#install-drycc-workflow" aria-label="Heading self-link"></a></h2>
+<p>If the version of helm is 3.0 +; you need to create the namespace in advance:</p>
+<pre tabindex="0"><code>kubectl create ns drycc
+</code></pre><p>If you want to change it, set the variable when using helm.</p>
+<pre tabindex="0"><code>$ helm install drycc oci://registry.drycc.cc/charts/workflow \
+    --namespace drycc \
+    --set builder.imageRegistry=quay.io \
+    --set imagebuilder.imageRegistry=quay.io \
+    --set controller.imageRegistry=quay.io \
+    --set database.imageRegistry=quay.io \
+    --set fluentbit.imageRegistry=quay.io \
+    --set valkey.imageRegistry=quay.io \
+    --set storage.imageRegistry=quay.io \
+    --set grafana.imageRegistry=quay.io \
+    --set registry.imageRegistry=quay.io \
+    --set global.platformDomain=drycc.cc
+</code></pre><p>Helm will install a variety of Kubernetes resources in the <code>drycc</code> namespace.
+Wait for the pods that Helm launched to be ready. Monitor their status by running:</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+</code></pre><p>If it&rsquo;s preferred to have <code>kubectl</code> automatically update as the pod states change, run (type Ctrl-C to stop the watch):</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods -w
+</code></pre><p>Depending on the order in which the Workflow components initialize, some pods may restart. This is common during the
+installation: if a component&rsquo;s dependencies are not yet available, that component will exit and Kubernetes will
+automatically restart it.</p>
+<p>Here, it can be seen that the controller, builder and registry all took a few loops before they were able to start:</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+NAME                                     READY     STATUS    RESTARTS   AGE
+drycc-builder-574483744-l15zj             1/1       Running   0          4m
+drycc-controller-3953262871-pncgq         1/1       Running   2          4m
+drycc-controller-celery-cmxxn             3/3       Running   0          4m
+drycc-database-83844344-47ld6             1/1       Running   0          4m
+drycc-fluentbit-zxnqb                     1/1       Running   0          4m
+drycc-valkey-304849759-1f35p              1/1       Running   0          4m
+drycc-storage-676004970-nxqgt             1/1       Running   0          4m
+drycc-monitor-grafana-432627134-lnl2h     1/1       Running   0          4m
+drycc-monitor-telegraf-wmcmn              1/1       Running   1          4m
+drycc-registry-756475849-lwc6b            1/1       Running   1          4m
+drycc-registry-proxy-96c4p                1/1       Running   0          4m
+</code></pre><p>Once all of the pods are in the <code>READY</code> state, Drycc Workflow is up and running!</p>
+<p>For more installation parameters, please check the <a href="https://github.com/drycc/workflow/blob/main/charts/workflow/values.yaml">values.yaml</a> file of workflow.</p>
+<p>After installing Workflow, <a href="/docs/quickstart/deploy-an-app/">register a user and deploy an application</a>.</p>
+<h2 id="configure-dns">Configure DNS<a class="td-heading-self-link" href="#configure-dns" aria-label="Heading self-link"></a></h2>
+<p>User must to set up a hostname, and assumes the <code>drycc-builder.$host</code> convention.</p>
+<p>We need to point the <code>drycc-builder.$host</code> record to the public IP address of your builder. You can get the public IP using the following command. A wildcard entry is necessary here as apps will use the same rule after they are deployed.</p>
+<pre tabindex="0"><code>$ kubectl get svc drycc-builder --namespace drycc
+NAME              CLUSTER-IP   EXTERNAL-IP      PORT(S)                      AGE
+drycc-builder     10.0.25.3    138.91.243.152   2222:31625/TCP               33m
+</code></pre><p>If we were using <code>drycc.cc</code> as a hostname, we would need to create the following A DNS records.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>drycc-builder.drycc.cc</td>
+<td style="text-align:center">A</td>
+<td style="text-align:right">138.91.243.152</td>
+</tr>
+</tbody>
+</table>
+<p>Once all of the pods are in the <code>READY</code> state, and <code>drycc-builder.$host</code> resolves to the external IP found above, Workflow is up and running!</p>
+<p>After installing Workflow, <a href="/docs/quickstart/deploy-an-app/">register a user and deploy an application</a>.</p>
+<p>If your k8s does not provide public network loadblance, you need to install TCP proxy services such as haproxy on machines that can
+access both internal and external networks, and then expose <code>80</code> and <code>443</code>.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-295b46299c21cdb84c782750a6780f61">4 - Configuring Object Storage</h1>
+    <div class="lead">A variety of Drycc Workflow components rely on an object storage system to do their work including storing application slugs, Container images and database logs.</div>
+	<p>Drycc Workflow ships with <a href="/docs/understanding-workflow/components/#object-storage">Storage</a> by default, which provides in-cluster.</p>
+<h2 id="configuring-off-cluster-object-storage">Configuring off-cluster Object Storage<a class="td-heading-self-link" href="#configuring-off-cluster-object-storage" aria-label="Heading self-link"></a></h2>
+<p>Every component that relies on object storage uses two inputs for configuration:</p>
+<ol>
+<li>You must use object storage services that are compatible with S3 API</li>
+<li>Access credentials stored as a Kubernetes secret named <code>storage-creds</code></li>
+</ol>
+<p>The helm chart for Drycc Workflow can be easily configured to connect Workflow components to off-cluster object storage. Drycc Workflow currently supports Google Compute Storage, Amazon S3, <a href="https://azure.microsoft.com/en-us/services/storage/blobs/">Azure Blob Storage</a> and OpenStack Swift Storage.</p>
+<h3 id="step-1-create-storage-buckets">Step 1: Create storage buckets<a class="td-heading-self-link" href="#step-1-create-storage-buckets" aria-label="Heading self-link"></a></h3>
+<p>Create storage buckets for each of the Workflow subsystems: <code>builder</code>, <code>registry</code>, and <code>database</code>.</p>
+<p>Depending on your chosen object storage you may need to provide globally unique bucket names. If you are using S3, use hyphens instead of periods in the bucket names. Using periods in the bucket name will cause an <a href="https://forums.aws.amazon.com/thread.jspa?threadID=105357">ssl certificate validation issue with S3</a>.</p>
+<p>If you provide credentials with sufficient access to the underlying storage, Workflow components will create the buckets if they do not exist.</p>
+<h3 id="step-2-generate-storage-credentials">Step 2: Generate storage credentials<a class="td-heading-self-link" href="#step-2-generate-storage-credentials" aria-label="Heading self-link"></a></h3>
+<p>If applicable, generate credentials that have create and write access to the storage buckets created in Step 1.</p>
+<p>If you are using AWS S3 and your Kubernetes nodes are configured with appropriate <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">IAM</a> API keys via InstanceRoles, you do not need to create API credentials. Do, however, validate that the InstanceRole has appropriate permissions to the configured buckets!</p>
+<h3 id="step-3-configure-workflow-chart">Step 3: Configure Workflow Chart<a class="td-heading-self-link" href="#step-3-configure-workflow-chart" aria-label="Heading self-link"></a></h3>
+<p>Operators should configure object storage by editing the Helm values file before running <code>helm install</code>. To do so:</p>
+<ul>
+<li>Fetch the Helm values by running <code>helm inspect values oci://registry.drycc.cc/charts/workflow &gt; values.yaml</code></li>
+<li>Update the <code>global/storage</code> parameter to reference the platform you are using, e.g. <code>s3</code>, <code>azure</code>, <code>gcs</code>, or <code>swift</code></li>
+<li>Find the corresponding section for your storage type and provide appropriate values including region, bucket names, and access credentials.</li>
+<li>Save your changes.</li>
+</ul>
+<p>!!! note
+All values will be automatically (base64) encoded <em>except</em> the <code>key_json</code> values under <code>gcs</code>/<code>gcr</code>.  These must be base64-encoded.  This is to support cleanly passing said encoded text via <code>helm --set</code> cli functionality rather than attempting to pass the raw JSON data.  For example:</p>
+<pre><code>	$ helm install drycc oci://registry.drycc.cc/charts/workflow \
+	    --namespace drycc \
+		--set global.platformDomain=youdomain.com
+		--set global.storage=gcs,gcs.key_json=&quot;$(cat /path/to/gcs_creds.json | base64 -w 0)&quot;
+</code></pre>
+<p>You are now ready to run <code>helm install drycc oci://registry.drycc.cc/charts/workflow --namespace drycc -f values.yaml</code> using your desired object storage.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0d336adcc6b0a2147690be79cb9a7557">5 - Configuring Postgres</h1>
+    <div class="lead">Drycc Workflow&rsquo;s controller and passport component rely on a PostgreSQL database to store platform state.</div>
+	<h1 id="configuring-postgres">Configuring Postgres<a class="td-heading-self-link" href="#configuring-postgres" aria-label="Heading self-link"></a></h1>
+<p>By default, Drycc Workflow ships with the <a href="/docs/understanding-workflow/components/#database">database</a> component, which provides an in-cluster PostgreSQL database backed up to in-cluster or off-cluster <a href="/docs/installing-workflow/configuring-object-storage/">object storage</a>. Currently, for object storage, which is utilized by <em>several</em> Workflow components, only off-cluster solutions such as S3 or GCS are recommended in production environments. Experience has shown that many operators already opting for off-cluster object storage similarly prefer to host Postgres off-cluster as well, using Amazon RDS or similar. When excercising both options, a Workflow installation becomes entirely stateless, and is thus restored or rebuilt with greater ease should the need ever arise.</p>
+<h2 id="provisioning-off-cluster-postgres">Provisioning off-cluster Postgres<a class="td-heading-self-link" href="#provisioning-off-cluster-postgres" aria-label="Heading self-link"></a></h2>
+<p>First, provision a PostgreSQL RDBMS using the cloud provider or other infrastructure of your choice. Take care to ensure that security groups or other firewall rules will permit connectivity from your Kubernetes worker nodes, any of which may play host to the Workflow controller component.</p>
+<p>Take note of the following:</p>
+<ol>
+<li>The hostname or public IP of your PostgreSQL RDBMS</li>
+<li>The port on which your PostgreSQL RDBMS runs&ndash; typically 5432</li>
+</ol>
+<p>Within the off-cluster RDBMS, manually provision the following:</p>
+<ol>
+<li>A database user (take note of the username and password)</li>
+<li>A database owned by that user (take note of its name)</li>
+</ol>
+<p>If you are able to log into the RDBMS as a superuser or a user with appropriate permissions, this process will <em>typically</em> look like this:</p>
+<pre tabindex="0"><code>$ psql -h &lt;host&gt; -p &lt;port&gt; -d postgres -U &lt;&#34;postgres&#34; or your own username&gt;
+&gt; create user &lt;drycc username; typically &#34;drycc&#34;&gt; with password &#39;&lt;password&gt;&#39;;
+&gt; create database &lt;database name; typically &#34;drycc&#34;&gt; with owner &lt;drycc username&gt;;
+&gt; \q
+</code></pre><h2 id="configuring-workflow">Configuring Workflow<a class="td-heading-self-link" href="#configuring-workflow" aria-label="Heading self-link"></a></h2>
+<p>The Helm chart for Drycc Workflow can be easily configured to connect the Workflow controller component to an off-cluster PostgreSQL database.</p>
+<ul>
+<li><strong>Step 1:</strong> If you haven&rsquo;t already fetched the values, do so with <code>helm inspect values drycc/workflow &gt; values.yaml</code></li>
+<li><strong>Step 2:</strong> Update database connection details by modifying <code>values.yaml</code>:
+<ul>
+<li>Update the <code>database.enabled</code> parameter to <code>false</code>.</li>
+<li>Update the values in the <code>[database]</code> configuration section to properly reflect all connection details.</li>
+<li>Update the values in the <code>[controller]</code> configuration section to properly reflect platformDomain details.</li>
+<li>Save your changes.</li>
+<li>Note: you do not need to (and must not) base64 encode any values, as the Helm chart will automatically handle encoding as necessary.</li>
+</ul>
+</li>
+</ul>
+<p>You are now ready to <code>helm install drycc oci://registry.drycc.cc/charts/workflow --namespace drycc -f values.yaml</code> <a href="/docs/installing-workflow/">as usual</a>.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fe6530b6e8ee56416ae8a9f905cc910c">6 - Configuring Registry</h1>
+    <div class="lead">Drycc Workflow&rsquo;s builder component relies on a registry for storing application container images.</div>
+	<p>Drycc Workflow ships with a <a href="/docs/understanding-workflow/components/#registry">registry</a> component by default, which provides an in-cluster Container registry backed by the platform-configured <a href="/docs/installing-workflow/configuring-object-storage/">object storage</a>. Operators might want to use an off-cluster registry for performance or security reasons.</p>
+<h2 id="configuring-off-cluster-private-registry">Configuring Off-Cluster Private Registry<a class="td-heading-self-link" href="#configuring-off-cluster-private-registry" aria-label="Heading self-link"></a></h2>
+<p>Every component that relies on a registry uses two inputs for configuration:</p>
+<ol>
+<li>Registry Location environment variable named <code>DRYCC_REGISTRY_LOCATION</code></li>
+<li>Access credentials stored as a Kubernetes secret named <code>registry-secret</code></li>
+</ol>
+<p>The Helm chart for Drycc Workflow can be easily configured to connect Workflow components to off-cluster registry. Drycc Workflow supports external registries which provide either short-lived tokens that are valid only for a specified amount of time or long-lived tokens (basic username/password) which are valid forever for authenticating to them. For those registries which provide short lived tokens for authentication, Drycc Workflow will generate and refresh them such that the deployed apps will only have access to the short-lived tokens and not to the actual credentials for the registries.</p>
+<p>When using a private registry the container images are no longer pulled by Drycc Workflow Controller but rather are managed by <a href="https://kubernetes.io">Kubernetes</a>. This will increase security and overall speed, however the <code>port</code> information can no longer be discovered. Instead the <code>port</code> information can be set via <code>drycc config set PORT=&lt;port&gt;</code> prior to deploying the application.</p>
+<p>Drycc Workflow currently supports:</p>
+<ol>
+<li>off-cluster: Any provider which supports long-lived username/password authentication, such as <a href="https://docs.microsoft.com/en-us/azure/container-registry/">Azure Container Registry</a>, <a href="https://hub.docker.com/">Docker Hub</a>, <a href="https://quay.io/">quay.io</a>, or a self-hosted Container registry.</li>
+</ol>
+<h2 id="configuration">Configuration<a class="td-heading-self-link" href="#configuration" aria-label="Heading self-link"></a></h2>
+<ol>
+<li>If you haven&rsquo;t already fetched the values file, do so with <code>helm inspect values drycc/workflow &gt; values.yaml</code></li>
+<li>Update registry location details by modifying the values file:
+* Update the <code>registry.enabled</code> parameter to reference the registry location you are using: <code>true</code>, <code>false</code>
+* Update the values in the section which corresponds to your registry location type.</li>
+</ol>
+<p>You are now ready to <code>helm install drycc oci://registry.drycc.cc/charts/workflow --namespace drycc -f values.yaml</code> using your desired registry.</p>
+<h2 id="examples">Examples<a class="td-heading-self-link" href="#examples" aria-label="Heading self-link"></a></h2>
+<p>Here we show how the relevant parts of the fetched <code>values.yaml</code> file might look like after configuring for a particular off-cluster registry:</p>
+<h3 id="azure-container-registryhttpsazuremicrosoftcomen-usservicescontainer-registry-acr"><a href="https://azure.microsoft.com/en-us/services/container-registry/">Azure Container Registry</a> (ACR)<a class="td-heading-self-link" href="#azure-container-registryhttpsazuremicrosoftcomen-usservicescontainer-registry-acr" aria-label="Heading self-link"></a></h3>
+<p>After following the <a href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli">docs</a> and creating a registry, e.g. <code>myregistry</code>, with its corresponding login server of <code>myregistry.azurecr.io</code>, the following values should be supplied:</p>
+<pre tabindex="0"><code>builder:
+  registryHost: &#34;myregistry.azurecr.io&#34;
+  registryUsername: &#34;xxxx&#34;
+  registryPassword: &#34;xxxx&#34;
+  registryOrganization: &#34;xxxx&#34;
+registry:
+  enabled: false
+</code></pre><p><strong>Note:</strong> The mandatory organization field (here <code>myorg</code>) will be created as an ACR repository if it does not already exist.</p>
+<h3 id="quayio">Quay.io<a class="td-heading-self-link" href="#quayio" aria-label="Heading self-link"></a></h3>
+<pre tabindex="0"><code>builder:
+  registryHost: &#34;quay.io&#34;
+  registryUsername: &#34;xxxx&#34;
+  registryPassword: &#34;xxxx&#34;
+  registryOrganization: &#34;xxxx&#34;
+registry:
+  enabled: false
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

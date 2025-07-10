@@ -1,0 +1,492 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/docs/understanding-workflow/">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/understanding-workflow/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Understanding Workflow | Drycc</title>
+<meta name="description" content="Understanding the architecture design of workflow.">
+<meta property="og:url" content="/docs/understanding-workflow/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Understanding Workflow">
+  <meta property="og:description" content="Understanding the architecture design of workflow.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Understanding Workflow">
+  <meta itemprop="description" content="Understanding the architecture design of workflow.">
+  <meta itemprop="dateModified" content="2024-05-06T13:43:29+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Understanding Workflow">
+  <meta name="twitter:description" content="Understanding the architecture design of workflow.">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/understanding-workflow/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Understanding Workflow</h1>
+<div class="lead">Understanding the architecture design of workflow.</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-26d236fa72225654c1d849add92dafa4">Concepts</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-c982d33ed1d4cdbe2048cc622558e243">Architecture</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-c8b3697d58439ac48af0e2f6d87073ea">Components</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-26d236fa72225654c1d849add92dafa4">1 - Concepts</h1>
+    <div class="lead">Drycc Workflow is a lightweight application platform that deploys and scales Twelve-Factor apps as containers across a Kubernetes cluster.</div>
+	<h2 id="twelve-factor-applications">Twelve-Factor Applications<a class="td-heading-self-link" href="#twelve-factor-applications" aria-label="Heading self-link"></a></h2>
+<p>The <a href="http://12factor.net/">Twelve-Factor App</a> is a methodology for building modern
+applications that can be scaled across a distributed system.</p>
+<p>Twelve-factor is a valuable synthesis of years of experience with
+software-as-a-service apps in the wild, particularly on the
+Heroku platform.</p>
+<p>Workflow is designed to run applications that adhere to the <a href="http://12factor.net/">Twelve-Factor App</a>
+methodology and best practices.</p>
+<h2 id="kubernetes">Kubernetes<a class="td-heading-self-link" href="#kubernetes" aria-label="Heading self-link"></a></h2>
+<p><a href="https://kubernetes.io">Kubernetes</a> is an open-source cluster manager developed by Google and
+donated to the <a href="https://cncf.io/">Cloud Native Compute Foundation</a>. Kubernetes manages all
+the activity on your cluster, including: desired state convergence, stable
+service addresses, health monitoring, service discovery, and DNS resolution.</p>
+<p>Workflow builds upon Kubernetes abstractions like Services,
+Deployments and Pods to provide a developer-friendly experience.
+Building containers directly from application source code, aggregating logs,
+and managing deployment configurations and app releases are just some of the
+features Workflow adds.</p>
+<p>Drycc Workflow is a set of Kubernetes-native components, installable via
+<a href="https://github.com/kubernetes/helm">Helm</a>. Systems engineers who are familiar with Kubernetes will feel right
+at home running Workflow.</p>
+<p>See the <a href="/docs/understanding-workflow/components/">components</a> overview for more detail.</p>
+<h2 id="container">Container<a class="td-heading-self-link" href="#container" aria-label="Heading self-link"></a></h2>
+<p>[Container][] is an open source project to build, ship and run any
+application as a lightweight, portable, self-sufficient container.</p>
+<p>If you have not yet converted your application to containers, Workflow provides
+a simple and straightforward &ldquo;source to Container image&rdquo; capability. Supporting
+multiple language runtimes via community <a href="/docs/applications/using-buildpacks/">buildpacks</a>, building your application
+in a container can be as easy as <code>git push drycc master</code>.</p>
+<p>Applications which use either a Dockerfile or reference external Container
+images are launched unmodified.</p>
+<h2 id="applications">Applications<a class="td-heading-self-link" href="#applications" aria-label="Heading self-link"></a></h2>
+<p>Workflow is designed around the concept of an <a href="../reference-guide/terms.md#application">application</a>, or app.</p>
+<p>Applications come in one of three forms:</p>
+<ol>
+<li>a collection of source files stored in a <code>git</code> repository</li>
+<li>a Dockerfile and associated source files stored in a <code>git</code> repository</li>
+<li>a reference to an existing image at a Container repository</li>
+</ol>
+<p>Applications are identified by a unique name for easy reference. If you do not
+specify a name when creating your application, Workflow generates one for you.
+Workflow also manages related information, including domain names, SSL
+certificates, and developer-provided configuration.</p>
+<h2 id="build-release-run">Build, Release, Run<a class="td-heading-self-link" href="#build-release-run" aria-label="Heading self-link"></a></h2>
+<p><img alt="Git Push Workflow" src="../../diagrams/Git_Push_Flow.png"></p>
+<h3 id="build-stage">Build Stage<a class="td-heading-self-link" href="#build-stage" aria-label="Heading self-link"></a></h3>
+<p>The <a href="/docs/understanding-workflow/components/#builder">builder</a> component processes incoming <code>git push drycc master</code> requests
+and manages your application packaging.</p>
+<p>If your application is using a <a href="/docs/applications/using-buildpacks/">buildpack</a>, builder will launch an ephemeral
+job to extract and execute the packaging instructions. The resulting
+application artifact is stored by the platform for execution during the run
+stage.</p>
+<p>If instead builder finds a <a href="/docs/applications/using-dockerfiles/">Dockerfile</a>, it follows those instructions to
+create a Container image. The resulting artifact is stored in a Drycc-managed registry which
+will be referenced during the run stage.</p>
+<p>If another system already builds and packages your application, that container
+artifact can be used directly. When referencing an <a href="/docs/applications/using-container-images/">external Container
+image</a>, the builder component doesn&rsquo;t attempt to repackage your
+app.</p>
+<h3 id="release-stage">Release Stage<a class="td-heading-self-link" href="#release-stage" aria-label="Heading self-link"></a></h3>
+<p>During the release stage, a <a href="../reference-guide/terms.md#build">build</a> is combined with <a href="../reference-guide/terms.md#config">application configuration</a>
+to create a new, numbered <a href="../reference-guide/terms.md#release">release</a>. New releases are created any time a new
+build is created or application configuration is changed. Tracking releases as a
+&ldquo;write-only ledger&rdquo; this way makes it easy to rollback to any previous release.</p>
+<h3 id="run-stage">Run Stage<a class="td-heading-self-link" href="#run-stage" aria-label="Heading self-link"></a></h3>
+<p>The run stage deploys the new release to the underlying Kubernetes cluster by
+changing the Deployment object which references the new release.
+By managing the desired replica count, Workflow
+orchestrates a zero-downtime, rolling update of your application. Once
+successfully updated, Workflow removes the last reference to the old release.
+Note that during the deploy, your application will be running in a mixed mode.</p>
+<h2 id="backing-services">Backing Services<a class="td-heading-self-link" href="#backing-services" aria-label="Heading self-link"></a></h2>
+<p>Workflow treats all persistent services such as databases, caches, storage,
+messaging systems, and other <a href="http://12factor.net/backing-services">backing services</a> as resources managed
+separately from your application. This philosophy aligns with Twelve-Factor
+best practices.</p>
+<p>Applications attach to backing services using <a href="http://12factor.net/config">environment variables</a>.
+Because apps are decoupled from backing services, they are free to
+scale up independently, to use services provided by other apps, or to switch
+to external or third-party vendor services.</p>
+<h2 id="see-also">See Also<a class="td-heading-self-link" href="#see-also" aria-label="Heading self-link"></a></h2>
+<ul>
+<li><a href="/docs/understanding-workflow/architecture/">Workflow Architecture</a></li>
+<li><a href="/docs/understanding-workflow/components/">Workflow Components</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c982d33ed1d4cdbe2048cc622558e243">2 - Architecture</h1>
+    <div class="lead">Drycc Workflow is built using a service oriented architecture.</div>
+	<p>All components are published as a set of container images which can be deployed to any
+compliant Kubernetes cluster.</p>
+<h2 id="overview">Overview<a class="td-heading-self-link" href="#overview" aria-label="Heading self-link"></a></h2>
+<p><img alt="System Overview" src="../../diagrams/Ecosystem_Basic.jpg"></p>
+<p>Operators use <a href="https://github.com/kubernetes/helm">Helm</a> to configure and install the Workflow components which
+interface directly with the underlying Kubernetes cluster. Service discovery,
+container availability and networking are all delegated to Kubernetes, while
+Workflow provides a clean and simple developer experience.</p>
+<h2 id="platform-services">Platform Services<a class="td-heading-self-link" href="#platform-services" aria-label="Heading self-link"></a></h2>
+<p><img alt="Workflow Overview" src="../../diagrams/Workflow_Overview.jpg"></p>
+<p>Drycc Workflow provides additional functionality to your Kubernetes cluster, including:</p>
+<ul>
+<li><a href="/docs/understanding-workflow/components/#builder">Source to Image Builder</a> which compiles your Application code via Buildpacks or Dockerfiles</li>
+<li><a href="/docs/understanding-workflow/components/#controller">Simple REST API</a> which powers the CLI and any external integrations</li>
+<li>Application release and rollback</li>
+<li>Authentication and Authorization to Application resources</li>
+</ul>
+<h2 id="kubernetes-native">Kubernetes-Native<a class="td-heading-self-link" href="#kubernetes-native" aria-label="Heading self-link"></a></h2>
+<p>All platform components and applications deployed via Workflow expect to be
+running on an existing Kubernetes cluster. This means that you can happily run
+your Kubernetes-native workloads next to applications that are managed through
+Drycc Workflow.</p>
+<p><img alt="Workflow and Kubernetes" src="../../diagrams/Workflow_Detail.png"></p>
+<h2 id="application-layout-and-edge-routing">Application Layout and Edge Routing<a class="td-heading-self-link" href="#application-layout-and-edge-routing" aria-label="Heading self-link"></a></h2>
+<p>By default Workflow creates per-application Namespaces and Services so you can
+easily connect your applications to other on-cluster services through standard
+Kubernetes mechanisms.</p>
+<p><img alt="Application Configuration" src="../../diagrams/Application_Layout.png"></p>
+<p>The router component is responsible for routing HTTP/s traffic to your
+Applications as well as proxying <code>git push</code> and platform API traffic.</p>
+<p>By default, the router component is deployed as a Kubernetes service with type
+<code>LoadBalancer</code>; which, depending on your configuration, will provision a
+cloud-native load balancer automatically.</p>
+<p>The router automatically discovers routable Applications, SSL/TLS certificates
+and application-specific configurations through the use of Kubernetes
+annotations. Any changes to router configuration or certificates are applied
+within seconds.</p>
+<h2 id="topologies">Topologies<a class="td-heading-self-link" href="#topologies" aria-label="Heading self-link"></a></h2>
+<p>Drycc Workflow no longer dictates a specific topology or server count for your
+deployment. The platform components will happily run on single-server
+configurations as well as multi-server production clusters.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c8b3697d58439ac48af0e2f6d87073ea">3 - Components</h1>
+    <div class="lead">Workflow is comprised of a number of small, independent services that combine to create a distributed CaaS.</div>
+	<p>All Workflow components are deployed as services (and associated controllers) in your Kubernetes cluster.
+If you are interested we have a more detailed exploration of the <a href="/docs/understanding-workflow/architecture/">Workflow architecture</a>.</p>
+<p>All of the componentry for Workflow is built with composability in mind. If you
+need to customize one of the components for your specific deployment or need
+the functionality in your own project we invite you to give it a shot!</p>
+<h2 id="controller">Controller<a class="td-heading-self-link" href="#controller" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/controller">drycc/controller</a></p>
+<p>The controller component is an HTTP API server which serves as the endpoint for
+the <code>drycc</code> CLI. The controller provides all of the platform functionality as
+well as interfacing with your Kubernetes cluster. The controller persists all
+of its data to the database component.</p>
+<h2 id="passport">Passport<a class="td-heading-self-link" href="#passport" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/passport">drycc/passport</a></p>
+<p>The passport component exposes a web API and provide OAuth2 authentication.</p>
+<h2 id="database">Database<a class="td-heading-self-link" href="#database" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/postgres">drycc/postgres</a></p>
+<p>The database component is a managed instance of <a href="http://www.postgresql.org/">PostgreSQL</a> which holds a
+majority of the platforms state. Backups and WAL files are pushed to object
+storage via <a href="https://github.com/wal-e/wal-e">WAL-E</a>. When the database is restarted, backups are fetched and
+replayed from object storage so no data is lost.</p>
+<h2 id="builder">Builder<a class="td-heading-self-link" href="#builder" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/builder">drycc/builder</a></p>
+<p>The builder component is responsible for accepting code pushes via <a href="http://git-scm.com/">Git</a> and
+managing the build process of your <a href="../reference-guide/terms.md#application">Application</a>. The builder process is:</p>
+<ol>
+<li>Receives incoming <code>git push</code> requests over SSH</li>
+<li>Authenticates the user via SSH key fingerprint</li>
+<li>Authorizes the user&rsquo;s access to push code to the Application</li>
+<li>Starts the Application Build phase (see below)</li>
+<li>Triggers a new <a href="../reference-guide/terms.md#release">Release</a> via the Controller</li>
+</ol>
+<p>Builder currently supports both buildpack and Dockerfile based builds.</p>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/imagebuilder">drycc/imagebuilder</a></p>
+<p>For Buildpack-based deploys, the builder component will launch a one-shot Job
+in the <code>drycc</code> namespace. This job runs <code>imagebuilder</code> component which handles
+default and custom buildpacks (specified by <code>.packbuilder</code>). The completed image
+is pushed to the managed Container registry on cluster. For more information
+about buildpacks see <a href="/docs/applications/using-buildpacks/">using buildpacks</a>.</p>
+<p>Unlike buildpack-based, For Applications which contain a <code>Dockerfile</code> in the root
+of the repository, it generates a Container image (using the underlying Container engine).
+For more information see <a href="/docs/applications/using-dockerfiles/">using Dockerfiles</a>.</p>
+<h2 id="object-storage">Object Storage<a class="td-heading-self-link" href="#object-storage" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/storage">drycc/storage</a></p>
+<p>All of the Workflow components that need to persist data will ship them to the
+object storage that was configured for the cluster.For example, database ships
+its WAL files, registry stores Container images, and slugbuilder stores slugs.</p>
+<p>Workflow supports either on or off-cluster storage. For production deployments
+we highly recommend that you configure <a href="/docs/installing-workflow/configuring-object-storage/">off-cluster object storage</a>.</p>
+<p>To facilitate experimentation, development and test environments, the default charts for
+Workflow include on-cluster storage via <a href="https://github.com/drycc/storage">storage</a>.</p>
+<p>If you also feel comfortable using Kubernetes persistent volumes you may
+configure storage to use persistent storage available in your environment.</p>
+<h2 id="registry">Registry<a class="td-heading-self-link" href="#registry" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/registry">drycc/registry</a></p>
+<p>The registry component is a managed container registry which holds application
+images generated from the builder component. Registry persists the Container image
+images to either local storage (in development mode) or to object storage
+configured for the cluster.</p>
+<h2 id="quickwit">Quickwit<a class="td-heading-self-link" href="#quickwit" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/quickwit">drycc/quickwit</a></p>
+<p>Quickwit is the first engine to execute complex search and analytics queries directly on cloud storage with
+sub-second latency. Powered by Rust and its decoupled compute and storage architecture, it is designed to
+be resource-efficient, easy to operate, and scale to petabytes of data.</p>
+<p>Quickwit is a great fit for log management, distributed tracing, and generally immutable data such as
+conversational data (emails, texts, messaging platforms) and event-based analytics.</p>
+<h2 id="fluentbit">Fluentbit<a class="td-heading-self-link" href="#fluentbit" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/fluentbit">drycc/fluentbit</a></p>
+<p>Fluent Bit is a fast and lightweight telemetry agent for logs, metrics, and traces for Linux, macOS, Windows,
+and BSD family operating systems. Fluent Bit has been made with a strong focus on performance to allow the
+collection and processing of telemetry data from different sources without complexity.</p>
+<h2 id="victoriametrics">Victoriametrics<a class="td-heading-self-link" href="#victoriametrics" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/victoriametrics">drycc/victoriametrics</a></p>
+<p>Victoriametrics is a system monitoring and alerting system. It was opensourced by SoundCloud in 2012 and is
+the second project both to join and to graduate within Cloud Native Computing Foundation after Kubernetes.
+Victoriametrics stores all metrics data as time series, i.e metrics information is stored along with the
+timestamp at which it was recorded, optional key-value pairs called as labels can also be stored along
+with metrics.</p>
+<h2 id="helmbroker">HelmBroker<a class="td-heading-self-link" href="#helmbroker" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc-addons/helmbroker">drycc-addons/helmbroker</a></p>
+<p>Helm Broker is a Service Broker that exposes Helm charts as Service Classes in Service Catalog.
+To do so, Helm Broker uses the concept of addons. An addon is an abstraction layer over a Helm chart
+which provides all information required to convert the chart into a Service Class.</p>
+<h2 id="victoriametrics-1">Victoriametrics<a class="td-heading-self-link" href="#victoriametrics-1" aria-label="Heading self-link"></a></h2>
+<p><strong>Project Location:</strong> <a href="https://github.com/drycc/victoriametrics">drycc/victoriametrics</a></p>
+<p>Victoriametrics is an open-source systemsmonitoring and alerting toolkit originally built atSoundCloud.</p>
+<h2 id="see-also">See Also<a class="td-heading-self-link" href="#see-also" aria-label="Heading self-link"></a></h2>
+<ul>
+<li><a href="/docs/understanding-workflow/concepts/">Workflow Concepts</a></li>
+<li><a href="/docs/understanding-workflow/architecture/">Workflow Architecture</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

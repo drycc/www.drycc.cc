@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drycc</title>
+    <link>/</link>
+    <description>Recent content on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drycc Workflow  CLI</title>
+      <link>/docs/users/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/users/cli/</guid>
+      <description>The Drycc Workflow command-line interface (CLI), or client, allows you to interact with Drycc Workflow.&#xA;Installation Install the latest drycc client for Linux or Mac OS X with: $ curl -sfL https://www.drycc.cc/install-cli.sh | bash -&#xA;The installer puts drycc in your current directory, but you should move it somewhere in your $PATH:&#xA;$ ln -fs $PWD/drycc /usr/local/bin/drycc Getting Help The Drycc client comes with comprehensive documentation for every command. Use drycc help to explore the commands available to you:</description>
+    </item>
+    <item>
+      <title>Concepts</title>
+      <link>/docs/understanding-workflow/concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/understanding-workflow/concepts/</guid>
+      <description>Twelve-Factor Applications The Twelve-Factor App is a methodology for building modern applications that can be scaled across a distributed system.&#xA;Twelve-factor is a valuable synthesis of years of experience with software-as-a-service apps in the wild, particularly on the Heroku platform.&#xA;Workflow is designed to run applications that adhere to the Twelve-Factor App methodology and best practices.&#xA;Kubernetes Kubernetes is an open-source cluster manager developed by Google and donated to the Cloud Native Compute Foundation.</description>
+    </item>
+    <item>
+      <title>Creating a Self-Signed SSL Certificate</title>
+      <link>/docs/reference-guide/creating-a-self-signed-ssl-certificate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/creating-a-self-signed-ssl-certificate/</guid>
+      <description>When using the app ssl feature for non-production applications or when installing SSL for the platform, you can avoid the costs associated with the SSL certificate by using a self-signed SSL certificate. Though the certificate implements full encryption, visitors to your site will see a browser warning indicating that the certificate should not be trusted.&#xA;Prerequisites The openssl library is required to generate your own certificate. Run the following command in your local environment to see if you already have openssl installed.</description>
+    </item>
+    <item>
+      <title>Deploying an Application</title>
+      <link>/docs/applications/deploying-apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/deploying-apps/</guid>
+      <description>An Application is deployed to Drycc using git push or the drycc client.&#xA;Supported Applications Drycc Workflow can deploy any application or service that can run inside a container. In order to be scaled horizontally, applications must follow the Twelve-Factor App methodology and store any application state in external backing services.&#xA;For example, if your application persists state to the local filesystem &amp;ndash; common with content management systems like Wordpress and Drupal &amp;ndash; it cannot be scaled horizontally using drycc scale.</description>
+    </item>
+    <item>
+      <title>Quick Start</title>
+      <link>/docs/quickstart/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/overview/</guid>
+      <description>Get started with Drycc Workflow in three easy steps.&#xA;Install CLI tools for Helm and Drycc Workflow Boot a Kubernetes and install Drycc Workflow Deploy your first application This guide will help you set up a cluster suitable for evaluation, development and testing. When you are ready for staging and production, view our production checklist.&#xA;Step 1: Install Workflow For the quickstart we will install Drycc Workflow.&#xA;Step 2: Install CLI tools For the quickstart we will install Drycc Workflow CLI.</description>
+    </item>
+    <item>
+      <title>Contributor Overview</title>
+      <link>/docs/contribution-guidelines/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/overview/</guid>
+      <description>File Bugs &amp;amp; Enhancements Find a bug? Want to see a new feature? Have a request for the maintainers? Open a Github issue in the applicable repository and we’ll get the conversation started.&#xA;Our official support channel is the Drycc #community Slack channel.&#xA;Don&amp;rsquo;t know what the applicable repository for an issue is? Open up in issue in workflow or chat with a maintainer in the Drycc #community Slack channel and we&amp;rsquo;ll make sure it gets to the right place.</description>
+    </item>
+    <item>
+      <title>Planning Process</title>
+      <link>/docs/roadmap/planning-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/roadmap/planning-process/</guid>
+      <description>The Role of Maintainers Maintainers lead the Drycc projects. Their duties include proposing the Roadmap, reviewing and integrating contributions and maintaining the vision of the project.&#xA;Open Roadmap The Drycc Roadmap is a community document. While Maintainers propose the Roadmap, it gets discussed and refined in Release Planning Meetings.&#xA;Contributing to the Roadmap Proposals and issues can be opened by anyone. Every member of the community is welcome to participate in the discussion by providing feedback and/or offering counter-proposals.</description>
+    </item>
+    <item>
+      <title>Requirements</title>
+      <link>/docs/installing-workflow/system-requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/system-requirements/</guid>
+      <description>Kubernetes Versions Drycc Workflow requires Kubernetes v1.16.15 or later.&#xA;Components Requirements Drycc uses gateway as a routing implementation, so you have to choose an gateway. We recommend using istio or kong.&#xA;Workflow supports the use of ACME to manage automatic certificates, cert-manager is also one of the necessary components, if you use cert-manager EAB, you need to set the clusterResourceNamespace to the namespace of drycc.&#xA;Workflow supports stateful apps. You can create and use them through the &amp;lsquo;drycc volumes&amp;rsquo; command.</description>
+    </item>
+    <item>
+      <title>Troubleshooting Workflow</title>
+      <link>/docs/troubleshooting/workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/troubleshooting/workflow/</guid>
+      <description>A Component Fails to Start For information on troubleshooting a failing component, see Troubleshooting with Kubectl.&#xA;An Application Fails to Start For information on troubleshooting application deployment issues, see Troubleshooting Applications.&#xA;Permission denied (publickey) The most common problem for this issue is the user forgetting to run drycc keys:add or add their private key to their SSH agent. To do so, run ssh-add ~/.ssh/id_rsa and try running git push drycc master again.</description>
+    </item>
+    <item>
+      <title>Tuning Component Settings</title>
+      <link>/docs/managing-workflow/tuning-component-settings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/tuning-component-settings/</guid>
+      <description>After you add the Drycc Chart Repository, you can customize the chart using helm inspect values drycc/workflow &amp;gt; values.yaml before using helm install to complete the installation.&#xA;There are a few ways to customize the respective component:&#xA;If the value is exposed in the values.yaml file as derived above, one may modify the section of the component to tune these settings. The modified value(s) will then take effect at chart installation or release upgrade time via either of the two respective commands:</description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>/docs/understanding-workflow/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/understanding-workflow/architecture/</guid>
+      <description>All components are published as a set of container images which can be deployed to any compliant Kubernetes cluster.&#xA;Overview Operators use Helm to configure and install the Workflow components which interface directly with the underlying Kubernetes cluster. Service discovery, container availability and networking are all delegated to Kubernetes, while Workflow provides a clean and simple developer experience.&#xA;Platform Services Drycc Workflow provides additional functionality to your Kubernetes cluster, including:</description>
+    </item>
+    <item>
+      <title>Using Buildpacks</title>
+      <link>/docs/applications/using-buildpacks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/using-buildpacks/</guid>
+      <description>Drycc supports deploying applications via Cloud Native Buildpacks. Cloud Native Buildpacks are useful if you want to follow cnb&amp;rsquo;s docs for building applications.&#xA;Add SSH Key For Buildpack based application deploys via git push, Drycc Workflow identifies users via SSH keys. SSH keys are pushed to the platform and must be unique to each user.&#xA;See this document for instructions on how to generate an SSH key.&#xA;Run drycc keys add to upload your SSH key to Drycc Workflow.</description>
+    </item>
+    <item>
+      <title>Configure DNS</title>
+      <link>/docs/managing-workflow/configuring-dns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/configuring-dns/</guid>
+      <description>For example, assuming example.com were a cluster&amp;rsquo;s domain:&#xA;The controller should be accessible at drycc.example.com Applications should be accessible (by default) at &amp;lt;application name&amp;gt;.example.com Given that this is the case, the primary objective in configuring DNS is that traffic for all subdomains of a cluster&amp;rsquo;s domain be directed to the cluster node(s) hosting the platform&amp;rsquo;s router component, which is capable of directing traffic within the cluster to the correct endpoints.</description>
+    </item>
+    <item>
+      <title>Design Documents</title>
+      <link>/docs/contribution-guidelines/design-documents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/design-documents/</guid>
+      <description>Before submitting a pull request which will significantly alter the behavior of any Drycc component, such as a new feature or major refactoring, contributors should first open an issue representing a design document.&#xA;Goals Design documents help ensure project contributors:&#xA;Involve stakeholders as early as possible in a feature&amp;rsquo;s development Ensure code changes accomplish the original motivations and design goals Establish clear acceptance criteria for a feature or change Enforce test-driven design methodology and automated test coverage Contents Design document issues should be named Design Doc: &amp;lt;change description&amp;gt; and contain the following sections:</description>
+    </item>
+    <item>
+      <title>Install Workflow</title>
+      <link>/docs/quickstart/install-workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/install-workflow/</guid>
+      <description>If you have a pure host, it can be a cloud server, bare metal server, virtual machine, or even your laptop. Then this chapter is very suitable for you.&#xA;Operating Systems Drycc is expected to work on most modern Linux systems. Some OSS have specific requirements:&#xA;(Red Hat/CentOS) Enterprise Linux, they usually use RPM package management. Ubuntu (Desktop/Server/Cloud) Linux, a very popular distribution. Debian GNU Linux, a very pure distribution of opensource software.</description>
+    </item>
+    <item>
+      <title>Specify Gateway</title>
+      <link>/docs/installing-workflow/gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/gateway/</guid>
+      <description>Install Drycc Workflow (Specify gateway) Now that Helm is installed and the repository has been added, install Workflow with a native gateway by running:&#xA;$ helm install drycc oci://registry.drycc.cc/charts/workflow \ --namespace drycc \ --set global.gatewayClass=istio \ --set global.platformDomain=drycc.cc \ --set builder.service.type=LoadBalancer Of course, if you deploy it on a bare machine, you probably do not have Load Balancer. You need to use NodePort:&#xA;$ helm install drycc oci://registry.drycc.cc/charts/workflow \ --namespace drycc \ --set global.</description>
+    </item>
+    <item>
+      <title>Installing Drycc Workflow</title>
+      <link>/docs/installing-workflow/workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/workflow/</guid>
+      <description>If help is required getting started with Kubernetes and Drycc Workflow, follow the quickstart guide for assistance.&#xA;Prerequisites Verify the Kubernetes system requirements Install Helm and Drycc Workflow CLI tools Check Your Setup Check that the helm command is available and the version is v2.5.0 or newer.&#xA;$ helm version Client: &amp;amp;version.Version{SemVer:&amp;#34;v2.5.0&amp;#34;, GitCommit:&amp;#34;012cb0ac1a1b2f888144ef5a67b8dab6c2d45be6&amp;#34;, GitTreeState:&amp;#34;clean&amp;#34;} Server: &amp;amp;version.Version{SemVer:&amp;#34;v2.5.0&amp;#34;, GitCommit:&amp;#34;012cb0ac1a1b2f888144ef5a67b8dab6c2d45be6&amp;#34;, GitTreeState:&amp;#34;clean&amp;#34;} Choose Your Deployment Strategy Drycc Workflow includes everything it needs to run out of the box.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow Roadmap</title>
+      <link>/docs/roadmap/roadmap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/roadmap/roadmap/</guid>
+      <description>Drycc Workflow Roadmap The Drycc Workflow Roadmap is a community document created as part of the open Planning Process. Each roadmap item describes a high-level capability or grouping of features that are deemed important to the future of Drycc.&#xA;Given the project&amp;rsquo;s rapid Release Schedule, roadmap items are designed to provide a sense of direction over many releases.&#xA;Interactive drycc run /bin/bash Provide the ability for developers to launch an interactive terminal session in their application environment.</description>
+    </item>
+    <item>
+      <title>Troubleshooting using Kubectl</title>
+      <link>/docs/troubleshooting/kubectl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/troubleshooting/kubectl/</guid>
+      <description>This document describes how one can use kubectl to debug any issues with the cluster.&#xA;Diving into the Components Using kubectl, one can inspect the cluster&amp;rsquo;s current state. When Workflow is installed with helm, Workflow is installed into the drycc namespace. To inspect if Workflow is running, run:&#xA;$ kubectl --namespace=drycc get pods NAME READY STATUS RESTARTS AGE drycc-builder-gqum7 0/1 ContainerCreating 0 4s drycc-controller-h6lk6 0/1 ContainerCreating 0 4s drycc-controller-celery-cmxxn 0/3 ContainerCreating 0 4s drycc-database-56v39 0/1 ContainerCreating 0 4s drycc-fluentbit-xihr1 0/1 Pending 0 2s drycc-storage-c2exb 0/1 Pending 0 3s drycc-grafana-9ccur 0/1 Pending 0 3s drycc-registry-5bor6 0/1 Pending 0 3s !</description>
+    </item>
+    <item>
+      <title>Users and Registration</title>
+      <link>/docs/users/registration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/users/registration/</guid>
+      <description>Workflow use the passport component to create and authorize users, it can config options for LDAP authentication or browse passport web site to register users.&#xA;Login to Workflow If you already have an account, use drycc login to authenticate against the Drycc Workflow API.&#xA;$ drycc login http://drycc.example.com Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71 Waiting for login... .o.Logged in as drycc Configuration file written to /root/.drycc/client.json Or you can login with username and password $ drycc login http://drycc.</description>
+    </item>
+    <item>
+      <title>Components</title>
+      <link>/docs/understanding-workflow/components/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/understanding-workflow/components/</guid>
+      <description>All Workflow components are deployed as services (and associated controllers) in your Kubernetes cluster. If you are interested we have a more detailed exploration of the Workflow architecture.&#xA;All of the componentry for Workflow is built with composability in mind. If you need to customize one of the components for your specific deployment or need the functionality in your own project we invite you to give it a shot!&#xA;Controller Project Location: drycc/controller</description>
+    </item>
+    <item>
+      <title>Controller API v2.0</title>
+      <link>/docs/reference-guide/controller-api-v2-0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/controller-api-v2-0/</guid>
+      <description>What&amp;rsquo;s New New! format of POST /v2/apps/&amp;lt;app id&amp;gt;/run has changed.&#xA;Authentication Register a New User Example Request:&#xA;POST /v2/auth/register/ HTTP/1.1 Host: drycc.example.com Content-Type: application/json { &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;opensesame&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34; } Optional Parameters:&#xA;{ &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34; } Example Response:&#xA;HTTP/1.1 201 CREATED DRYCC_API_VERSION: 2.0 DRYCC_PLATFORM_VERSION: 2.1.0 Content-Type: application/json { &amp;#34;id&amp;#34;: 1, &amp;#34;last_login&amp;#34;: &amp;#34;2014-10-19T22:01:00.601Z&amp;#34;, &amp;#34;is_superuser&amp;#34;: true, &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34;, &amp;#34;is_staff&amp;#34;: true, &amp;#34;is_active&amp;#34;: true, &amp;#34;date_joined&amp;#34;: &amp;#34;2014-10-19T22:01:00.</description>
+    </item>
+    <item>
+      <title>Deploy Hooks</title>
+      <link>/docs/managing-workflow/deploy-hooks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/deploy-hooks/</guid>
+      <description>It’s useful to help keep the development team informed about deploys, while it can also be used to integrate different systems together.&#xA;After one or more hooks are setup, hook output and errors appear in your application’s logs:&#xA;$ drycc logs ... 2011-03-15T15:07:29-07:00 drycc[api]: Deploy hook sent to http://drycc.rocks Deploy hooks are a generic HTTP hook. An administrator can create and configure multiple deploy hooks by tuning the controller settings via the Helm chart.</description>
+    </item>
+    <item>
+      <title>Using Dockerfiles</title>
+      <link>/docs/applications/using-dockerfiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/using-dockerfiles/</guid>
+      <description>Drycc supports deploying applications via Dockerfiles. A Dockerfile automates the steps for crafting a [Container Image][]. Dockerfiles are incredibly powerful but require some extra work to define your exact application runtime environment.&#xA;Add SSH Key For Dockerfile based application deploys via git push, Drycc Workflow identifies users via SSH keys. SSH keys are pushed to the platform and must be unique to each user.&#xA;See this document for instructions on how to generate an SSH key.</description>
+    </item>
+    <item>
+      <title>Development Environment</title>
+      <link>/docs/contribution-guidelines/development-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/development-environment/</guid>
+      <description>In this guide, we walk you through the process of setting up a development environment that is suitable for hacking on most Drycc components.&#xA;We try to make it simple to hack on Drycc components. However, there are necessarily several moving pieces and some setup required. We welcome any suggestions for automating or simplifying this process.&#xA;!!! note The Drycc team is actively engaged in containerizing Go and Python based development environments tailored specifically for Drycc development in order to minimize the setup required.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow Client CLI</title>
+      <link>/docs/quickstart/install-cli-tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/install-cli-tools/</guid>
+      <description>Drycc Workflow Client CLI The Drycc command-line interface (CLI), lets you interact with Drycc Workflow. Use the CLI to create and configure and manage applications.&#xA;Install the drycc client for Linux or Mac OS X with:&#xA;$ curl -sfL https://www.drycc.cc/install-cli.sh | bash - !!! important Users in Chinese mainland can use the following methods to speed up installation:&#xA;``` $ curl -sfL https://www.drycc.cc/install-cli.sh | INSTALL_DRYCC_MIRROR=cn bash - ``` Others please visit: https://github.</description>
+    </item>
+    <item>
+      <title>Releases</title>
+      <link>/docs/roadmap/releases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/roadmap/releases/</guid>
+      <description>Drycc uses a continuous delivery approach for creating releases. Every merged commit that passes testing results in a deliverable that can be given a semantic version tag and shipped.&#xA;The master git branch of a project should always work. Only changes considered ready to be released publicly are merged.&#xA;Components Release as Needed Drycc components release new versions as often as needed. Fixing a high priority bug requires the project maintainer to create a new patch release.</description>
+    </item>
+    <item>
+      <title>Users and SSH Keys</title>
+      <link>/docs/users/ssh-keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/users/ssh-keys/</guid>
+      <description>For Dockerfile and Buildpack based application deploys via git push, Drycc Workflow identifies users via SSH keys. SSH keys are pushed to the platform and must be unique to each user. Users may have multiple SSH keys as needed.&#xA;Generate an SSH Key If you do not already have an SSH key or would like to create a new key for Drycc Workflow, generate a new key using ssh-keygen:&#xA;$ ssh-keygen -f ~/.</description>
+    </item>
+    <item>
+      <title>Troubleshooting Applications</title>
+      <link>/docs/troubleshooting/applications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/troubleshooting/applications/</guid>
+      <description>Application has a Dockerfile, but a Buildpack Deployment Occurs When you deploy an application to Workflow using git push drycc master and the Builder attempts to deploy using the Buildpack workflow, check the following steps:&#xA;Are you deploying the correct project? Are you pushing the correct git branch (git push drycc &amp;lt;branch&amp;gt;)? Is the Dockerfile in the project&amp;rsquo;s root directory? Have you committed the Dockerfile to the project? Application was Deployed, but is Failing to Start If you deployed your application but it is failing to start, you can use drycc logs to check why the application fails to boot.</description>
+    </item>
+    <item>
+      <title>Configuring Object Storage</title>
+      <link>/docs/installing-workflow/configuring-object-storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/configuring-object-storage/</guid>
+      <description>Drycc Workflow ships with Storage by default, which provides in-cluster.&#xA;Configuring off-cluster Object Storage Every component that relies on object storage uses two inputs for configuration:&#xA;You must use object storage services that are compatible with S3 API Access credentials stored as a Kubernetes secret named storage-creds The helm chart for Drycc Workflow can be easily configured to connect Workflow components to off-cluster object storage. Drycc Workflow currently supports Google Compute Storage, Amazon S3, Azure Blob Storage and OpenStack Swift Storage.</description>
+    </item>
+    <item>
+      <title>Using Docker Images</title>
+      <link>/docs/applications/using-container-images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/using-container-images/</guid>
+      <description>Drycc supports deploying applications via an existing Docker Image. This is useful for integrating Drycc into Docker-based CI/CD pipelines.&#xA;Prepare an Application Start by cloning an example application:&#xA;$ git clone https://github.com/drycc/example-dockerfile-http.git $ cd example-dockerfile-http Next use your local docker client to build the image and push it to DockerHub.&#xA;$ docker build -t &amp;lt;username&amp;gt;/example-dockerfile-http . $ docker push &amp;lt;username&amp;gt;/example-dockerfile-http Docker Image Requirements In order to deploy Docker images, they must conform to the following requirements:</description>
+    </item>
+    <item>
+      <title>Controller API v2.1</title>
+      <link>/docs/reference-guide/controller-api-v2-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/controller-api-v2-1/</guid>
+      <description>What&amp;rsquo;s New New! healthcheck field in configuration, deprecates the HEALTHCHECK_* environment variables.&#xA;New! Unsetting a configuration variable that does not exist will return a 422.&#xA;New! Creating an identical sequential release returns a 409 rather than create a no-op release.&#xA;Authentication Register a New User Example Request:&#xA;POST /v2/auth/register/ HTTP/1.1 Host: drycc.example.com Content-Type: application/json { &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;opensesame&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34; } Optional Parameters:&#xA;{ &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34; } Example Response:</description>
+    </item>
+    <item>
+      <title>Deploy Your First App</title>
+      <link>/docs/quickstart/deploy-an-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/deploy-an-app/</guid>
+      <description>Determine Your Host and Hostname Values Drycc workflow requires a wildcard DNS record to dynamically map app names to the router.&#xA;User should already have DNS set up pointing to their known host. The $hostname value can be calculated by prepending drycc. to the value set in global.platformDomain.&#xA;Login to Workflow Workflow use the passport component to create and authorize users. If you already have an account, use drycc login to authenticate against the Drycc Workflow API.</description>
+    </item>
+    <item>
+      <title>Platform Logging</title>
+      <link>/docs/managing-workflow/platform-logging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/platform-logging/</guid>
+      <description>We’re working with Quickwit to bring you an application log cluster and search interface.&#xA;Architecture Diagram ┌───────────┐ ┌───────────┐ │ Container │ │ Grafana │ └───────────┘ └───────────┘ │ ^ log | │ | ˅ │ ┌───────────┐ ┌───────────┐ │ Fluentbit │─────otel/grpc────&amp;gt;│ Quickwit │ └───────────┘ └───────────┘ Default Configuration Fluent Bit is based in a pluggable architecture where different plugins plays a major role in the data pipeline, more than 70 built-in plugins available. Please refer to charts values.</description>
+    </item>
+    <item>
+      <title>Testing Drycc</title>
+      <link>/docs/contribution-guidelines/testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/testing/</guid>
+      <description>Each Drycc component includes its own suite of style checks, unit tests, and black-box type functional tests.&#xA;Integration tests verify the behavior of the Drycc components together as a system and are provided separately by the drycc/workflow-e2e project.&#xA;GitHub pull requests for all Drycc components are tested automatically by the Travis CI continuous integration system. Contributors should run the same tests locally before proposing any changes to the Drycc codebase.</description>
+    </item>
+    <item>
+      <title>Configuring Postgres</title>
+      <link>/docs/installing-workflow/configuring-postgres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/configuring-postgres/</guid>
+      <description>Configuring Postgres By default, Drycc Workflow ships with the database component, which provides an in-cluster PostgreSQL database backed up to in-cluster or off-cluster object storage. Currently, for object storage, which is utilized by several Workflow components, only off-cluster solutions such as S3 or GCS are recommended in production environments. Experience has shown that many operators already opting for off-cluster object storage similarly prefer to host Postgres off-cluster as well, using Amazon RDS or similar.</description>
+    </item>
+    <item>
+      <title>Configuring Registry</title>
+      <link>/docs/installing-workflow/configuring-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/installing-workflow/configuring-registry/</guid>
+      <description>Drycc Workflow ships with a registry component by default, which provides an in-cluster Container registry backed by the platform-configured object storage. Operators might want to use an off-cluster registry for performance or security reasons.&#xA;Configuring Off-Cluster Private Registry Every component that relies on a registry uses two inputs for configuration:&#xA;Registry Location environment variable named DRYCC_REGISTRY_LOCATION Access credentials stored as a Kubernetes secret named registry-secret The Helm chart for Drycc Workflow can be easily configured to connect Workflow components to off-cluster registry.</description>
+    </item>
+    <item>
+      <title>Controller API v2.2</title>
+      <link>/docs/reference-guide/controller-api-v2-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/controller-api-v2-2/</guid>
+      <description>What&amp;rsquo;s New New! /v2/auth/whoami endpoint&#xA;Authentication Register a New User Example Request:&#xA;POST /v2/auth/register/ HTTP/1.1 Host: drycc.example.com Content-Type: application/json { &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;opensesame&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34; } Optional Parameters:&#xA;{ &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34; } Example Response:&#xA;HTTP/1.1 201 CREATED DRYCC_API_VERSION: 2.2 DRYCC_PLATFORM_VERSION: 2.2.0 Content-Type: application/json { &amp;#34;id&amp;#34;: 1, &amp;#34;last_login&amp;#34;: &amp;#34;2014-10-19T22:01:00.601Z&amp;#34;, &amp;#34;is_superuser&amp;#34;: true, &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34;, &amp;#34;is_staff&amp;#34;: true, &amp;#34;is_active&amp;#34;: true, &amp;#34;date_joined&amp;#34;: &amp;#34;2014-10-19T22:01:00.601Z&amp;#34;, &amp;#34;groups&amp;#34;: [], &amp;#34;user_permissions&amp;#34;: [] } Log in Example Request:</description>
+    </item>
+    <item>
+      <title>Managing Application Processes</title>
+      <link>/docs/applications/managing-app-processes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-processes/</guid>
+      <description>Drycc Workflow manages your application as a set of processes that can be named, scaled and configured according to their role. This gives you the flexibility to easily manage the different facets of your application. For example, you may have web-facing processes that handle HTTP traffic, background worker processes that do async work, and a helper process that streams from the Twitter API.&#xA;By using a Procfile, either checked in to your application or provided via the CLI you can specify the name of the type and the application command that should run.</description>
+    </item>
+    <item>
+      <title>Platform Monitoring</title>
+      <link>/docs/managing-workflow/platform-monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/platform-monitoring/</guid>
+      <description>Description We now include a monitoring stack for introspection on a running Kubernetes cluster. The stack includes 4 components:&#xA;kube-state-metrics, kube-state-metrics (KSM) is a simple service that listens to the Kubernetes API server and generates metrics about the state of the objects. Node Exporter, Prometheus exporter for hardware and OS metrics exposed by *NIX kernels. Victoriametrics, a Cloud Native Computing Foundation project, is a systems and service monitoring system. Grafana, Graphing tool for time series data Architecture Diagram ┌────────────────┐ │ HOST │ │ node-exporter │◀──┐ ┌──────────────────┐ └────────────────┘ │ │kube-state-metrics│ │ └──────────────────┘ ┌────────────────┐ │ ▲ │ HOST │ │ ┌─────────────────┐ │ │ node-exporter │◀──┼────│ victoriametrics │─────────────┘ └────────────────┘ │ └─────────────────┘ │ ▲ ┌───────────────┐ │ │ │ HOST │ │ ▼ │ node-exporter│◀───┘ ┌──────────┐ └───────────────┘ │ Grafana │ └──────────┘ Grafana Grafana allows users to create custom dashboards that visualize the data captured to the running VictoriaMetrics component.</description>
+    </item>
+    <item>
+      <title>Submitting a Pull Request</title>
+      <link>/docs/contribution-guidelines/submitting-a-pull-request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/submitting-a-pull-request/</guid>
+      <description>Design Document Before opening a pull request, ensure your change also references a design document if the contribution is substantial. For more information, see Design Documents.&#xA;Single Issue It&amp;rsquo;s hard to reach agreement on the merit of a PR when it isn&amp;rsquo;t focused. When fixing an issue or implementing a new feature, resist the temptation to refactor nearby code or to fix that potential bug you noticed. Instead, open a separate issue or pull request.</description>
+    </item>
+    <item>
+      <title>Community</title>
+      <link>/docs/contribution-guidelines/community/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/community/</guid>
+      <description>Drycc software is fully open source. As such, the &amp;ldquo;Drycc community&amp;rdquo; consists of anyone who uses the Drycc software and participates in its evolution, whether by answering questions, finding bugs, suggesting enhancements, or writing documentation or code.&#xA;Drycc development is coordinated through numerous project repositories on GitHub. Anyone can check out the source code for any Drycc component, fork it, make improvements, and create a pull request to offer those changes back to the Drycc community.</description>
+    </item>
+    <item>
+      <title>Controller API v2.3</title>
+      <link>/docs/reference-guide/controller-api-v2-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/reference-guide/controller-api-v2-3/</guid>
+      <description>What&amp;rsquo;s New New! /v2/apps/{name}/logs endpoint was fixed and no longer returns b&#39;log data&#39; and instead returns a normal string log data&#xA;Authentication Register a New User Example Request:&#xA;POST /v2/auth/register/ HTTP/1.1 Host: drycc.example.com Content-Type: application/json { &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;opensesame&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.com&amp;#34; } Optional Parameters:&#xA;{ &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34; } Example Response:&#xA;HTTP/1.1 201 CREATED DRYCC_API_VERSION: 2.3 DRYCC_PLATFORM_VERSION: 2.3.0 Content-Type: application/json { &amp;#34;id&amp;#34;: 1, &amp;#34;last_login&amp;#34;: &amp;#34;2014-10-19T22:01:00.601Z&amp;#34;, &amp;#34;is_superuser&amp;#34;: true, &amp;#34;username&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;testerson&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;test@example.</description>
+    </item>
+    <item>
+      <title>Configuring an Application</title>
+      <link>/docs/applications/managing-app-configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-configuration/</guid>
+      <description>Configuring an Application A Drycc application stores config in environment variables.&#xA;Setting Environment Variables Use drycc config to modify environment variables for a deployed application.&#xA;$ drycc help config Manage environment variables that define app config Usage: drycc config [flags] drycc config [command] Available Commands: info An app config info set Set environment variables for an app unset Unset environment variables for an app pull Pull environment variables to the path push Push environment variables from the path attach Selects environment groups to attach an app ptype detach Selects environment groups to detach an app ptype Flags: -a, --app string The uniquely identifiable name for the application -g, --group string The group for which the config needs to be listed -p, --ptype string The ptype for which the config needs to be listed -v, --version int The version for which the config needs to be listed Global Flags: -c, --config string Path to configuration file.</description>
+    </item>
+    <item>
+      <title>Managing Application Metrics</title>
+      <link>/docs/applications/managing-app-metrics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-metrics/</guid>
+      <description>Create an authentication token Create an authentication token using the drycc client.&#xA;# drycc tokens add prometheus --password admin --username admin ! WARNING: Make sure to copy your token now. ! You won&amp;#39;t be able to see it again, please confirm whether to continue. ! To proceed, type &amp;#34;yes&amp;#34; ! &amp;gt; yes UUID USERNAME TOKEN 58176cf1-37a8-4c52-9b27-4c7a47269dfb admin 1F2c7A802aF640fd9F31dD846AdDf56BcMsay Add scrape configurations for prometheus A valid example file can be found here.</description>
+    </item>
+    <item>
+      <title>Production Deployments</title>
+      <link>/docs/managing-workflow/production-deployments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/production-deployments/</guid>
+      <description>Running Workflow without drycc storage In production, persistent storage can be achieved by running an external object store. For users on AWS, GCE/GKE or Azure, the convenience of Amazon S3, Google GCS or Microsoft Azure Storage makes the prospect of running a Storage-less Workflow cluster quite reasonable. For users who have restriction on using external object storage using swift object storage can be an option.&#xA;Running a Workflow cluster without Storage provides several advantages:</description>
+    </item>
+    <item>
+      <title>Upgrading Workflow</title>
+      <link>/docs/managing-workflow/upgrading-workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/managing-workflow/upgrading-workflow/</guid>
+      <description>This upgrade process requires:&#xA;Helm version 2.1.0 or newer Configured Off-Cluster Storage Upgrade Process !!! note If upgrading from a Helm Classic install, you&amp;rsquo;ll need to &amp;lsquo;migrate&amp;rsquo; the cluster to a Kubernetes Helm installation. See Workflow-Migration for steps.&#xA;Step 1: Apply the Workflow upgrade Helm will remove all components from the previous release. Traffic to applications deployed through Workflow will continue to flow during the upgrade. No service interruptions should occur.</description>
+    </item>
+    <item>
+      <title>Managing an Application</title>
+      <link>/docs/applications/managing-app-lifecycle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-lifecycle/</guid>
+      <description>Track Application Changes Drycc Workflow tracks all changes to your application. Application changes are the result of either new application code pushed to the platform (via git push drycc master), or an update to application configuration (via drycc config:set KEY=VAL).&#xA;Each time a build or config change is made to your application a new release is created. These release numbers increase monotonically.&#xA;You can see a record of changes to your application using drycc releases:</description>
+    </item>
+    <item>
+      <title>Triaging Issues</title>
+      <link>/docs/contribution-guidelines/triaging-issues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/triaging-issues/</guid>
+      <description>Triage helps ensure issues resolve quickly by:&#xA;Describing the issue&amp;rsquo;s intent and purpose is conveyed precisely. This is necessary because it can be difficult for an issue to explain how an end user experiences an problem and what actions they took. Giving a contributor the information they need before they commit to resolving an issue. Lowering the issue count by preventing duplicate issues. Streamlining the development process by preventing duplicate discussions.</description>
+    </item>
+    <item>
+      <title>Conduct</title>
+      <link>/docs/contribution-guidelines/conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/conduct/</guid>
+      <description>Conduct The Drycc community welcomes and encourages participation by everyone.&#xA;No matter how you identify yourself or how others perceive you: we welcome you. We welcome contributions from everyone as long as they interact constructively with our community.&#xA;The Drycc developer community continues to grow, and it is inevitable that disagreements and conflict will arise. We ask that participants conduct themselves according to these principles:&#xA;Be welcoming, friendly, and patient.</description>
+    </item>
+    <item>
+      <title>Mounting volumes for an Application</title>
+      <link>/docs/applications/managing-app-volumes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-volumes/</guid>
+      <description>We can use the blow command to create volumes and mount the created volumes. Drycc create volume support ReadWriteMany, so before deploying drycc, you need to have a StorageClass ready which can support ReadWriteMany. Deploying drycc, set controller.appStorageClass to this StorageClass.&#xA;Use drycc volumes to mount a volume for a deployed application&amp;rsquo;s processes.&#xA;$ drycc help volumes Valid commands for volumes: add create a volume for the application expand expand a volume for the application list list volumes in the application info print information about a volume remove delete a volume from the application client the client used to manage volume files mount mount a volume to process of the application unmount unmount a volume from process of the application Use &#39;drycc help [command]&#39; to learn more.</description>
+    </item>
+    <item>
+      <title>Drycc Maintainers</title>
+      <link>/docs/contribution-guidelines/maintainers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/contribution-guidelines/maintainers/</guid>
+      <description>What is a maintainer? (Unabashedly stolen from the Podman project)&#xA;There are different types of maintainers, with different responsibilities, but all maintainers have 3 things in common:&#xA;They share responsibility in the project&amp;rsquo;s success. They have made a long-term, recurring time investment to improve the project. They spend that time doing whatever needs to be done, not necessarily what is the most interesting or fun. Maintainers are often under-appreciated, because their work is harder to appreciate.</description>
+    </item>
+    <item>
+      <title>About gateway for an Application</title>
+      <link>/docs/applications/managing-app-gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-gateway/</guid>
+      <description>A Gateway describes how traffic can be translated to Services within the cluster. That is, it defines a request for a way to translate traffic from somewhere that does not know about Kubernetes to somewhere that does. For example, traffic sent to a Kubernetes Service by a cloud load balancer, an in-cluster proxy, or an external hardware load balancer. While many use cases have client traffic originating “outside” the cluster, this is not a requirement.</description>
+    </item>
+    <item>
+      <title>Managing resources for an Application</title>
+      <link>/docs/applications/managing-app-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-app-resources/</guid>
+      <description>We can use blow command to create resources and bind which resource is created. This command depend on service-catalog.&#xA;Use drycc resources to create and bind a resource for a deployed application.&#xA;$ drycc help resources Manage resources for your applications Usage: drycc resources [flags] drycc resources [command] Available Commands: services List all available resource services plans List all available plans for a resource service create Create a resource for the application list List resources in the application describe Get a resource&#39;s detail in the application update Update a resource from the application bind Bind a resource for an application unbind unbind a resources for an application destroy Delete a resource from the application Flags: -a, --app string The uniquely identifiable name for the application -l, --limit int The maximum number of results to display Global Flags: -c, --config string Path to configuration file.</description>
+    </item>
+    <item>
+      <title>Inter-app Communication</title>
+      <link>/docs/applications/inter-app-communication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/inter-app-communication/</guid>
+      <description>A common architecture pattern of multi-process applications is to have one process serve public requests while having multiple other processes supporting the public one to, for example, perform actions on a schedule or process work items from a queue. To implement this system of apps in Drycc Workflow, set up the apps to communicate using DNS resolution, as shown above, and hide the supporting processes from public view by removing them from the Drycc Workflow router.</description>
+    </item>
+    <item>
+      <title>Resource Limits</title>
+      <link>/docs/applications/managing-resource-limits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/managing-resource-limits/</guid>
+      <description>Managing Application Resource Limits Drycc Workflow supports restricting memory and CPU shares of each process. Requests/Limits set on a per-process type are given to Kubernetes as a requests and limits. Which means you guarantee &amp;lt;requests&amp;gt; amount of resource for a process as well as limit the process from using more than &amp;lt;limits&amp;gt;. By default, Kubernetes will set &amp;lt;requests&amp;gt; equal to &amp;lt;limit&amp;gt; if we don&amp;rsquo;t explicitly set &amp;lt;requests&amp;gt; value. Please keep in mind that 0 &amp;lt;= requests &amp;lt;= limits.</description>
+    </item>
+    <item>
+      <title>Domains and Routing</title>
+      <link>/docs/applications/domains-and-routing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/domains-and-routing/</guid>
+      <description>You can use drycc domains to add or remove custom domains to the application:&#xA;$ drycc domains add hello.bacongobbler.com --ptype=web Adding hello.bacongobbler.com to finest-woodshed... done Once that&amp;rsquo;s done, you can go into a DNS registrar and set up a CNAME from the new appname to the old one:&#xA;$ dig hello.dryccapp.com [...] ;; ANSWER SECTION: hello.bacongobbler.com. 1759 IN CNAME finest-woodshed.dryccapp.com. finest-woodshed.dryccapp.com. 270 IN A 172.17.8.100 !!! note Setting a CNAME for a root domain can cause issues.</description>
+    </item>
+    <item>
+      <title>Application SSL Certificates</title>
+      <link>/docs/applications/ssl-certificates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/ssl-certificates/</guid>
+      <description>Application SSL Certificates SSL is a cryptographic protocol that provides end-to-end encryption and integrity for all web requests. Apps that transmit sensitive data should enable SSL to ensure all information is transmitted securely.&#xA;To enable SSL on a custom domain, e.g., www.example.com, use the SSL endpoint.&#xA;!!! note drycc certs is only useful for custom domains. Default application domains are SSL-enabled already and can be accessed simply by using https, e.</description>
+    </item>
+    <item>
+      <title>Using drycc path</title>
+      <link>/docs/applications/using-dryccpath/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/applications/using-dryccpath/</guid>
+      <description>The Drycc stack is intended for advanced use cases only. Unless you have a specific need for custom Docker images, we recommend using Drycc’s default buildpack-powered build system. It offers automatic base image security updates and language-specific optimizations. It also avoids the need to maintain a container Dockerfile.&#xA;Drycc config path overview A drycc repository comes in two different flavours:&#xA;a .drycc directory at the root of the working tree;</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.8.1</title>
+      <link>/blog/2025/04/15/drycc-workflow-v1.8.1/</link>
+      <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/blog/2025/04/15/drycc-workflow-v1.8.1/</guid>
+      <description>!IMPORTANT This version is a major update with the following major changes made:&#xA;Remove timeseries Remove telegraf Remove rabbitmq Replace seaweedfs with minio Replace redis with valkey Workflow ## v1.7.12 -&amp;gt; v1.8.1 Releases filer v1.0.4 -&amp;gt; v1.0.5 builder v1.7.2 -&amp;gt; v1.8.0 controller v1.12.0 -&amp;gt; v1.13.0 database v1.3.0 -&amp;gt; v1.3.1 passport v1.3.2 -&amp;gt; v1.3.3 imagebuilder v1.2.2 -&amp;gt; v1.3.0 fluentbit v0.0.3 -&amp;gt; v0.0.4 logger v1.3.6 -&amp;gt; v1.3.7 gateway v0.0.3 -&amp;gt; v0.1.0 grafana v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.12</title>
+      <link>/blog/2024/09/14/drycc-workflow-v1.7.12/</link>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/09/14/drycc-workflow-v1.7.12/</guid>
+      <description>Workflow ## v1.7.11 -&amp;gt; v1.7.12 Releases filer v1.0.3 -&amp;gt; v1.0.4 builder v1.7.1 -&amp;gt; v1.7.2 controller v1.11.0 -&amp;gt; v1.12.0 passport v1.3.1 -&amp;gt; v1.3.2 imagebuilder v1.2.1 -&amp;gt; v1.2.2 fluentbit v0.0.2 -&amp;gt; v0.0.3 logger v1.3.5 -&amp;gt; v1.3.6 storage v0.2.0 -&amp;gt; v0.2.1 rabbitmq v1.3.1 -&amp;gt; v1.3.2 workflow-cli v1.8.0 -&amp;gt; v1.9.0 Features ef9e2ce (controller) - controller: support autorollback config (#154) c497a87 (controller) - release: add deploy release ba43453 (controller) - release: add release deploy 80b6f1d (controller) - perms: refine the permission model 751f5e7 (workflow-cli) - perms: add object user perm 005fe95 (workflow-cli) - workflow-cli: add autorollback cmd (#58) c8fa511 (workflow-cli) - workflow-cli: add update cmd a5d440c (workflow-cli) - release: add deploy release 4f28426 (workflow-cli) - workflow-cli: add autodeploy flag and more (#62) Fixes ce20b62 (controller) - migrations: certificate migrate err 97eff7a (controller) - controller: volume can not delete when ptype isn&amp;rsquo;t exist 4076bea (controller) - controller: fix pod unhealthy do not rollback 84c84f9 (controller) - migration: cert migrate error b4201d3 (controller) - controller: no cert domain do not redirect https (#162) f26d608 (imagebuilder) - podman: permission denied 7d5afe9 (imagebuilder) - podman: failed to reexec e766f1d (workflow-cli) - perms: print perm message 06ac7b5 (workflow-cli) - filer: cp file to volume error Maintenance 52ef190 (builder) - controller-sdk-go: bump new version v0.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.11</title>
+      <link>/blog/2024/07/19/drycc-workflow-v1.7.11/</link>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/07/19/drycc-workflow-v1.7.11/</guid>
+      <description>Workflow ## v1.7.10 -&amp;gt; v1.7.11 Releases builder v1.7.0 -&amp;gt; v1.7.1 controller v1.10.0 -&amp;gt; v1.11.0 passport v1.3.0 -&amp;gt; v1.3.1 imagebuilder v1.2.0 -&amp;gt; v1.2.1 logger v1.3.4 -&amp;gt; v1.3.5 storage v0.1.0 -&amp;gt; v0.2.0 monitor v1.4.1 -&amp;gt; v1.4.2 timeseries v0.1.0 -&amp;gt; v0.1.1 rabbitmq v1.3.0 -&amp;gt; v1.3.1 workflow-cli v1.7.0 -&amp;gt; v1.8.0 Features 8875d5f (controller) - volumes: add volumes client support 98235b9 (controller) - canary: remove canary api d0495c3 (storage) - storage: add csi 725215e (workflow-cli) - ps: add ps describe 97ab7f2 (workflow-cli) - ps: pod list add ready and restarts (#42) eade475 (workflow-cli) - volumes: add filer client 11f55e1 (workflow-cli) - canary: remove canary api Fixes 59f299b (controller) - serializer: list type representation error d6f1e1a (storage) - charts: helm upgrade error 291a42a (timeseries) - charts: upgrade err e685d4b (workflow-cli) - config: unset typed values (#41) 86c800a (workflow-cli) - token: parameter unused warning Maintenance 197686a (builder) - controller-sdk-go: bump new version 9cbe813 (controller) - ps:logs: support pod all logs 22794cf (controller) - release: pre_release is incorrect 0c1a13e (controller) - controller: pipeline and httproute optimization 31d3daf (controller) - volumes: add add filer delete 141de25 (controller) - deps: bump djangorestframework from 3.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.10</title>
+      <link>/blog/2024/05/08/drycc-workflow-v1.7.10/</link>
+      <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/05/08/drycc-workflow-v1.7.10/</guid>
+      <description>Workflow ## v1.7.9 -&amp;gt; v1.7.10 Releases passport v1.3.0 -&amp;gt; v1.3.1 Maintenance 12bcc9a (passport) - chart: job upgrade add passportLocation condition </description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.9</title>
+      <link>/blog/2024/05/07/drycc-workflow-v1.7.9/</link>
+      <pubDate>Tue, 07 May 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/05/07/drycc-workflow-v1.7.9/</guid>
+      <description>Workflow ## v1.7.8 -&amp;gt; v1.7.9 Releases controller v1.9.0 -&amp;gt; v1.10.0 Features d707420 (controller) - pipline: differential deployment </description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.8</title>
+      <link>/blog/2024/05/01/drycc-workflow-v1.7.8/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/05/01/drycc-workflow-v1.7.8/</guid>
+      <description>Workflow ## v1.7.7 -&amp;gt; v1.7.8 Releases builder v1.6.0 -&amp;gt; v1.7.0 controller v1.8.0 -&amp;gt; v1.9.0 workflow-cli v1.6.0 -&amp;gt; v1.7.0 Features 384c7ee (builder) - domain: add procfile_type 26c8c7f (controller) - domain: add procfile_type bd49789 (workflow-cli) - domain: add procfile_type </description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.7</title>
+      <link>/blog/2024/04/30/drycc-workflow-v1.7.7/</link>
+      <pubDate>Tue, 30 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/04/30/drycc-workflow-v1.7.7/</guid>
+      <description>Workflow ## v1.7.6 -&amp;gt; v1.7.7 Releases builder v1.5.1 -&amp;gt; v1.6.0 controller v1.7.0 -&amp;gt; v1.8.0 database v1.2.1 -&amp;gt; v1.3.0 passport v1.2.0 -&amp;gt; v1.3.0 imagebuilder v1.1.1 -&amp;gt; v1.2.0 fluentbit v0.0.1 -&amp;gt; v0.0.2 logger v1.3.3 -&amp;gt; v1.3.4 storage v0.0.5 -&amp;gt; v0.1.0 gateway v0.0.2 -&amp;gt; v0.0.3 monitor v1.4.0 -&amp;gt; v1.4.1 redis v1.3.2 -&amp;gt; v1.4.0 timeseries v0.0.2 -&amp;gt; v0.1.0 prometheus v0.1.1 -&amp;gt; v0.1.2 rabbitmq v1.2.1 -&amp;gt; v1.3.0 registry v1.2.2 -&amp;gt; v1.3.0 registry-proxy v1.2.1 -&amp;gt; v1.2.2 workflow-cli v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.5</title>
+      <link>/blog/2024/02/27/drycc-workflow-v1.7.5/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/02/27/drycc-workflow-v1.7.5/</guid>
+      <description>These release notes for Drycc Workflow v1.7.5 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.7.4, please refer to the following change summary.&#xA;Workflow ## v1.7.4 -&amp;gt; v1.7.5 Releases builder v1.5.0 -&amp;gt; v1.5.1 controller v1.6.3 -&amp;gt; v1.7.0 logger v1.3.2 -&amp;gt; v1.3.3 storage v0.0.3 -&amp;gt; v0.0.4 redis v1.3.1 -&amp;gt; v1.3.2 rabbitmq v1.2.0 -&amp;gt; v1.2.1 registry v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.6</title>
+      <link>/blog/2024/02/27/drycc-workflow-v1.7.6/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/02/27/drycc-workflow-v1.7.6/</guid>
+      <description>Workflow ## v1.7.5 -&amp;gt; v1.7.6 Releases storage v0.0.4 -&amp;gt; v0.0.5 Maintenance 6cb63b6 (storage) - seaweedfs: bump version 3.63 </description>
+    </item>
+    <item>
+      <title>Drycc Workflow  v1.7.2</title>
+      <link>/blog/2024/01/29/drycc-workflow-v1.7.2/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/01/29/drycc-workflow-v1.7.2/</guid>
+      <description>These release notes for Drycc Workflow v1.7.2 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.7.1, please refer to the following change summary.&#xA;Workflow ## v1.7.1 -&amp;gt; v1.7.2 Releases controller v1.6.0 -&amp;gt; v1.6.1 logger v1.3.1 -&amp;gt; v1.3.2 storage v0.0.1 -&amp;gt; v0.0.2 timeseries v0.0.1 -&amp;gt; v0.0.2 prometheus v0.1.0 -&amp;gt; v0.1.1 workflow-cli v1.5.0 -&amp;gt; v1.5.1 Fixes 2fe80a6 (controller) - resources: after resources instance update, could not delete (#111) a4082ad (controller) - controller: resource status and binding e9bfccc (controller) - controller: fix multiple volumes mount at one dir error (#116) 58d2b4c (logger) - logger: redis conn error block 7cb2700 (prometheus) - prometheus: prometheus config basic_auth 7838c6b (storage) - storage: random accesskey secretkey d9dcdfb (storage) - storage: pod restart loses data 3cbdd29 (storage) - storage: tipd cannot start after deleting pod be7e11f (storage) - storage: jq command not found 878f674 (storage) - storage: charts updateStrategy error 06cfe56 (timeseries) - timeseries: the data node ip is incorrect Maintenance 7f29f5a (controller) - resources: retrieve resource instance response add message (#112) 4a84dcd (controller) - controller: add deploy default annotations (#113) 829d7e5 (controller) - controller: modify url match service name (#114) 30abf6d (controller) - controller: transfer app ownership in async dc6f45e (controller) - controller: add channel for pod exec af4f3a7 (controller) - controller: avoid error when secret no data field (#117) ca27956 (controller) - controller: add pod default security b2e9c64 (prometheus) - charts: node-exporter mount root (#2) 3cdb2b6 (storage) - storage: bump seaweedfs 3.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.0</title>
+      <link>/blog/2023/12/08/drycc-workflow-v1.7.0/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/blog/2023/12/08/drycc-workflow-v1.7.0/</guid>
+      <description>These release notes for Drycc Workflow v1.7.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.6.0, please refer to the following change summary.&#xA;Workflow ## v1.6.0 -&amp;gt; v1.7.0 Releases builder v1.4.0 -&amp;gt; v1.5.0 controller v1.5.1 -&amp;gt; v1.6.0 database v1.2.0 -&amp;gt; v1.2.1 passport v1.1.0 -&amp;gt; v1.2.0 imagebuilder v1.1.0 -&amp;gt; v1.1.1 fluentbit v0.0.0 -&amp;gt; v0.0.1 logger v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.6.0</title>
+      <link>/blog/2022/10/21/drycc-workflow-v1.6.0/</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>/blog/2022/10/21/drycc-workflow-v1.6.0/</guid>
+      <description>These release notes for Drycc Workflow v1.6.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.5.0, please refer to the following change summary.&#xA;Workflow ## v1.5.0 -&amp;gt; v1.6.0 Releases builder v1.3.0 -&amp;gt; v1.4.0 controller v1.4.0 -&amp;gt; v1.5.0 passport v1.0.0 -&amp;gt; v1.1.0 database v1.1.0 -&amp;gt; v1.2.0 imagebuilder v1.0.1 -&amp;gt; v1.1.0 fluentd v1.2.0 -&amp;gt; v1.3.0 logger v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.5.0</title>
+      <link>/blog/2022/10/06/drycc-workflow-v1.5.0/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>/blog/2022/10/06/drycc-workflow-v1.5.0/</guid>
+      <description>These release notes for Drycc Workflow v1.5.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.4.0, please refer to the following change summary.&#xA;Workflow ## v1.4.0 -&amp;gt; v1.5.0 Releases passport v1.0.0 rabbitmq v1.0.0 imagebuilder v1.0.0 builder v1.2.0 -&amp;gt; v1.3.0 controller v1.3.0 -&amp;gt; v1.4.0 database v1.0.2 -&amp;gt; v1.1.0 fluentd v1.1.0 -&amp;gt; v1.2.0 redis v1.1.0 -&amp;gt; v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.4.0</title>
+      <link>/blog/2021/10/06/drycc-workflow-v1.4.0/</link>
+      <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>/blog/2021/10/06/drycc-workflow-v1.4.0/</guid>
+      <description>These release notes for Drycc Workflow v1.3.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.4.0, please refer to the following change summary.&#xA;Workflow ## v1.3.0 -&amp;gt; v1.4.0 Releases builder v1.1.0 -&amp;gt; v1.2.0 slugbuilder v1.1.1 -&amp;gt; v1.2.0 dockerbuilder v1.1.1 -&amp;gt; v1.1.2 controller v1.2.1 -&amp;gt; v1.3.0 slugrunner v1.1.1 -&amp;gt; v1.1.2 database v1.0.1 -&amp;gt; v1.0.2 fluentd v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.3.0</title>
+      <link>/blog/2020/10/06/drycc-workflow-v1.3.0/</link>
+      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/blog/2020/10/06/drycc-workflow-v1.3.0/</guid>
+      <description>These release notes for Drycc Workflow v1.3.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.2.0, please refer to the following change summary.&#xA;Workflow ## v1.2.0 -&amp;gt; v1.3.0 Releases builder v1.0.2 -&amp;gt; v1.1.0 slugbuilder v1.1.0 -&amp;gt; v1.1.1 dockerbuilder v1.1.0 -&amp;gt; v1.1.1 controller v1.2.0 -&amp;gt; v1.2.1 slugrunner v1.1.0 -&amp;gt; v1.1.1 database v1.0.0 -&amp;gt; v1.0.1 fluentd v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.2.0</title>
+      <link>/blog/2019/10/06/drycc-workflow-v1.2.0/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/blog/2019/10/06/drycc-workflow-v1.2.0/</guid>
+      <description>These release notes for Drycc Workflow v1.2.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.1.0, please refer to the following change summary.&#xA;Workflow ## v1.1.0 -&amp;gt; v1.2.0 Releases builder v1.0.1 -&amp;gt; v1.0.2 slugbuilder v1.0.0 -&amp;gt; v1.1.0 dockerbuilder v1.0.0 -&amp;gt; v1.1.0 controller v1.1.0 -&amp;gt; v1.2.0 slugrunner v1.0.0 -&amp;gt; v1.1.0 registry v1.0.0 -&amp;gt; v1.0.1 registry-proxy v1.</description>
+    </item>
+    <item>
+      <title>Welcome to Drycc</title>
+      <link>/blog/2018/10/06/welcome-to-drycc/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>/blog/2018/10/06/welcome-to-drycc/</guid>
+      <description>Drycc Workflow is an open source Container as a Service (CaaS) that adds a developer-friendly layer to any Kubernetes cluster, making it easy to deploy and manage applications.&#xA;We welcome your input! If you have feedback, please submit an issue. If you&amp;rsquo;d like to participate in development, please read the &amp;ldquo;Working on Documentation&amp;rdquo; section below and submit a pull request.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/about/</guid>
+      <description>About Drycc Drycc, the only Container as a Service (CaaS) you need.&#xA;Native to Kubernetes, Drycc is the Container as a Service(CaaS) suite available on every public cloud, every Kubernetes distribution, the private cloud and the edge.&#xA;Mission&#xA;Empower engineers and enterprises to innovate with speed, agility, and scale.&#xA;Vision&#xA;Become the best and most respected infrastructure software company in the world.&#xA;Core values&#xA;Native to Kubernetes, Drycc is the Container as a Service(CaaS) suite available on every public cloud, every Kubernetes distribution, the private cloud and the edge.</description>
+    </item>
+    <item>
+      <title>Search Results</title>
+      <link>/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/search/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

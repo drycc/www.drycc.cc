@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Release on Drycc</title>
+    <link>/blog/releases/</link>
+    <description>Recent content in Release on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/blog/releases/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drycc Workflow v1.8.1</title>
+      <link>/blog/2025/04/15/drycc-workflow-v1.8.1/</link>
+      <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/blog/2025/04/15/drycc-workflow-v1.8.1/</guid>
+      <description>!IMPORTANT This version is a major update with the following major changes made:&#xA;Remove timeseries Remove telegraf Remove rabbitmq Replace seaweedfs with minio Replace redis with valkey Workflow ## v1.7.12 -&amp;gt; v1.8.1 Releases filer v1.0.4 -&amp;gt; v1.0.5 builder v1.7.2 -&amp;gt; v1.8.0 controller v1.12.0 -&amp;gt; v1.13.0 database v1.3.0 -&amp;gt; v1.3.1 passport v1.3.2 -&amp;gt; v1.3.3 imagebuilder v1.2.2 -&amp;gt; v1.3.0 fluentbit v0.0.3 -&amp;gt; v0.0.4 logger v1.3.6 -&amp;gt; v1.3.7 gateway v0.0.3 -&amp;gt; v0.1.0 grafana v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.12</title>
+      <link>/blog/2024/09/14/drycc-workflow-v1.7.12/</link>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/09/14/drycc-workflow-v1.7.12/</guid>
+      <description>Workflow ## v1.7.11 -&amp;gt; v1.7.12 Releases filer v1.0.3 -&amp;gt; v1.0.4 builder v1.7.1 -&amp;gt; v1.7.2 controller v1.11.0 -&amp;gt; v1.12.0 passport v1.3.1 -&amp;gt; v1.3.2 imagebuilder v1.2.1 -&amp;gt; v1.2.2 fluentbit v0.0.2 -&amp;gt; v0.0.3 logger v1.3.5 -&amp;gt; v1.3.6 storage v0.2.0 -&amp;gt; v0.2.1 rabbitmq v1.3.1 -&amp;gt; v1.3.2 workflow-cli v1.8.0 -&amp;gt; v1.9.0 Features ef9e2ce (controller) - controller: support autorollback config (#154) c497a87 (controller) - release: add deploy release ba43453 (controller) - release: add release deploy 80b6f1d (controller) - perms: refine the permission model 751f5e7 (workflow-cli) - perms: add object user perm 005fe95 (workflow-cli) - workflow-cli: add autorollback cmd (#58) c8fa511 (workflow-cli) - workflow-cli: add update cmd a5d440c (workflow-cli) - release: add deploy release 4f28426 (workflow-cli) - workflow-cli: add autodeploy flag and more (#62) Fixes ce20b62 (controller) - migrations: certificate migrate err 97eff7a (controller) - controller: volume can not delete when ptype isn&amp;rsquo;t exist 4076bea (controller) - controller: fix pod unhealthy do not rollback 84c84f9 (controller) - migration: cert migrate error b4201d3 (controller) - controller: no cert domain do not redirect https (#162) f26d608 (imagebuilder) - podman: permission denied 7d5afe9 (imagebuilder) - podman: failed to reexec e766f1d (workflow-cli) - perms: print perm message 06ac7b5 (workflow-cli) - filer: cp file to volume error Maintenance 52ef190 (builder) - controller-sdk-go: bump new version v0.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.11</title>
+      <link>/blog/2024/07/19/drycc-workflow-v1.7.11/</link>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/07/19/drycc-workflow-v1.7.11/</guid>
+      <description>Workflow ## v1.7.10 -&amp;gt; v1.7.11 Releases builder v1.7.0 -&amp;gt; v1.7.1 controller v1.10.0 -&amp;gt; v1.11.0 passport v1.3.0 -&amp;gt; v1.3.1 imagebuilder v1.2.0 -&amp;gt; v1.2.1 logger v1.3.4 -&amp;gt; v1.3.5 storage v0.1.0 -&amp;gt; v0.2.0 monitor v1.4.1 -&amp;gt; v1.4.2 timeseries v0.1.0 -&amp;gt; v0.1.1 rabbitmq v1.3.0 -&amp;gt; v1.3.1 workflow-cli v1.7.0 -&amp;gt; v1.8.0 Features 8875d5f (controller) - volumes: add volumes client support 98235b9 (controller) - canary: remove canary api d0495c3 (storage) - storage: add csi 725215e (workflow-cli) - ps: add ps describe 97ab7f2 (workflow-cli) - ps: pod list add ready and restarts (#42) eade475 (workflow-cli) - volumes: add filer client 11f55e1 (workflow-cli) - canary: remove canary api Fixes 59f299b (controller) - serializer: list type representation error d6f1e1a (storage) - charts: helm upgrade error 291a42a (timeseries) - charts: upgrade err e685d4b (workflow-cli) - config: unset typed values (#41) 86c800a (workflow-cli) - token: parameter unused warning Maintenance 197686a (builder) - controller-sdk-go: bump new version 9cbe813 (controller) - ps:logs: support pod all logs 22794cf (controller) - release: pre_release is incorrect 0c1a13e (controller) - controller: pipeline and httproute optimization 31d3daf (controller) - volumes: add add filer delete 141de25 (controller) - deps: bump djangorestframework from 3.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.10</title>
+      <link>/blog/2024/05/08/drycc-workflow-v1.7.10/</link>
+      <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/05/08/drycc-workflow-v1.7.10/</guid>
+      <description>Workflow ## v1.7.9 -&amp;gt; v1.7.10 Releases passport v1.3.0 -&amp;gt; v1.3.1 Maintenance 12bcc9a (passport) - chart: job upgrade add passportLocation condition </description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.9</title>
+      <link>/blog/2024/05/07/drycc-workflow-v1.7.9/</link>
+      <pubDate>Tue, 07 May 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/05/07/drycc-workflow-v1.7.9/</guid>
+      <description>Workflow ## v1.7.8 -&amp;gt; v1.7.9 Releases controller v1.9.0 -&amp;gt; v1.10.0 Features d707420 (controller) - pipline: differential deployment </description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.8</title>
+      <link>/blog/2024/05/01/drycc-workflow-v1.7.8/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/05/01/drycc-workflow-v1.7.8/</guid>
+      <description>Workflow ## v1.7.7 -&amp;gt; v1.7.8 Releases builder v1.6.0 -&amp;gt; v1.7.0 controller v1.8.0 -&amp;gt; v1.9.0 workflow-cli v1.6.0 -&amp;gt; v1.7.0 Features 384c7ee (builder) - domain: add procfile_type 26c8c7f (controller) - domain: add procfile_type bd49789 (workflow-cli) - domain: add procfile_type </description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.7</title>
+      <link>/blog/2024/04/30/drycc-workflow-v1.7.7/</link>
+      <pubDate>Tue, 30 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/04/30/drycc-workflow-v1.7.7/</guid>
+      <description>Workflow ## v1.7.6 -&amp;gt; v1.7.7 Releases builder v1.5.1 -&amp;gt; v1.6.0 controller v1.7.0 -&amp;gt; v1.8.0 database v1.2.1 -&amp;gt; v1.3.0 passport v1.2.0 -&amp;gt; v1.3.0 imagebuilder v1.1.1 -&amp;gt; v1.2.0 fluentbit v0.0.1 -&amp;gt; v0.0.2 logger v1.3.3 -&amp;gt; v1.3.4 storage v0.0.5 -&amp;gt; v0.1.0 gateway v0.0.2 -&amp;gt; v0.0.3 monitor v1.4.0 -&amp;gt; v1.4.1 redis v1.3.2 -&amp;gt; v1.4.0 timeseries v0.0.2 -&amp;gt; v0.1.0 prometheus v0.1.1 -&amp;gt; v0.1.2 rabbitmq v1.2.1 -&amp;gt; v1.3.0 registry v1.2.2 -&amp;gt; v1.3.0 registry-proxy v1.2.1 -&amp;gt; v1.2.2 workflow-cli v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.5</title>
+      <link>/blog/2024/02/27/drycc-workflow-v1.7.5/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/02/27/drycc-workflow-v1.7.5/</guid>
+      <description>These release notes for Drycc Workflow v1.7.5 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.7.4, please refer to the following change summary.&#xA;Workflow ## v1.7.4 -&amp;gt; v1.7.5 Releases builder v1.5.0 -&amp;gt; v1.5.1 controller v1.6.3 -&amp;gt; v1.7.0 logger v1.3.2 -&amp;gt; v1.3.3 storage v0.0.3 -&amp;gt; v0.0.4 redis v1.3.1 -&amp;gt; v1.3.2 rabbitmq v1.2.0 -&amp;gt; v1.2.1 registry v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.6</title>
+      <link>/blog/2024/02/27/drycc-workflow-v1.7.6/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/02/27/drycc-workflow-v1.7.6/</guid>
+      <description>Workflow ## v1.7.5 -&amp;gt; v1.7.6 Releases storage v0.0.4 -&amp;gt; v0.0.5 Maintenance 6cb63b6 (storage) - seaweedfs: bump version 3.63 </description>
+    </item>
+    <item>
+      <title>Drycc Workflow  v1.7.2</title>
+      <link>/blog/2024/01/29/drycc-workflow-v1.7.2/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024/01/29/drycc-workflow-v1.7.2/</guid>
+      <description>These release notes for Drycc Workflow v1.7.2 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.7.1, please refer to the following change summary.&#xA;Workflow ## v1.7.1 -&amp;gt; v1.7.2 Releases controller v1.6.0 -&amp;gt; v1.6.1 logger v1.3.1 -&amp;gt; v1.3.2 storage v0.0.1 -&amp;gt; v0.0.2 timeseries v0.0.1 -&amp;gt; v0.0.2 prometheus v0.1.0 -&amp;gt; v0.1.1 workflow-cli v1.5.0 -&amp;gt; v1.5.1 Fixes 2fe80a6 (controller) - resources: after resources instance update, could not delete (#111) a4082ad (controller) - controller: resource status and binding e9bfccc (controller) - controller: fix multiple volumes mount at one dir error (#116) 58d2b4c (logger) - logger: redis conn error block 7cb2700 (prometheus) - prometheus: prometheus config basic_auth 7838c6b (storage) - storage: random accesskey secretkey d9dcdfb (storage) - storage: pod restart loses data 3cbdd29 (storage) - storage: tipd cannot start after deleting pod be7e11f (storage) - storage: jq command not found 878f674 (storage) - storage: charts updateStrategy error 06cfe56 (timeseries) - timeseries: the data node ip is incorrect Maintenance 7f29f5a (controller) - resources: retrieve resource instance response add message (#112) 4a84dcd (controller) - controller: add deploy default annotations (#113) 829d7e5 (controller) - controller: modify url match service name (#114) 30abf6d (controller) - controller: transfer app ownership in async dc6f45e (controller) - controller: add channel for pod exec af4f3a7 (controller) - controller: avoid error when secret no data field (#117) ca27956 (controller) - controller: add pod default security b2e9c64 (prometheus) - charts: node-exporter mount root (#2) 3cdb2b6 (storage) - storage: bump seaweedfs 3.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.7.0</title>
+      <link>/blog/2023/12/08/drycc-workflow-v1.7.0/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/blog/2023/12/08/drycc-workflow-v1.7.0/</guid>
+      <description>These release notes for Drycc Workflow v1.7.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.6.0, please refer to the following change summary.&#xA;Workflow ## v1.6.0 -&amp;gt; v1.7.0 Releases builder v1.4.0 -&amp;gt; v1.5.0 controller v1.5.1 -&amp;gt; v1.6.0 database v1.2.0 -&amp;gt; v1.2.1 passport v1.1.0 -&amp;gt; v1.2.0 imagebuilder v1.1.0 -&amp;gt; v1.1.1 fluentbit v0.0.0 -&amp;gt; v0.0.1 logger v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.6.0</title>
+      <link>/blog/2022/10/21/drycc-workflow-v1.6.0/</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>/blog/2022/10/21/drycc-workflow-v1.6.0/</guid>
+      <description>These release notes for Drycc Workflow v1.6.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.5.0, please refer to the following change summary.&#xA;Workflow ## v1.5.0 -&amp;gt; v1.6.0 Releases builder v1.3.0 -&amp;gt; v1.4.0 controller v1.4.0 -&amp;gt; v1.5.0 passport v1.0.0 -&amp;gt; v1.1.0 database v1.1.0 -&amp;gt; v1.2.0 imagebuilder v1.0.1 -&amp;gt; v1.1.0 fluentd v1.2.0 -&amp;gt; v1.3.0 logger v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.5.0</title>
+      <link>/blog/2022/10/06/drycc-workflow-v1.5.0/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>/blog/2022/10/06/drycc-workflow-v1.5.0/</guid>
+      <description>These release notes for Drycc Workflow v1.5.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.4.0, please refer to the following change summary.&#xA;Workflow ## v1.4.0 -&amp;gt; v1.5.0 Releases passport v1.0.0 rabbitmq v1.0.0 imagebuilder v1.0.0 builder v1.2.0 -&amp;gt; v1.3.0 controller v1.3.0 -&amp;gt; v1.4.0 database v1.0.2 -&amp;gt; v1.1.0 fluentd v1.1.0 -&amp;gt; v1.2.0 redis v1.1.0 -&amp;gt; v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.4.0</title>
+      <link>/blog/2021/10/06/drycc-workflow-v1.4.0/</link>
+      <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>/blog/2021/10/06/drycc-workflow-v1.4.0/</guid>
+      <description>These release notes for Drycc Workflow v1.3.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.4.0, please refer to the following change summary.&#xA;Workflow ## v1.3.0 -&amp;gt; v1.4.0 Releases builder v1.1.0 -&amp;gt; v1.2.0 slugbuilder v1.1.1 -&amp;gt; v1.2.0 dockerbuilder v1.1.1 -&amp;gt; v1.1.2 controller v1.2.1 -&amp;gt; v1.3.0 slugrunner v1.1.1 -&amp;gt; v1.1.2 database v1.0.1 -&amp;gt; v1.0.2 fluentd v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.3.0</title>
+      <link>/blog/2020/10/06/drycc-workflow-v1.3.0/</link>
+      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/blog/2020/10/06/drycc-workflow-v1.3.0/</guid>
+      <description>These release notes for Drycc Workflow v1.3.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.2.0, please refer to the following change summary.&#xA;Workflow ## v1.2.0 -&amp;gt; v1.3.0 Releases builder v1.0.2 -&amp;gt; v1.1.0 slugbuilder v1.1.0 -&amp;gt; v1.1.1 dockerbuilder v1.1.0 -&amp;gt; v1.1.1 controller v1.2.0 -&amp;gt; v1.2.1 slugrunner v1.1.0 -&amp;gt; v1.1.1 database v1.0.0 -&amp;gt; v1.0.1 fluentd v1.</description>
+    </item>
+    <item>
+      <title>Drycc Workflow v1.2.0</title>
+      <link>/blog/2019/10/06/drycc-workflow-v1.2.0/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/blog/2019/10/06/drycc-workflow-v1.2.0/</guid>
+      <description>These release notes for Drycc Workflow v1.2.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.1.0, please refer to the following change summary.&#xA;Workflow ## v1.1.0 -&amp;gt; v1.2.0 Releases builder v1.0.1 -&amp;gt; v1.0.2 slugbuilder v1.0.0 -&amp;gt; v1.1.0 dockerbuilder v1.0.0 -&amp;gt; v1.1.0 controller v1.1.0 -&amp;gt; v1.2.0 slugrunner v1.0.0 -&amp;gt; v1.1.0 registry v1.0.0 -&amp;gt; v1.0.1 registry-proxy v1.</description>
+    </item>
+  </channel>
+</rss>

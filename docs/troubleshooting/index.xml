@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Troubleshooting on Drycc</title>
+    <link>/docs/troubleshooting/</link>
+    <description>Recent content in Troubleshooting on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Troubleshooting Workflow</title>
+      <link>/docs/troubleshooting/workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/troubleshooting/workflow/</guid>
+      <description>A Component Fails to Start For information on troubleshooting a failing component, see Troubleshooting with Kubectl.&#xA;An Application Fails to Start For information on troubleshooting application deployment issues, see Troubleshooting Applications.&#xA;Permission denied (publickey) The most common problem for this issue is the user forgetting to run drycc keys:add or add their private key to their SSH agent. To do so, run ssh-add ~/.ssh/id_rsa and try running git push drycc master again.</description>
+    </item>
+    <item>
+      <title>Troubleshooting using Kubectl</title>
+      <link>/docs/troubleshooting/kubectl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/troubleshooting/kubectl/</guid>
+      <description>This document describes how one can use kubectl to debug any issues with the cluster.&#xA;Diving into the Components Using kubectl, one can inspect the cluster&amp;rsquo;s current state. When Workflow is installed with helm, Workflow is installed into the drycc namespace. To inspect if Workflow is running, run:&#xA;$ kubectl --namespace=drycc get pods NAME READY STATUS RESTARTS AGE drycc-builder-gqum7 0/1 ContainerCreating 0 4s drycc-controller-h6lk6 0/1 ContainerCreating 0 4s drycc-controller-celery-cmxxn 0/3 ContainerCreating 0 4s drycc-database-56v39 0/1 ContainerCreating 0 4s drycc-fluentbit-xihr1 0/1 Pending 0 2s drycc-storage-c2exb 0/1 Pending 0 3s drycc-grafana-9ccur 0/1 Pending 0 3s drycc-registry-5bor6 0/1 Pending 0 3s !</description>
+    </item>
+    <item>
+      <title>Troubleshooting Applications</title>
+      <link>/docs/troubleshooting/applications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/troubleshooting/applications/</guid>
+      <description>Application has a Dockerfile, but a Buildpack Deployment Occurs When you deploy an application to Workflow using git push drycc master and the Builder attempts to deploy using the Buildpack workflow, check the following steps:&#xA;Are you deploying the correct project? Are you pushing the correct git branch (git push drycc &amp;lt;branch&amp;gt;)? Is the Dockerfile in the project&amp;rsquo;s root directory? Have you committed the Dockerfile to the project? Application was Deployed, but is Failing to Start If you deployed your application but it is failing to start, you can use drycc logs to check why the application fails to boot.</description>
+    </item>
+  </channel>
+</rss>

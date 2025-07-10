@@ -1,0 +1,326 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Drycc Workflow v1.2.0 | Drycc</title>
+<meta name="description" content="New Drycc Workflow Release v1.2.0">
+<meta property="og:url" content="/blog/2019/10/06/drycc-workflow-v1.2.0/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="Drycc Workflow v1.2.0">
+  <meta property="og:description" content="New Drycc Workflow Release v1.2.0">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2019-10-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-02-29T23:04:26+08:00">
+
+  <meta itemprop="name" content="Drycc Workflow v1.2.0">
+  <meta itemprop="description" content="New Drycc Workflow Release v1.2.0">
+  <meta itemprop="datePublished" content="2019-10-06T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-02-29T23:04:26+08:00">
+  <meta itemprop="wordCount" content="245">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Drycc Workflow v1.2.0">
+  <meta name="twitter:description" content="New Drycc Workflow Release v1.2.0">
+<link rel="preload" href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" as="style" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<link href="/scss/main.min.c5f3972ecd14552b62d50499cdf962964cffcef39104da44781bfe2d89334f3c.css" rel="stylesheet" integrity="sha256-xfOXLs0UVSti1QSZzflilkz/zvORBNpEeBv&#43;LYkzTzw=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page td-blog">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#ff2f57" fill="#ff2f57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3fb1e5" fill="#3fb1e5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38bb4c" fill="#38bb4c" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About Us</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.f289c1e4acebc2095c6ea9f5b314646a.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blog-li">
+  <a href="/blog/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-blog"><span class="">Blog</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blognews-li">
+  <a href="/blog/news/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-blognews"><span class="">News</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20181006welcome-to-drycc-li">
+  <a href="/blog/2018/10/06/welcome-to-drycc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20181006welcome-to-drycc"><span class="">Welcome to Drycc</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blogreleases-li">
+  <a href="/blog/releases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-blogreleases"><span class="">Release</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20250415drycc-workflow-v181-li">
+  <a href="/blog/2025/04/15/drycc-workflow-v1.8.1/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20250415drycc-workflow-v181"><span class="">Drycc Workflow v1.8.1</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240914drycc-workflow-v1712-li">
+  <a href="/blog/2024/09/14/drycc-workflow-v1.7.12/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240914drycc-workflow-v1712"><span class="">Drycc Workflow v1.7.12</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240719drycc-workflow-v1711-li">
+  <a href="/blog/2024/07/19/drycc-workflow-v1.7.11/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240719drycc-workflow-v1711"><span class="">Drycc Workflow v1.7.11</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240508drycc-workflow-v1710-li">
+  <a href="/blog/2024/05/08/drycc-workflow-v1.7.10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240508drycc-workflow-v1710"><span class="">Drycc Workflow v1.7.10</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240507drycc-workflow-v179-li">
+  <a href="/blog/2024/05/07/drycc-workflow-v1.7.9/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240507drycc-workflow-v179"><span class="">Drycc Workflow v1.7.9</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240501drycc-workflow-v178-li">
+  <a href="/blog/2024/05/01/drycc-workflow-v1.7.8/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240501drycc-workflow-v178"><span class="">Drycc Workflow v1.7.8</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240430drycc-workflow-v177-li">
+  <a href="/blog/2024/04/30/drycc-workflow-v1.7.7/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240430drycc-workflow-v177"><span class="">Drycc Workflow v1.7.7</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240227drycc-workflow-v175-li">
+  <a href="/blog/2024/02/27/drycc-workflow-v1.7.5/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240227drycc-workflow-v175"><span class="">Drycc Workflow v1.7.5</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240227drycc-workflow-v176-li">
+  <a href="/blog/2024/02/27/drycc-workflow-v1.7.6/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240227drycc-workflow-v176"><span class="">Drycc Workflow v1.7.6</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240129drycc-workflow-v172-li">
+  <a href="/blog/2024/01/29/drycc-workflow-v1.7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240129drycc-workflow-v172"><span class="">Drycc Workflow  v1.7.2</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20231208drycc-workflow-v170-li">
+  <a href="/blog/2023/12/08/drycc-workflow-v1.7.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20231208drycc-workflow-v170"><span class="">Drycc Workflow v1.7.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221021drycc-workflow-v160-li">
+  <a href="/blog/2022/10/21/drycc-workflow-v1.6.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221021drycc-workflow-v160"><span class="">Drycc Workflow v1.6.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221006drycc-workflow-v150-li">
+  <a href="/blog/2022/10/06/drycc-workflow-v1.5.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221006drycc-workflow-v150"><span class="">Drycc Workflow v1.5.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20211006drycc-workflow-v140-li">
+  <a href="/blog/2021/10/06/drycc-workflow-v1.4.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20211006drycc-workflow-v140"><span class="">Drycc Workflow v1.4.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20201006drycc-workflow-v130-li">
+  <a href="/blog/2020/10/06/drycc-workflow-v1.3.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-blog20201006drycc-workflow-v130"><span class="">Drycc Workflow v1.3.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-blog20191006drycc-workflow-v120-li">
+  <a href="/blog/2019/10/06/drycc-workflow-v1.2.0/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-blog20191006drycc-workflow-v120"><span class="td-sidebar-nav-active-item">Drycc Workflow v1.2.0</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+<a href="https://github.com/drycc/website/tree/main/content/en/blog/releases/v1.2.0.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+  <a href="https://github.com/drycc/website/edit/main/content/en/blog/releases/v1.2.0.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/drycc/website/new/main/content/en/blog/releases?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+  <a href="https://github.com/drycc/website/issues/new?title=Drycc%20Workflow%20v1.2.0" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+  <a href="https://github.com/drycc/workflow/issues/new" class="td-page-meta--project td-page-meta__project-issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create project issue</a>
+  <a id="print" href="/blog/releases/_print/"><i class="fa-solid fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#workflow--v110---v120">Workflow ## v1.1.0 -&gt; v1.2.0</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5 pe-md-4" role="main">
+            <a class="td-rss-button" title="RSS" href="/blog/releases/index.xml" target="_blank" rel="noopener">
+              <i class="fa-solid fa-rss" aria-hidden="true"></i>
+            </a>
+            
+<div class="td-content">
+	<h1>Drycc Workflow v1.2.0</h1>
+	<div class="lead">New Drycc Workflow Release v1.2.0</div>
+	<div class="td-byline mb-4">
+		
+		<time datetime="2019-10-06" class="text-body-secondary">06.10.2019</time>
+	</div>
+	<header class="article-meta">
+		
+  <p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 2 minute read &nbsp;</p>
+</header>
+	<p>These release notes for Drycc Workflow v1.2.0 provide an overview of the release and document the known issues with Drycc Workflow and its flavours. For details of the changes applied since v1.1.0, please refer to the following change summary.</p>
+<h2 id="workflow--v110---v120">Workflow ## v1.1.0 -&gt; v1.2.0<a class="td-heading-self-link" href="#workflow--v110---v120" aria-label="Heading self-link"></a></h2>
+<h4 id="releases">Releases<a class="td-heading-self-link" href="#releases" aria-label="Heading self-link"></a></h4>
+<ul>
+<li>builder v1.0.1 -&gt; v1.0.2</li>
+<li>slugbuilder v1.0.0 -&gt; v1.1.0</li>
+<li>dockerbuilder v1.0.0 -&gt; v1.1.0</li>
+<li>controller v1.1.0 -&gt; v1.2.0</li>
+<li>slugrunner v1.0.0 -&gt; v1.1.0</li>
+<li>registry v1.0.0 -&gt; v1.0.1</li>
+<li>registry-proxy v1.0.1 -&gt; v1.0.2</li>
+</ul>
+<h4 id="features">Features<a class="td-heading-self-link" href="#features" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/e5584e32ef02329fd091a7a4d3f40bac9894d5a4"><code>e5584e3</code></a> (controller) - controller: add STACK support</li>
+<li><a href="https://api.github.com/repos/drycc/dockerbuilder/git/trees/ad34dc1a501aada4aa2f8ceeb7eefa9fed6baf75"><code>ad34dc1</code></a> (dockerbuilder) - kaniko: use kaniko replace docker-py</li>
+<li><a href="https://api.github.com/repos/drycc/dockerbuilder/git/trees/b81430e8d7ac10167450667cf41e2f9efada6cca"><code>b81430e</code></a> (dockerbuilder) - dockerbuilder: change image to image.json format</li>
+<li><a href="https://api.github.com/repos/drycc/slugbuilder/git/trees/60dde96064c69aa7578476c2e4855680f5186706"><code>60dde96</code></a> (slugbuilder) - slugbuilder: add STACK support</li>
+<li><a href="https://api.github.com/repos/drycc/slugrunner/git/trees/fe8b6e56dd1a9334844581183bb16eb3d59df366"><code>fe8b6e5</code></a> (slugrunner) - slugrunner: add STACK support</li>
+</ul>
+<h4 id="maintenance">Maintenance<a class="td-heading-self-link" href="#maintenance" aria-label="Heading self-link"></a></h4>
+<ul>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/942f050ec90f771262cbb5634f5df8d5a3818a5d"><code>942f050</code></a> (builder) - registry: remove env DRYCC_REGISTRY_PROXY_PORT</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/ff7a16f53ac78dac0c334a9718cdc76c65400732"><code>ff7a16f</code></a> (builder) - registry: remove ecr and gcr registry</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/ad13683ce634c9b4835f45d2b474bac16ca52baa"><code>ad13683</code></a> (builder) - builder: change DRYCC_BUILD_TYPE to DRYCC_STACK</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/6def637d5331330940d0a94cf6313a4bcb67fec0"><code>6def637</code></a> (builder) - registry: rename DRYCC_REGISTRY_SERVICE to DRYCC_REGISTRY_PROXY</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/5044e223a56ee6283ac8d68a1442a6430b18dd99"><code>5044e22</code></a> (builder) - registry: remove registry_secret_prefix</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/2ea39cc0a9dd68fa1baca4b3725a00b9bcf7f89a"><code>2ea39cc</code></a> (builder) - controller-go-sdk: upgrade controller-go-sdk</li>
+<li><a href="https://api.github.com/repos/drycc/builder/git/trees/6aee0d7f092b53c37c70d05db076eaae1bbcff44"><code>6aee0d7</code></a> (builder) - registry: optimizing variable naming</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/f9c62d9db809bfe03af33092e71a16e56fc35483"><code>f9c62d9</code></a> (controller) - domain: added reserved domain check</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/f5a135be6aa2b319e623fd59bb711705d1cfe13f"><code>f5a135b</code></a> (controller) - migrations: clean old migrations</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/4369b2c2fb6ef861978588a61efa1bfc6a4572ec"><code>4369b2c</code></a> (controller) - registry: rename DRYCC_REGISTRY_SERVICE to DRYCC_REGISTRY_PROXY</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/1057ca59c3ae6bbd85d772f6b49b0c542d7d18c4"><code>1057ca5</code></a> (controller) - registry: remove registry_secret_prefix</li>
+<li><a href="https://api.github.com/repos/drycc/controller/git/trees/d114b3e93544624a5f01b1ca71db92d0b33f4e0d"><code>d114b3e</code></a> (controller) - docker: update docker client</li>
+<li><a href="https://api.github.com/repos/drycc/dockerbuilder/git/trees/edbe9631dcfb34ed50d9e931d36506fa262b6299"><code>edbe963</code></a> (dockerbuilder) - dockerfile: change base image to alpine</li>
+<li><a href="https://api.github.com/repos/drycc/dockerbuilder/git/trees/fb35baf913ff846e08ba79d9ad8195fca1411684"><code>fb35baf</code></a> (dockerbuilder) - registry: rename DRYCC_REGISTRY_SERVICE to DRYCC_REGISTRY_PROXY</li>
+<li><a href="https://api.github.com/repos/drycc/dockerbuilder/git/trees/946dbf688474933f821f641f6c027bab68cd9e79"><code>946dbf6</code></a> (dockerbuilder) - docker: remove insecure support</li>
+<li><a href="https://api.github.com/repos/drycc/dockerbuilder/git/trees/628d8532256e32a046268491f2a331dcb608b713"><code>628d853</code></a> (dockerbuilder) - proxy: add registry proxy</li>
+<li><a href="https://api.github.com/repos/drycc/registry/git/trees/ff27cbdd27e9dc51ce29b6a68777888ed8737862"><code>ff27cbd</code></a> (registry) - env: remove unused env</li>
+<li><a href="https://api.github.com/repos/drycc/registry-proxy/git/trees/7204d72c00b2d7360a2d3a20833d701e303a9f62"><code>7204d72</code></a> (registry-proxy) - registry: optimizing variable naming</li>
+</ul>
+
+	<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+  <li>
+    <a class="btn btn-primary disabled"><span class="me-1">←</span>Previous</a>
+  </li>
+  <li>
+    <a href="/blog/2020/10/06/drycc-workflow-v1.3.0/" aria-label="Next - Drycc Workflow v1.3.0" class="btn btn-primary">Next<span class="ms-1">→</span></a>
+  </li>
+</ul>
+
+	<div class="td-page-meta__lastmod">
+  Last modified 29.02.2024: <a href="https://github.com/drycc/website/commit/3b49d6ee91dda360c6b7d34f632a24c93b3d7702">init repo (3b49d6e)</a>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.69e2c1ae9320465ab10236d9ef752c6a4442c54b48b883b17c497b7c7d96a796.js" integrity="sha256-aeLBrpMgRlqxAjbZ73UsakRCxUtIuIOxfEl7fH2Wp5Y=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

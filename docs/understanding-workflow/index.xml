@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Understanding Workflow on Drycc</title>
+    <link>/docs/understanding-workflow/</link>
+    <description>Recent content in Understanding Workflow on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/understanding-workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Concepts</title>
+      <link>/docs/understanding-workflow/concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/understanding-workflow/concepts/</guid>
+      <description>Twelve-Factor Applications The Twelve-Factor App is a methodology for building modern applications that can be scaled across a distributed system.&#xA;Twelve-factor is a valuable synthesis of years of experience with software-as-a-service apps in the wild, particularly on the Heroku platform.&#xA;Workflow is designed to run applications that adhere to the Twelve-Factor App methodology and best practices.&#xA;Kubernetes Kubernetes is an open-source cluster manager developed by Google and donated to the Cloud Native Compute Foundation.</description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>/docs/understanding-workflow/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/understanding-workflow/architecture/</guid>
+      <description>All components are published as a set of container images which can be deployed to any compliant Kubernetes cluster.&#xA;Overview Operators use Helm to configure and install the Workflow components which interface directly with the underlying Kubernetes cluster. Service discovery, container availability and networking are all delegated to Kubernetes, while Workflow provides a clean and simple developer experience.&#xA;Platform Services Drycc Workflow provides additional functionality to your Kubernetes cluster, including:</description>
+    </item>
+    <item>
+      <title>Components</title>
+      <link>/docs/understanding-workflow/components/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/understanding-workflow/components/</guid>
+      <description>All Workflow components are deployed as services (and associated controllers) in your Kubernetes cluster. If you are interested we have a more detailed exploration of the Workflow architecture.&#xA;All of the componentry for Workflow is built with composability in mind. If you need to customize one of the components for your specific deployment or need the functionality in your own project we invite you to give it a shot!&#xA;Controller Project Location: drycc/controller</description>
+    </item>
+  </channel>
+</rss>
