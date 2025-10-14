@@ -1,0 +1,390 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/zh-cn/docs/troubleshooting/">
+<link rel="alternate" type="application/rss&#43;xml" href="/zh-cn/docs/troubleshooting/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>故障排除 | Drycc</title>
+<meta name="description" content="故障排除是系统性问题解决方法。">
+<meta property="og:url" content="/zh-cn/docs/troubleshooting/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="故障排除">
+  <meta property="og:description" content="故障排除是系统性问题解决方法。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="故障排除">
+  <meta itemprop="description" content="故障排除是系统性问题解决方法。">
+  <meta itemprop="dateModified" content="2025-10-09T12:58:35+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="故障排除">
+  <meta name="twitter:description" content="故障排除是系统性问题解决方法。">
+<link rel="preload" href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" as="style" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<link href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" rel="stylesheet" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/zh-cn/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3FB1E5" fill="#3FB1E5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/about/"><span>关于我们</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/zh-cn/docs/"><span>文档</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/blog/"><span>博客</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/community/"><span>社区</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/docs/troubleshooting/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="站内搜索…"
+    aria-label="站内搜索…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.55f5a19ce53e8fd6d7d6bc886b53a362.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+这是本节的多页打印视图。
+<a href="#" onclick="print();return false;">点击此处打印</a>.
+</p><p>
+<a href="/zh-cn/docs/troubleshooting/">返回本页常规视图</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">故障排除</h1>
+<div class="lead">故障排除是系统性问题解决方法。</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-ae09ee5bda595915162c64bb5b058028">Workflow 故障排除</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-804be11dbfa1e18a9008195da92602ff">使用 Kubectl 进行故障排除</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-840798867228de33b883f3d76e5df256">应用故障排除</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-ae09ee5bda595915162c64bb5b058028">1 - Workflow 故障排除</h1>
+    <div class="lead">用户在配置 Workflow 时遇到的常见问题详述如下。</div>
+	<h2 id="组件启动失败">组件启动失败<a class="td-heading-self-link" href="#%e7%bb%84%e4%bb%b6%e5%90%af%e5%8a%a8%e5%a4%b1%e8%b4%a5" aria-label="Heading self-link"></a>
+</h2><p>有关故障排除失败组件的信息，请参见<a href="/zh-cn/docs/troubleshooting/kubectl/">使用 Kubectl 进行故障排除</a>。</p>
+<h2 id="应用启动失败">应用启动失败<a class="td-heading-self-link" href="#%e5%ba%94%e7%94%a8%e5%90%af%e5%8a%a8%e5%a4%b1%e8%b4%a5" aria-label="Heading self-link"></a>
+</h2><p>有关应用部署问题故障排除的信息，请参见<a href="/zh-cn/docs/troubleshooting/applications/">应用故障排除</a>。</p>
+<h2 id="权限被拒绝-publickey">权限被拒绝 (publickey)<a class="td-heading-self-link" href="#%e6%9d%83%e9%99%90%e8%a2%ab%e6%8b%92%e7%bb%9d-publickey" aria-label="Heading self-link"></a>
+</h2><p>此问题最常见的原因是用户忘记运行 <code>drycc keys:add</code> 或将他们的私钥添加到 SSH 代理。要解决此问题，请运行 <code>ssh-add ~/.ssh/id_rsa</code>，然后再次尝试运行 <code>git push drycc master</code>。</p>
+<p>如果在尝试运行上述 <code>ssh-add</code> 命令后收到 <code>Could not open a connection to your authentication agent</code> 错误，您可能需要在运行 <code>ssh-add</code> 之前通过执行 <code>eval &quot;$(ssh-agent)&quot;</code> 命令来加载 SSH 代理环境变量。</p>
+<h2 id="其他问题">其他问题<a class="td-heading-self-link" href="#%e5%85%b6%e4%bb%96%e9%97%ae%e9%a2%98" aria-label="Heading self-link"></a>
+</h2><p>遇到这里没有详细说明的问题？请<a href="https://github.com/drycc/workflow/issues/new">打开一个 issue</a> 或加入 <a href="http://slack.drycc.cc/">Slack 上的 #community</a> 获取帮助！</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-804be11dbfa1e18a9008195da92602ff">2 - 使用 Kubectl 进行故障排除</h1>
+    <div class="lead">Kubernetes 提供了一个命令行工具，用于与 Kubernetes 集群的控制平面通信，使用 Kubernetes API。</div>
+	<p>本文档描述了如何使用 <code>kubectl</code> 来调试集群中的任何问题。</p>
+<h2 id="深入了解组件">深入了解组件<a class="td-heading-self-link" href="#%e6%b7%b1%e5%85%a5%e4%ba%86%e8%a7%a3%e7%bb%84%e4%bb%b6" aria-label="Heading self-link"></a>
+</h2><p>使用 <code>kubectl</code>，可以检查集群的当前状态。当使用 <code>helm</code> 安装 Workflow 时，Workflow 被安装到 <code>drycc</code> 命名空间中。要检查 Workflow 是否正在运行，请运行：</p>
+<pre><code>$ kubectl --namespace=drycc get pods
+NAME                          READY     STATUS              RESTARTS   AGE
+drycc-builder-gqum7            0/1       ContainerCreating   0          4s
+drycc-controller-h6lk6         0/1       ContainerCreating   0          4s
+drycc-controller-celery-cmxxn  0/3       ContainerCreating   0          4s
+drycc-database-56v39           0/1       ContainerCreating   0          4s
+drycc-fluentbit-xihr1          0/1       Pending             0          2s
+drycc-storage-c2exb            0/1       Pending             0          3s
+drycc-grafana-9ccur            0/1       Pending             0          3s
+drycc-registry-5bor6           0/1       Pending             0          3s
+</code></pre>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    tip
+为了节省宝贵的击键次数，将 <code>kubectl --namespace=drycc</code> 别名为 <code>kd</code>，这样以后更容易输入。
+
+</div>
+
+<p>要获取特定组件的日志，请使用 <code>kubectl logs</code>：</p>
+<pre><code>$ kubectl --namespace=drycc logs drycc-controller-h6lk6
+system information:
+Django Version: 1.9.6
+Python 3.5.1
+addgroup: gid '0' in use
+Django checks:
+System check identified no issues (2 silenced).
+[...]
+</code></pre>
+<p>要深入运行中的容器来检查其环境，请使用 <code>kubectl exec</code>：</p>
+<pre><code>$ kubectl --namespace=drycc exec -it drycc-database-56v39 gosu postgres psql
+psql (13.4 (Debian 13.4-1.pgdg100+1))
+Type &quot;help&quot; for help.
+
+postgres=# \l
+                                                List of databases
+     Name          |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges
+-------------------+----------+----------+------------+------------+-----------------------
+ drycc_controller  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ drycc_passport    | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ postgres          | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ template0         | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+                   |          |          |            |            | postgres=CTc/postgres
+ template1         | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+                   |          |          |            |            | postgres=CTc/postgres
+(4 rows)
+postgres=# \connect drycc_controller
+You are now connected to database &quot;drycc_controller&quot; as user &quot;postgres&quot;.
+drycc_controller=# \dt
+                                 List of relations
+ Schema |              Name              | Type  |      Owner
+--------+--------------------------------+-------+-------------------
+ public | api_app                        | table | drycc_controller
+ public | api_build                      | table | drycc_controller
+ public | api_certificate                | table | drycc_controller
+ public | api_config                     | table | drycc_controller
+ public | api_domain                     | table | drycc_controller
+ public | api_key                        | table | drycc_controller
+ public | api_push                       | table | drycc_controller
+ public | api_release                    | table | drycc_controller
+ public | auth_group                     | table | drycc_controller
+ --More--
+ drycc_controller=# SELECT COUNT(*) from api_app;
+ count
+-------
+     0
+(1 row)
+</code></pre>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-840798867228de33b883f3d76e5df256">3 - 应用故障排除</h1>
+    <div class="lead">本文档描述了如何在部署或调试无法启动或部署的应用时排除常见问题。</div>
+	<h2 id="应用有-dockerfile但发生了-buildpack-部署">应用有 Dockerfile，但发生了 Buildpack 部署<a class="td-heading-self-link" href="#%e5%ba%94%e7%94%a8%e6%9c%89-dockerfile%e4%bd%86%e5%8f%91%e7%94%9f%e4%ba%86-buildpack-%e9%83%a8%e7%bd%b2" aria-label="Heading self-link"></a>
+</h2><p>当您使用 <code>git push drycc master</code> 将应用部署到 Workflow 时，如果 <a href="/zh-cn/docs/understanding-workflow/components/#builder">Builder</a> 尝试使用 Buildpack 工作流进行部署，请检查以下步骤：</p>
+<ol>
+<li>您是否在部署正确的项目？</li>
+<li>您是否在推送正确的 git 分支（<code>git push drycc &lt;branch&gt;</code>）？</li>
+<li><code>Dockerfile</code> 是否在项目的根目录中？</li>
+<li>您是否已将 <code>Dockerfile</code> 提交到项目中？</li>
+</ol>
+<h2 id="应用已部署但无法启动">应用已部署，但无法启动<a class="td-heading-self-link" href="#%e5%ba%94%e7%94%a8%e5%b7%b2%e9%83%a8%e7%bd%b2%e4%bd%86%e6%97%a0%e6%b3%95%e5%90%af%e5%8a%a8" aria-label="Heading self-link"></a>
+</h2><p>如果您部署了应用但它无法启动，您可以使用 Drycc Grafana 来检查应用无法启动的原因。有时，应用容器可能在没有记录任何错误信息的情况下启动失败。这通常发生在为应用配置的健康检查失败时。在这种情况下，您可以首先<a href="/zh-cn/docs/troubleshooting/kubectl/">使用 kubectl 进行故障排除</a>。您可以通过检查部署在应用命名空间中的 pod 来查看应用当前状态。为此，请运行</p>
+<pre><code>$ kubectl --namespace=myapp get pods
+NAME                          READY     STATUS                RESTARTS   AGE
+myapp-web-1585713350-3brbo    0/1       CrashLoopBackOff      2          43s
+</code></pre>
+<p>然后我们可以描述 pod 并确定它为什么无法启动：</p>
+<pre><code>Events:
+  FirstSeen     LastSeen        Count   From                            SubobjectPath                           Type            Reason          Message
+  ---------     --------        -----   ----                            -------------                           --------        ------          -------
+  43s           43s             1       {default-scheduler }                                                    Normal          Scheduled       Successfully assigned myapp-web-1585713350-3brbo to kubernetes-node-1
+  41s           41s             1       {kubelet kubernetes-node-1}     spec.containers{myapp-web}              Normal          Created         Created container with container id b86bd851a61f
+  41s           41s             1       {kubelet kubernetes-node-1}     spec.containers{myapp-web}              Normal          Started         Started container with container id b86bd851a61f
+  37s           35s             1       {kubelet kubernetes-node-1}     spec.containers{myapp-web}              Warning         Unhealthy       Liveness probe failed: Get http://10.246.39.13:8000/healthz: dial tcp 10.246.39.13:8000: getsockopt: connection refused
+</code></pre>
+<p>在这种情况下，我们将应用的健康检查初始延迟超时设置为 1 秒，这太激进了。应用在容器启动后需要一些时间来设置 API 服务器。通过将健康检查初始延迟超时增加到 10 秒，应用能够启动并正确响应。</p>
+<p>有关如何自定义应用健康检查以更好地满足应用需求的更多信息，请参见<a href="/zh-cn/docs/applications/managing-app-configuration/#custom-health-checks">自定义健康检查</a>。</p>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">保留所有权利</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">隐私政策</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.403ff095218c662472dab60ed98ecbb19431682de5ac7c6159891241cd366af5.js" integrity="sha256-QD/wlSGMZiRy2rYO2Y7LsZQxaC3lrHxhWYkSQc02avU=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

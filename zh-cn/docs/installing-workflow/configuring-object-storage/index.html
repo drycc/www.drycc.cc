@@ -1,0 +1,524 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>配置对象存储 | Drycc</title>
+<meta name="description" content="各种 Drycc Workflow 组件依赖对象存储系统来完成工作，包括存储应用程序、容器镜像">
+<meta property="og:url" content="/zh-cn/docs/installing-workflow/configuring-object-storage/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="配置对象存储">
+  <meta property="og:description" content="各种 Drycc Workflow 组件依赖对象存储系统来完成工作，包括存储应用程序、容器镜像">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-10-09T18:00:20+08:00">
+
+  <meta itemprop="name" content="配置对象存储">
+  <meta itemprop="description" content="各种 Drycc Workflow 组件依赖对象存储系统来完成工作，包括存储应用程序、容器镜像">
+  <meta itemprop="dateModified" content="2025-10-09T18:00:20+08:00">
+  <meta itemprop="wordCount" content="149">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="配置对象存储">
+  <meta name="twitter:description" content="各种 Drycc Workflow 组件依赖对象存储系统来完成工作，包括存储应用程序、容器镜像">
+<link rel="preload" href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" as="style" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<link href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" rel="stylesheet" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/zh-cn/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3FB1E5" fill="#3FB1E5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/about/"><span>关于我们</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/zh-cn/docs/"><span>文档</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/blog/"><span>博客</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/community/"><span>社区</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/docs/installing-workflow/configuring-object-storage/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="站内搜索…"
+    aria-label="站内搜索…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.55f5a19ce53e8fd6d7d6bc886b53a362.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="站内搜索…"
+    aria-label="站内搜索…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.55f5a19ce53e8fd6d7d6bc886b53a362.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/docs/installing-workflow/configuring-object-storage/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-zh-cndocs-li">
+  <a href="/zh-cn/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-zh-cndocs"><span class="">文档</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-zh-cndocsquickstart-li">
+  <a href="/zh-cn/docs/quickstart/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocsquickstart"><span class="">快速开始</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsquickstartoverview-li">
+  <a href="/zh-cn/docs/quickstart/overview/" title="快速开始" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsquickstartoverview"><span class="">概述</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsquickstartinstall-workflow-li">
+  <a href="/zh-cn/docs/quickstart/install-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsquickstartinstall-workflow"><span class="">安装 Workflow</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsquickstartinstall-cli-tools-li">
+  <a href="/zh-cn/docs/quickstart/install-cli-tools/" title="Drycc Workflow 客户端 CLI" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsquickstartinstall-cli-tools"><span class="">安装 CLI 工具</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsquickstartdeploy-an-app-li">
+  <a href="/zh-cn/docs/quickstart/deploy-an-app/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsquickstartdeploy-an-app"><span class="">部署您的第一个应用</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-zh-cndocsunderstanding-workflow-li">
+  <a href="/zh-cn/docs/understanding-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocsunderstanding-workflow"><span class="">理解 Workflow</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsunderstanding-workflowconcepts-li">
+  <a href="/zh-cn/docs/understanding-workflow/concepts/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsunderstanding-workflowconcepts"><span class="">概念</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsunderstanding-workflowarchitecture-li">
+  <a href="/zh-cn/docs/understanding-workflow/architecture/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsunderstanding-workflowarchitecture"><span class="">架构</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsunderstanding-workflowcomponents-li">
+  <a href="/zh-cn/docs/understanding-workflow/components/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsunderstanding-workflowcomponents"><span class="">组件</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-zh-cndocsinstalling-workflow-li">
+  <a href="/zh-cn/docs/installing-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocsinstalling-workflow"><span class="">安装到 Kubernetes</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsinstalling-workflowsystem-requirements-li">
+  <a href="/zh-cn/docs/installing-workflow/system-requirements/" title="要求" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsinstalling-workflowsystem-requirements"><span class="">系统要求</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsinstalling-workflowworkflow-li">
+  <a href="/zh-cn/docs/installing-workflow/workflow/" title="安装 Drycc Workflow" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsinstalling-workflowworkflow"><span class="">安装 Workflow</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsinstalling-workflowgateway-li">
+  <a href="/zh-cn/docs/installing-workflow/gateway/" title="指定网关" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsinstalling-workflowgateway"><span class="">安装网关</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsinstalling-workflowconfiguring-postgres-li">
+  <a href="/zh-cn/docs/installing-workflow/configuring-postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsinstalling-workflowconfiguring-postgres"><span class="">配置 Postgres</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsinstalling-workflowconfiguring-registry-li">
+  <a href="/zh-cn/docs/installing-workflow/configuring-registry/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsinstalling-workflowconfiguring-registry"><span class="">配置注册表</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-zh-cndocsinstalling-workflowconfiguring-object-storage-li">
+  <a href="/zh-cn/docs/installing-workflow/configuring-object-storage/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsinstalling-workflowconfiguring-object-storage"><span class="td-sidebar-nav-active-item">配置对象存储</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-zh-cndocsusers-li">
+  <a href="/zh-cn/docs/users/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocsusers"><span class="">用户</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsuserscli-li">
+  <a href="/zh-cn/docs/users/cli/" title="Drycc Workflow CLI" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsuserscli"><span class="">命令行界面</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsusersregistration-li">
+  <a href="/zh-cn/docs/users/registration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsusersregistration"><span class="">用户和注册</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsusersssh-keys-li">
+  <a href="/zh-cn/docs/users/ssh-keys/" title="用户和 SSH 密钥" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsusersssh-keys"><span class="">SSH 密钥</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-zh-cndocsmanaging-workflow-li">
+  <a href="/zh-cn/docs/managing-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocsmanaging-workflow"><span class="">管理 Workflow</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsmanaging-workflowtuning-component-settings-li">
+  <a href="/zh-cn/docs/managing-workflow/tuning-component-settings/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsmanaging-workflowtuning-component-settings"><span class="">调整组件设置</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsmanaging-workflowconfiguring-dns-li">
+  <a href="/zh-cn/docs/managing-workflow/configuring-dns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsmanaging-workflowconfiguring-dns"><span class="">配置 DNS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsmanaging-workflowdeploy-hooks-li">
+  <a href="/zh-cn/docs/managing-workflow/deploy-hooks/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsmanaging-workflowdeploy-hooks"><span class="">部署钩子</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsmanaging-workflowplatform-logging-li">
+  <a href="/zh-cn/docs/managing-workflow/platform-logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsmanaging-workflowplatform-logging"><span class="">平台日志</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsmanaging-workflowplatform-monitoring-li">
+  <a href="/zh-cn/docs/managing-workflow/platform-monitoring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsmanaging-workflowplatform-monitoring"><span class="">平台监控</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsmanaging-workflowupgrading-workflow-li">
+  <a href="/zh-cn/docs/managing-workflow/upgrading-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsmanaging-workflowupgrading-workflow"><span class="">升级 Workflow</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsmanaging-workflowproduction-deployments-li">
+  <a href="/zh-cn/docs/managing-workflow/production-deployments/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsmanaging-workflowproduction-deployments"><span class="">生产部署</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-zh-cndocsapplications-li">
+  <a href="/zh-cn/docs/applications/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocsapplications"><span class="">应用</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsdeploying-apps-li">
+  <a href="/zh-cn/docs/applications/deploying-apps/" title="部署应用程序" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsdeploying-apps"><span class="">部署应用</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsusing-buildpacks-li">
+  <a href="/zh-cn/docs/applications/using-buildpacks/" title="使用 Buildpacks" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsusing-buildpacks"><span class="">Buildpacks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsusing-dockerfiles-li">
+  <a href="/zh-cn/docs/applications/using-dockerfiles/" title="使用 Dockerfiles" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsusing-dockerfiles"><span class="">使用 Dockerfiles 部署</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsusing-container-images-li">
+  <a href="/zh-cn/docs/applications/using-container-images/" title="使用容器镜像" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsusing-container-images"><span class="">容器镜像</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsmanaging-app-processes-li">
+  <a href="/zh-cn/docs/applications/managing-app-processes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsmanaging-app-processes"><span class="">管理应用进程</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsmanaging-app-configuration-li">
+  <a href="/zh-cn/docs/applications/managing-app-configuration/" title="配置应用程序" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsmanaging-app-configuration"><span class="">管理应用配置</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsmanaging-app-metrics-li">
+  <a href="/zh-cn/docs/applications/managing-app-metrics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsmanaging-app-metrics"><span class="">管理应用指标</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsmanaging-app-lifecycle-li">
+  <a href="/zh-cn/docs/applications/managing-app-lifecycle/" title="管理应用" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsmanaging-app-lifecycle"><span class="">管理应用生命周期</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsmanaging-app-volumes-li">
+  <a href="/zh-cn/docs/applications/managing-app-volumes/" title="为应用挂载卷" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsmanaging-app-volumes"><span class="">管理应用卷</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsmanaging-app-gateway-li">
+  <a href="/zh-cn/docs/applications/managing-app-gateway/" title="关于应用的网关" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsmanaging-app-gateway"><span class="">管理应用网关</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsmanaging-app-resources-li">
+  <a href="/zh-cn/docs/applications/managing-app-resources/" title="管理应用的资源" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsmanaging-app-resources"><span class="">管理应用资源</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsinter-app-communication-li">
+  <a href="/zh-cn/docs/applications/inter-app-communication/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsinter-app-communication"><span class="">应用间通信</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsmanaging-resource-limits-li">
+  <a href="/zh-cn/docs/applications/managing-resource-limits/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsmanaging-resource-limits"><span class="">资源限制</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsdomains-and-routing-li">
+  <a href="/zh-cn/docs/applications/domains-and-routing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsdomains-and-routing"><span class="">域名和路由</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsssl-certificates-li">
+  <a href="/zh-cn/docs/applications/ssl-certificates/" title="应用 SSL 证书" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsssl-certificates"><span class="">SSL 证书</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsapplicationsusing-dryccpath-li">
+  <a href="/zh-cn/docs/applications/using-dryccpath/" title="使用 drycc 路径" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsapplicationsusing-dryccpath"><span class="">使用 drycc 路径部署</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-zh-cndocstroubleshooting-li">
+  <a href="/zh-cn/docs/troubleshooting/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocstroubleshooting"><span class="">故障排除</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocstroubleshootingworkflow-li">
+  <a href="/zh-cn/docs/troubleshooting/workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocstroubleshootingworkflow"><span class="">Workflow 故障排除</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocstroubleshootingkubectl-li">
+  <a href="/zh-cn/docs/troubleshooting/kubectl/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocstroubleshootingkubectl"><span class="">使用 Kubectl 进行故障排除</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocstroubleshootingapplications-li">
+  <a href="/zh-cn/docs/troubleshooting/applications/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocstroubleshootingapplications"><span class="">应用故障排除</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-zh-cndocsroadmap-li">
+  <a href="/zh-cn/docs/roadmap/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocsroadmap"><span class="">路线图</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsroadmapplanning-process-li">
+  <a href="/zh-cn/docs/roadmap/planning-process/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsroadmapplanning-process"><span class="">规划过程</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsroadmaproadmap-li">
+  <a href="/zh-cn/docs/roadmap/roadmap/" title="Drycc Workflow 路线图" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsroadmaproadmap"><span class="">路线图</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsroadmapreleases-li">
+  <a href="/zh-cn/docs/roadmap/releases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsroadmapreleases"><span class="">发布</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-zh-cndocscontribution-guidelines-li">
+  <a href="/zh-cn/docs/contribution-guidelines/" title="贡献指南" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocscontribution-guidelines"><span class="">贡献</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocscontribution-guidelinesoverview-li">
+  <a href="/zh-cn/docs/contribution-guidelines/overview/" title="贡献者概述" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocscontribution-guidelinesoverview"><span class="">概述</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocscontribution-guidelinesdesign-documents-li">
+  <a href="/zh-cn/docs/contribution-guidelines/design-documents/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocscontribution-guidelinesdesign-documents"><span class="">设计文档</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocscontribution-guidelinesdevelopment-environment-li">
+  <a href="/zh-cn/docs/contribution-guidelines/development-environment/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocscontribution-guidelinesdevelopment-environment"><span class="">开发环境</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocscontribution-guidelinestesting-li">
+  <a href="/zh-cn/docs/contribution-guidelines/testing/" title="测试 Drycc" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocscontribution-guidelinestesting"><span class="">测试</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocscontribution-guidelinessubmitting-a-pull-request-li">
+  <a href="/zh-cn/docs/contribution-guidelines/submitting-a-pull-request/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocscontribution-guidelinessubmitting-a-pull-request"><span class="">提交拉取请求</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocscontribution-guidelinescommunity-li">
+  <a href="/zh-cn/docs/contribution-guidelines/community/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocscontribution-guidelinescommunity"><span class="">社区</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocscontribution-guidelinestriaging-issues-li">
+  <a href="/zh-cn/docs/contribution-guidelines/triaging-issues/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocscontribution-guidelinestriaging-issues"><span class="">分流问题</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocscontribution-guidelinesconduct-li">
+  <a href="/zh-cn/docs/contribution-guidelines/conduct/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocscontribution-guidelinesconduct"><span class="">行为准则</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocscontribution-guidelinesmaintainers-li">
+  <a href="/zh-cn/docs/contribution-guidelines/maintainers/" title="Drycc 维护者" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocscontribution-guidelinesmaintainers"><span class="">维护者</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-zh-cndocsreference-guide-li">
+  <a href="/zh-cn/docs/reference-guide/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-zh-cndocsreference-guide"><span class="">参考指南</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsreference-guidecreating-a-self-signed-ssl-certificate-li">
+  <a href="/zh-cn/docs/reference-guide/creating-a-self-signed-ssl-certificate/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsreference-guidecreating-a-self-signed-ssl-certificate"><span class="">创建自签名 SSL 证书</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsreference-guidecontroller-api-v2-0-li">
+  <a href="/zh-cn/docs/reference-guide/controller-api-v2-0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsreference-guidecontroller-api-v2-0"><span class="">Controller API v2.0</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsreference-guidecontroller-api-v2-1-li">
+  <a href="/zh-cn/docs/reference-guide/controller-api-v2-1/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsreference-guidecontroller-api-v2-1"><span class="">Controller API v2.1</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsreference-guidecontroller-api-v2-2-li">
+  <a href="/zh-cn/docs/reference-guide/controller-api-v2-2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsreference-guidecontroller-api-v2-2"><span class="">Controller API v2.2</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-zh-cndocsreference-guidecontroller-api-v2-3-li">
+  <a href="/zh-cn/docs/reference-guide/controller-api-v2-3/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-zh-cndocsreference-guidecontroller-api-v2-3"><span class="">Controller API v2.3</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+<a href="https://github.com/drycc/website/tree/main/content/zh-cn/docs/installing-workflow/configuring-object-storage.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> 查看页面源码</a>
+  <a href="https://github.com/drycc/website/edit/main/content/zh-cn/docs/installing-workflow/configuring-object-storage.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> 编辑此页</a>
+  <a href="https://github.com/drycc/website/new/main/content/zh-cn/docs/installing-workflow?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> 添加子页面</a>
+  <a href="https://github.com/drycc/website/issues/new?title=%e9%85%8d%e7%bd%ae%e5%af%b9%e8%b1%a1%e5%ad%98%e5%82%a8" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> 提交文档问题</a>
+  <a href="https://github.com/drycc/workflow/issues/new" class="td-page-meta--project td-page-meta__project-issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> 提交项目问题</a>
+  <a id="print" href="/zh-cn/-print/docs/installing-workflow/"><i class="fa-solid fa-print fa-fw"></i> 整节打印</a>
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#配置集群外对象存储">配置集群外对象存储</a>
+      <ul>
+        <li><a href="#步骤-1创建存储桶">步骤 1：创建存储桶</a></li>
+        <li><a href="#步骤-2生成存储凭据">步骤 2：生成存储凭据</a></li>
+        <li><a href="#步骤-3配置-workflow-chart">步骤 3：配置 Workflow Chart</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/zh-cn/docs/">文档</a></li>
+  <li class="breadcrumb-item">
+    <a href="/zh-cn/docs/installing-workflow/">安装到 Kubernetes</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    配置对象存储</li>
+  </ol>
+</nav>
+<div class="td-content">
+	<h1>配置对象存储</h1>
+	<div class="lead">各种 Drycc Workflow 组件依赖对象存储系统来完成工作，包括存储应用程序、容器镜像</div>
+	<header class="article-meta">
+		
+<p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 少于1分钟 &nbsp;</p>
+</header>
+	<p>Drycc Workflow 默认附带 <a href="/zh-cn/docs/understanding-workflow/components/#object-storage">Storage</a>，它提供集群内存储。</p>
+<h2 id="配置集群外对象存储">配置集群外对象存储<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae%e9%9b%86%e7%be%a4%e5%a4%96%e5%af%b9%e8%b1%a1%e5%ad%98%e5%82%a8" aria-label="Heading self-link"></a>
+</h2><p>每个依赖对象存储的组件使用两个输入进行配置：</p>
+<ol>
+<li>您必须使用与 S3 API 兼容的对象存储服务。</li>
+<li>访问凭据存储在Kubernetes secret之中以保证安全。</li>
+</ol>
+<p>Drycc Workflow 的 helm chart 可以轻松配置以将 Workflow 组件连接到集群外对象存储。Drycc Workflow 目前支持 Google Compute Storage、Amazon S3、<a href="https://azure.microsoft.com/en-us/services/storage/blobs/">Azure Blob Storage</a> 和 OpenStack Swift Storage。</p>
+<h3 id="步骤-1创建存储桶">步骤 1：创建存储桶<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-1%e5%88%9b%e5%bb%ba%e5%ad%98%e5%82%a8%e6%a1%b6" aria-label="Heading self-link"></a>
+</h3><p>为每个 Workflow 子系统创建存储桶：<code>builder</code>和<code>registry</code>。</p>
+<p>根据您选择的对象存储，您可能需要提供全局唯一的桶名称。如果您使用 S3，请在桶名称中使用连字符而不是句点。在桶名称中使用句点会导致 <a href="https://forums.aws.amazon.com/thread.jspa?threadID=105357">S3 的 ssl 证书验证问题</a>。</p>
+<p>如果您提供对底层存储有足够访问权限的凭据，Workflow 组件将在桶不存在时创建它们。</p>
+<h3 id="步骤-2生成存储凭据">步骤 2：生成存储凭据<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-2%e7%94%9f%e6%88%90%e5%ad%98%e5%82%a8%e5%87%ad%e6%8d%ae" aria-label="Heading self-link"></a>
+</h3><p>如果适用，生成对步骤 1 中创建的存储桶具有创建和写入访问权限的凭据。</p>
+<p>如果您使用 AWS S3 并且您的 Kubernetes 节点通过 InstanceRoles 配置了适当的 <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">IAM</a> API 密钥，您不需要创建 API 凭据。但是，请验证 InstanceRole 对配置的桶具有适当的权限！</p>
+<h3 id="步骤-3配置-workflow-chart">步骤 3：配置 Workflow Chart<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-3%e9%85%8d%e7%bd%ae-workflow-chart" aria-label="Heading self-link"></a>
+</h3><p>操作员应该在运行 <code>helm install</code> 之前通过编辑 Helm values 文件来配置对象存储。为此：</p>
+<ul>
+<li>通过运行 <code>helm inspect values oci://registry.drycc.cc/charts/workflow &gt; values.yaml</code> 获取 Helm values</li>
+<li>更新 <code>builder/storage</code> 和 <code>registry/storage</code> 参数以引用您使用的平台。</li>
+<li>找到您的存储类型的相应部分，并提供适当的值，包括区域、桶名称和访问凭据。</li>
+<li>保存您的更改。</li>
+</ul>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    <p>假设我们使用 MinIO 的 Play 作为存储，需要注意的是它仅是一个测试服务器，不应在生产环境中使用：</p>
+<pre><code>$ helm install drycc oci://registry.drycc.cc/charts/workflow \
+	--namespace drycc \
+	--set global.platformDomain=youdomain.com \
+	--set builder.storageBucket=registry \
+	--set builder.storageEndpoint=https://play.min.io \
+	--set builder.storageAccesskey=Q3AM3UQ867SPQQA43P2F \
+	--set builder.storageSecretkey=zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG \
+	--set builder.storagePathStyle=auto \
+	--set registry.storageBucket=registry \
+	--set registry.storageEndpoint=https://play.min.io \
+	--set registry.storageAccesskey=Q3AM3UQ867SPQQA43P2F \
+	--set registry.storageSecretkey=zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG \
+	--set registry.storagePathStyle=auto
+</code></pre>
+
+</div>
+
+<p>现在您可以使用所需的集群外对象存储运行 <code>helm install drycc oci://registry.drycc.cc/charts/workflow --namespace drycc -f values.yaml</code>。</p>
+
+	<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">反馈</h2>
+<p class="feedback--question">这个页面有帮助吗？</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">确定</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">取消</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/drycc/workflow/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/drycc/workflow/issues/new">tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'page_helpful', {
+      'event_category': 'Helpful',
+      'event_label': window.location.pathname,
+      'value': value
+    });
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback( 100 );
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+<br />
+<div class="td-page-meta__lastmod">
+  最后修改 2025.10.09: <a data-proofer-ignore href="https://github.com/drycc/website/commit/f95540ef2324272e6ede201b591166a5617b0a03">fix(storage): expired configuration documentation (f95540e)</a>
+</div>
+
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">保留所有权利</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">隐私政策</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.403ff095218c662472dab60ed98ecbb19431682de5ac7c6159891241cd366af5.js" integrity="sha256-QD/wlSGMZiRy2rYO2Y7LsZQxaC3lrHxhWYkSQc02avU=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

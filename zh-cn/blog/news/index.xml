@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>新闻 on Drycc</title>
+    <link>/zh-cn/blog/news/</link>
+    <description>Recent content in 新闻 on Drycc</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="/zh-cn/blog/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>欢迎使用 Drycc</title>
+      <link>/zh-cn/blog/2018/10/06/%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8-drycc/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>/zh-cn/blog/2018/10/06/%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8-drycc/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Drycc Workflow&lt;/strong&gt; 是一个开源的容器即服务 (CaaS)，它为任何 &lt;a href=&#34;http://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; 集群添加了一个开发者友好的层，使部署和管理应用程序变得容易。&lt;/p&gt;&#xA;&lt;p&gt;我们欢迎您的输入！如果您有反馈，请 &lt;a href=&#34;https://github.com/drycc/workflow/issues&#34;&gt;提交问题&lt;/a&gt;。如果您想参与开发，请阅读下面的“处理文档”部分并 &lt;a href=&#34;https://github.com/drycc/workflow/pulls&#34;&gt;提交拉取请求&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

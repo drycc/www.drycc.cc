@@ -1,0 +1,658 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/zh-cn/docs/installing-workflow/">
+<link rel="alternate" type="application/rss&#43;xml" href="/zh-cn/docs/installing-workflow/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>安装到 Kubernetes | Drycc</title>
+<meta name="description" content="在 Kubernetes 集群上部署 Drycc。">
+<meta property="og:url" content="/zh-cn/docs/installing-workflow/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="安装到 Kubernetes">
+  <meta property="og:description" content="在 Kubernetes 集群上部署 Drycc。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="安装到 Kubernetes">
+  <meta itemprop="description" content="在 Kubernetes 集群上部署 Drycc。">
+  <meta itemprop="dateModified" content="2025-10-09T12:58:35+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="安装到 Kubernetes">
+  <meta name="twitter:description" content="在 Kubernetes 集群上部署 Drycc。">
+<link rel="preload" href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" as="style" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<link href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" rel="stylesheet" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/zh-cn/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3FB1E5" fill="#3FB1E5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/about/"><span>关于我们</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/zh-cn/docs/"><span>文档</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/blog/"><span>博客</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/community/"><span>社区</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/docs/installing-workflow/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="站内搜索…"
+    aria-label="站内搜索…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.55f5a19ce53e8fd6d7d6bc886b53a362.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+这是本节的多页打印视图。
+<a href="#" onclick="print();return false;">点击此处打印</a>.
+</p><p>
+<a href="/zh-cn/docs/installing-workflow/">返回本页常规视图</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">安装到 Kubernetes</h1>
+<div class="lead">在 Kubernetes 集群上部署 Drycc。</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-46bc914b43c7294d3007db288d795021">要求</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-8ff1c03ab1d2c9948af7ce8da6fa387a">安装 Drycc Workflow</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-ee3fe110d0efcc1b34a882fb946886e4">指定网关</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-0d336adcc6b0a2147690be79cb9a7557">配置 Postgres</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-fe6530b6e8ee56416ae8a9f905cc910c">配置注册表</a></li>
+
+
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-295b46299c21cdb84c782750a6780f61">配置对象存储</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-46bc914b43c7294d3007db288d795021">1 - 要求</h1>
+    <div class="lead">要在 Kubernetes 集群上运行 Drycc Workflow，需要记住一些要求。</div>
+	<h2 id="kubernetes-版本">Kubernetes 版本<a class="td-heading-self-link" href="#kubernetes-%e7%89%88%e6%9c%ac" aria-label="Heading self-link"></a>
+</h2><p>Drycc Workflow 需要 Kubernetes v1.16.15 或更高版本。</p>
+<h2 id="组件要求">组件要求<a class="td-heading-self-link" href="#%e7%bb%84%e4%bb%b6%e8%a6%81%e6%b1%82" aria-label="Heading self-link"></a>
+</h2><p>Drycc 使用网关作为路由实现，因此您必须选择一个网关。我们推荐使用 <a href="https://istio.io/">istio</a> 或 <a href="https://konghq.com/">kong</a>。</p>
+<p>Workflow 支持使用 ACME 来管理自动证书，<a href="https://github.com/helm/charts/tree/master/stable/cert-manager">cert-manager</a> 也是必要组件之一，如果您使用 cert-manager EAB，您需要将 <code>clusterResourceNamespace</code> 设置为 drycc 的命名空间。</p>
+<p>Workflow 支持有状态应用。您可以通过 &lsquo;drycc volumes&rsquo; 命令创建和使用它们。如果您想使用此功能，您必须有一个支持 <code>ReadWriteMany</code> 的 <code>StorageClass</code>。</p>
+<p>Workflow 还通过 &lsquo;drycc resources&rsquo; 命令支持 <a href="https://github.com/openservicebrokerapi/servicebroker">OSB</a> API。如果您想使用此功能，需要安装 <a href="https://service-catalog.drycc.cc">service-catalog</a>。</p>
+<h2 id="存储要求">存储要求<a class="td-heading-self-link" href="#%e5%ad%98%e5%82%a8%e8%a6%81%e6%b1%82" aria-label="Heading self-link"></a>
+</h2><p>各种 Drycc Workflow 组件依赖对象存储系统来完成工作，包括存储应用程序 slugs、容器镜像和数据库日志。</p>
+<p>Drycc Workflow 默认附带 drycc 存储，它提供集群内存储。</p>
+<p>Workflow 支持 Amazon Simple Storage Service (S3)、Google Cloud Storage (GCS)、OpenShift Swift 和 Azure Blob Storage。请参阅<a href="/zh-cn/docs/installing-workflow/configuring-object-storage/">配置对象存储</a>以获取设置说明。</p>
+<h2 id="资源要求">资源要求<a class="td-heading-self-link" href="#%e8%b5%84%e6%ba%90%e8%a6%81%e6%b1%82" aria-label="Heading self-link"></a>
+</h2><p>部署 Drycc Workflow 时，为机器提供充足资源很重要。Drycc 是一个高可用分布式系统，这意味着 Drycc 组件和您部署的应用程序会随着主机因各种原因（故障、重启、自动缩放器等）离开集群而移动到集群中的健康主机上。因此，您应该在集群中的任何机器上都有充足的备用资源，以承受运行失败机器服务的额外负载。</p>
+<p>Drycc Workflow 组件在集群中使用大约 2.5GB 内存，并需要大约 30GB 硬盘空间。因为如果另一台机器失败，它可能需要处理额外负载，所以每台机器的最低要求是：</p>
+<ul>
+<li>至少 4GB RAM（越多越好）</li>
+<li>至少 40GB 硬盘空间</li>
+</ul>
+<p>请注意，这些估计仅适用于 Drycc Workflow 和 Kubernetes。确保为您的应用程序占用空间留出足够的备用容量。</p>
+<p>运行配置较低的机器可能会导致系统负载增加，并已知会导致组件故障和不稳定。</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8ff1c03ab1d2c9948af7ce8da6fa387a">2 - 安装 Drycc Workflow</h1>
+    <div class="lead">本文档面向那些已经配置了 Kubernetes 集群并想要安装 Drycc Workflow 的人。</div>
+	<p>如果需要有关 Kubernetes 和 Drycc Workflow 入门的帮助，请遵循<a href="/zh-cn/docs/quickstart/">快速入门指南</a>以获取帮助。</p>
+<h2 id="先决条件">先决条件<a class="td-heading-self-link" href="#%e5%85%88%e5%86%b3%e6%9d%a1%e4%bb%b6" aria-label="Heading self-link"></a>
+</h2><ol>
+<li>验证 <a href="/zh-cn/docs/installing-workflow/system-requirements/">Kubernetes 系统要求</a></li>
+<li>安装 <a href="/zh-cn/docs/quickstart/install-cli-tools/">Helm 和 Drycc Workflow CLI</a> 工具</li>
+</ol>
+<h2 id="检查您的设置">检查您的设置<a class="td-heading-self-link" href="#%e6%a3%80%e6%9f%a5%e6%82%a8%e7%9a%84%e8%ae%be%e7%bd%ae" aria-label="Heading self-link"></a>
+</h2><p>检查 <code>helm</code> 命令是否可用且版本为 v2.5.0 或更新版本。</p>
+<pre tabindex="0"><code>$ helm version
+Client: &amp;version.Version{SemVer:&#34;v2.5.0&#34;, GitCommit:&#34;012cb0ac1a1b2f888144ef5a67b8dab6c2d45be6&#34;, GitTreeState:&#34;clean&#34;}
+Server: &amp;version.Version{SemVer:&#34;v2.5.0&#34;, GitCommit:&#34;012cb0ac1a1b2f888144ef5a67b8dab6c2d45be6&#34;, GitTreeState:&#34;clean&#34;}
+</code></pre><h2 id="选择您的部署策略">选择您的部署策略<a class="td-heading-self-link" href="#%e9%80%89%e6%8b%a9%e6%82%a8%e7%9a%84%e9%83%a8%e7%bd%b2%e7%ad%96%e7%95%a5" aria-label="Heading self-link"></a>
+</h2><p>Drycc Workflow 包含运行所需的一切。然而，这些默认设置旨在简单而不是生产就绪。Workflow 的生产和暂存部署至少应该使用集群外存储，Workflow 组件使用它来存储和备份关键数据。如果操作员需要完全重新安装 Workflow，所需组件可以从集群外存储恢复。有关更多详细信息，请参阅<a href="/zh-cn/docs/installing-workflow/configuring-object-storage/">配置对象存储</a>的文档。</p>
+<p>更严格的安装将受益于对以下内容使用外部来源：</p>
+<ul>
+<li><a href="/zh-cn/docs/installing-workflow/configuring-postgres/">Postgres</a> - 例如 AWS RDS。</li>
+<li><a href="/zh-cn/docs/installing-workflow/configuring-registry/">Registry</a> - 这包括 <a href="https://quay.io">quay.io</a>、<a href="https://hub.docker.com">dockerhub</a>、<a href="https://aws.amazon.com/ecr/">Amazon ECR</a> 和 <a href="https://cloud.google.com/container-registry/">Google GCR</a>。</li>
+<li><a href="/zh-cn/docs/managing-workflow/platform-logging/#configuring-off-cluster-valkey">Valkey</a> - 如 AWS ElastiCache</li>
+<li><a href="/zh-cn/docs/managing-workflow/platform-monitoring/#off-cluster-grafana">Grafana</a></li>
+</ul>
+<h4 id="网关">网关<a class="td-heading-self-link" href="#%e7%bd%91%e5%85%b3" aria-label="Heading self-link"></a>
+</h4><p>现在，workflow 要求必须安装网关和 cert-manager。可以使用任何兼容的 Kubernetes 入口控制器。</p>
+<h2 id="安装-drycc-workflow">安装 Drycc Workflow<a class="td-heading-self-link" href="#%e5%ae%89%e8%a3%85-drycc-workflow" aria-label="Heading self-link"></a>
+</h2><p>如果 helm 版本为 3.0+；您需要提前创建命名空间：</p>
+<pre tabindex="0"><code>kubectl create ns drycc
+</code></pre><p>如果您想更改它，请在使用 helm 时设置变量。</p>
+<pre tabindex="0"><code>$ helm install drycc oci://registry.drycc.cc/charts/workflow \
+    --namespace drycc \
+    --set builder.imageRegistry=quay.io \
+    --set imagebuilder.imageRegistry=quay.io \
+    --set controller.imageRegistry=quay.io \
+    --set database.imageRegistry=quay.io \
+    --set fluentbit.imageRegistry=quay.io \
+    --set valkey.imageRegistry=quay.io \
+    --set storage.imageRegistry=quay.io \
+    --set grafana.imageRegistry=quay.io \
+    --set registry.imageRegistry=quay.io \
+    --set global.platformDomain=drycc.cc
+</code></pre><p>Helm 将在 <code>drycc</code> 命名空间中安装各种 Kubernetes 资源。
+等待 Helm 启动的 pod 准备就绪。通过运行以下命令监控其状态：</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+</code></pre><p>如果希望 <code>kubectl</code> 在 pod 状态更改时自动更新，请运行（键入 Ctrl-C 停止监视）：</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods -w
+</code></pre><p>根据 Workflow 组件初始化的顺序，一些 pod 可能会重新启动。这在安装期间很常见：如果组件的依赖项尚不可用，该组件将退出，Kubernetes 将自动重新启动它。</p>
+<p>在这里，可以看到控制器、构建器和注册表都花了几次循环才能启动：</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+NAME                                     READY     STATUS    RESTARTS   AGE
+drycc-builder-574483744-l15zj             1/1       Running   0          4m
+drycc-controller-3953262871-pncgq         1/1       Running   2          4m
+drycc-controller-celery-cmxxn             3/3       Running   0          4m
+drycc-database-83844344-47ld6             1/1       Running   0          4m
+drycc-fluentbit-zxnqb                     1/1       Running   0          4m
+drycc-valkey-304849759-1f35p              1/1       Running   0          4m
+drycc-storage-676004970-nxqgt             1/1       Running   0          4m
+drycc-monitor-grafana-432627134-lnl2h     1/1       Running   0          4m
+drycc-monitor-telegraf-wmcmn              1/1       Running   1          4m
+drycc-registry-756475849-lwc6b            1/1       Running   1          4m
+drycc-registry-proxy-96c4p                1/1       Running   0          4m
+</code></pre><p>一旦所有 pod 都处于 <code>READY</code> 状态，Drycc Workflow 就启动并运行了！</p>
+<p>有关更多安装参数，请检查 workflow 的 <a href="https://github.com/drycc/workflow/blob/main/charts/workflow/values.yaml">values.yaml</a> 文件。</p>
+<p>安装 Workflow 后，<a href="/zh-cn/docs/quickstart/deploy-an-app/">注册用户并部署应用程序</a>。</p>
+<h2 id="配置-dns">配置 DNS<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae-dns" aria-label="Heading self-link"></a>
+</h2><p>用户必须设置主机名，并采用 <code>drycc-builder.$host</code> 约定。</p>
+<p>我们需要将 <code>drycc-builder.$host</code> 记录指向您的构建器的公共 IP 地址。您可以使用以下命令获取公共 IP。这里需要通配符条目，因为应用程序在部署后将使用相同的规则。</p>
+<pre tabindex="0"><code>$ kubectl get svc drycc-builder --namespace drycc
+NAME              CLUSTER-IP   EXTERNAL-IP      PORT(S)                      AGE
+drycc-builder     10.0.25.3    138.91.243.152   2222:31625/TCP               33m
+</code></pre><p>如果我们使用 <code>drycc.cc</code> 作为主机名，我们需要创建以下 A DNS 记录。</p>
+<table>
+  <thead>
+      <tr>
+          <th>名称</th>
+          <th style="text-align: center">类型</th>
+          <th style="text-align: right">值</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>drycc-builder.drycc.cc</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: right">138.91.243.152</td>
+      </tr>
+  </tbody>
+</table>
+<p>一旦所有 pod 都处于 <code>READY</code> 状态，并且 <code>drycc-builder.$host</code> 解析为上面找到的外部 IP，Workflow 就启动并运行了！</p>
+<p>安装 Workflow 后，<a href="/zh-cn/docs/quickstart/deploy-an-app/">注册用户并部署应用程序</a>。</p>
+<p>如果您的 k8s 不提供公共网络负载均衡器，您需要在可以访问内部和外部网络的机器上安装 haproxy 等 TCP 代理服务，然后公开 <code>80</code> 和 <code>443</code>。</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ee3fe110d0efcc1b34a882fb946886e4">3 - 指定网关</h1>
+    <div class="lead">选择最适合您需求和平台的网关提供商。</div>
+	<h2 id="安装-drycc-workflow指定网关">安装 Drycc Workflow（指定网关）<a class="td-heading-self-link" href="#%e5%ae%89%e8%a3%85-drycc-workflow%e6%8c%87%e5%ae%9a%e7%bd%91%e5%85%b3" aria-label="Heading self-link"></a>
+</h2><p>现在 Helm 已安装并添加了仓库，通过运行以下命令使用原生网关安装 Workflow：</p>
+<pre tabindex="0"><code>$ helm install drycc oci://registry.drycc.cc/charts/workflow \
+    --namespace drycc \
+    --set gateway.gatewayClass=istio \
+    --set controller.appGatewayClass=istio \
+    --set global.platformDomain=drycc.cc \
+    --set builder.service.type=LoadBalancer
+</code></pre><p>当然，如果您在裸机上部署，您可能没有负载均衡器。您需要使用 NodePort：</p>
+<pre tabindex="0"><code>$ helm install drycc oci://registry.drycc.cc/charts/workflow \
+    --namespace drycc \
+    --set gateway.gatewayClass=istio \
+    --set controller.appGatewayClass=istio \
+    --set global.platformDomain=drycc.cc \
+    --set builder.service.type=NodePort \
+    --set builder.service.nodePort=32222
+</code></pre><p>如果您想在裸机上使用负载均衡器，您可以查看 <a href="https://github.com/metallb/metallb">metallb</a></p>
+<p>其中 <code>global.platformDomain</code> 是一个<strong>必需</strong>参数，对于 Workflow 传统上不是必需的，这在下一节中会解释。在此示例中，我们使用 <code>drycc.cc</code> 作为 <code>$hostname</code>。</p>
+<p>Helm 将在 <code>drycc</code> 命名空间中安装各种 Kubernetes 资源。
+等待 Helm 启动的 pod 准备就绪。通过运行以下命令监控其状态：</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+</code></pre><p>您还应该注意到您的集群上已安装了几个 Kubernetes gatewayclass。您可以通过运行以下命令查看它：</p>
+<pre tabindex="0"><code>$ kubectl get gatewayclass
+</code></pre><p>根据 Workflow 组件初始化的顺序，一些 pod 可能会重新启动。这在安装期间很常见：如果组件的依赖项尚不可用，该组件将退出，Kubernetes 将自动重新启动它。</p>
+<p>在这里，可以看到控制器、构建器和注册表都花了几次循环等待存储才能启动：</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+NAME                          READY     STATUS    RESTARTS   AGE
+drycc-builder-hy3xv            1/1       Running   5          5m
+drycc-controller-g3cu8         1/1       Running   5          5m
+drycc-controller-celery-cmxxn  3/3       Running   0          5m
+drycc-database-rad1o           1/1       Running   0          5m
+drycc-fluentbit-1v8uk          1/1       Running   0          5m
+drycc-fluentbit-esm60          1/1       Running   0          5m
+drycc-storage-4ww3t            1/1       Running   0          5m
+drycc-registry-asozo           1/1       Running   1          5m
+</code></pre><h2 id="安装-kubernetes-网关">安装 Kubernetes 网关<a class="td-heading-self-link" href="#%e5%ae%89%e8%a3%85-kubernetes-%e7%bd%91%e5%85%b3" aria-label="Heading self-link"></a>
+</h2><p>现在 Workflow 已使用 <code>gatewayClass</code> 部署，我们需要安装 Kubernetes 网关来开始路由流量。</p>
+<p>以下是如何使用 <a href="https://istio.io/">istio</a> 作为 Workflow 网关的示例。当然，您可以随意使用任何您希望的控制器。</p>
+<pre tabindex="0"><code>$ helm repo add istio https://istio-release.storage.googleapis.com/charts
+$ helm repo update
+$ kubectl create namespace istio-system
+$ helm install istio-base istio/base -n istio-system
+$ helm install istiod istio/istiod -n istio-system --wait
+$ kubectl create namespace istio-ingress
+$ helm install istio-ingress istio/gateway -n istio-ingress --wait
+</code></pre><h2 id="配置-dns">配置 DNS<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae-dns" aria-label="Heading self-link"></a>
+</h2><p>用户必须安装 <a href="/zh-cn/docs/quickstart/install-workflow/">drycc</a> 然后设置主机名，并采用 <code>*.$host</code> 约定。</p>
+<p>我们需要将 <code>*.$host</code> 记录指向您的网关的公共 IP 地址。您可以使用以下命令获取公共 IP。这里需要通配符条目，因为应用程序在部署后将使用相同的规则。</p>
+<pre tabindex="0"><code>$ kubectl get gateway --namespace drycc
+NAME      CLASS   ADDRESS         PROGRAMMED   AGE
+gateway   istio   138.91.243.152  True         36d
+</code></pre><p>如果我们使用 <code>drycc.cc</code> 作为主机名，我们需要创建以下 A DNS 记录。</p>
+<table>
+  <thead>
+      <tr>
+          <th>名称</th>
+          <th style="text-align: center">类型</th>
+          <th style="text-align: right">值</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>*.drycc.cc</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: right">138.91.243.152</td>
+      </tr>
+  </tbody>
+</table>
+<p>一旦所有 pod 都处于 <code>READY</code> 状态，并且 <code>*.$host</code> 解析为上面找到的外部 IP，网关的准备就完成了！</p>
+<p>安装 Workflow 后，<a href="/zh-cn/docs/quickstart/deploy-an-app/">注册用户并部署应用程序</a>。</p>
+<p>如果您的 k8s 不提供公共网络负载均衡器，您需要在可以访问内部和外部网络的机器上安装 haproxy 等 TCP 代理服务，然后公开 <code>80</code> 和 <code>443</code>。</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0d336adcc6b0a2147690be79cb9a7557">4 - 配置 Postgres</h1>
+    <div class="lead">Drycc Workflow 的控制器和护照组件依赖 PostgreSQL 数据库来存储平台状态。</div>
+	<h1 id="配置-postgres">配置 Postgres<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae-postgres" aria-label="Heading self-link"></a>
+</h1><p>默认情况下，Drycc Workflow 附带 <a href="/zh-cn/docs/understanding-workflow/components/#database">database</a> 组件，它提供集群内 PostgreSQL 数据库，并备份到集群内或集群外 <a href="/zh-cn/docs/installing-workflow/configuring-object-storage/">object storage</a>。目前，对于对象存储（由_多个_ Workflow 组件使用），在生产环境中仅推荐集群外解决方案，如 S3 或 GCS。经验表明，许多操作员已经选择集群外对象存储，同样更喜欢在集群外托管 Postgres，使用 Amazon RDS 或类似服务。当同时行使这两个选项时，Workflow 安装变得完全无状态，因此在需要时可以更容易地恢复或重建。</p>
+<h2 id="提供集群外-postgres">提供集群外 Postgres<a class="td-heading-self-link" href="#%e6%8f%90%e4%be%9b%e9%9b%86%e7%be%a4%e5%a4%96-postgres" aria-label="Heading self-link"></a>
+</h2><p>首先，使用您选择的云提供商或其他基础设施提供 PostgreSQL RDBMS。请注意确保安全组或其他防火墙规则将允许从您的 Kubernetes 工作节点连接，任何节点都可能托管 Workflow 控制器组件。</p>
+<p>记下以下内容：</p>
+<ol>
+<li>您的 PostgreSQL RDBMS 的主机名或公共 IP</li>
+<li>您的 PostgreSQL RDBMS 运行的端口 - 通常为 5432</li>
+</ol>
+<p>在集群外 RDBMS 中，手动提供以下内容：</p>
+<ol>
+<li>数据库用户（记下用户名和密码）</li>
+<li>该用户拥有的数据库（记下其名称）</li>
+</ol>
+<p>如果您能够以超级用户或具有适当权限的用户身份登录 RDBMS，此过程通常如下所示：</p>
+<pre tabindex="0"><code>$ psql -h &lt;host&gt; -p &lt;port&gt; -d postgres -U &lt;&#34;postgres&#34; 或您自己的用户名&gt;
+&gt; create user &lt;drycc 用户名；通常为 &#34;drycc&#34;&gt; with password &#39;&lt;password&gt;&#39;;
+&gt; create database &lt;数据库名称；通常为 &#34;drycc&#34;&gt; with owner &lt;drycc 用户名&gt;;
+&gt; \q
+</code></pre><h2 id="配置-workflow">配置 Workflow<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae-workflow" aria-label="Heading self-link"></a>
+</h2><p>Drycc Workflow 的 Helm chart 可以轻松配置以将 Workflow 控制器组件连接到集群外 PostgreSQL 数据库。</p>
+<ul>
+<li><strong>步骤 1：</strong> 如果您尚未获取 values，请使用 <code>helm inspect values drycc/workflow &gt; values.yaml</code> 获取</li>
+<li><strong>步骤 2：</strong> 通过修改 <code>values.yaml</code> 更新数据库连接详细信息：
+<ul>
+<li>将 <code>database.enabled</code> 参数更新为 <code>false</code>。</li>
+<li>更新 <code>[database]</code> 配置部分中的值以正确反映所有连接详细信息。</li>
+<li>更新 <code>[controller]</code> 配置部分中的值以正确反映 platformDomain 详细信息。</li>
+<li>保存您的更改。</li>
+<li>注意：您不需要（也不必须）对任何值进行 base64 编码，因为 Helm chart 将根据需要自动处理编码。</li>
+</ul>
+</li>
+</ul>
+<p>现在您可以使用 <code>helm install drycc oci://registry.drycc.cc/charts/workflow --namespace drycc -f values.yaml</code> <a href="/zh-cn/docs/installing-workflow/">照常</a>安装。</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fe6530b6e8ee56416ae8a9f905cc910c">5 - 配置注册表</h1>
+    <div class="lead">Drycc Workflow 的构建器组件依赖注册表来存储应用程序容器镜像。</div>
+	<p>Drycc Workflow 默认附带 <a href="/zh-cn/docs/understanding-workflow/components/#registry">registry</a> 组件，它提供集群内容器注册表，由平台配置的 <a href="/zh-cn/docs/installing-workflow/configuring-object-storage/">object storage</a> 支持。操作员可能出于性能或安全原因想要使用集群外注册表。</p>
+<h2 id="配置集群外私有注册表">配置集群外私有注册表<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae%e9%9b%86%e7%be%a4%e5%a4%96%e7%a7%81%e6%9c%89%e6%b3%a8%e5%86%8c%e8%a1%a8" aria-label="Heading self-link"></a>
+</h2><p>每个依赖注册表的组件使用两个输入进行配置：</p>
+<ol>
+<li>名为 <code>DRYCC_REGISTRY_LOCATION</code> 的注册表位置环境变量</li>
+<li>访问凭据存储为名为 <code>registry-secret</code> 的 Kubernetes secret</li>
+</ol>
+<p>Drycc Workflow 的 Helm chart 可以轻松配置以将 Workflow 组件连接到集群外注册表。Drycc Workflow 支持外部注册表，这些注册表提供仅在指定时间内有效的短期令牌或永久有效的长期令牌（基本用户名/密码）来进行身份验证。对于那些提供短期令牌进行身份验证的注册表，Drycc Workflow 将生成并刷新它们，以便部署的应用程序只能访问短期令牌，而不是注册表的实际凭据。</p>
+<p>使用私有注册表时，容器镜像不再由 Drycc Workflow Controller 拉取，而是由 <a href="https://kubernetes.io">Kubernetes</a> 管理。这将提高安全性和整体速度，但是 <code>port</code> 信息不再能够被发现。相反，可以通过在部署应用程序之前使用 <code>drycc config set PORT=&lt;port&gt;</code> 设置 <code>port</code> 信息。</p>
+<p>Drycc Workflow 目前支持：</p>
+<ol>
+<li>集群外：任何支持长期用户名/密码身份验证的提供商，如 <a href="https://docs.microsoft.com/en-us/azure/container-registry/">Azure Container Registry</a>、<a href="https://hub.docker.com/">Docker Hub</a>、<a href="https://quay.io/">quay.io</a> 或自托管容器注册表。</li>
+</ol>
+<h2 id="配置">配置<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h2><ol>
+<li>如果您尚未获取 values 文件，请使用 <code>helm inspect values drycc/workflow &gt; values.yaml</code> 获取</li>
+<li>通过修改 values 文件更新注册表位置详细信息：
+* 将 <code>registry.enabled</code> 参数更新为引用您使用的注册表位置：<code>true</code>、<code>false</code>
+* 更新与您的注册表位置类型对应的部分中的值。</li>
+</ol>
+<p>现在您可以使用所需的注册表运行 <code>helm install drycc oci://registry.drycc.cc/charts/workflow --namespace drycc -f values.yaml</code>。</p>
+<h2 id="示例">示例<a class="td-heading-self-link" href="#%e7%a4%ba%e4%be%8b" aria-label="Heading self-link"></a>
+</h2><p>在这里，我们展示了获取的 <code>values.yaml</code> 文件的相关部分在为特定集群外注册表配置后可能的样子：</p>
+<h3 id="azure-container-registry-acr"><a href="https://azure.microsoft.com/en-us/services/container-registry/">Azure Container Registry</a> (ACR)<a class="td-heading-self-link" href="#azure-container-registry-acr" aria-label="Heading self-link"></a>
+</h3><p>按照 <a href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli">docs</a> 创建注册表后，例如 <code>myregistry</code>，其对应的登录服务器为 <code>myregistry.azurecr.io</code>，应提供以下值：</p>
+<pre tabindex="0"><code>builder:
+  registryHost: &#34;myregistry.azurecr.io&#34;
+  registryUsername: &#34;xxxx&#34;
+  registryPassword: &#34;xxxx&#34;
+  registryOrganization: &#34;xxxx&#34;
+registry:
+  enabled: false
+</code></pre><p><strong>注意：</strong> 强制性组织字段（此处为 <code>myorg</code>）将在 ACR 仓库中创建，如果它尚不存在。</p>
+<h3 id="quayio">Quay.io<a class="td-heading-self-link" href="#quayio" aria-label="Heading self-link"></a>
+</h3><pre tabindex="0"><code>builder:
+  registryHost: &#34;quay.io&#34;
+  registryUsername: &#34;xxxx&#34;
+  registryPassword: &#34;xxxx&#34;
+  registryOrganization: &#34;xxxx&#34;
+registry:
+  enabled: false
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-295b46299c21cdb84c782750a6780f61">6 - 配置对象存储</h1>
+    <div class="lead">各种 Drycc Workflow 组件依赖对象存储系统来完成工作，包括存储应用程序、容器镜像</div>
+	<p>Drycc Workflow 默认附带 <a href="/zh-cn/docs/understanding-workflow/components/#object-storage">Storage</a>，它提供集群内存储。</p>
+<h2 id="配置集群外对象存储">配置集群外对象存储<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae%e9%9b%86%e7%be%a4%e5%a4%96%e5%af%b9%e8%b1%a1%e5%ad%98%e5%82%a8" aria-label="Heading self-link"></a>
+</h2><p>每个依赖对象存储的组件使用两个输入进行配置：</p>
+<ol>
+<li>您必须使用与 S3 API 兼容的对象存储服务。</li>
+<li>访问凭据存储在Kubernetes secret之中以保证安全。</li>
+</ol>
+<p>Drycc Workflow 的 helm chart 可以轻松配置以将 Workflow 组件连接到集群外对象存储。Drycc Workflow 目前支持 Google Compute Storage、Amazon S3、<a href="https://azure.microsoft.com/en-us/services/storage/blobs/">Azure Blob Storage</a> 和 OpenStack Swift Storage。</p>
+<h3 id="步骤-1创建存储桶">步骤 1：创建存储桶<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-1%e5%88%9b%e5%bb%ba%e5%ad%98%e5%82%a8%e6%a1%b6" aria-label="Heading self-link"></a>
+</h3><p>为每个 Workflow 子系统创建存储桶：<code>builder</code>和<code>registry</code>。</p>
+<p>根据您选择的对象存储，您可能需要提供全局唯一的桶名称。如果您使用 S3，请在桶名称中使用连字符而不是句点。在桶名称中使用句点会导致 <a href="https://forums.aws.amazon.com/thread.jspa?threadID=105357">S3 的 ssl 证书验证问题</a>。</p>
+<p>如果您提供对底层存储有足够访问权限的凭据，Workflow 组件将在桶不存在时创建它们。</p>
+<h3 id="步骤-2生成存储凭据">步骤 2：生成存储凭据<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-2%e7%94%9f%e6%88%90%e5%ad%98%e5%82%a8%e5%87%ad%e6%8d%ae" aria-label="Heading self-link"></a>
+</h3><p>如果适用，生成对步骤 1 中创建的存储桶具有创建和写入访问权限的凭据。</p>
+<p>如果您使用 AWS S3 并且您的 Kubernetes 节点通过 InstanceRoles 配置了适当的 <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">IAM</a> API 密钥，您不需要创建 API 凭据。但是，请验证 InstanceRole 对配置的桶具有适当的权限！</p>
+<h3 id="步骤-3配置-workflow-chart">步骤 3：配置 Workflow Chart<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-3%e9%85%8d%e7%bd%ae-workflow-chart" aria-label="Heading self-link"></a>
+</h3><p>操作员应该在运行 <code>helm install</code> 之前通过编辑 Helm values 文件来配置对象存储。为此：</p>
+<ul>
+<li>通过运行 <code>helm inspect values oci://registry.drycc.cc/charts/workflow &gt; values.yaml</code> 获取 Helm values</li>
+<li>更新 <code>builder/storage</code> 和 <code>registry/storage</code> 参数以引用您使用的平台。</li>
+<li>找到您的存储类型的相应部分，并提供适当的值，包括区域、桶名称和访问凭据。</li>
+<li>保存您的更改。</li>
+</ul>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    <p>假设我们使用 MinIO 的 Play 作为存储，需要注意的是它仅是一个测试服务器，不应在生产环境中使用：</p>
+<pre><code>$ helm install drycc oci://registry.drycc.cc/charts/workflow \
+	--namespace drycc \
+	--set global.platformDomain=youdomain.com \
+	--set builder.storageBucket=registry \
+	--set builder.storageEndpoint=https://play.min.io \
+	--set builder.storageAccesskey=Q3AM3UQ867SPQQA43P2F \
+	--set builder.storageSecretkey=zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG \
+	--set builder.storagePathStyle=auto \
+	--set registry.storageBucket=registry \
+	--set registry.storageEndpoint=https://play.min.io \
+	--set registry.storageAccesskey=Q3AM3UQ867SPQQA43P2F \
+	--set registry.storageSecretkey=zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG \
+	--set registry.storagePathStyle=auto
+</code></pre>
+
+</div>
+
+<p>现在您可以使用所需的集群外对象存储运行 <code>helm install drycc oci://registry.drycc.cc/charts/workflow --namespace drycc -f values.yaml</code>。</p>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">保留所有权利</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">隐私政策</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.403ff095218c662472dab60ed98ecbb19431682de5ac7c6159891241cd366af5.js" integrity="sha256-QD/wlSGMZiRy2rYO2Y7LsZQxaC3lrHxhWYkSQc02avU=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

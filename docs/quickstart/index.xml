@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quick Start on Drycc</title>
+    <link>/docs/quickstart/</link>
+    <description>Recent content in Quick Start on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/quickstart/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quick Start</title>
+      <link>/docs/quickstart/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/overview/</guid>
+      <description>&lt;p&gt;Get started with Drycc Workflow in three simple steps:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Install CLI tools&lt;/strong&gt; for Helm and Drycc Workflow&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Boot a Kubernetes cluster and install Drycc Workflow&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Deploy your first application&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;This guide helps you set up a cluster suitable for evaluation, development, and testing. When you are ready for staging and production, view our &lt;a href=&#34;/docs/managing-workflow/production-deployments/&#34;&gt;production checklist&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-1-install-workflow&#34;&gt;Step 1: Install Workflow&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#step-1-install-workflow&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/docs/quickstart/install-workflow/&#34;&gt;Install Drycc Workflow&lt;/a&gt; on your infrastructure.&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-2-install-cli-tools&#34;&gt;Step 2: Install CLI tools&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#step-2-install-cli-tools&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/docs/quickstart/install-cli-tools/&#34;&gt;Install the Drycc Workflow CLI tools&lt;/a&gt; on your local machine.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Install Workflow</title>
+      <link>/docs/quickstart/install-workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/install-workflow/</guid>
+      <description>&lt;p&gt;If you have a bare metal host, which can be a cloud server, bare metal server, virtual machine, or even your laptop, then this chapter is very suitable for you.&lt;/p&gt;&#xA;&lt;h2 id=&#34;operating-systems&#34;&gt;Operating Systems&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#operating-systems&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Drycc is expected to work on most modern Linux systems. Some operating systems have specific requirements:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;(Red Hat/CentOS) Enterprise Linux, which usually use RPM package management&lt;/li&gt;&#xA;&lt;li&gt;Ubuntu (Desktop/Server/Cloud) Linux, a very popular distribution&lt;/li&gt;&#xA;&lt;li&gt;Debian GNU Linux, a very pure distribution of open source software&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;If you want to add support for more Linux distributions, please submit an issue on GitHub or submit a PR directly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Install CLI Tools</title>
+      <link>/docs/quickstart/install-cli-tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/install-cli-tools/</guid>
+      <description>&lt;h2 id=&#34;drycc-workflow-client-cli&#34;&gt;Drycc Workflow Client CLI&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#drycc-workflow-client-cli&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;The Drycc command-line interface (CLI) lets you interact with Drycc Workflow. Use the CLI to create, configure, and manage applications.&lt;/p&gt;&#xA;&lt;p&gt;Install the &lt;code&gt;drycc&lt;/code&gt; client for Linux or macOS with:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ curl -sfL https://www.drycc.cc/install-cli.sh | bash -&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;&#xA;&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;&#xA;&#xA;    &lt;p&gt;Users in mainland China can use the following method to speed up installation:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ curl -sfL https://www.drycc.cc/install-cli.sh | INSTALL_DRYCC_MIRROR=cn bash -&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;For other platforms, please visit: &lt;a href=&#34;https://github.com/drycc/workflow-cli/releases&#34;&gt;https://github.com/drycc/workflow-cli/releases&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deploy Your First App</title>
+      <link>/docs/quickstart/deploy-an-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/quickstart/deploy-an-app/</guid>
+      <description>&lt;h2 id=&#34;determine-your-host-and-hostname-values&#34;&gt;Determine Your Host and Hostname Values&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#determine-your-host-and-hostname-values&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Drycc Workflow requires a wildcard DNS record to dynamically map application names to the router.&lt;/p&gt;&#xA;&lt;p&gt;You should already have DNS set up pointing to your known host. The &lt;code&gt;$hostname&lt;/code&gt; value can be calculated by prepending &lt;code&gt;drycc.&lt;/code&gt; to the value set in &lt;code&gt;global.platformDomain&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;login-to-workflow&#34;&gt;Login to Workflow&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#login-to-workflow&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Workflow uses the passport component to create and authorize users. If you already have an account, use &lt;code&gt;drycc login&lt;/code&gt; to authenticate against the Drycc Workflow API.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

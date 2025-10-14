@@ -1,0 +1,442 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/zh-cn/docs/users/">
+<link rel="alternate" type="application/rss&#43;xml" href="/zh-cn/docs/users/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>用户 | Drycc</title>
+<meta name="description" content="在本教程中，您将学习如何管理用户。">
+<meta property="og:url" content="/zh-cn/docs/users/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="用户">
+  <meta property="og:description" content="在本教程中，您将学习如何管理用户。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="用户">
+  <meta itemprop="description" content="在本教程中，您将学习如何管理用户。">
+  <meta itemprop="dateModified" content="2025-10-09T12:58:35+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="用户">
+  <meta name="twitter:description" content="在本教程中，您将学习如何管理用户。">
+<link rel="preload" href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" as="style" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<link href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" rel="stylesheet" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/zh-cn/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3FB1E5" fill="#3FB1E5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/about/"><span>关于我们</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/zh-cn/docs/"><span>文档</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/blog/"><span>博客</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/community/"><span>社区</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/docs/users/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="站内搜索…"
+    aria-label="站内搜索…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.55f5a19ce53e8fd6d7d6bc886b53a362.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+这是本节的多页打印视图。
+<a href="#" onclick="print();return false;">点击此处打印</a>.
+</p><p>
+<a href="/zh-cn/docs/users/">返回本页常规视图</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">用户</h1>
+<div class="lead">在本教程中，您将学习如何管理用户。</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-4fb0482339ab618b926388863b0a7831">Drycc Workflow CLI</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-12c0c67f6b5849e4a51f8b6f7c8d4df3">用户和注册</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-58441c0d4701f07c911ce8422802623a">用户和 SSH 密钥</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-4fb0482339ab618b926388863b0a7831">1 - Drycc Workflow CLI</h1>
+    <div class="lead">如何下载、安装和开始使用 Drycc CLI。Drycc CLI 曾经是 Drycc Toolbelt 的一部分。</div>
+	<p>Drycc Workflow 命令行界面 (CLI) 或客户端允许您与 Drycc Workflow 进行交互。</p>
+<h2 id="安装">安装<a class="td-heading-self-link" href="#%e5%ae%89%e8%a3%85" aria-label="Heading self-link"></a>
+</h2><p>使用以下命令为 Linux 或 Mac OS X 安装最新的 <code>drycc</code> 客户端：
+$ curl -sfL <a href="https://www.drycc.cc/install-cli.sh">https://www.drycc.cc/install-cli.sh</a> | bash -</p>
+<p>安装程序将 <code>drycc</code> 放在当前目录中，但您应该将其移动到 $PATH 中的某个位置：</p>
+<pre><code>$ ln -fs $PWD/drycc /usr/local/bin/drycc
+</code></pre>
+<h2 id="获取帮助">获取帮助<a class="td-heading-self-link" href="#%e8%8e%b7%e5%8f%96%e5%b8%ae%e5%8a%a9" aria-label="Heading self-link"></a>
+</h2><p>Drycc 客户端为每个命令提供了全面的文档。使用 <code>drycc help</code> 来探索可用的命令：</p>
+<pre><code>$ drycc help
+The Drycc command-line client issues API calls to a Drycc controller.
+
+Usage: drycc &lt;command&gt; [&lt;args&gt;...]
+
+Auth commands::
+
+  login         login to a controller
+  logout        logout from the current controller
+
+Subcommands, use `drycc help [subcommand]` to learn more::
+...
+</code></pre>
+<p>要获取子命令的帮助，请使用 <code>drycc help [subcommand]</code>：</p>
+<pre><code>$ drycc help apps
+Valid commands for apps:
+
+apps:create        create a new application
+apps:list          list accessible applications
+apps:info          view info about an application
+apps:open          open the application in a browser
+apps:logs          view aggregated application logs
+apps:run           run a command in an ephemeral app container
+apps:destroy       destroy an application
+apps:transfer      transfer app ownership to another user
+
+Use `drycc help [command]` to learn more
+</code></pre>
+<h2 id="支持多个配置文件">支持多个配置文件<a class="td-heading-self-link" href="#%e6%94%af%e6%8c%81%e5%a4%9a%e4%b8%aa%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" aria-label="Heading self-link"></a>
+</h2><p>CLI 从默认的 <code>client</code> 配置文件读取，该文件位于您工作站上的 <code>$HOME/.drycc/client.json</code>。</p>
+<p>通过设置 <code>$DRYCC_PROFILE</code> 环境变量或使用 <code>-c</code> 标志，可以轻松在多个 Drycc Workflow 安装或用户之间切换。</p>
+<p>设置 <code>$DRYCC_PROFILE</code> 选项有两种方法。</p>
+<ol>
+<li>json 配置文件的路径。</li>
+<li>配置文件名称。如果您将配置文件设置为仅名称，它将与默认配置文件一起保存，在 <code>$HOME/.drycc/&lt;name&gt;.json</code> 中。</li>
+</ol>
+<p>示例：</p>
+<pre><code>$ DRYCC_PROFILE=production drycc login drycc.production.com
+...
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as drycc
+Configuration saved to /home/testuser/.drycc/production.json
+$ DRYCC_PROFILE=~/config.json drycc login drycc.example.com
+...
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as drycc
+Configuration saved to /home/testuser/config.json
+</code></pre>
+<p>配置标志的工作方式与 <code>$DRYCC_PROFILE</code> 相同并覆盖它：</p>
+<pre><code>$ drycc whoami -c ~/config.json
+You are drycc at drycc.example.com
+</code></pre>
+<h2 id="代理支持">代理支持<a class="td-heading-self-link" href="#%e4%bb%a3%e7%90%86%e6%94%af%e6%8c%81" aria-label="Heading self-link"></a>
+</h2><p>如果您的工作站使用代理来访问集群所在的网络，请设置 <code>http_proxy</code> 或 <code>https_proxy</code> 环境变量以启用代理支持：</p>
+<pre><code>$ export http_proxy=&quot;http://proxyip:port&quot;
+$ export https_proxy=&quot;http://proxyip:port&quot;
+</code></pre>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    对于本地 Minikube 集群，通常不需要配置代理。
+
+</div>
+
+<h2 id="cli-插件">CLI 插件<a class="td-heading-self-link" href="#cli-%e6%8f%92%e4%bb%b6" aria-label="Heading self-link"></a>
+</h2><p>插件允许开发人员扩展 Drycc 客户端的功能，添加新命令或功能。</p>
+<p>如果指定了未知命令，客户端将尝试将命令作为破折号分隔的命令执行。在这种情况下，<code>drycc resource:command</code> 将执行 <code>drycc-resource</code> 并使用参数列表 <code>command</code>。完整形式：</p>
+<pre><code>$ # 以下两个命令相同
+$ drycc accounts list
+$ drycc-accounts list
+</code></pre>
+<p>命令后的任何标志也将作为参数发送到插件：</p>
+<pre><code>$ # 以下两个命令相同
+$ drycc accounts list --debug
+$ drycc-accounts list --debug
+</code></pre>
+<p>但命令前的标志不会：</p>
+<pre><code>$ # 以下两个命令相同
+$ drycc --debug accounts list
+$ drycc-accounts list
+</code></pre>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-12c0c67f6b5849e4a51f8b6f7c8d4df3">2 - 用户和注册</h1>
+    <div class="lead">立即开始使用 Drycc</div>
+	<p>Workflow 使用 passport 组件来创建和授权用户，它可以配置 LDAP 认证选项或通过 passport 网站来注册用户。</p>
+<h2 id="登录到-workflow">登录到 Workflow<a class="td-heading-self-link" href="#%e7%99%bb%e5%bd%95%e5%88%b0-workflow" aria-label="Heading self-link"></a>
+</h2><p>如果您已经有账户，请使用 <code>drycc login</code> 来针对 Drycc Workflow API 进行认证。</p>
+<pre><code>$ drycc login http://drycc.example.com
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as drycc
+Configuration file written to /root/.drycc/client.json
+</code></pre>
+<p>或者您可以使用用户名和密码登录
+$ drycc login <a href="http://drycc.example.com">http://drycc.example.com</a> &ndash;username=demo &ndash;password=demo
+Configuration file written to /root/.drycc/client.json</p>
+<h2 id="从-workflow-注销">从 Workflow 注销<a class="td-heading-self-link" href="#%e4%bb%8e-workflow-%e6%b3%a8%e9%94%80" aria-label="Heading self-link"></a>
+</h2><p>使用 <code>drycc logout</code> 从现有控制器会话注销。</p>
+<pre><code>$ drycc logout
+Logged out as drycc
+</code></pre>
+<h2 id="验证您的会话">验证您的会话<a class="td-heading-self-link" href="#%e9%aa%8c%e8%af%81%e6%82%a8%e7%9a%84%e4%bc%9a%e8%af%9d" aria-label="Heading self-link"></a>
+</h2><p>您可以通过运行 <code>drycc whoami</code> 来验证您的客户端配置。</p>
+<pre><code>$ drycc whoami
+You are drycc at http://drycc.example.com
+</code></pre>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    会话和客户端配置存储在 <code>~/.drycc/client.json</code> 文件中。
+
+</div>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-58441c0d4701f07c911ce8422802623a">3 - 用户和 SSH 密钥</h1>
+    <div class="lead">为 Drycc 创建、管理和上传 SSH 密钥，用于部署和连接应用程序。</div>
+	<p>对于通过 <code>git push</code> 进行的 <strong>Dockerfile</strong> 和 <strong>Buildpack</strong> 基础应用部署，Drycc Workflow 通过 SSH 密钥识别用户。SSH 密钥被推送到平台，并且必须对每个用户唯一。用户可以根据需要拥有多个 SSH 密钥。</p>
+<h2 id="生成-ssh-密钥">生成 SSH 密钥<a class="td-heading-self-link" href="#%e7%94%9f%e6%88%90-ssh-%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h2><p>如果您还没有 SSH 密钥或者想为 Drycc Workflow 创建新密钥，请使用 <code>ssh-keygen</code> 生成新密钥：</p>
+<pre tabindex="0"><code>$ ssh-keygen -f ~/.ssh/id_drycc -t rsa
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/admin/.ssh/id_drycc.
+Your public key has been saved in /Users/admin/.ssh/id_drycc.pub.
+The key fingerprint is:
+3d:ac:1f:f4:83:f7:64:51:c1:7e:7f:80:b6:70:36:c9 admin@plinth-23437.local
+The key&#39;s randomart image is:
++--[ RSA 2048]----+
+|              .. |
+|               ..|
+|           . o. .|
+|         o. E .o.|
+|        S == o..o|
+|         o +.  .o|
+|        . o + o .|
+|         . o =   |
+|          .   .  |
++-----------------+
+$ ssh-add ~/.ssh/id_drycc
+Identity added: /Users/admin/.ssh/id_drycc (/Users/admin/.ssh/id_drycc)
+</code></pre><h2 id="添加和移除-ssh-密钥">添加和移除 SSH 密钥<a class="td-heading-self-link" href="#%e6%b7%bb%e5%8a%a0%e5%92%8c%e7%a7%bb%e9%99%a4-ssh-%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h2><p>通过将 SSH 密钥的<strong>公钥</strong>部分发布到 Drycc Workflow，负责接收 <code>git push</code> 的组件将能够认证用户并确保他们有权访问目标应用。</p>
+<pre tabindex="0"><code>$ drycc keys add ~/.ssh/id_drycc.pub
+Uploading id_drycc.pub to drycc... done
+</code></pre><p>您还可以随时查看与您的用户关联的密钥：</p>
+<pre tabindex="0"><code>$ drycc keys list
+ID                              OWNER    KEY                           
+admin@plinth-23437.local        admin    ssh-rsa abc AAAAB3Nz...3437.local
+admin@subgenius.local           admin    ssh-rsa 123 AAAAB3Nz...nius.local
+</code></pre><p>按名称移除密钥：</p>
+<pre tabindex="0"><code>$ drycc keys remove admin@plinth-23437.local
+Removing admin@plinth-23437.local SSH Key... don
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">保留所有权利</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">隐私政策</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.403ff095218c662472dab60ed98ecbb19431682de5ac7c6159891241cd366af5.js" integrity="sha256-QD/wlSGMZiRy2rYO2Y7LsZQxaC3lrHxhWYkSQc02avU=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

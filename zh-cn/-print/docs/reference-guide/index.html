@@ -1,0 +1,4252 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/zh-cn/docs/reference-guide/">
+<link rel="alternate" type="application/rss&#43;xml" href="/zh-cn/docs/reference-guide/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>参考指南 | Drycc</title>
+<meta name="description" content="参考指南定义和含义。">
+<meta property="og:url" content="/zh-cn/docs/reference-guide/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="参考指南">
+  <meta property="og:description" content="参考指南定义和含义。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="参考指南">
+  <meta itemprop="description" content="参考指南定义和含义。">
+  <meta itemprop="dateModified" content="2025-10-09T12:58:35+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="参考指南">
+  <meta name="twitter:description" content="参考指南定义和含义。">
+<link rel="preload" href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" as="style" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<link href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" rel="stylesheet" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/zh-cn/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3FB1E5" fill="#3FB1E5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/about/"><span>关于我们</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/zh-cn/docs/"><span>文档</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/blog/"><span>博客</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/community/"><span>社区</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/docs/reference-guide/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="站内搜索…"
+    aria-label="站内搜索…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.55f5a19ce53e8fd6d7d6bc886b53a362.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+这是本节的多页打印视图。
+<a href="#" onclick="print();return false;">点击此处打印</a>.
+</p><p>
+<a href="/zh-cn/docs/reference-guide/">返回本页常规视图</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">参考指南</h1>
+<div class="lead">参考指南定义和含义。</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-8dc8e2744c72e06d155d31efb9f8001f">创建自签名 SSL 证书</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-8a47178b8f3a1af42c395fef1a635765">Controller API v2.0</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-cee50ca92714d97db6e9e68bc506be78">Controller API v2.1</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-b5fb7561bc7d913f5efd9e06d7b13c33">Controller API v2.2</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-6272bef032a9303c3be681bdf0c9d07b">Controller API v2.3</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-8dc8e2744c72e06d155d31efb9f8001f">1 - 创建自签名 SSL 证书</h1>
+    <div class="lead">自签名 TLS/SSL 证书不是由公开信任的证书颁发机构 (CA) 签发的，而是由负责网站的开发人员或公司签发的。</div>
+	<p>当<a href="/zh-cn/docs/applications/ssl-certificates/">使用应用 SSL</a> 功能用于非生产应用程序或<a href="https://gateway-api.sigs.k8s.io/guides/tls/">为平台安装 SSL</a> 时，您可以通过使用自签名 SSL 证书来避免与 SSL 证书相关的成本。虽然证书实现了完全加密，但访问您网站的访客会看到浏览器警告，指示该证书不应被信任。</p>
+<h2 id="先决条件">先决条件<a class="td-heading-self-link" href="#%e5%85%88%e5%86%b3%e6%9d%a1%e4%bb%b6" aria-label="Heading self-link"></a>
+</h2><p>需要 openssl 库来生成您自己的证书。在您的本地环境中运行以下命令来查看是否已经安装了 openssl。</p>
+<pre><code>$ which openssl
+/usr/bin/openssl
+</code></pre>
+<p>如果 which 命令没有返回路径，那么您需要自己安装 openssl：</p>
+<table>
+  <thead>
+      <tr>
+          <th>如果您有&hellip;</th>
+          <th>使用以下方式安装&hellip;</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Mac OS X</td>
+          <td>Homebrew: <code>brew install openssl</code></td>
+      </tr>
+      <tr>
+          <td>Windows</td>
+          <td>完整包 .exe 安装</td>
+      </tr>
+      <tr>
+          <td>Ubuntu Linux</td>
+          <td><code>apt-get install openssl</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="生成私钥和证书签名请求">生成私钥和证书签名请求<a class="td-heading-self-link" href="#%e7%94%9f%e6%88%90%e7%a7%81%e9%92%a5%e5%92%8c%e8%af%81%e4%b9%a6%e7%ad%be%e5%90%8d%e8%af%b7%e6%b1%82" aria-label="Heading self-link"></a>
+</h2><p>需要私钥和证书签名请求来创建 SSL 证书。这些可以通过几个简单的命令生成。当 openssl req 命令询问&quot;challenge password&quot;时，只需按回车键，将密码留空。</p>
+<pre><code>$ openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
+...
+$ openssl rsa -passin pass:x -in server.pass.key -out server.key
+writing RSA key
+$ rm server.pass.key
+$ openssl req -new -key server.key -out server.csr
+...
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:California
+...
+A challenge password []:
+...
+</code></pre>
+<h2 id="生成-ssl-证书">生成 SSL 证书<a class="td-heading-self-link" href="#%e7%94%9f%e6%88%90-ssl-%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h2><p>自签名 SSL 证书是从 server.key 私钥和 server.csr 文件生成的。</p>
+<pre><code>$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+</code></pre>
+<p>server.crt 文件是您的站点证书，适合与 <a href="/zh-cn/docs/applications/ssl-certificates/">Drycc 的 SSL 端点</a> 一起使用，以及 server.key 私钥。</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8a47178b8f3a1af42c395fef1a635765">2 - Controller API v2.0</h1>
+    <div class="lead">这是 Controller 的 v2.0 REST API。</div>
+	<h2 id="新增功能">新增功能<a class="td-heading-self-link" href="#%e6%96%b0%e5%a2%9e%e5%8a%9f%e8%83%bd" aria-label="Heading self-link"></a>
+</h2><p><strong>新增！</strong> <code>POST /v2/apps/&lt;app id&gt;/run</code> 的格式已更改。</p>
+<h2 id="认证">认证<a class="td-heading-self-link" href="#%e8%ae%a4%e8%af%81" aria-label="Heading self-link"></a>
+</h2><h3 id="注册新用户">注册新用户<a class="td-heading-self-link" href="#%e6%b3%a8%e5%86%8c%e6%96%b0%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/register/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;password&#34;: &#34;opensesame&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;
+}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="登录">登录<a class="td-heading-self-link" href="#%e7%99%bb%e5%bd%95" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/login/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{&#34;username&#34;: &#34;test&#34;, &#34;password&#34;: &#34;opensesame&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="取消账户">取消账户<a class="td-heading-self-link" href="#%e5%8f%96%e6%b6%88%e8%b4%a6%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="重新生成令牌">重新生成令牌<a class="td-heading-self-link" href="#%e9%87%8d%e6%96%b0%e7%94%9f%e6%88%90%e4%bb%a4%e7%89%8c" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令可能需要管理权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;username&#34; : &#34;test&#34;
+    &#34;all&#34; : &#34;true&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="更改密码">更改密码<a class="td-heading-self-link" href="#%e6%9b%b4%e6%94%b9%e5%af%86%e7%a0%81" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;password&#34;: &#34;foo&#34;,
+    &#34;new_password&#34;: &#34;bar&#34;
+}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{&#34;username&#34;: &#34;testuser&#34;}
+</code></pre><blockquote>
+<p><strong>注意</strong></p>
+<p>使用 <code>username</code> 参数需要管理权限，并使 <code>password</code> 参数可选。</p></blockquote>
+<p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="应用程序">应用程序<a class="td-heading-self-link" href="#%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有应用程序">列出所有应用程序<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;example-go&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;structure&#34;: {},
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;url&#34;: &#34;example-go.example.com&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="创建应用程序">创建应用程序<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{&#34;id&#34;: &#34;example-go&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="销毁应用程序">销毁应用程序<a class="td-heading-self-link" href="#%e9%94%80%e6%af%81%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="列出应用程序详情">列出应用程序详情<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="更新应用程序详情">更新应用程序详情<a class="td-heading-self-link" href="#%e6%9b%b4%e6%96%b0%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+  &#34;owner&#34;: &#34;test&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json
+</code></pre><h3 id="检索应用程序日志">检索应用程序日志<a class="td-heading-self-link" href="#%e6%a3%80%e7%b4%a2%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e6%97%a5%e5%bf%97" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选 URL 查询参数：</p>
+<pre tabindex="0"><code>?log_lines=
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: text/plain
+
+&#34;16:51:14 drycc[api]: test created initial release\n&#34;
+</code></pre><h3 id="运行一次性命令">运行一次性命令<a class="td-heading-self-link" href="#%e8%bf%90%e8%a1%8c%e4%b8%80%e6%ac%a1%e6%80%a7%e5%91%bd%e4%bb%a4" aria-label="Heading self-link"></a>
+</h3><pre tabindex="0"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;command&#34;: &#34;echo hi&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;exit_code&#34;: 0, &#34;output&#34;: &#34;hi\n&#34;}
+</code></pre><h2 id="证书">证书<a class="td-heading-self-link" href="#%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有证书">列出所有证书<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/certs HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;count&#34;: 1,
+  &#34;next&#34;: null,
+  &#34;previous&#34;: null,
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: 22,
+      &#34;owner&#34;: &#34;test&#34;,
+      &#34;san&#34;: [],
+      &#34;domains&#34;: [],
+      &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;name&#34;: &#34;foo&#34;,
+      &#34;common_name&#34;: &#34;bar.com&#34;,
+      &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+      &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+      &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+      &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+      &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+    }
+  ]
+}
+</code></pre><h3 id="获取证书详情">获取证书详情<a class="td-heading-self-link" href="#%e8%8e%b7%e5%8f%96%e8%af%81%e4%b9%a6%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="创建证书">创建证书<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/certs/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &#34;name&#34;: &#34;foo&#34;
+    &#34;certificate&#34;: &#34;-----BEGIN CERTIFICATE-----&#34;,
+    &#34;key&#34;: &#34;-----BEGIN RSA PRIVATE KEY-----&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="销毁证书">销毁证书<a class="td-heading-self-link" href="#%e9%94%80%e6%af%81%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="将域名附加到证书">将域名附加到证书<a class="td-heading-self-link" href="#%e5%b0%86%e5%9f%9f%e5%90%8d%e9%99%84%e5%8a%a0%e5%88%b0%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;domain&#34;: &#34;test.com&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="从证书中移除域名">从证书中移除域名<a class="td-heading-self-link" href="#%e4%bb%8e%e8%af%81%e4%b9%a6%e4%b8%ad%e7%a7%bb%e9%99%a4%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="pod">Pod<a class="td-heading-self-link" href="#pod" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有-pod">列出所有 Pod<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89-pod" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="按类型列出所有-pod">按类型列出所有 Pod<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89-pod" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="重启所有-pod">重启所有 Pod<a class="td-heading-self-link" href="#%e9%87%8d%e5%90%af%e6%89%80%e6%9c%89-pod" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="按类型重启-pod">按类型重启 Pod<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e9%87%8d%e5%90%af-pod" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="按类型和名称重启-pod">按类型和名称重启 Pod<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e5%92%8c%e5%90%8d%e7%a7%b0%e9%87%8d%e5%90%af-pod" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="缩放-pod">缩放 Pod<a class="td-heading-self-link" href="#%e7%bc%a9%e6%94%be-pod" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;web&#34;: 3}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="配置">配置<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用程序配置">列出应用程序配置<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+      &#34;PLATFORM&#34;: &#34;drycc&#34;
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="创建新配置">创建新配置<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e6%96%b0%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: &#34;world&#34;, &#34;PLATFORM&#34;: &#34;drycc&#34;}}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+X-Drycc-Release: 3
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v3&#34;,
+        &#34;HELLO&#34;: &#34;world&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="取消设置配置变量">取消设置配置变量<a class="td-heading-self-link" href="#%e5%8f%96%e6%b6%88%e8%ae%be%e7%bd%ae%e9%85%8d%e7%bd%ae%e5%8f%98%e9%87%8f" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: null}}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+X-Drycc-Release: 4
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v4&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+   },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="域名">域名<a class="td-heading-self-link" href="#%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用程序域名">列出应用程序域名<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;domain&#34;: &#34;example.example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+        }
+    ]
+}
+</code></pre><h3 id="添加域名">添加域名<a class="td-heading-self-link" href="#%e6%b7%bb%e5%8a%a0%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#39;domain&#39;: &#39;example.example.com&#39;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;domain&#34;: &#34;example.example.com&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+}
+</code></pre><h3 id="移除域名">移除域名<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="构建">构建<a class="td-heading-self-link" href="#%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用程序构建">列出应用程序构建<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;FROM drycc/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&#34;/runner/init\&#34;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&#34;,
+    &#34;image&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {
+        &#34;web&#34;: &#34;example-go&#34;
+    },
+    &#34;sha&#34;: &#34;060da68f&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="创建应用程序构建">创建应用程序构建<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;image&#34;: &#34;drycc/example-go:latest&#34;}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;procfile&#34;: {
+      &#34;web&#34;: &#34;./cmd&#34;
+    }
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+X-Drycc-Release: 4
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;&#34;,
+    &#34;image&#34;: &#34;drycc/example-go:latest&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {},
+    &#34;sha&#34;: &#34;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="发布">发布<a class="td-heading-self-link" href="#%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用程序发布">列出应用程序发布<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 3,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;ed637ceb-5d32-44bd-9406-d326a777a513&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test changed nothing&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 3
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test deployed 060da68&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 2
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: null,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test created initial release&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 1
+        }
+    ]
+}
+</code></pre><h3 id="列出发布详情">列出发布详情<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%8f%91%e5%b8%83%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;build&#34;: null,
+    &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;summary&#34;: &#34;test created initial release&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+    &#34;version&#34;: 1
+}
+</code></pre><h3 id="回滚发布">回滚发布<a class="td-heading-self-link" href="#%e5%9b%9e%e6%bb%9a%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;version&#34;: 1}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;version&#34;: 5}
+</code></pre><h2 id="密钥">密钥<a class="td-heading-self-link" href="#%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h2><h3 id="列出密钥">列出密钥<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;test@example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="为用户添加密钥">为用户添加密钥<a class="td-heading-self-link" href="#%e4%b8%ba%e7%94%a8%e6%88%b7%e6%b7%bb%e5%8a%a0%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;owner&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="从用户移除密钥">从用户移除密钥<a class="td-heading-self-link" href="#%e4%bb%8e%e7%94%a8%e6%88%b7%e7%a7%bb%e9%99%a4%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/keys/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="权限">权限<a class="td-heading-self-link" href="#%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用程序权限">列出应用程序权限<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>这不包括应用程序所有者。</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;users&#34;: [
+        &#34;test&#34;,
+        &#34;foo&#34;
+    ]
+}
+</code></pre><h3 id="创建应用程序权限">创建应用程序权限<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="移除应用程序权限">移除应用程序权限<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="列出管理员">列出管理员<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e7%ae%a1%e7%90%86%e5%91%98" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 2,
+    &#34;next&#34;: null
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;is_superuser&#34;: true
+        },
+        {
+            &#34;username&#34;: &#34;foo&#34;,
+            &#34;is_superuser&#34;: true
+        }
+    ]
+}
+</code></pre><h3 id="授予用户管理权限">授予用户管理权限<a class="td-heading-self-link" href="#%e6%8e%88%e4%ba%88%e7%94%a8%e6%88%b7%e7%ae%a1%e7%90%86%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/admin/perms HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="移除用户的管理权限">移除用户的管理权限<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e7%94%a8%e6%88%b7%e7%9a%84%e7%ae%a1%e7%90%86%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="用户">用户<a class="td-heading-self-link" href="#%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有用户">列出所有用户<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/users HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.0
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;id&#34;: 1,
+            &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;is_superuser&#34;: true,
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;first_name&#34;: &#34;test&#34;,
+            &#34;last_name&#34;: &#34;testerson&#34;,
+            &#34;email&#34;: &#34;test@example.com&#34;,
+            &#34;is_staff&#34;: true,
+            &#34;is_active&#34;: true,
+            &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;groups&#34;: [],
+            &#34;user_permissions&#34;: []
+        }
+    ]
+}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cee50ca92714d97db6e9e68bc506be78">3 - Controller API v2.1</h1>
+    <div class="lead">这是 Controller 的 v2.1 REST API。</div>
+	<h2 id="新功能">新功能<a class="td-heading-self-link" href="#%e6%96%b0%e5%8a%9f%e8%83%bd" aria-label="Heading self-link"></a>
+</h2><p><strong>新增！</strong> 配置中的 <code>healthcheck</code> 字段，弃用 <code>HEALTHCHECK_*</code> 环境变量。</p>
+<p><strong>新增！</strong> 取消设置不存在的配置变量将返回 422。</p>
+<p><strong>新增！</strong> 创建相同的连续发布将返回 409 而不是创建无操作发布。</p>
+<h2 id="认证">认证<a class="td-heading-self-link" href="#%e8%ae%a4%e8%af%81" aria-label="Heading self-link"></a>
+</h2><h3 id="注册新用户">注册新用户<a class="td-heading-self-link" href="#%e6%b3%a8%e5%86%8c%e6%96%b0%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/register/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;password&#34;: &#34;opensesame&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;
+}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="登录">登录<a class="td-heading-self-link" href="#%e7%99%bb%e5%bd%95" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/login/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{&#34;username&#34;: &#34;test&#34;, &#34;password&#34;: &#34;opensesame&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="注销账户">注销账户<a class="td-heading-self-link" href="#%e6%b3%a8%e9%94%80%e8%b4%a6%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="重新生成令牌">重新生成令牌<a class="td-heading-self-link" href="#%e9%87%8d%e6%96%b0%e7%94%9f%e6%88%90%e4%bb%a4%e7%89%8c" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令可能需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;username&#34; : &#34;test&#34;
+    &#34;all&#34; : &#34;true&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="修改密码">修改密码<a class="td-heading-self-link" href="#%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;password&#34;: &#34;foo&#34;,
+    &#34;new_password&#34;: &#34;bar&#34;
+}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{&#34;username&#34;: &#34;testuser&#34;}
+</code></pre><blockquote>
+<p><strong>注意</strong></p>
+<p>使用 <code>username</code> 参数需要管理员权限，并使 <code>password</code> 参数可选。</p></blockquote>
+<p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="应用">应用<a class="td-heading-self-link" href="#%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有应用">列出所有应用<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;example-go&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;structure&#34;: {},
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;url&#34;: &#34;example-go.example.com&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="创建应用">创建应用<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{&#34;id&#34;: &#34;example-go&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="销毁应用">销毁应用<a class="td-heading-self-link" href="#%e9%94%80%e6%af%81%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="列出应用详情">列出应用详情<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="更新应用详情">更新应用详情<a class="td-heading-self-link" href="#%e6%9b%b4%e6%96%b0%e5%ba%94%e7%94%a8%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+  &#34;owner&#34;: &#34;test&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json
+</code></pre><h3 id="获取应用日志">获取应用日志<a class="td-heading-self-link" href="#%e8%8e%b7%e5%8f%96%e5%ba%94%e7%94%a8%e6%97%a5%e5%bf%97" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选 URL 查询参数：</p>
+<pre tabindex="0"><code>?log_lines=
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: text/plain
+
+&#34;16:51:14 drycc[api]: test created initial release\n&#34;
+</code></pre><h3 id="运行一次性命令">运行一次性命令<a class="td-heading-self-link" href="#%e8%bf%90%e8%a1%8c%e4%b8%80%e6%ac%a1%e6%80%a7%e5%91%bd%e4%bb%a4" aria-label="Heading self-link"></a>
+</h3><pre tabindex="0"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;command&#34;: &#34;echo hi&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;exit_code&#34;: 0, &#34;output&#34;: &#34;hi\n&#34;}
+</code></pre><h2 id="证书">证书<a class="td-heading-self-link" href="#%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有证书">列出所有证书<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/certs HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;count&#34;: 1,
+  &#34;next&#34;: null,
+  &#34;previous&#34;: null,
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: 22,
+      &#34;owner&#34;: &#34;test&#34;,
+      &#34;san&#34;: [],
+      &#34;domains&#34;: [],
+      &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;name&#34;: &#34;foo&#34;,
+      &#34;common_name&#34;: &#34;bar.com&#34;,
+      &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+      &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+      &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+      &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+      &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+    }
+  ]
+}
+</code></pre><h3 id="获取证书详情">获取证书详情<a class="td-heading-self-link" href="#%e8%8e%b7%e5%8f%96%e8%af%81%e4%b9%a6%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="创建证书">创建证书<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/certs/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &#34;name&#34;: &#34;foo&#34;
+    &#34;certificate&#34;: &#34;-----BEGIN CERTIFICATE-----&#34;,
+    &#34;key&#34;: &#34;-----BEGIN RSA PRIVATE KEY-----&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="销毁证书">销毁证书<a class="td-heading-self-link" href="#%e9%94%80%e6%af%81%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="将域名附加到证书">将域名附加到证书<a class="td-heading-self-link" href="#%e5%b0%86%e5%9f%9f%e5%90%8d%e9%99%84%e5%8a%a0%e5%88%b0%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;domain&#34;: &#34;test.com&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="从证书中移除域名">从证书中移除域名<a class="td-heading-self-link" href="#%e4%bb%8e%e8%af%81%e4%b9%a6%e4%b8%ad%e7%a7%bb%e9%99%a4%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="pods">Pods<a class="td-heading-self-link" href="#pods" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有-pods">列出所有 Pods<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="按类型列出所有-pods">按类型列出所有 Pods<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="重启所有-pods">重启所有 Pods<a class="td-heading-self-link" href="#%e9%87%8d%e5%90%af%e6%89%80%e6%9c%89-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="按类型重启-pods">按类型重启 Pods<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e9%87%8d%e5%90%af-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="按类型和名称重启-pods">按类型和名称重启 Pods<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e5%92%8c%e5%90%8d%e7%a7%b0%e9%87%8d%e5%90%af-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="缩放-pods">缩放 Pods<a class="td-heading-self-link" href="#%e7%bc%a9%e6%94%be-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;web&#34;: 3}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="配置">配置<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用配置">列出应用配置<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+      &#34;PLATFORM&#34;: &#34;drycc&#34;
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="创建新配置">创建新配置<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e6%96%b0%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: &#34;world&#34;, &#34;PLATFORM&#34;: &#34;drycc&#34;}}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v3&#34;,
+        &#34;HELLO&#34;: &#34;world&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="取消设置配置变量">取消设置配置变量<a class="td-heading-self-link" href="#%e5%8f%96%e6%b6%88%e8%ae%be%e7%bd%ae%e9%85%8d%e7%bd%ae%e5%8f%98%e9%87%8f" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: null}}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v4&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+   },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="域名">域名<a class="td-heading-self-link" href="#%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用域名">列出应用域名<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;domain&#34;: &#34;example.example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+        }
+    ]
+}
+</code></pre><h3 id="添加域名">添加域名<a class="td-heading-self-link" href="#%e6%b7%bb%e5%8a%a0%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#39;domain&#39;: &#39;example.example.com&#39;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;domain&#34;: &#34;example.example.com&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+}
+</code></pre><h3 id="移除域名">移除域名<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="构建">构建<a class="td-heading-self-link" href="#%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用构建">列出应用构建<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;FROM drycc/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&#34;/runner/init\&#34;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&#34;,
+    &#34;image&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {
+        &#34;web&#34;: &#34;example-go&#34;
+    },
+    &#34;sha&#34;: &#34;060da68f&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="创建应用构建">创建应用构建<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;image&#34;: &#34;drycc/example-go:latest&#34;}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;procfile&#34;: {
+      &#34;web&#34;: &#34;./cmd&#34;
+    }
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;&#34;,
+    &#34;image&#34;: &#34;drycc/example-go:latest&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {},
+    &#34;sha&#34;: &#34;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="发布">发布<a class="td-heading-self-link" href="#%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用发布">列出应用发布<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 3,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;ed637ceb-5d32-44bd-9406-d326a777a513&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test changed nothing&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 3
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test deployed 060da68&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 2
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: null,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test created initial release&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 1
+        }
+    ]
+}
+</code></pre><h3 id="列出发布详情">列出发布详情<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%8f%91%e5%b8%83%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;build&#34;: null,
+    &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;summary&#34;: &#34;test created initial release&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+    &#34;version&#34;: 1
+}
+</code></pre><h3 id="回滚发布">回滚发布<a class="td-heading-self-link" href="#%e5%9b%9e%e6%bb%9a%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;version&#34;: 1}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{&#34;version&#34;: 5}
+</code></pre><h2 id="密钥">密钥<a class="td-heading-self-link" href="#%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h2><h3 id="列出密钥">列出密钥<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;test@example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="向用户添加密钥">向用户添加密钥<a class="td-heading-self-link" href="#%e5%90%91%e7%94%a8%e6%88%b7%e6%b7%bb%e5%8a%a0%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;owner&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="从用户移除密钥">从用户移除密钥<a class="td-heading-self-link" href="#%e4%bb%8e%e7%94%a8%e6%88%b7%e7%a7%bb%e9%99%a4%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/keys/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="权限">权限<a class="td-heading-self-link" href="#%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用权限">列出应用权限<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>这不包括应用所有者。</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;users&#34;: [
+        &#34;test&#34;,
+        &#34;foo&#34;
+    ]
+}
+</code></pre><h3 id="创建应用权限">创建应用权限<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="移除应用权限">移除应用权限<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e5%ba%94%e7%94%a8%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="列出管理员">列出管理员<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e7%ae%a1%e7%90%86%e5%91%98" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 2,
+    &#34;next&#34;: null
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;is_superuser&#34;: true
+        },
+        {
+            &#34;username&#34;: &#34;foo&#34;,
+            &#34;is_superuser&#34;: true
+        }
+    ]
+}
+</code></pre><h3 id="授予用户管理员权限">授予用户管理员权限<a class="td-heading-self-link" href="#%e6%8e%88%e4%ba%88%e7%94%a8%e6%88%b7%e7%ae%a1%e7%90%86%e5%91%98%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/admin/perms HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h3 id="移除用户的管理员权限">移除用户的管理员权限<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e7%94%a8%e6%88%b7%e7%9a%84%e7%ae%a1%e7%90%86%e5%91%98%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+</code></pre><h2 id="用户">用户<a class="td-heading-self-link" href="#%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有用户">列出所有用户<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/users HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.1
+DRYCC_PLATFORM_VERSION: 2.1.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;id&#34;: 1,
+            &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;is_superuser&#34;: true,
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;first_name&#34;: &#34;test&#34;,
+            &#34;last_name&#34;: &#34;testerson&#34;,
+            &#34;email&#34;: &#34;test@example.com&#34;,
+            &#34;is_staff&#34;: true,
+            &#34;is_active&#34;: true,
+            &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;groups&#34;: [],
+            &#34;user_permissions&#34;: []
+        }
+    ]
+}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b5fb7561bc7d913f5efd9e06d7b13c33">4 - Controller API v2.2</h1>
+    <div class="lead">这是 Controller 的 v2.2 REST API。</div>
+	<h2 id="新功能">新功能<a class="td-heading-self-link" href="#%e6%96%b0%e5%8a%9f%e8%83%bd" aria-label="Heading self-link"></a>
+</h2><p><strong>新增！</strong> <code>/v2/auth/whoami</code> 端点</p>
+<h2 id="认证">认证<a class="td-heading-self-link" href="#%e8%ae%a4%e8%af%81" aria-label="Heading self-link"></a>
+</h2><h3 id="注册新用户">注册新用户<a class="td-heading-self-link" href="#%e6%b3%a8%e5%86%8c%e6%96%b0%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/register/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;password&#34;: &#34;opensesame&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;
+}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="登录">登录<a class="td-heading-self-link" href="#%e7%99%bb%e5%bd%95" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/login/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{&#34;username&#34;: &#34;test&#34;, &#34;password&#34;: &#34;opensesame&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="注销账户">注销账户<a class="td-heading-self-link" href="#%e6%b3%a8%e9%94%80%e8%b4%a6%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="我是谁">我是谁<a class="td-heading-self-link" href="#%e6%88%91%e6%98%af%e8%b0%81" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/auth/whoami/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="重新生成令牌">重新生成令牌<a class="td-heading-self-link" href="#%e9%87%8d%e6%96%b0%e7%94%9f%e6%88%90%e4%bb%a4%e7%89%8c" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令可能需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;username&#34; : &#34;test&#34;
+    &#34;all&#34; : &#34;true&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="修改密码">修改密码<a class="td-heading-self-link" href="#%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;password&#34;: &#34;foo&#34;,
+    &#34;new_password&#34;: &#34;bar&#34;
+}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{&#34;username&#34;: &#34;testuser&#34;}
+</code></pre><blockquote>
+<p><strong>注意</strong></p>
+<p>使用 <code>username</code> 参数需要管理员权限，并使 <code>password</code> 参数可选。</p></blockquote>
+<p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="应用">应用<a class="td-heading-self-link" href="#%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有应用">列出所有应用<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;example-go&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;structure&#34;: {},
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;url&#34;: &#34;example-go.example.com&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="创建应用">创建应用<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{&#34;id&#34;: &#34;example-go&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="销毁应用">销毁应用<a class="td-heading-self-link" href="#%e9%94%80%e6%af%81%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="列出应用详情">列出应用详情<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="更新应用详情">更新应用详情<a class="td-heading-self-link" href="#%e6%9b%b4%e6%96%b0%e5%ba%94%e7%94%a8%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+  &#34;owner&#34;: &#34;test&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json
+</code></pre><h3 id="获取应用日志">获取应用日志<a class="td-heading-self-link" href="#%e8%8e%b7%e5%8f%96%e5%ba%94%e7%94%a8%e6%97%a5%e5%bf%97" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选 URL 查询参数：</p>
+<pre tabindex="0"><code>?log_lines=
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: text/plain
+
+&#34;16:51:14 drycc[api]: test created initial release\n&#34;
+</code></pre><h3 id="运行一次性命令">运行一次性命令<a class="td-heading-self-link" href="#%e8%bf%90%e8%a1%8c%e4%b8%80%e6%ac%a1%e6%80%a7%e5%91%bd%e4%bb%a4" aria-label="Heading self-link"></a>
+</h3><pre tabindex="0"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;command&#34;: &#34;echo hi&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&#34;exit_code&#34;: 0, &#34;output&#34;: &#34;hi\n&#34;}
+</code></pre><h2 id="证书">证书<a class="td-heading-self-link" href="#%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有证书">列出所有证书<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/certs HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+  &#34;count&#34;: 1,
+  &#34;next&#34;: null,
+  &#34;previous&#34;: null,
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: 22,
+      &#34;owner&#34;: &#34;test&#34;,
+      &#34;san&#34;: [],
+      &#34;domains&#34;: [],
+      &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+      &#34;name&#34;: &#34;foo&#34;,
+      &#34;common_name&#34;: &#34;bar.com&#34;,
+      &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+      &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+      &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+      &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+      &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+    }
+  ]
+}
+</code></pre><h3 id="获取证书详情">获取证书详情<a class="td-heading-self-link" href="#%e8%8e%b7%e5%8f%96%e8%af%81%e4%b9%a6%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="创建证书">创建证书<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/certs/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &#34;name&#34;: &#34;foo&#34;
+    &#34;certificate&#34;: &#34;-----BEGIN CERTIFICATE-----&#34;,
+    &#34;key&#34;: &#34;-----BEGIN RSA PRIVATE KEY-----&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22T22:24:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="销毁证书">销毁证书<a class="td-heading-self-link" href="#%e9%94%80%e6%af%81%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="将域名附加到证书">将域名附加到证书<a class="td-heading-self-link" href="#%e5%b0%86%e5%9f%9f%e5%90%8d%e9%99%84%e5%8a%a0%e5%88%b0%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;domain&#34;: &#34;test.com&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="从证书中移除域名">从证书中移除域名<a class="td-heading-self-link" href="#%e4%bb%8e%e8%af%81%e4%b9%a6%e4%b8%ad%e7%a7%bb%e9%99%a4%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="pods">Pods<a class="td-heading-self-link" href="#pods" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有-pods">列出所有 Pods<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="按类型列出所有-pods">按类型列出所有 Pods<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="重启所有-pods">重启所有 Pods<a class="td-heading-self-link" href="#%e9%87%8d%e5%90%af%e6%89%80%e6%9c%89-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="按类型重启-pods">按类型重启 Pods<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e9%87%8d%e5%90%af-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="按类型和名称重启-pods">按类型和名称重启 Pods<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e5%92%8c%e5%90%8d%e7%a7%b0%e9%87%8d%e5%90%af-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="缩放-pods">缩放 Pods<a class="td-heading-self-link" href="#%e7%bc%a9%e6%94%be-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;web&#34;: 3}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="配置">配置<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用配置">列出应用配置<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+      &#34;PLATFORM&#34;: &#34;drycc&#34;
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="创建新配置">创建新配置<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e6%96%b0%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: &#34;world&#34;, &#34;PLATFORM&#34;: &#34;drycc&#34;}}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v3&#34;,
+        &#34;HELLO&#34;: &#34;world&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="取消设置配置变量">取消设置配置变量<a class="td-heading-self-link" href="#%e5%8f%96%e6%b6%88%e8%ae%be%e7%bd%ae%e9%85%8d%e7%bd%ae%e5%8f%98%e9%87%8f" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: null}}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v4&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+   },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="域名">域名<a class="td-heading-self-link" href="#%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用域名">列出应用域名<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;domain&#34;: &#34;example.example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+        }
+    ]
+}
+</code></pre><h3 id="添加域名">添加域名<a class="td-heading-self-link" href="#%e6%b7%bb%e5%8a%a0%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#39;domain&#39;: &#39;example.example.com&#39;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;domain&#34;: &#34;example.example.com&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+}
+</code></pre><h3 id="移除域名">移除域名<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="构建">构建<a class="td-heading-self-link" href="#%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用构建">列出应用构建<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;FROM drycc/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&#34;/runner/init\&#34;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&#34;,
+    &#34;image&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {
+        &#34;web&#34;: &#34;example-go&#34;
+    },
+    &#34;sha&#34;: &#34;060da68f&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="创建应用构建">创建应用构建<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;image&#34;: &#34;drycc/example-go:latest&#34;}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;procfile&#34;: {
+      &#34;web&#34;: &#34;./cmd&#34;
+    }
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;&#34;,
+    &#34;image&#34;: &#34;drycc/example-go:latest&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {},
+    &#34;sha&#34;: &#34;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="发布">发布<a class="td-heading-self-link" href="#%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用发布">列出应用发布<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 3,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;ed637ceb-5d32-44bd-9406-d326a777a513&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test changed nothing&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 3
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;202d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test deployed 060da68&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 2
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: null,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test created initial release&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 1
+        }
+    ]
+}
+</code></pre><h3 id="列出发布详情">列出发布详情<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%8f%91%e5%b8%83%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;build&#34;: null,
+    &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;summary&#34;: &#34;test created initial release&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+    &#34;version&#34;: 1
+}
+</code></pre><h3 id="回滚发布">回滚发布<a class="td-heading-self-link" href="#%e5%9b%9e%e6%bb%9a%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;version&#34;: 1}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&#34;version&#34;: 5}
+</code></pre><h2 id="密钥">密钥<a class="td-heading-self-link" href="#%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h2><h3 id="列出密钥">列出密钥<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;test@example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="向用户添加密钥">向用户添加密钥<a class="td-heading-self-link" href="#%e5%90%91%e7%94%a8%e6%88%b7%e6%b7%bb%e5%8a%a0%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;owner&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="从用户移除密钥">从用户移除密钥<a class="td-heading-self-link" href="#%e4%bb%8e%e7%94%a8%e6%88%b7%e7%a7%bb%e9%99%a4%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/keys/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="权限">权限<a class="td-heading-self-link" href="#%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用权限">列出应用权限<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>这不包括应用所有者。</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;users&#34;: [
+        &#34;test&#34;,
+        &#34;foo&#34;
+    ]
+}
+</code></pre><h3 id="创建应用权限">创建应用权限<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="移除应用权限">移除应用权限<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e5%ba%94%e7%94%a8%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="列出管理员">列出管理员<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e7%ae%a1%e7%90%86%e5%91%98" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 2,
+    &#34;next&#34;: null
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;is_superuser&#34;: true
+        },
+        {
+            &#34;username&#34;: &#34;foo&#34;,
+            &#34;is_superuser&#34;: true
+        }
+    ]
+}
+</code></pre><h3 id="授予用户管理员权限">授予用户管理员权限<a class="td-heading-self-link" href="#%e6%8e%88%e4%ba%88%e7%94%a8%e6%88%b7%e7%ae%a1%e7%90%86%e5%91%98%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/admin/perms HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h3 id="移除用户的管理员权限">移除用户的管理员权限<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e7%94%a8%e6%88%b7%e7%9a%84%e7%ae%a1%e7%90%86%e5%91%98%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+</code></pre><h2 id="用户">用户<a class="td-heading-self-link" href="#%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有用户">列出所有用户<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/users HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.2
+DRYCC_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;id&#34;: 1,
+            &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;is_superuser&#34;: true,
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;first_name&#34;: &#34;test&#34;,
+            &#34;last_name&#34;: &#34;testerson&#34;,
+            &#34;email&#34;: &#34;test@example.com&#34;,
+            &#34;is_staff&#34;: true,
+            &#34;is_active&#34;: true,
+            &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;groups&#34;: [],
+            &#34;user_permissions&#34;: []
+        }
+    ]
+}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-6272bef032a9303c3be681bdf0c9d07b">5 - Controller API v2.3</h1>
+    <div class="lead">这是 Controller 的 v2.3 REST API。</div>
+	<h2 id="新功能">新功能<a class="td-heading-self-link" href="#%e6%96%b0%e5%8a%9f%e8%83%bd" aria-label="Heading self-link"></a>
+</h2><p><strong>新增！</strong> <code>/v2/apps/{name}/logs</code> 端点已修复，不再返回 <code>b'log data'</code>，而是返回正常的字符串 <code>log data</code></p>
+<h2 id="认证">认证<a class="td-heading-self-link" href="#%e8%ae%a4%e8%af%81" aria-label="Heading self-link"></a>
+</h2><h3 id="注册新用户">注册新用户<a class="td-heading-self-link" href="#%e6%b3%a8%e5%86%8c%e6%96%b0%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/register/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;password&#34;: &#34;opensesame&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;
+}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="登录">登录<a class="td-heading-self-link" href="#%e7%99%bb%e5%bd%95" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/login/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+
+{&#34;username&#34;: &#34;test&#34;, &#34;password&#34;: &#34;opensesame&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="注销账户">注销账户<a class="td-heading-self-link" href="#%e6%b3%a8%e9%94%80%e8%b4%a6%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="我是谁">我是谁<a class="td-heading-self-link" href="#%e6%88%91%e6%98%af%e8%b0%81" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/auth/whoami/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;id&#34;: 1,
+    &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;is_superuser&#34;: true,
+    &#34;username&#34;: &#34;test&#34;,
+    &#34;first_name&#34;: &#34;test&#34;,
+    &#34;last_name&#34;: &#34;testerson&#34;,
+    &#34;email&#34;: &#34;test@example.com&#34;,
+    &#34;is_staff&#34;: true,
+    &#34;is_active&#34;: true,
+    &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+    &#34;groups&#34;: [],
+    &#34;user_permissions&#34;: []
+}
+</code></pre><h3 id="重新生成令牌">重新生成令牌<a class="td-heading-self-link" href="#%e9%87%8d%e6%96%b0%e7%94%9f%e6%88%90%e4%bb%a4%e7%89%8c" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令可能需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;username&#34; : &#34;test&#34;
+    &#34;all&#34; : &#34;true&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{&#34;token&#34;: &#34;abc123&#34;}
+</code></pre><h3 id="修改密码">修改密码<a class="td-heading-self-link" href="#%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;password&#34;: &#34;foo&#34;,
+    &#34;new_password&#34;: &#34;bar&#34;
+}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{&#34;username&#34;: &#34;testuser&#34;}
+</code></pre><blockquote>
+<p><strong>注意</strong></p>
+<p>使用 <code>username</code> 参数需要管理员权限，并使 <code>password</code> 参数可选。</p></blockquote>
+<p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="应用">应用<a class="td-heading-self-link" href="#%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有应用">列出所有应用<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;example-go&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;structure&#34;: {},
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;url&#34;: &#34;example-go.example.com&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="创建应用">创建应用<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{&#34;id&#34;: &#34;example-go&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="销毁应用">销毁应用<a class="td-heading-self-link" href="#%e9%94%80%e6%af%81%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="列出应用详情">列出应用详情<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;structure&#34;: {},
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;url&#34;: &#34;example-go.example.com&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="更新应用详情">更新应用详情<a class="td-heading-self-link" href="#%e6%9b%b4%e6%96%b0%e5%ba%94%e7%94%a8%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+  &#34;owner&#34;: &#34;test&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json
+</code></pre><h3 id="获取应用日志">获取应用日志<a class="td-heading-self-link" href="#%e8%8e%b7%e5%8f%96%e5%ba%94%e7%94%a8%e6%97%a5%e5%bf%97" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>可选 URL 查询参数：</p>
+<pre tabindex="0"><code>?log_lines=
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: text/plain
+
+&#34;16:51:14 drycc[api]: test created initial release\n&#34;
+</code></pre><h3 id="运行一次性命令">运行一次性命令<a class="td-heading-self-link" href="#%e8%bf%90%e8%a1%8c%e4%b8%80%e6%ac%a1%e6%80%a7%e5%91%bd%e4%bb%a4" aria-label="Heading self-link"></a>
+</h3><pre tabindex="0"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;command&#34;: &#34;echo hi&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{&#34;exit_code&#34;: 0, &#34;output&#34;: &#34;hi\n&#34;}
+</code></pre><h2 id="证书">证书<a class="td-heading-self-link" href="#%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有证书">列出所有证书<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/certs HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+  &#34;count&#34;: 1,
+  &#34;next&#34;: null,
+  &#34;previous&#34;: null,
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: 22,
+      &#34;owner&#34;: &#34;test&#34;,
+      &#34;san&#34;: [],
+      &#34;domains&#34;: [],
+      &#34;created&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+      &#34;updated&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+      &#34;name&#34;: &#34;foo&#34;,
+      &#34;common_name&#34;: &#34;bar.com&#34;,
+      &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+      &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+      &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+      &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+      &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+    }
+  ]
+}
+</code></pre><h3 id="获取证书详情">获取证书详情<a class="td-heading-self-link" href="#%e8%8e%b7%e5%8f%96%e8%af%81%e4%b9%a6%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="创建证书">创建证书<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/certs/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &#34;name&#34;: &#34;foo&#34;
+    &#34;certificate&#34;: &#34;-----BEGIN CERTIFICATE-----&#34;,
+    &#34;key&#34;: &#34;-----BEGIN RSA PRIVATE KEY-----&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+  &#34;id&#34;: 22,
+  &#34;owner&#34;: &#34;test&#34;,
+  &#34;san&#34;: [],
+  &#34;domains&#34;: [],
+  &#34;created&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+  &#34;updated&#34;: &#34;2016-06-22.32.34:20Z&#34;,
+  &#34;name&#34;: &#34;foo&#34;,
+  &#34;common_name&#34;: &#34;bar.com&#34;,
+  &#34;fingerprint&#34;: &#34;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&#34;,
+  &#34;expires&#34;: &#34;2017-01-14T23:57:57Z&#34;,
+  &#34;starts&#34;: &#34;2016-01-15T23:57:57Z&#34;,
+  &#34;issuer&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;,
+  &#34;subject&#34;: &#34;/C=US/ST=CA/L=San Francisco/O=Drycc/OU=Engineering/CN=bar.com/emailAddress=engineering@drycc.cc&#34;
+}
+</code></pre><h3 id="销毁证书">销毁证书<a class="td-heading-self-link" href="#%e9%94%80%e6%af%81%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="将域名附加到证书">将域名附加到证书<a class="td-heading-self-link" href="#%e5%b0%86%e5%9f%9f%e5%90%8d%e9%99%84%e5%8a%a0%e5%88%b0%e8%af%81%e4%b9%a6" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;domain&#34;: &#34;test.com&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="从证书中移除域名">从证书中移除域名<a class="td-heading-self-link" href="#%e4%bb%8e%e8%af%81%e4%b9%a6%e4%b8%ad%e7%a7%bb%e9%99%a4%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="启用或禁用-tls">启用或禁用 TLS<a class="td-heading-self-link" href="#%e5%90%af%e7%94%a8%e6%88%96%e7%a6%81%e7%94%a8-tls" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/tls/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+  &#34;https_enforced&#34;: true
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;https_enforced&#34;: true,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="获取-tls-状态">获取 TLS 状态<a class="td-heading-self-link" href="#%e8%8e%b7%e5%8f%96-tls-%e7%8a%b6%e6%80%81" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/tls/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;https_enforced&#34;: false,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="pods">Pods<a class="td-heading-self-link" href="#pods" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有-pods">列出所有 Pods<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="按类型列出所有-pods">按类型列出所有 Pods<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;results&#34;: [
+        {
+            &#34;name&#34;: &#34;go-v2-web-e7dej&#34;,
+            &#34;release&#34;: &#34;v2&#34;,
+            &#34;started&#34;: &#34;2014-01-01T00:00:00Z&#34;,
+            &#34;state&#34;: &#34;up&#34;,
+            &#34;type&#34;: &#34;web&#34;
+        }
+    ]
+}
+</code></pre><h3 id="重启所有-pods">重启所有 Pods<a class="td-heading-self-link" href="#%e9%87%8d%e5%90%af%e6%89%80%e6%9c%89-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="按类型重启-pods">按类型重启 Pods<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e9%87%8d%e5%90%af-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="按类型和名称重启-pods">按类型和名称重启 Pods<a class="td-heading-self-link" href="#%e6%8c%89%e7%b1%bb%e5%9e%8b%e5%92%8c%e5%90%8d%e7%a7%b0%e9%87%8d%e5%90%af-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+[
+    {
+        &#34;name&#34;: &#34;go-v2-web-atots&#34;,
+        &#34;release&#34;: &#34;v2&#34;,
+        &#34;started&#34;: &#34;2016-04-11T21:07:54Z&#34;,
+        &#34;state&#34;: &#34;up&#34;,
+        &#34;type&#34;: &#34;web&#34;
+    }
+]
+</code></pre><h3 id="缩放-pods">缩放 Pods<a class="td-heading-self-link" href="#%e7%bc%a9%e6%94%be-pods" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;web&#34;: 3}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="配置">配置<a class="td-heading-self-link" href="#%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用配置">列出应用配置<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+      &#34;PLATFORM&#34;: &#34;drycc&#34;
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="创建新配置">创建新配置<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e6%96%b0%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: &#34;world&#34;, &#34;PLATFORM&#34;: &#34;drycc&#34;}}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v3&#34;,
+        &#34;HELLO&#34;: &#34;world&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+
+    },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="取消设置配置变量">取消设置配置变量<a class="td-heading-self-link" href="#%e5%8f%96%e6%b6%88%e8%ae%be%e7%bd%ae%e9%85%8d%e7%bd%ae%e5%8f%98%e9%87%8f" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;values&#34;: {&#34;HELLO&#34;: null}}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;values&#34;: {
+        &#34;DRYCC_APP&#34;: &#34;example-go&#34;,
+        &#34;DRYCC_RELEASE&#34;: &#34;v4&#34;,
+        &#34;PLATFORM&#34;: &#34;drycc&#34;
+   },
+    &#34;memory&#34;: {},
+    &#34;cpu&#34;: {},
+    &#34;tags&#34;: {},
+    &#34;healthcheck&#34;: {},
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="域名">域名<a class="td-heading-self-link" href="#%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用域名">列出应用域名<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;domain&#34;: &#34;example.example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+        }
+    ]
+}
+</code></pre><h3 id="添加域名">添加域名<a class="td-heading-self-link" href="#%e6%b7%bb%e5%8a%a0%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#39;domain&#39;: &#39;example.example.com&#39;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;domain&#34;: &#34;example.example.com&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;
+}
+</code></pre><h3 id="移除域名">移除域名<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="构建">构建<a class="td-heading-self-link" href="#%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用构建">列出应用构建<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;FROM drycc/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&#34;/runner/init\&#34;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&#34;,
+    &#34;image&#34;: &#34;example-go&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {
+        &#34;web&#34;: &#34;example-go&#34;
+    },
+    &#34;sha&#34;: &#34;060da68f&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="创建应用构建">创建应用构建<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8%e6%9e%84%e5%bb%ba" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/build/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;image&#34;: &#34;drycc/example-go:latest&#34;}
+</code></pre><p>可选参数：</p>
+<pre tabindex="0"><code>{
+    &#34;procfile&#34;: {
+      &#34;web&#34;: &#34;./cmd&#34;
+    }
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;dockerfile&#34;: &#34;&#34;,
+    &#34;image&#34;: &#34;drycc/example-go:latest&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;procfile&#34;: {},
+    &#34;sha&#34;: &#34;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h2 id="发布">发布<a class="td-heading-self-link" href="#%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用发布">列出应用发布<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 3,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;2.3d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;ed637ceb-5d32-44bd-9406-d326a777a513&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test changed nothing&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 3
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: &#34;2.3d8e4b-600e-4425-a85c-ffc7ea607f61&#34;,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test deployed 060da68&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 2
+        },
+        {
+            &#34;app&#34;: &#34;example-go&#34;,
+            &#34;build&#34;: null,
+            &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;summary&#34;: &#34;test created initial release&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+            &#34;version&#34;: 1
+        }
+    ]
+}
+</code></pre><h3 id="列出发布详情">列出发布详情<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%8f%91%e5%b8%83%e8%af%a6%e6%83%85" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;app&#34;: &#34;example-go&#34;,
+    &#34;build&#34;: null,
+    &#34;config&#34;: &#34;95bd6dea-1685-4f78-a03d-fd7270b058d1&#34;,
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;owner&#34;: &#34;test&#34;,
+    &#34;summary&#34;: &#34;test created initial release&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;,
+    &#34;version&#34;: 1
+}
+</code></pre><h3 id="回滚发布">回滚发布<a class="td-heading-self-link" href="#%e5%9b%9e%e6%bb%9a%e5%8f%91%e5%b8%83" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: drycc.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&#34;version&#34;: 1}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{&#34;version&#34;: 5}
+</code></pre><h2 id="密钥">密钥<a class="td-heading-self-link" href="#%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h2><h3 id="列出密钥">列出密钥<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;id&#34;: &#34;test@example.com&#34;,
+            &#34;owner&#34;: &#34;test&#34;,
+            &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+            &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+            &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+        }
+    ]
+}
+</code></pre><h3 id="向用户添加密钥">向用户添加密钥<a class="td-heading-self-link" href="#%e5%90%91%e7%94%a8%e6%88%b7%e6%b7%bb%e5%8a%a0%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/keys/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;
+}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;created&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;id&#34;: &#34;example&#34;,
+    &#34;owner&#34;: &#34;example&#34;,
+    &#34;public&#34;: &#34;ssh-rsa &lt;...&gt;&#34;,
+    &#34;updated&#34;: &#34;2014-01-01T00:00:00UTC&#34;,
+    &#34;uuid&#34;: &#34;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&#34;
+}
+</code></pre><h3 id="从用户移除密钥">从用户移除密钥<a class="td-heading-self-link" href="#%e4%bb%8e%e7%94%a8%e6%88%b7%e7%a7%bb%e9%99%a4%e5%af%86%e9%92%a5" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/keys/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="权限">权限<a class="td-heading-self-link" href="#%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h2><h3 id="列出应用权限">列出应用权限<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e5%ba%94%e7%94%a8%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>这不包括应用所有者。</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;users&#34;: [
+        &#34;test&#34;,
+        &#34;foo&#34;
+    ]
+}
+</code></pre><h3 id="创建应用权限">创建应用权限<a class="td-heading-self-link" href="#%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="移除应用权限">移除应用权限<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e5%ba%94%e7%94%a8%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="列出管理员">列出管理员<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e7%ae%a1%e7%90%86%e5%91%98" aria-label="Heading self-link"></a>
+</h3><p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 2,
+    &#34;next&#34;: null
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;is_superuser&#34;: true
+        },
+        {
+            &#34;username&#34;: &#34;foo&#34;,
+            &#34;is_superuser&#34;: true
+        }
+    ]
+}
+</code></pre><h3 id="授予用户管理员权限">授予用户管理员权限<a class="td-heading-self-link" href="#%e6%8e%88%e4%ba%88%e7%94%a8%e6%88%b7%e7%ae%a1%e7%90%86%e5%91%98%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>POST /v2/admin/perms HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+
+{&#34;username&#34;: &#34;example&#34;}
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 201 CREATED
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h3 id="移除用户的管理员权限">移除用户的管理员权限<a class="td-heading-self-link" href="#%e7%a7%bb%e9%99%a4%e7%94%a8%e6%88%b7%e7%9a%84%e7%ae%a1%e7%90%86%e5%91%98%e6%9d%83%e9%99%90" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 204 NO CONTENT
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+</code></pre><h2 id="用户">用户<a class="td-heading-self-link" href="#%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h2><h3 id="列出所有用户">列出所有用户<a class="td-heading-self-link" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7" aria-label="Heading self-link"></a>
+</h3><blockquote>
+<p><strong>注意</strong></p>
+<p>此命令需要管理员权限</p></blockquote>
+<p>示例请求：</p>
+<pre tabindex="0"><code>GET /v2/users HTTP/1.1
+Host: drycc.example.com
+Authorization: token abc123
+</code></pre><p>示例响应：</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+DRYCC_API_VERSION: 2.3
+DRYCC_PLATFORM_VERSION: 2.3.0
+Content-Type: application/json
+
+{
+    &#34;count&#34;: 1,
+    &#34;next&#34;: null,
+    &#34;previous&#34;: null,
+    &#34;results&#34;: [
+        {
+            &#34;id&#34;: 1,
+            &#34;last_login&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;is_superuser&#34;: true,
+            &#34;username&#34;: &#34;test&#34;,
+            &#34;first_name&#34;: &#34;test&#34;,
+            &#34;last_name&#34;: &#34;testerson&#34;,
+            &#34;email&#34;: &#34;test@example.com&#34;,
+            &#34;is_staff&#34;: true,
+            &#34;is_active&#34;: true,
+            &#34;date_joined&#34;: &#34;2014-10-19T22:01:00.601Z&#34;,
+            &#34;groups&#34;: [],
+            &#34;user_permissions&#34;: []
+        }
+    ]
+}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">保留所有权利</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">隐私政策</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.403ff095218c662472dab60ed98ecbb19431682de5ac7c6159891241cd366af5.js" integrity="sha256-QD/wlSGMZiRy2rYO2Y7LsZQxaC3lrHxhWYkSQc02avU=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

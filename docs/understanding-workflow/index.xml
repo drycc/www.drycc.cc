@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Understanding Workflow on Drycc</title>
+    <link>/docs/understanding-workflow/</link>
+    <description>Recent content in Understanding Workflow on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/understanding-workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Concepts</title>
+      <link>/docs/understanding-workflow/concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/understanding-workflow/concepts/</guid>
+      <description>&lt;h2 id=&#34;twelve-factor-applications&#34;&gt;Twelve-Factor Applications&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#twelve-factor-applications&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;The &lt;a href=&#34;http://12factor.net/&#34;&gt;Twelve-Factor App&lt;/a&gt; is a methodology for building modern applications that can be scaled across a distributed system.&lt;/p&gt;&#xA;&lt;p&gt;Twelve-factor is a valuable synthesis of years of experience with software-as-a-service apps in the wild, particularly on the Heroku platform.&lt;/p&gt;&#xA;&lt;p&gt;Workflow is designed to run applications that adhere to the &lt;a href=&#34;http://12factor.net/&#34;&gt;Twelve-Factor App&lt;/a&gt; methodology and best practices.&lt;/p&gt;&#xA;&lt;h2 id=&#34;kubernetes&#34;&gt;Kubernetes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#kubernetes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; is an open-source cluster manager developed by Google and donated to the &lt;a href=&#34;https://cncf.io/&#34;&gt;Cloud Native Compute Foundation&lt;/a&gt;. Kubernetes manages all activity on your cluster, including desired state convergence, stable service addresses, health monitoring, service discovery, and DNS resolution.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>/docs/understanding-workflow/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/understanding-workflow/architecture/</guid>
+      <description>&lt;p&gt;All components are published as a set of container images which can be deployed to any&#xA;compliant Kubernetes cluster.&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#overview&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/images/diagrams/Ecosystem_Basic.jpg&#34; alt=&#34;System Overview&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Operators use &lt;a href=&#34;https://github.com/kubernetes/helm&#34;&gt;Helm&lt;/a&gt; to configure and install the Workflow components which&#xA;interface directly with the underlying Kubernetes cluster. Service discovery,&#xA;container availability and networking are all delegated to Kubernetes, while&#xA;Workflow provides a clean and simple developer experience.&lt;/p&gt;&#xA;&lt;h2 id=&#34;platform-services&#34;&gt;Platform Services&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#platform-services&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/images/diagrams/Workflow_Overview.jpg&#34; alt=&#34;Workflow Overview&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Drycc Workflow provides additional functionality to your Kubernetes cluster, including:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Components</title>
+      <link>/docs/understanding-workflow/components/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/understanding-workflow/components/</guid>
+      <description>&lt;p&gt;All Workflow components are deployed as services (and associated controllers) in your Kubernetes cluster.&#xA;If you are interested we have a more detailed exploration of the &lt;a href=&#34;/docs/understanding-workflow/architecture/&#34;&gt;Workflow architecture&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;All of the componentry for Workflow is built with composability in mind. If you&#xA;need to customize one of the components for your specific deployment or need&#xA;the functionality in your own project we invite you to give it a shot!&lt;/p&gt;&#xA;&lt;h2 id=&#34;controller&#34;&gt;Controller&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#controller&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Project Location:&lt;/strong&gt; &lt;a href=&#34;https://github.com/drycc/controller&#34;&gt;drycc/controller&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

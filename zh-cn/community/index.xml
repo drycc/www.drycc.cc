@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>社区 on Drycc</title>
+    <link>/zh-cn/community/</link>
+    <description>Recent content in 社区 on Drycc</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="/zh-cn/community/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

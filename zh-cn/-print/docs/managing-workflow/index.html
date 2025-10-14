@@ -1,0 +1,923 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/zh-cn/docs/managing-workflow/">
+<link rel="alternate" type="application/rss&#43;xml" href="/zh-cn/docs/managing-workflow/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>管理 Workflow | Drycc</title>
+<meta name="description" content="使用 kubectl 管理 Workflow。">
+<meta property="og:url" content="/zh-cn/docs/managing-workflow/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="管理 Workflow">
+  <meta property="og:description" content="使用 kubectl 管理 Workflow。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="管理 Workflow">
+  <meta itemprop="description" content="使用 kubectl 管理 Workflow。">
+  <meta itemprop="dateModified" content="2025-10-09T12:58:35+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="管理 Workflow">
+  <meta name="twitter:description" content="使用 kubectl 管理 Workflow。">
+<link rel="preload" href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" as="style" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<link href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" rel="stylesheet" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/zh-cn/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3FB1E5" fill="#3FB1E5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/about/"><span>关于我们</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/zh-cn/docs/"><span>文档</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/blog/"><span>博客</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/community/"><span>社区</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/docs/managing-workflow/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="站内搜索…"
+    aria-label="站内搜索…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.55f5a19ce53e8fd6d7d6bc886b53a362.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+这是本节的多页打印视图。
+<a href="#" onclick="print();return false;">点击此处打印</a>.
+</p><p>
+<a href="/zh-cn/docs/managing-workflow/">返回本页常规视图</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">管理 Workflow</h1>
+<div class="lead">使用 kubectl 管理 Workflow。</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-0e712a5c2020887818ceab36d4f26910">调整组件设置</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-a1258f39e96a14029efa8d7c379f95a4">配置 DNS</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-5e70dabb651ba434bf52f6a0f428d092">部署钩子</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-004a15eb4cb73246d89366dd9838d84d">平台日志</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-fd8f5f6dc2937f1343d4f1cd4660ae35">平台监控</a></li>
+
+
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-f30a865310ec754108a4ce6a32869210">升级 Workflow</a></li>
+
+
+    
+  
+    
+    
+	
+<li>7: <a href="#pg-ad04652ad398a8700cd2996d3d721e6f">生产部署</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-0e712a5c2020887818ceab36d4f26910">1 - 调整组件设置</h1>
+    <div class="lead">Helm Charts 是一组 Kubernetes 清单，反映了在 Kubernetes 上部署应用程序或服务的最佳实践。</div>
+	<p>在添加 Drycc Chart Repository 后，您可以在使用 <code>helm install</code> 完成安装之前，使用 <code>helm inspect values drycc/workflow &gt; values.yaml</code> 来自定义图表。</p>
+<p>有几种方法可以自定义相应组件：</p>
+<ul>
+<li>
+<p>如果值在上面派生的 <code>values.yaml</code> 文件中暴露，可以修改组件的部分来调整这些设置。修改的值将在图表安装或发布升级时通过以下两个相应命令之一生效：</p>
+<pre><code> $ helm install drycc oci://registry.drycc.cc/charts/workflow \
+     -n drycc \
+     --namespace drycc \
+     -f values.yaml
+ $ helm upgrade drycc oci://registry.drycc.cc/charts/workflow \
+     -n drycc \
+     --namespace drycc \
+     -f values.yaml
+</code></pre>
+</li>
+<li>
+<p>如果值尚未在 <code>values.yaml</code> 文件中暴露，可以编辑组件部署以调整设置。这里我们编辑 <code>drycc-controller</code> 部署：</p>
+<pre><code> $ kubectl --namespace drycc edit deployment drycc-controller
+</code></pre>
+<p>在 <code>env</code> 部分下通过适当的环境变量和值添加/编辑设置并保存。更新后的部署将使用新的/修改的设置重新创建组件 pod。</p>
+</li>
+<li>
+<p>最后，可以获取并编辑版本控制/图表仓库本身提供的图表：</p>
+<pre><code> $ helm fetch oci://registry.drycc.cc/charts/workflow --untar
+ $ $EDITOR workflow/charts/controller/templates/controller-deployment.yaml
+</code></pre>
+<p>然后运行 <code>helm install ./workflow --namespace drycc --name drycc</code> 来应用更改，或者如果集群已经在运行，则运行 <code>helm upgrade drycc ./workflow</code>。</p>
+</li>
+</ul>
+<h2 id="设置资源限制">设置资源限制<a class="td-heading-self-link" href="#%e8%ae%be%e7%bd%ae%e8%b5%84%e6%ba%90%e9%99%90%e5%88%b6" aria-label="Heading self-link"></a>
+</h2><p>您可以通过修改之前获取的 values.yaml 文件来为 Workflow 组件设置资源限制。此文件为每个 Workflow 组件都有一个部分。要为任何 Workflow 组件设置限制，只需在部分中添加 <code>resources</code> 并将其设置为适当的值。</p>
+<p>以下是设置了 CPU 和内存限制的 <code>values.yaml</code> 中 builder 部分的样子示例：</p>
+<pre tabindex="0"><code>builder:
+  imageOrg: &#34;drycc&#34;
+  imagePullPolicy: &#34;Always&#34;
+  imageTag: &#34;canary&#34;
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 2048Mi
+    requests:
+      cpu: 500m
+      memory: 1024Mi
+</code></pre><h2 id="自定义-builder">自定义 Builder<a class="td-heading-self-link" href="#%e8%87%aa%e5%ae%9a%e4%b9%89-builder" aria-label="Heading self-link"></a>
+</h2><p><a href="/zh-cn/docs/understanding-workflow/components/#builder">Builder</a> 组件可以调整以下环境变量：</p>
+<table>
+  <thead>
+      <tr>
+          <th>设置</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>DEBUG</td>
+          <td>启用调试日志输出（默认：false）</td>
+      </tr>
+      <tr>
+          <td>BUILDER_POD_NODE_SELECTOR</td>
+          <td>builder 作业的节点选择器设置。由于它有时会消耗大量节点资源，您可能希望给定的 builder 作业仅在特定节点上运行，这样就不会影响关键节点。例如 <code>pool:testing,disk:magnetic</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="自定义-controller">自定义 Controller<a class="td-heading-self-link" href="#%e8%87%aa%e5%ae%9a%e4%b9%89-controller" aria-label="Heading self-link"></a>
+</h2><p><a href="/zh-cn/docs/understanding-workflow/components/#controller">Controller</a> 组件可以调整以下环境变量：</p>
+<table>
+  <thead>
+      <tr>
+          <th>设置</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>REGISTRATION_MODE</td>
+          <td>将注册设置为 &ldquo;enabled&rdquo;、&ldquo;disabled&rdquo; 或 &ldquo;admin_only&rdquo;（默认：&ldquo;admin_only&rdquo;）</td>
+      </tr>
+      <tr>
+          <td>GUNICORN_WORKERS</td>
+          <td>生成的 <a href="http://gunicorn.org/">gunicorn</a> 工作进程数量，用于处理请求（默认：CPU 核心数 * 4 + 1）</td>
+      </tr>
+      <tr>
+          <td>RESERVED_NAMES</td>
+          <td>应用程序无法为路由保留的名称的逗号分隔列表（默认：&ldquo;drycc, drycc-builder&rdquo;）</td>
+      </tr>
+      <tr>
+          <td>DRYCC_DEPLOY_HOOK_URLS</td>
+          <td>发送 <a href="/zh-cn/docs/managing-workflow/deploy-hooks/#http-post-hook">deploy hooks</a> 的 URL 逗号分隔列表。</td>
+      </tr>
+      <tr>
+          <td>DRYCC_DEPLOY_HOOK_SECRET_KEY</td>
+          <td>用于计算部署钩子 HMAC 签名的私钥。</td>
+      </tr>
+      <tr>
+          <td>DRYCC_DEPLOY_REJECT_IF_PROCFILE_MISSING</td>
+          <td>如果之前的构建有 Procfile 但当前部署缺少它，则拒绝部署。API 中抛出 409。防止意外删除进程类型。（默认：&ldquo;false&rdquo;，允许值：&ldquo;true&rdquo;、&ldquo;false&rdquo;）</td>
+      </tr>
+      <tr>
+          <td>DRYCC_DEPLOY_PROCFILE_MISSING_REMOVE</td>
+          <td>开启时（默认），与之前部署相比，Procfile 中缺少的任何进程类型都会被移除。设置为 false 时，将允许空的 Procfile 通过而不移除缺少的进程类型，请注意，新镜像、配置等将在所有进程类型上更新。（默认：&ldquo;true&rdquo;，允许值：&ldquo;true&rdquo;、&ldquo;false&rdquo;）</td>
+      </tr>
+      <tr>
+          <td>DRYCC_DEFAULT_CONFIG_TAGS</td>
+          <td>默认情况下为所有应用程序设置标签，例如：&rsquo;{&ldquo;role&rdquo;: &ldquo;worker&rdquo;}&rsquo;。（默认：&rsquo;&rsquo;）</td>
+      </tr>
+      <tr>
+          <td>KUBERNETES_NAMESPACE_DEFAULT_QUOTA_SPEC</td>
+          <td>通过设置 <a href="http://kubernetes.io/docs/admin/resourcequota/">ResourceQuota</a> 规范为应用程序命名空间设置资源配额，例如：<code>{&quot;spec&quot;:{&quot;hard&quot;:{&quot;pods&quot;:&quot;10&quot;}}}</code>, 限制应用所有者生成超过 10 个 pod（默认：&quot;&quot;, 不会对命名空间应用配额）</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="ldap-认证设置">LDAP 认证设置<a class="td-heading-self-link" href="#ldap-%e8%ae%a4%e8%af%81%e8%ae%be%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>LDAP 认证的配置选项详细说明<a href="https://pythonhosted.org/django-auth-ldap/reference.html">此处</a>。</p>
+<p><a href="/zh-cn/docs/understanding-workflow/components/#passport">Passport</a> 组件中启用用户账户 LDAP 认证的可用环境变量如下：</p>
+<table>
+  <thead>
+      <tr>
+          <th>设置</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LDAP_ENDPOINT</td>
+          <td>LDAP 服务器的 URI。如果未指定，则不启用 LDAP 认证（默认：&quot;&quot;, 示例：<code>ldap://hostname</code>）。</td>
+      </tr>
+      <tr>
+          <td>LDAP_BIND_DN</td>
+          <td>绑定到 LDAP 服务器时使用的可分辨名称（默认：&quot;&quot;）</td>
+      </tr>
+      <tr>
+          <td>LDAP_BIND_PASSWORD</td>
+          <td>与 LDAP_BIND_DN 一起使用的密码（默认：&quot;&quot;）</td>
+      </tr>
+      <tr>
+          <td>LDAP_USER_BASEDN</td>
+          <td>用户名的搜索基础的可分辨名称（默认：&quot;&quot;）</td>
+      </tr>
+      <tr>
+          <td>LDAP_USER_FILTER</td>
+          <td>用户搜索基础中的登录字段名称（默认：&ldquo;username&rdquo;）</td>
+      </tr>
+      <tr>
+          <td>LDAP_GROUP_BASEDN</td>
+          <td>用户组名的搜索基础的可分辨名称（默认：&quot;&quot;）</td>
+      </tr>
+      <tr>
+          <td>LDAP_GROUP_FILTER</td>
+          <td>用户组的过滤器（默认：&quot;&quot;, 示例：<code>objectClass=person</code>）</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="全局和每个应用程序设置">全局和每个应用程序设置<a class="td-heading-self-link" href="#%e5%85%a8%e5%b1%80%e5%92%8c%e6%af%8f%e4%b8%aa%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e8%ae%be%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><table>
+  <thead>
+      <tr>
+          <th>设置</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>DRYCC_DEPLOY_BATCHES</td>
+          <td>缩放期间顺序启动和停止的 pod 数量（默认：可用节点数量）</td>
+      </tr>
+      <tr>
+          <td>DRYCC_DEPLOY_TIMEOUT</td>
+          <td>每个部署批次的部署超时时间（秒）（默认：120）</td>
+      </tr>
+      <tr>
+          <td>IMAGE_PULL_POLICY</td>
+          <td>应用程序镜像的 kubernetes <a href="http://kubernetes.io/docs/user-guide/images/">镜像拉取策略</a>（默认：&ldquo;IfNotPresent&rdquo;）（允许值：&ldquo;Always&rdquo;、&ldquo;IfNotPresent&rdquo;）</td>
+      </tr>
+      <tr>
+          <td>KUBERNETES_DEPLOYMENTS_REVISION_HISTORY_LIMIT</td>
+          <td>Kubernetes 为给定 Deployment 保留的<a href="http://kubernetes.io/docs/user-guide/deployments/#revision-history-limit">修订</a>数量（默认：所有修订）</td>
+      </tr>
+      <tr>
+          <td>KUBERNETES_POD_TERMINATION_GRACE_PERIOD_SECONDS</td>
+          <td>发送 SIGKILL 之前，kubernetes 在 SIGTERM 后等待 pod 完成工作的秒数（默认：30）</td>
+      </tr>
+  </tbody>
+</table>
+<p>有关这些的更多详细信息，请参阅[部署应用][]指南。</p>
+<h2 id="自定义数据库">自定义数据库<a class="td-heading-self-link" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%95%b0%e6%8d%ae%e5%ba%93" aria-label="Heading self-link"></a>
+</h2><p><a href="/zh-cn/docs/understanding-workflow/components/#database">Database</a> 组件可以调整以下环境变量：</p>
+<table>
+  <thead>
+      <tr>
+          <th>设置</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>BACKUP_FREQUENCY</td>
+          <td>数据库执行基础备份的频率（默认：&ldquo;12h&rdquo;）</td>
+      </tr>
+      <tr>
+          <td>BACKUPS_TO_RETAIN</td>
+          <td>后备存储应保留的基础备份数量（默认：5）</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="自定义-fluentbit">自定义 Fluentbit<a class="td-heading-self-link" href="#%e8%87%aa%e5%ae%9a%e4%b9%89-fluentbit" aria-label="Heading self-link"></a>
+</h2><p>以下值可以在 <code>values.yaml</code> 文件中更改，或使用 Helm CLI 的 <code>--values</code> 标志。</p>
+<table>
+  <thead>
+      <tr>
+          <th>键</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>config.service</td>
+          <td>服务部分定义服务的全局属性。</td>
+      </tr>
+      <tr>
+          <td>config.inputs</td>
+          <td>输入部分定义源（与输入插件相关）。</td>
+      </tr>
+      <tr>
+          <td>config.filters</td>
+          <td>过滤器部分定义过滤器（与过滤器插件相关）</td>
+      </tr>
+      <tr>
+          <td>config.outputs</td>
+          <td>输出部分指定某些记录在标签匹配后应遵循的目的地。</td>
+      </tr>
+  </tbody>
+</table>
+<p>有关可以设置的各种变量的更多信息，请参阅 <a href="https://github.com/drycc/fluentbit">fluentbit</a>。</p>
+<h2 id="自定义监控">自定义监控<a class="td-heading-self-link" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e7%9b%91%e6%8e%a7" aria-label="Heading self-link"></a>
+</h2><h3 id="grafana"><a href="https://grafana.com/">Grafana</a><a class="td-heading-self-link" href="#grafana" aria-label="Heading self-link"></a>
+</h3><p>我们直接在图表中暴露了一些更有用的配置值。这允许使用 <code>values.yaml</code> 文件或 Helm CLI 的 <code>--set</code> 标志来设置它们。您可以在下面看到这些选项：</p>
+<table>
+  <thead>
+      <tr>
+          <th>设置</th>
+          <th>默认值</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>user</td>
+          <td>&ldquo;admin&rdquo;</td>
+          <td>数据库中创建的第一个用户（此用户具有管理员权限）</td>
+      </tr>
+      <tr>
+          <td>password</td>
+          <td>&ldquo;admin&rdquo;</td>
+          <td>第一个用户的密码。</td>
+      </tr>
+      <tr>
+          <td>allow_sign_up</td>
+          <td>&ldquo;true&rdquo;</td>
+          <td>允许用户注册账户。</td>
+      </tr>
+  </tbody>
+</table>
+<p>有关可以使用环境变量设置的其他选项列表，请参阅 Github 中的<a href="https://github.com/drycc/monitor/blob/main/grafana/rootfs/usr/share/grafana/grafana.ini.tpl">配置文件</a>。</p>
+<h3 id="victoriametrics"><a href="https://victoriametrics.com/">Victoriametrics</a><a class="td-heading-self-link" href="#victoriametrics" aria-label="Heading self-link"></a>
+</h3><p>您可以在<a href="https://github.com/drycc/victoriametrics">此处</a>找到可以使用环境变量设置的值列表。</p>
+<h2 id="自定义注册表">自定义注册表<a class="td-heading-self-link" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%b3%a8%e5%86%8c%e8%a1%a8" aria-label="Heading self-link"></a>
+</h2><p><a href="/zh-cn/docs/understanding-workflow/components/#registry">Registry</a> 组件可以通过遵循 <a href="https://distribution.github.io/distribution/about/configuration/">distribution config doc</a> 来调整。</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a1258f39e96a14029efa8d7c379f95a4">2 - 配置 DNS</h1>
+    <div class="lead">Drycc Workflow 控制器和通过 Workflow 部署的所有应用程序默认情况下旨在作为 Workflow 集群域的子域访问。</div>
+	<p>例如，假设 <code>example.com</code> 是集群的域：</p>
+<ul>
+<li>控制器应该可以在 <code>drycc.example.com</code> 访问</li>
+<li>应用程序应该默认可以在 <code>&lt;application name&gt;.example.com</code> 访问</li>
+</ul>
+<p>鉴于这种情况，配置 DNS 的主要目标是将集群域的所有子域的流量定向到托管平台的路由器组件的集群节点，该组件能够将流量引导到集群内的正确端点。</p>
+<h2 id="使用负载均衡器">使用负载均衡器<a class="td-heading-self-link" href="#%e4%bd%bf%e7%94%a8%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e5%99%a8" aria-label="Heading self-link"></a>
+</h2><p>通常，建议使用 [load balancer][] 将入站流量定向到一个或多个路由器。在这种情况下，配置 DNS 就像在 DNS 中定义一个指向负载均衡器的通配符记录一样简单。</p>
+<p>例如，假设域为 <code>example.com</code>：</p>
+<ul>
+<li>枚举每个负载均衡器 IP 的 <code>A</code> 记录（即 DNS 轮询）</li>
+<li>引用负载均衡器现有完全限定域名的 <code>CNAME</code> 记录
+<ul>
+<li>根据 <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">AWS 自己的文档</a>，当使用 AWS Elastic Load Balancers 时，这是推荐策略，因为 ELB IP 可能会随时间变化。</li>
+</ul>
+</li>
+</ul>
+<p>对于使用&quot;自定义域&quot;（不是集群自己域的子域的完全限定域名）的任何应用程序的 DNS，可以通过创建引用上述通配符记录的 <code>CNAME</code> 记录来配置。</p>
+<p>虽然这取决于您的 Kubernetes 发行版和底层基础设施，但在许多情况下，可以使用 <code>kubectl</code> 工具直接确定负载均衡器的 IP 或现有完全限定域名：</p>
+<pre tabindex="0"><code>$ kubectl --namespace=istio-nginx describe service | grep &#34;LoadBalancer&#34;
+LoadBalancer Ingress:	a493e4e58ea0511e5bb390686bc85da3-1558404688.us-west-2.elb.amazonaws.com
+</code></pre><p><code>LoadBalancer Ingress</code> 字段通常描述现有域名或公共 IP。请注意，如果 Kubernetes 能够为您自动提供负载均衡器，它会异步执行此操作。如果在 Workflow 安装后不久发出上述命令，负载均衡器可能尚不存在。</p>
+<h2 id="没有负载均衡器">没有负载均衡器<a class="td-heading-self-link" href="#%e6%b2%a1%e6%9c%89%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e5%99%a8" aria-label="Heading self-link"></a>
+</h2><p>在某些平台（例如 Minikube）上，提供负载均衡器不是一件容易或实际的事情。在这些情况下，可以直接识别托管路由器 pod 的 Kubernetes 节点的公共 IP，并使用该信息来配置本地 <code>/etc/hosts</code> 文件。</p>
+<p>因为通配符条目在本地 <code>/etc/hosts</code> 文件中不起作用，使用此策略可能导致频繁编辑该文件，为添加到该集群的每个应用程序添加集群的完全限定子域。因此，更可行的选项可能是利用 <a href="http://xip.io/">xip.io</a> 服务。</p>
+<p>一般来说，对于任何 IP <code>a.b.c.d</code>，完全限定域名 <code>any-subdomain.a.b.c.d.xip.io</code> 将解析为 IP <code>a.b.c.d</code>。这可能非常有用。</p>
+<p>首先，使用 <code>kubectl</code> 查找托管路由器实例的节点：</p>
+<pre tabindex="0"><code>$ kubectl --namespace=istio-ingress describe pod | grep Node:
+Node:       ip-10-0-0-199.us-west-2.compute.internal/10.0.0.199
+Node:       ip-10-0-0-198.us-west-2.compute.internal/10.0.0.198
+</code></pre><p>该命令将显示每个路由器 pod 的信息。对于每个，<code>Node</code> 字段中显示节点名称和 IP。如果这些字段中出现的 IP 是公共的，则可以使用其中任何一个来配置您的本地 <code>/etc/hosts</code> 文件，或与 <a href="http://xip.io/">xip.io</a> 一起使用。如果显示的 IP 不是公共的，则可能需要进一步调查。</p>
+<p>您可以使用 <code>kubectl</code> 列出节点的 IP 地址：</p>
+<pre tabindex="0"><code>$ kubectl describe node ip-10-0-0-199.us-west-2.compute.internal
+# ...
+Addresses:	10.0.0.199,10.0.0.199,54.218.85.175
+# ...
+</code></pre><p>在这里，<code>Addresses</code> 字段列出了节点的所有 IP。如果其中任何一个是公共的，则可以再次使用它们来配置您的本地 <code>/etc/hosts</code> 文件，或与 <a href="http://xip.io/">xip.io</a> 一起使用。</p>
+<h2 id="教程使用-google-cloud-dns-配置-dns">教程：使用 <a href="https://cloud.google.com/dns/docs">Google Cloud DNS</a> 配置 DNS<a class="td-heading-self-link" href="#%e6%95%99%e7%a8%8b%e4%bd%bf%e7%94%a8-google-cloud-dns-%e9%85%8d%e7%bd%ae-dns" aria-label="Heading self-link"></a>
+</h2><p>在本节中，我们将描述如何配置 Google Cloud DNS 以将您的域名路由到您的 Drycc 集群。</p>
+<p>在本节中，我们假设以下内容：</p>
+<ul>
+<li>您的入口服务前面有一个负载均衡器。
+<ul>
+<li>负载均衡器不必基于云，它只需要提供稳定的 IP 地址或稳定的域名</li>
+</ul>
+</li>
+<li>您在注册商处注册了 <code>mystuff.com</code> 域名
+<ul>
+<li>在以下说明中用您的域名替换 <code>mystuff.com</code></li>
+</ul>
+</li>
+<li>您的注册商允许您更改域名的名称服务器（大多数注册商都这样做）</li>
+</ul>
+<p>以下是配置云 DNS 以路由到您的 drycc 集群的步骤：</p>
+<ol>
+<li>获取负载均衡器 IP 或域名</li>
+</ol>
+<ul>
+<li>如果您在 Google Container Engine 上，可以运行 <code>kubectl get svc -n istio-ingress</code> 并查找 <code>LoadBalancer Ingress</code> 列以获取 IP 地址</li>
+</ul>
+<ol start="2">
+<li>创建新的 Cloud DNS Zone（在控制台上：<code>Networking</code> =&gt; <code>Cloud DNS</code>，然后点击 <code>Create Zone</code>）</li>
+<li>命名您的区域，并将 DNS 名称设置为 <code>mystuff.com.</code>（注意末尾的 <code>.</code></li>
+<li>点击 <code>Create</code> 按钮</li>
+<li>在结果页面上点击 <code>Add Record Set</code> 按钮</li>
+<li>如果您的负载均衡器提供稳定的 IP 地址，请在结果表单中输入以下字段：</li>
+<li><code>DNS Name</code>: <code>*</code></li>
+<li><code>Resource Record Type</code>: <code>A</code></li>
+<li><code>TTL</code>: 您选择的 DNS TTL。如果您正在测试或预计您会随着时间推移拆除和重建许多 drycc 集群，我们推荐较低的 TTL</li>
+<li><code>IPv4 Address</code>: 您在第一步中获得的 IP</li>
+<li>点击 <code>Create</code> 按钮</li>
+<li>如果您的负载均衡器提供稳定的域名 <code>lbdomain.com</code>，请在结果表单中输入以下字段：</li>
+<li><code>DNS Name</code>: <code>*</code></li>
+<li><code>Resource Record Type</code>: <code>CNAME</code></li>
+<li><code>TTL</code>: 您选择的 DNS TTL。如果您正在测试或预计您会随着时间推移拆除和重建许多 drycc 集群，我们推荐较低的 TTL</li>
+<li><code>Canonical name</code>: <code>lbdomain.com.</code>（注意末尾的 <code>.</code>）</li>
+<li>点击 <code>Create</code> 按钮</li>
+<li>在您的域注册商中，将您的 <code>mystuff.com</code> 域的名称服务器设置为同一页面上 <code>NS</code> 记录的 <code>data</code> 列下的名称服务器。它们通常如下所示（注意尾随 <code>.</code> 字符）。</li>
+</ol>
+<pre tabindex="0"><code>ns-cloud-b1.googledomains.com.
+ns-cloud-b2.googledomains.com.
+ns-cloud-b3.googledomains.com.
+ns-cloud-b4.googledomains.com.
+</code></pre><p>注意：如果您必须重新创建您的 drycc 集群，只需返回步骤 6.4 或 7.4（取决于您的负载均衡器）并将 IP 地址或域名更改为新值。您可能必须等待您设置的 TTL 到期。</p>
+<h2 id="测试">测试<a class="td-heading-self-link" href="#%e6%b5%8b%e8%af%95" aria-label="Heading self-link"></a>
+</h2><p>要测试流量是否到达其预期目的地，可以像这样向 Drycc 控制器发送请求（不要忘记尾随斜杠！）：</p>
+<pre tabindex="0"><code>curl http://drycc.example.com/v2/
+</code></pre><p>或：</p>
+<pre tabindex="0"><code>curl http://drycc.54.218.85.175.xip.io/v2/
+</code></pre><p>由于此类请求需要身份验证，以下响应应被视为成功的指标：</p>
+<pre tabindex="0"><code>{&#34;detail&#34;:&#34;Authentication credentials were not provided.&#34;}
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5e70dabb651ba434bf52f6a0f428d092">3 - 部署钩子</h1>
+    <div class="lead">部署钩子允许外部服务在您的应用程序的新版本推送到 Workflow 时接收通知。</div>
+	<p>它有助于让开发团队了解部署情况，同时也可以用于将不同系统集成在一起。</p>
+<p>设置一个或多个钩子后，钩子输出和错误会出现在您的Drycc Grafana应用程序日志中：</p>
+<pre tabindex="0"><code>2011-03-15T15:07:29-07:00 drycc[api]: Deploy hook sent to http://drycc.rocks
+</code></pre><p>部署钩子是一个通用的 HTTP 钩子。管理员可以通过 <a href="/zh-cn/docs/managing-workflow/tuning-component-settings/#customizing-the-controller">调整控制器设置</a> 来创建和配置多个部署钩子。</p>
+<h2 id="http-post-钩子">HTTP POST 钩子<a class="td-heading-self-link" href="#http-post-%e9%92%a9%e5%ad%90" aria-label="Heading self-link"></a>
+</h2><p>HTTP 部署钩子对 URL 执行 HTTP POST。请求中包含的参数与钩子消息中可用的变量相同：<code>app</code>、<code>release</code>、<code>release_summary</code>、<code>sha</code> 和 <code>user</code>。请参见下面的描述：</p>
+<pre tabindex="0"><code>app=secure-woodland&amp;release=v4&amp;release_summary=gabrtv%20deployed%35b3726&amp;sha=35b3726&amp;user=gabrtv
+</code></pre><p>可选地，如果通过 <a href="/zh-cn/docs/managing-workflow/tuning-component-settings/#customizing-the-controller">调整控制器设置</a> 将部署钩子密钥添加到控制器，则 POST 请求中将存在新的 <code>Authorization</code> 标头。此标头的值是使用密钥作为密钥计算的请求 URL 的 <a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a> 十六进制摘要。</p>
+<p>为了验证此请求是否来自 Workflow，请使用密钥、完整 URL 和 HMAC-SHA1 哈希算法来计算签名。在 Python 中，这看起来像这样：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">hashlib</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">hmac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">hmac</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">new</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;my_secret_key&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;http://drycc.rocks?app=secure-woodland&amp;release=v4&amp;release_summary=gabrtv</span><span style="color:#4e9a06">%20d</span><span style="color:#4e9a06">eployed%35b3726&amp;sha=35b3726&amp;user=gabrtv&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">digestmod</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">hashlib</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">sha1</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">hexdigest</span><span style="color:#000;font-weight:bold">()</span>
+</span></span></code></pre></div><p>如果计算的 HMAC 十六进制摘要的值和 <code>Authorization</code> 标头中的值相同，则请求来自 Workflow。</p>
+
+
+<div class="alert alert-danger" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    计算签名时，请确保 URL 参数按字母顺序排列。这在计算加密签名时至关重要，因为大多数 Web 应用程序不关心 HTTP 参数的顺序，但加密签名将不会相同。
+
+</div>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-004a15eb4cb73246d89366dd9838d84d">4 - 平台日志</h1>
+    <div class="lead">日志是从您的应用程序所有运行进程的输出流中聚合的时间戳事件流。检索、过滤或使用 syslog drains。</div>
+	<p>我们正在与 Quickwit 合作，为您提供应用程序日志集群和搜索界面。</p>
+<h2 id="架构图">架构图<a class="td-heading-self-link" href="#%e6%9e%b6%e6%9e%84%e5%9b%be" aria-label="Heading self-link"></a>
+</h2><pre tabindex="0"><code>┌───────────┐                   ┌───────────┐
+│ Container │                   │  Grafana  │
+└───────────┘                   └───────────┘
+      │                               ^
+     log                              |
+      │                               |
+      ˅                               │
+┌───────────┐                   ┌───────────┐
+│ Fluentbit │─────otel/grpc────&gt;│  Quickwit │
+└───────────┘                   └───────────┘
+</code></pre><h2 id="默认配置">默认配置<a class="td-heading-self-link" href="#%e9%bb%98%e8%ae%a4%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h2><p>Fluent Bit 基于可插拔架构，其中不同的插件在数据管道中发挥主要作用，有 70 多个内置插件可用。
+请参考 charts <a href="https://github.com/drycc/fluentbit/blob/main/charts/fluentbit/values.yaml">values.yaml</a> 以获取特定配置。</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fd8f5f6dc2937f1343d4f1cd4660ae35">5 - 平台监控</h1>
+    <div class="lead">为您的应用提供平台监控，提前发现问题并快速响应事件。</div>
+	<h2 id="描述">描述<a class="td-heading-self-link" href="#%e6%8f%8f%e8%bf%b0" aria-label="Heading self-link"></a>
+</h2><p>我们现在为运行中的 Kubernetes 集群提供了一个监控堆栈，用于内省。该堆栈包括 4 个组件：</p>
+<ul>
+<li><a href="https://github.com/kubernetes/kube-state-metrics">kube-state-metrics</a>，kube-state-metrics (KSM) 是一个简单的服务，它监听 Kubernetes API 服务器并生成关于对象状态的指标。</li>
+<li><a href="http://github.com/prometheus/node_exporter">Node Exporter</a>，Prometheus 导出器，用于 *NIX 内核暴露的硬件和操作系统指标。</li>
+<li><a href="https://victoriametrics.com/">Victoriametrics</a>，一个 <a href="https://cncf.io/">Cloud Native Computing Foundation</a> 项目，是一个系统和服务监控系统。</li>
+<li><a href="http://grafana.org/">Grafana</a>，时序数据的图形化工具</li>
+</ul>
+<h2 id="架构图">架构图<a class="td-heading-self-link" href="#%e6%9e%b6%e6%9e%84%e5%9b%be" aria-label="Heading self-link"></a>
+</h2><pre tabindex="0"><code>┌────────────────┐                                                        
+│ HOST           │                                                        
+│  node-exporter │◀──┐                          ┌──────────────────┐         
+└────────────────┘   │                          │kube-state-metrics│         
+                     │                          └──────────────────┘         
+┌────────────────┐   │                                    ▲                    
+│ HOST           │   │    ┌─────────────────┐             │                    
+│  node-exporter │◀──┼────│ victoriametrics │─────────────┘                    
+└────────────────┘   │    └─────────────────┘                                  
+                     │             ▲                                         
+┌───────────────┐    │             │                                         
+│ HOST          │    │             ▼                                         
+│  node-exporter│◀───┘       ┌──────────┐                                    
+└───────────────┘            │ Grafana  │                                    
+                             └──────────┘                                    
+</code></pre><h2 id="grafana"><a href="https://grafana.com/">Grafana</a><a class="td-heading-self-link" href="#grafana" aria-label="Heading self-link"></a>
+</h2><p>Grafana 允许用户创建自定义仪表板，可视化捕获到运行中的 VictoriaMetrics 组件的数据。默认情况下，Grafana 通过路由器使用<a href="https://github.com/drycc/router#how-it-works">服务注解</a>暴露在以下 URL：<code>http://grafana.mydomain.com</code>。默认登录是 <code>admin/admin</code>。如果您有兴趣更改这些值，请参阅[调整组件设置][]。</p>
+<p>Grafana 将预加载几个仪表板，帮助操作员开始监控 Kubernetes 和 Drycc Workflow。这些仪表板旨在作为起点，并不包括生产安装中可能需要监控的每个项目。</p>
+<p>Drycc Workflow 监控默认情况下不会将数据写入主机文件系统或长期存储。如果 Grafana 实例失败，修改的仪表板将丢失。</p>
+<h3 id="生产配置">生产配置<a class="td-heading-self-link" href="#%e7%94%9f%e4%ba%a7%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>生产安装的 Grafana 应尽可能更改以下配置值：</p>
+<ul>
+<li>将默认用户名和密码从 <code>admin/admin</code> 更改。密码值以明文传递，因此最好在命令行上设置此值，而不是将其检入版本控制。</li>
+<li>启用持久性</li>
+<li>使用受支持的外部数据库，如 mysql 或 postgres。您可以在<a href="https://github.com/drycc/monitor/blob/main/grafana/rootfs/usr/share/grafana/grafana.ini.tpl#L62">此处</a>找到更多信息</li>
+</ul>
+<h3 id="集群内持久性">集群内持久性<a class="td-heading-self-link" href="#%e9%9b%86%e7%be%a4%e5%86%85%e6%8c%81%e4%b9%85%e6%80%a7" aria-label="Heading self-link"></a>
+</h3><p>启用持久性将允许您的自定义配置在 pod 重启后保持。这意味着如果您升级 Workflow 安装，默认的 sqllite 数据库（存储会话和用户数据等）不会消失。</p>
+<p>如果您希望为 Grafana 启用持久性，可以在运行 <code>helm install</code> 之前在 <code>values.yaml</code> 文件中将 <code>enabled</code> 设置为 <code>true</code>。</p>
+<pre tabindex="0"><code> grafana:
+   # Configure the following ONLY if you want persistence for on-cluster grafana
+   # GCP PDs and EBS volumes are supported only
+   persistence:
+     enabled: true # Set to true to enable persistence
+     size: 5Gi # PVC size
+</code></pre><h3 id="集群外-grafana">集群外 Grafana<a class="td-heading-self-link" href="#%e9%9b%86%e7%be%a4%e5%a4%96-grafana" aria-label="Heading self-link"></a>
+</h3><p>如果您希望提供自己的 Grafana 实例，可以在运行 <code>helm install</code> 之前在 <code>values.yaml</code> 文件中设置 <code>grafana.enabled</code>。</p>
+<h2 id="victoriametrics"><a href="https://victoriametrics.com/">VictoriaMetrics</a><a class="td-heading-self-link" href="#victoriametrics" aria-label="Heading self-link"></a>
+</h2><p>VictoriaMetrics 是一个快速且可扩展的开源时序数据库和监控解决方案，让用户无需扩展性问题和最小的运营负担即可构建监控平台，它与 prometheus 格式完全兼容。</p>
+<h3 id="集群内持久性-1">集群内持久性<a class="td-heading-self-link" href="#%e9%9b%86%e7%be%a4%e5%86%85%e6%8c%81%e4%b9%85%e6%80%a7-1" aria-label="Heading self-link"></a>
+</h3><p>您可以在 <code>values.yaml</code> 中将 <code>node-exporter</code> 和 <code>kube-state-metrics</code> 设置为 <code>true</code> 或 <code>false</code>。
+如果您希望为 VictoriaMetrics 启用持久性，可以在运行 <code>helm install</code> 之前在 <code>values.yaml</code> 文件中将 <code>enabled</code> 设置为 <code>true</code>。</p>
+<pre tabindex="0"><code>victoriametrics:
+  vmstorage:
+    replicas: 3
+    extraArgs:
+    - --retentionPeriod=30d
+    temporary:
+      enabled: true
+      size: 5Gi
+      storageClass: &#34;toplvm-ssd&#34;
+    persistence:
+      enabled: true
+      size: 10Gi
+      storageClass: &#34;toplvm-hdd&#34;
+  node-exporter:
+    enabled: true
+  kube-state-metrics:
+    enabled: true
+</code></pre><h3 id="集群外-victoriametrics">集群外 VictoriaMetrics<a class="td-heading-self-link" href="#%e9%9b%86%e7%be%a4%e5%a4%96-victoriametrics" aria-label="Heading self-link"></a>
+</h3><p>要使用外部 VictoriaMetrics，请在运行 <code>helm install</code> 之前在 <code>values.yaml</code> 文件中提供以下值。</p>
+<ul>
+<li><code>victoriametrics.enabled=false</code></li>
+<li><code>grafana.prometheusUrl=&quot;http://my.prometheus.url:9090&quot;</code></li>
+<li><code>controller.prometheusUrl=&quot;http://my.prometheus.url:9090&quot;</code></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f30a865310ec754108a4ce6a32869210">6 - 升级 Workflow</h1>
+    <div class="lead">Drycc Workflow 版本可以就地升级，最小化停机时间。</div>
+	<p>此升级过程需要：</p>
+<ul>
+<li>Helm 版本 <a href="https://github.com/kubernetes/helm/releases/tag/v2.1.0">2.1.0 或更新</a></li>
+<li>配置的集群外存储</li>
+</ul>
+<h2 id="升级过程">升级过程<a class="td-heading-self-link" href="#%e5%8d%87%e7%ba%a7%e8%bf%87%e7%a8%8b" aria-label="Heading self-link"></a>
+</h2>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    如果从 <a href="https://github.com/helm/helm-classic">Helm Classic</a> 安装升级，您需要将集群迁移到 <a href="https://github.com/kubernetes/helm">Kubernetes Helm</a> 安装。请参阅 [Workflow-Migration][] 获取步骤。
+
+</div>
+
+<h3 id="步骤-1应用-workflow-升级">步骤 1：应用 Workflow 升级<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-1%e5%ba%94%e7%94%a8-workflow-%e5%8d%87%e7%ba%a7" aria-label="Heading self-link"></a>
+</h3><p>Helm 将从之前的版本中移除所有组件。通过 Workflow 部署的应用程序流量将在升级期间继续流动。不应发生服务中断。</p>
+<p>如果 Workflow 未配置为使用集群外 Postgres，Workflow API 将在数据库从备份恢复时经历短暂的停机时间。</p>
+<p>首先，使用 <code>helm ls</code> 查找 helm 给您的部署的版本名称，然后运行</p>
+<pre tabindex="0"><code>$ helm upgrade &lt;release-name&gt; oci://registry.drycc.cc/charts/workflow
+</code></pre><p><strong>注意：</strong> 如果使用 <a href="https://cloud.google.com/storage/">gcs</a> 上的集群外对象存储和/或使用 <a href="https://cloud.google.com/container-registry/">gcr</a> 的集群外注册表，并打算从 pre-<code>v2.10.0</code> 图表升级到 <code>v2.10.0</code> 或更高版本，现在需要预先 base64 编码 <code>key_json</code> 值。因此，假设其余的自定义/集群外值在用于之前安装的现有 <code>values.yaml</code> 中定义，可以运行以下命令：</p>
+<pre tabindex="0"><code>$ B64_KEY_JSON=&#34;$(cat ~/path/to/key.json | base64 -w 0)&#34;
+$ helm upgrade &lt;release_name&gt; drycc/workflow -f values.yaml --set gcs.key_json=&#34;${B64_KEY_JSON}&#34;,registry-token-refresher.gcr.key_json=&#34;${B64_KEY_JSON}&#34;
+</code></pre><p>或者，只需在 values.yaml 中替换适当的值，而不使用 <code>--set</code> 参数。确保用单引号包装，因为双引号会在升级时给出解析器错误。</p>
+<h3 id="步骤-2验证升级">步骤 2：验证升级<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-2%e9%aa%8c%e8%af%81%e5%8d%87%e7%ba%a7" aria-label="Heading self-link"></a>
+</h3><p>验证所有组件已启动并通过了就绪检查：</p>
+<pre tabindex="0"><code>$ kubectl --namespace=drycc get pods
+NAME                                     READY     STATUS    RESTARTS   AGE
+drycc-builder-2448122224-3cibz            1/1       Running   0          5m
+drycc-controller-1410285775-ipc34         1/1       Running   3          5m
+drycc-controller-celery-694f75749b-cmxxn  3/3       Running   0          5m
+drycc-database-e7c5z                      1/1       Running   0          5m
+drycc-fluentbit-45h7j                     1/1       Running   0          5m
+drycc-fluentbit-4z7lw                     1/1       Running   0          5m
+drycc-fluentbit-k2wsw                     1/1       Running   0          5m
+drycc-fluentbit-skdw4                     1/1       Running   0          5m
+drycc-valkey-8nazu                        1/1       Running   0          5m
+drycc-grafana-tm266                       1/1       Running   0          5m
+drycc-registry-1814324048-yomz5           1/1       Running   0          5m
+drycc-registry-proxy-4m3o4                1/1       Running   0          5m
+drycc-registry-proxy-no3r1                1/1       Running   0          5m
+drycc-registry-proxy-ou8is                1/1       Running   0          5m
+drycc-registry-proxy-zyajl                1/1       Running   0          5m
+</code></pre><h3 id="步骤-3升级-drycc-客户端">步骤 3：升级 Drycc 客户端<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-3%e5%8d%87%e7%ba%a7-drycc-%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="Heading self-link"></a>
+</h3><p>Drycc Workflow 的用户现在应该升级他们的 drycc 客户端，以避免收到 <code>WARNING: Client and server API versions do not match. Please consider upgrading.</code> 警告。</p>
+<pre tabindex="0"><code>curl -sfL https://www.drycc.cc/install-cli.sh | bash - &amp;&amp; sudo mv drycc $(which drycc)
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ad04652ad398a8700cd2996d3d721e6f">7 - 生产部署</h1>
+    <div class="lead">为生产工作负载准备 Workflow 部署时，有一些额外的建议。</div>
+	<h2 id="在生产环境中运行-workflow-而不使用-drycc-存储">在生产环境中运行 Workflow 而不使用 drycc 存储<a class="td-heading-self-link" href="#%e5%9c%a8%e7%94%9f%e4%ba%a7%e7%8e%af%e5%a2%83%e4%b8%ad%e8%bf%90%e8%a1%8c-workflow-%e8%80%8c%e4%b8%8d%e4%bd%bf%e7%94%a8-drycc-%e5%ad%98%e5%82%a8" aria-label="Heading self-link"></a>
+</h2><p>在生产环境中，可以通过运行外部对象存储来实现持久存储。对于 AWS、GCE/GKE 或 Azure 上的用户，Amazon S3、Google GCS 或 Microsoft Azure Storage 的便利性使得运行不使用存储的 Workflow 集群成为相当合理的选择。对于对使用外部对象存储有限制的用户，使用 swift 对象存储可能是一个选项。</p>
+<p>运行不使用存储的 Workflow 集群提供了几个优势：</p>
+<ul>
+<li>从工作节点移除状态</li>
+<li>减少资源使用</li>
+<li>减少管理 Workflow 的复杂性和运营负担</li>
+</ul>
+<p>有关移除此运营复杂性的详细信息，请参阅<a href="/zh-cn/docs/installing-workflow/configuring-object-storage/">Configuring Object Storage</a>。</p>
+<h2 id="审查安全注意事项">审查安全注意事项<a class="td-heading-self-link" href="#%e5%ae%a1%e6%9f%a5%e5%ae%89%e5%85%a8%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" aria-label="Heading self-link"></a>
+</h2><p>在生产环境中运行 Workflow 时，有一些额外的安全相关注意事项。有关详细信息，请参阅[Security Considerations][]。</p>
+<h2 id="注册仅限管理员">注册仅限管理员<a class="td-heading-self-link" href="#%e6%b3%a8%e5%86%8c%e4%bb%85%e9%99%90%e7%ae%a1%e7%90%86%e5%91%98" aria-label="Heading self-link"></a>
+</h2><p>默认情况下，与 Workflow 控制器的注册处于&quot;admin_only&quot;模式。第一个运行 <code>drycc register</code> 命令的用户成为初始&quot;admin&quot;用户，此后的注册将被禁止，除非由管理员请求。</p>
+<p>请参阅以下文档了解如何更改注册模式：</p>
+<ul>
+<li><a href="/zh-cn/docs/managing-workflow/tuning-component-settings/#customizing-the-controller">Customizing Controller</a></li>
+</ul>
+<h2 id="禁用-grafana-注册">禁用 Grafana 注册<a class="td-heading-self-link" href="#%e7%a6%81%e7%94%a8-grafana-%e6%b3%a8%e5%86%8c" aria-label="Heading self-link"></a>
+</h2><p>还建议禁用 Grafana 仪表板的注册。</p>
+<p>请参阅以下文档了解如何禁用 Grafana 注册：</p>
+<ul>
+<li><a href="/zh-cn/docs/managing-workflow/tuning-component-settings/#customizing-the-monitor">Customizing Monitor</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">保留所有权利</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">隐私政策</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.403ff095218c662472dab60ed98ecbb19431682de5ac7c6159891241cd366af5.js" integrity="sha256-QD/wlSGMZiRy2rYO2Y7LsZQxaC3lrHxhWYkSQc02avU=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Roadmap on Drycc</title>
+    <link>/docs/roadmap/</link>
+    <description>Recent content in Roadmap on Drycc</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/docs/roadmap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Planning Process</title>
+      <link>/docs/roadmap/planning-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/roadmap/planning-process/</guid>
+      <description>&lt;h2 id=&#34;the-role-of-maintainers&#34;&gt;The Role of Maintainers&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#the-role-of-maintainers&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;../contributing/maintainers.md&#34;&gt;Maintainers&lt;/a&gt; lead the Drycc projects. Their duties include proposing the Roadmap, reviewing and integrating contributions and maintaining the vision of the project.&lt;/p&gt;&#xA;&lt;h2 id=&#34;open-roadmap&#34;&gt;Open Roadmap&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#open-roadmap&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;The &lt;a href=&#34;/docs/roadmap/roadmap/&#34;&gt;Drycc Roadmap&lt;/a&gt; is a community document. While Maintainers propose the Roadmap, it gets discussed and refined in Release Planning Meetings.&lt;/p&gt;&#xA;&lt;h2 id=&#34;contributing-to-the-roadmap&#34;&gt;Contributing to the Roadmap&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#contributing-to-the-roadmap&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Proposals and issues can be opened by anyone. Every member of the &lt;a href=&#34;../contributing/community.md&#34;&gt;community&lt;/a&gt; is welcome to participate in the discussion by providing feedback and/or offering counter-proposals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Drycc Workflow Roadmap</title>
+      <link>/docs/roadmap/roadmap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/roadmap/roadmap/</guid>
+      <description>&lt;h1 id=&#34;drycc-workflow-roadmap&#34;&gt;Drycc Workflow Roadmap&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#drycc-workflow-roadmap&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;The Drycc Workflow Roadmap is a community document created as part of the open&#xA;&lt;a href=&#34;/docs/roadmap/planning-process/&#34;&gt;Planning Process&lt;/a&gt;. Each roadmap item describes a high-level capability or&#xA;grouping of features that are deemed important to the future of Drycc.&lt;/p&gt;&#xA;&lt;p&gt;Given the project&amp;rsquo;s rapid &lt;a href=&#34;/docs/roadmap/releases/&#34;&gt;Release Schedule&lt;/a&gt;, roadmap&#xA;items are designed to provide a sense of direction over many releases.&lt;/p&gt;&#xA;&lt;h2 id=&#34;interactive-drycc-run-binbash&#34;&gt;Interactive &lt;code&gt;drycc run /bin/bash&lt;/code&gt;&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#interactive-drycc-run-binbash&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Provide the ability for developers to launch an interactive terminal session in&#xA;their application environment.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Releases</title>
+      <link>/docs/roadmap/releases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/roadmap/releases/</guid>
+      <description>&lt;p&gt;Drycc uses a &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;continuous delivery&lt;/a&gt; approach for creating releases. Every merged commit that passes&#xA;testing results in a deliverable that can be given a &lt;a href=&#34;http://semver.org&#34;&gt;semantic version&lt;/a&gt; tag and shipped.&lt;/p&gt;&#xA;&lt;p&gt;The master &lt;code&gt;git&lt;/code&gt; branch of a project should always work. Only changes considered ready to be&#xA;released publicly are merged.&lt;/p&gt;&#xA;&lt;h2 id=&#34;components-release-as-needed&#34;&gt;Components Release as Needed&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#components-release-as-needed&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Drycc components release new versions as often as needed. Fixing a high priority bug requires the&#xA;project maintainer to create a new patch release. Merging a backward-compatible feature implies&#xA;a minor release.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

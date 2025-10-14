@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>用户 on Drycc</title>
+    <link>/zh-cn/docs/users/</link>
+    <description>Recent content in 用户 on Drycc</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="/zh-cn/docs/users/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drycc Workflow CLI</title>
+      <link>/zh-cn/docs/users/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/zh-cn/docs/users/cli/</guid>
+      <description>&lt;p&gt;Drycc Workflow 命令行界面 (CLI) 或客户端允许您与 Drycc Workflow 进行交互。&lt;/p&gt;&#xA;&lt;h2 id=&#34;安装&#34;&gt;安装&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#%e5%ae%89%e8%a3%85&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;使用以下命令为 Linux 或 Mac OS X 安装最新的 &lt;code&gt;drycc&lt;/code&gt; 客户端：&#xA;$ curl -sfL &lt;a href=&#34;https://www.drycc.cc/install-cli.sh&#34;&gt;https://www.drycc.cc/install-cli.sh&lt;/a&gt; | bash -&lt;/p&gt;&#xA;&lt;p&gt;安装程序将 &lt;code&gt;drycc&lt;/code&gt; 放在当前目录中，但您应该将其移动到 $PATH 中的某个位置：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;$ ln -fs $PWD/drycc /usr/local/bin/drycc&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;获取帮助&#34;&gt;获取帮助&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#%e8%8e%b7%e5%8f%96%e5%b8%ae%e5%8a%a9&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Drycc 客户端为每个命令提供了全面的文档。使用 &lt;code&gt;drycc help&lt;/code&gt; 来探索可用的命令：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;$ drycc help&#xA;The Drycc command-line client issues API calls to a Drycc controller.&#xA;&#xA;Usage: drycc &amp;lt;command&amp;gt; [&amp;lt;args&amp;gt;...]&#xA;&#xA;Auth commands::&#xA;&#xA;  login         login to a controller&#xA;  logout        logout from the current controller&#xA;&#xA;Subcommands, use `drycc help [subcommand]` to learn more::&#xA;...&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;要获取子命令的帮助，请使用 &lt;code&gt;drycc help [subcommand]&lt;/code&gt;：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>用户和注册</title>
+      <link>/zh-cn/docs/users/registration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/zh-cn/docs/users/registration/</guid>
+      <description>&lt;p&gt;Workflow 使用 passport 组件来创建和授权用户，它可以配置 LDAP 认证选项或通过 passport 网站来注册用户。&lt;/p&gt;&#xA;&lt;h2 id=&#34;登录到-workflow&#34;&gt;登录到 Workflow&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#%e7%99%bb%e5%bd%95%e5%88%b0-workflow&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;如果您已经有账户，请使用 &lt;code&gt;drycc login&lt;/code&gt; 来针对 Drycc Workflow API 进行认证。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;$ drycc login http://drycc.example.com&#xA;Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71&#xA;Waiting for login... .o.Logged in as drycc&#xA;Configuration file written to /root/.drycc/client.json&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;或者您可以使用用户名和密码登录&#xA;$ drycc login &lt;a href=&#34;http://drycc.example.com&#34;&gt;http://drycc.example.com&lt;/a&gt; &amp;ndash;username=demo &amp;ndash;password=demo&#xA;Configuration file written to /root/.drycc/client.json&lt;/p&gt;&#xA;&lt;h2 id=&#34;从-workflow-注销&#34;&gt;从 Workflow 注销&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#%e4%bb%8e-workflow-%e6%b3%a8%e9%94%80&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;drycc logout&lt;/code&gt; 从现有控制器会话注销。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;$ drycc logout&#xA;Logged out as drycc&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;验证您的会话&#34;&gt;验证您的会话&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#%e9%aa%8c%e8%af%81%e6%82%a8%e7%9a%84%e4%bc%9a%e8%af%9d&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;您可以通过运行 &lt;code&gt;drycc whoami&lt;/code&gt; 来验证您的客户端配置。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>用户和 SSH 密钥</title>
+      <link>/zh-cn/docs/users/ssh-keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/zh-cn/docs/users/ssh-keys/</guid>
+      <description>&lt;p&gt;对于通过 &lt;code&gt;git push&lt;/code&gt; 进行的 &lt;strong&gt;Dockerfile&lt;/strong&gt; 和 &lt;strong&gt;Buildpack&lt;/strong&gt; 基础应用部署，Drycc Workflow 通过 SSH 密钥识别用户。SSH 密钥被推送到平台，并且必须对每个用户唯一。用户可以根据需要拥有多个 SSH 密钥。&lt;/p&gt;&#xA;&lt;h2 id=&#34;生成-ssh-密钥&#34;&gt;生成 SSH 密钥&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#%e7%94%9f%e6%88%90-ssh-%e5%af%86%e9%92%a5&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;如果您还没有 SSH 密钥或者想为 Drycc Workflow 创建新密钥，请使用 &lt;code&gt;ssh-keygen&lt;/code&gt; 生成新密钥：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ssh-keygen -f ~/.ssh/id_drycc -t rsa&#xA;Generating public/private rsa key pair.&#xA;Enter passphrase (empty for no passphrase):&#xA;Enter same passphrase again:&#xA;Your identification has been saved in /Users/admin/.ssh/id_drycc.&#xA;Your public key has been saved in /Users/admin/.ssh/id_drycc.pub.&#xA;The key fingerprint is:&#xA;3d:ac:1f:f4:83:f7:64:51:c1:7e:7f:80:b6:70:36:c9 admin@plinth-23437.local&#xA;The key&amp;#39;s randomart image is:&#xA;+--[ RSA 2048]----+&#xA;|              .. |&#xA;|               ..|&#xA;|           . o. .|&#xA;|         o. E .o.|&#xA;|        S == o..o|&#xA;|         o +.  .o|&#xA;|        . o + o .|&#xA;|         . o =   |&#xA;|          .   .  |&#xA;+-----------------+&#xA;$ ssh-add ~/.ssh/id_drycc&#xA;Identity added: /Users/admin/.ssh/id_drycc (/Users/admin/.ssh/id_drycc)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;添加和移除-ssh-密钥&#34;&gt;添加和移除 SSH 密钥&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#%e6%b7%bb%e5%8a%a0%e5%92%8c%e7%a7%bb%e9%99%a4-ssh-%e5%af%86%e9%92%a5&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;通过将 SSH 密钥的&lt;strong&gt;公钥&lt;/strong&gt;部分发布到 Drycc Workflow，负责接收 &lt;code&gt;git push&lt;/code&gt; 的组件将能够认证用户并确保他们有权访问目标应用。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

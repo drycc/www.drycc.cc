@@ -1,0 +1,724 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="/zh-cn/docs/quickstart/">
+<link rel="alternate" type="application/rss&#43;xml" href="/zh-cn/docs/quickstart/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>快速开始 | Drycc</title>
+<meta name="description" content="部署您的第一个应用并掌握 Drycc 基础知识的分步指南。">
+<meta property="og:url" content="/zh-cn/docs/quickstart/">
+  <meta property="og:site_name" content="Drycc">
+  <meta property="og:title" content="快速开始">
+  <meta property="og:description" content="部署您的第一个应用并掌握 Drycc 基础知识的分步指南。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="快速开始">
+  <meta itemprop="description" content="部署您的第一个应用并掌握 Drycc 基础知识的分步指南。">
+  <meta itemprop="dateModified" content="2025-10-09T12:58:35+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="快速开始">
+  <meta name="twitter:description" content="部署您的第一个应用并掌握 Drycc 基础知识的分步指南。">
+<link rel="preload" href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" as="style" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<link href="/scss/main.min.bfc6c022fc8601c1a5c384ac21335e1a2e52095f9d29ffaae0c66890b2f6f377.css" rel="stylesheet" integrity="sha256-v8bAIvyGAcGlw4SsITNeGi5SCV&#43;dKf&#43;q4MZokLL283c=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/zh-cn/"><span class="navbar-brand__logo navbar-logo"><svg width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="3" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="3" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="13" r="2"/><circle id="Oval" stroke="#FF2F57" fill="#FF2F57" cx="13" cy="3" r="2"/><rect id="Rectangle" stroke="#3FB1E5" fill="#3FB1E5" x="6.5" y="6.5" width="3" height="3"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" points="8 11 10 15 6 15"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(3.000000, 8.000000) rotate(90.000000) translate(-3.000000, -8.000000)" points="3 6 5 10 1 10"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(8.000000, 3.000000) rotate(180.000000) translate(-8.000000, -3.000000)" points="8 1 10 5 6 5"/><polygon id="Triangle" stroke="#38BB4C" fill="#38BB4C" stroke-linejoin="round" transform="translate(13.000000, 8.000000) rotate(270.000000) translate(-13.000000, -8.000000)" points="13 6 15 10 11 10"/></g></svg></span><span class="navbar-brand__name">Drycc</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/about/"><span>关于我们</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/zh-cn/docs/"><span>文档</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/blog/"><span>博客</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zh-cn/community/"><span>社区</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/docs/quickstart/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="站内搜索…"
+    aria-label="站内搜索…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.55f5a19ce53e8fd6d7d6bc886b53a362.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+这是本节的多页打印视图。
+<a href="#" onclick="print();return false;">点击此处打印</a>.
+</p><p>
+<a href="/zh-cn/docs/quickstart/">返回本页常规视图</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">快速开始</h1>
+<div class="lead">部署您的第一个应用并掌握 Drycc 基础知识的分步指南。</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-c44ef3d444be71ea9e19e6b46099120c">快速开始</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-19de2e3ad5db012bc696e084bd521832">安装 Workflow</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-70f22538a3706ab607f31f52253895b1">Drycc Workflow 客户端 CLI</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-7323d78972f7284a5a82b3888ad3b56a">部署您的第一个应用</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c44ef3d444be71ea9e19e6b46099120c">1 - 快速开始</h1>
+    <div class="lead">本指南帮助您设置 Drycc Workflow。</div>
+	<p>通过三个简单步骤开始使用 Drycc Workflow。</p>
+<ol>
+<li>为 Helm 和 Drycc Workflow 安装 CLI 工具</li>
+<li>启动 Kubernetes 并安装 Drycc Workflow</li>
+<li>部署您的第一个应用</li>
+</ol>
+<p>本指南将帮助您设置适合评估、开发和测试的集群。当您准备好进行预发和生产环境部署时，请查看我们的<a href="/zh-cn/docs/managing-workflow/production-deployments/">生产清单</a>。</p>
+<h2 id="步骤-1安装-workflow">步骤 1：安装 Workflow<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-1%e5%ae%89%e8%a3%85-workflow" aria-label="Heading self-link"></a>
+</h2><p>对于快速开始，我们将<a href="/zh-cn/docs/quickstart/install-workflow/">安装 Drycc Workflow</a>。</p>
+<h2 id="步骤-2安装-cli-工具">步骤 2：安装 CLI 工具<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-2%e5%ae%89%e8%a3%85-cli-%e5%b7%a5%e5%85%b7" aria-label="Heading self-link"></a>
+</h2><p>对于快速开始，我们将<a href="/zh-cn/docs/quickstart/install-cli-tools/">安装 Drycc Workflow CLI</a>。</p>
+<h2 id="步骤-3部署您的第一个应用">步骤 3：部署您的第一个应用<a class="td-heading-self-link" href="#%e6%ad%a5%e9%aa%a4-3%e9%83%a8%e7%bd%b2%e6%82%a8%e7%9a%84%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%ba%94%e7%94%a8" aria-label="Heading self-link"></a>
+</h2><p>最后但同样重要的是，<a href="/zh-cn/docs/quickstart/deploy-an-app/">登录并部署您的第一个应用</a>。</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-19de2e3ad5db012bc696e084bd521832">2 - 安装 Workflow</h1>
+    <div class="lead">在纯主机上安装 Workflow，它可以是云服务器、裸机服务器、虚拟机，甚至您的笔记本电脑。</div>
+	<p>如果您有一个纯主机，它可以是云服务器、裸机服务器、虚拟机，甚至您的笔记本电脑。那么本章非常适合您。</p>
+<h2 id="操作系统">操作系统<a class="td-heading-self-link" href="#%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f" aria-label="Heading self-link"></a>
+</h2><p>Drycc 预计可以在大多数现代 Linux 系统上运行。一些 OSS 有特定要求：</p>
+<ul>
+<li>(Red Hat/CentOS) Enterprise Linux，它们通常使用 RPM 包管理。</li>
+<li>Ubuntu (Desktop/Server/Cloud) Linux，一个非常流行的发行版。</li>
+<li>Debian GNU Linux，一个非常纯净的开源软件发行版。</li>
+</ul>
+<p>如果您想添加更多 Linux 发行版支持，请在 GitHub 上提交 issue 或直接提交 PR。</p>
+<h2 id="系统软件">系统软件<a class="td-heading-self-link" href="#%e7%b3%bb%e7%bb%9f%e8%bd%af%e4%bb%b6" aria-label="Heading self-link"></a>
+</h2><p>在安装 drycc workflow 之前，需要安装一些基本软件。</p>
+<h3 id="os-配置">OS 配置<a class="td-heading-self-link" href="#os-%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h3><p>K8s 需要大量端口。如果您不确定它们是什么，请关闭本地防火墙或打开这些端口。
+同时，因为 k8s 需要系统时间，您需要确保系统时间正确。</p>
+<h3 id="安装-nfsv4-客户端">安装 NFSv4 客户端<a class="td-heading-self-link" href="#%e5%ae%89%e8%a3%85-nfsv4-%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="Heading self-link"></a>
+</h3><p>安装 NFSv4 客户端的命令因 Linux 发行版而异。</p>
+<p>对于 Debian 和 Ubuntu，使用此命令：</p>
+<pre tabindex="0"><code>$ apt-get install nfs-common
+</code></pre><p>对于 RHEL、CentOS 和 EKS 与 AmazonLinux2 镜像的 EKS Kubernetes Worker AMI，使用此命令：</p>
+<pre tabindex="0"><code>$ yum install nfs-utils
+</code></pre><h3 id="安装-curl">安装 curl<a class="td-heading-self-link" href="#%e5%ae%89%e8%a3%85-curl" aria-label="Heading self-link"></a>
+</h3><p>对于 Debian 和 Ubuntu，使用此命令：</p>
+<pre tabindex="0"><code>$ apt-get install curl
+</code></pre><p>对于 RHEL、CentOS 和 EKS 与 AmazonLinux2 镜像的 EKS Kubernetes Worker AMI，使用此命令：</p>
+<pre tabindex="0"><code>$ yum install curl
+</code></pre><h2 id="硬件">硬件<a class="td-heading-self-link" href="#%e7%a1%ac%e4%bb%b6" aria-label="Heading self-link"></a>
+</h2><p>硬件要求基于您的部署规模而扩展。最低推荐在这里概述。</p>
+<ul>
+<li>RAM：1G 最低（我们推荐至少 2GB）</li>
+<li>CPU：1 最低</li>
+</ul>
+<p>此配置仅包含满足操作的最低要求。</p>
+<h2 id="磁盘">磁盘<a class="td-heading-self-link" href="#%e7%a3%81%e7%9b%98" aria-label="Heading self-link"></a>
+</h2><p>Drycc 性能取决于数据库的性能。为了确保最佳速度，我们推荐尽可能使用 SSD。磁盘性能在利用 SD 卡或 eMMC 的 ARM 设备上会有所不同。</p>
+<h2 id="域名">域名<a class="td-heading-self-link" href="#%e5%9f%9f%e5%90%8d" aria-label="Heading self-link"></a>
+</h2><p>Drycc 需要一个完全由您控制的根域名，并将此域名指向要安装的服务器。
+假设有一个通配符域名指向当前安装 drycc 的服务器，即名称 <code>*.dryccdoman.com</code>。
+我们需要在安装前设置 <code>PLATFORM_DOMAIN</code> 环境变量。</p>
+<pre tabindex="0"><code>$ export PLATFORM_DOMAIN=dryccdoman.co
+</code></pre><p>当然，如果是测试环境，我们也可以使用 <code>nip.io</code>，一个 IP 到域名的服务。
+例如，您的主机 IP 是 <code>59.46.3.190</code>，我们将获得以下域名 <code>59.46.3.190.nip.io</code></p>
+<pre tabindex="0"><code>$ export PLATFORM_DOMAIN=59.46.3.190.nip.io
+</code></pre><h2 id="安装">安装<a class="td-heading-self-link" href="#%e5%ae%89%e8%a3%85" aria-label="Heading self-link"></a>
+</h2><p>在安装之前，请确保您的安装环境是否是公网。
+如果是内网环境且没有公网 IP，您需要禁用自动证书。</p>
+<pre tabindex="0"><code>$ export CERT_MANAGER_ENABLED=false
+</code></pre><p>然后您可以使用 <a href="https://www.drycc.cc/install.sh">https://www.drycc.cc/install.sh</a> 上的安装脚本在基于 systemd 和 openrc 的系统上将 drycc 安装为服务。</p>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install.sh | bash -
+</code></pre><p>如果需要安装测试版，请使用如下脚本安装。</p>
+<pre tabindex="0"><code>$ export CHANNEL=testing
+$ curl -sfL https://drycc-mirrors.drycc.cc/drycc/workflow/raw/refs/heads/main/install.sh | bash -
+</code></pre>
+
+<div class="alert alert-danger" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    <p>如果您在中国，需要使用镜像加速：</p>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install.sh | INSTALL_DRYCC_MIRROR=cn bash -
+</code></pre>
+
+</div>
+
+<h3 id="安装节点">安装节点<a class="td-heading-self-link" href="#%e5%ae%89%e8%a3%85%e8%8a%82%e7%82%b9" aria-label="Heading self-link"></a>
+</h3><p>节点可以是简单的代理或服务器；服务器具有代理的功能。多个服务器具有高可用性，但服务器数量最多不应超过 7 个。代理数量没有限制。</p>
+<ul>
+<li>首先，检查主节点的集群令牌。</li>
+</ul>
+<pre tabindex="0"><code>$ cat /var/lib/rancher/k3s/server/node-token
+K1078e7213ca32bdaabb44536f14b9ce7926bb201f41c3f3edd39975c16ff4901ea::server:33bde27f-ac49-4483-b6ac-f4eec2c6dbfa
+</code></pre><p>我们假设集群主节点的 IP 地址是 <code>192.168.6.240</code>，那样的话。</p>
+<ul>
+<li>然后，设置环境变量：</li>
+</ul>
+<pre tabindex="0"><code>$ export K3S_URL=https://192.168.6.240:6443
+$ export K3S_TOKEN=&#34;K1078e7213ca32bdaabb44536f14b9ce7926bb201f41c3f3edd39975c16ff4901ea::server:33bde27f-ac49-4483-b6ac-f4eec2c6dbfa&#34;
+</code></pre>
+
+<div class="alert alert-danger" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    <p>如果您在中国，需要使用镜像加速：</p>
+<pre tabindex="0"><code>$ export INSTALL_DRYCC_MIRROR=cn
+</code></pre>
+
+</div>
+
+<ul>
+<li>以服务器身份加入集群：</li>
+</ul>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install.sh | bash -s - install_k3s_server
+</code></pre><ul>
+<li>以代理身份加入集群：</li>
+</ul>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install.sh | bash -s - install_k3s_agent
+</code></pre><h3 id="安装选项">安装选项<a class="td-heading-self-link" href="#%e5%ae%89%e8%a3%85%e9%80%89%e9%a1%b9" aria-label="Heading self-link"></a>
+</h3><p>使用此方法安装 drycc 时，可以使用以下环境变量来配置安装：</p>
+<table>
+  <thead>
+      <tr>
+          <th>环境变量</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>PLATFORM_DOMAIN</td>
+          <td>必需项，指定 drycc 的域名</td>
+      </tr>
+      <tr>
+          <td>DRYCC_ADMIN_USERNAME</td>
+          <td>必需项，指定 drycc 的管理员用户名</td>
+      </tr>
+      <tr>
+          <td>DRYCC_ADMIN_PASSWORD</td>
+          <td>必需项，指定 drycc 的管理员密码</td>
+      </tr>
+      <tr>
+          <td>CERT_MANAGER_ENABLED</td>
+          <td>是否使用自动证书。默认是 <code>false</code></td>
+      </tr>
+      <tr>
+          <td>CHANNEL</td>
+          <td>默认安装 <code>stable</code> 通道。您也可以指定 <code>testing</code></td>
+      </tr>
+      <tr>
+          <td>KUBERNETES_SERVICE_HOST</td>
+          <td>设置为 kube-apiserver 前面的负载均衡器的 HOST</td>
+      </tr>
+      <tr>
+          <td>KUBERNETES_SERVICE_PORT</td>
+          <td>设置为 kube-apiserver 前面的负载均衡器的 PORT</td>
+      </tr>
+      <tr>
+          <td>METALLB_CONFIG_FILE</td>
+          <td>metallb 配置文件路径，默认使用 layer 2 网络</td>
+      </tr>
+      <tr>
+          <td>LONGHORN_CONFIG_FILE</td>
+          <td>Longhorn 配置文件路径</td>
+      </tr>
+      <tr>
+          <td>INSTALL_DRYCC_MIRROR</td>
+          <td>指定加速镜像位置。目前仅支持 <code>cn</code></td>
+      </tr>
+      <tr>
+          <td>BUILDER_REPLICAS</td>
+          <td>要部署的构建器副本数</td>
+      </tr>
+      <tr>
+          <td>CONTROLLER_API_REPLICAS</td>
+          <td>要部署的控制器 API 副本数</td>
+      </tr>
+      <tr>
+          <td>CONTROLLER_CELERY_REPLICAS</td>
+          <td>要部署的控制器 celery 副本数</td>
+      </tr>
+      <tr>
+          <td>CONTROLLER_METRIC_REPLICAS</td>
+          <td>要部署的控制器指标副本数</td>
+      </tr>
+      <tr>
+          <td>CONTROLLER_MUTATE_REPLICAS</td>
+          <td>要部署的控制器变异副本数</td>
+      </tr>
+      <tr>
+          <td>CONTROLLER_WEBHOOK_REPLICAS</td>
+          <td>要部署的控制器 webhook 副本数</td>
+      </tr>
+      <tr>
+          <td>CONTROLLER_APP_RUNTIME_CLASS</td>
+          <td>RuntimeClass 用于选择容器运行时配置。</td>
+      </tr>
+      <tr>
+          <td>CONTROLLER_APP_GATEWAY_CLASS</td>
+          <td>由 <code>drycc gateways</code> 分配的 GatewayClass；默认使用默认 GatewayClass</td>
+      </tr>
+      <tr>
+          <td>CONTROLLER_APP_STORAGE_CLASS</td>
+          <td>由 <code>drycc volumes</code> 分配的 StorageClass；默认使用默认 storageClass</td>
+      </tr>
+      <tr>
+          <td>VALKEY_PERSISTENCE_SIZE</td>
+          <td>分配给 <code>valkey</code> 的持久化空间大小，默认是 <code>5Gi</code></td>
+      </tr>
+      <tr>
+          <td>VALKEY_PERSISTENCE_STORAGE_CLASS</td>
+          <td><code>valkey</code> 的 StorangeClass；默认使用默认 storangeclass</td>
+      </tr>
+      <tr>
+          <td>STORAGE_PERSISTENCE_SIZE</td>
+          <td>分配给 <code>storage</code> 的持久化空间大小，默认是 <code>5Gi</code></td>
+      </tr>
+      <tr>
+          <td>STORAGE_PERSISTENCE_STORAGE_CLASS</td>
+          <td><code>storage</code> 的 StorangeClass；默认使用默认 storangeclass</td>
+      </tr>
+      <tr>
+          <td>MONITOR_GRAFANA_PERSISTENCE_SIZE</td>
+          <td>分配给 <code>monitor.grafana</code> 的持久化空间大小，默认是 <code>5Gi</code></td>
+      </tr>
+      <tr>
+          <td>MONITOR_GRAFANA_PERSISTENCE_STORAGE_CLASS</td>
+          <td><code>monitor</code> grafana 的 StorangeClass；默认使用默认 storangeclass</td>
+      </tr>
+      <tr>
+          <td>DATABASE_PERSISTENCE_SIZE</td>
+          <td>分配给 <code>database</code> 的持久化空间大小，默认是 <code>5Gi</code></td>
+      </tr>
+      <tr>
+          <td>DATABASE_PERSISTENCE_STORAGE_CLASS</td>
+          <td><code>database</code> 的 StorangeClass；默认使用默认 storangeclass</td>
+      </tr>
+      <tr>
+          <td>TIMESERIES_REPLICAS</td>
+          <td>要部署的时间序列副本数</td>
+      </tr>
+      <tr>
+          <td>TIMESERIES_PERSISTENCE_SIZE</td>
+          <td>分配给 <code>timeseries</code> 的持久化空间大小，默认是 <code>5Gi</code></td>
+      </tr>
+      <tr>
+          <td>TIMESERIES_PERSISTENCE_STORAGE_CLASS</td>
+          <td><code>timeseries</code> 的 StorangeClass；默认使用默认 storangeclass</td>
+      </tr>
+      <tr>
+          <td>PASSPORT_REPLICAS</td>
+          <td>要部署的护照副本数</td>
+      </tr>
+      <tr>
+          <td>REGISTRY_REPLICAS</td>
+          <td>要部署的注册表副本数</td>
+      </tr>
+      <tr>
+          <td>HELMBROKER_API_REPLICAS</td>
+          <td>要部署的 helmbroker api 副本数</td>
+      </tr>
+      <tr>
+          <td>HELMBROKER_CELERY_REPLICAS</td>
+          <td>要部署的 helmbroker celery 副本数</td>
+      </tr>
+      <tr>
+          <td>HELMBROKER_PERSISTENCE_SIZE</td>
+          <td>分配给 <code>helmbroker</code> 的持久化空间大小，默认是 <code>5Gi</code></td>
+      </tr>
+      <tr>
+          <td>HELMBROKER_PERSISTENCE_STORAGE_CLASS</td>
+          <td><code>helmbroker</code> 的 StorangeClass；默认使用默认 storangeclass</td>
+      </tr>
+      <tr>
+          <td>VICTORIAMETRICS_CONFIG_FILE</td>
+          <td>victoriametrics 配置文件的路径，开启此项，下面的两个不会工作。</td>
+      </tr>
+      <tr>
+          <td>VICTORIAMETRICS_VMAGENT_PERSISTENCE_SIZE</td>
+          <td>分配给 <code>victoriametrics</code> vmagent 的持久化空间大小，默认是 <code>10Gi</code></td>
+      </tr>
+      <tr>
+          <td>VICTORIAMETRICS_VMAGENT_PERSISTENCE_STORAGE_CLASS</td>
+          <td><code>victoriametrics</code> vmagent 的 StorangeClass；默认使用默认 storangeclass</td>
+      </tr>
+      <tr>
+          <td>VICTORIAMETRICS_VMSTORAGE_PERSISTENCE_SIZE</td>
+          <td>分配给 <code>victoriametrics</code> vmstorage 的持久化空间大小，默认是 <code>10Gi</code></td>
+      </tr>
+      <tr>
+          <td>VICTORIAMETRICS_VMSTORAGE_PERSISTENCE_STORAGE_CLASS</td>
+          <td><code>victoriametrics</code> vmstorage 的 StorangeClass；默认使用默认 storangeclass</td>
+      </tr>
+      <tr>
+          <td>K3S_DATA_DIR</td>
+          <td>k3s 数据目录的配置；如果未设置，使用默认路径</td>
+      </tr>
+      <tr>
+          <td>ACME_SERVER</td>
+          <td>ACME 服务器 URL，默认使用 letsencrypt</td>
+      </tr>
+      <tr>
+          <td>ACME_EAB_KEY_ID</td>
+          <td>您的外部账户绑定所索引的密钥 ID</td>
+      </tr>
+      <tr>
+          <td>ACME_EAB_KEY_SECRET</td>
+          <td>您的外部账户对称 MAC 密钥的密钥 Secret</td>
+      </tr>
+  </tbody>
+</table>
+<p>由于安装脚本将安装 k3s，其他环境变量可以参考 k3s 安装 <a href="https://rancher.com/docs/k3s/latest/en/installation/install-options/">环境变量</a>。</p>
+<h2 id="卸载">卸载<a class="td-heading-self-link" href="#%e5%8d%b8%e8%bd%bd" aria-label="Heading self-link"></a>
+</h2><p>如果您使用安装脚本安装了 drycc，您可以使用此脚本卸载整个 drycc。</p>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/uninstall.sh | bash -
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-70f22538a3706ab607f31f52253895b1">3 - Drycc Workflow 客户端 CLI</h1>
+    <div class="lead">如何下载、安装 Drycc CLI 工具。</div>
+	<h2 id="drycc-workflow-客户端-cli">Drycc Workflow 客户端 CLI<a class="td-heading-self-link" href="#drycc-workflow-%e5%ae%a2%e6%88%b7%e7%ab%af-cli" aria-label="Heading self-link"></a>
+</h2><p>Drycc 命令行界面 (CLI) 让您与 Drycc Workflow 交互。
+使用 CLI 创建、配置和管理应用程序。</p>
+<p>使用以下命令为 Linux 或 Mac OS X 安装 <code>drycc</code> 客户端：</p>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install-cli.sh | bash -
+</code></pre>
+
+<div class="alert alert-danger" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    <p>中国大陆用户可以使用以下方法加速安装：</p>
+<pre tabindex="0"><code>$ curl -sfL https://www.drycc.cc/install-cli.sh | INSTALL_DRYCC_MIRROR=cn bash -
+</code></pre>
+
+</div>
+
+<p>其他人请访问：https://github.com/drycc/workflow-cli/releases</p>
+<p>安装程序将 <code>drycc</code> 二进制文件放在当前目录中，但您应该将其移动到 $PATH 中的某个位置：</p>
+<pre tabindex="0"><code>$ sudo ln -fs $PWD/drycc /usr/local/bin/drycc
+</code></pre><p><em>或</em>：</p>
+<pre tabindex="0"><code>$ sudo mv $PWD/drycc /usr/local/bin/drycc
+</code></pre><p>通过运行 <code>drycc version</code> 检查您的工作：</p>
+<pre tabindex="0"><code>$ drycc version
+v1.1.0
+</code></pre><p>将 workflow cli 更新到最新发布。</p>
+<pre tabindex="0"><code>drycc update
+</code></pre>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    请注意，随着新版本的发布，版本号可能会有所不同
+
+</div>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7323d78972f7284a5a82b3888ad3b56a">4 - 部署您的第一个应用</h1>
+    <div class="lead">使用 drycc cli 部署应用程序。</div>
+	<h2 id="确定您的主机和主机名值">确定您的主机和主机名值<a class="td-heading-self-link" href="#%e7%a1%ae%e5%ae%9a%e6%82%a8%e7%9a%84%e4%b8%bb%e6%9c%ba%e5%92%8c%e4%b8%bb%e6%9c%ba%e5%90%8d%e5%80%bc" aria-label="Heading self-link"></a>
+</h2><p>Drycc Workflow 需要一个通配符 DNS 记录来动态映射应用名称到路由器。</p>
+<p>用户应该已经设置了 DNS 指向他们的已知主机。<code>$hostname</code> 值可以通过在 <code>global.platformDomain</code> 中设置的值前加上 <code>drycc.</code> 来计算。</p>
+<h2 id="登录到-workflow">登录到 Workflow<a class="td-heading-self-link" href="#%e7%99%bb%e5%bd%95%e5%88%b0-workflow" aria-label="Heading self-link"></a>
+</h2><p>Workflow 使用 passport 组件创建和授权用户。
+如果您已经有账户，使用 <code>drycc login</code> 对 Drycc Workflow API 进行身份验证。</p>
+<pre tabindex="0"><code>$ drycc login http://drycc.example.com
+Opening browser to http://drycc.example.com/v2/login/drycc/?key=4ccc81ee2dce4349ad5261ceffe72c71
+Waiting for login... .o.Logged in as admin
+Configuration file written to /root/.drycc/client.json
+</code></pre><p>或者您可以使用用户名和密码登录</p>
+<pre tabindex="0"><code>$ drycc login http://drycc.example.com --username=demo --password=demo
+Configuration file written to /root/.drycc/client.json
+</code></pre><h2 id="部署应用程序">部署应用程序<a class="td-heading-self-link" href="#%e9%83%a8%e7%bd%b2%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f" aria-label="Heading self-link"></a>
+</h2><p>Drycc Workflow 支持三种不同类型的应用程序，Buildpacks、Dockerfiles 和容器镜像。我们的第一个应用程序将是一个简单的基于容器镜像的应用程序，所以您不必与检出代码搏斗。</p>
+<p>运行 <code>drycc create</code> 在 Drycc Workflow 上创建一个新应用程序。如果您没有为应用程序指定名称，Workflow 会自动生成一个友好的（有时有趣的）名称。</p>
+<pre tabindex="0"><code>$ drycc create --no-remote
+Creating Application... done, created proper-barbecue
+If you want to add a git remote for this app later, use `drycc git remote -a proper-barbecue`
+</code></pre><p>我们的应用程序已创建并命名为 <code>proper-barbecue</code>。与 <code>drycc</code> 主机名一样，任何到 <code>proper-barbecue</code> 的 HTTP 流量将由边缘路由器自动路由到您的应用程序 pod。</p>
+<p>让我们使用 CLI 告诉平台部署应用程序，然后使用 curl 向应用发送请求：</p>
+<pre tabindex="0"><code>$ drycc pull drycc/example-go -a proper-barbecue
+Creating build... done
+$ curl http://proper-barbecue.$hostname
+Powered by Drycc
+</code></pre>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    如果您看到 404 错误，请确保使用 <code>-a &lt;appname&gt;</code> 指定了您的应用程序名称！
+
+</div>
+
+<p>Workflow 的边缘路由器知道所有关于应用程序名称的信息，并自动将流量发送到正确的应用程序。路由器将 <code>proper-barbecue.104.197.125.75.nip.io</code> 的流量发送到您的应用，就像 <code>drycc.104.197.125.75.nip.io</code> 被发送到 Workflow API 服务一样。</p>
+<h2 id="更改应用程序配置">更改应用程序配置<a class="td-heading-self-link" href="#%e6%9b%b4%e6%94%b9%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e9%85%8d%e7%bd%ae" aria-label="Heading self-link"></a>
+</h2><p>接下来，让我们使用 CLI 更改一些配置。我们的示例应用构建为从环境读取配置。通过使用 <code>drycc config set</code> 我们可以更改应用程序的行为方式：</p>
+<pre tabindex="0"><code>$ drycc config set POWERED_BY=&#34;Container Images + Kubernetes&#34; -a proper-barbecue
+Creating config... done
+</code></pre><p>在幕后，Workflow 为您的应用程序创建了一个新发布，并使用 Kubernetes 提供零停机滚动部署到新发布！</p>
+<p>验证我们的配置更改是否有效：</p>
+<pre tabindex="0"><code>$ curl http://proper-barbecue.104.197.125.75.nip.io
+Powered by Container Images + Kubernetes
+</code></pre><h2 id="扩展您的应用程序">扩展您的应用程序<a class="td-heading-self-link" href="#%e6%89%a9%e5%b1%95%e6%82%a8%e7%9a%84%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f" aria-label="Heading self-link"></a>
+</h2><p>最后，让我们通过添加更多应用程序进程来扩展我们的应用程序。使用 CLI 您可以轻松添加和删除额外的进程来服务请求：</p>
+<pre tabindex="0"><code>$ drycc scale web=2 -a proper-barbecue
+Scaling processes... but first, coffee!
+done in 36s
+
+NAME                                RELEASE    STATE    PTYPE       STARTED
+proper-barbecue-v18-web-rk644       v18        up       web         2023-12-08T03:09:25UTC
+proper-barbecue-v18-web-0ag04       v18        up       web         2023-12-08T03:09:25UTC
+</code></pre><p>恭喜！您已使用 Drycc Workflow 部署、配置和扩展了您的第一个应用程序。</p>
+<h2 id="进一步探索">进一步探索<a class="td-heading-self-link" href="#%e8%bf%9b%e4%b8%80%e6%ad%a5%e6%8e%a2%e7%b4%a2" aria-label="Heading self-link"></a>
+</h2><p>Drycc Workflow 可以做更多事情，试试 CLI：</p>
+
+
+<div class="alert alert-danger" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    为了有权限推送应用，您必须在 Drycc Workflow 上为您的用户添加 SSH 密钥。
+有关更多信息，请查看 <a href="/zh-cn/docs/users/ssh-keys/">用户和 SSH 密钥</a> 和 <a href="/zh-cn/docs/troubleshooting/">故障排除 Workflow</a>。
+
+</div>
+
+<ul>
+<li>使用 <code>drycc rollback -a proper-barbecue</code> 回滚到以前的发布。</li>
+<li>使用Drycc Grafana查看应用程序日志。</li>
+<li>尝试我们的其他示例应用程序，如：
+<ul>
+<li><a href="https://github.com/drycc/ruby-getting-started">drycc/ruby-getting-started</a></li>
+<li><a href="https://github.com/drycc/python-getting-started">drycc/python-getting-started</a></li>
+<li><a href="https://github.com/drycc/php-getting-started">drycc/php-getting-started</a></li>
+</ul>
+</li>
+<li>阅读关于使用应用程序 <a href="/zh-cn/docs/applications/using-buildpacks/">Buildpacks</a> 或 <a href="/zh-cn/docs/applications/using-dockerfiles/">Dockerfiles</a></li>
+<li>加入我们的 <a href="https://drycc.slack.com/">#community slack channel</a> 并与团队见面！</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Tawk" aria-label="Tawk">
+    <a target="_blank" rel="noopener" href="https://tawk.to/chat/6234b5491ffac05b1d7f4669/1fueu8a9t" aria-label="Tawk">
+      <i class="fa fa-comment-dots"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Reddit" aria-label="Reddit">
+    <a target="_blank" rel="noopener" href="https://www.reddit.com/r/drycc" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/drycc" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://drycc.slack.com/" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2015&ndash;2025
+    <span class="td-footer__authors">Drycc Authors | <a href="https://legal.doopai.com/#/cloud-services-terms">Terms of Service</a> | <a href="https://legal.doopai.com/#/doopai-cookie-policy">Cookies</a> |</span></span><span class="td-footer__all_rights_reserved">保留所有权利</span><span class="ms-2"><a href="https://legal.doopai.com/#/doopai-privacy-policy" target="_blank" rel="noopener">隐私政策</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.min.403ff095218c662472dab60ed98ecbb19431682de5ac7c6159891241cd366af5.js" integrity="sha256-QD/wlSGMZiRy2rYO2Y7LsZQxaC3lrHxhWYkSQc02avU=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>
